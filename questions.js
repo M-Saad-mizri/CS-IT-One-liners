@@ -1835,6 +1835,292 @@ Index = Faster retrieval
 Stored Procedure = Precompiled SQL code
 Cursor = Row-by-row processing
 Data Warehouse = Historical data for analysis
+`,
+  "Operating Systems": `
+## Part 4 (Questions 151–200)
+
+### Memory Management
+
+151. What is memory management? → The operating system function that allocates and deallocates memory.
+152. Which OS component manages main memory? → Memory Manager.
+153. What is the main purpose of memory management? → Efficient utilization of main memory.
+154. What is contiguous memory allocation? → Allocating one continuous block of memory to a process.
+155. What is non-contiguous memory allocation? → Allocating memory in separate blocks.
+156. Which memory allocation technique suffers from external fragmentation? → Contiguous Allocation.
+157. Which memory allocation technique eliminates external fragmentation? → Paging.
+158. Which memory allocation technique may suffer from internal fragmentation? → Paging.
+159. What is fragmentation? → Wasted memory space caused by allocation.
+160. How many types of fragmentation are there? → Two (Internal and External).
+
+### Fragmentation
+
+161. What is internal fragmentation? → Wasted space inside an allocated memory block.
+162. What is external fragmentation? → Free memory scattered into small non-contiguous blocks.
+163. Which memory management technique suffers from external fragmentation? → Segmentation.
+164. Which memory management technique suffers from internal fragmentation? → Paging.
+165. Which technique can reduce external fragmentation? → Compaction.
+166. What is compaction? → Combining scattered free memory into one large block.
+167. Does compaction eliminate internal fragmentation? → No.
+168. Which type of fragmentation occurs due to fixed-size memory blocks? → Internal Fragmentation.
+169. Which type of fragmentation occurs due to variable-size memory blocks? → External Fragmentation.
+170. Which memory allocation technique requires compaction? → Contiguous Allocation.
+
+### Memory Allocation Algorithms
+
+171. Which algorithm allocates the first available memory block? → First Fit.
+172. Which algorithm allocates the smallest suitable memory block? → Best Fit.
+173. Which algorithm allocates the largest available memory block? → Worst Fit.
+174. Which allocation algorithm is generally the fastest? → First Fit.
+175. Which allocation algorithm may leave many small unusable holes? → Best Fit.
+176. Which allocation algorithm attempts to leave large free blocks? → Worst Fit.
+177. Which allocation algorithm starts searching from the last allocated position? → Next Fit.
+178. Which allocation algorithm usually has the least searching overhead? → First Fit.
+179. Which allocation algorithm often results in the highest external fragmentation? → Best Fit.
+180. Which allocation algorithm is easiest to implement? → First Fit.
+
+### Paging
+
+181. What is paging? → A memory management technique using fixed-size pages and frames.
+182. What is a page? → A fixed-size block of logical memory.
+183. What is a frame? → A fixed-size block of physical memory.
+184. What is a page table? → A table that maps pages to frames.
+185. Which memory management technique divides memory into pages and frames? → Paging.
+186. Does paging require contiguous physical memory? → No.
+187. Which memory management technique completely removes external fragmentation? → Paging.
+188. Which type of fragmentation can still occur in paging? → Internal Fragmentation.
+189. What is page mapping? → Mapping logical pages to physical frames.
+190. Which hardware component speeds up page table access? → TLB (Translation Lookaside Buffer).
+
+### Segmentation
+
+191. What is segmentation? → A memory management technique that divides memory into logical segments.
+192. Are segments fixed-size or variable-size? → Variable-size.
+193. Which memory management technique is based on logical program units? → Segmentation.
+194. Which memory management technique reflects the programmer's view of memory? → Segmentation.
+195. Which table stores the base and limit of each segment? → Segment Table.
+196. Which type of fragmentation occurs in segmentation? → External Fragmentation.
+197. Which memory management technique supports modules such as code, data, and stack? → Segmentation.
+198. Which technique combines paging and segmentation? → Segmented Paging.
+199. Which memory management technique is easier for memory sharing and protection? → Segmentation.
+200. What is the major advantage of paging over contiguous allocation? → It eliminates external fragmentation.
+
+### Most Repeated Lecturer MCQs (151–200)
+Memory Manager = Allocates and deallocates memory
+Two Fragmentation Types = Internal & External
+Paging = Fixed-size Pages and Frames
+Segmentation = Variable-size Segments
+Page = Logical Memory
+Frame = Physical Memory
+Page Table maps Pages to Frames
+TLB speeds up address translation
+Paging eliminates External Fragmentation
+Paging may cause Internal Fragmentation
+Segmentation may cause External Fragmentation
+Compaction reduces External Fragmentation
+First Fit = First available block
+Best Fit = Smallest suitable block
+Worst Fit = Largest available block
+Next Fit = Continue from last search position
+First Fit is generally the fastest allocation algorithm
+Segmentation matches the programmer's logical view
+Segment Table stores Base and Limit
+Segmented Paging combines both techniques
+
+## Part 5 (Questions 201–250)
+
+### Virtual Memory
+
+201. What is virtual memory? → A technique that allows programs larger than physical memory to execute.
+202. What is the main advantage of virtual memory? → It allows execution of large programs with limited RAM.
+203. Which storage device is used to implement virtual memory? → Secondary Storage (Hard Disk/SSD).
+204. Which memory is faster: Physical Memory or Virtual Memory? → Physical Memory.
+205. Which memory is larger: Physical Memory or Virtual Memory? → Virtual Memory.
+206. What is demand paging? → Loading a page into memory only when it is needed.
+207. What is a page fault? → An event that occurs when a required page is not in main memory.
+208. Does every page fault indicate an error? → No.
+209. Which OS component handles a page fault? → Operating System.
+210. What happens after a page fault? → The required page is loaded from disk into RAM.
+
+### Page Replacement Algorithms
+
+211. Why are page replacement algorithms needed? → To replace pages when memory is full.
+212. Which page replacement algorithm removes the oldest page? → FIFO.
+213. What does FIFO stand for? → First In, First Out.
+214. Which page replacement algorithm replaces the least recently used page? → LRU.
+215. What does LRU stand for? → Least Recently Used.
+216. Which page replacement algorithm replaces the page that will not be used for the longest future time? → Optimal (OPT).
+217. Which page replacement algorithm provides the minimum possible page faults? → Optimal (OPT).
+218. Which page replacement algorithm is practical but slightly less efficient than OPT? → LRU.
+219. Which page replacement algorithm is the simplest to implement? → FIFO.
+220. Which FIFO phenomenon may increase page faults after adding more memory? → Belady's Anomaly.
+
+### Thrashing
+
+221. What is thrashing? → The system spends more time paging than executing processes.
+222. What is the main cause of thrashing? → Excessive page faults.
+223. How can thrashing be reduced? → Allocate more memory or reduce the degree of multiprogramming.
+224. Does thrashing improve system performance? → No.
+225. Which memory-related problem greatly decreases CPU utilization? → Thrashing.
+
+### File Systems
+
+226. What is a file system? → A method used by the OS to organize and store files.
+227. Which file system is the default for modern Linux distributions? → ext4.
+228. Which file system is commonly used by Windows? → NTFS.
+229. Which file system is commonly used on USB drives? → FAT32.
+230. Which file system is used by macOS? → APFS.
+231. What does NTFS stand for? → New Technology File System.
+232. Which file system supports Linux root partitions? → ext4.
+233. Which file system supports very large files and permissions? → NTFS.
+234. Which file system has broad compatibility across operating systems? → FAT32.
+235. Which OS component manages files and directories? → File System.
+
+### Disk Scheduling
+
+236. What is disk scheduling? → Determining the order in which disk I/O requests are serviced.
+237. Which disk scheduling algorithm serves requests in arrival order? → FCFS.
+238. Which disk scheduling algorithm always services the nearest request first? → SSTF.
+239. What does SSTF stand for? → Shortest Seek Time First.
+240. Which disk scheduling algorithm moves the disk head in one direction before reversing? → SCAN.
+241. Which disk scheduling algorithm is also called the Elevator Algorithm? → SCAN.
+242. Which algorithm moves in one direction and then jumps back without servicing on return? → C-SCAN.
+243. Which disk scheduling algorithm provides more uniform waiting time? → C-SCAN.
+244. Which disk scheduling algorithm may cause starvation? → SSTF.
+245. Which disk scheduling algorithm is the simplest? → FCFS.
+
+### RAID
+
+246. What does RAID stand for? → Redundant Array of Independent Disks.
+247. Which RAID level provides mirroring? → RAID 1.
+248. Which RAID level provides striping without redundancy? → RAID 0.
+249. Which RAID level uses distributed parity? → RAID 5.
+250. Which RAID level provides fault tolerance through mirroring? → RAID 1.
+
+### Most Repeated Lecturer MCQs (201–250)
+Virtual Memory = Run programs larger than RAM
+Demand Paging = Load page when needed
+Page Fault = Page not in memory
+FIFO = Oldest page replaced
+LRU = Least Recently Used page replaced
+OPT = Minimum page faults
+Belady's Anomaly = FIFO
+Thrashing = More paging than execution
+Linux default file system = ext4
+Windows file system = NTFS
+USB file system = FAT32
+macOS file system = APFS
+SSTF = Shortest Seek Time First
+SCAN = Elevator Algorithm
+C-SCAN = Circular SCAN
+SSTF may cause starvation
+RAID 0 = Striping
+RAID 1 = Mirroring
+RAID 5 = Distributed parity
+RAID improves performance and/or fault tolerance
+
+## Part 6 (Questions 251–300)
+
+### Linux & UNIX
+
+251. Which operating system is open source and Unix-like? → Linux.
+252. Which operating system supports multiple command interpreters (shells)? → Linux and Unix.
+253. Which shell is the default in most Linux distributions? → Bash (Bourne Again Shell).
+254. Which Linux command displays the current working directory? → pwd.
+255. Which Linux command lists files and directories? → ls.
+256. Which Linux command changes the current directory? → cd.
+257. Which Linux command copies files? → cp.
+258. Which Linux command moves or renames files? → mv.
+259. Which Linux command removes files? → rm.
+260. Which Linux command creates a new directory? → mkdir.
+
+### Windows Operating System
+
+261. Which Windows database stores system configuration settings? → Windows Registry.
+262. What is the purpose of the Windows Registry? → To store system and application configuration.
+263. Which file system is the default in modern Windows? → NTFS.
+264. Which Windows utility manages running processes? → Task Manager.
+265. Which Windows utility manages disks and partitions? → Disk Management.
+266. Which key combination opens Task Manager directly? → Ctrl + Shift + Esc.
+267. Which Windows component loads the operating system during startup? → Boot Loader.
+268. Which Windows feature restores the system to a previous state? → System Restore.
+269. Which operating system was primarily single-user and single-tasking? → MS-DOS.
+270. Which operating system introduced the Windows Registry? → Microsoft Windows.
+
+### Booting & System Concepts
+
+271. What is booting? → The process of starting a computer and loading the operating system.
+272. What is a boot loader? → A program that loads the operating system into memory.
+273. Which type of boot restarts a running computer? → Warm Boot.
+274. Which type of boot starts a powered-off computer? → Cold Boot.
+275. What is BIOS? → Basic Input/Output System firmware that initializes hardware.
+276. What does UEFI stand for? → Unified Extensible Firmware Interface.
+277. Which firmware replaces BIOS on modern computers? → UEFI.
+278. What is the bootstrap program? → A small program that loads the operating system kernel.
+279. Which memory stores BIOS/UEFI firmware? → ROM/Flash Memory.
+280. Which partition contains files needed to boot an operating system? → Boot Partition.
+
+### Miscellaneous High-Yield Concepts
+
+281. What is multiprogramming? → Keeping multiple programs in memory to maximize CPU utilization.
+282. What is multitasking? → Executing multiple tasks apparently at the same time.
+283. What is multiprocessing? → Using two or more CPUs/cores simultaneously.
+284. What is a multi-core processor? → A single CPU containing multiple processing cores.
+285. Which operating system supports multiprocessing? → Modern operating systems such as Linux and Windows.
+286. What is spooling? → Temporarily storing jobs in a buffer before processing.
+287. Where is spooling commonly used? → Printer management.
+288. What is buffering? → Temporarily storing data during transfer between devices.
+289. What is caching? → Storing frequently used data for faster access.
+290. Which memory is faster: Cache or RAM? → Cache Memory.
+
+### Frequently Asked One-Liners
+
+291. Which OS function allocates CPU time? → CPU Scheduling.
+292. Which OS function allocates main memory? → Memory Management.
+293. Which OS function manages files and directories? → File Management.
+294. Which OS function controls input/output devices? → Device Management.
+295. Which OS function protects system resources? → Security and Protection.
+296. Which OS function detects and handles errors? → Error Detection.
+297. Which OS function keeps records of resource usage? → Accounting.
+298. Which OS function provides communication between processes? → Inter-Process Communication (IPC).
+299. Which OS function allocates hardware resources efficiently? → Resource Allocation.
+300. What is the ultimate goal of an operating system? → To provide an efficient, convenient, and secure environment for executing programs.
+
+### Final 35 Most Repeated Operating Systems Facts
+Kernel = Core of the Operating System
+Shell = Command Interpreter
+Process = Program in execution
+Thread = Smallest execution unit
+PCB = Process Control Block
+FCFS = First Come First Served
+SJF = Minimum average waiting time
+Round Robin = Time Quantum
+Priority Scheduling = May cause starvation
+Aging = Prevents starvation
+Context Switching = Save and restore process state
+Semaphore = Synchronization
+Mutex = Mutual Exclusion
+Deadlock Conditions = Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait
+Banker's Algorithm = Deadlock Avoidance
+Paging = Pages and Frames
+Segmentation = Variable-size segments
+Paging removes External Fragmentation
+Paging may cause Internal Fragmentation
+Virtual Memory = Run programs larger than RAM
+Page Fault = Page not in memory
+Thrashing = More paging than execution
+FIFO = First In First Out
+LRU = Least Recently Used
+OPT = Minimum page faults
+Linux default file system = ext4
+Windows file system = NTFS
+RAID 0 = Striping
+RAID 1 = Mirroring
+RAID 5 = Distributed Parity
+SCAN = Elevator Algorithm
+Windows Registry = System configuration
+Linux supports multiple shells
+BIOS/UEFI = Initializes hardware and starts boot process
+Primary goal of OS = Efficient resource management
 `
 };
 
@@ -2161,3 +2447,5 @@ window.factsData = getParsedData();
 window.parseRawSubject = parseRawSubject;
 console.log("Parsed Networking Facts:", window.factsData["Computer Networking"] ? window.factsData["Computer Networking"].length : 0);
 console.log("Parsed Microprocessor Facts:", window.factsData["Microprocessors & Interfacing"] ? window.factsData["Microprocessors & Interfacing"].length : 0);
+console.log("Parsed DBMS Facts:", window.factsData["Database Management System"] ? window.factsData["Database Management System"].length : 0);
+console.log("Parsed OS Facts:", window.factsData["Operating Systems"] ? window.factsData["Operating Systems"].length : 0);
