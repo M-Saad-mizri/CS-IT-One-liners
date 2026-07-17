@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickFacts - Mobile-First Revision Portal</title>
+  
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode"> <!-- Defaults to dark mode for premium look -->
+
+  <!-- Top Navigation Bar -->
+  <header class="app-header">
+    <button class="icon-btn sidebar-toggle" id="sidebarToggle" aria-label="Open settings menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="6" x2="20" y2="6"></line>
+        <line x1="4" y1="18" x2="20" y2="18"></line>
+      </svg>
+    </button>
+    <div class="logo">
+      <span class="logo-accent">Quick</span>Facts
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" id="themeToggleTop" aria-label="Toggle theme">
+        <!-- Sun icon (shows in dark mode) -->
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+        <!-- Moon icon (shows in light mode) -->
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="app-container">
+    
+    <!-- Hero Status Section -->
+    <section class="status-hero">
+      <div class="progress-details">
+        <div class="stats-row">
+          <span class="subject-badge" id="currentSubjectBadge">Computer Networking</span>
+          <span class="progress-text" id="progressPercentage">0% Covered</span>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="progressBarFill" style="width: 0%"></div>
+        </div>
+        <div class="stats-counter">
+          <span id="progressCount">0 / 0 facts covered</span>
+          <span class="bookmark-stat" id="bookmarkCount">0 bookmarked</span>
+        </div>
+      </div>
+
+      <!-- Quick Search & Actions -->
+      <div class="search-actions-bar">
+        <div class="search-box">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="searchInput" placeholder="Search facts..." aria-label="Search facts">
+          <button class="clear-btn" id="searchClear" style="display: none;">&times;</button>
+        </div>
+        
+        <div class="filter-toggles">
+          <button class="filter-chip" id="filterBookmarks" data-active="false">
+            <svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            Bookmarks
+          </button>
+          
+          <button class="filter-chip" id="filterUncovered" data-active="false">
+            Uncovered
+          </button>
+        </div>
+      </div>
+
+      <!-- Checkpoint Jump Bar -->
+      <div class="checkpoint-banner" id="checkpointBanner" style="display: none;">
+        <div class="checkpoint-info">
+          <svg class="pin-icon-pulse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>Checkpoint set at fact <strong id="checkpointNumber">#0</strong></span>
+        </div>
+        <button class="jump-btn" id="jumpToCheckpoint">Jump to Pin</button>
+      </div>
+    </section>
+
+    <!-- Facts List Area -->
+    <section class="facts-list" id="factsList">
+      <!-- Loading state / fallback -->
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <p>Loading your facts portal...</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Responsive Settings Sidebar -->
+  <aside class="settings-sidebar" id="settingsSidebar">
+    <div class="sidebar-header">
+      <h3>Revision Control</h3>
+      <button class="close-btn" id="sidebarClose" aria-label="Close sidebar">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="sidebar-content">
+      <!-- Subjects Management -->
+      <div class="setting-group">
+        <label class="setting-label">Select Subject</label>
+        <div class="subject-list" id="sidebarSubjectList">
+          <!-- Dynamically populated subjects -->
+        </div>
+      </div>
+
+      <!-- Quick Toggle Show/Hide All -->
+      <div class="setting-group">
+        <label class="setting-label">Global Controls</label>
+        <div class="control-card">
+          <div class="control-row">
+            <div class="control-info">
+              <span class="control-title">Show All Answers</span>
+              <span class="control-desc">Reveal all answers by default</span>
+            </div>
+            <label class="switch-toggle">
+              <input type="checkbox" id="globalShowAnswersToggle">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Appearance -->
+      <div class="setting-group">
+        <label class="setting-label">Appearance</label>
+        <div class="control-card">
+          <div class="control-row">
+            <div class="control-info">
+              <span class="control-title">Dark Mode</span>
+              <span class="control-desc">Toggle sleek nighttime styling</span>
+            </div>
+            <label class="switch-toggle">
+              <input type="checkbox" id="darkModeToggle">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Custom Facts / Subject Panel -->
+      <div class="setting-group">
+        <label class="setting-label">Add Questions & Subjects</label>
+        <div class="add-facts-panel">
+          <p class="add-desc">Paste new revision facts here. They will be parsed and duplicates will be skipped automatically!</p>
+          <input type="text" id="newSubjectName" placeholder="Subject (e.g. Operating Systems)" class="text-input">
+          <textarea id="rawFactsPaste" placeholder="1. Fact Question = Fact Answer&#10;2. Another Fact Question&#10;Answer of another fact" rows="6" class="textarea-input"></textarea>
+          <button class="primary-btn" id="addFactsBtn">Import & Append</button>
+        </div>
+      </div>
+
+      <!-- Reset & Data Management -->
+      <div class="setting-group danger-zone">
+        <label class="setting-label">Danger Zone</label>
+        <button class="danger-btn-outline" id="resetProgressBtn">
+          <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+            <path d="M3 3v5h5"></path>
+          </svg>
+          Reset Subject Progress
+        </button>
+        <button class="danger-btn-outline" id="clearAllDataBtn" style="margin-top: 10px;">
+          <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+          </svg>
+          Reset All Custom Data
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- External JS Scripts -->
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
