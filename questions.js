@@ -1476,6 +1476,365 @@ The combination of OSI layers, device functions, protocols, ports, IP addressing
 **49. Which candidate key is not selected as the primary key? →** Alternate Key.
 
 **50. What is a Super Key? →** Any set of attributes that uniquely identifies a record.
+
+## Part 2 (Questions 51-300)
+
+### Constraints
+
+51. Which constraint prevents duplicate values in a column? → UNIQUE.
+52. Which constraint prevents NULL values? → NOT NULL.
+53. Which constraint maintains parent-child relationships? → FOREIGN KEY.
+54. Which constraint restricts values based on a condition? → CHECK.
+55. Which constraint provides a default value automatically? → DEFAULT.
+56. Which constraint uniquely identifies each row? → PRIMARY KEY.
+57. Can a table have more than one PRIMARY KEY? → No.
+58. Can a table have multiple UNIQUE constraints? → Yes.
+59. Can a FOREIGN KEY contain duplicate values? → Yes.
+60. Can a FOREIGN KEY contain NULL values? → Yes, unless restricted.
+
+### SQL Basics
+
+61. Which SQL command retrieves data? → SELECT.
+62. Which SQL command inserts new records? → INSERT.
+63. Which SQL command modifies existing records? → UPDATE.
+64. Which SQL command removes records? → DELETE.
+65. Which SQL command creates a table? → CREATE TABLE.
+66. Which SQL command removes a table permanently? → DROP TABLE.
+67. Which SQL command changes a table structure? → ALTER TABLE.
+68. Which SQL command removes all rows but keeps the table? → TRUNCATE TABLE.
+69. Which SQL statement is used to rename a table? → RENAME.
+70. Which SQL command displays all columns? → SELECT *.
+
+### SQL Clauses
+
+71. Which clause filters rows? → WHERE.
+72. Which clause sorts query results? → ORDER BY.
+73. Which clause groups similar rows? → GROUP BY.
+74. Which clause filters grouped records? → HAVING.
+75. Which clause selects unique rows only? → DISTINCT.
+76. Which clause specifies the source table? → FROM.
+77. Which clause limits returned rows in MySQL? → LIMIT.
+78. Which clause returns the first N rows in SQL Server? → TOP.
+79. Which operator searches for a pattern? → LIKE.
+80. Which wildcard represents multiple characters? → %.
+
+### SQL Operators
+
+81. Which wildcard represents exactly one character? → _ (underscore).
+82. Which operator checks a value within a range? → BETWEEN.
+83. Which operator checks multiple values? → IN.
+84. Which operator checks for NULL values? → IS NULL.
+85. Which operator checks for non-NULL values? → IS NOT NULL.
+86. Which operator combines conditions requiring both to be true? → AND.
+87. Which operator requires at least one condition to be true? → OR.
+88. Which operator reverses a condition? → NOT.
+89. Which operator combines query results without duplicates? → UNION.
+90. Which operator combines query results including duplicates? → UNION ALL.
+
+### SQL Functions
+
+91. Which function counts rows? → COUNT().
+92. Which function calculates the total? → SUM().
+93. Which function calculates the average? → AVG().
+94. Which function returns the smallest value? → MIN().
+95. Which function returns the largest value? → MAX().
+96. Which aggregate function ignores NULL values? → COUNT(column).
+97. Does AVG() ignore NULL values? → Yes.
+98. Does SUM() ignore NULL values? → Yes.
+99. Can aggregate functions be used with GROUP BY? → Yes.
+100. Which clause is commonly used with aggregate functions? → GROUP BY.
+
+### SQL Joins
+
+101. What is a JOIN in SQL? → It combines rows from two or more tables.
+102. Which JOIN returns only matching rows from both tables? → INNER JOIN.
+103. Which JOIN returns all rows from the left table and matching rows from the right table? → LEFT JOIN.
+104. Which JOIN returns all rows from the right table and matching rows from the left table? → RIGHT JOIN.
+105. Which JOIN returns all rows from both tables? → FULL OUTER JOIN.
+106. Which JOIN returns the Cartesian product of two tables? → CROSS JOIN.
+107. Which JOIN compares every row of one table with every row of another? → CROSS JOIN.
+108. Which JOIN joins a table with itself? → SELF JOIN.
+109. Which JOIN is most commonly used in SQL queries? → INNER JOIN.
+110. Which JOIN can produce NULL values for unmatched rows? → LEFT, RIGHT, and FULL OUTER JOIN.
+
+### SQL Queries
+
+111. What is a subquery? → A query nested inside another query.
+112. Can a subquery be used in the WHERE clause? → Yes.
+113. Can a subquery return multiple rows? → Yes.
+114. Which operator is commonly used with multi-row subqueries? → IN.
+115. Which operator is commonly used with single-row subqueries? → = (Equal).
+116. What is a correlated subquery? → A subquery that depends on the outer query.
+117. Is a correlated subquery executed once or multiple times? → Multiple times.
+118. Which clause is evaluated before GROUP BY? → WHERE.
+119. Which clause is evaluated after GROUP BY? → HAVING.
+120. Which clause is executed last in a SELECT statement? → ORDER BY.
+
+### Views
+
+121. What is a view? → A virtual table based on a SQL query.
+122. Does a view store actual data? → No.
+123. Which SQL command creates a view? → CREATE VIEW.
+124. Which SQL command removes a view? → DROP VIEW.
+125. Why are views used? → To simplify queries and improve security.
+126. Can data be retrieved from a view? → Yes.
+127. Can a view be based on multiple tables? → Yes.
+128. Can updates always be performed through a view? → No.
+129. What is a materialized view? → A view that physically stores query results.
+130. Which is faster for repeated queries: View or Materialized View? → Materialized View.
+
+### Indexes
+
+131. What is an index? → A database object that speeds up data retrieval.
+132. Which SQL command creates an index? → CREATE INDEX.
+133. Which SQL command removes an index? → DROP INDEX.
+134. Does an index improve SELECT performance? → Yes.
+135. Can excessive indexes slow INSERT and UPDATE operations? → Yes.
+136. Which index determines the physical order of rows? → Clustered Index.
+137. How many clustered indexes can a table have? → One.
+138. Can a table have multiple non-clustered indexes? → Yes.
+139. Which index stores a separate structure from table data? → Non-clustered Index.
+140. Which database object mainly improves query performance? → Index.
+
+### Transactions
+
+141. What is a transaction? → A logical unit of work.
+142. Which SQL command permanently saves a transaction? → COMMIT.
+143. Which SQL command undoes uncommitted changes? → ROLLBACK.
+144. Which SQL command creates a rollback point? → SAVEPOINT.
+145. Can a transaction contain multiple SQL statements? → Yes.
+146. Which SQL category includes COMMIT and ROLLBACK? → TCL (Transaction Control Language).
+147. What happens after COMMIT? → Changes become permanent.
+148. Can ROLLBACK undo a committed transaction? → No.
+149. What is the purpose of SAVEPOINT? → To partially roll back a transaction.
+150. Which SQL command removes a SAVEPOINT? → RELEASE SAVEPOINT (supported in many DBMSs).
+
+### ACID Properties
+
+151. What does ACID stand for? → Atomicity, Consistency, Isolation, Durability.
+152. What does Atomicity ensure? → A transaction is completed entirely or not at all.
+153. What does Consistency ensure? → A transaction moves the database from one valid state to another.
+154. What does Isolation ensure? → Concurrent transactions do not interfere with each other.
+155. What does Durability ensure? → Committed data survives system failures.
+156. Which ACID property prevents partial transaction execution? → Atomicity.
+157. Which ACID property guarantees valid database rules after a transaction? → Consistency.
+158. Which ACID property is achieved using locking and concurrency control? → Isolation.
+159. Which ACID property relies on logs and backups? → Durability.
+160. Which SQL command makes ACID durability effective? → COMMIT.
+
+### Normalization
+
+161. What is normalization? → The process of minimizing data redundancy and anomalies.
+162. Why is normalization performed? → To improve data consistency and reduce redundancy.
+163. Which normal form removes repeating groups? → First Normal Form (1NF).
+164. Which normal form removes partial dependencies? → Second Normal Form (2NF).
+165. Which normal form removes transitive dependencies? → Third Normal Form (3NF).
+166. Which normal form is stricter than 3NF? → Boyce-Codd Normal Form (BCNF).
+167. Which normal form removes multivalued dependencies? → Fourth Normal Form (4NF).
+168. Which normal form removes join dependencies? → Fifth Normal Form (5NF).
+169. Which normal form requires atomic attribute values? → 1NF.
+170. Which normal form requires every non-key attribute to depend on the whole primary key? → 2NF.
+
+### Functional Dependencies
+
+171. What is a functional dependency? → A relationship where one attribute determines another.
+172. Which symbol represents functional dependency? → → (Arrow).
+173. What is a determinant? → The attribute that determines another attribute.
+174. Which dependency violates 2NF? → Partial Dependency.
+175. Which dependency violates 3NF? → Transitive Dependency.
+176. What is a partial dependency? → A non-key attribute depends on part of a composite key.
+177. What is a transitive dependency? → A non-key attribute depends on another non-key attribute.
+178. Does BCNF eliminate all functional dependency anomalies? → Yes.
+179. Which normal form is based entirely on functional dependencies? → BCNF.
+180. Which dependency is allowed in 3NF but not in BCNF? → Certain determinant dependencies where the determinant is not a candidate key.
+
+### Concurrency Control
+
+181. What is concurrency control? → Managing simultaneous transactions safely.
+182. Why is concurrency control needed? → To maintain data consistency.
+183. Which technique is most commonly used for concurrency control? → Locking.
+184. What is a shared lock? → A lock that allows multiple read operations.
+185. What is an exclusive lock? → A lock that allows one transaction to write.
+186. Can two transactions hold an exclusive lock on the same data simultaneously? → No.
+187. Which lock allows reading but prevents writing by others? → Shared Lock.
+188. Which lock prevents both reading and writing by other transactions? → Exclusive Lock.
+189. What is optimistic locking? → A method that assumes conflicts are rare.
+190. What is pessimistic locking? → A method that locks resources before access to prevent conflicts.
+
+### Deadlocks & Recovery
+
+191. What is a deadlock? → A situation where transactions wait indefinitely for each other.
+192. Which condition commonly causes deadlocks? → Circular waiting.
+193. What is starvation in DBMS? → A transaction waits indefinitely because others keep getting priority.
+194. What is database recovery? → Restoring the database after a failure.
+195. Which file is mainly used during database recovery? → Transaction Log.
+196. What is a checkpoint? → A synchronization point that reduces recovery time.
+197. Which operation restores committed transactions after failure? → REDO.
+198. Which operation reverses incomplete transactions? → UNDO.
+199. Which recovery technique uses transaction logs? → Log-Based Recovery.
+200. What is the main goal of database recovery? → To preserve database consistency after failures.
+
+### Triggers
+
+201. What is a trigger? → A database object that automatically executes in response to a specified event.
+202. Which SQL command creates a trigger? → CREATE TRIGGER.
+203. Which SQL command removes a trigger? → DROP TRIGGER.
+204. On which operations can a trigger be defined? → INSERT, UPDATE, and DELETE.
+205. Does a trigger execute automatically? → Yes.
+206. Which type of trigger executes before an event? → BEFORE Trigger.
+207. Which type of trigger executes after an event? → AFTER Trigger.
+208. What is the primary purpose of a trigger? → To enforce business rules and automate actions.
+209. Can multiple triggers exist on the same table? → Yes.
+210. Are triggers invoked explicitly by users? → No.
+
+### Stored Procedures
+
+211. What is a stored procedure? → A precompiled collection of SQL statements stored in the database.
+212. Which SQL command creates a stored procedure? → CREATE PROCEDURE.
+213. What is the main advantage of a stored procedure? → Code reuse and improved performance.
+214. Can a stored procedure accept parameters? → Yes.
+215. Can a stored procedure return values? → Yes.
+216. Where is a stored procedure stored? → Inside the database.
+217. Can a stored procedure execute multiple SQL statements? → Yes.
+218. Which statement executes a stored procedure in SQL Server? → EXEC or EXECUTE.
+219. Are stored procedures compiled once and reused? → Yes.
+220. Which database object reduces repeated SQL code? → Stored Procedure.
+
+### Functions
+
+221. What is a user-defined function (UDF)? → A function created by the user that returns a value.
+222. Which SQL command creates a function? → CREATE FUNCTION.
+223. What is the main difference between a function and a procedure? → A function returns a value; a procedure may not.
+224. Can a function be used inside a SELECT statement? → Yes.
+225. Can a stored procedure be used directly in a SELECT statement? → No.
+226. Which object is preferred for calculations? → Function.
+227. Which object is preferred for complex business logic? → Stored Procedure.
+228. Can a function accept parameters? → Yes.
+229. Can one stored procedure call another? → Yes.
+230. Can functions call other functions? → Yes.
+
+### Cursors
+
+231. What is a cursor? → A database object used to process rows one at a time.
+232. Why are cursors used? → For row-by-row processing.
+233. Are cursors generally slower than set-based queries? → Yes.
+234. Which SQL command opens a cursor? → OPEN.
+235. Which SQL command retrieves the next row from a cursor? → FETCH.
+236. Which SQL command releases a cursor? → CLOSE.
+237. Which SQL command removes a cursor definition? → DEALLOCATE.
+238. Which processing method is usually faster than cursors? → Set-based processing.
+239. Should cursors be avoided when possible? → Yes.
+240. Can a cursor iterate through a query result? → Yes.
+
+### Database Security & Authorization
+
+241. Which SQL command gives privileges to users? → GRANT.
+242. Which SQL command removes user privileges? → REVOKE.
+243. Which SQL language category includes GRANT and REVOKE? → DCL (Data Control Language).
+244. What does authentication verify? → User identity.
+245. What does authorization determine? → User permissions.
+246. Which principle gives users only the permissions they need? → Principle of Least Privilege.
+247. Which database feature protects sensitive data from unauthorized access? → Access Control.
+248. Which mechanism protects data during transmission and storage? → Encryption.
+249. Which database object can improve security by restricting access to selected columns and rows? → View.
+250. What is the primary goal of database security? → To ensure confidentiality, integrity, and availability of data.
+
+### Database Architecture
+
+251. What is the ANSI/SPARC three-schema architecture? → External, Conceptual, and Internal levels.
+252. Which level describes how users view the database? → External Level.
+253. Which level represents the overall logical structure of the database? → Conceptual Level.
+254. Which level describes physical data storage? → Internal Level.
+255. What is logical data independence? → Ability to change the conceptual schema without affecting external schemas.
+256. What is physical data independence? → Ability to change the internal schema without affecting the conceptual schema.
+257. Which type of data independence is easier to achieve? → Physical Data Independence.
+258. Which schema is also called the logical schema? → Conceptual Schema.
+259. Which schema is closest to the end user? → External Schema.
+260. Which schema is closest to the storage devices? → Internal Schema.
+
+### File System vs DBMS
+
+261. Which system minimizes data redundancy? → DBMS.
+262. Which system provides better security? → DBMS.
+263. Which system supports concurrent access? → DBMS.
+264. Which system enforces data integrity? → DBMS.
+265. Which system provides backup and recovery mechanisms? → DBMS.
+266. Which system is more prone to data inconsistency? → File System.
+267. Which system supports SQL? → DBMS.
+268. Which system maintains relationships between data? → DBMS.
+269. Which system is suitable for large organizations? → DBMS.
+270. Which system generally has lower overhead? → File System.
+
+### NoSQL Databases
+
+271. What does NoSQL stand for? → Not Only SQL.
+272. Which NoSQL database is document-oriented? → MongoDB.
+273. Which NoSQL database is column-oriented? → Cassandra.
+274. Which NoSQL database is key-value based? → Redis.
+275. Which NoSQL database is graph-based? → Neo4j.
+276. Which type of database is best suited for graph relationships? → Graph Database.
+277. Which NoSQL database stores data as JSON-like documents? → MongoDB.
+278. Which type of database is highly scalable for big data applications? → NoSQL Database.
+279. Which database type usually follows a fixed schema? → Relational Database.
+280. Which database type generally provides flexible schemas? → NoSQL Database.
+
+### Data Warehouse & OLTP/OLAP
+
+281. What is a data warehouse? → A repository for historical and analytical data.
+282. What does OLTP stand for? → Online Transaction Processing.
+283. What does OLAP stand for? → Online Analytical Processing.
+284. Which system is optimized for daily transactions? → OLTP.
+285. Which system is optimized for analysis and reporting? → OLAP.
+286. Which system usually contains current operational data? → OLTP.
+287. Which system mainly stores historical data? → Data Warehouse.
+288. Which operation is common in OLAP? → Complex analytical queries.
+289. Which operation is common in OLTP? → Frequent INSERT, UPDATE, and DELETE operations.
+290. Which schema is commonly used in data warehouses? → Star Schema.
+
+### Miscellaneous High-Yield Facts
+
+291. What is data redundancy? → Unnecessary duplication of data.
+292. What is data inconsistency? → Different copies of data having different values.
+293. What is data integrity? → Accuracy and consistency of stored data.
+294. Which key concept prevents orphan records? → Referential Integrity.
+295. Which SQL command permanently removes both a table and its data? → DROP TABLE.
+296. Which SQL command removes all rows while preserving the table structure? → TRUNCATE TABLE.
+297. Which SQL command removes selected rows based on a condition? → DELETE.
+298. Which SQL clause is used to eliminate duplicate rows in query results? → DISTINCT.
+299. Which aggregate function returns the number of records? → COUNT().
+300. What is the primary objective of a DBMS? → To provide efficient, secure, reliable, and consistent data management.
+
+### Final 30 Most Repeated Lecturer DBMS Facts
+SQL = Structured Query Language
+DBMS manages databases
+ER Diagram = Database design
+Rectangle = Entity
+Diamond = Relationship
+Oval = Attribute
+Primary Key = Unique + NOT NULL
+Foreign Key = Referential Integrity
+WHERE filters rows
+HAVING filters groups
+GROUP BY groups records
+ORDER BY sorts records
+COUNT(), SUM(), AVG(), MIN(), MAX() = Aggregate functions
+INNER JOIN = Matching rows
+LEFT JOIN = All left rows
+RIGHT JOIN = All right rows
+FULL OUTER JOIN = All rows from both tables
+COMMIT = Save permanently
+ROLLBACK = Undo uncommitted changes
+ACID = Atomicity, Consistency, Isolation, Durability
+1NF = Remove repeating groups
+2NF = Remove partial dependency
+3NF = Remove transitive dependency
+BCNF = Every determinant is a candidate key
+Trigger = Automatic execution
+View = Virtual table
+Index = Faster retrieval
+Stored Procedure = Precompiled SQL code
+Cursor = Row-by-row processing
+Data Warehouse = Historical data for analysis
 `
 };
 
