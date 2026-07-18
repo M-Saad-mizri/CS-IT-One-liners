@@ -970,7 +970,7 @@ The combination of OSI layers, device functions, protocols, ports, IP addressing
 ## 8085 Basics
 
 1. 8085 is an 8-bit microprocessor.
-2. Address bus = 16 bits
+2. Address bus = 16 bits (unidirectional)
 3. Data bus = 8 bits
 4. Maximum memory = 64 KB
 5. Maximum I/O ports = 256
@@ -981,7 +981,7 @@ The combination of OSI layers, device functions, protocols, ports, IP addressing
 10. Number of flags = 5
 11. Total registers = 6 general-purpose
 12. Register size = 8 bits
-13. Register pairs = 3 (BC, DE, HL)
+13. Register pairs = 3 (BC, DE, HL(memory pointer))
 14. Program Counter = 16 bits
 15. Stack Pointer = 16 bits
 16. Opcode size = 1 byte
@@ -2289,7 +2289,7 @@ function parseRawSubject(subjectName, rawText) {
   const seenQuestions = new Set();
 
   let currentCategory = "General";
-  
+
   // Noise filtering rules
   const isNoise = (line) => {
     if (!line) return true;
@@ -2325,7 +2325,7 @@ function parseRawSubject(subjectName, rawText) {
 
     if (isIsolatedNumberMarker || inlineNumberMatch) {
       let contentLines = [];
-      
+
       if (inlineNumberMatch) {
         // First content line is the inline text after the number
         contentLines.push(inlineNumberMatch[2].trim());
@@ -2342,27 +2342,27 @@ function parseRawSubject(subjectName, rawText) {
           idx++;
           continue;
         }
-        
+
         // Clean markdown
         const cleanNext = nextLine.replace(/\*\*/g, "").replace(/\*/g, "").trim();
-        
+
         // Stop if we hit a number marker (isolated or inline)
         if (/^\d+\.$/.test(cleanNext) || /^(\d+)\.\s+(.*)$/.test(cleanNext)) {
           break;
         }
 
         // Stop if we hit a header (e.g. starts with "##" or is short non-verb text)
-        const isHeader = cleanNext.startsWith("#") || 
-                         (cleanNext.length < 35 && 
-                          !VERBS.some(v => cleanNext.toLowerCase().includes(v)) && 
-                          !cleanNext.includes("=") &&
-                          !cleanNext.includes(":") &&
-                          !/\d/.test(cleanNext));
-                          
+        const isHeader = cleanNext.startsWith("#") ||
+          (cleanNext.length < 35 &&
+            !VERBS.some(v => cleanNext.toLowerCase().includes(v)) &&
+            !cleanNext.includes("=") &&
+            !cleanNext.includes(":") &&
+            !/\d/.test(cleanNext));
+
         if (isHeader) {
           break;
         }
-        
+
         contentLines.push(cleanNext);
         idx++;
       }
@@ -2415,7 +2415,7 @@ function parseRawSubject(subjectName, rawText) {
       const q = parts[0].trim();
       const a = parts[1].trim();
       const normQ = normalizeText(q);
-      
+
       if (normQ && !seenQuestions.has(normQ)) {
         seenQuestions.add(normQ);
         facts.push({
