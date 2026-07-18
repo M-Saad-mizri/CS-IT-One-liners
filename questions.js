@@ -982,8 +982,8 @@ The combination of OSI layers, device functions, protocols, ports, IP addressing
 11. Total registers = 6 general-purpose
 12. Register size = 8 bits
 13. Register pairs = 3 (BC, DE, HL(memory pointer))
-14. Program Counter = 16 bits
-15. Stack Pointer = 16 bits
+14. Program Counter = 16 bits (holds next instruction address)
+15. Stack Pointer = 16 bits (pointer to top of stack)
 16. Opcode size = 1 byte
 17. Instruction length = 1–3 bytes
 18. Machine cycles = 1–6
@@ -992,21 +992,21 @@ The combination of OSI layers, device functions, protocols, ports, IP addressing
 
 ## Flag Register
 
-21. Sign Flag = Bit 7
-22. Zero Flag = Bit 6
-23. Auxiliary Carry = Bit 4
-24. Parity Flag = Bit 2
-25. Carry Flag = Bit 0
+21. Sign Flag = Bit 7(1 if result is negative, 0 otherwise)
+22. Zero Flag = Bit 6(1 if result is zero, 0 otherwise)
+23. Auxiliary Carry = Bit 4(1 if there is a carry from bit 3 to bit 4)
+24. Parity Flag = Bit 2(1 if there is an even number of 1s, 0 otherwise)
+25. Carry Flag = Bit 0(1 if there is a carry from bit 7 to bit 8)
 
 ## Interrupts
 
-26. Total hardware interrupts = 5
-27. Total software interrupts = 8
-28. Highest priority interrupt = TRAP
-29. Lowest priority interrupt = INTR
-30. Non-maskable interrupt = TRAP
-31. Maskable interrupts = RST7.5, RST6.5, RST5.5
-32. INTR requires external acknowledge
+26. Total hardware interrupts = 5(RST7.5, RST6.5, RST5.5, INTR, TRAP)
+27. Total software interrupts = 8(00H to 37H in steps of 8)
+28. Highest priority interrupt = TRAP(highest priority)
+29. Lowest priority interrupt = INTR(lowest priority)
+30. Non-maskable interrupt = TRAP(non-maskable)
+31. Maskable interrupts = RST7.5, RST6.5, RST5.5(maskable)
+32. INTR requires external acknowledge(to fetch instruction)
 33. TRAP is edge and level triggered
 34. RST7.5 is edge triggered
 35. RST6.5 = level triggered
@@ -1015,12 +1015,12 @@ The combination of OSI layers, device functions, protocols, ports, IP addressing
 ## 8086 Basics
 
 37. 8086 is 16-bit
-38. Address bus = 20 bits
-39. Data bus = 16 bits
+38. Address bus = 20 bits(unidirectional)
+39. Data bus = 16 bits(bidirectional)
 40. Maximum memory = 1 MB
 41. Segment size = 64 KB
-42. Queue size = 6 bytes
-43. General-purpose registers = 8
+42. Queue size = 6 bytes(for pipelining)
+43. General-purpose registers = 8(AX, BX, CX, DX, SI, DI, SP, BP)
 44. Segment registers = 4
 45. Pointer/index registers = 4
 46. Flag register = 16 bits
