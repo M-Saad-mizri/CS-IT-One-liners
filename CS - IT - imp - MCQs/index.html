@@ -311,19 +311,29 @@
         </div>
       </div>
 
-      <!-- Appearance -->
+      <!-- Backup & Transfer Progress -->
       <div class="setting-group">
-        <label class="setting-label">Appearance</label>
-        <div class="control-card">
-          <div class="control-row">
-            <div class="control-info">
-              <span class="control-title">Dark Mode</span>
-              <span class="control-desc">Toggle sleek nighttime styling</span>
-            </div>
-            <label class="switch-toggle">
-              <input type="checkbox" id="darkModeToggle">
-              <span class="slider"></span>
-            </label>
+        <label class="setting-label">Backup & Transfer Progress</label>
+        <div class="add-facts-panel">
+          <p class="add-desc">Transfer your complete history (covered, bookmarked, checkpoints, attempts, accuracy, custom MCQs) to another device.</p>
+          <div class="backup-btn-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <button class="card-action-btn" id="exportProgressBtn" style="justify-content: center; width: 100%;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Export History JSON</span>
+            </button>
+            <button class="card-action-btn" id="importProgressBtn" style="justify-content: center; width: 100%;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+              <span>Import History JSON</span>
+            </button>
+            <input type="file" id="importFileInput" accept=".json" style="display: none;">
           </div>
         </div>
       </div>

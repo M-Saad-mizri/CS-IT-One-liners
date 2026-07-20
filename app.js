@@ -115,11 +115,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (state.theme === "dark") {
       body.classList.add("dark-mode");
       body.classList.remove("light-mode");
-      darkModeToggle.checked = true;
+      if (darkModeToggle) darkModeToggle.checked = true;
     } else {
       body.classList.add("light-mode");
       body.classList.remove("dark-mode");
-      darkModeToggle.checked = false;
+      if (darkModeToggle) darkModeToggle.checked = false;
     }
   }
 
@@ -511,11 +511,58 @@ document.addEventListener("DOMContentLoaded", () => {
   sidebarOverlay.addEventListener("click", closeSidebar);
   themeToggleTopBtn.addEventListener("click", toggleTheme);
   
-  darkModeToggle.addEventListener("change", () => {
-    state.theme = darkModeToggle.checked ? "dark" : "light";
-    applyTheme();
-    saveState();
-  });
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener("change", () => {
+      state.theme = darkModeToggle.checked ? "dark" : "light";
+      applyTheme();
+      saveState();
+    });
+  }
+
+  // Export & Import Progress History Features
+  const exportProgressBtn = document.getElementById("exportProgressBtn");
+  const importProgressBtn = document.getElementById("importProgressBtn");
+  const importFileInput = document.getElementById("importFileInput");
+
+  if (exportProgressBtn) {
+    exportProgressBtn.addEventListener("click", () => {
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", `quickfacts_one_liners_backup_${new Date().toISOString().slice(0, 10)}.json`);
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+    });
+  }
+
+  if (importProgressBtn && importFileInput) {
+    importProgressBtn.addEventListener("click", () => {
+      importFileInput.click();
+    });
+    importFileInput.addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const importedData = JSON.parse(event.target.result);
+          if (typeof importedData === "object" && importedData !== null) {
+            state = { ...state, ...importedData };
+            saveState();
+            initSubjectView();
+            closeSidebar();
+            alert("Progress & history successfully imported!");
+          } else {
+            alert("Invalid JSON backup file.");
+          }
+        } catch (err) {
+          alert("Error reading JSON file: " + err.message);
+        }
+      };
+      reader.readAsText(file);
+    });
+  }
 
   globalShowAnswersToggle.addEventListener("change", () => {
     state.showAllAnswers = globalShowAnswersToggle.checked;

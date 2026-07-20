@@ -40,11 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeToggleTopBtn = document.getElementById("themeToggleTop");
   const darkModeToggle = document.getElementById("darkModeToggle");
   const globalShowAnswersToggle = document.getElementById("globalShowAnswersToggle");
-  
+
   // Mode Switchers
   const btnModePractice = document.getElementById("btnModePractice");
   const btnModeQuiz = document.getElementById("btnModeQuiz");
-  
+
   // Hero Stats & Controls
   const currentSubjectBadge = document.getElementById("currentSubjectBadge");
   const progressPercentage = document.getElementById("progressPercentage");
@@ -52,11 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const progressCount = document.getElementById("progressCount");
   const accuracyStat = document.getElementById("accuracyStat");
   const bookmarkCount = document.getElementById("bookmarkCount");
-  
+
   const topicsScroll = document.getElementById("topicsScroll");
   const searchInput = document.getElementById("searchInput");
   const searchClear = document.getElementById("searchClear");
-  
+
   // Filter Chips
   const filterAll = document.getElementById("filterAll");
   const filterBookmarks = document.getElementById("filterBookmarks");
@@ -71,12 +71,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Containers
   const factsListContainer = document.getElementById("factsList");
   const quizContainer = document.getElementById("quizContainer");
-  
+
   // Quiz Setup DOM
   const quizSetupCard = document.getElementById("quizSetupCard");
   const quizTopicSelect = document.getElementById("quizTopicSelect");
   const startQuizBtn = document.getElementById("startQuizBtn");
-  
+
   // Active Quiz DOM
   const quizActiveCard = document.getElementById("quizActiveCard");
   const quizQuestionCounter = document.getElementById("quizQuestionCounter");
@@ -176,11 +176,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (state.theme === "dark") {
       body.classList.add("dark-mode");
       body.classList.remove("light-mode");
-      darkModeToggle.checked = true;
+      if (darkModeToggle) darkModeToggle.checked = true;
     } else {
       body.classList.add("light-mode");
       body.classList.remove("dark-mode");
-      darkModeToggle.checked = false;
+      if (darkModeToggle) darkModeToggle.checked = false;
     }
   }
 
@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function switchMode(mode) {
     state.activeMode = mode;
     saveState();
-    
+
     if (mode === "practice") {
       btnModePractice.classList.add("active");
       btnModeQuiz.classList.remove("active");
@@ -264,12 +264,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const coveredCount = state.covered[state.activeSubject].length;
     const bookmarkedCount = state.bookmarks[state.activeSubject].length;
-    
+
     // Calculate Accuracy from Quiz Mode performance
     if (!state.quizStats) state.quizStats = {};
     const quizStats = state.quizStats[state.activeSubject] || { totalAttempted: 0, totalCorrect: 0 };
-    const accuracy = quizStats.totalAttempted > 0 
-      ? Math.round((quizStats.totalCorrect / quizStats.totalAttempted) * 100) 
+    const accuracy = quizStats.totalAttempted > 0
+      ? Math.round((quizStats.totalCorrect / quizStats.totalAttempted) * 100)
       : 0;
     const percent = total > 0 ? Math.round((coveredCount / total) * 100) : 0;
 
@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
     progressPercentage.textContent = `${percent}% Covered`;
     progressBarFill.style.width = `${percent}%`;
     progressCount.textContent = `${coveredCount} / ${total} MCQs covered`;
-    accuracyStat.textContent = quizStats.totalAttempted > 0 ? `Accuracy: ${accuracy}%` : `Accuracy: -- (Take Quiz)`;
+    accuracyStat.textContent = quizStats.totalAttempted > 0 ? `Accuracy: ${accuracy}%` : `Accuracy: 0%`;
     bookmarkCount.textContent = `${bookmarkedCount} bookmarked`;
 
     // Render Checkpoint Banner
@@ -369,7 +369,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const isCovered = coveredList.includes(mcq.id);
       const isBookmarked = bookmarkedList.includes(mcq.id);
       const isCheckpoint = activeCheckpoint === mcq.id;
-      
+
       const att = attempts[mcq.id] || { wrongOptions: [], isCorrect: false };
       const isRevealed = state.showAllAnswers || revealedList.includes(mcq.id);
 
@@ -600,9 +600,9 @@ document.addEventListener("DOMContentLoaded", () => {
   startQuizBtn.addEventListener("click", () => {
     const allMCQs = getActiveSubjectMCQs();
     const topicVal = quizTopicSelect.value;
-    
+
     let filtered = topicVal === "ALL" ? [...allMCQs] : allMCQs.filter(m => m.category === topicVal);
-    
+
     if (filtered.length === 0) {
       alert("No MCQs available for this selected topic.");
       return;
@@ -641,7 +641,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     quizQuestionCounter.textContent = `Question ${quizSession.currentIndex + 1} of ${total}`;
     quizProgressFill.style.width = `${((quizSession.currentIndex + 1) / total) * 100}%`;
-    
+
     quizQuestionCategory.textContent = q.category || "General";
     quizQuestionStatement.textContent = q.question;
 
@@ -692,7 +692,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     quizPrevBtn.disabled = quizSession.currentIndex === 0;
     quizCheckBtn.disabled = selectedIdx === undefined || isChecked;
-    
+
     if (quizSession.currentIndex === total - 1) {
       quizNextBtn.textContent = "Finish & Submit Test";
     } else {
@@ -710,15 +710,15 @@ document.addEventListener("DOMContentLoaded", () => {
   quizCheckBtn.addEventListener("click", () => {
     const q = quizSession.questions[quizSession.currentIndex];
     quizSession.checked[q.id] = true;
-    
+
     const selectedIdx = quizSession.userAnswers[q.id];
     const isCorrect = selectedIdx === q.answerIndex;
     if (!state.attempts[state.activeSubject]) state.attempts[state.activeSubject] = {};
-    
+
     let att = state.attempts[state.activeSubject][q.id] || { wrongOptions: [], isCorrect: false };
     if (isCorrect) att.isCorrect = true;
     else if (!att.wrongOptions.includes(selectedIdx)) att.wrongOptions.push(selectedIdx);
-    
+
     state.attempts[state.activeSubject][q.id] = att;
 
     saveState();
@@ -865,11 +865,58 @@ document.addEventListener("DOMContentLoaded", () => {
   sidebarOverlay.addEventListener("click", closeSidebar);
   themeToggleTopBtn.addEventListener("click", toggleTheme);
 
-  darkModeToggle.addEventListener("change", () => {
-    state.theme = darkModeToggle.checked ? "dark" : "light";
-    applyTheme();
-    saveState();
-  });
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener("change", () => {
+      state.theme = darkModeToggle.checked ? "dark" : "light";
+      applyTheme();
+      saveState();
+    });
+  }
+
+  // Export & Import Progress History Features
+  const exportProgressBtn = document.getElementById("exportProgressBtn");
+  const importProgressBtn = document.getElementById("importProgressBtn");
+  const importFileInput = document.getElementById("importFileInput");
+
+  if (exportProgressBtn) {
+    exportProgressBtn.addEventListener("click", () => {
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", `quickfacts_mcq_backup_${new Date().toISOString().slice(0, 10)}.json`);
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+    });
+  }
+
+  if (importProgressBtn && importFileInput) {
+    importProgressBtn.addEventListener("click", () => {
+      importFileInput.click();
+    });
+    importFileInput.addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const importedData = JSON.parse(event.target.result);
+          if (typeof importedData === "object" && importedData !== null) {
+            state = { ...state, ...importedData };
+            saveState();
+            initSubjectView();
+            closeSidebar();
+            alert("Progress & history successfully imported!");
+          } else {
+            alert("Invalid JSON backup file.");
+          }
+        } catch (err) {
+          alert("Error reading JSON file: " + err.message);
+        }
+      };
+      reader.readAsText(file);
+    });
+  }
 
   globalShowAnswersToggle.addEventListener("change", () => {
     state.showAllAnswers = globalShowAnswersToggle.checked;
