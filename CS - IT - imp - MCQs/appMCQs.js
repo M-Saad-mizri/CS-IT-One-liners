@@ -953,50 +953,52 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  addFactsBtn.addEventListener("click", () => {
-    const rawSubject = newSubjectNameInput.value.trim();
-    const rawText = rawFactsPasteInput.value.trim();
+  if (addFactsBtn) {
+    addFactsBtn.addEventListener("click", () => {
+      const rawSubject = newSubjectNameInput.value.trim();
+      const rawText = rawFactsPasteInput.value.trim();
 
-    if (!rawText) {
-      alert("Please paste MCQs text first.");
-      return;
-    }
+      if (!rawText) {
+        alert("Please paste MCQs text first.");
+        return;
+      }
 
-    const subjectName = rawSubject || state.activeSubject;
-    let newMCQs = [];
+      const subjectName = rawSubject || state.activeSubject;
+      let newMCQs = [];
 
-    if (window.parseRawSubject) {
-      newMCQs = window.parseRawSubject(subjectName, rawText);
-    }
+      if (window.parseRawSubject) {
+        newMCQs = window.parseRawSubject(subjectName, rawText);
+      }
 
-    if (newMCQs.length === 0) {
-      alert("Could not extract valid questions. Ensure standard format.");
-      return;
-    }
+      if (newMCQs.length === 0) {
+        alert("Could not extract valid questions. Ensure standard format.");
+        return;
+      }
 
-    if (!state.customSubjects[subjectName]) {
-      state.customSubjects[subjectName] = [];
-    }
+      if (!state.customSubjects[subjectName]) {
+        state.customSubjects[subjectName] = [];
+      }
 
-    const existing = state.customSubjects[subjectName];
-    const builtIn = (window.factsData && window.factsData[subjectName]) || [];
-    const allCurrent = [...builtIn, ...existing];
+      const existing = state.customSubjects[subjectName];
+      const builtIn = (window.factsData && window.factsData[subjectName]) || [];
+      const allCurrent = [...builtIn, ...existing];
 
-    let addedCount = 0;
-    newMCQs.forEach(m => {
-      m.id = allCurrent.length + addedCount + 1;
-      existing.push(m);
-      addedCount++;
+      let addedCount = 0;
+      newMCQs.forEach(m => {
+        m.id = allCurrent.length + addedCount + 1;
+        existing.push(m);
+        addedCount++;
+      });
+
+      state.activeSubject = subjectName;
+      saveState();
+      newSubjectNameInput.value = "";
+      rawFactsPasteInput.value = "";
+      alert(`Added ${addedCount} MCQs to "${subjectName}".`);
+      initSubjectView();
+      closeSidebar();
     });
-
-    state.activeSubject = subjectName;
-    saveState();
-    newSubjectNameInput.value = "";
-    rawFactsPasteInput.value = "";
-    alert(`Added ${addedCount} MCQs to "${subjectName}".`);
-    initSubjectView();
-    closeSidebar();
-  });
+  }
 
   resetProgressBtn.addEventListener("click", () => {
     if (confirm(`Reset progress for "${state.activeSubject}"?`)) {

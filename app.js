@@ -571,7 +571,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Custom facts import
-  addFactsBtn.addEventListener("click", () => {
+  if (addFactsBtn) {
+    addFactsBtn.addEventListener("click", () => {
     const rawSubject = newSubjectNameInput.value.trim();
     const rawText = rawFactsPasteInput.value.trim();
 
@@ -653,7 +654,8 @@ document.addEventListener("DOMContentLoaded", () => {
       initSubjectView();
       closeSidebar();
     }
-  });
+    });
+  }
 
   // Reset Progress of Active Subject
   resetProgressBtn.addEventListener("click", () => {
