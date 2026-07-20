@@ -205,14 +205,14 @@ body.light-mode .theme-toggle .moon-icon {
 /* Main Application Container */
 .app-container {
   margin-top: 64px;
-  padding: 20px 16px 40px 16px;
-  max-width: 840px;
+  padding: 16px 16px 40px 16px;
+  max-width: 680px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 /* Status Hero & Progress Banner */
@@ -220,12 +220,12 @@ body.light-mode .theme-toggle .moon-icon {
   background: var(--bg-card);
   backdrop-filter: var(--glass-blur);
   border: 1px solid var(--border-color);
-  border-radius: 20px;
-  padding: 20px;
+  border-radius: 16px;
+  padding: 18px;
   box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .progress-details {
@@ -243,8 +243,8 @@ body.light-mode .theme-toggle .moon-icon {
 .subject-badge {
   background: rgba(99, 102, 241, 0.15);
   color: #818CF8;
-  padding: 6px 12px;
-  border-radius: 30px;
+  padding: 4px 12px;
+  border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -260,14 +260,14 @@ body.light-mode .subject-badge {
 .progress-text {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   background: var(--progress-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .progress-bar-container {
-  height: 10px;
+  height: 8px;
   background-color: rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   overflow: hidden;
@@ -287,7 +287,7 @@ body.light-mode .progress-bar-container {
 .stats-counter {
   display: flex;
   justify-content: space-between;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   gap: 8px;
   flex-wrap: wrap;
@@ -318,8 +318,8 @@ body.light-mode .progress-bar-container {
   background: var(--option-bg);
   border: 1px solid var(--border-color);
   color: var(--text-muted);
-  padding: 6px 14px;
-  border-radius: 20px;
+  padding: 6px 12px;
+  border-radius: 10px;
   font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;
@@ -371,12 +371,12 @@ body.light-mode .progress-bar-container {
 
 .search-box input {
   width: 100%;
-  padding: 12px 38px 12px 42px;
+  padding: 10px 38px 10px 42px;
   background-color: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-color);
-  border-radius: 14px;
+  border-radius: 12px;
   color: var(--text-main);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   outline: none;
   transition: border-color 0.2s ease, background-color 0.2s ease;
 }
@@ -416,9 +416,9 @@ body.light-mode .search-box input {
   background-color: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-color);
   color: var(--text-muted);
-  padding: 8px 14px;
-  border-radius: 12px;
-  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 0.82rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -495,7 +495,7 @@ body.light-mode .filter-chip {
 .facts-list {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
 
 /* MCQ Card Component */
@@ -503,12 +503,12 @@ body.light-mode .filter-chip {
   background: var(--bg-card);
   backdrop-filter: var(--glass-blur);
   border: 1px solid var(--border-color);
-  border-radius: 20px;
-  padding: 20px;
+  border-radius: 16px;
+  padding: 16px;
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -529,7 +529,7 @@ body.light-mode .filter-chip {
 }
 
 .fact-num {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--accent-color);
   letter-spacing: 0.5px;
@@ -551,7 +551,7 @@ body.light-mode .fact-category {
 .fact-question {
   font-size: 1.05rem;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.45;
   color: var(--text-main);
 }
 
@@ -559,19 +559,19 @@ body.light-mode .fact-category {
 .mcq-options-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .mcq-option-btn {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
+  gap: 10px;
+  padding: 10px 14px;
   background-color: var(--option-bg);
   border: 1px solid var(--option-border);
-  border-radius: 14px;
+  border-radius: 12px;
   color: var(--text-main);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 500;
   cursor: pointer;
   text-align: left;
@@ -829,8 +829,9 @@ body.light-mode .card-action-btn {
 }
 
 .quiz-question-statement {
-  font-size: 1.15rem;
-  line-height: 1.5;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.45;
   margin-top: 8px;
   margin-bottom: 16px;
 }
