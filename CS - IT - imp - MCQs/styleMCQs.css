@@ -1041,6 +1041,54 @@ body.light-mode .card-action-btn {
   border-bottom: 1px solid var(--border-color);
 }
 
+.sidebar-header h3 {
+  font-size: 1.15rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.one-liner-btn, .sidebar-header span a {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--accent-color);
+  text-decoration: none;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  transition: all 0.2s ease;
+}
+
+.one-liner-btn:hover, .sidebar-header span a:hover {
+  background: var(--accent-color);
+  color: #ffffff;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+}
+
+.close-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
 .sidebar-content {
   padding: 20px;
   overflow-y: auto;
