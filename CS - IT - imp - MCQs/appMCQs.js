@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     covered: {},            // { [subjectName]: [id1, id2, ...] }
     checkpoints: {},        // { [subjectName]: id }
     attempts: {},           // { [subjectName]: { [mcqId]: { wrongOptions: [0, 1], isCorrect: boolean } } }
-    revealedAnswers: {}     // { [subjectName]: [id1, id2, ...] }
+    revealedAnswers: {},    // { [subjectName]: [id1, id2, ...] }
+    quizStats: {}           // { [subjectName]: { totalAttempted: number, totalCorrect: number } }
   };
 
   // --- QUIZ TEST SESSION STATE ---
@@ -129,7 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
           covered: parsed.covered || {},
           checkpoints: parsed.checkpoints || {},
           attempts: parsed.attempts || {},
-          revealedAnswers: parsed.revealedAnswers || {}
+          revealedAnswers: parsed.revealedAnswers || {},
+          quizStats: parsed.quizStats || {}
         };
       }
     } catch (e) {
@@ -263,21 +265,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const coveredCount = state.covered[state.activeSubject].length;
     const bookmarkedCount = state.bookmarks[state.activeSubject].length;
     
-    // Calculate Accuracy
-    const subAttempts = state.attempts[state.activeSubject];
-    const attemptedIds = Object.keys(subAttempts);
-    let correctCount = 0;
-    attemptedIds.forEach(id => {
-      if (subAttempts[id] && subAttempts[id].isCorrect) correctCount++;
-    });
-    const accuracy = attemptedIds.length > 0 ? Math.round((correctCount / attemptedIds.length) * 100) : 0;
+    // Calculate Accuracy from Quiz Mode performance
+    if (!state.quizStats) state.quizStats = {};
+    const quizStats = state.quizStats[state.activeSubject] || { totalAttempted: 0, totalCorrect: 0 };
+    const accuracy = quizStats.totalAttempted > 0 
+      ? Math.round((quizStats.totalCorrect / quizStats.totalAttempted) * 100) 
+      : 0;
     const percent = total > 0 ? Math.round((coveredCount / total) * 100) : 0;
 
     currentSubjectBadge.textContent = state.activeSubject;
     progressPercentage.textContent = `${percent}% Covered`;
     progressBarFill.style.width = `${percent}%`;
     progressCount.textContent = `${coveredCount} / ${total} MCQs covered`;
-    accuracyStat.textContent = `Accuracy: ${accuracy}%`;
+    accuracyStat.textContent = quizStats.totalAttempted > 0 ? `Accuracy: ${accuracy}%` : `Accuracy: -- (Take Quiz)`;
     bookmarkCount.textContent = `${bookmarkedCount} bookmarked`;
 
     // Render Checkpoint Banner
@@ -382,25 +382,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const letter = String.fromCharCode(65 + idx);
         let stateClass = "";
         let badgeHTML = "";
-        let disabledAttr = "";
 
-        if (att.isCorrect) {
-          if (idx === mcq.answerIndex) {
-            stateClass = "state-correct";
-            badgeHTML = `<span class="mcq-opt-badge">✓ Correct</span>`;
-          }
-          disabledAttr = "disabled";
-        } else if (att.wrongOptions && att.wrongOptions.includes(idx)) {
-          stateClass = "state-wrong";
-          badgeHTML = `<span class="mcq-opt-badge">✕ Wrong</span>`;
-          disabledAttr = "disabled";
-        } else if (isRevealed && idx === mcq.answerIndex) {
+        if (isRevealed && idx === mcq.answerIndex) {
           stateClass = "state-correct";
           badgeHTML = `<span class="mcq-opt-badge">✓ Answer</span>`;
         }
 
         return `
-          <button class="mcq-option-btn ${stateClass}" data-id="${mcq.id}" data-index="${idx}" ${disabledAttr}>
+          <button class="mcq-option-btn ${stateClass}" data-id="${mcq.id}" data-index="${idx}">
             <span class="mcq-opt-letter">${letter}</span>
             <span class="mcq-opt-text">${optText}</span>
             ${badgeHTML}
@@ -455,56 +444,61 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
 
-      // Option Click Handler (IN-PLACE UPDATE ONLY, NO FULL LIST RE-RENDER!)
+      // Option Click Handler (Instant feedback, auto-mark covered if correct, auto-reset back to normal in 2.5s)
       const optBtns = card.querySelectorAll(".mcq-option-btn");
       optBtns.forEach(btn => {
         btn.addEventListener("click", () => {
           const selectedIdx = parseInt(btn.getAttribute("data-index"), 10);
           const isCorrect = selectedIdx === mcq.answerIndex;
 
+          // Lock option buttons temporarily during feedback display
+          optBtns.forEach(b => b.disabled = true);
+
           if (!state.attempts[state.activeSubject]) {
             state.attempts[state.activeSubject] = {};
           }
-
           let currentAtt = state.attempts[state.activeSubject][mcq.id] || { wrongOptions: [], isCorrect: false };
 
-          // If already solved correctly, do nothing
-          if (currentAtt.isCorrect) return;
-
           if (isCorrect) {
-            // Correct Selection
             currentAtt.isCorrect = true;
-            state.attempts[state.activeSubject][mcq.id] = currentAtt;
-            saveState();
-
-            // In-place DOM update
             btn.classList.add("state-correct");
             if (!btn.querySelector(".mcq-opt-badge")) {
               btn.insertAdjacentHTML("beforeend", `<span class="mcq-opt-badge">✓ Correct</span>`);
             }
 
-            // Lock all option buttons on this card
-            optBtns.forEach(b => b.disabled = true);
+            // Auto-mark as covered on correct answer
+            let covered = state.covered[state.activeSubject] || [];
+            if (!covered.includes(mcq.id)) {
+              covered.push(mcq.id);
+              state.covered[state.activeSubject] = covered;
+              saveState();
+              const coverBtn = card.querySelector(".btn-cover");
+              if (coverBtn) {
+                coverBtn.setAttribute("data-covered", "true");
+                coverBtn.querySelector("span").textContent = "Covered";
+              }
+            }
           } else {
-            // Wrong Selection
             if (!currentAtt.wrongOptions.includes(selectedIdx)) {
               currentAtt.wrongOptions.push(selectedIdx);
             }
-            currentAtt.isCorrect = false;
-            state.attempts[state.activeSubject][mcq.id] = currentAtt;
-            saveState();
-
-            // In-place DOM update
             btn.classList.add("state-wrong");
-            btn.disabled = true;
             if (!btn.querySelector(".mcq-opt-badge")) {
               btn.insertAdjacentHTML("beforeend", `<span class="mcq-opt-badge">✕ Wrong</span>`);
             }
-            // Other options remain active so user can try again!
           }
 
-          // Update header progress UI counters without re-rendering the list
+          state.attempts[state.activeSubject][mcq.id] = currentAtt;
+          saveState();
           updateProgressUI();
+
+          // Auto reset option styles back to normal after 2.5 seconds for fresh re-attempting
+          setTimeout(() => {
+            btn.classList.remove("state-correct", "state-wrong");
+            const badge = btn.querySelector(".mcq-opt-badge");
+            if (badge) badge.remove();
+            optBtns.forEach(b => b.disabled = false);
+          }, 2500);
         });
       });
 
@@ -757,6 +751,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const mins = String(Math.floor(quizSession.timerSeconds / 60)).padStart(2, '0');
     const secs = String(quizSession.timerSeconds % 60).padStart(2, '0');
 
+    // Accumulate Quiz Test stats for global Accuracy metric
+    if (!state.quizStats) state.quizStats = {};
+    const subStats = state.quizStats[state.activeSubject] || { totalAttempted: 0, totalCorrect: 0 };
+    subStats.totalAttempted += total;
+    subStats.totalCorrect += correct;
+    state.quizStats[state.activeSubject] = subStats;
+    saveState();
+    updateProgressUI();
+
     modalScorePercent.textContent = `${percent}%`;
     modalScoreFraction.textContent = `${correct} / ${total} Correct`;
     modalCorrectCount.textContent = correct;
@@ -955,6 +958,7 @@ document.addEventListener("DOMContentLoaded", () => {
       state.checkpoints[state.activeSubject] = null;
       state.attempts[state.activeSubject] = {};
       state.revealedAnswers[state.activeSubject] = [];
+      if (state.quizStats) state.quizStats[state.activeSubject] = { totalAttempted: 0, totalCorrect: 0 };
       saveState();
       initSubjectView();
       closeSidebar();
