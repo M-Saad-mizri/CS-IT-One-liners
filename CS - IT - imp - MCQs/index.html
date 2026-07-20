@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QuickFacts - Mobile-First Revision Portal</title>
+  <title>QuickFacts - BPSC Networking MCQs Practice & Quiz Portal</title>
 
   <!-- Modern Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,7 @@
     rel="stylesheet">
 
   <!-- CSS Styles -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleMCQs.css">
 </head>
 
 <body class="dark-mode"> <!-- Defaults to dark mode for premium look -->
@@ -30,8 +30,30 @@
       </svg>
     </button>
     <div class="logo">
-      <span class="logo-accent">Quick</span>Facts
+      <span class="logo-accent">Networking</span>MCQs
     </div>
+
+    <!-- Mode Switcher (Practice vs Quiz Test) -->
+    <div class="mode-switch-container">
+      <button class="mode-btn active" id="btnModePractice">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+        <span>Practice</span>
+      </button>
+      <button class="mode-btn" id="btnModeQuiz">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        <span>Quiz Test</span>
+      </button>
+    </div>
+
     <div class="header-actions">
       <button class="icon-btn theme-toggle" id="themeToggleTop" aria-label="Toggle theme">
         <!-- Sun icon (shows in dark mode) -->
@@ -65,8 +87,16 @@
           <div class="progress-bar-fill" id="progressBarFill" style="width: 0%"></div>
         </div>
         <div class="stats-counter">
-          <span id="progressCount">0 / 0 facts covered</span>
+          <span id="progressCount">0 / 220 MCQs covered</span>
+          <span class="accuracy-stat" id="accuracyStat">Accuracy: 0%</span>
           <span class="bookmark-stat" id="bookmarkCount">0 bookmarked</span>
+        </div>
+      </div>
+
+      <!-- Horizontal Topics Filter Bar -->
+      <div class="topics-bar-container">
+        <div class="topics-scroll" id="topicsScroll">
+          <!-- Dynamically populated topic pills -->
         </div>
       </div>
 
@@ -78,11 +108,16 @@
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input type="text" id="searchInput" placeholder="Search facts..." aria-label="Search facts">
+          <input type="text" id="searchInput" placeholder="Search MCQs by question or protocol..."
+            aria-label="Search MCQs">
           <button class="clear-btn" id="searchClear" style="display: none;">&times;</button>
         </div>
 
         <div class="filter-toggles">
+          <button class="filter-chip" id="filterAll" data-active="true">
+            All
+          </button>
+
           <button class="filter-chip" id="filterBookmarks" data-active="false">
             <svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -96,6 +131,16 @@
           <button class="filter-chip" id="filterUncovered" data-active="false">
             Uncovered
           </button>
+
+          <button class="filter-chip chip-mistakes" id="filterMistakes" data-active="false">
+            <svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="15" y1="9" x2="9" y2="15"></line>
+              <line x1="9" y1="9" x2="15" y2="15"></line>
+            </svg>
+            Mistakes
+          </button>
         </div>
       </div>
 
@@ -107,21 +152,125 @@
             <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
-          <span>Checkpoint set at fact <strong id="checkpointNumber">#0</strong></span>
+          <span>Checkpoint pinned at MCQ <strong id="checkpointNumber">#0</strong></span>
         </div>
         <button class="jump-btn" id="jumpToCheckpoint">Jump to Pin</button>
       </div>
     </section>
 
-    <!-- Facts List Area -->
+    <!-- Practice Mode Container: MCQs List -->
     <section class="facts-list" id="factsList">
       <!-- Loading state / fallback -->
       <div class="loading-state">
         <div class="spinner"></div>
-        <p>Loading your facts portal...</p>
+        <p>Loading Networking MCQ bank...</p>
+      </div>
+    </section>
+
+    <!-- Quiz Test Mode Container -->
+    <section class="quiz-container" id="quizContainer" style="display: none;">
+      <!-- Setup Panel -->
+      <div class="quiz-setup-card" id="quizSetupCard">
+        <h2>Practice Quiz Generator</h2>
+        <p>Configure your customized quiz session to test your knowledge.</p>
+
+        <div class="form-group">
+          <label>Select Category</label>
+          <select id="quizTopicSelect" class="form-select">
+            <option value="ALL">All High-Yield Networking Topics (220 MCQs)</option>
+            <option value="OSI Model">OSI Model (40 MCQs)</option>
+            <option value="TCP/IP Model">TCP/IP Model (10 MCQs)</option>
+            <option value="IPv4 Addressing">IPv4 Addressing (20 MCQs)</option>
+            <option value="Subnetting">Subnetting (30 MCQs)</option>
+            <option value="TCP vs UDP">TCP vs UDP (30 MCQs)</option>
+            <option value="Router vs Switch vs Hub">Router vs Switch vs Hub (20 MCQs)</option>
+            <option value="Protocols">Application Layer Protocols (30 MCQs)</option>
+            <option value="Well-Known Ports">Well-Known Ports (20 MCQs)</option>
+            <option value="Routing Basics">Routing Basics (10 MCQs)</option>
+            <option value="Network Topologies">Network Topologies (10 MCQs)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Number of Questions</label>
+          <div class="count-selector">
+            <button class="count-chip active" data-count="10">10 MCQs</button>
+            <button class="count-chip" data-count="20">20 MCQs</button>
+            <button class="count-chip" data-count="50">50 MCQs</button>
+            <button class="count-chip" data-count="ALL">All</button>
+          </div>
+        </div>
+
+        <button class="primary-btn start-quiz-btn" id="startQuizBtn">
+          Start Quiz Test
+        </button>
+      </div>
+
+      <!-- Active Quiz Card -->
+      <div class="quiz-active-card" id="quizActiveCard" style="display: none;">
+        <div class="quiz-top-meta">
+          <div class="quiz-progress-info">
+            <span id="quizQuestionCounter">Question 1 of 10</span>
+            <span class="quiz-timer" id="quizTimer">Time: 00:00</span>
+          </div>
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quizProgressFill" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <div class="quiz-question-body">
+          <span class="quiz-topic-badge" id="quizQuestionCategory">OSI Model</span>
+          <h3 class="quiz-question-statement" id="quizQuestionStatement">Question Statement</h3>
+          <div class="quiz-options-grid" id="quizOptionsGrid">
+            <!-- Dynamic A, B, C, D option buttons -->
+          </div>
+          <div class="quiz-explanation-box" id="quizExplanationBox" style="display: none;">
+            <!-- Explanation content -->
+          </div>
+        </div>
+
+        <div class="quiz-nav-footer">
+          <button class="secondary-btn" id="quizPrevBtn" disabled>Previous</button>
+          <button class="secondary-btn" id="quizCheckBtn" disabled>Check Answer</button>
+          <button class="primary-btn" id="quizNextBtn">Next Question</button>
+        </div>
       </div>
     </section>
   </main>
+
+  <!-- Quiz Results Modal -->
+  <div class="modal-overlay" id="quizResultsModal" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2>Quiz Test Complete! 🎉</h2>
+        <button class="close-btn" id="quizModalClose">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="score-circle">
+          <span class="score-number" id="modalScorePercent">0%</span>
+          <span class="score-label" id="modalScoreFraction">0 / 10 Correct</span>
+        </div>
+        <div class="result-stats-grid">
+          <div class="res-stat-item green">
+            <span class="res-val" id="modalCorrectCount">0</span>
+            <span class="res-lbl">Correct</span>
+          </div>
+          <div class="res-stat-item red">
+            <span class="res-val" id="modalWrongCount">0</span>
+            <span class="res-lbl">Wrong</span>
+          </div>
+          <div class="res-stat-item blue">
+            <span class="res-val" id="modalTimeSpent">00:00</span>
+            <span class="res-lbl">Time Taken</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="secondary-btn" id="modalReviewMistakesBtn">Review Mistakes</button>
+        <button class="primary-btn" id="modalRetakeQuizBtn">Retake Quiz</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Sidebar Overlay -->
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
@@ -129,7 +278,7 @@
   <!-- Responsive Settings Sidebar -->
   <aside class="settings-sidebar" id="settingsSidebar">
     <div class="sidebar-header">
-      <h3>Revision Control</h3><span><a href="CS - IT - imp - MCQs/index.html">MCQS</a></span>
+      <h3>Revision Control</h3>
       <button class="close-btn" id="sidebarClose" aria-label="Close sidebar">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
           stroke-linecap="round" stroke-linejoin="round">
@@ -155,7 +304,7 @@
           <div class="control-row">
             <div class="control-info">
               <span class="control-title">Show All Answers</span>
-              <span class="control-desc">Reveal all answers by default</span>
+              <span class="control-desc">Reveal all answers and explanations</span>
             </div>
             <label class="switch-toggle">
               <input type="checkbox" id="globalShowAnswersToggle">
@@ -184,13 +333,12 @@
 
       <!-- Add Custom Facts / Subject Panel -->
       <div class="setting-group">
-        <label class="setting-label">Add Questions & Subjects</label>
+        <label class="setting-label">Import Custom MCQs</label>
         <div class="add-facts-panel">
-          <p class="add-desc">Paste new revision facts here. They will be parsed and duplicates will be skipped
-            automatically!</p>
+          <p class="add-desc">Paste new MCQs or revision facts here. Duplicates will be skipped automatically!</p>
           <input type="text" id="newSubjectName" placeholder="Subject (e.g. Operating Systems)" class="text-input">
           <textarea id="rawFactsPaste"
-            placeholder="1. Fact Question = Fact Answer&#10;2. Another Fact Question&#10;Answer of another fact"
+            placeholder="1. Which OSI layer handles framing?&#10;a) Physical Layer&#10;b) Data Link Layer ✅&#10;c) Network Layer&#10;d) Transport Layer"
             rows="6" class="textarea-input"></textarea>
           <button class="primary-btn" id="addFactsBtn">Import & Append</button>
         </div>
@@ -220,8 +368,8 @@
   </aside>
 
   <!-- External JS Scripts -->
-  <script src="questions.js"></script>
-  <script src="app.js"></script>
+  <script src="questionsMCQs.js"></script>
+  <script src="appMCQs.js"></script>
 </body>
 
 </html>

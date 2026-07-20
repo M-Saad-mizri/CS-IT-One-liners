@@ -1,0 +1,988 @@
+// QuickFacts & MCQ Practice Portal - Application Core Logic
+
+document.addEventListener("DOMContentLoaded", () => {
+  // --- APPLICATION STATE ---
+  let state = {
+    activeSubject: "Computer Networking",
+    theme: "dark",
+    showAllAnswers: false,
+    activeMode: "practice", // "practice" | "quiz"
+    selectedTopic: "ALL",   // "ALL" | specific topic string
+    customSubjects: {},     // { [subjectName]: [ { id, category, question, options, answerIndex, explanation } ] }
+    bookmarks: {},          // { [subjectName]: [id1, id2, ...] }
+    covered: {},            // { [subjectName]: [id1, id2, ...] }
+    checkpoints: {},        // { [subjectName]: id }
+    attempts: {},           // { [subjectName]: { [mcqId]: { wrongOptions: [0, 1], isCorrect: boolean } } }
+    revealedAnswers: {}     // { [subjectName]: [id1, id2, ...] }
+  };
+
+  // --- QUIZ TEST SESSION STATE ---
+  let quizSession = {
+    active: false,
+    questions: [],
+    currentIndex: 0,
+    userAnswers: {}, // { [questionId]: selectedIndex }
+    checked: {},     // { [questionId]: boolean }
+    timerSeconds: 0,
+    timerInterval: null
+  };
+
+  // --- LOCAL STORAGE KEY ---
+  const STORAGE_KEY = "quickfacts_mcq_state_v3";
+
+  // --- DOM ELEMENTS ---
+  const body = document.body;
+  const sidebar = document.getElementById("settingsSidebar");
+  const sidebarOverlay = document.getElementById("sidebarOverlay");
+  const sidebarToggleBtn = document.getElementById("sidebarToggle");
+  const sidebarCloseBtn = document.getElementById("sidebarClose");
+  const themeToggleTopBtn = document.getElementById("themeToggleTop");
+  const darkModeToggle = document.getElementById("darkModeToggle");
+  const globalShowAnswersToggle = document.getElementById("globalShowAnswersToggle");
+  
+  // Mode Switchers
+  const btnModePractice = document.getElementById("btnModePractice");
+  const btnModeQuiz = document.getElementById("btnModeQuiz");
+  
+  // Hero Stats & Controls
+  const currentSubjectBadge = document.getElementById("currentSubjectBadge");
+  const progressPercentage = document.getElementById("progressPercentage");
+  const progressBarFill = document.getElementById("progressBarFill");
+  const progressCount = document.getElementById("progressCount");
+  const accuracyStat = document.getElementById("accuracyStat");
+  const bookmarkCount = document.getElementById("bookmarkCount");
+  
+  const topicsScroll = document.getElementById("topicsScroll");
+  const searchInput = document.getElementById("searchInput");
+  const searchClear = document.getElementById("searchClear");
+  
+  // Filter Chips
+  const filterAll = document.getElementById("filterAll");
+  const filterBookmarks = document.getElementById("filterBookmarks");
+  const filterUncovered = document.getElementById("filterUncovered");
+  const filterMistakes = document.getElementById("filterMistakes");
+
+  // Checkpoint Banner
+  const checkpointBanner = document.getElementById("checkpointBanner");
+  const checkpointNumber = document.getElementById("checkpointNumber");
+  const jumpToCheckpointBtn = document.getElementById("jumpToCheckpoint");
+
+  // Containers
+  const factsListContainer = document.getElementById("factsList");
+  const quizContainer = document.getElementById("quizContainer");
+  
+  // Quiz Setup DOM
+  const quizSetupCard = document.getElementById("quizSetupCard");
+  const quizTopicSelect = document.getElementById("quizTopicSelect");
+  const startQuizBtn = document.getElementById("startQuizBtn");
+  
+  // Active Quiz DOM
+  const quizActiveCard = document.getElementById("quizActiveCard");
+  const quizQuestionCounter = document.getElementById("quizQuestionCounter");
+  const quizTimer = document.getElementById("quizTimer");
+  const quizProgressFill = document.getElementById("quizProgressFill");
+  const quizQuestionCategory = document.getElementById("quizQuestionCategory");
+  const quizQuestionStatement = document.getElementById("quizQuestionStatement");
+  const quizOptionsGrid = document.getElementById("quizOptionsGrid");
+  const quizExplanationBox = document.getElementById("quizExplanationBox");
+  const quizPrevBtn = document.getElementById("quizPrevBtn");
+  const quizCheckBtn = document.getElementById("quizCheckBtn");
+  const quizNextBtn = document.getElementById("quizNextBtn");
+
+  // Quiz Modal DOM
+  const quizResultsModal = document.getElementById("quizResultsModal");
+  const quizModalClose = document.getElementById("quizModalClose");
+  const modalScorePercent = document.getElementById("modalScorePercent");
+  const modalScoreFraction = document.getElementById("modalScoreFraction");
+  const modalCorrectCount = document.getElementById("modalCorrectCount");
+  const modalWrongCount = document.getElementById("modalWrongCount");
+  const modalTimeSpent = document.getElementById("modalTimeSpent");
+  const modalReviewMistakesBtn = document.getElementById("modalReviewMistakesBtn");
+  const modalRetakeQuizBtn = document.getElementById("modalRetakeQuizBtn");
+
+  // Sidebar Controls
+  const sidebarSubjectList = document.getElementById("sidebarSubjectList");
+  const newSubjectNameInput = document.getElementById("newSubjectName");
+  const rawFactsPasteInput = document.getElementById("rawFactsPaste");
+  const addFactsBtn = document.getElementById("addFactsBtn");
+  const resetProgressBtn = document.getElementById("resetProgressBtn");
+  const clearAllDataBtn = document.getElementById("clearAllDataBtn");
+
+  // Active Filter Modes
+  let searchFilter = "";
+  let currentFilter = "all"; // "all" | "bookmarks" | "uncovered" | "mistakes"
+
+  // --- STATE PERSISTENCE ---
+  function loadState() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        state = {
+          activeSubject: parsed.activeSubject || "Computer Networking",
+          theme: parsed.theme || "dark",
+          showAllAnswers: !!parsed.showAllAnswers,
+          activeMode: parsed.activeMode || "practice",
+          selectedTopic: parsed.selectedTopic || "ALL",
+          customSubjects: parsed.customSubjects || {},
+          bookmarks: parsed.bookmarks || {},
+          covered: parsed.covered || {},
+          checkpoints: parsed.checkpoints || {},
+          attempts: parsed.attempts || {},
+          revealedAnswers: parsed.revealedAnswers || {}
+        };
+      }
+    } catch (e) {
+      console.error("Failed to load state:", e);
+    }
+  }
+
+  function saveState() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (e) {
+      console.error("Failed to save state:", e);
+    }
+  }
+
+  // --- SUBJECT & MCQs HELPERS ---
+  function getActiveSubjectMCQs() {
+    const subject = state.activeSubject;
+    if (state.customSubjects[subject]) {
+      return state.customSubjects[subject];
+    }
+    if (window.factsData && window.factsData[subject]) {
+      return window.factsData[subject];
+    }
+    return [];
+  }
+
+  function getAllSubjects() {
+    const builtIn = window.factsData ? Object.keys(window.factsData) : [];
+    const custom = Object.keys(state.customSubjects);
+    return Array.from(new Set([...builtIn, ...custom]));
+  }
+
+  function getAvailableTopics() {
+    const mcqs = getActiveSubjectMCQs();
+    const categories = mcqs.map(q => q.category).filter(Boolean);
+    return Array.from(new Set(categories));
+  }
+
+  // --- UI THEME & MODE SWITCHERS ---
+  function applyTheme() {
+    if (state.theme === "dark") {
+      body.classList.add("dark-mode");
+      body.classList.remove("light-mode");
+      darkModeToggle.checked = true;
+    } else {
+      body.classList.add("light-mode");
+      body.classList.remove("dark-mode");
+      darkModeToggle.checked = false;
+    }
+  }
+
+  function toggleTheme() {
+    state.theme = state.theme === "dark" ? "light" : "dark";
+    applyTheme();
+    saveState();
+  }
+
+  function switchMode(mode) {
+    state.activeMode = mode;
+    saveState();
+    
+    if (mode === "practice") {
+      btnModePractice.classList.add("active");
+      btnModeQuiz.classList.remove("active");
+      factsListContainer.style.display = "flex";
+      quizContainer.style.display = "none";
+      renderFactsList();
+    } else {
+      btnModeQuiz.classList.add("active");
+      btnModePractice.classList.remove("active");
+      factsListContainer.style.display = "none";
+      quizContainer.style.display = "block";
+      initQuizSetup();
+    }
+  }
+
+  function openSidebar() {
+    sidebar.classList.add("active");
+    sidebarOverlay.classList.add("active");
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove("active");
+    sidebarOverlay.classList.remove("active");
+  }
+
+  // --- TOPIC & CATEGORY PILLS ---
+  function renderTopicPills() {
+    topicsScroll.innerHTML = "";
+    const topics = getAvailableTopics();
+    const allMCQs = getActiveSubjectMCQs();
+
+    // "All" Pill
+    const allPill = document.createElement("button");
+    allPill.className = `topic-pill ${state.selectedTopic === 'ALL' ? 'active' : ''}`;
+    allPill.textContent = `All (${allMCQs.length})`;
+    allPill.addEventListener("click", () => {
+      state.selectedTopic = "ALL";
+      saveState();
+      renderTopicPills();
+      renderFactsList();
+    });
+    topicsScroll.appendChild(allPill);
+
+    // Individual Topics
+    topics.forEach(topic => {
+      const topicCount = allMCQs.filter(m => m.category === topic).length;
+      const pill = document.createElement("button");
+      pill.className = `topic-pill ${state.selectedTopic === topic ? 'active' : ''}`;
+      pill.textContent = `${topic} (${topicCount})`;
+      pill.addEventListener("click", () => {
+        state.selectedTopic = topic;
+        saveState();
+        renderTopicPills();
+        renderFactsList();
+      });
+      topicsScroll.appendChild(pill);
+    });
+  }
+
+  // --- PROGRESS & STATS UI ---
+  function updateProgressUI() {
+    const mcqs = getActiveSubjectMCQs();
+    const total = mcqs.length;
+
+    if (!state.covered[state.activeSubject]) state.covered[state.activeSubject] = [];
+    if (!state.bookmarks[state.activeSubject]) state.bookmarks[state.activeSubject] = [];
+    if (!state.attempts[state.activeSubject]) state.attempts[state.activeSubject] = {};
+
+    const coveredCount = state.covered[state.activeSubject].length;
+    const bookmarkedCount = state.bookmarks[state.activeSubject].length;
+    
+    // Calculate Accuracy
+    const subAttempts = state.attempts[state.activeSubject];
+    const attemptedIds = Object.keys(subAttempts);
+    let correctCount = 0;
+    attemptedIds.forEach(id => {
+      if (subAttempts[id] && subAttempts[id].isCorrect) correctCount++;
+    });
+    const accuracy = attemptedIds.length > 0 ? Math.round((correctCount / attemptedIds.length) * 100) : 0;
+    const percent = total > 0 ? Math.round((coveredCount / total) * 100) : 0;
+
+    currentSubjectBadge.textContent = state.activeSubject;
+    progressPercentage.textContent = `${percent}% Covered`;
+    progressBarFill.style.width = `${percent}%`;
+    progressCount.textContent = `${coveredCount} / ${total} MCQs covered`;
+    accuracyStat.textContent = `Accuracy: ${accuracy}%`;
+    bookmarkCount.textContent = `${bookmarkedCount} bookmarked`;
+
+    // Render Checkpoint Banner
+    const checkpointId = state.checkpoints[state.activeSubject];
+    if (checkpointId) {
+      const mcqIndex = mcqs.findIndex(m => m.id === checkpointId);
+      if (mcqIndex !== -1) {
+        checkpointBanner.style.display = "flex";
+        checkpointNumber.textContent = `#${mcqIndex + 1}`;
+      } else {
+        checkpointBanner.style.display = "none";
+      }
+    } else {
+      checkpointBanner.style.display = "none";
+    }
+  }
+
+  // --- RENDER PRACTICE MCQs LIST ---
+  function renderFactsList() {
+    if (state.activeMode !== "practice") return;
+
+    factsListContainer.innerHTML = "";
+    const mcqs = getActiveSubjectMCQs();
+
+    if (mcqs.length === 0) {
+      factsListContainer.innerHTML = `
+        <div class="empty-state">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          <p>No MCQs found in this subject. Use the sidebar to import questions!</p>
+        </div>
+      `;
+      return;
+    }
+
+    const coveredList = state.covered[state.activeSubject] || [];
+    const bookmarkedList = state.bookmarks[state.activeSubject] || [];
+    const activeCheckpoint = state.checkpoints[state.activeSubject] || null;
+    const attempts = state.attempts[state.activeSubject] || {};
+    const revealedList = state.revealedAnswers[state.activeSubject] || [];
+
+    // Filter MCQs
+    const filtered = mcqs.filter(mcq => {
+      // Topic Filter
+      if (state.selectedTopic !== "ALL" && mcq.category !== state.selectedTopic) {
+        return false;
+      }
+
+      // Search Filter
+      if (searchFilter) {
+        const query = searchFilter.toLowerCase();
+        const inQuestion = mcq.question.toLowerCase().includes(query);
+        const inCategory = (mcq.category || "").toLowerCase().includes(query);
+        const inOptions = mcq.options.some(opt => opt.toLowerCase().includes(query));
+        const inExplanation = (mcq.explanation || "").toLowerCase().includes(query);
+        if (!inQuestion && !inCategory && !inOptions && !inExplanation) return false;
+      }
+
+      // Chip Filters
+      if (currentFilter === "bookmarks" && !bookmarkedList.includes(mcq.id)) return false;
+      if (currentFilter === "uncovered" && coveredList.includes(mcq.id)) return false;
+      if (currentFilter === "mistakes") {
+        const att = attempts[mcq.id];
+        if (!att || att.isCorrect || !att.wrongOptions || att.wrongOptions.length === 0) return false;
+      }
+
+      return true;
+    });
+
+    if (filtered.length === 0) {
+      factsListContainer.innerHTML = `
+        <div class="empty-state">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <p>No MCQs match your selected topic or filter criteria.</p>
+        </div>
+      `;
+      return;
+    }
+
+    // Render filtered cards
+    filtered.forEach(mcq => {
+      const absoluteIndex = mcqs.findIndex(m => m.id === mcq.id) + 1;
+      const isCovered = coveredList.includes(mcq.id);
+      const isBookmarked = bookmarkedList.includes(mcq.id);
+      const isCheckpoint = activeCheckpoint === mcq.id;
+      
+      const att = attempts[mcq.id] || { wrongOptions: [], isCorrect: false };
+      const isRevealed = state.showAllAnswers || revealedList.includes(mcq.id);
+
+      const card = document.createElement("article");
+      card.className = `fact-card ${isCheckpoint ? 'is-checkpoint' : ''}`;
+      card.id = `fact-card-${mcq.id}`;
+
+      // Build Option Buttons HTML
+      const optionsHTML = mcq.options.map((optText, idx) => {
+        const letter = String.fromCharCode(65 + idx);
+        let stateClass = "";
+        let badgeHTML = "";
+        let disabledAttr = "";
+
+        if (att.isCorrect) {
+          if (idx === mcq.answerIndex) {
+            stateClass = "state-correct";
+            badgeHTML = `<span class="mcq-opt-badge">✓ Correct</span>`;
+          }
+          disabledAttr = "disabled";
+        } else if (att.wrongOptions && att.wrongOptions.includes(idx)) {
+          stateClass = "state-wrong";
+          badgeHTML = `<span class="mcq-opt-badge">✕ Wrong</span>`;
+          disabledAttr = "disabled";
+        } else if (isRevealed && idx === mcq.answerIndex) {
+          stateClass = "state-correct";
+          badgeHTML = `<span class="mcq-opt-badge">✓ Answer</span>`;
+        }
+
+        return `
+          <button class="mcq-option-btn ${stateClass}" data-id="${mcq.id}" data-index="${idx}" ${disabledAttr}>
+            <span class="mcq-opt-letter">${letter}</span>
+            <span class="mcq-opt-text">${optText}</span>
+            ${badgeHTML}
+          </button>
+        `;
+      }).join("");
+
+      card.innerHTML = `
+        <div class="fact-header">
+          <span class="fact-num">MCQ #${absoluteIndex}</span>
+          <span class="fact-category">${mcq.category || 'General'}</span>
+        </div>
+        <h3 class="fact-question">${mcq.question}</h3>
+        
+        <div class="mcq-options-list">
+          ${optionsHTML}
+        </div>
+
+        <div class="fact-explanation-box" style="display: ${isRevealed ? 'block' : 'none'}">
+          <strong>Key Concept / Answer:</strong> Option ${String.fromCharCode(65 + mcq.answerIndex)}: ${mcq.options[mcq.answerIndex]}<br>
+          <span style="opacity: 0.9;">${mcq.explanation || ''}</span>
+        </div>
+
+        <div class="fact-actions">
+          <div class="action-left">
+            <button class="card-action-btn btn-cover" data-id="${mcq.id}" data-covered="${isCovered}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>${isCovered ? 'Covered' : 'Mark Covered'}</span>
+            </button>
+            
+            <button class="card-action-btn btn-bookmark" data-id="${mcq.id}" data-bookmarked="${isBookmarked}" title="Add to Revision Bookmarks">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </button>
+
+            <button class="card-action-btn btn-checkpoint" data-id="${mcq.id}" data-checkpoint="${isCheckpoint}" title="Pin Study Checkpoint">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+
+          <div class="action-right">
+            <button class="card-action-btn btn-toggle-answer" data-id="${mcq.id}">
+              ${isRevealed ? 'Hide Answer' : 'Show Answer'}
+            </button>
+          </div>
+        </div>
+      `;
+
+      // Option Click Handler (IN-PLACE UPDATE ONLY, NO FULL LIST RE-RENDER!)
+      const optBtns = card.querySelectorAll(".mcq-option-btn");
+      optBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const selectedIdx = parseInt(btn.getAttribute("data-index"), 10);
+          const isCorrect = selectedIdx === mcq.answerIndex;
+
+          if (!state.attempts[state.activeSubject]) {
+            state.attempts[state.activeSubject] = {};
+          }
+
+          let currentAtt = state.attempts[state.activeSubject][mcq.id] || { wrongOptions: [], isCorrect: false };
+
+          // If already solved correctly, do nothing
+          if (currentAtt.isCorrect) return;
+
+          if (isCorrect) {
+            // Correct Selection
+            currentAtt.isCorrect = true;
+            state.attempts[state.activeSubject][mcq.id] = currentAtt;
+            saveState();
+
+            // In-place DOM update
+            btn.classList.add("state-correct");
+            if (!btn.querySelector(".mcq-opt-badge")) {
+              btn.insertAdjacentHTML("beforeend", `<span class="mcq-opt-badge">✓ Correct</span>`);
+            }
+
+            // Lock all option buttons on this card
+            optBtns.forEach(b => b.disabled = true);
+          } else {
+            // Wrong Selection
+            if (!currentAtt.wrongOptions.includes(selectedIdx)) {
+              currentAtt.wrongOptions.push(selectedIdx);
+            }
+            currentAtt.isCorrect = false;
+            state.attempts[state.activeSubject][mcq.id] = currentAtt;
+            saveState();
+
+            // In-place DOM update
+            btn.classList.add("state-wrong");
+            btn.disabled = true;
+            if (!btn.querySelector(".mcq-opt-badge")) {
+              btn.insertAdjacentHTML("beforeend", `<span class="mcq-opt-badge">✕ Wrong</span>`);
+            }
+            // Other options remain active so user can try again!
+          }
+
+          // Update header progress UI counters without re-rendering the list
+          updateProgressUI();
+        });
+      });
+
+      // Show/Hide Answer Toggle
+      const toggleAnswerBtn = card.querySelector(".btn-toggle-answer");
+      const explanationBox = card.querySelector(".fact-explanation-box");
+      toggleAnswerBtn.addEventListener("click", () => {
+        let rev = state.revealedAnswers[state.activeSubject] || [];
+        const isCurrentlyRevealed = rev.includes(mcq.id);
+
+        if (isCurrentlyRevealed) {
+          rev = rev.filter(id => id !== mcq.id);
+          explanationBox.style.display = "none";
+          toggleAnswerBtn.textContent = "Show Answer";
+        } else {
+          rev.push(mcq.id);
+          explanationBox.style.display = "block";
+          toggleAnswerBtn.textContent = "Hide Answer";
+
+          // Also highlight correct answer button if not yet solved
+          const correctBtn = card.querySelector(`.mcq-option-btn[data-index="${mcq.answerIndex}"]`);
+          if (correctBtn && !correctBtn.classList.contains("state-correct")) {
+            correctBtn.classList.add("state-correct");
+            if (!correctBtn.querySelector(".mcq-opt-badge")) {
+              correctBtn.insertAdjacentHTML("beforeend", `<span class="mcq-opt-badge">✓ Answer</span>`);
+            }
+          }
+        }
+
+        state.revealedAnswers[state.activeSubject] = rev;
+        saveState();
+      });
+
+      // Mark Covered Manual Toggle
+      const coverBtn = card.querySelector(".btn-cover");
+      coverBtn.addEventListener("click", () => {
+        let covered = state.covered[state.activeSubject] || [];
+        if (covered.includes(mcq.id)) {
+          covered = covered.filter(id => id !== mcq.id);
+          coverBtn.setAttribute("data-covered", "false");
+          coverBtn.querySelector("span").textContent = "Mark Covered";
+        } else {
+          covered.push(mcq.id);
+          coverBtn.setAttribute("data-covered", "true");
+          coverBtn.querySelector("span").textContent = "Covered";
+        }
+        state.covered[state.activeSubject] = covered;
+        saveState();
+        updateProgressUI();
+      });
+
+      // Toggle Bookmark
+      const bookmarkBtn = card.querySelector(".btn-bookmark");
+      bookmarkBtn.addEventListener("click", () => {
+        let bookmarks = state.bookmarks[state.activeSubject] || [];
+        if (bookmarks.includes(mcq.id)) {
+          bookmarks = bookmarks.filter(id => id !== mcq.id);
+          bookmarkBtn.setAttribute("data-bookmarked", "false");
+        } else {
+          bookmarks.push(mcq.id);
+          bookmarkBtn.setAttribute("data-bookmarked", "true");
+        }
+        state.bookmarks[state.activeSubject] = bookmarks;
+        saveState();
+        updateProgressUI();
+      });
+
+      // Toggle Checkpoint
+      const checkpointBtn = card.querySelector(".btn-checkpoint");
+      checkpointBtn.addEventListener("click", () => {
+        const currentCheckpoint = state.checkpoints[state.activeSubject];
+        state.checkpoints[state.activeSubject] = (currentCheckpoint === mcq.id) ? null : mcq.id;
+        saveState();
+        updateProgressUI();
+        renderFactsList();
+      });
+
+      factsListContainer.appendChild(card);
+    });
+  }
+
+  // --- QUIZ TEST ENGINE ---
+  let selectedQuizCount = 10;
+
+  function initQuizSetup() {
+    quizSetupCard.style.display = "flex";
+    quizActiveCard.style.display = "none";
+
+    const countChips = quizSetupCard.querySelectorAll(".count-chip");
+    countChips.forEach(chip => {
+      chip.addEventListener("click", () => {
+        countChips.forEach(c => c.classList.remove("active"));
+        chip.classList.add("active");
+        selectedQuizCount = chip.getAttribute("data-count");
+      });
+    });
+  }
+
+  startQuizBtn.addEventListener("click", () => {
+    const allMCQs = getActiveSubjectMCQs();
+    const topicVal = quizTopicSelect.value;
+    
+    let filtered = topicVal === "ALL" ? [...allMCQs] : allMCQs.filter(m => m.category === topicVal);
+    
+    if (filtered.length === 0) {
+      alert("No MCQs available for this selected topic.");
+      return;
+    }
+
+    filtered = filtered.sort(() => Math.random() - 0.5);
+
+    if (selectedQuizCount !== "ALL") {
+      const limit = parseInt(selectedQuizCount, 10);
+      filtered = filtered.slice(0, limit);
+    }
+
+    quizSession = {
+      active: true,
+      questions: filtered,
+      currentIndex: 0,
+      userAnswers: {},
+      checked: {},
+      timerSeconds: 0,
+      timerInterval: setInterval(() => {
+        quizSession.timerSeconds++;
+        const mins = String(Math.floor(quizSession.timerSeconds / 60)).padStart(2, '0');
+        const secs = String(quizSession.timerSeconds % 60).padStart(2, '0');
+        quizTimer.textContent = `Time: ${mins}:${secs}`;
+      }, 1000)
+    };
+
+    quizSetupCard.style.display = "none";
+    quizActiveCard.style.display = "flex";
+    renderActiveQuizQuestion();
+  });
+
+  function renderActiveQuizQuestion() {
+    const q = quizSession.questions[quizSession.currentIndex];
+    const total = quizSession.questions.length;
+
+    quizQuestionCounter.textContent = `Question ${quizSession.currentIndex + 1} of ${total}`;
+    quizProgressFill.style.width = `${((quizSession.currentIndex + 1) / total) * 100}%`;
+    
+    quizQuestionCategory.textContent = q.category || "General";
+    quizQuestionStatement.textContent = q.question;
+
+    const selectedIdx = quizSession.userAnswers[q.id];
+    const isChecked = quizSession.checked[q.id];
+
+    quizOptionsGrid.innerHTML = "";
+    q.options.forEach((optText, idx) => {
+      const letter = String.fromCharCode(65 + idx);
+      const btn = document.createElement("button");
+      btn.className = "mcq-option-btn";
+
+      if (isChecked) {
+        if (idx === q.answerIndex) {
+          btn.classList.add("state-correct");
+        } else if (idx === selectedIdx) {
+          btn.classList.add("state-wrong");
+        }
+      } else if (idx === selectedIdx) {
+        btn.style.borderColor = "var(--accent-color)";
+        btn.style.backgroundColor = "var(--option-hover)";
+      }
+
+      btn.innerHTML = `
+        <span class="mcq-opt-letter">${letter}</span>
+        <span class="mcq-opt-text">${optText}</span>
+      `;
+
+      btn.addEventListener("click", () => {
+        if (isChecked) return;
+        quizSession.userAnswers[q.id] = idx;
+        quizCheckBtn.disabled = false;
+        renderActiveQuizQuestion();
+      });
+
+      quizOptionsGrid.appendChild(btn);
+    });
+
+    if (isChecked) {
+      quizExplanationBox.style.display = "block";
+      quizExplanationBox.innerHTML = `
+        <strong>Explanation:</strong> Option ${String.fromCharCode(65 + q.answerIndex)}: ${q.options[q.answerIndex]}<br>
+        <span style="opacity: 0.9;">${q.explanation || ''}</span>
+      `;
+    } else {
+      quizExplanationBox.style.display = "none";
+    }
+
+    quizPrevBtn.disabled = quizSession.currentIndex === 0;
+    quizCheckBtn.disabled = selectedIdx === undefined || isChecked;
+    
+    if (quizSession.currentIndex === total - 1) {
+      quizNextBtn.textContent = "Finish & Submit Test";
+    } else {
+      quizNextBtn.textContent = "Next Question";
+    }
+  }
+
+  quizPrevBtn.addEventListener("click", () => {
+    if (quizSession.currentIndex > 0) {
+      quizSession.currentIndex--;
+      renderActiveQuizQuestion();
+    }
+  });
+
+  quizCheckBtn.addEventListener("click", () => {
+    const q = quizSession.questions[quizSession.currentIndex];
+    quizSession.checked[q.id] = true;
+    
+    const selectedIdx = quizSession.userAnswers[q.id];
+    const isCorrect = selectedIdx === q.answerIndex;
+    if (!state.attempts[state.activeSubject]) state.attempts[state.activeSubject] = {};
+    
+    let att = state.attempts[state.activeSubject][q.id] || { wrongOptions: [], isCorrect: false };
+    if (isCorrect) att.isCorrect = true;
+    else if (!att.wrongOptions.includes(selectedIdx)) att.wrongOptions.push(selectedIdx);
+    
+    state.attempts[state.activeSubject][q.id] = att;
+
+    saveState();
+    updateProgressUI();
+    renderActiveQuizQuestion();
+  });
+
+  quizNextBtn.addEventListener("click", () => {
+    const total = quizSession.questions.length;
+    if (quizSession.currentIndex < total - 1) {
+      quizSession.currentIndex++;
+      renderActiveQuizQuestion();
+    } else {
+      finishQuizTest();
+    }
+  });
+
+  function finishQuizTest() {
+    clearInterval(quizSession.timerInterval);
+
+    let correct = 0;
+    quizSession.questions.forEach(q => {
+      const sel = quizSession.userAnswers[q.id];
+      if (sel === q.answerIndex) correct++;
+    });
+
+    const total = quizSession.questions.length;
+    const wrong = total - correct;
+    const percent = Math.round((correct / total) * 100);
+    const mins = String(Math.floor(quizSession.timerSeconds / 60)).padStart(2, '0');
+    const secs = String(quizSession.timerSeconds % 60).padStart(2, '0');
+
+    modalScorePercent.textContent = `${percent}%`;
+    modalScoreFraction.textContent = `${correct} / ${total} Correct`;
+    modalCorrectCount.textContent = correct;
+    modalWrongCount.textContent = wrong;
+    modalTimeSpent.textContent = `${mins}:${secs}`;
+
+    quizResultsModal.style.display = "flex";
+  }
+
+  quizModalClose.addEventListener("click", () => {
+    quizResultsModal.style.display = "none";
+    switchMode("practice");
+  });
+
+  modalRetakeQuizBtn.addEventListener("click", () => {
+    quizResultsModal.style.display = "none";
+    initQuizSetup();
+  });
+
+  modalReviewMistakesBtn.addEventListener("click", () => {
+    quizResultsModal.style.display = "none";
+    currentFilter = "mistakes";
+    updateFilterChipUI();
+    switchMode("practice");
+  });
+
+  // --- FILTER CHIPS LOGIC ---
+  function updateFilterChipUI() {
+    filterAll.setAttribute("data-active", currentFilter === "all" ? "true" : "false");
+    filterBookmarks.setAttribute("data-active", currentFilter === "bookmarks" ? "true" : "false");
+    filterUncovered.setAttribute("data-active", currentFilter === "uncovered" ? "true" : "false");
+    filterMistakes.setAttribute("data-active", currentFilter === "mistakes" ? "true" : "false");
+  }
+
+  filterAll.addEventListener("click", () => {
+    currentFilter = "all";
+    updateFilterChipUI();
+    renderFactsList();
+  });
+
+  filterBookmarks.addEventListener("click", () => {
+    currentFilter = currentFilter === "bookmarks" ? "all" : "bookmarks";
+    updateFilterChipUI();
+    renderFactsList();
+  });
+
+  filterUncovered.addEventListener("click", () => {
+    currentFilter = currentFilter === "uncovered" ? "all" : "uncovered";
+    updateFilterChipUI();
+    renderFactsList();
+  });
+
+  filterMistakes.addEventListener("click", () => {
+    currentFilter = currentFilter === "mistakes" ? "all" : "mistakes";
+    updateFilterChipUI();
+    renderFactsList();
+  });
+
+  // --- SEARCH BAR LOGIC ---
+  searchInput.addEventListener("input", (e) => {
+    searchFilter = e.target.value;
+    searchClear.style.display = searchFilter ? "block" : "none";
+    renderFactsList();
+  });
+
+  searchClear.addEventListener("click", () => {
+    searchFilter = "";
+    searchInput.value = "";
+    searchClear.style.display = "none";
+    renderFactsList();
+  });
+
+  // --- CHECKPOINT JUMP ---
+  function jumpToCheckpoint() {
+    const checkpointId = state.checkpoints[state.activeSubject];
+    if (!checkpointId) return;
+
+    if (searchFilter || currentFilter !== "all" || state.selectedTopic !== "ALL") {
+      searchFilter = "";
+      searchInput.value = "";
+      searchClear.style.display = "none";
+      currentFilter = "all";
+      state.selectedTopic = "ALL";
+      updateFilterChipUI();
+      renderTopicPills();
+      renderFactsList();
+    }
+
+    setTimeout(() => {
+      const card = document.getElementById(`fact-card-${checkpointId}`);
+      if (card) {
+        card.scrollIntoView({ behavior: "smooth", block: "center" });
+        card.classList.add("is-checkpoint");
+      }
+    }, 100);
+  }
+
+  jumpToCheckpointBtn.addEventListener("click", jumpToCheckpoint);
+
+  // --- SIDEBAR & CUSTOM IMPORT ---
+  sidebarToggleBtn.addEventListener("click", openSidebar);
+  sidebarCloseBtn.addEventListener("click", closeSidebar);
+  sidebarOverlay.addEventListener("click", closeSidebar);
+  themeToggleTopBtn.addEventListener("click", toggleTheme);
+
+  darkModeToggle.addEventListener("change", () => {
+    state.theme = darkModeToggle.checked ? "dark" : "light";
+    applyTheme();
+    saveState();
+  });
+
+  globalShowAnswersToggle.addEventListener("change", () => {
+    state.showAllAnswers = globalShowAnswersToggle.checked;
+    saveState();
+    renderFactsList();
+  });
+
+  btnModePractice.addEventListener("click", () => switchMode("practice"));
+  btnModeQuiz.addEventListener("click", () => switchMode("quiz"));
+
+  function renderSubjectsList() {
+    sidebarSubjectList.innerHTML = "";
+    const subjects = getAllSubjects();
+
+    subjects.forEach(subject => {
+      let count = 0;
+      if (state.customSubjects[subject]) count = state.customSubjects[subject].length;
+      else if (window.factsData && window.factsData[subject]) count = window.factsData[subject].length;
+
+      const button = document.createElement("button");
+      button.className = `subject-item ${state.activeSubject === subject ? 'active' : ''}`;
+      button.innerHTML = `
+        <span>${subject}</span>
+        <span class="subject-count">${count} MCQs</span>
+      `;
+      button.addEventListener("click", () => {
+        state.activeSubject = subject;
+        state.selectedTopic = "ALL";
+        saveState();
+        closeSidebar();
+        initSubjectView();
+      });
+      sidebarSubjectList.appendChild(button);
+    });
+  }
+
+  addFactsBtn.addEventListener("click", () => {
+    const rawSubject = newSubjectNameInput.value.trim();
+    const rawText = rawFactsPasteInput.value.trim();
+
+    if (!rawText) {
+      alert("Please paste MCQs text first.");
+      return;
+    }
+
+    const subjectName = rawSubject || state.activeSubject;
+    let newMCQs = [];
+
+    if (window.parseRawSubject) {
+      newMCQs = window.parseRawSubject(subjectName, rawText);
+    }
+
+    if (newMCQs.length === 0) {
+      alert("Could not extract valid questions. Ensure standard format.");
+      return;
+    }
+
+    if (!state.customSubjects[subjectName]) {
+      state.customSubjects[subjectName] = [];
+    }
+
+    const existing = state.customSubjects[subjectName];
+    const builtIn = (window.factsData && window.factsData[subjectName]) || [];
+    const allCurrent = [...builtIn, ...existing];
+
+    let addedCount = 0;
+    newMCQs.forEach(m => {
+      m.id = allCurrent.length + addedCount + 1;
+      existing.push(m);
+      addedCount++;
+    });
+
+    state.activeSubject = subjectName;
+    saveState();
+    newSubjectNameInput.value = "";
+    rawFactsPasteInput.value = "";
+    alert(`Added ${addedCount} MCQs to "${subjectName}".`);
+    initSubjectView();
+    closeSidebar();
+  });
+
+  resetProgressBtn.addEventListener("click", () => {
+    if (confirm(`Reset progress for "${state.activeSubject}"?`)) {
+      state.covered[state.activeSubject] = [];
+      state.bookmarks[state.activeSubject] = [];
+      state.checkpoints[state.activeSubject] = null;
+      state.attempts[state.activeSubject] = {};
+      state.revealedAnswers[state.activeSubject] = [];
+      saveState();
+      initSubjectView();
+      closeSidebar();
+    }
+  });
+
+  clearAllDataBtn.addEventListener("click", () => {
+    if (confirm("Reset ALL application data and progress?")) {
+      localStorage.removeItem(STORAGE_KEY);
+      window.location.reload();
+    }
+  });
+
+  // --- INITIALIZATION ---
+  function initSubjectView() {
+    updateProgressUI();
+    renderTopicPills();
+    renderSubjectsList();
+    if (state.activeMode === "practice") {
+      renderFactsList();
+    } else {
+      initQuizSetup();
+    }
+  }
+
+  loadState();
+  applyTheme();
+  globalShowAnswersToggle.checked = state.showAllAnswers;
+  switchMode(state.activeMode || "practice");
+  initSubjectView();
+});
