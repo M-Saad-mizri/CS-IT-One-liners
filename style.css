@@ -652,7 +652,7 @@ body.light-mode .fact-header {
   -webkit-text-fill-color: transparent;
 }
 
-.sidebar-header span a {
+.sidebar-header a, .sidebar-header span a {
   font-size: 0.78rem;
   font-weight: 700;
   padding: 4px 10px;
@@ -664,7 +664,7 @@ body.light-mode .fact-header {
   transition: all 0.2s ease;
 }
 
-.sidebar-header span a:hover {
+.sidebar-header a:hover, .sidebar-header span a:hover {
   background: var(--accent-color);
   color: #ffffff;
 }

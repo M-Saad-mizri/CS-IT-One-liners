@@ -1049,7 +1049,7 @@ body.light-mode .card-action-btn {
   -webkit-text-fill-color: transparent;
 }
 
-.one-liner-btn, .sidebar-header span a {
+.one-liner-btn, .sidebar-header a, .sidebar-header span a {
   font-size: 0.78rem;
   font-weight: 700;
   padding: 4px 10px;
@@ -1061,7 +1061,7 @@ body.light-mode .card-action-btn {
   transition: all 0.2s ease;
 }
 
-.one-liner-btn:hover, .sidebar-header span a:hover {
+.one-liner-btn:hover, .sidebar-header a:hover, .sidebar-header span a:hover {
   background: var(--accent-color);
   color: #ffffff;
 }
