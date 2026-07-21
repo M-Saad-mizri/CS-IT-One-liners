@@ -533,30 +533,23 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(downloadAnchor);
     downloadAnchor.click();
     downloadAnchor.remove();
-    URL.revokeObjectURL(url);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 
   async function exportAndShareData(dataObj, filename, title) {
     const jsonStr = JSON.stringify(dataObj, null, 2);
+    const txtFilename = filename.replace(/\.json$/, ".txt");
 
-    // 1. Always trigger file download
-    downloadJsonFile(jsonStr, filename);
+    // 1. Trigger local JSON file download after 100ms so a.click() doesn't consume the click user gesture
+    setTimeout(() => {
+      downloadJsonFile(jsonStr, filename);
+    }, 100);
 
-    // 2. Open native sharing sheet if supported
+    // 2. Open native share sheet immediately using text/plain .txt file format for universal OS support
     if (navigator.share) {
       try {
-        const jsonFile = new File([jsonStr], filename, { type: "application/json" });
-        if (navigator.canShare && navigator.canShare({ files: [jsonFile] })) {
-          await navigator.share({
-            title: title,
-            files: [jsonFile]
-          });
-          return;
-        }
-
-        // Try text file if OS restricts application/json sharing
-        const txtFilename = filename.replace(/\.json$/, ".txt");
         const txtFile = new File([jsonStr], txtFilename, { type: "text/plain" });
+
         if (navigator.canShare && navigator.canShare({ files: [txtFile] })) {
           await navigator.share({
             title: title,
@@ -574,7 +567,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (err.name === "AbortError") {
           return;
         }
-        console.error("Native sharing failed:", err);
+        console.warn("Native sharing failed:", err);
       }
     }
   }
