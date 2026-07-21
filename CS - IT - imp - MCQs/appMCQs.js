@@ -148,15 +148,45 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // --- SUBJECT & MCQs HELPERS ---
+  let shuffledSubjectCache = {};
+
+  function shuffleMCQItem(mcq) {
+    if (!mcq || !Array.isArray(mcq.options) || mcq.options.length < 2) {
+      return mcq;
+    }
+    const correctAnswerText = mcq.options[mcq.answerIndex];
+    if (correctAnswerText === undefined) return mcq;
+
+    const shuffledOptions = [...mcq.options];
+    for (let i = shuffledOptions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledOptions[i], shuffledOptions[j]] = [shuffledOptions[j], shuffledOptions[i]];
+    }
+
+    const newAnswerIndex = shuffledOptions.indexOf(correctAnswerText);
+
+    return {
+      ...mcq,
+      options: shuffledOptions,
+      answerIndex: newAnswerIndex
+    };
+  }
+
   function getActiveSubjectMCQs() {
     const subject = state.activeSubject;
+    if (shuffledSubjectCache[subject]) {
+      return shuffledSubjectCache[subject];
+    }
+
+    let rawList = [];
     if (state.customSubjects[subject]) {
-      return state.customSubjects[subject];
+      rawList = state.customSubjects[subject];
+    } else if (window.factsData && window.factsData[subject]) {
+      rawList = window.factsData[subject];
     }
-    if (window.factsData && window.factsData[subject]) {
-      return window.factsData[subject];
-    }
-    return [];
+
+    shuffledSubjectCache[subject] = rawList.map(shuffleMCQItem);
+    return shuffledSubjectCache[subject];
   }
 
   function getAllSubjects() {
@@ -956,6 +986,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const importedData = JSON.parse(event.target.result);
           if (typeof importedData === "object" && importedData !== null) {
             state = { ...state, ...importedData };
+            shuffledSubjectCache = {};
             saveState();
             initSubjectView();
             closeSidebar();
