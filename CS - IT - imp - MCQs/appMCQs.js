@@ -1115,24 +1115,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- BACK TO TOP FLOATING BUTTON LOGIC ---
   const backToTopBtn = document.getElementById("backToTopBtn");
+  let lastScrollY = window.scrollY;
 
   function checkBackToTopVisibility() {
     if (!backToTopBtn) return;
+
+    const currentScrollY = window.scrollY;
+    const isScrollingUp = currentScrollY < lastScrollY;
+    lastScrollY = currentScrollY;
+
     const cards = document.querySelectorAll(".fact-card");
+    let pastThreshold = false;
+
     if (cards.length >= 20) {
       const card20 = cards[19];
       const rect = card20.getBoundingClientRect();
-      if (rect.top <= window.innerHeight) {
-        backToTopBtn.classList.add("show");
-      } else {
-        backToTopBtn.classList.remove("show");
-      }
+      pastThreshold = rect.top <= window.innerHeight;
     } else {
-      if (window.scrollY > 1200) {
-        backToTopBtn.classList.add("show");
-      } else {
-        backToTopBtn.classList.remove("show");
-      }
+      pastThreshold = currentScrollY > 1200;
+    }
+
+    // Only show button if user is past 20th card AND is scrolling UP
+    if (pastThreshold && isScrollingUp && currentScrollY > 200) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
     }
   }
 
