@@ -317,6 +317,13 @@ body.light-mode .search-box input {
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
 }
 
+body.light-mode .filter-chip[data-active="true"] {
+  background: rgba(15, 23, 42, 0.08);
+  border: 1.5px solid #0F172A;
+  color: #0F172A;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
 .chip-icon {
   width: 14px;
   height: 14px;
@@ -326,6 +333,11 @@ body.light-mode .search-box input {
 .filter-chip[data-active="true"] .chip-icon {
   fill: #FFF;
   stroke: #FFF;
+}
+
+body.light-mode .filter-chip[data-active="true"] .chip-icon {
+  fill: #0F172A;
+  stroke: #0F172A;
 }
 
 /* Checkpoint Jump Banner */

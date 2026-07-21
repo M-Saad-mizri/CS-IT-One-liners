@@ -439,14 +439,38 @@ body.light-mode .filter-chip {
   border-color: var(--accent-color);
 }
 
+body.light-mode .filter-chip[data-active="true"] {
+  background-color: rgba(15, 23, 42, 0.08);
+  border: 1.5px solid #0F172A;
+  color: #0F172A;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
 .filter-chip.chip-mistakes[data-active="true"] {
   background-color: #EF4444;
   border-color: #EF4444;
+  color: #FFFFFF;
+}
+
+body.light-mode .filter-chip.chip-mistakes[data-active="true"] {
+  background-color: #EF4444;
+  border-color: #EF4444;
+  color: #FFFFFF;
 }
 
 .chip-icon {
   width: 14px;
   height: 14px;
+}
+
+body.light-mode .filter-chip[data-active="true"] .chip-icon {
+  fill: #0F172A;
+  stroke: #0F172A;
+}
+
+body.light-mode .filter-chip.chip-mistakes[data-active="true"] .chip-icon {
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
 }
 
 /* Checkpoint Banner */
