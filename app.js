@@ -524,53 +524,63 @@ document.addEventListener("DOMContentLoaded", () => {
   const importProgressBtn = document.getElementById("importProgressBtn");
   const importFileInput = document.getElementById("importFileInput");
 
-  function downloadJsonFile(content, filename) {
+  const downloadBlobFallback = (content, filename) => {
     const blob = new Blob([content], { type: "application/json" });
     const url = URL.createObjectURL(blob);
-    const downloadAnchor = document.createElement("a");
-    downloadAnchor.href = url;
-    downloadAnchor.download = filename;
-    document.body.appendChild(downloadAnchor);
-    downloadAnchor.click();
-    downloadAnchor.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-  }
-
-  async function exportAndShareData(dataObj, filename, title) {
-    const jsonStr = JSON.stringify(dataObj, null, 2);
-    const txtFilename = filename.replace(/\.json$/, ".txt");
-
-    // 1. Trigger local JSON file download after 100ms so a.click() doesn't consume the click user gesture
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
     setTimeout(() => {
-      downloadJsonFile(jsonStr, filename);
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
     }, 100);
+  };
 
-    // 2. Open native share sheet immediately using text/plain .txt file format for universal OS support
-    if (navigator.share) {
-      try {
-        const txtFile = new File([jsonStr], txtFilename, { type: "text/plain" });
+  const exportAndShareData = async (dataObj, filename, title) => {
+    const jsonString = JSON.stringify(dataObj, null, 2);
+    const baseFilename = filename.replace(/\.json$/, "");
 
-        if (navigator.canShare && navigator.canShare({ files: [txtFile] })) {
-          await navigator.share({
-            title: title,
-            files: [txtFile]
-          });
-          return;
-        }
-
-        // Fallback to sharing plain text content
-        await navigator.share({
-          title: title,
-          text: jsonStr
-        });
-      } catch (err) {
-        if (err.name === "AbortError") {
-          return;
-        }
-        console.warn("Native sharing failed:", err);
-      }
+    // 1. Feature Check
+    if (!navigator.share) {
+      downloadBlobFallback(jsonString, `${baseFilename}.json`);
+      return;
     }
-  }
+
+    try {
+      // 2. Prepare file with text/plain type for maximum OS compatibility
+      const file = new File([jsonString], `${baseFilename}.txt`, { type: "text/plain" });
+
+      // 3. Test if device supports file sharing
+      const canShareFiles = navigator.canShare && navigator.canShare({ files: [file] });
+
+      let sharePayload = {};
+      if (canShareFiles) {
+        sharePayload = {
+          title,
+          text: `Backup file for ${title}`,
+          files: [file],
+        };
+      } else {
+        // Fallback to text payload sharing if files are unsupported
+        sharePayload = {
+          title,
+          text: `Data Backup (${title}):\n\n${jsonString.substring(0, 1000)}...`,
+        };
+      }
+
+      // 4. Trigger Web Share API (Must be inside user gesture)
+      await navigator.share(sharePayload);
+    } catch (err) {
+      if (err.name !== "AbortError") {
+        console.error("Web Share failed:", err);
+      }
+    } finally {
+      // 5. Always save file locally
+      downloadBlobFallback(jsonString, `${baseFilename}.json`);
+    }
+  };
 
   if (exportProgressBtn) {
     exportProgressBtn.addEventListener("click", () => {
