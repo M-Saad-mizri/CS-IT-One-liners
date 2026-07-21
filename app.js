@@ -426,6 +426,37 @@ document.addEventListener("DOMContentLoaded", () => {
     updateProgressUI();
     renderFactsList();
     renderSubjectsList();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  // --- BACK TO TOP FLOATING BUTTON LOGIC ---
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  function checkBackToTopVisibility() {
+    if (!backToTopBtn) return;
+    const cards = document.querySelectorAll(".fact-card");
+    if (cards.length >= 20) {
+      const card20 = cards[19];
+      const rect = card20.getBoundingClientRect();
+      if (rect.top <= window.innerHeight) {
+        backToTopBtn.classList.add("show");
+      } else {
+        backToTopBtn.classList.remove("show");
+      }
+    } else {
+      if (window.scrollY > 1200) {
+        backToTopBtn.classList.add("show");
+      } else {
+        backToTopBtn.classList.remove("show");
+      }
+    }
+  }
+
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    window.addEventListener("scroll", checkBackToTopVisibility, { passive: true });
   }
 
   // --- ACTIONS & HANDLERS ---
@@ -484,6 +515,7 @@ document.addEventListener("DOMContentLoaded", () => {
     searchInput.value = "";
     searchClear.style.display = "none";
     renderFactsList();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   // Filter Bookmarks toggle
@@ -491,6 +523,7 @@ document.addEventListener("DOMContentLoaded", () => {
     bookmarksFilterOnly = !bookmarksFilterOnly;
     filterBookmarks.setAttribute("data-active", bookmarksFilterOnly ? "true" : "false");
     renderFactsList();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   // Filter Uncovered toggle
@@ -498,6 +531,7 @@ document.addEventListener("DOMContentLoaded", () => {
     uncoveredFilterOnly = !uncoveredFilterOnly;
     filterUncovered.setAttribute("data-active", uncoveredFilterOnly ? "true" : "false");
     renderFactsList();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   // Jump Button Click

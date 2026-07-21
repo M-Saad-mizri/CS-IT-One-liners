@@ -237,6 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
       quizContainer.style.display = "block";
       initQuizSetup();
     }
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function openSidebar() {
@@ -264,6 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
       saveState();
       renderTopicPills();
       renderFactsList();
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
     topicsScroll.appendChild(allPill);
 
@@ -278,6 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
         saveState();
         renderTopicPills();
         renderFactsList();
+        window.scrollTo({ top: 0, behavior: "smooth" });
       });
       topicsScroll.appendChild(pill);
     });
@@ -828,24 +831,28 @@ document.addEventListener("DOMContentLoaded", () => {
     currentFilter = "all";
     updateFilterChipUI();
     renderFactsList();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   filterBookmarks.addEventListener("click", () => {
     currentFilter = currentFilter === "bookmarks" ? "all" : "bookmarks";
     updateFilterChipUI();
     renderFactsList();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   filterUncovered.addEventListener("click", () => {
     currentFilter = currentFilter === "uncovered" ? "all" : "uncovered";
     updateFilterChipUI();
     renderFactsList();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   filterMistakes.addEventListener("click", () => {
     currentFilter = currentFilter === "mistakes" ? "all" : "mistakes";
     updateFilterChipUI();
     renderFactsList();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   // --- SEARCH BAR LOGIC ---
@@ -860,6 +867,7 @@ document.addEventListener("DOMContentLoaded", () => {
     searchInput.value = "";
     searchClear.style.display = "none";
     renderFactsList();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   // --- CHECKPOINT JUMP ---
@@ -1105,6 +1113,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // --- BACK TO TOP FLOATING BUTTON LOGIC ---
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  function checkBackToTopVisibility() {
+    if (!backToTopBtn) return;
+    const cards = document.querySelectorAll(".fact-card");
+    if (cards.length >= 20) {
+      const card20 = cards[19];
+      const rect = card20.getBoundingClientRect();
+      if (rect.top <= window.innerHeight) {
+        backToTopBtn.classList.add("show");
+      } else {
+        backToTopBtn.classList.remove("show");
+      }
+    } else {
+      if (window.scrollY > 1200) {
+        backToTopBtn.classList.add("show");
+      } else {
+        backToTopBtn.classList.remove("show");
+      }
+    }
+  }
+
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    window.addEventListener("scroll", checkBackToTopVisibility, { passive: true });
+  }
+
   // --- INITIALIZATION ---
   function initSubjectView() {
     updateProgressUI();
@@ -1115,6 +1153,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       initQuizSetup();
     }
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   loadState();
