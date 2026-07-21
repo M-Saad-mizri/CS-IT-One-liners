@@ -744,16 +744,17 @@ body.light-mode .close-btn:hover {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border-color);
   color: var(--text-main);
-  padding: 10px 14px;
-  border-radius: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   text-align: left;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
   transition: all 0.2s ease;
 }
 
@@ -762,28 +763,71 @@ body.light-mode .subject-item {
 }
 
 .subject-item:hover {
-  background: rgba(99, 102, 241, 0.05);
+  background: rgba(99, 102, 241, 0.06);
   border-color: var(--accent-color);
 }
 
 .subject-item.active {
   background: rgba(99, 102, 241, 0.12);
   border-color: var(--accent-color);
-  color: var(--accent-color);
+  color: var(--text-main);
   font-weight: 600;
+}
+
+.subject-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.subject-name {
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.subject-item.active .subject-name {
+  color: var(--accent-color);
 }
 
 .subject-count {
   font-size: 0.75rem;
+  font-weight: 600;
   background-color: rgba(99, 102, 241, 0.15);
   color: var(--accent-color);
-  padding: 2px 6px;
+  padding: 2px 8px;
   border-radius: 6px;
+  white-space: nowrap;
 }
 
 .subject-item.active .subject-count {
   background-color: var(--accent-color);
   color: #FFF;
+}
+
+/* Horizontal Mini Progress Bar */
+.subject-mini-bar-track {
+  width: 100%;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+body.light-mode .subject-mini-bar-track {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.subject-mini-bar-fill {
+  height: 100%;
+  background: var(--accent-gradient);
+  border-radius: 99px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subject-item.active .subject-mini-bar-fill {
+  background: var(--progress-gradient, var(--accent-gradient));
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
 }
 
 /* Control Settings Cards */

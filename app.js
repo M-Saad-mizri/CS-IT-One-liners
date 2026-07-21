@@ -143,6 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Render list of subjects in the sidebar
   function renderSubjectsList() {
+    if (!sidebarSubjectList) return;
     sidebarSubjectList.innerHTML = "";
     const subjects = getAllSubjects();
     
@@ -154,11 +155,20 @@ document.addEventListener("DOMContentLoaded", () => {
         factsCount = window.factsData[subject].length;
       }
 
+      const coveredList = state.covered[subject] || [];
+      const coveredCount = coveredList.length;
+      const percent = factsCount > 0 ? Math.round((coveredCount / factsCount) * 100) : 0;
+
       const button = document.createElement("button");
       button.className = `subject-item ${state.activeSubject === subject ? 'active' : ''}`;
       button.innerHTML = `
-        <span>${subject}</span>
-        <span class="subject-count">${factsCount}</span>
+        <div class="subject-item-top">
+          <span class="subject-name">${subject}</span>
+          <span class="subject-count">${factsCount}</span>
+        </div>
+        <div class="subject-mini-bar-track">
+          <div class="subject-mini-bar-fill" style="width: ${percent}%"></div>
+        </div>
       `;
       button.addEventListener("click", () => {
         state.activeSubject = subject;
@@ -205,6 +215,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       checkpointBanner.style.display = "none";
     }
+
+    // Refresh sidebar mini progress bars
+    renderSubjectsList();
   }
 
   // Render Fact Cards with active filters

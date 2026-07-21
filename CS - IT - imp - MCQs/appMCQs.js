@@ -326,6 +326,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       checkpointBanner.style.display = "none";
     }
+
+    // Refresh sidebar mini progress bars
+    renderSubjectsList();
   }
 
   // --- RENDER PRACTICE MCQs LIST ---
@@ -1020,6 +1023,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btnModeQuiz.addEventListener("click", () => switchMode("quiz"));
 
   function renderSubjectsList() {
+    if (!sidebarSubjectList) return;
     sidebarSubjectList.innerHTML = "";
     const subjects = getAllSubjects();
 
@@ -1028,11 +1032,20 @@ document.addEventListener("DOMContentLoaded", () => {
       if (state.customSubjects[subject]) count = state.customSubjects[subject].length;
       else if (window.factsData && window.factsData[subject]) count = window.factsData[subject].length;
 
+      const coveredList = state.covered[subject] || [];
+      const coveredCount = coveredList.length;
+      const percent = count > 0 ? Math.round((coveredCount / count) * 100) : 0;
+
       const button = document.createElement("button");
       button.className = `subject-item ${state.activeSubject === subject ? 'active' : ''}`;
       button.innerHTML = `
-        <span>${subject}</span>
-        <span class="subject-count">${count} MCQs</span>
+        <div class="subject-item-top">
+          <span class="subject-name">${subject}</span>
+          <span class="subject-count">${count} MCQs</span>
+        </div>
+        <div class="subject-mini-bar-track">
+          <div class="subject-mini-bar-fill" style="width: ${percent}%"></div>
+        </div>
       `;
       button.addEventListener("click", () => {
         state.activeSubject = subject;
