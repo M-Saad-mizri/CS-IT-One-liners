@@ -878,15 +878,65 @@ document.addEventListener("DOMContentLoaded", () => {
   const importProgressBtn = document.getElementById("importProgressBtn");
   const importFileInput = document.getElementById("importFileInput");
 
+  function downloadJsonFile(content, filename) {
+    const blob = new Blob([content], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const downloadAnchor = document.createElement("a");
+    downloadAnchor.href = url;
+    downloadAnchor.download = filename;
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  async function exportAndShareData(dataObj, filename, title) {
+    const jsonStr = JSON.stringify(dataObj, null, 2);
+
+    // 1. Always trigger file download
+    downloadJsonFile(jsonStr, filename);
+
+    // 2. Open native sharing sheet if supported
+    if (navigator.share) {
+      try {
+        const jsonFile = new File([jsonStr], filename, { type: "application/json" });
+        if (navigator.canShare && navigator.canShare({ files: [jsonFile] })) {
+          await navigator.share({
+            title: title,
+            files: [jsonFile]
+          });
+          return;
+        }
+
+        // Try text file if OS restricts application/json sharing
+        const txtFilename = filename.replace(/\.json$/, ".txt");
+        const txtFile = new File([jsonStr], txtFilename, { type: "text/plain" });
+        if (navigator.canShare && navigator.canShare({ files: [txtFile] })) {
+          await navigator.share({
+            title: title,
+            files: [txtFile]
+          });
+          return;
+        }
+
+        // Fallback to sharing plain text content
+        await navigator.share({
+          title: title,
+          text: jsonStr
+        });
+      } catch (err) {
+        if (err.name === "AbortError") {
+          return;
+        }
+        console.error("Native sharing failed:", err);
+      }
+    }
+  }
+
   if (exportProgressBtn) {
     exportProgressBtn.addEventListener("click", () => {
-      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state, null, 2));
-      const downloadAnchor = document.createElement('a');
-      downloadAnchor.setAttribute("href", dataStr);
-      downloadAnchor.setAttribute("download", `quickfacts_mcq_backup_${new Date().toISOString().slice(0, 10)}.json`);
-      document.body.appendChild(downloadAnchor);
-      downloadAnchor.click();
-      downloadAnchor.remove();
+      const filename = `quickfacts_mcq_backup_${new Date().toISOString().slice(0, 10)}.json`;
+      exportAndShareData(state, filename, "QuickFacts MCQs Backup");
     });
   }
 
