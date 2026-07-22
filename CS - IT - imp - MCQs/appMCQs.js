@@ -115,16 +115,21 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentFilter = "all"; // "all" | "bookmarks" | "uncovered" | "mistakes"
 
   // --- TOPIC COVERAGE HELPER ---
-  function getTopicCoverage(topic) {
+  function isTopicCovered(topic) {
     const allMCQs = getActiveSubjectMCQs();
     const topicMCQs = topic === "ALL" ? allMCQs : allMCQs.filter(m => m.category === topic);
-    if (topicMCQs.length === 0) return { covered: 0, total: 0, percent: 0 };
+    if (topicMCQs.length === 0) return false;
 
+    // Check if user attempted at least 1 quiz for this topic
+    const history = state.quizHistory || [];
+    const hasQuizAttempt = history.some(h => 
+      h.subject === state.activeSubject && (h.category === topic || h.category === "ALL")
+    );
+    if (hasQuizAttempt) return true;
+
+    // Or check if all MCQs in this topic are covered in practice mode
     const coveredList = state.covered[state.activeSubject] || [];
-    const coveredCount = topicMCQs.filter(m => coveredList.includes(m.id)).length;
-    const percent = Math.round((coveredCount / topicMCQs.length) * 100);
-
-    return { covered: coveredCount, total: topicMCQs.length, percent };
+    return topicMCQs.every(m => coveredList.includes(m.id));
   }
 
   // --- STATE PERSISTENCE ---
@@ -258,13 +263,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const allMCQs = getActiveSubjectMCQs();
 
     // "All" Pill
-    const allCov = getTopicCoverage("ALL");
-    let allCovClass = "";
-    if (allCov.percent === 100) allCovClass = "is-fully-covered";
-    else if (allCov.percent > 0) allCovClass = "is-partially-covered";
-
     const allPill = document.createElement("button");
-    allPill.className = `topic-pill ${state.selectedTopic === 'ALL' ? 'active' : ''} ${allCovClass}`;
+    const isAllCov = isTopicCovered("ALL");
+    allPill.className = `topic-pill ${state.selectedTopic === 'ALL' ? 'active' : ''} ${isAllCov ? 'is-covered' : ''}`;
     allPill.textContent = `All (${allMCQs.length})`;
     allPill.addEventListener("click", () => {
       state.selectedTopic = "ALL";
@@ -278,13 +279,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Individual Topics
     topics.forEach(topic => {
       const topicCount = allMCQs.filter(m => m.category === topic).length;
-      const cov = getTopicCoverage(topic);
-      let covClass = "";
-      if (cov.percent === 100) covClass = "is-fully-covered";
-      else if (cov.percent > 0) covClass = "is-partially-covered";
-
+      const isCov = isTopicCovered(topic);
       const pill = document.createElement("button");
-      pill.className = `topic-pill ${state.selectedTopic === topic ? 'active' : ''} ${covClass}`;
+      pill.className = `topic-pill ${state.selectedTopic === topic ? 'active' : ''} ${isCov ? 'is-covered' : ''}`;
       pill.textContent = `${topic} (${topicCount})`;
       pill.addEventListener("click", () => {
         state.selectedTopic = topic;
@@ -835,19 +832,13 @@ document.addEventListener("DOMContentLoaded", () => {
       quizTopicSelect.appendChild(promptOpt);
 
       // ALL Option
-      const allCov = getTopicCoverage("ALL");
       const allOpt = document.createElement("option");
       allOpt.value = "ALL";
       allOpt.textContent = `All Topics (${allMCQs.length} MCQs)`;
-      if (allCov.percent === 100) {
+      if (isTopicCovered("ALL")) {
         allOpt.className = "is-topic-covered";
         allOpt.style.backgroundColor = "rgba(16, 185, 129, 0.18)";
         allOpt.style.color = "#34D399";
-        allOpt.style.fontWeight = "600";
-      } else if (allCov.percent > 0) {
-        allOpt.className = "is-topic-partially-covered";
-        allOpt.style.backgroundColor = "rgba(245, 158, 11, 0.18)";
-        allOpt.style.color = "#FBBF24";
         allOpt.style.fontWeight = "600";
       }
       quizTopicSelect.appendChild(allOpt);
@@ -855,19 +846,13 @@ document.addEventListener("DOMContentLoaded", () => {
       // Topic Options
       topics.forEach(topic => {
         const topicCount = allMCQs.filter(m => m.category === topic).length;
-        const cov = getTopicCoverage(topic);
         const opt = document.createElement("option");
         opt.value = topic;
         opt.textContent = `${topic} (${topicCount} MCQs)`;
-        if (cov.percent === 100) {
+        if (isTopicCovered(topic)) {
           opt.className = "is-topic-covered";
           opt.style.backgroundColor = "rgba(16, 185, 129, 0.18)";
           opt.style.color = "#34D399";
-          opt.style.fontWeight = "600";
-        } else if (cov.percent > 0) {
-          opt.className = "is-topic-partially-covered";
-          opt.style.backgroundColor = "rgba(245, 158, 11, 0.18)";
-          opt.style.color = "#FBBF24";
           opt.style.fontWeight = "600";
         }
         quizTopicSelect.appendChild(opt);

@@ -1624,42 +1624,22 @@ body.light-mode .back-to-top-btn:hover {
   }
 }
 
-/* Topic Coverage Visual Indicators (Full vs Partial) */
-.topic-pill.is-fully-covered,
+/* Covered Topic Pill Visual Indicator (No text-based label) */
 .topic-pill.is-covered {
   border-color: rgba(16, 185, 129, 0.6);
   background: rgba(16, 185, 129, 0.12);
   color: #34D399;
 }
 
-.topic-pill.is-fully-covered:hover,
 .topic-pill.is-covered:hover {
   background: rgba(16, 185, 129, 0.22);
 }
 
-.topic-pill.is-fully-covered.active,
 .topic-pill.is-covered.active {
   background: linear-gradient(135deg, #059669 0%, #10B981 100%);
   color: #FFFFFF;
   border-color: transparent;
   box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
-}
-
-.topic-pill.is-partially-covered {
-  border-color: rgba(245, 158, 11, 0.6);
-  background: rgba(245, 158, 11, 0.12);
-  color: #FBBF24;
-}
-
-.topic-pill.is-partially-covered:hover {
-  background: rgba(245, 158, 11, 0.22);
-}
-
-.topic-pill.is-partially-covered.active {
-  background: linear-gradient(135deg, #D97706 0%, #F59E0B 100%);
-  color: #FFFFFF;
-  border-color: transparent;
-  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
 }
 
 /* Question Pool Selector Chips */
