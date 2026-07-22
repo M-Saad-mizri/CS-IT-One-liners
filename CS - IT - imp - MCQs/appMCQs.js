@@ -132,6 +132,18 @@ document.addEventListener("DOMContentLoaded", () => {
     return topicMCQs.every(m => coveredList.includes(m.id));
   }
 
+  function getTopicProgress(topic) {
+    const allMCQs = getActiveSubjectMCQs();
+    const topicMCQs = topic === "ALL" ? allMCQs : allMCQs.filter(m => m.category === topic);
+    if (topicMCQs.length === 0) return { correct: 0, total: 0, percent: 0 };
+
+    const coveredList = state.covered[state.activeSubject] || [];
+    const correctCount = topicMCQs.filter(m => coveredList.includes(m.id)).length;
+    const percent = Math.min(100, Math.max(0, Math.round((correctCount / topicMCQs.length) * 100)));
+
+    return { correct: correctCount, total: topicMCQs.length, percent };
+  }
+
   // --- STATE PERSISTENCE ---
   function loadState() {
     try {
@@ -263,10 +275,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const allMCQs = getActiveSubjectMCQs();
 
     // "All" Pill
+    const allProg = getTopicProgress("ALL");
+    const isAllActive = state.selectedTopic === 'ALL';
     const allPill = document.createElement("button");
-    const isAllCov = isTopicCovered("ALL");
-    allPill.className = `topic-pill ${state.selectedTopic === 'ALL' ? 'active' : ''} ${isAllCov ? 'is-covered' : ''}`;
+    allPill.className = `topic-pill ${isAllActive ? 'active' : ''}`;
     allPill.textContent = `All (${allMCQs.length})`;
+
+    if (!isAllActive && allProg.percent > 0) {
+      const p = allProg.percent;
+      allPill.style.background = `linear-gradient(90deg, rgba(16, 185, 129, 0.25) 0%, rgba(16, 185, 129, 0.25) ${p}%, var(--option-bg) ${p}%, var(--option-bg) 100%)`;
+      allPill.style.borderColor = `rgba(16, 185, 129, ${Math.min(0.6, 0.25 + (p / 100) * 0.35)})`;
+    }
+
     allPill.addEventListener("click", () => {
       state.selectedTopic = "ALL";
       saveState();
@@ -279,10 +299,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Individual Topics
     topics.forEach(topic => {
       const topicCount = allMCQs.filter(m => m.category === topic).length;
-      const isCov = isTopicCovered(topic);
+      const prog = getTopicProgress(topic);
+      const isActive = state.selectedTopic === topic;
       const pill = document.createElement("button");
-      pill.className = `topic-pill ${state.selectedTopic === topic ? 'active' : ''} ${isCov ? 'is-covered' : ''}`;
+      pill.className = `topic-pill ${isActive ? 'active' : ''}`;
       pill.textContent = `${topic} (${topicCount})`;
+
+      if (!isActive && prog.percent > 0) {
+        const p = prog.percent;
+        pill.style.background = `linear-gradient(90deg, rgba(16, 185, 129, 0.25) 0%, rgba(16, 185, 129, 0.25) ${p}%, var(--option-bg) ${p}%, var(--option-bg) 100%)`;
+        pill.style.borderColor = `rgba(16, 185, 129, ${Math.min(0.6, 0.25 + (p / 100) * 0.35)})`;
+      }
+
       pill.addEventListener("click", () => {
         state.selectedTopic = topic;
         saveState();
