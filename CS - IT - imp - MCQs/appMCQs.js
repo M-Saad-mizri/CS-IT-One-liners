@@ -474,7 +474,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
           <div class="action-right">
             <button class="card-action-btn btn-toggle-answer" data-id="${mcq.id}">
-              ${isRevealed ? 'Hide Answer' : 'Show Answer'}
+              ${isRevealed ? `
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"></path><path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"></path><line x1="2" y1="2" x2="22" y2="22"></line></svg>
+                <span>Hide Answer</span>
+              ` : `
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <span>Show Answer</span>
+              `}
             </button>
           </div>
         </div>
@@ -548,11 +554,17 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isCurrentlyRevealed) {
           rev = rev.filter(id => id !== mcq.id);
           explanationBox.style.display = "none";
-          toggleAnswerBtn.textContent = "Show Answer";
+          toggleAnswerBtn.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            <span>Show Answer</span>
+          `;
         } else {
           rev.push(mcq.id);
           explanationBox.style.display = "block";
-          toggleAnswerBtn.textContent = "Hide Answer";
+          toggleAnswerBtn.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"></path><path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"></path><line x1="2" y1="2" x2="22" y2="22"></line></svg>
+            <span>Hide Answer</span>
+          `;
 
           // Also highlight correct answer button if not yet solved
           const correctBtn = card.querySelector(`.mcq-option-btn[data-index="${mcq.answerIndex}"]`);
@@ -728,6 +740,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     quizPrevBtn.disabled = quizSession.currentIndex === 0;
     quizCheckBtn.disabled = selectedIdx === undefined || isChecked;
+
+    if (isChecked) {
+      quizCheckBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"></path><path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"></path><line x1="2" y1="2" x2="22" y2="22"></line></svg>`;
+      quizCheckBtn.setAttribute("title", "Answer Checked");
+      quizCheckBtn.setAttribute("aria-label", "Answer Checked");
+    } else {
+      quizCheckBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
+      quizCheckBtn.setAttribute("title", "Check Answer");
+      quizCheckBtn.setAttribute("aria-label", "Check Answer");
+    }
 
     if (quizSession.currentIndex === total - 1) {
       quizNextBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>`;
