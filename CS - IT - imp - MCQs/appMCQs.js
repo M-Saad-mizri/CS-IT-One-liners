@@ -751,26 +751,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const poolDefs = [
       { 
         id: "all", 
-        label: `All (${allCount})`, 
+        label: `All`, 
         iconSVG: ``,
         count: allCount 
       },
       { 
         id: "bookmarks", 
-        label: `Bookmarks (${bmCount})`, 
+        label: `(${bmCount})`, 
         iconSVG: `<svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`,
         count: bmCount 
       },
       { 
         id: "uncovered", 
         label: `Uncovered (${uncCount})`, 
-        iconSVG: `<svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg>`,
+        iconSVG: ``,
         count: uncCount 
       },
       { 
         id: "mistakes", 
         label: `Mistakes (${mistCount})`, 
-        iconSVG: `<svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>`,
+        iconSVG: ``,
         count: mistCount 
       }
     ].filter(p => p.count > 0);
@@ -789,6 +789,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const isActive = pool.id === selectedQuizPool;
         chip.className = `pool-chip ${isActive ? 'active' : ''}`;
         chip.setAttribute("data-pool", pool.id);
+        chip.setAttribute("title", pool.id === "bookmarks" ? `Bookmarks (${pool.count})` : pool.label);
         chip.innerHTML = `${pool.iconSVG}<span>${pool.label}</span>`;
 
         chip.addEventListener("click", () => {
