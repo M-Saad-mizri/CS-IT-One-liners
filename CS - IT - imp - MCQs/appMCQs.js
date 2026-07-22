@@ -257,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (searchActionsBar) searchActionsBar.style.display = "flex";
       factsListContainer.style.display = "flex";
       quizContainer.style.display = "none";
-      updateSubjectHeaderUI();
+      updateProgressUI();
       renderTopicPills();
       renderFactsList();
     } else {
