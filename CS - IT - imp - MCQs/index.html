@@ -177,29 +177,25 @@
           </select>
         </div>
 
-        <div class="form-group">
-          <label>Question Pool</label>
-          <div class="pool-selector" id="quizPoolSelector">
-            <button class="pool-chip active" data-pool="all">All MCQs</button>
-            <button class="pool-chip" data-pool="bookmarks">Bookmarks</button>
-            <button class="pool-chip" data-pool="uncovered">Uncovered</button>
-            <button class="pool-chip" data-pool="mistakes">Mistakes</button>
+        <div id="quizOptionsWrapper" style="display: none; flex-direction: column; gap: 18px;">
+          <div class="form-group">
+            <label>Question Pool</label>
+            <div class="pool-selector" id="quizPoolSelector">
+              <!-- Dynamically populated pool chips -->
+            </div>
           </div>
-        </div>
 
-        <div class="form-group">
-          <label>Number of Questions</label>
-          <div class="count-selector">
-            <button class="count-chip active" data-count="10">10 MCQs</button>
-            <button class="count-chip" data-count="20">20 MCQs</button>
-            <button class="count-chip" data-count="50">50 MCQs</button>
-            <button class="count-chip" data-count="ALL">All</button>
+          <div class="form-group">
+            <label>Number of Questions</label>
+            <div class="count-selector" id="quizCountSelector">
+              <!-- Dynamically populated count chips -->
+            </div>
           </div>
-        </div>
 
-        <button class="primary-btn start-quiz-btn" id="startQuizBtn">
-          Start Quiz Test
-        </button>
+          <button class="primary-btn start-quiz-btn" id="startQuizBtn">
+            Start Quiz Test
+          </button>
+        </div>
       </div>
 
       <!-- Quiz Attempt History Card -->

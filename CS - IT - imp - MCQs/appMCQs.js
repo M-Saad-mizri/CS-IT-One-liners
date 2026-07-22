@@ -641,6 +641,155 @@ document.addEventListener("DOMContentLoaded", () => {
   let selectedQuizCount = 10;
   let lastAttemptedQuizId = null;
 
+  const quizOptionsWrapper = document.getElementById("quizOptionsWrapper");
+  const quizPoolSelector = document.getElementById("quizPoolSelector");
+  const quizCountSelector = document.getElementById("quizCountSelector");
+
+  function getDynamicCountSteps(N) {
+    if (N <= 0) return [];
+    if (N === 1) return [{ label: "1 MCQ", value: "ALL" }];
+    if (N <= 4) {
+      const steps = [];
+      for (let i = 1; i < N; i++) {
+        steps.push({ label: `${i} MCQ${i > 1 ? 's' : ''}`, value: i });
+      }
+      steps.push({ label: `All (${N})`, value: "ALL" });
+      return steps;
+    }
+    if (N <= 10) {
+      const s1 = Math.max(1, Math.round(N * 0.3));
+      const s2 = Math.min(N - 1, Math.max(s1 + 1, Math.round(N * 0.7)));
+      const steps = [
+        { label: `${s1} MCQs`, value: s1 },
+        { label: `${s2} MCQs`, value: s2 },
+        { label: `All (${N})`, value: "ALL" }
+      ];
+      return steps;
+    }
+    if (N <= 25) {
+      const s1 = Math.round(N * 0.25);
+      const s2 = Math.round(N * 0.50);
+      const s3 = Math.round(N * 0.75);
+      const raw = Array.from(new Set([s1, s2, s3])).filter(v => v > 0 && v < N);
+      const steps = raw.map(v => ({ label: `${v} MCQs`, value: v }));
+      steps.push({ label: `All (${N})`, value: "ALL" });
+      return steps;
+    }
+    if (N <= 60) {
+      const raw = Array.from(new Set([10, 20, 35])).filter(v => v < N);
+      const steps = raw.map(v => ({ label: `${v} MCQs`, value: v }));
+      steps.push({ label: `All (${N})`, value: "ALL" });
+      return steps;
+    }
+    const raw = Array.from(new Set([10, 25, 50, 100])).filter(v => v < N);
+    const steps = raw.map(v => ({ label: `${v} MCQs`, value: v }));
+    steps.push({ label: `All (${N})`, value: "ALL" });
+    return steps;
+  }
+
+  function renderCountChips(availableCount) {
+    if (!quizCountSelector) return;
+    quizCountSelector.innerHTML = "";
+
+    const steps = getDynamicCountSteps(availableCount);
+    if (steps.length === 0) return;
+
+    // Pick first step or "ALL" as default selectedQuizCount
+    selectedQuizCount = steps[0].value;
+
+    steps.forEach((step, idx) => {
+      const chip = document.createElement("button");
+      chip.className = `count-chip ${idx === 0 ? 'active' : ''}`;
+      chip.setAttribute("data-count", step.value);
+      chip.textContent = step.label;
+
+      chip.addEventListener("click", () => {
+        const allChips = quizCountSelector.querySelectorAll(".count-chip");
+        allChips.forEach(c => c.classList.remove("active"));
+        chip.classList.add("active");
+        selectedQuizCount = step.value;
+      });
+
+      quizCountSelector.appendChild(chip);
+    });
+  }
+
+  function updateQuizOptionsForSelectedTopic() {
+    const topicVal = quizTopicSelect ? quizTopicSelect.value : "";
+    if (!topicVal) {
+      if (quizOptionsWrapper) quizOptionsWrapper.style.display = "none";
+      return;
+    }
+
+    const allMCQs = getActiveSubjectMCQs();
+    const topicMCQs = topicVal === "ALL" ? allMCQs : allMCQs.filter(m => m.category === topicVal);
+
+    if (topicMCQs.length === 0) {
+      if (quizOptionsWrapper) quizOptionsWrapper.style.display = "none";
+      return;
+    }
+
+    // Reveal options wrapper
+    if (quizOptionsWrapper) {
+      quizOptionsWrapper.style.display = "flex";
+    }
+
+    // Calculate pool counts for selected topic
+    const coveredList = state.covered[state.activeSubject] || [];
+    const bookmarkedList = state.bookmarks[state.activeSubject] || [];
+    const attempts = state.attempts[state.activeSubject] || {};
+
+    const allCount = topicMCQs.length;
+    const bmCount = topicMCQs.filter(m => bookmarkedList.includes(m.id)).length;
+    const uncCount = topicMCQs.filter(m => !coveredList.includes(m.id)).length;
+    const mistCount = topicMCQs.filter(m => {
+      const att = attempts[m.id];
+      return att && !att.isCorrect && att.wrongOptions && att.wrongOptions.length > 0;
+    }).length;
+
+    // Define pool objects and filter only those with count > 0
+    const poolDefs = [
+      { id: "all", label: `All MCQs (${allCount})`, count: allCount },
+      { id: "bookmarks", label: `Bookmarks (${bmCount})`, count: bmCount },
+      { id: "uncovered", label: `Uncovered (${uncCount})`, count: uncCount },
+      { id: "mistakes", label: `Mistakes (${mistCount})`, count: mistCount }
+    ].filter(p => p.count > 0);
+
+    // If current selectedQuizPool is not among available pools, pick the first pool
+    const activePoolExists = poolDefs.some(p => p.id === selectedQuizPool);
+    if (!activePoolExists && poolDefs.length > 0) {
+      selectedQuizPool = poolDefs[0].id;
+    }
+
+    // Render Pool Chips
+    if (quizPoolSelector) {
+      quizPoolSelector.innerHTML = "";
+      poolDefs.forEach(pool => {
+        const chip = document.createElement("button");
+        const isActive = pool.id === selectedQuizPool;
+        chip.className = `pool-chip ${isActive ? 'active' : ''}`;
+        chip.setAttribute("data-pool", pool.id);
+        chip.textContent = pool.label;
+
+        chip.addEventListener("click", () => {
+          const allPoolChips = quizPoolSelector.querySelectorAll(".pool-chip");
+          allPoolChips.forEach(c => c.classList.remove("active"));
+          chip.classList.add("active");
+          selectedQuizPool = pool.id;
+          renderCountChips(pool.count);
+        });
+
+        quizPoolSelector.appendChild(chip);
+      });
+    }
+
+    // Render Count Chips for active pool
+    const activePoolDef = poolDefs.find(p => p.id === selectedQuizPool) || poolDefs[0];
+    if (activePoolDef) {
+      renderCountChips(activePoolDef.count);
+    }
+  }
+
   function initQuizSetup() {
     const quizHistoryCard = document.getElementById("quizHistoryCard");
     quizSetupCard.style.display = "flex";
@@ -652,6 +801,14 @@ document.addEventListener("DOMContentLoaded", () => {
       quizTopicSelect.innerHTML = "";
       const allMCQs = getActiveSubjectMCQs();
       const topics = getAvailableTopics();
+
+      // Placeholder prompt option
+      const promptOpt = document.createElement("option");
+      promptOpt.value = "";
+      promptOpt.disabled = true;
+      promptOpt.selected = true;
+      promptOpt.textContent = "-- Select Category / Topic --";
+      quizTopicSelect.appendChild(promptOpt);
 
       // ALL Option
       const allOpt = document.createElement("option");
@@ -679,30 +836,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         quizTopicSelect.appendChild(opt);
       });
+
+      // Add change event listener
+      quizTopicSelect.removeEventListener("change", updateQuizOptionsForSelectedTopic);
+      quizTopicSelect.addEventListener("change", updateQuizOptionsForSelectedTopic);
     }
 
-    // Pool Selector Handler
-    const poolSelector = document.getElementById("quizPoolSelector");
-    if (poolSelector) {
-      const poolChips = poolSelector.querySelectorAll(".pool-chip");
-      poolChips.forEach(chip => {
-        chip.addEventListener("click", () => {
-          poolChips.forEach(c => c.classList.remove("active"));
-          chip.classList.add("active");
-          selectedQuizPool = chip.getAttribute("data-pool");
-        });
-      });
+    // Hide options wrapper initially until topic is selected
+    if (quizOptionsWrapper) {
+      quizOptionsWrapper.style.display = "none";
     }
-
-    // Count Chips Handler
-    const countChips = quizSetupCard.querySelectorAll(".count-chip");
-    countChips.forEach(chip => {
-      chip.addEventListener("click", () => {
-        countChips.forEach(c => c.classList.remove("active"));
-        chip.classList.add("active");
-        selectedQuizCount = chip.getAttribute("data-count");
-      });
-    });
 
     renderQuizHistoryList();
   }
