@@ -173,18 +173,18 @@
         <div class="form-group">
           <label>Select Category</label>
           <select id="quizTopicSelect" class="form-select">
-            <option value="ALL">All High-Yield Networking Topics (220 MCQs)</option>
-            <option value="OSI Model">OSI Model (40 MCQs)</option>
-            <option value="TCP/IP Model">TCP/IP Model (10 MCQs)</option>
-            <option value="IPv4 Addressing">IPv4 Addressing (20 MCQs)</option>
-            <option value="Subnetting">Subnetting (30 MCQs)</option>
-            <option value="TCP vs UDP">TCP vs UDP (30 MCQs)</option>
-            <option value="Router vs Switch vs Hub">Router vs Switch vs Hub (20 MCQs)</option>
-            <option value="Protocols">Application Layer Protocols (30 MCQs)</option>
-            <option value="Well-Known Ports">Well-Known Ports (20 MCQs)</option>
-            <option value="Routing Basics">Routing Basics (10 MCQs)</option>
-            <option value="Network Topologies">Network Topologies (10 MCQs)</option>
+            <!-- Dynamically populated topics -->
           </select>
+        </div>
+
+        <div class="form-group">
+          <label>Question Pool</label>
+          <div class="pool-selector" id="quizPoolSelector">
+            <button class="pool-chip active" data-pool="all">All MCQs</button>
+            <button class="pool-chip" data-pool="bookmarks">Bookmarks</button>
+            <button class="pool-chip" data-pool="uncovered">Uncovered</button>
+            <button class="pool-chip" data-pool="mistakes">Mistakes</button>
+          </div>
         </div>
 
         <div class="form-group">
@@ -200,6 +200,17 @@
         <button class="primary-btn start-quiz-btn" id="startQuizBtn">
           Start Quiz Test
         </button>
+      </div>
+
+      <!-- Quiz Attempt History Card -->
+      <div class="quiz-history-card" id="quizHistoryCard">
+        <div class="quiz-history-header">
+          <h3>Attempt History</h3>
+          <button class="danger-btn-outline btn-sm" id="clearQuizHistoryBtn">Clear History</button>
+        </div>
+        <div class="quiz-history-list" id="quizHistoryList">
+          <!-- Dynamically populated history entries -->
+        </div>
       </div>
 
       <!-- Active Quiz Card -->
@@ -275,8 +286,21 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button class="secondary-btn" id="modalReviewMistakesBtn">Review Mistakes</button>
+        <button class="secondary-btn" id="modalReviewMistakesBtn">Review Details</button>
         <button class="primary-btn" id="modalRetakeQuizBtn">Retake Quiz</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz History Detail Breakdown Modal -->
+  <div class="modal-overlay" id="quizHistoryDetailModal" style="display: none;">
+    <div class="modal-card modal-large">
+      <div class="modal-header">
+        <h2 id="historyDetailTitle">Quiz Attempt Details</h2>
+        <button class="close-btn" id="historyDetailModalClose">&times;</button>
+      </div>
+      <div class="modal-body" id="historyDetailModalBody">
+        <!-- Dynamic Breakdown -->
       </div>
     </div>
   </div>

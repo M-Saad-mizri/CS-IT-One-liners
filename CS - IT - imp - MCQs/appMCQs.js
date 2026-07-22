@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
     checkpoints: {},        // { [subjectName]: id }
     attempts: {},           // { [subjectName]: { [mcqId]: { wrongOptions: [0, 1], isCorrect: boolean } } }
     revealedAnswers: {},    // { [subjectName]: [id1, id2, ...] }
-    quizStats: {}           // { [subjectName]: { totalAttempted: number, totalCorrect: number } }
+    quizStats: {},          // { [subjectName]: { totalAttempted: number, totalCorrect: number } }
+    quizHistory: []         // Array of past quiz attempt objects
   };
 
   // --- QUIZ TEST SESSION STATE ---
@@ -113,29 +114,34 @@ document.addEventListener("DOMContentLoaded", () => {
   let searchFilter = "";
   let currentFilter = "all"; // "all" | "bookmarks" | "uncovered" | "mistakes"
 
+  // --- TOPIC COVERAGE HELPER ---
+  function isTopicCovered(topic) {
+    const allMCQs = getActiveSubjectMCQs();
+    const topicMCQs = topic === "ALL" ? allMCQs : allMCQs.filter(m => m.category === topic);
+    if (topicMCQs.length === 0) return false;
+
+    // Check if user attempted at least 1 quiz for this topic
+    const history = state.quizHistory || [];
+    const hasQuizAttempt = history.some(h => 
+      h.subject === state.activeSubject && (h.category === topic || h.category === "ALL")
+    );
+    if (hasQuizAttempt) return true;
+
+    // Or check if all MCQs in this topic are covered in practice mode
+    const coveredList = state.covered[state.activeSubject] || [];
+    return topicMCQs.every(m => coveredList.includes(m.id));
+  }
+
   // --- STATE PERSISTENCE ---
   function loadState() {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
-        state = {
-          activeSubject: parsed.activeSubject || "Computer Networking",
-          theme: parsed.theme || "dark",
-          showAllAnswers: !!parsed.showAllAnswers,
-          activeMode: parsed.activeMode || "practice",
-          selectedTopic: parsed.selectedTopic || "ALL",
-          customSubjects: parsed.customSubjects || {},
-          bookmarks: parsed.bookmarks || {},
-          covered: parsed.covered || {},
-          checkpoints: parsed.checkpoints || {},
-          attempts: parsed.attempts || {},
-          revealedAnswers: parsed.revealedAnswers || {},
-          quizStats: parsed.quizStats || {}
-        };
+        state = { ...state, ...parsed };
       }
     } catch (e) {
-      console.error("Failed to load state:", e);
+      console.error("Failed to load state", e);
     }
   }
 
@@ -143,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     } catch (e) {
-      console.error("Failed to save state:", e);
+      console.error("Failed to save state", e);
     }
   }
 
@@ -258,7 +264,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // "All" Pill
     const allPill = document.createElement("button");
-    allPill.className = `topic-pill ${state.selectedTopic === 'ALL' ? 'active' : ''}`;
+    const isAllCov = isTopicCovered("ALL");
+    allPill.className = `topic-pill ${state.selectedTopic === 'ALL' ? 'active' : ''} ${isAllCov ? 'is-covered' : ''}`;
     allPill.textContent = `All (${allMCQs.length})`;
     allPill.addEventListener("click", () => {
       state.selectedTopic = "ALL";
@@ -272,8 +279,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Individual Topics
     topics.forEach(topic => {
       const topicCount = allMCQs.filter(m => m.category === topic).length;
+      const isCov = isTopicCovered(topic);
       const pill = document.createElement("button");
-      pill.className = `topic-pill ${state.selectedTopic === topic ? 'active' : ''}`;
+      pill.className = `topic-pill ${state.selectedTopic === topic ? 'active' : ''} ${isCov ? 'is-covered' : ''}`;
       pill.textContent = `${topic} (${topicCount})`;
       pill.addEventListener("click", () => {
         state.selectedTopic = topic;
@@ -629,12 +637,64 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // --- QUIZ TEST ENGINE ---
+  let selectedQuizPool = "all"; // "all" | "bookmarks" | "uncovered" | "mistakes"
   let selectedQuizCount = 10;
+  let lastAttemptedQuizId = null;
 
   function initQuizSetup() {
+    const quizHistoryCard = document.getElementById("quizHistoryCard");
     quizSetupCard.style.display = "flex";
+    if (quizHistoryCard) quizHistoryCard.style.display = "flex";
     quizActiveCard.style.display = "none";
 
+    // Dynamically populate quizTopicSelect with visual coverage styling
+    if (quizTopicSelect) {
+      quizTopicSelect.innerHTML = "";
+      const allMCQs = getActiveSubjectMCQs();
+      const topics = getAvailableTopics();
+
+      // ALL Option
+      const allOpt = document.createElement("option");
+      allOpt.value = "ALL";
+      allOpt.textContent = `All Topics (${allMCQs.length} MCQs)`;
+      if (isTopicCovered("ALL")) {
+        allOpt.className = "is-topic-covered";
+        allOpt.style.backgroundColor = "rgba(16, 185, 129, 0.18)";
+        allOpt.style.color = "#34D399";
+        allOpt.style.fontWeight = "600";
+      }
+      quizTopicSelect.appendChild(allOpt);
+
+      // Topic Options
+      topics.forEach(topic => {
+        const topicCount = allMCQs.filter(m => m.category === topic).length;
+        const opt = document.createElement("option");
+        opt.value = topic;
+        opt.textContent = `${topic} (${topicCount} MCQs)`;
+        if (isTopicCovered(topic)) {
+          opt.className = "is-topic-covered";
+          opt.style.backgroundColor = "rgba(16, 185, 129, 0.18)";
+          opt.style.color = "#34D399";
+          opt.style.fontWeight = "600";
+        }
+        quizTopicSelect.appendChild(opt);
+      });
+    }
+
+    // Pool Selector Handler
+    const poolSelector = document.getElementById("quizPoolSelector");
+    if (poolSelector) {
+      const poolChips = poolSelector.querySelectorAll(".pool-chip");
+      poolChips.forEach(chip => {
+        chip.addEventListener("click", () => {
+          poolChips.forEach(c => c.classList.remove("active"));
+          chip.classList.add("active");
+          selectedQuizPool = chip.getAttribute("data-pool");
+        });
+      });
+    }
+
+    // Count Chips Handler
     const countChips = quizSetupCard.querySelectorAll(".count-chip");
     countChips.forEach(chip => {
       chip.addEventListener("click", () => {
@@ -643,16 +703,35 @@ document.addEventListener("DOMContentLoaded", () => {
         selectedQuizCount = chip.getAttribute("data-count");
       });
     });
+
+    renderQuizHistoryList();
   }
 
   startQuizBtn.addEventListener("click", () => {
     const allMCQs = getActiveSubjectMCQs();
-    const topicVal = quizTopicSelect.value;
+    const topicVal = quizTopicSelect ? quizTopicSelect.value : "ALL";
 
+    // 1. Topic Filter
     let filtered = topicVal === "ALL" ? [...allMCQs] : allMCQs.filter(m => m.category === topicVal);
 
+    // 2. Pool Filter (Bookmarks, Uncovered, Mistakes)
+    const coveredList = state.covered[state.activeSubject] || [];
+    const bookmarkedList = state.bookmarks[state.activeSubject] || [];
+    const attempts = state.attempts[state.activeSubject] || {};
+
+    if (selectedQuizPool === "bookmarks") {
+      filtered = filtered.filter(m => bookmarkedList.includes(m.id));
+    } else if (selectedQuizPool === "uncovered") {
+      filtered = filtered.filter(m => !coveredList.includes(m.id));
+    } else if (selectedQuizPool === "mistakes") {
+      filtered = filtered.filter(m => {
+        const att = attempts[m.id];
+        return att && !att.isCorrect && att.wrongOptions && att.wrongOptions.length > 0;
+      });
+    }
+
     if (filtered.length === 0) {
-      alert("No MCQs available for this selected topic.");
+      alert(`No MCQs found matching topic "${topicVal}" and pool "${selectedQuizPool}". Try selecting another option!`);
       return;
     }
 
@@ -679,6 +758,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     quizSetupCard.style.display = "none";
+    const quizHistoryCard = document.getElementById("quizHistoryCard");
+    if (quizHistoryCard) quizHistoryCard.style.display = "none";
     quizActiveCard.style.display = "flex";
     renderActiveQuizQuestion();
   });
@@ -819,8 +900,39 @@ document.addEventListener("DOMContentLoaded", () => {
     subStats.totalAttempted += total;
     subStats.totalCorrect += correct;
     state.quizStats[state.activeSubject] = subStats;
+
+    // Save Complete Attempt History Entry with Details
+    if (!state.quizHistory) state.quizHistory = [];
+    const historyItem = {
+      id: "qhist_" + Date.now(),
+      timestamp: new Date().toISOString(),
+      dateFormatted: new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      subject: state.activeSubject,
+      category: quizTopicSelect ? quizTopicSelect.value : "ALL",
+      poolFilter: selectedQuizPool,
+      totalQuestions: total,
+      correctCount: correct,
+      wrongCount: wrong,
+      scorePercent: percent,
+      timeSpentSeconds: quizSession.timerSeconds,
+      timeSpentFormatted: `${mins}:${secs}`,
+      questions: quizSession.questions.map(q => ({
+        id: q.id,
+        question: q.question,
+        category: q.category || "General",
+        userAnswer: quizSession.userAnswers[q.id],
+        correctAnswer: q.answerIndex,
+        isCorrect: quizSession.userAnswers[q.id] === q.answerIndex,
+        options: q.options,
+        explanation: q.explanation || ""
+      }))
+    };
+
+    state.quizHistory.unshift(historyItem);
+    lastAttemptedQuizId = historyItem.id;
     saveState();
     updateProgressUI();
+    renderTopicPills();
 
     modalScorePercent.textContent = `${percent}%`;
     modalScoreFraction.textContent = `${correct} / ${total} Correct`;
@@ -831,9 +943,122 @@ document.addEventListener("DOMContentLoaded", () => {
     quizResultsModal.style.display = "flex";
   }
 
+  // --- QUIZ ATTEMPT HISTORY LIST & BREAKDOWN MODAL ---
+  const quizHistoryList = document.getElementById("quizHistoryList");
+  const clearQuizHistoryBtn = document.getElementById("clearQuizHistoryBtn");
+  const quizHistoryDetailModal = document.getElementById("quizHistoryDetailModal");
+  const historyDetailModalClose = document.getElementById("historyDetailModalClose");
+  const historyDetailTitle = document.getElementById("historyDetailTitle");
+  const historyDetailModalBody = document.getElementById("historyDetailModalBody");
+
+  function renderQuizHistoryList() {
+    if (!quizHistoryList) return;
+    quizHistoryList.innerHTML = "";
+
+    const history = (state.quizHistory || []).filter(h => h.subject === state.activeSubject);
+
+    if (history.length === 0) {
+      quizHistoryList.innerHTML = `
+        <div class="empty-history">
+          <p>No past quiz attempts yet. Start a quiz test above to track your progress!</p>
+        </div>
+      `;
+      return;
+    }
+
+    history.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "history-item-card";
+
+      let scoreClass = "score-high";
+      if (item.scorePercent < 50) scoreClass = "score-low";
+      else if (item.scorePercent < 75) scoreClass = "score-med";
+
+      card.innerHTML = `
+        <div class="history-item-main">
+          <div class="history-item-left">
+            <span class="history-date">${item.dateFormatted}</span>
+            <div class="history-tags">
+              <span class="history-tag category">${item.category}</span>
+              <span class="history-tag pool">${item.poolFilter.toUpperCase()}</span>
+            </div>
+          </div>
+          <div class="history-item-right">
+            <span class="history-score-badge ${scoreClass}">${item.scorePercent}%</span>
+          </div>
+        </div>
+        <div class="history-item-sub">
+          <span>${item.correctCount} / ${item.totalQuestions} Correct</span>
+          <span>⏱️ ${item.timeSpentFormatted}</span>
+          <button class="card-action-btn view-history-btn" data-id="${item.id}">Review Details</button>
+        </div>
+      `;
+
+      card.querySelector(".view-history-btn").addEventListener("click", () => {
+        openHistoryDetailModal(item.id);
+      });
+
+      quizHistoryList.appendChild(card);
+    });
+  }
+
+  if (clearQuizHistoryBtn) {
+    clearQuizHistoryBtn.addEventListener("click", () => {
+      if (!confirm("Are you sure you want to clear quiz attempt history for this subject?")) return;
+      state.quizHistory = (state.quizHistory || []).filter(h => h.subject !== state.activeSubject);
+      saveState();
+      renderQuizHistoryList();
+      renderTopicPills();
+    });
+  }
+
+  function openHistoryDetailModal(historyId) {
+    const historyItem = (state.quizHistory || []).find(h => h.id === historyId);
+    if (!historyItem) return;
+
+    historyDetailTitle.textContent = `${historyItem.category} Quiz Details (${historyItem.scorePercent}%)`;
+
+    historyDetailModalBody.innerHTML = `
+      <div class="history-summary-box">
+        <div><strong>Score:</strong> ${historyItem.scorePercent}% (${historyItem.correctCount}/${historyItem.totalQuestions})</div>
+        <div><strong>Time Taken:</strong> ${historyItem.timeSpentFormatted}</div>
+        <div><strong>Date:</strong> ${historyItem.dateFormatted}</div>
+      </div>
+      <div class="history-questions-breakdown">
+        ${historyItem.questions.map((q, idx) => `
+          <div class="history-q-card ${q.isCorrect ? 'q-correct' : 'q-wrong'}">
+            <div class="history-q-header">
+              <span class="history-q-num">Q${idx + 1} (${q.category})</span>
+              <span class="history-q-status">${q.isCorrect ? '✓ Correct' : '✕ Incorrect'}</span>
+            </div>
+            <p class="history-q-text">${q.question}</p>
+            <div class="history-q-options">
+              ${q.options.map((opt, optIdx) => {
+                let optClass = "";
+                if (optIdx === q.correctAnswer) optClass = "opt-correct";
+                else if (optIdx === q.userAnswer) optClass = "opt-user-wrong";
+                const letter = String.fromCharCode(65 + optIdx);
+                return `<div class="history-opt ${optClass}">${letter}. ${opt}</div>`;
+              }).join("")}
+            </div>
+            ${q.explanation ? `<div class="history-q-explanation"><strong>Explanation:</strong> ${q.explanation}</div>` : ''}
+          </div>
+        `).join("")}
+      </div>
+    `;
+
+    quizHistoryDetailModal.style.display = "flex";
+  }
+
+  if (historyDetailModalClose) {
+    historyDetailModalClose.addEventListener("click", () => {
+      quizHistoryDetailModal.style.display = "none";
+    });
+  }
+
   quizModalClose.addEventListener("click", () => {
     quizResultsModal.style.display = "none";
-    switchMode("practice");
+    initQuizSetup();
   });
 
   modalRetakeQuizBtn.addEventListener("click", () => {
@@ -843,9 +1068,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   modalReviewMistakesBtn.addEventListener("click", () => {
     quizResultsModal.style.display = "none";
-    currentFilter = "mistakes";
-    updateFilterChipUI();
-    switchMode("practice");
+    if (lastAttemptedQuizId) {
+      openHistoryDetailModal(lastAttemptedQuizId);
+    } else {
+      switchMode("practice");
+    }
   });
 
   // --- FILTER CHIPS LOGIC ---
