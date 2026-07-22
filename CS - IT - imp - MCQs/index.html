@@ -226,9 +226,21 @@
         </div>
 
         <div class="quiz-nav-footer">
-          <button class="secondary-btn" id="quizPrevBtn" disabled>Previous</button>
-          <button class="secondary-btn" id="quizCheckBtn" disabled>Check Answer</button>
-          <button class="primary-btn" id="quizNextBtn">Next Question</button>
+          <button class="secondary-btn quiz-nav-icon-btn" id="quizPrevBtn" disabled title="Previous Question" aria-label="Previous Question">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="secondary-btn quiz-nav-icon-btn" id="quizCheckBtn" disabled title="Check Answer" aria-label="Check Answer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </button>
+          <button class="primary-btn quiz-nav-icon-btn" id="quizNextBtn" title="Next Question" aria-label="Next Question">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
         </div>
       </div>
     </section>
