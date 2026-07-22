@@ -139,13 +139,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (topicMCQs.length === 0) return { count: 0, total: 0, percent: 0 };
 
     let count = 0;
+    const attempts = state.attempts[state.activeSubject] || {};
+    const coveredList = state.covered[state.activeSubject] || [];
+
     if (state.activeMode === "quiz") {
-      // Quiz Mode: Correct Answered MCQs / Total MCQs
-      const attempts = state.attempts[state.activeSubject] || {};
-      count = topicMCQs.filter(m => attempts[m.id] && attempts[m.id].isCorrect).length;
+      // Quiz Mode: Correctly answered or covered MCQs / Total MCQs
+      count = topicMCQs.filter(m => (attempts[m.id] && attempts[m.id].isCorrect) || coveredList.includes(m.id)).length;
     } else {
       // Practice Mode: Covered MCQs / Total MCQs
-      const coveredList = state.covered[state.activeSubject] || [];
       count = topicMCQs.filter(m => coveredList.includes(m.id)).length;
     }
 
@@ -1091,14 +1092,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let correct = 0;
     if (!state.covered[state.activeSubject]) state.covered[state.activeSubject] = [];
+    if (!state.attempts[state.activeSubject]) state.attempts[state.activeSubject] = {};
+
     quizSession.questions.forEach(q => {
       const sel = quizSession.userAnswers[q.id];
-      if (sel === q.answerIndex) {
+      const isCorrect = sel === q.answerIndex;
+      let att = state.attempts[state.activeSubject][q.id] || { wrongOptions: [], isCorrect: false };
+
+      if (isCorrect) {
         correct++;
+        att.isCorrect = true;
         if (!state.covered[state.activeSubject].includes(q.id)) {
           state.covered[state.activeSubject].push(q.id);
         }
+      } else if (sel !== undefined && sel !== null) {
+        if (!att.wrongOptions.includes(sel)) {
+          att.wrongOptions.push(sel);
+        }
       }
+      state.attempts[state.activeSubject][q.id] = att;
     });
 
     const total = quizSession.questions.length;
