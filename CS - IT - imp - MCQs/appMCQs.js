@@ -647,22 +647,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getDynamicCountSteps(N) {
     if (N <= 0) return [];
-    if (N === 1) return [{ label: "1 MCQ", value: "ALL" }];
+    if (N === 1) return [{ label: "All", value: "ALL" }];
     if (N <= 4) {
       const steps = [];
       for (let i = 1; i < N; i++) {
-        steps.push({ label: `${i} MCQ${i > 1 ? 's' : ''}`, value: i });
+        steps.push({ label: `${i}`, value: i });
       }
-      steps.push({ label: `All (${N})`, value: "ALL" });
+      steps.push({ label: "All", value: "ALL" });
       return steps;
     }
     if (N <= 10) {
       const s1 = Math.max(1, Math.round(N * 0.3));
       const s2 = Math.min(N - 1, Math.max(s1 + 1, Math.round(N * 0.7)));
       const steps = [
-        { label: `${s1} MCQs`, value: s1 },
-        { label: `${s2} MCQs`, value: s2 },
-        { label: `All (${N})`, value: "ALL" }
+        { label: `${s1}`, value: s1 },
+        { label: `${s2}`, value: s2 },
+        { label: "All", value: "ALL" }
       ];
       return steps;
     }
@@ -671,19 +671,19 @@ document.addEventListener("DOMContentLoaded", () => {
       const s2 = Math.round(N * 0.50);
       const s3 = Math.round(N * 0.75);
       const raw = Array.from(new Set([s1, s2, s3])).filter(v => v > 0 && v < N);
-      const steps = raw.map(v => ({ label: `${v} MCQs`, value: v }));
-      steps.push({ label: `All (${N})`, value: "ALL" });
+      const steps = raw.map(v => ({ label: `${v}`, value: v }));
+      steps.push({ label: "All", value: "ALL" });
       return steps;
     }
     if (N <= 60) {
       const raw = Array.from(new Set([10, 20, 35])).filter(v => v < N);
-      const steps = raw.map(v => ({ label: `${v} MCQs`, value: v }));
-      steps.push({ label: `All (${N})`, value: "ALL" });
+      const steps = raw.map(v => ({ label: `${v}`, value: v }));
+      steps.push({ label: "All", value: "ALL" });
       return steps;
     }
     const raw = Array.from(new Set([10, 25, 50, 100])).filter(v => v < N);
-    const steps = raw.map(v => ({ label: `${v} MCQs`, value: v }));
-    steps.push({ label: `All (${N})`, value: "ALL" });
+    const steps = raw.map(v => ({ label: `${v}`, value: v }));
+    steps.push({ label: "All", value: "ALL" });
     return steps;
   }
 
@@ -747,12 +747,32 @@ document.addEventListener("DOMContentLoaded", () => {
       return att && !att.isCorrect && att.wrongOptions && att.wrongOptions.length > 0;
     }).length;
 
-    // Define pool objects and filter only those with count > 0
+    // Define pool objects with SVG icons and filter only those with count > 0
     const poolDefs = [
-      { id: "all", label: `All MCQs (${allCount})`, count: allCount },
-      { id: "bookmarks", label: `Bookmarks (${bmCount})`, count: bmCount },
-      { id: "uncovered", label: `Uncovered (${uncCount})`, count: uncCount },
-      { id: "mistakes", label: `Mistakes (${mistCount})`, count: mistCount }
+      { 
+        id: "all", 
+        label: `All (${allCount})`, 
+        iconSVG: ``,
+        count: allCount 
+      },
+      { 
+        id: "bookmarks", 
+        label: `Bookmarks (${bmCount})`, 
+        iconSVG: `<svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`,
+        count: bmCount 
+      },
+      { 
+        id: "uncovered", 
+        label: `Uncovered (${uncCount})`, 
+        iconSVG: `<svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg>`,
+        count: uncCount 
+      },
+      { 
+        id: "mistakes", 
+        label: `Mistakes (${mistCount})`, 
+        iconSVG: `<svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>`,
+        count: mistCount 
+      }
     ].filter(p => p.count > 0);
 
     // If current selectedQuizPool is not among available pools, pick the first pool
@@ -769,7 +789,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const isActive = pool.id === selectedQuizPool;
         chip.className = `pool-chip ${isActive ? 'active' : ''}`;
         chip.setAttribute("data-pool", pool.id);
-        chip.textContent = pool.label;
+        chip.innerHTML = `${pool.iconSVG}<span>${pool.label}</span>`;
 
         chip.addEventListener("click", () => {
           const allPoolChips = quizPoolSelector.querySelectorAll(".pool-chip");
