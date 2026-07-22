@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const bookmarkCount = document.getElementById("bookmarkCount");
 
   const topicsScroll = document.getElementById("topicsScroll");
+  const searchActionsBar = document.querySelector(".search-actions-bar");
   const searchInput = document.getElementById("searchInput");
   const searchClear = document.getElementById("searchClear");
 
@@ -253,13 +254,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (mode === "practice") {
       btnModePractice.classList.add("active");
       btnModeQuiz.classList.remove("active");
+      if (searchActionsBar) searchActionsBar.style.display = "flex";
       factsListContainer.style.display = "flex";
       quizContainer.style.display = "none";
+      updateSubjectHeaderUI();
       renderTopicPills();
       renderFactsList();
     } else {
       btnModeQuiz.classList.add("active");
       btnModePractice.classList.remove("active");
+      if (searchActionsBar) searchActionsBar.style.display = "none";
+      if (checkpointBanner) checkpointBanner.style.display = "none";
       factsListContainer.style.display = "none";
       quizContainer.style.display = "block";
       renderTopicPills();
@@ -359,9 +364,9 @@ document.addEventListener("DOMContentLoaded", () => {
     accuracyStat.textContent = quizStats.totalAttempted > 0 ? `Accuracy: ${accuracy}%` : `Accuracy: 0%`;
     bookmarkCount.textContent = `${bookmarkedCount} bookmarked`;
 
-    // Render Checkpoint Banner
+    // Render Checkpoint Banner (Only in practice mode)
     const checkpointId = state.checkpoints[state.activeSubject];
-    if (checkpointId) {
+    if (checkpointId && state.activeMode === "practice") {
       const mcqIndex = mcqs.findIndex(m => m.id === checkpointId);
       if (mcqIndex !== -1) {
         checkpointBanner.style.display = "flex";
