@@ -135,13 +135,21 @@ document.addEventListener("DOMContentLoaded", () => {
   function getTopicProgress(topic) {
     const allMCQs = getActiveSubjectMCQs();
     const topicMCQs = topic === "ALL" ? allMCQs : allMCQs.filter(m => m.category === topic);
-    if (topicMCQs.length === 0) return { correct: 0, total: 0, percent: 0 };
+    if (topicMCQs.length === 0) return { count: 0, total: 0, percent: 0 };
 
-    const coveredList = state.covered[state.activeSubject] || [];
-    const correctCount = topicMCQs.filter(m => coveredList.includes(m.id)).length;
-    const percent = Math.min(100, Math.max(0, Math.round((correctCount / topicMCQs.length) * 100)));
+    let count = 0;
+    if (state.activeMode === "quiz") {
+      // Quiz Mode: Correct Answered MCQs / Total MCQs
+      const attempts = state.attempts[state.activeSubject] || {};
+      count = topicMCQs.filter(m => attempts[m.id] && attempts[m.id].isCorrect).length;
+    } else {
+      // Practice Mode: Covered MCQs / Total MCQs
+      const coveredList = state.covered[state.activeSubject] || [];
+      count = topicMCQs.filter(m => coveredList.includes(m.id)).length;
+    }
 
-    return { correct: correctCount, total: topicMCQs.length, percent };
+    const percent = Math.min(100, Math.max(0, Math.round((count / topicMCQs.length) * 100)));
+    return { count, total: topicMCQs.length, percent };
   }
 
   // --- STATE PERSISTENCE ---
@@ -247,12 +255,14 @@ document.addEventListener("DOMContentLoaded", () => {
       btnModeQuiz.classList.remove("active");
       factsListContainer.style.display = "flex";
       quizContainer.style.display = "none";
+      renderTopicPills();
       renderFactsList();
     } else {
       btnModeQuiz.classList.add("active");
       btnModePractice.classList.remove("active");
       factsListContainer.style.display = "none";
       quizContainer.style.display = "block";
+      renderTopicPills();
       initQuizSetup();
     }
     window.scrollTo({ top: 0, behavior: "smooth" });
