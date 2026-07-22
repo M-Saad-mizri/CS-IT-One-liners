@@ -9691,10 +9691,3655 @@ const MICROPROCESSOR_MCQS = [
 ];
 
 
+const SOFTWARE_ENGINEERING_MCQS = [
+  {
+    "id": 1,
+    "category": "SDLC Phases",
+    "question": "Which phase of the Software Development Life Cycle (SDLC) identifies the needs and expectations of the users?",
+    "options": [
+      "System Design",
+      "Requirements Analysis",
+      "Testing",
+      "Maintenance"
+    ],
+    "answerIndex": 1,
+    "explanation": "Requirements Analysis identifies the needs and expectations of users."
+  },
+  {
+    "id": 2,
+    "category": "SDLC Phases",
+    "question": "During which SDLC phase is the software architecture designed?",
+    "options": [
+      "Coding",
+      "System Design",
+      "Testing",
+      "Deployment"
+    ],
+    "answerIndex": 1,
+    "explanation": "System Design defines system architecture, database design, and high-level structure."
+  },
+  {
+    "id": 3,
+    "category": "SDLC Phases",
+    "question": "Which SDLC phase converts the design into executable code?",
+    "options": [
+      "Design",
+      "Testing",
+      "Implementation",
+      "Maintenance"
+    ],
+    "answerIndex": 2,
+    "explanation": "Implementation (or Coding) converts system design into executable source code."
+  },
+  {
+    "id": 4,
+    "category": "SDLC Phases",
+    "question": "The primary objective of the testing phase is to:",
+    "options": [
+      "Gather user requirements",
+      "Improve documentation",
+      "Detect defects before deployment",
+      "Install software"
+    ],
+    "answerIndex": 2,
+    "explanation": "Testing aims to uncover defects and verify system compliance before customer deployment."
+  },
+  {
+    "id": 5,
+    "category": "SDLC Phases",
+    "question": "Which SDLC phase comes immediately after Requirements Analysis?",
+    "options": [
+      "Testing",
+      "System Design",
+      "Maintenance",
+      "Deployment"
+    ],
+    "answerIndex": 1,
+    "explanation": "System Design immediately follows Requirements Analysis in classical SDLC."
+  },
+  {
+    "id": 6,
+    "category": "SDLC Phases",
+    "question": "Which phase determines whether a proposed software project is technically and economically feasible?",
+    "options": [
+      "Design",
+      "Feasibility Study",
+      "Coding",
+      "Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Feasibility Study assesses technical, financial, and operational viability before full development."
+  },
+  {
+    "id": 7,
+    "category": "SDLC Phases",
+    "question": "Which SDLC phase involves preparing database structures, interface layouts, and system architecture?",
+    "options": [
+      "Requirement Analysis",
+      "System Design",
+      "Implementation",
+      "Maintenance"
+    ],
+    "answerIndex": 1,
+    "explanation": "System Design produces DB schemas, UI layouts, and architectural blueprints."
+  },
+  {
+    "id": 8,
+    "category": "SDLC Phases",
+    "question": "User interviews, questionnaires, and observations are commonly performed during:",
+    "options": [
+      "Coding",
+      "Requirements Analysis",
+      "Testing",
+      "Deployment"
+    ],
+    "answerIndex": 1,
+    "explanation": "Requirements Analysis utilizes interviews, questionnaires, and observations to gather user needs."
+  },
+  {
+    "id": 9,
+    "category": "SDLC Phases",
+    "question": "Which phase verifies that the developed software satisfies the specified requirements?",
+    "options": [
+      "Design",
+      "Coding",
+      "Testing",
+      "Maintenance"
+    ],
+    "answerIndex": 2,
+    "explanation": "Testing validates and verifies that the software fulfills specified SRS requirements."
+  },
+  {
+    "id": 10,
+    "category": "SDLC Phases",
+    "question": "Which SDLC phase begins after successful completion of testing?",
+    "options": [
+      "Requirement Analysis",
+      "Design",
+      "Deployment",
+      "Maintenance"
+    ],
+    "answerIndex": 2,
+    "explanation": "Deployment occurs right after successful testing and validation."
+  },
+  {
+    "id": 11,
+    "category": "SDLC Phases",
+    "question": "Correcting software faults after it has been delivered is part of:",
+    "options": [
+      "Implementation",
+      "Testing",
+      "Deployment",
+      "Maintenance"
+    ],
+    "answerIndex": 3,
+    "explanation": "Maintenance encompasses fixing bugs and enhancing software post-delivery."
+  },
+  {
+    "id": 12,
+    "category": "SDLC Phases",
+    "question": "During which phase are programming languages and development tools primarily used?",
+    "options": [
+      "Requirement Analysis",
+      "Design",
+      "Implementation",
+      "Feasibility Study"
+    ],
+    "answerIndex": 2,
+    "explanation": "Implementation is when developers write code using IDEs, compilers, and programming languages."
+  },
+  {
+    "id": 13,
+    "category": "SDLC Phases",
+    "question": "A software engineer prepares UML diagrams and database schemas. Which SDLC phase is being performed?",
+    "options": [
+      "Requirement Analysis",
+      "System Design",
+      "Testing",
+      "Maintenance"
+    ],
+    "answerIndex": 1,
+    "explanation": "Creating UML diagrams and database schemas is part of System Design."
+  },
+  {
+    "id": 14,
+    "category": "SDLC Phases",
+    "question": "Which SDLC phase produces the Software Requirements Specification (SRS)?",
+    "options": [
+      "Design",
+      "Requirements Analysis",
+      "Coding",
+      "Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Requirements Analysis produces the formal SRS document."
+  },
+  {
+    "id": 15,
+    "category": "SDLC Phases",
+    "question": "Installing software at the client's site is part of:",
+    "options": [
+      "Testing",
+      "Requirement Analysis",
+      "Deployment",
+      "Maintenance"
+    ],
+    "answerIndex": 2,
+    "explanation": "Deployment involves delivering and installing the application on customer servers."
+  },
+  {
+    "id": 16,
+    "category": "SDLC Phases",
+    "question": "A client requests a new reporting feature after the software has been delivered. This request is handled during:",
+    "options": [
+      "Requirement Analysis",
+      "Design",
+      "Testing",
+      "Maintenance"
+    ],
+    "answerIndex": 3,
+    "explanation": "Handling new feature requests post-delivery is perfective maintenance."
+  },
+  {
+    "id": 17,
+    "category": "SDLC Phases",
+    "question": "Which SDLC phase is mainly concerned with 'how the system will work'?",
+    "options": [
+      "Requirement Analysis",
+      "System Design",
+      "Testing",
+      "Deployment"
+    ],
+    "answerIndex": 1,
+    "explanation": "System Design determines HOW the system will operate."
+  },
+  {
+    "id": 18,
+    "category": "SDLC Phases",
+    "question": "Which SDLC phase is mainly concerned with 'what the system should do'?",
+    "options": [
+      "Requirements Analysis",
+      "System Design",
+      "Implementation",
+      "Testing"
+    ],
+    "answerIndex": 0,
+    "explanation": "Requirements Analysis specifies WHAT the system must accomplish."
+  },
+  {
+    "id": 19,
+    "category": "SDLC Phases",
+    "question": "Which deliverable is most commonly produced during the Design phase?",
+    "options": [
+      "Test Cases",
+      "Source Code",
+      "System Design Document (SDD)",
+      "User Manual"
+    ],
+    "answerIndex": 2,
+    "explanation": "System Design Document (SDD) is the main outcome of the design phase."
+  },
+  {
+    "id": 20,
+    "category": "SDLC Phases",
+    "question": "Arrange the following SDLC phases in the correct order: 1. Testing 2. Requirement Analysis 3. Design 4. Implementation",
+    "options": [
+      "2 -> 4 -> 3 -> 1",
+      "2 -> 3 -> 4 -> 1",
+      "3 -> 2 -> 4 -> 1",
+      "4 -> 2 -> 3 -> 1"
+    ],
+    "answerIndex": 1,
+    "explanation": "Correct SDLC sequence: Requirement Analysis (2) -> Design (3) -> Implementation (4) -> Testing (1)."
+  },
+  {
+    "id": 21,
+    "category": "SDLC Models",
+    "question": "In which SDLC model are all phases executed in a linear, sequential order?",
+    "options": [
+      "Spiral",
+      "Waterfall",
+      "Agile",
+      "Prototype"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Waterfall model processes phase by phase in strict sequential order."
+  },
+  {
+    "id": 22,
+    "category": "SDLC Models",
+    "question": "The Waterfall model is best suited for projects where:",
+    "options": [
+      "Requirements change frequently",
+      "Requirements are well defined and stable",
+      "Risk is very high",
+      "Continuous customer feedback is required"
+    ],
+    "answerIndex": 1,
+    "explanation": "Waterfall works best when requirements are clear, fixed, and unambiguous."
+  },
+  {
+    "id": 23,
+    "category": "SDLC Models",
+    "question": "Which SDLC model does NOT normally allow returning to previous phases?",
+    "options": [
+      "Waterfall",
+      "Agile",
+      "Spiral",
+      "Incremental"
+    ],
+    "answerIndex": 0,
+    "explanation": "Waterfall is linear and does not easily allow backward iteration."
+  },
+  {
+    "id": 24,
+    "category": "SDLC Models",
+    "question": "Which is a major disadvantage of the Waterfall model?",
+    "options": [
+      "Excessive customer involvement",
+      "Difficult to accommodate changing requirements",
+      "High development speed",
+      "Frequent releases"
+    ],
+    "answerIndex": 1,
+    "explanation": "Inability to adapt to late requirement changes is Waterfall's primary drawback."
+  },
+  {
+    "id": 25,
+    "category": "SDLC Models",
+    "question": "Which project is most suitable for the Waterfall model?",
+    "options": [
+      "Social media application",
+      "Startup MVP",
+      "Payroll system with fixed requirements",
+      "Research project"
+    ],
+    "answerIndex": 2,
+    "explanation": "Payroll systems with stable, well-understood government rules fit Waterfall best."
+  },
+  {
+    "id": 26,
+    "category": "SDLC Models",
+    "question": "Which SDLC model is best suited for changing requirements?",
+    "options": [
+      "Waterfall",
+      "V-Model",
+      "Agile",
+      "RAD"
+    ],
+    "answerIndex": 2,
+    "explanation": "Agile accommodates frequent requirement changes and iterative evolution."
+  },
+  {
+    "id": 27,
+    "category": "SDLC Models",
+    "question": "Agile development emphasizes:",
+    "options": [
+      "Extensive documentation",
+      "Customer collaboration",
+      "Sequential execution",
+      "One-time delivery"
+    ],
+    "answerIndex": 1,
+    "explanation": "Agile prioritizes customer collaboration over heavy documentation."
+  },
+  {
+    "id": 28,
+    "category": "SDLC Models",
+    "question": "Agile delivers software:",
+    "options": [
+      "Only after project completion",
+      "In small iterative increments",
+      "After documentation only",
+      "After final testing only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Agile delivers working software in short, iterative release cycles."
+  },
+  {
+    "id": 29,
+    "category": "SDLC Models",
+    "question": "Agile is based on:",
+    "options": [
+      "Long development cycles",
+      "Fixed requirements",
+      "Iterative and incremental development",
+      "Single deployment"
+    ],
+    "answerIndex": 2,
+    "explanation": "Agile combines iterative refinement with incremental functionality delivery."
+  },
+  {
+    "id": 30,
+    "category": "SDLC Models",
+    "question": "Which is NOT a characteristic of Agile?",
+    "options": [
+      "Customer feedback",
+      "Frequent releases",
+      "Iterative development",
+      "Rigid sequential phases"
+    ],
+    "answerIndex": 3,
+    "explanation": "Rigid sequential phases belong to Waterfall, not Agile."
+  },
+  {
+    "id": 31,
+    "category": "SDLC Models",
+    "question": "Which SDLC model is known as a risk-driven model?",
+    "options": [
+      "Agile",
+      "Spiral",
+      "Waterfall",
+      "Prototype"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Spiral model incorporates explicit risk analysis in every iteration."
+  },
+  {
+    "id": 32,
+    "category": "SDLC Models",
+    "question": "Spiral model is most appropriate for:",
+    "options": [
+      "Small school assignment",
+      "Stable requirements",
+      "Large high-risk projects",
+      "Very short projects"
+    ],
+    "answerIndex": 2,
+    "explanation": "Spiral is designed for complex, high-risk, mission-critical systems."
+  },
+  {
+    "id": 33,
+    "category": "SDLC Models",
+    "question": "Risk analysis is performed repeatedly in:",
+    "options": [
+      "Waterfall",
+      "Spiral",
+      "RAD",
+      "V-Model"
+    ],
+    "answerIndex": 1,
+    "explanation": "Every loop of the Spiral model begins with risk evaluation."
+  },
+  {
+    "id": 34,
+    "category": "SDLC Models",
+    "question": "Which activity distinguishes the Spiral model from most other SDLC models?",
+    "options": [
+      "Coding",
+      "Testing",
+      "Risk assessment",
+      "Documentation"
+    ],
+    "answerIndex": 2,
+    "explanation": "Formal risk assessment is the hallmark of the Spiral model."
+  },
+  {
+    "id": 35,
+    "category": "SDLC Models",
+    "question": "Spiral combines the features of:",
+    "options": [
+      "Waterfall and Assembly",
+      "Prototyping and Waterfall",
+      "Agile and RAD",
+      "V-Model and Scrum"
+    ],
+    "answerIndex": 1,
+    "explanation": "Spiral combines the systematic step-by-step nature of Waterfall with Prototyping."
+  },
+  {
+    "id": 36,
+    "category": "SDLC Models",
+    "question": "Which model is mainly used when requirements are unclear?",
+    "options": [
+      "Waterfall",
+      "Spiral",
+      "Prototype",
+      "V-Model"
+    ],
+    "answerIndex": 2,
+    "explanation": "Prototyping is ideal when users cannot clearly state requirements upfront."
+  },
+  {
+    "id": 37,
+    "category": "SDLC Models",
+    "question": "The primary objective of a prototype is to:",
+    "options": [
+      "Deliver the final product",
+      "Clarify user requirements",
+      "Replace testing",
+      "Improve coding speed"
+    ],
+    "answerIndex": 1,
+    "explanation": "A prototype is built to help stakeholders visualize and refine requirements."
+  },
+  {
+    "id": 38,
+    "category": "SDLC Models",
+    "question": "Which SDLC model encourages early customer feedback?",
+    "options": [
+      "Waterfall",
+      "Incremental",
+      "Spiral",
+      "Prototype"
+    ],
+    "answerIndex": 3,
+    "explanation": "Prototyping obtains early user feedback on mockups before full coding."
+  },
+  {
+    "id": 39,
+    "category": "SDLC Models",
+    "question": "A customer is unsure about the system interface. Which model is most suitable?",
+    "options": [
+      "Waterfall",
+      "Prototype",
+      "V-Model",
+      "Incremental"
+    ],
+    "answerIndex": 1,
+    "explanation": "Building a sample interface prototype allows users to clarify UI expectations."
+  },
+  {
+    "id": 40,
+    "category": "SDLC Models",
+    "question": "Which is a disadvantage of the Prototype model?",
+    "options": [
+      "Customer is never involved",
+      "Users may mistake the prototype for the final product",
+      "No requirement gathering",
+      "No testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Clients often confuse a demonstration prototype with a finished, production-ready system."
+  },
+  {
+    "id": 41,
+    "category": "SDLC Models",
+    "question": "The V-Model mainly emphasizes:",
+    "options": [
+      "Rapid coding",
+      "Verification and Validation",
+      "Customer interviews",
+      "Risk analysis"
+    ],
+    "answerIndex": 1,
+    "explanation": "The V-Model maps every development phase directly to a corresponding testing phase."
+  },
+  {
+    "id": 42,
+    "category": "SDLC Models",
+    "question": "In the V-Model, every development phase has a corresponding:",
+    "options": [
+      "Coding phase",
+      "Testing phase",
+      "Deployment phase",
+      "Maintenance phase"
+    ],
+    "answerIndex": 1,
+    "explanation": "Each left-side development phase pairs with a right-side testing phase."
+  },
+  {
+    "id": 43,
+    "category": "SDLC Models",
+    "question": "Which model is considered an extension of the Waterfall model?",
+    "options": [
+      "Agile",
+      "V-Model",
+      "Spiral",
+      "Prototype"
+    ],
+    "answerIndex": 1,
+    "explanation": "The V-Model is a modified, testing-focused extension of the sequential Waterfall model."
+  },
+  {
+    "id": 44,
+    "category": "SDLC Models",
+    "question": "Which testing activity corresponds to System Design in the V-Model?",
+    "options": [
+      "Unit Testing",
+      "Acceptance Testing",
+      "System Testing",
+      "Smoke Testing"
+    ],
+    "answerIndex": 2,
+    "explanation": "System Design is validated by System Testing in the V-Model."
+  },
+  {
+    "id": 45,
+    "category": "SDLC Models",
+    "question": "Which testing activity corresponds to Requirements Analysis in the V-Model?",
+    "options": [
+      "Unit Testing",
+      "Integration Testing",
+      "System Testing",
+      "Acceptance Testing"
+    ],
+    "answerIndex": 3,
+    "explanation": "Requirements Analysis is validated by Acceptance Testing."
+  },
+  {
+    "id": 46,
+    "category": "SDLC Models",
+    "question": "In the Incremental model, software is delivered:",
+    "options": [
+      "Only once",
+      "In multiple working increments",
+      "Without testing",
+      "Without design"
+    ],
+    "answerIndex": 1,
+    "explanation": "Software is built and released in functional parts over time."
+  },
+  {
+    "id": 47,
+    "category": "SDLC Models",
+    "question": "Which model allows users to receive partial functionality early?",
+    "options": [
+      "Waterfall",
+      "Incremental",
+      "V-Model",
+      "Prototype"
+    ],
+    "answerIndex": 1,
+    "explanation": "Incremental development releases working core modules early to users."
+  },
+  {
+    "id": 48,
+    "category": "SDLC Models",
+    "question": "Iterative development means:",
+    "options": [
+      "One-time development",
+      "Repeated refinement of the product",
+      "No customer feedback",
+      "No testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Iterative development repeatedly revisits and refines product builds."
+  },
+  {
+    "id": 49,
+    "category": "SDLC Models",
+    "question": "Which model reduces overall project risk by delivering functionality gradually?",
+    "options": [
+      "Waterfall",
+      "Incremental",
+      "V-Model",
+      "Prototype"
+    ],
+    "answerIndex": 1,
+    "explanation": "Incremental delivery reduces risk by splitting project scope into smaller chunks."
+  },
+  {
+    "id": 50,
+    "category": "SDLC Models",
+    "question": "Incremental development is useful because:",
+    "options": [
+      "All modules are completed together",
+      "Users receive usable software earlier",
+      "Testing is skipped",
+      "Design is unnecessary"
+    ],
+    "answerIndex": 1,
+    "explanation": "Delivering working subsets earlier provides immediate business value."
+  },
+  {
+    "id": 51,
+    "category": "SDLC Models",
+    "question": "RAD stands for:",
+    "options": [
+      "Rapid Application Development",
+      "Reliable Application Development",
+      "Rapid Agile Design",
+      "Requirement Analysis and Design"
+    ],
+    "answerIndex": 0,
+    "explanation": "RAD = Rapid Application Development."
+  },
+  {
+    "id": 52,
+    "category": "SDLC Models",
+    "question": "RAD primarily focuses on:",
+    "options": [
+      "Long development cycles",
+      "Fast software development",
+      "Risk analysis",
+      "Sequential execution"
+    ],
+    "answerIndex": 1,
+    "explanation": "RAD uses rapid prototyping and reusable components for speedy delivery."
+  },
+  {
+    "id": 53,
+    "category": "SDLC Models",
+    "question": "Which approach is commonly associated with RAD?",
+    "options": [
+      "Slow documentation",
+      "Manual coding only",
+      "Rapid prototyping and reusable components",
+      "Delayed customer feedback"
+    ],
+    "answerIndex": 2,
+    "explanation": "RAD heavily relies on component reuse and quick GUI prototyping."
+  },
+  {
+    "id": 54,
+    "category": "SDLC Models",
+    "question": "A software company releases a working version every two weeks and collects customer feedback. Which model is being followed?",
+    "options": [
+      "Waterfall",
+      "Agile",
+      "V-Model",
+      "Waterfall"
+    ],
+    "answerIndex": 1,
+    "explanation": "Short two-week sprint cycles with continuous feedback is Agile."
+  },
+  {
+    "id": 55,
+    "category": "SDLC Models",
+    "question": "A bank is developing mission-critical software where risk assessment is performed before every iteration.",
+    "options": [
+      "Prototype",
+      "Agile",
+      "Spiral",
+      "Waterfall"
+    ],
+    "answerIndex": 2,
+    "explanation": "Repeated risk analysis before iterations indicates the Spiral model."
+  },
+  {
+    "id": 56,
+    "category": "SDLC Models",
+    "question": "The client knows exactly what is required and does not expect requirement changes.",
+    "options": [
+      "Waterfall",
+      "Agile",
+      "Prototype",
+      "Spiral"
+    ],
+    "answerIndex": 0,
+    "explanation": "Fixed, fully-understood requirements fit the Waterfall model."
+  },
+  {
+    "id": 57,
+    "category": "SDLC Models",
+    "question": "Developers first build a sample interface to understand customer expectations before starting actual development.",
+    "options": [
+      "Agile",
+      "Prototype",
+      "Waterfall",
+      "V-Model"
+    ],
+    "answerIndex": 1,
+    "explanation": "Building a sample interface first is prototyping."
+  },
+  {
+    "id": 58,
+    "category": "SDLC Models",
+    "question": "Which SDLC model has the highest customer involvement?",
+    "options": [
+      "Waterfall",
+      "V-Model",
+      "Agile",
+      "Incremental"
+    ],
+    "answerIndex": 2,
+    "explanation": "Agile requires active, continuous customer involvement throughout the project."
+  },
+  {
+    "id": 59,
+    "category": "SDLC Models",
+    "question": "Which SDLC model is least suitable when requirements change frequently?",
+    "options": [
+      "Waterfall",
+      "Agile",
+      "Prototype",
+      "Spiral"
+    ],
+    "answerIndex": 0,
+    "explanation": "Waterfall struggles most with changing requirements due to its rigid structure."
+  },
+  {
+    "id": 60,
+    "category": "SDLC Models",
+    "question": "Which SDLC model is most likely to produce the earliest working version of software?",
+    "options": [
+      "Waterfall",
+      "V-Model",
+      "Agile",
+      "Waterfall"
+    ],
+    "answerIndex": 2,
+    "explanation": "Agile aims to produce working software increments in early sprints."
+  },
+  {
+    "id": 61,
+    "category": "Software Testing",
+    "question": "Which testing technique examines the internal structure of the source code?",
+    "options": [
+      "Black-box Testing",
+      "White-box Testing",
+      "Acceptance Testing",
+      "System Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "White-box testing inspects internal code structure, paths, and logic."
+  },
+  {
+    "id": 62,
+    "category": "Software Testing",
+    "question": "Which testing technique focuses only on software inputs and outputs?",
+    "options": [
+      "Black-box Testing",
+      "White-box Testing",
+      "Unit Testing",
+      "Regression Testing"
+    ],
+    "answerIndex": 0,
+    "explanation": "Black-box testing checks functional inputs vs outputs without viewing source code."
+  },
+  {
+    "id": 63,
+    "category": "Software Testing",
+    "question": "Knowledge of source code is essential for:",
+    "options": [
+      "Black-box Testing",
+      "White-box Testing",
+      "Acceptance Testing",
+      "Beta Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "White-box testers must understand programming logic and code structure."
+  },
+  {
+    "id": 64,
+    "category": "Software Testing",
+    "question": "Which testing method is generally performed from the user's perspective?",
+    "options": [
+      "Black-box Testing",
+      "White-box Testing",
+      "Unit Testing",
+      "Integration Testing"
+    ],
+    "answerIndex": 0,
+    "explanation": "Black-box testing evaluates system behavior from an end-user viewpoint."
+  },
+  {
+    "id": 65,
+    "category": "Software Testing",
+    "question": "Which testing technique is also known as structural testing?",
+    "options": [
+      "Black-box Testing",
+      "White-box Testing",
+      "Functional Testing",
+      "Acceptance Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "White-box testing is also termed structural or glass-box testing."
+  },
+  {
+    "id": 66,
+    "category": "Software Testing",
+    "question": "Which testing technique is also called behavioral testing?",
+    "options": [
+      "Black-box Testing",
+      "White-box Testing",
+      "Regression Testing",
+      "Smoke Testing"
+    ],
+    "answerIndex": 0,
+    "explanation": "Black-box testing evaluates external behavior, hence behavioral testing."
+  },
+  {
+    "id": 67,
+    "category": "Software Testing",
+    "question": "Unit testing is mainly performed on:",
+    "options": [
+      "Entire system",
+      "Individual modules",
+      "Complete project",
+      "Customer environment"
+    ],
+    "answerIndex": 1,
+    "explanation": "Unit testing tests individual functions, classes, or modules in isolation."
+  },
+  {
+    "id": 68,
+    "category": "Software Testing",
+    "question": "Unit testing is usually performed by:",
+    "options": [
+      "Developers",
+      "Customers",
+      "End users",
+      "Project manager"
+    ],
+    "answerIndex": 0,
+    "explanation": "Developers write and execute unit tests during implementation."
+  },
+  {
+    "id": 69,
+    "category": "Software Testing",
+    "question": "Which testing type verifies the smallest testable part of software?",
+    "options": [
+      "Integration Testing",
+      "Unit Testing",
+      "System Testing",
+      "Acceptance Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Unit testing tests the smallest individual software component."
+  },
+  {
+    "id": 70,
+    "category": "Software Testing",
+    "question": "Which testing is normally completed before Integration Testing?",
+    "options": [
+      "Unit Testing",
+      "Acceptance Testing",
+      "Regression Testing",
+      "Beta Testing"
+    ],
+    "answerIndex": 0,
+    "explanation": "Unit testing must pass before combining modules into Integration Testing."
+  },
+  {
+    "id": 71,
+    "category": "Software Testing",
+    "question": "Integration testing is performed to verify:",
+    "options": [
+      "User satisfaction",
+      "Interaction between modules",
+      "Software performance",
+      "Hardware compatibility"
+    ],
+    "answerIndex": 1,
+    "explanation": "Integration testing tests interfaces and data flow between connected modules."
+  },
+  {
+    "id": 72,
+    "category": "Software Testing",
+    "question": "Integration testing is conducted after:",
+    "options": [
+      "Unit Testing",
+      "System Testing",
+      "Acceptance Testing",
+      "Maintenance"
+    ],
+    "answerIndex": 0,
+    "explanation": "Integration testing follows individual unit testing."
+  },
+  {
+    "id": 73,
+    "category": "Software Testing",
+    "question": "Which defect is most likely to be found during Integration Testing?",
+    "options": [
+      "Typographical error",
+      "Interface mismatch between modules",
+      "Requirement ambiguity",
+      "Hardware failure"
+    ],
+    "answerIndex": 1,
+    "explanation": "Interface mismatches (e.g. data type mismatches) surface during integration."
+  },
+  {
+    "id": 74,
+    "category": "Software Testing",
+    "question": "Which testing checks communication among integrated components?",
+    "options": [
+      "Unit Testing",
+      "Integration Testing",
+      "Acceptance Testing",
+      "Load Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Integration testing validates module interactions."
+  },
+  {
+    "id": 75,
+    "category": "Software Testing",
+    "question": "System Testing evaluates:",
+    "options": [
+      "Individual functions",
+      "The complete integrated system",
+      "Database only",
+      "User documentation only"
+    ],
+    "answerIndex": 1,
+    "explanation": "System testing evaluates the fully assembled, complete system."
+  },
+  {
+    "id": 76,
+    "category": "Software Testing",
+    "question": "Which testing ensures that all integrated modules work together as one complete system?",
+    "options": [
+      "Unit Testing",
+      "Integration Testing",
+      "System Testing",
+      "Smoke Testing"
+    ],
+    "answerIndex": 2,
+    "explanation": "System testing tests end-to-end system operation."
+  },
+  {
+    "id": 77,
+    "category": "Software Testing",
+    "question": "System testing is mainly performed before:",
+    "options": [
+      "Coding",
+      "Design",
+      "Acceptance Testing",
+      "Maintenance"
+    ],
+    "answerIndex": 2,
+    "explanation": "System testing precedes final user Acceptance Testing."
+  },
+  {
+    "id": 78,
+    "category": "Software Testing",
+    "question": "Which testing confirms that software satisfies customer requirements?",
+    "options": [
+      "Unit Testing",
+      "Regression Testing",
+      "Acceptance Testing",
+      "White-box Testing"
+    ],
+    "answerIndex": 2,
+    "explanation": "Acceptance testing verifies compliance with customer business requirements."
+  },
+  {
+    "id": 79,
+    "category": "Software Testing",
+    "question": "Acceptance testing is mainly performed by:",
+    "options": [
+      "Developers",
+      "Test engineers",
+      "Customers or end users",
+      "Database administrators"
+    ],
+    "answerIndex": 2,
+    "explanation": "Acceptance testing is conducted by clients/users before accepting delivery."
+  },
+  {
+    "id": 80,
+    "category": "Software Testing",
+    "question": "The primary objective of Acceptance Testing is to:",
+    "options": [
+      "Detect syntax errors",
+      "Measure execution speed",
+      "Verify business requirements",
+      "Improve source code"
+    ],
+    "answerIndex": 2,
+    "explanation": "Acceptance testing confirms business readiness and customer agreement."
+  },
+  {
+    "id": 81,
+    "category": "Software Testing",
+    "question": "Which testing is usually the final testing before software release?",
+    "options": [
+      "Integration Testing",
+      "Unit Testing",
+      "Acceptance Testing",
+      "Smoke Testing"
+    ],
+    "answerIndex": 2,
+    "explanation": "Acceptance testing is the final validation before release."
+  },
+  {
+    "id": 82,
+    "category": "Software Testing",
+    "question": "Regression Testing is performed to:",
+    "options": [
+      "Test new requirements only",
+      "Ensure existing functionality still works after changes",
+      "Test hardware",
+      "Test usability"
+    ],
+    "answerIndex": 1,
+    "explanation": "Regression testing ensures bug fixes or edits didn't break working features."
+  },
+  {
+    "id": 83,
+    "category": "Software Testing",
+    "question": "Which testing is repeated after bug fixing?",
+    "options": [
+      "Acceptance Testing",
+      "Regression Testing",
+      "Load Testing",
+      "Unit Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Regression testing is run after code changes/fixes."
+  },
+  {
+    "id": 84,
+    "category": "Software Testing",
+    "question": "Regression Testing helps identify:",
+    "options": [
+      "Requirement changes",
+      "Database normalization",
+      "New defects introduced after modification",
+      "Coding standards"
+    ],
+    "answerIndex": 2,
+    "explanation": "Regression testing catches unwanted side-effects of recent code modifications."
+  },
+  {
+    "id": 85,
+    "category": "Software Testing",
+    "question": "Regression Testing is commonly required after:",
+    "options": [
+      "Requirement gathering",
+      "Software modification",
+      "Feasibility study",
+      "Project planning"
+    ],
+    "answerIndex": 1,
+    "explanation": "Software modifications require regression testing to ensure stability."
+  },
+  {
+    "id": 86,
+    "category": "Software Testing",
+    "question": "Functional Testing verifies:",
+    "options": [
+      "Software functions according to requirements",
+      "CPU utilization",
+      "Network bandwidth",
+      "Memory size"
+    ],
+    "answerIndex": 0,
+    "explanation": "Functional testing verifies that software features perform specified tasks."
+  },
+  {
+    "id": 87,
+    "category": "Software Testing",
+    "question": "Which is NOT a Functional Testing type?",
+    "options": [
+      "Unit Testing",
+      "Integration Testing",
+      "System Testing",
+      "Load Testing"
+    ],
+    "answerIndex": 3,
+    "explanation": "Load testing is a non-functional performance test."
+  },
+  {
+    "id": 88,
+    "category": "Software Testing",
+    "question": "Non-functional Testing evaluates:",
+    "options": [
+      "User login",
+      "Payment processing",
+      "Performance, reliability, and usability",
+      "Business logic"
+    ],
+    "answerIndex": 2,
+    "explanation": "Non-functional testing evaluates quality attributes like speed and reliability."
+  },
+  {
+    "id": 89,
+    "category": "Software Testing",
+    "question": "Which testing checks software speed under heavy workload?",
+    "options": [
+      "Functional Testing",
+      "Load Testing",
+      "Unit Testing",
+      "Regression Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Load testing tests system behavior under high concurrent user loads."
+  },
+  {
+    "id": 90,
+    "category": "Software Testing",
+    "question": "Which testing mainly measures system performance?",
+    "options": [
+      "Acceptance Testing",
+      "Load Testing",
+      "Unit Testing",
+      "White-box Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Load testing measures response times and throughput performance."
+  },
+  {
+    "id": 91,
+    "category": "Software Testing",
+    "question": "Smoke Testing verifies whether:",
+    "options": [
+      "Individual module is correct",
+      "Basic system functions work after a new build",
+      "Customer requirements are satisfied",
+      "Software is secure"
+    ],
+    "answerIndex": 1,
+    "explanation": "Smoke testing verifies if a build is stable enough for deeper testing."
+  },
+  {
+    "id": 92,
+    "category": "Software Testing",
+    "question": "Smoke Testing is also known as:",
+    "options": [
+      "White-box Testing",
+      "Build Verification Testing",
+      "Integration Testing",
+      "Load Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Smoke testing is also called Build Verification Testing (BVT)."
+  },
+  {
+    "id": 93,
+    "category": "Software Testing",
+    "question": "Sanity Testing mainly checks:",
+    "options": [
+      "Entire application",
+      "Specific modified functionality after minor changes",
+      "Hardware",
+      "Security"
+    ],
+    "answerIndex": 1,
+    "explanation": "Sanity testing quickly verifies minor bug fixes or small code changes."
+  },
+  {
+    "id": 94,
+    "category": "Software Testing",
+    "question": "Which testing is narrower in scope?",
+    "options": [
+      "Smoke Testing",
+      "Sanity Testing",
+      "System Testing",
+      "Acceptance Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Sanity testing focuses tightly on specific changed features."
+  },
+  {
+    "id": 95,
+    "category": "Software Testing",
+    "question": "Alpha Testing is usually performed:",
+    "options": [
+      "At the developer's site",
+      "At the customer's site",
+      "After maintenance",
+      "During coding"
+    ],
+    "answerIndex": 0,
+    "explanation": "Alpha testing is internal testing conducted at the developer's site."
+  },
+  {
+    "id": 96,
+    "category": "Software Testing",
+    "question": "Beta Testing is mainly conducted:",
+    "options": [
+      "Inside development company",
+      "By selected real users",
+      "By database administrators",
+      "By project managers"
+    ],
+    "answerIndex": 1,
+    "explanation": "Beta testing is performed by external real users in real environment."
+  },
+  {
+    "id": 97,
+    "category": "Software Testing",
+    "question": "Which testing provides real-world user feedback before official release?",
+    "options": [
+      "Alpha Testing",
+      "Beta Testing",
+      "Unit Testing",
+      "Integration Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Beta testing collects real-world feedback from end users."
+  },
+  {
+    "id": 98,
+    "category": "Software Testing",
+    "question": "A tester checks whether all menu buttons produce the expected results without viewing source code.",
+    "options": [
+      "Black-box Testing",
+      "White-box Testing",
+      "Unit Testing",
+      "Regression Testing"
+    ],
+    "answerIndex": 0,
+    "explanation": "Testing UI outputs without inspecting code is Black-box testing."
+  },
+  {
+    "id": 99,
+    "category": "Software Testing",
+    "question": "A developer examines every decision path in the source code.",
+    "options": [
+      "Acceptance Testing",
+      "White-box Testing",
+      "Black-box Testing",
+      "Load Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Testing all decision paths in source code is White-box testing."
+  },
+  {
+    "id": 100,
+    "category": "Software Testing",
+    "question": "After integrating the payment module with the inventory module, engineers verify data exchange.",
+    "options": [
+      "Unit Testing",
+      "Integration Testing",
+      "System Testing",
+      "Acceptance Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Testing data exchange between integrated modules is Integration testing."
+  },
+  {
+    "id": 101,
+    "category": "Software Testing",
+    "question": "A software company fixes five bugs and wants to ensure old features still work correctly.",
+    "options": [
+      "Smoke Testing",
+      "Regression Testing",
+      "Acceptance Testing",
+      "Alpha Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Testing old features after bug fixes is Regression testing."
+  },
+  {
+    "id": 102,
+    "category": "Software Testing",
+    "question": "Customers verify that the completed software satisfies all agreed requirements.",
+    "options": [
+      "Unit Testing",
+      "Integration Testing",
+      "Acceptance Testing",
+      "White-box Testing"
+    ],
+    "answerIndex": 2,
+    "explanation": "Customer verification of agreed requirements is Acceptance testing."
+  },
+  {
+    "id": 103,
+    "category": "Software Testing",
+    "question": "Developers test a newly compiled build to ensure basic features work before detailed testing.",
+    "options": [
+      "Regression Testing",
+      "Smoke Testing",
+      "System Testing",
+      "Beta Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Quick initial build sanity check is Smoke testing."
+  },
+  {
+    "id": 104,
+    "category": "Software Testing",
+    "question": "A tester checks only the updated search feature after a minor bug fix.",
+    "options": [
+      "Smoke Testing",
+      "Sanity Testing",
+      "Unit Testing",
+      "System Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Targeted verification of a minor bug fix is Sanity testing."
+  },
+  {
+    "id": 105,
+    "category": "Software Testing",
+    "question": "Thousands of users access an online portal simultaneously to evaluate response time.",
+    "options": [
+      "Functional Testing",
+      "Load Testing",
+      "Unit Testing",
+      "White-box Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Simultaneous high user load testing is Load testing."
+  },
+  {
+    "id": 106,
+    "category": "Software Testing",
+    "question": "A tester verifies the complete integrated application before it is handed to the customer.",
+    "options": [
+      "Integration Testing",
+      "System Testing",
+      "Unit Testing",
+      "Beta Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Verifying the full integrated system prior to customer delivery is System testing."
+  },
+  {
+    "id": 107,
+    "category": "Software Testing",
+    "question": "Which testing generally requires programming knowledge?",
+    "options": [
+      "Acceptance Testing",
+      "White-box Testing",
+      "Black-box Testing",
+      "Beta Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "White-box testing requires source code readability."
+  },
+  {
+    "id": 108,
+    "category": "Software Testing",
+    "question": "Which testing usually does NOT require knowledge of source code?",
+    "options": [
+      "Black-box Testing",
+      "White-box Testing",
+      "Unit Testing",
+      "Structural Testing"
+    ],
+    "answerIndex": 0,
+    "explanation": "Black-box testing requires no code knowledge."
+  },
+  {
+    "id": 109,
+    "category": "Software Testing",
+    "question": "Which testing is primarily intended to reveal defects in software functionality?",
+    "options": [
+      "Functional Testing",
+      "Load Testing",
+      "Stress Testing",
+      "Performance Testing"
+    ],
+    "answerIndex": 0,
+    "explanation": "Functional testing targets software feature correctness."
+  },
+  {
+    "id": 110,
+    "category": "Software Testing",
+    "question": "Which testing type is most closely associated with customer satisfaction before software release?",
+    "options": [
+      "Regression Testing",
+      "Unit Testing",
+      "Acceptance Testing",
+      "White-box Testing"
+    ],
+    "answerIndex": 2,
+    "explanation": "Acceptance testing ensures customer approval prior to release."
+  },
+  {
+    "id": 111,
+    "category": "SRS & Requirements",
+    "question": "What is the primary purpose of a Software Requirements Specification (SRS)?",
+    "options": [
+      "To write program code",
+      "To define and document software requirements",
+      "To perform software testing",
+      "To install the software"
+    ],
+    "answerIndex": 1,
+    "explanation": "An SRS defines complete software capabilities and constraints."
+  },
+  {
+    "id": 112,
+    "category": "SRS & Requirements",
+    "question": "An SRS document mainly serves as:",
+    "options": [
+      "A user manual",
+      "An agreement between the client and the developer",
+      "A maintenance guide",
+      "A testing report"
+    ],
+    "answerIndex": 1,
+    "explanation": "The SRS forms the contractual agreement between client and development team."
+  },
+  {
+    "id": 113,
+    "category": "SRS & Requirements",
+    "question": "Which phase of SDLC produces the SRS document?",
+    "options": [
+      "Design",
+      "Requirements Analysis",
+      "Coding",
+      "Maintenance"
+    ],
+    "answerIndex": 1,
+    "explanation": "Requirements Analysis yields the formal SRS."
+  },
+  {
+    "id": 114,
+    "category": "SRS & Requirements",
+    "question": "Which IEEE standard is commonly associated with SRS?",
+    "options": [
+      "IEEE 802.11",
+      "IEEE 488",
+      "IEEE 830",
+      "IEEE 754"
+    ],
+    "answerIndex": 2,
+    "explanation": "IEEE 830 is the standard for Software Requirements Specifications."
+  },
+  {
+    "id": 115,
+    "category": "SRS & Requirements",
+    "question": "The SRS document describes:",
+    "options": [
+      "How the software will be coded",
+      "What the software should do",
+      "Which language should be used",
+      "Which IDE should be used"
+    ],
+    "answerIndex": 1,
+    "explanation": "SRS documents WHAT the system must achieve."
+  },
+  {
+    "id": 116,
+    "category": "SRS & Requirements",
+    "question": "Which stakeholder primarily approves the SRS?",
+    "options": [
+      "Tester",
+      "Programmer",
+      "Client/User",
+      "Network Administrator"
+    ],
+    "answerIndex": 2,
+    "explanation": "The Client/User approves SRS requirements."
+  },
+  {
+    "id": 117,
+    "category": "SRS & Requirements",
+    "question": "Which of the following should NOT normally appear in an SRS?",
+    "options": [
+      "Functional requirements",
+      "Non-functional requirements",
+      "Constraints",
+      "Source code"
+    ],
+    "answerIndex": 3,
+    "explanation": "Source code belongs in implementation, not in SRS."
+  },
+  {
+    "id": 118,
+    "category": "SRS & Requirements",
+    "question": "A complete and correct SRS helps to:",
+    "options": [
+      "Increase hardware cost",
+      "Reduce misunderstandings between client and developer",
+      "Replace testing",
+      "Eliminate maintenance"
+    ],
+    "answerIndex": 1,
+    "explanation": "Clear SRS prevents scope misunderstandings."
+  },
+  {
+    "id": 119,
+    "category": "SRS & Requirements",
+    "question": "Which document acts as the foundation for software design?",
+    "options": [
+      "User Manual",
+      "Test Report",
+      "SRS",
+      "Installation Guide"
+    ],
+    "answerIndex": 2,
+    "explanation": "SRS provides requirements that guide System Design."
+  },
+  {
+    "id": 120,
+    "category": "SRS & Requirements",
+    "question": "Which activity should be completed before writing an SRS?",
+    "options": [
+      "Coding",
+      "Requirement Elicitation",
+      "Testing",
+      "Deployment"
+    ],
+    "answerIndex": 1,
+    "explanation": "Requirement Elicitation gathers facts before drafting the SRS."
+  },
+  {
+    "id": 121,
+    "category": "SRS & Requirements",
+    "question": "Functional requirements describe:",
+    "options": [
+      "What the system should do",
+      "How fast it should run",
+      "How secure it should be",
+      "Hardware specifications"
+    ],
+    "answerIndex": 0,
+    "explanation": "Functional requirements define system actions and behavior."
+  },
+  {
+    "id": 122,
+    "category": "SRS & Requirements",
+    "question": "Which is a Functional Requirement?",
+    "options": [
+      "User Login",
+      "Availability",
+      "Reliability",
+      "Performance"
+    ],
+    "answerIndex": 0,
+    "explanation": "User Login is a specific system feature."
+  },
+  {
+    "id": 123,
+    "category": "SRS & Requirements",
+    "question": "Which is a Functional Requirement?",
+    "options": [
+      "Security",
+      "Portability",
+      "Generate Monthly Report",
+      "Maintainability"
+    ],
+    "answerIndex": 2,
+    "explanation": "Generate Monthly Report is a functional service."
+  },
+  {
+    "id": 124,
+    "category": "SRS & Requirements",
+    "question": "Which requirement specifies that users can reset forgotten passwords?",
+    "options": [
+      "Functional Requirement",
+      "Non-functional Requirement",
+      "Business Requirement",
+      "Technical Requirement"
+    ],
+    "answerIndex": 0,
+    "explanation": "Password reset is a functional feature."
+  },
+  {
+    "id": 125,
+    "category": "SRS & Requirements",
+    "question": "Which is NOT a Functional Requirement?",
+    "options": [
+      "Print Invoice",
+      "Search Product",
+      "Register Student",
+      "Response Time"
+    ],
+    "answerIndex": 3,
+    "explanation": "Response time is a performance (non-functional) attribute."
+  },
+  {
+    "id": 126,
+    "category": "SRS & Requirements",
+    "question": "Which requirement defines business operations performed by the software?",
+    "options": [
+      "Functional Requirement",
+      "Non-functional Requirement",
+      "Performance Requirement",
+      "Security Requirement"
+    ],
+    "answerIndex": 0,
+    "explanation": "Functional requirements encode operational business logic."
+  },
+  {
+    "id": 127,
+    "category": "SRS & Requirements",
+    "question": "Which of the following belongs to Functional Requirements?",
+    "options": [
+      "Encryption",
+      "Add New Employee",
+      "Scalability",
+      "Reliability"
+    ],
+    "answerIndex": 1,
+    "explanation": "Add New Employee is a functional operation."
+  },
+  {
+    "id": 128,
+    "category": "SRS & Requirements",
+    "question": "Functional requirements are mainly concerned with:",
+    "options": [
+      "Quality",
+      "Services provided by the system",
+      "Hardware",
+      "Software cost"
+    ],
+    "answerIndex": 1,
+    "explanation": "Functional requirements state the explicit services offered."
+  },
+  {
+    "id": 129,
+    "category": "SRS & Requirements",
+    "question": "Non-functional requirements describe:",
+    "options": [
+      "Business functions",
+      "Quality attributes of the software",
+      "Source code",
+      "Database schema"
+    ],
+    "answerIndex": 1,
+    "explanation": "Non-functional requirements specify quality attributes (speed, security)."
+  },
+  {
+    "id": 130,
+    "category": "SRS & Requirements",
+    "question": "Which is a Non-functional Requirement?",
+    "options": [
+      "Online Registration",
+      "High Performance",
+      "Generate Receipt",
+      "Calculate Salary"
+    ],
+    "answerIndex": 1,
+    "explanation": "High Performance is a quality metric."
+  },
+  {
+    "id": 131,
+    "category": "SRS & Requirements",
+    "question": "Which of the following is a Non-functional Requirement?",
+    "options": [
+      "Print Report",
+      "Login",
+      "Security",
+      "Search Record"
+    ],
+    "answerIndex": 2,
+    "explanation": "Security is a non-functional constraint."
+  },
+  {
+    "id": 132,
+    "category": "SRS & Requirements",
+    "question": "Which requirement specifies that the application should respond within 2 seconds?",
+    "options": [
+      "Functional",
+      "Non-functional",
+      "Business",
+      "User"
+    ],
+    "answerIndex": 1,
+    "explanation": "Performance criteria like response time are non-functional."
+  },
+  {
+    "id": 133,
+    "category": "SRS & Requirements",
+    "question": "Which requirement deals with software reliability?",
+    "options": [
+      "Functional",
+      "Non-functional",
+      "Business",
+      "User"
+    ],
+    "answerIndex": 1,
+    "explanation": "Reliability is a non-functional attribute."
+  },
+  {
+    "id": 134,
+    "category": "SRS & Requirements",
+    "question": "Which of the following is NOT a Non-functional Requirement?",
+    "options": [
+      "Usability",
+      "Portability",
+      "Maintainability",
+      "User Registration"
+    ],
+    "answerIndex": 3,
+    "explanation": "User Registration is a functional feature."
+  },
+  {
+    "id": 135,
+    "category": "SRS & Requirements",
+    "question": "Scalability is an example of:",
+    "options": [
+      "Functional Requirement",
+      "Non-functional Requirement",
+      "Business Rule",
+      "Design Constraint"
+    ],
+    "answerIndex": 1,
+    "explanation": "Scalability measures quality under growth, hence non-functional."
+  },
+  {
+    "id": 136,
+    "category": "SRS & Requirements",
+    "question": "Availability is classified as:",
+    "options": [
+      "Functional Requirement",
+      "Non-functional Requirement",
+      "User Requirement",
+      "Business Requirement"
+    ],
+    "answerIndex": 1,
+    "explanation": "Availability (uptime) is a non-functional metric."
+  },
+  {
+    "id": 137,
+    "category": "SRS & Requirements",
+    "question": "Which requirement specifies that the software should be available 24/7?",
+    "options": [
+      "Functional",
+      "Non-functional",
+      "User",
+      "Design"
+    ],
+    "answerIndex": 1,
+    "explanation": "24/7 uptime is a non-functional availability requirement."
+  },
+  {
+    "id": 138,
+    "category": "SRS & Requirements",
+    "question": "Usability is categorized as:",
+    "options": [
+      "Functional",
+      "Non-functional",
+      "Business",
+      "Technical"
+    ],
+    "answerIndex": 1,
+    "explanation": "Usability is a non-functional user experience quality."
+  },
+  {
+    "id": 139,
+    "category": "SRS & Requirements",
+    "question": "Requirement elicitation means:",
+    "options": [
+      "Coding software",
+      "Collecting requirements from stakeholders",
+      "Testing software",
+      "Deploying software"
+    ],
+    "answerIndex": 1,
+    "explanation": "Elicitation is discovering and collecting needs from users."
+  },
+  {
+    "id": 140,
+    "category": "SRS & Requirements",
+    "question": "Which is a common requirement elicitation technique?",
+    "options": [
+      "Compilation",
+      "Interview",
+      "Linking",
+      "Scheduling"
+    ],
+    "answerIndex": 1,
+    "explanation": "Interviews are a primary requirement gathering technique."
+  },
+  {
+    "id": 141,
+    "category": "SRS & Requirements",
+    "question": "Which technique gathers requirements from multiple users through discussion?",
+    "options": [
+      "Observation",
+      "Prototype",
+      "Workshop",
+      "Coding"
+    ],
+    "answerIndex": 2,
+    "explanation": "Requirements workshops bring multiple stakeholders together for discussion."
+  },
+  {
+    "id": 142,
+    "category": "SRS & Requirements",
+    "question": "Which requirement elicitation technique involves watching users perform their work?",
+    "options": [
+      "Brainstorming",
+      "Observation",
+      "Testing",
+      "Deployment"
+    ],
+    "answerIndex": 1,
+    "explanation": "Observation watches users in their natural environment."
+  },
+  {
+    "id": 143,
+    "category": "SRS & Requirements",
+    "question": "Questionnaires are most suitable when:",
+    "options": [
+      "One user exists",
+      "Many users are geographically distributed",
+      "Coding begins",
+      "Testing is completed"
+    ],
+    "answerIndex": 1,
+    "explanation": "Surveys/questionnaires work best for large, dispersed user groups."
+  },
+  {
+    "id": 144,
+    "category": "SRS & Requirements",
+    "question": "Requirement validation ensures that:",
+    "options": [
+      "Software is bug-free",
+      "Requirements correctly represent customer needs",
+      "Source code is optimized",
+      "Database is normalized"
+    ],
+    "answerIndex": 1,
+    "explanation": "Validation checks if requirements truly reflect what the client wants."
+  },
+  {
+    "id": 145,
+    "category": "SRS & Requirements",
+    "question": "Requirement validation is performed before:",
+    "options": [
+      "Coding",
+      "System Design",
+      "Maintenance",
+      "Deployment"
+    ],
+    "answerIndex": 1,
+    "explanation": "Requirements must be validated before starting System Design."
+  },
+  {
+    "id": 146,
+    "category": "SRS & Requirements",
+    "question": "Which activity checks whether requirements are complete and consistent?",
+    "options": [
+      "Coding",
+      "Testing",
+      "Requirement Validation",
+      "Maintenance"
+    ],
+    "answerIndex": 2,
+    "explanation": "Requirement Validation audits completeness, feasibility, and consistency."
+  },
+  {
+    "id": 147,
+    "category": "SRS & Requirements",
+    "question": "A bank requires customers to transfer funds between accounts. This is:",
+    "options": [
+      "Functional Requirement",
+      "Non-functional Requirement",
+      "Performance Requirement",
+      "Security Requirement"
+    ],
+    "answerIndex": 0,
+    "explanation": "Funds transfer is an explicit system feature."
+  },
+  {
+    "id": 148,
+    "category": "SRS & Requirements",
+    "question": "A mobile application must support 100,000 simultaneous users.",
+    "options": [
+      "Functional Requirement",
+      "Non-functional Requirement",
+      "User Requirement",
+      "Business Rule"
+    ],
+    "answerIndex": 1,
+    "explanation": "Supporting 100k concurrency is a non-functional scalability metric."
+  },
+  {
+    "id": 149,
+    "category": "SRS & Requirements",
+    "question": "A customer signs a document confirming all software requirements before development begins. That document is:",
+    "options": [
+      "User Manual",
+      "SRS",
+      "Test Plan",
+      "Design Document"
+    ],
+    "answerIndex": 1,
+    "explanation": "The signed agreement document is the SRS."
+  },
+  {
+    "id": 150,
+    "category": "SRS & Requirements",
+    "question": "During requirement gathering, developers meet users to understand business needs. This activity is called:",
+    "options": [
+      "Verification",
+      "Validation",
+      "Requirement Elicitation",
+      "Deployment"
+    ],
+    "answerIndex": 2,
+    "explanation": "Meeting stakeholders to gather needs is Requirement Elicitation."
+  },
+  {
+    "id": 151,
+    "category": "Software Maintenance",
+    "question": "Which type of maintenance is performed to fix software bugs after delivery?",
+    "options": [
+      "Adaptive Maintenance",
+      "Corrective Maintenance",
+      "Perfective Maintenance",
+      "Preventive Maintenance"
+    ],
+    "answerIndex": 1,
+    "explanation": "Corrective maintenance fixes bugs discovered in production."
+  },
+  {
+    "id": 152,
+    "category": "Software Maintenance",
+    "question": "Which maintenance modifies software to work with a new operating system?",
+    "options": [
+      "Corrective Maintenance",
+      "Adaptive Maintenance",
+      "Perfective Maintenance",
+      "Preventive Maintenance"
+    ],
+    "answerIndex": 1,
+    "explanation": "Adaptive maintenance updates software for changed hardware/OS environments."
+  },
+  {
+    "id": 153,
+    "category": "Software Maintenance",
+    "question": "Which maintenance improves software performance or adds new features requested by users?",
+    "options": [
+      "Corrective Maintenance",
+      "Adaptive Maintenance",
+      "Perfective Maintenance",
+      "Preventive Maintenance"
+    ],
+    "answerIndex": 2,
+    "explanation": "Perfective maintenance adds features or enhances efficiency based on user requests."
+  },
+  {
+    "id": 154,
+    "category": "Software Maintenance",
+    "question": "Which maintenance aims to reduce future software failures before they occur?",
+    "options": [
+      "Corrective Maintenance",
+      "Adaptive Maintenance",
+      "Perfective Maintenance",
+      "Preventive Maintenance"
+    ],
+    "answerIndex": 3,
+    "explanation": "Preventive maintenance refactors code to prevent future errors."
+  },
+  {
+    "id": 155,
+    "category": "Software Maintenance",
+    "question": "Replacing obsolete libraries because the operating system has changed is an example of:",
+    "options": [
+      "Corrective Maintenance",
+      "Adaptive Maintenance",
+      "Perfective Maintenance",
+      "Preventive Maintenance"
+    ],
+    "answerIndex": 1,
+    "explanation": "Adapting to environment changes is Adaptive maintenance."
+  },
+  {
+    "id": 156,
+    "category": "Software Maintenance",
+    "question": "Removing logical errors discovered after deployment is called:",
+    "options": [
+      "Perfective Maintenance",
+      "Corrective Maintenance",
+      "Adaptive Maintenance",
+      "Preventive Maintenance"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fixing post-deployment errors is Corrective maintenance."
+  },
+  {
+    "id": 157,
+    "category": "Software Maintenance",
+    "question": "Software maintenance is generally performed:",
+    "options": [
+      "Before testing",
+      "During coding only",
+      "After software delivery",
+      "Before requirement analysis"
+    ],
+    "answerIndex": 2,
+    "explanation": "Maintenance begins after software is delivered to clients."
+  },
+  {
+    "id": 158,
+    "category": "Software Maintenance",
+    "question": "Which SDLC phase usually consumes the largest portion of software cost?",
+    "options": [
+      "Design",
+      "Coding",
+      "Testing",
+      "Maintenance"
+    ],
+    "answerIndex": 3,
+    "explanation": "Long-term Maintenance typically accounts for 60-80% of total lifecycle cost."
+  },
+  {
+    "id": 159,
+    "category": "Software Maintenance",
+    "question": "The primary objective of software maintenance is to:",
+    "options": [
+      "Rewrite the software completely",
+      "Keep the software useful and operational",
+      "Eliminate documentation",
+      "Replace requirement analysis"
+    ],
+    "answerIndex": 1,
+    "explanation": "Maintenance preserves application value and operations over time."
+  },
+  {
+    "id": 160,
+    "category": "Software Maintenance",
+    "question": "Which maintenance type is most closely associated with correcting defects?",
+    "options": [
+      "Adaptive",
+      "Corrective",
+      "Preventive",
+      "Perfective"
+    ],
+    "answerIndex": 1,
+    "explanation": "Corrective maintenance fixes bugs."
+  },
+  {
+    "id": 161,
+    "category": "Software Maintenance",
+    "question": "A calculation error is reported after deployment. Which maintenance is required?",
+    "options": [
+      "Adaptive",
+      "Corrective",
+      "Perfective",
+      "Preventive"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fixing calculation errors is Corrective maintenance."
+  },
+  {
+    "id": 162,
+    "category": "Software Maintenance",
+    "question": "Corrective maintenance is mainly performed because of:",
+    "options": [
+      "Hardware upgrades",
+      "Software defects",
+      "User suggestions",
+      "Performance improvements"
+    ],
+    "answerIndex": 1,
+    "explanation": "Defects/bugs trigger corrective maintenance."
+  },
+  {
+    "id": 163,
+    "category": "Software Maintenance",
+    "question": "Fixing an incorrect tax calculation in payroll software is an example of:",
+    "options": [
+      "Adaptive Maintenance",
+      "Corrective Maintenance",
+      "Perfective Maintenance",
+      "Preventive Maintenance"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fixing incorrect logic is Corrective maintenance."
+  },
+  {
+    "id": 164,
+    "category": "Software Maintenance",
+    "question": "Which maintenance responds to changes in the external environment?",
+    "options": [
+      "Corrective",
+      "Adaptive",
+      "Perfective",
+      "Preventive"
+    ],
+    "answerIndex": 1,
+    "explanation": "Adaptive maintenance handles external environment shifts."
+  },
+  {
+    "id": 165,
+    "category": "Software Maintenance",
+    "question": "Software is modified because government tax regulations have changed. This is:",
+    "options": [
+      "Corrective Maintenance",
+      "Adaptive Maintenance",
+      "Perfective Maintenance",
+      "Preventive Maintenance"
+    ],
+    "answerIndex": 1,
+    "explanation": "Adapting to external regulatory changes is Adaptive maintenance."
+  },
+  {
+    "id": 166,
+    "category": "Software Maintenance",
+    "question": "Updating software to support a newly released browser is:",
+    "options": [
+      "Corrective",
+      "Adaptive",
+      "Perfective",
+      "Preventive"
+    ],
+    "answerIndex": 1,
+    "explanation": "Supporting new browser versions is Adaptive maintenance."
+  },
+  {
+    "id": 167,
+    "category": "Software Maintenance",
+    "question": "Adding a 'Dark Mode' feature after user requests is:",
+    "options": [
+      "Corrective",
+      "Adaptive",
+      "Perfective",
+      "Preventive"
+    ],
+    "answerIndex": 2,
+    "explanation": "Adding user-requested enhancements is Perfective maintenance."
+  },
+  {
+    "id": 168,
+    "category": "Software Maintenance",
+    "question": "Improving system response time without fixing bugs is:",
+    "options": [
+      "Corrective",
+      "Adaptive",
+      "Perfective",
+      "Preventive"
+    ],
+    "answerIndex": 2,
+    "explanation": "Optimizing performance is Perfective maintenance."
+  },
+  {
+    "id": 169,
+    "category": "Software Maintenance",
+    "question": "Enhancing the user interface based on customer feedback is:",
+    "options": [
+      "Corrective",
+      "Adaptive",
+      "Perfective",
+      "Preventive"
+    ],
+    "answerIndex": 2,
+    "explanation": "UI enhancements are Perfective maintenance."
+  },
+  {
+    "id": 170,
+    "category": "Software Maintenance",
+    "question": "Refactoring poorly written code to reduce future maintenance effort is:",
+    "options": [
+      "Corrective",
+      "Adaptive",
+      "Perfective",
+      "Preventive"
+    ],
+    "answerIndex": 3,
+    "explanation": "Code refactoring for future maintainability is Preventive maintenance."
+  },
+  {
+    "id": 171,
+    "category": "Software Maintenance",
+    "question": "Updating documentation to reduce future maintenance problems is considered:",
+    "options": [
+      "Corrective",
+      "Adaptive",
+      "Perfective",
+      "Preventive"
+    ],
+    "answerIndex": 3,
+    "explanation": "Preventive documentation updates lower future risk."
+  },
+  {
+    "id": 172,
+    "category": "Software Maintenance",
+    "question": "Which maintenance focuses on improving software maintainability?",
+    "options": [
+      "Corrective",
+      "Adaptive",
+      "Perfective",
+      "Preventive"
+    ],
+    "answerIndex": 3,
+    "explanation": "Preventive maintenance improves future code health."
+  },
+  {
+    "id": 173,
+    "category": "Software Maintenance",
+    "question": "A company upgrades its servers, requiring changes to the software so it can run properly.",
+    "options": [
+      "Corrective",
+      "Adaptive",
+      "Perfective",
+      "Preventive"
+    ],
+    "answerIndex": 1,
+    "explanation": "Server hardware/OS upgrade changes are Adaptive maintenance."
+  },
+  {
+    "id": 174,
+    "category": "Software Maintenance",
+    "question": "Users request a new export-to-PDF feature.",
+    "options": [
+      "Corrective",
+      "Adaptive",
+      "Perfective",
+      "Preventive"
+    ],
+    "answerIndex": 2,
+    "explanation": "Adding new export features is Perfective maintenance."
+  },
+  {
+    "id": 175,
+    "category": "Software Maintenance",
+    "question": "Developers repair a login failure reported by users.",
+    "options": [
+      "Adaptive",
+      "Corrective",
+      "Perfective",
+      "Preventive"
+    ],
+    "answerIndex": 1,
+    "explanation": "Repairing login failures is Corrective maintenance."
+  },
+  {
+    "id": 176,
+    "category": "Software Maintenance",
+    "question": "Developers reorganize the source code to improve readability and reduce future errors.",
+    "options": [
+      "Corrective",
+      "Adaptive",
+      "Perfective",
+      "Preventive"
+    ],
+    "answerIndex": 3,
+    "explanation": "Reorganizing code for future readability is Preventive maintenance."
+  },
+  {
+    "id": 177,
+    "category": "Software Maintenance",
+    "question": "An application is updated to comply with newly introduced banking regulations.",
+    "options": [
+      "Corrective",
+      "Adaptive",
+      "Perfective",
+      "Preventive"
+    ],
+    "answerIndex": 1,
+    "explanation": "Complying with external legal/banking shifts is Adaptive maintenance."
+  },
+  {
+    "id": 178,
+    "category": "Software Maintenance",
+    "question": "Developers optimize database queries to improve application speed without changing functionality.",
+    "options": [
+      "Corrective",
+      "Adaptive",
+      "Perfective",
+      "Preventive"
+    ],
+    "answerIndex": 2,
+    "explanation": "Speed optimization is Perfective maintenance."
+  },
+  {
+    "id": 179,
+    "category": "Software Maintenance",
+    "question": "Which of the following is NOT a recognized type of software maintenance?",
+    "options": [
+      "Corrective",
+      "Adaptive",
+      "Perfective",
+      "Predictive"
+    ],
+    "answerIndex": 3,
+    "explanation": "Predictive is not one of the 4 standard maintenance types."
+  },
+  {
+    "id": 180,
+    "category": "Software Maintenance",
+    "question": "Which statement about software maintenance is correct?",
+    "options": [
+      "It is required only for failed projects.",
+      "It ends immediately after software deployment.",
+      "It continues throughout the operational life of the software.",
+      "It replaces software testing."
+    ],
+    "answerIndex": 2,
+    "explanation": "Maintenance spans the entire operational lifetime of software."
+  },
+  {
+    "id": 181,
+    "category": "Agile & DevOps",
+    "question": "Agile software development primarily emphasizes:",
+    "options": [
+      "Extensive documentation",
+      "Customer collaboration and adaptability",
+      "Sequential development",
+      "Fixed requirements"
+    ],
+    "answerIndex": 1,
+    "explanation": "Agile values customer collaboration and responding to change."
+  },
+  {
+    "id": 182,
+    "category": "Agile & DevOps",
+    "question": "Agile development follows:",
+    "options": [
+      "Linear development",
+      "Iterative and incremental development",
+      "One-time delivery",
+      "Reverse engineering"
+    ],
+    "answerIndex": 1,
+    "explanation": "Agile combines iterative refinement with incremental delivery."
+  },
+  {
+    "id": 183,
+    "category": "Agile & DevOps",
+    "question": "Agile is best suited for projects with:",
+    "options": [
+      "Stable requirements",
+      "Frequently changing requirements",
+      "No customer involvement",
+      "Fixed budget only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Agile excels when project scope and requirements evolve."
+  },
+  {
+    "id": 184,
+    "category": "Agile & DevOps",
+    "question": "Which of the following is a core Agile principle?",
+    "options": [
+      "Deliver software only after complete documentation",
+      "Deliver working software frequently",
+      "Avoid customer feedback",
+      "Complete all coding before testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Frequent delivery of working software is a key Agile principle."
+  },
+  {
+    "id": 185,
+    "category": "Agile & DevOps",
+    "question": "Which Agile characteristic distinguishes it from the Waterfall model?",
+    "options": [
+      "Sequential phases",
+      "Continuous customer feedback",
+      "One-time testing",
+      "Fixed requirements"
+    ],
+    "answerIndex": 1,
+    "explanation": "Continuous customer feedback throughout the loop sets Agile apart."
+  },
+  {
+    "id": 186,
+    "category": "Agile & DevOps",
+    "question": "In Scrum, who represents the customer's interests?",
+    "options": [
+      "Scrum Master",
+      "Product Owner",
+      "Tester",
+      "Developer"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Product Owner defines backlog items to represent customer interests."
+  },
+  {
+    "id": 187,
+    "category": "Agile & DevOps",
+    "question": "Who ensures that Scrum practices are properly followed?",
+    "options": [
+      "Product Owner",
+      "Scrum Master",
+      "Client",
+      "Database Administrator"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Scrum Master coaches the team and enforces Scrum process."
+  },
+  {
+    "id": 188,
+    "category": "Agile & DevOps",
+    "question": "Who develops the software in Scrum?",
+    "options": [
+      "Product Owner",
+      "Scrum Master",
+      "Development Team",
+      "Customer"
+    ],
+    "answerIndex": 2,
+    "explanation": "The cross-functional Development Team builds working increments."
+  },
+  {
+    "id": 189,
+    "category": "Agile & DevOps",
+    "question": "The Scrum Master is primarily responsible for:",
+    "options": [
+      "Writing source code",
+      "Approving software licenses",
+      "Facilitating the Scrum process",
+      "Managing the database"
+    ],
+    "answerIndex": 2,
+    "explanation": "The Scrum Master facilitates ceremonies and removes team blockers."
+  },
+  {
+    "id": 190,
+    "category": "Agile & DevOps",
+    "question": "A Sprint is:",
+    "options": [
+      "A software testing technique",
+      "A fixed time-boxed development iteration",
+      "A programming language",
+      "A design document"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Sprint is a 1 to 4 week time-boxed iteration in Scrum."
+  },
+  {
+    "id": 191,
+    "category": "Agile & DevOps",
+    "question": "At the end of every Sprint, the team should deliver:",
+    "options": [
+      "Documentation only",
+      "Source code only",
+      "A working software increment",
+      "Database schema only"
+    ],
+    "answerIndex": 2,
+    "explanation": "Every sprint must yield a potentially shippable working increment."
+  },
+  {
+    "id": 192,
+    "category": "Agile & DevOps",
+    "question": "Sprint duration is usually:",
+    "options": [
+      "Six months",
+      "One year",
+      "One to four weeks",
+      "Five years"
+    ],
+    "answerIndex": 2,
+    "explanation": "Scrum sprints typically run 1 to 4 weeks long."
+  },
+  {
+    "id": 193,
+    "category": "Agile & DevOps",
+    "question": "Which event is held every day during a Sprint?",
+    "options": [
+      "Sprint Review",
+      "Sprint Planning",
+      "Daily Scrum",
+      "Sprint Retrospective"
+    ],
+    "answerIndex": 2,
+    "explanation": "The 15-minute Daily Standup/Scrum occurs every workday."
+  },
+  {
+    "id": 194,
+    "category": "Agile & DevOps",
+    "question": "User Stories mainly describe:",
+    "options": [
+      "Database design",
+      "User requirements from the user's perspective",
+      "Test cases",
+      "Source code"
+    ],
+    "answerIndex": 1,
+    "explanation": "User stories capture functional requirements from end-user perspective."
+  },
+  {
+    "id": 195,
+    "category": "Agile & DevOps",
+    "question": "User Stories are commonly associated with:",
+    "options": [
+      "Waterfall",
+      "Agile",
+      "Spiral",
+      "V-Model"
+    ],
+    "answerIndex": 1,
+    "explanation": "User stories are standard Agile backlog items."
+  },
+  {
+    "id": 196,
+    "category": "Agile & DevOps",
+    "question": "A User Story typically begins with:",
+    "options": [
+      "'The database should...'",
+      "'As a user, I want...'",
+      "'The compiler should...'",
+      "'The programmer will...'"
+    ],
+    "answerIndex": 1,
+    "explanation": "Standard template: 'As a <user>, I want <feature> so that <benefit>'."
+  },
+  {
+    "id": 197,
+    "category": "Agile & DevOps",
+    "question": "Which UML diagram is most closely related to User Stories?",
+    "options": [
+      "Sequence Diagram",
+      "Activity Diagram",
+      "Use Case Diagram",
+      "Deployment Diagram"
+    ],
+    "answerIndex": 2,
+    "explanation": "Use Case diagrams map directly to user interactions and stories."
+  },
+  {
+    "id": 198,
+    "category": "Agile & DevOps",
+    "question": "The Product Backlog is:",
+    "options": [
+      "A testing document",
+      "A prioritized list of project requirements",
+      "A database",
+      "A programming language"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Product Backlog holds all ordered project requirements."
+  },
+  {
+    "id": 199,
+    "category": "Agile & DevOps",
+    "question": "Who prioritizes the Product Backlog?",
+    "options": [
+      "Scrum Master",
+      "Product Owner",
+      "Developer",
+      "Tester"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Product Owner has sole authority to prioritize backlog items."
+  },
+  {
+    "id": 200,
+    "category": "Agile & DevOps",
+    "question": "The Sprint Backlog contains:",
+    "options": [
+      "Completed software",
+      "Tasks selected for the current Sprint",
+      "Customer complaints",
+      "Test reports"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Sprint Backlog contains work items committed for the active sprint."
+  },
+  {
+    "id": 201,
+    "category": "Agile & DevOps",
+    "question": "DevOps mainly promotes collaboration between:",
+    "options": [
+      "Designers and customers",
+      "Development and Operations teams",
+      "Testers and clients",
+      "Developers and accountants"
+    ],
+    "answerIndex": 1,
+    "explanation": "DevOps bridges Development (Dev) and Operations (Ops)."
+  },
+  {
+    "id": 202,
+    "category": "Agile & DevOps",
+    "question": "CI in DevOps stands for:",
+    "options": [
+      "Continuous Inspection",
+      "Continuous Integration",
+      "Continuous Installation",
+      "Computer Integration"
+    ],
+    "answerIndex": 1,
+    "explanation": "CI = Continuous Integration."
+  },
+  {
+    "id": 203,
+    "category": "Agile & DevOps",
+    "question": "Continuous Integration means:",
+    "options": [
+      "Software is deployed once a year",
+      "Developers frequently merge code into a shared repository",
+      "Requirements never change",
+      "Documentation is skipped"
+    ],
+    "answerIndex": 1,
+    "explanation": "CI automatically builds and tests code whenever merged to main branch."
+  },
+  {
+    "id": 204,
+    "category": "Agile & DevOps",
+    "question": "CD commonly stands for:",
+    "options": [
+      "Code Debugging",
+      "Continuous Deployment",
+      "Continuous Delivery",
+      "Both B and C are commonly used depending on context"
+    ],
+    "answerIndex": 3,
+    "explanation": "CD stands for Continuous Delivery or Continuous Deployment."
+  },
+  {
+    "id": 205,
+    "category": "Agile & DevOps",
+    "question": "The primary objective of Continuous Delivery is to:",
+    "options": [
+      "Increase project documentation",
+      "Release software quickly and reliably",
+      "Delay testing",
+      "Avoid automation"
+    ],
+    "answerIndex": 1,
+    "explanation": "Continuous Delivery ensures software can be released reliably at any time."
+  },
+  {
+    "id": 206,
+    "category": "Agile & DevOps",
+    "question": "A software company releases a working version every two weeks and receives customer feedback after each release.",
+    "options": [
+      "Waterfall",
+      "Agile",
+      "V-Model",
+      "Prototype"
+    ],
+    "answerIndex": 1,
+    "explanation": "Two-week iterations with continuous feedback is Agile."
+  },
+  {
+    "id": 207,
+    "category": "Agile & DevOps",
+    "question": "Developers automatically build and test software whenever new code is committed.",
+    "options": [
+      "Reverse Engineering",
+      "Continuous Integration",
+      "Corrective Maintenance",
+      "Requirement Validation"
+    ],
+    "answerIndex": 1,
+    "explanation": "Automated build and test on commit is Continuous Integration (CI)."
+  },
+  {
+    "id": 208,
+    "category": "Agile & DevOps",
+    "question": "A Product Owner rearranges project features according to customer priorities.",
+    "options": [
+      "Sprint Planning",
+      "Product Backlog Management",
+      "Integration Testing",
+      "White-box Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Ordering backlog items by value is Product Backlog Management."
+  },
+  {
+    "id": 209,
+    "category": "Agile & DevOps",
+    "question": "A Scrum team meets every morning for a 15-minute discussion of progress and blockers.",
+    "options": [
+      "Sprint Review",
+      "Sprint Planning",
+      "Daily Scrum",
+      "Retrospective"
+    ],
+    "answerIndex": 2,
+    "explanation": "Daily 15-minute sync is the Daily Scrum."
+  },
+  {
+    "id": 210,
+    "category": "Agile & DevOps",
+    "question": "Which statement best describes Agile?",
+    "options": [
+      "Requirements must never change.",
+      "Customers participate only after deployment.",
+      "Software is developed in small increments with continuous customer feedback.",
+      "All documentation must be completed before coding."
+    ],
+    "answerIndex": 2,
+    "explanation": "Agile focuses on incremental delivery with constant feedback."
+  },
+  {
+    "id": 211,
+    "category": "Project Management",
+    "question": "Software Project Management primarily deals with:",
+    "options": [
+      "Writing source code",
+      "Planning, organizing, and controlling software projects",
+      "Database normalization",
+      "Network configuration"
+    ],
+    "answerIndex": 1,
+    "explanation": "Project management handles planning, scoping, resources, and execution control."
+  },
+  {
+    "id": 212,
+    "category": "Project Management",
+    "question": "The primary objective of project management is to:",
+    "options": [
+      "Increase project documentation only",
+      "Complete the project within scope, time, and budget",
+      "Eliminate software testing",
+      "Replace system analysis"
+    ],
+    "answerIndex": 1,
+    "explanation": "Project management aims to deliver agreed scope on schedule and within budget."
+  },
+  {
+    "id": 213,
+    "category": "Project Management",
+    "question": "Which of the following is known as the 'triple constraint' of project management?",
+    "options": [
+      "Coding, Testing, Maintenance",
+      "Scope, Time, Cost",
+      "Design, Coding, Testing",
+      "Quality, Security, Reliability"
+    ],
+    "answerIndex": 1,
+    "explanation": "The triple constraint consists of Scope, Time, and Cost."
+  },
+  {
+    "id": 214,
+    "category": "Project Management",
+    "question": "Who is primarily responsible for managing a software project?",
+    "options": [
+      "Database Administrator",
+      "Project Manager",
+      "Customer",
+      "Tester"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Project Manager oversees project delivery."
+  },
+  {
+    "id": 215,
+    "category": "Project Management",
+    "question": "Which activity is usually performed first in project management?",
+    "options": [
+      "Coding",
+      "Project Planning",
+      "Testing",
+      "Deployment"
+    ],
+    "answerIndex": 1,
+    "explanation": "Project Planning precedes operational execution."
+  },
+  {
+    "id": 216,
+    "category": "Project Management",
+    "question": "The Critical Path is:",
+    "options": [
+      "The longest sequence of dependent tasks determining project duration",
+      "The shortest path in the project",
+      "The most expensive tasks",
+      "The easiest project activities"
+    ],
+    "answerIndex": 0,
+    "explanation": "Critical Path is the longest path of dependent tasks; it dictates minimum project duration."
+  },
+  {
+    "id": 217,
+    "category": "Project Management",
+    "question": "Delay in a critical path activity will:",
+    "options": [
+      "Have no effect",
+      "Delay the entire project",
+      "Reduce project cost",
+      "Eliminate project risk"
+    ],
+    "answerIndex": 1,
+    "explanation": "Any delay on critical path directly delays the overall completion date."
+  },
+  {
+    "id": 218,
+    "category": "Project Management",
+    "question": "Activities on the Critical Path have:",
+    "options": [
+      "Maximum flexibility",
+      "Zero float (slack)",
+      "Lowest priority",
+      "Minimum cost"
+    ],
+    "answerIndex": 1,
+    "explanation": "Critical path tasks have zero float (slack time)."
+  },
+  {
+    "id": 219,
+    "category": "Project Management",
+    "question": "Which project management technique identifies the minimum project completion time?",
+    "options": [
+      "Scrum",
+      "RAD",
+      "Critical Path Method (CPM)",
+      "Waterfall"
+    ],
+    "answerIndex": 2,
+    "explanation": "CPM determines the shortest overall project schedule."
+  },
+  {
+    "id": 220,
+    "category": "Project Management",
+    "question": "The main purpose of identifying the Critical Path is to:",
+    "options": [
+      "Reduce documentation",
+      "Identify activities that directly affect project completion time",
+      "Improve coding quality",
+      "Eliminate software testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Focuses management attention on schedule-critical activities."
+  },
+  {
+    "id": 221,
+    "category": "Project Management",
+    "question": "A Gantt Chart is primarily used to:",
+    "options": [
+      "Test software",
+      "Schedule and track project activities",
+      "Design databases",
+      "Normalize relations"
+    ],
+    "answerIndex": 1,
+    "explanation": "Gantt Charts visually display project schedules and task timelines."
+  },
+  {
+    "id": 222,
+    "category": "Project Management",
+    "question": "A Gantt Chart represents project tasks using:",
+    "options": [
+      "Pie charts",
+      "Horizontal bars",
+      "Flowcharts",
+      "Decision trees"
+    ],
+    "answerIndex": 1,
+    "explanation": "Gantt charts render timeline activities using horizontal bars."
+  },
+  {
+    "id": 223,
+    "category": "Project Management",
+    "question": "Which information is commonly shown in a Gantt Chart?",
+    "options": [
+      "Source code",
+      "Database schema",
+      "Task duration and schedule",
+      "Test cases"
+    ],
+    "answerIndex": 2,
+    "explanation": "Task start dates, end dates, durations, and progress are shown."
+  },
+  {
+    "id": 224,
+    "category": "Project Management",
+    "question": "Gantt Charts are mainly useful for:",
+    "options": [
+      "Network routing",
+      "Monitoring project progress",
+      "White-box testing",
+      "Requirement elicitation"
+    ],
+    "answerIndex": 1,
+    "explanation": "Gantt charts enable easy tracking of task execution vs schedule."
+  },
+  {
+    "id": 225,
+    "category": "Project Management",
+    "question": "PERT stands for:",
+    "options": [
+      "Project Evaluation and Resource Technique",
+      "Program Evaluation and Review Technique",
+      "Project Execution and Review Tool",
+      "Program Execution and Resource Tracking"
+    ],
+    "answerIndex": 1,
+    "explanation": "PERT = Program Evaluation and Review Technique."
+  },
+  {
+    "id": 226,
+    "category": "Project Management",
+    "question": "PERT is mainly used when:",
+    "options": [
+      "Activity durations are exactly known",
+      "Activity durations are uncertain",
+      "Software has already been delivered",
+      "Coding is completed"
+    ],
+    "answerIndex": 1,
+    "explanation": "PERT handles probabilistic/uncertain activity durations."
+  },
+  {
+    "id": 227,
+    "category": "Project Management",
+    "question": "Which technique uses optimistic, most likely, and pessimistic time estimates?",
+    "options": [
+      "Gantt Chart",
+      "CPM",
+      "PERT",
+      "Scrum"
+    ],
+    "answerIndex": 2,
+    "explanation": "PERT uses 3-point estimation (optimistic, most likely, pessimistic)."
+  },
+  {
+    "id": 228,
+    "category": "Project Management",
+    "question": "PERT is especially suitable for:",
+    "options": [
+      "Repetitive manufacturing",
+      "Research and development projects",
+      "Payroll processing",
+      "Static websites"
+    ],
+    "answerIndex": 1,
+    "explanation": "PERT suits R&D projects with high timeline uncertainty."
+  },
+  {
+    "id": 229,
+    "category": "Project Management",
+    "question": "Which technique assumes deterministic activity durations?",
+    "options": [
+      "PERT",
+      "CPM",
+      "Scrum",
+      "Agile"
+    ],
+    "answerIndex": 1,
+    "explanation": "CPM assumes known, fixed (deterministic) task durations."
+  },
+  {
+    "id": 230,
+    "category": "Project Management",
+    "question": "Which technique considers uncertainty in activity durations?",
+    "options": [
+      "CPM",
+      "PERT",
+      "Waterfall",
+      "RAD"
+    ],
+    "answerIndex": 1,
+    "explanation": "PERT incorporates probabilistic duration modeling."
+  },
+  {
+    "id": 231,
+    "category": "Project Management",
+    "question": "Which statement is correct?",
+    "options": [
+      "CPM uses three time estimates.",
+      "PERT uses three time estimates.",
+      "Both use identical calculations.",
+      "Neither estimates project duration."
+    ],
+    "answerIndex": 1,
+    "explanation": "PERT uses 3 time estimates (O, M, P) whereas CPM uses 1."
+  },
+  {
+    "id": 232,
+    "category": "Project Management",
+    "question": "Risk in software engineering refers to:",
+    "options": [
+      "Guaranteed project failure",
+      "A potential event that may negatively affect the project",
+      "Software documentation",
+      "Coding standards"
+    ],
+    "answerIndex": 1,
+    "explanation": "Risk is an uncertain future event that could harm project goals."
+  },
+  {
+    "id": 233,
+    "category": "Project Management",
+    "question": "The first step in risk management is:",
+    "options": [
+      "Risk Identification",
+      "Risk Mitigation",
+      "Risk Monitoring",
+      "Risk Recovery"
+    ],
+    "answerIndex": 0,
+    "explanation": "Risk management begins by identifying potential risks."
+  },
+  {
+    "id": 234,
+    "category": "Project Management",
+    "question": "The primary objective of risk management is to:",
+    "options": [
+      "Eliminate software testing",
+      "Reduce the impact of potential project problems",
+      "Increase documentation",
+      "Delay project completion"
+    ],
+    "answerIndex": 1,
+    "explanation": "Risk management minimizes likelihood and severity of negative risks."
+  },
+  {
+    "id": 235,
+    "category": "Project Management",
+    "question": "A project activity is delayed by two days, causing the entire project to finish two days late. The activity belongs to:",
+    "options": [
+      "Non-critical path",
+      "Critical Path",
+      "Product Backlog",
+      "Sprint"
+    ],
+    "answerIndex": 1,
+    "explanation": "Activities whose delay extends project completion are on the Critical Path."
+  },
+  {
+    "id": 236,
+    "category": "Project Management",
+    "question": "A manager wants a visual chart showing task durations across a calendar timeline.",
+    "options": [
+      "CPM",
+      "Gantt Chart",
+      "SRS",
+      "UML"
+    ],
+    "answerIndex": 1,
+    "explanation": "Gantt Charts visually display calendar-based activity schedules."
+  },
+  {
+    "id": 237,
+    "category": "Project Management",
+    "question": "A project has uncertain activity durations because it involves research on a new technology.",
+    "options": [
+      "CPM",
+      "PERT",
+      "Waterfall",
+      "Prototype"
+    ],
+    "answerIndex": 1,
+    "explanation": "PERT accommodates schedule uncertainty in novel R&D tasks."
+  },
+  {
+    "id": 238,
+    "category": "Project Management",
+    "question": "A project manager identifies possible cyberattacks, budget overruns, and staff shortages before development begins.",
+    "options": [
+      "Requirement Validation",
+      "Quality Assurance",
+      "Risk Identification",
+      "Integration Testing"
+    ],
+    "answerIndex": 2,
+    "explanation": "Recognizing future threats early is Risk Identification."
+  },
+  {
+    "id": 239,
+    "category": "Project Management",
+    "question": "A software company prepares contingency plans in case key developers resign.",
+    "options": [
+      "Requirement Analysis",
+      "Risk Mitigation",
+      "White-box Testing",
+      "Corrective Maintenance"
+    ],
+    "answerIndex": 1,
+    "explanation": "Creating backup plans to reduce risk impact is Risk Mitigation."
+  },
+  {
+    "id": 240,
+    "category": "Project Management",
+    "question": "Which statement best describes successful software project management?",
+    "options": [
+      "Completing the project with maximum documentation only.",
+      "Finishing coding as quickly as possible.",
+      "Delivering the required software within agreed scope, time, cost, and quality.",
+      "Eliminating customer involvement."
+    ],
+    "answerIndex": 2,
+    "explanation": "Success means meeting scope, schedule, budget, and quality standards."
+  },
+  {
+    "id": 241,
+    "category": "UML & Quality Attributes",
+    "question": "UML stands for:",
+    "options": [
+      "Universal Modeling Language",
+      "Unified Modeling Language",
+      "Unified Management Language",
+      "Universal Management Language"
+    ],
+    "answerIndex": 1,
+    "explanation": "UML = Unified Modeling Language."
+  },
+  {
+    "id": 242,
+    "category": "UML & Quality Attributes",
+    "question": "Which UML diagram represents the interaction between users and the system?",
+    "options": [
+      "Class Diagram",
+      "Use Case Diagram",
+      "Sequence Diagram",
+      "Activity Diagram"
+    ],
+    "answerIndex": 1,
+    "explanation": "Use Case diagrams illustrate system functionality from user perspective."
+  },
+  {
+    "id": 243,
+    "category": "UML & Quality Attributes",
+    "question": "Which UML diagram shows the static structure of a system?",
+    "options": [
+      "Class Diagram",
+      "Sequence Diagram",
+      "Activity Diagram",
+      "Use Case Diagram"
+    ],
+    "answerIndex": 0,
+    "explanation": "Class diagrams depict system classes, attributes, methods, and static relationships."
+  },
+  {
+    "id": 244,
+    "category": "UML & Quality Attributes",
+    "question": "Which UML diagram illustrates the flow of activities in a process?",
+    "options": [
+      "Class Diagram",
+      "Sequence Diagram",
+      "Activity Diagram",
+      "Component Diagram"
+    ],
+    "answerIndex": 2,
+    "explanation": "Activity diagrams model procedural workflow logic."
+  },
+  {
+    "id": 245,
+    "category": "UML & Quality Attributes",
+    "question": "Which UML diagram emphasizes the sequence of messages exchanged between objects?",
+    "options": [
+      "Use Case Diagram",
+      "Sequence Diagram",
+      "Activity Diagram",
+      "Deployment Diagram"
+    ],
+    "answerIndex": 1,
+    "explanation": "Sequence diagrams detail time-ordered object interaction messages."
+  },
+  {
+    "id": 246,
+    "category": "UML & Quality Attributes",
+    "question": "User Stories are most closely related to which UML diagram?",
+    "options": [
+      "Class Diagram",
+      "Use Case Diagram",
+      "State Diagram",
+      "Deployment Diagram"
+    ],
+    "answerIndex": 1,
+    "explanation": "Use Case diagrams align with User Story requirements."
+  },
+  {
+    "id": 247,
+    "category": "UML & Quality Attributes",
+    "question": "Which UML diagram is most useful during requirement analysis?",
+    "options": [
+      "Class Diagram",
+      "Use Case Diagram",
+      "Component Diagram",
+      "Deployment Diagram"
+    ],
+    "answerIndex": 1,
+    "explanation": "Use Case diagrams capture user domain requirements."
+  },
+  {
+    "id": 248,
+    "category": "UML & Quality Attributes",
+    "question": "Which UML diagram mainly describes object relationships?",
+    "options": [
+      "Class Diagram",
+      "Activity Diagram",
+      "Sequence Diagram",
+      "Use Case Diagram"
+    ],
+    "answerIndex": 0,
+    "explanation": "Class diagrams map static object/class associations, inheritance, and dependencies."
+  },
+  {
+    "id": 249,
+    "category": "UML & Quality Attributes",
+    "question": "Verification answers the question:",
+    "options": [
+      "'Are we building the product right?'",
+      "'Are we building the right product?'",
+      "Is the software secure?",
+      "Is the software maintainable?"
+    ],
+    "answerIndex": 0,
+    "explanation": "Verification checks conformity to specifications ('Are we building the product right?')."
+  },
+  {
+    "id": 250,
+    "category": "UML & Quality Attributes",
+    "question": "Validation answers the question:",
+    "options": [
+      "Are we building the product right?",
+      "'Are we building the right product?'",
+      "Is the software bug-free?",
+      "Is the database normalized?"
+    ],
+    "answerIndex": 1,
+    "explanation": "Validation checks if product meets customer needs ('Are we building the right product?')."
+  },
+  {
+    "id": 251,
+    "category": "UML & Quality Attributes",
+    "question": "Verification mainly checks:",
+    "options": [
+      "Customer satisfaction",
+      "Whether the product conforms to specifications",
+      "Hardware compatibility",
+      "Network performance"
+    ],
+    "answerIndex": 1,
+    "explanation": "Verification checks compliance against specified design/SRS documents."
+  },
+  {
+    "id": 252,
+    "category": "UML & Quality Attributes",
+    "question": "Validation mainly ensures:",
+    "options": [
+      "Correct source code formatting",
+      "Software satisfies customer needs",
+      "Efficient database indexing",
+      "Memory optimization"
+    ],
+    "answerIndex": 1,
+    "explanation": "Validation ensures the product solves actual user business needs."
+  },
+  {
+    "id": 253,
+    "category": "UML & Quality Attributes",
+    "question": "Which activity is generally associated with verification?",
+    "options": [
+      "Reviews and inspections",
+      "User Acceptance Testing",
+      "Beta Testing",
+      "Deployment"
+    ],
+    "answerIndex": 0,
+    "explanation": "Code reviews, document inspections, and walkthroughs are verification tasks."
+  },
+  {
+    "id": 254,
+    "category": "UML & Quality Attributes",
+    "question": "Which activity is most closely associated with validation?",
+    "options": [
+      "Code Review",
+      "Walkthrough",
+      "Acceptance Testing",
+      "Inspection"
+    ],
+    "answerIndex": 2,
+    "explanation": "User Acceptance Testing is the primary validation activity."
+  },
+  {
+    "id": 255,
+    "category": "UML & Quality Attributes",
+    "question": "Alpha Testing is generally performed:",
+    "options": [
+      "Within the developer's organization",
+      "At the customer's workplace",
+      "After software retirement",
+      "Before coding"
+    ],
+    "answerIndex": 0,
+    "explanation": "Alpha testing occurs in-house at the developer's organization."
+  },
+  {
+    "id": 256,
+    "category": "UML & Quality Attributes",
+    "question": "Beta Testing is usually performed:",
+    "options": [
+      "Only by developers",
+      "By selected end users",
+      "During coding",
+      "During requirement analysis"
+    ],
+    "answerIndex": 1,
+    "explanation": "Beta testing is performed by external target users."
+  },
+  {
+    "id": 257,
+    "category": "UML & Quality Attributes",
+    "question": "The main objective of Beta Testing is:",
+    "options": [
+      "Measure CPU utilization",
+      "Obtain real-world user feedback",
+      "Improve source code readability",
+      "Normalize databases"
+    ],
+    "answerIndex": 1,
+    "explanation": "Beta testing gathers authentic user feedback prior to full launch."
+  },
+  {
+    "id": 258,
+    "category": "UML & Quality Attributes",
+    "question": "Which testing occurs first?",
+    "options": [
+      "Alpha Testing",
+      "Beta Testing",
+      "Maintenance",
+      "Retirement"
+    ],
+    "answerIndex": 0,
+    "explanation": "Alpha testing precedes external Beta testing."
+  },
+  {
+    "id": 259,
+    "category": "UML & Quality Attributes",
+    "question": "Smoke Testing verifies:",
+    "options": [
+      "Every feature in detail",
+      "Basic functionality of a new build",
+      "Customer requirements",
+      "Performance"
+    ],
+    "answerIndex": 1,
+    "explanation": "Smoke testing verifies basic build stability."
+  },
+  {
+    "id": 260,
+    "category": "UML & Quality Attributes",
+    "question": "Sanity Testing mainly checks:",
+    "options": [
+      "Entire software",
+      "Specific modified functionality",
+      "Database backup",
+      "Hardware installation"
+    ],
+    "answerIndex": 1,
+    "explanation": "Sanity testing checks targeted fixes."
+  },
+  {
+    "id": 261,
+    "category": "UML & Quality Attributes",
+    "question": "Smoke Testing is also known as:",
+    "options": [
+      "Functional Testing",
+      "Build Verification Testing",
+      "Structural Testing",
+      "Acceptance Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Smoke testing = Build Verification Testing."
+  },
+  {
+    "id": 262,
+    "category": "UML & Quality Attributes",
+    "question": "Which testing is narrower in scope?",
+    "options": [
+      "Smoke Testing",
+      "Sanity Testing",
+      "System Testing",
+      "Integration Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Sanity testing is focused narrowly on specific changes."
+  },
+  {
+    "id": 263,
+    "category": "UML & Quality Attributes",
+    "question": "Which quality attribute measures the probability of failure-free operation?",
+    "options": [
+      "Portability",
+      "Reliability",
+      "Usability",
+      "Scalability"
+    ],
+    "answerIndex": 1,
+    "explanation": "Reliability is probability of failure-free operation over a time period."
+  },
+  {
+    "id": 264,
+    "category": "UML & Quality Attributes",
+    "question": "Which quality attribute refers to ease of learning and using software?",
+    "options": [
+      "Reliability",
+      "Usability",
+      "Portability",
+      "Availability"
+    ],
+    "answerIndex": 1,
+    "explanation": "Usability measures user-friendliness and learning ease."
+  },
+  {
+    "id": 265,
+    "category": "UML & Quality Attributes",
+    "question": "Which quality attribute indicates that software can run on multiple platforms?",
+    "options": [
+      "Reliability",
+      "Maintainability",
+      "Portability",
+      "Efficiency"
+    ],
+    "answerIndex": 2,
+    "explanation": "Portability measures adaptability across different environments."
+  },
+  {
+    "id": 266,
+    "category": "UML & Quality Attributes",
+    "question": "Which quality attribute measures how easily software can be modified?",
+    "options": [
+      "Availability",
+      "Maintainability",
+      "Reliability",
+      "Performance"
+    ],
+    "answerIndex": 1,
+    "explanation": "Maintainability measures ease of fixing bugs or adding updates."
+  },
+  {
+    "id": 267,
+    "category": "UML & Quality Attributes",
+    "question": "Which quality attribute ensures software remains operational whenever needed?",
+    "options": [
+      "Performance",
+      "Portability",
+      "Availability",
+      "Reusability"
+    ],
+    "answerIndex": 2,
+    "explanation": "Availability ensures system uptime when accessed."
+  },
+  {
+    "id": 268,
+    "category": "UML & Quality Attributes",
+    "question": "Which quality attribute refers to efficient use of system resources?",
+    "options": [
+      "Security",
+      "Efficiency",
+      "Availability",
+      "Correctness"
+    ],
+    "answerIndex": 1,
+    "explanation": "Efficiency measures optimal use of memory, CPU, and bandwidth."
+  },
+  {
+    "id": 269,
+    "category": "UML & Quality Attributes",
+    "question": "Confidentiality, integrity, and authentication are mainly associated with:",
+    "options": [
+      "Performance",
+      "Security",
+      "Reliability",
+      "Maintainability"
+    ],
+    "answerIndex": 1,
+    "explanation": "Security protects data confidentiality, integrity, and access controls."
+  },
+  {
+    "id": 270,
+    "category": "UML & Quality Attributes",
+    "question": "Which quality attribute measures the ability of software to handle increasing workload?",
+    "options": [
+      "Reliability",
+      "Portability",
+      "Scalability",
+      "Correctness"
+    ],
+    "answerIndex": 2,
+    "explanation": "Scalability is the capacity to handle growing workloads."
+  },
+  {
+    "id": 271,
+    "category": "UML & Quality Attributes",
+    "question": "Which document serves as the foundation for software design?",
+    "options": [
+      "Test Plan",
+      "SRS",
+      "User Manual",
+      "Installation Guide"
+    ],
+    "answerIndex": 1,
+    "explanation": "SRS forms the baseline for architectural design."
+  },
+  {
+    "id": 272,
+    "category": "UML & Quality Attributes",
+    "question": "Which SDLC model is most suitable when risk analysis is performed in every iteration?",
+    "options": [
+      "Waterfall",
+      "Spiral",
+      "Prototype",
+      "V-Model"
+    ],
+    "answerIndex": 1,
+    "explanation": "Spiral model integrates iterative risk assessment."
+  },
+  {
+    "id": 273,
+    "category": "UML & Quality Attributes",
+    "question": "Which maintenance type improves software performance without changing its main functionality?",
+    "options": [
+      "Corrective",
+      "Adaptive",
+      "Perfective",
+      "Preventive"
+    ],
+    "answerIndex": 2,
+    "explanation": "Performance optimization is Perfective maintenance."
+  },
+  {
+    "id": 274,
+    "category": "UML & Quality Attributes",
+    "question": "Which testing type examines internal program logic?",
+    "options": [
+      "Black-box Testing",
+      "White-box Testing",
+      "Acceptance Testing",
+      "Load Testing"
+    ],
+    "answerIndex": 1,
+    "explanation": "White-box testing inspects internal program logic."
+  },
+  {
+    "id": 275,
+    "category": "UML & Quality Attributes",
+    "question": "Which requirement specifies that the system should respond within three seconds?",
+    "options": [
+      "Functional Requirement",
+      "Non-functional Requirement",
+      "Business Requirement",
+      "User Story"
+    ],
+    "answerIndex": 1,
+    "explanation": "Response time criteria are Non-functional requirements."
+  },
+  {
+    "id": 276,
+    "category": "UML & Quality Attributes",
+    "question": "Which Scrum role prioritizes the Product Backlog?",
+    "options": [
+      "Scrum Master",
+      "Product Owner",
+      "Development Team",
+      "Tester"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Product Owner prioritizes the backlog."
+  },
+  {
+    "id": 277,
+    "category": "UML & Quality Attributes",
+    "question": "Which project management technique identifies activities with zero float?",
+    "options": [
+      "Gantt Chart",
+      "Critical Path Method (CPM)",
+      "Scrum",
+      "RAD"
+    ],
+    "answerIndex": 1,
+    "explanation": "CPM identifies critical activities with zero slack time."
+  },
+  {
+    "id": 278,
+    "category": "UML & Quality Attributes",
+    "question": "Which DevOps practice automatically builds and tests software whenever developers commit code?",
+    "options": [
+      "Continuous Delivery",
+      "Continuous Integration",
+      "Acceptance Testing",
+      "Corrective Maintenance"
+    ],
+    "answerIndex": 1,
+    "explanation": "Continuous Integration (CI) automates builds and tests on commit."
+  },
+  {
+    "id": 279,
+    "category": "UML & Quality Attributes",
+    "question": "Which statement about Agile is correct?",
+    "options": [
+      "Customer involvement is minimal.",
+      "Requirements should never change.",
+      "Working software is delivered in small increments.",
+      "Testing occurs only at the end."
+    ],
+    "answerIndex": 2,
+    "explanation": "Agile delivers working software in frequent, small increments."
+  },
+  {
+    "id": 280,
+    "category": "UML & Quality Attributes",
+    "question": "Which statement best describes Software Engineering?",
+    "options": [
+      "Only writing computer programs.",
+      "Only software testing.",
+      "Applying engineering principles to the systematic development, operation, and maintenance of software.",
+      "Managing computer hardware only."
+    ],
+    "answerIndex": 2,
+    "explanation": "Software Engineering applies disciplined engineering principles to software development."
+  }
+];
+
+
 const builtInSubjects = {
   "Computer Networking": NETWORKING_MCQS,
   "Operating Systems": OPERATING_SYSTEMS_MCQS,
-  "Microprocessor": MICROPROCESSOR_MCQS
+  "Microprocessor": MICROPROCESSOR_MCQS,
+  "Software Engineering": SOFTWARE_ENGINEERING_MCQS
 };
 
 // Parser utility for user-pasted custom MCQs or facts
@@ -9782,3 +13427,4 @@ window.parseRawSubject = parseRawSubject;
 window.NETWORKING_MCQS = NETWORKING_MCQS;
 window.OPERATING_SYSTEMS_MCQS = OPERATING_SYSTEMS_MCQS;
 window.MICROPROCESSOR_MCQS = MICROPROCESSOR_MCQS;
+window.SOFTWARE_ENGINEERING_MCQS = SOFTWARE_ENGINEERING_MCQS;
