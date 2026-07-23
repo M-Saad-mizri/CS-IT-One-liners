@@ -2020,3 +2020,218 @@ body.light-mode .back-to-top-btn:hover {
     font-size: 0.78rem;
   }
 }
+
+/* --- RICH EXPLANATION MODAL STYLES --- */
+.explanation-modal-card {
+  max-width: 720px !important;
+  width: 95%;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card, #1E1B4B);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.explanation-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.explanation-badges {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.exp-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-difficulty.easy {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.badge-difficulty.medium {
+  background: rgba(245, 158, 11, 0.2);
+  color: #FBBF24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.badge-difficulty.hard {
+  background: rgba(239, 68, 68, 0.2);
+  color: #F87171;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.badge-importance {
+  background: rgba(99, 102, 241, 0.2);
+  color: #818CF8;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+}
+
+.explanation-modal-body {
+  overflow-y: auto;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.exp-q-banner {
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 4px solid var(--accent-color, #6366F1);
+  padding: 12px 14px;
+  border-radius: 10px;
+}
+
+.exp-q-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted, #94a3b8);
+  margin-bottom: 4px;
+}
+
+.exp-q-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main, #ffffff);
+  line-height: 1.4;
+}
+
+.exp-block {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp-block-header {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-main, #ffffff);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exp-block-body {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-muted, #cbd5e1);
+}
+
+.exp-options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp-option-card {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  background: rgba(255, 255, 255, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.exp-option-card.correct {
+  border-color: rgba(52, 211, 153, 0.4);
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.exp-option-card.incorrect {
+  border-color: rgba(248, 113, 113, 0.3);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.exp-option-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.exp-opt-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.exp-opt-badge.badge-correct {
+  background: rgba(52, 211, 153, 0.2);
+  color: #34D399;
+}
+
+.exp-opt-badge.badge-incorrect {
+  background: rgba(248, 113, 113, 0.2);
+  color: #F87171;
+}
+
+.exp-option-reason {
+  font-size: 0.82rem;
+  color: var(--text-muted, #94a3b8);
+  line-height: 1.4;
+}
+
+.exp-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.exp-pill {
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  background: rgba(99, 102, 241, 0.15);
+  color: #A5B4FC;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 20px;
+}
+
+.exp-related-mcqs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp-related-mcq-item {
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.exp-related-q {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.exp-related-ans {
+  font-size: 0.8rem;
+  color: #34D399;
+  font-weight: 600;
+}

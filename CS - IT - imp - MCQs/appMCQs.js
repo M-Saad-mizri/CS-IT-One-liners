@@ -559,8 +559,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const deepDiveBtn = card.querySelector(".btn-deep-dive");
       if (deepDiveBtn) {
         deepDiveBtn.addEventListener("click", () => {
-          const prompt = generateFormattedPrompt(mcq, state.activeSubject || "Computer Science");
-          openMiniPopupWindow(`https://duckduckgo.com/?q=${encodeURIComponent(prompt)}`, "DuckDuckGoSearchWindow");
+          openExplanationModal(mcq);
         });
       }
 
@@ -1550,131 +1549,182 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // --- DEEP DIVE & WEB SEARCH MODAL LOGIC ---
-  const deepDiveModal = document.getElementById("deepDiveModal");
-  const deepDiveTitle = document.getElementById("deepDiveTitle");
-  const deepDivePromptText = document.getElementById("deepDivePromptText");
-  const copyPromptBtn = document.getElementById("copyPromptBtn");
+  // --- RICH EXPLANATION MODAL LOGIC ---
+  const explanationModal = document.getElementById("explanationModal");
+  const explanationModalClose = document.getElementById("explanationModalClose");
 
-  const btnSearchGoogle = document.getElementById("btnSearchGoogle");
-  const btnSearchDuckDuckGo = document.getElementById("btnSearchDuckDuckGo");
-  const btnSearchChatGPT = document.getElementById("btnSearchChatGPT");
-  const btnSearchPerplexity = document.getElementById("btnSearchPerplexity");
+  const expQuestionText = document.getElementById("expQuestionText");
+  const expCorrectReasonText = document.getElementById("expCorrectReasonText");
+  const expOptionsGrid = document.getElementById("expOptionsGrid");
+  const expMemoryTipText = document.getElementById("expMemoryTipText");
+  const expExamTrapText = document.getElementById("expExamTrapText");
+  const expConceptSummaryText = document.getElementById("expConceptSummaryText");
+  const expRelatedConceptsPills = document.getElementById("expRelatedConceptsPills");
+  const expRelatedMcqsList = document.getElementById("expRelatedMcqsList");
+  const expBadgeDifficulty = document.getElementById("expBadgeDifficulty");
+  const expBadgeImportance = document.getElementById("expBadgeImportance");
 
-  const deepDiveModalClose = document.getElementById("deepDiveModalClose");
-  let activeDeepDiveMCQ = null;
+  const expMemoryBlock = document.getElementById("expMemoryBlock");
+  const expTrapBlock = document.getElementById("expTrapBlock");
+  const expSummaryBlock = document.getElementById("expSummaryBlock");
+  const expConceptsBlock = document.getElementById("expConceptsBlock");
+  const expRelatedMcqsBlock = document.getElementById("expRelatedMcqsBlock");
 
-  const openMiniPopupWindow = (url, title = "MiniSearchWindow") => {
-    const width = 800;
-    const height = 650;
-    const left = Math.max(0, Math.round((window.screen.width / 2) - (width / 2)));
-    const top = Math.max(0, Math.round((window.screen.height / 2) - (height / 2)));
-    window.open(
-      url,
-      title,
-      `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes,status=yes`
-    );
-  };
+  function openExplanationModal(mcq) {
+    if (!mcq || !explanationModal) return;
 
-  function generateFormattedPrompt(mcq, subjectName) {
-    const optionsList = (mcq.options || []).map((opt, i) => `${String.fromCharCode(65 + i)}. ${opt}`).join("\n");
-    const correctLetter = String.fromCharCode(65 + mcq.answerIndex);
-    const correctOptText = mcq.options[mcq.answerIndex];
-    const incorrectOpts = (mcq.options || []).filter((_, i) => i !== mcq.answerIndex).join(", ");
+    // 1. Question Statement
+    if (expQuestionText) expQuestionText.textContent = mcq.question;
 
-    return `Question:
-${mcq.question}
+    // 2. Parse Explanation Schema
+    let expObj = null;
+    let legacyText = "";
 
-Options:
-${optionsList}
-
-Correct Answer:
-${correctLetter}. ${correctOptText}
-
-Instructions:
-1. Explain why option ${correctLetter} (${correctOptText}) is correct.
-2. Explain why the other options (${incorrectOpts}) are incorrect.
-3. Provide simple real-world examples.
-4. Provide an easy memory trick / mnemonic to remember this concept.
-5. Mention where this concept is used in ${subjectName}.`;
-  }
-
-  function generateCopyableMCQText(mcq) {
-    const optionsList = (mcq.options || []).map((opt, i) => {
-      const letter = String.fromCharCode(65 + i);
-      const isCorrect = i === mcq.answerIndex;
-      return `${letter}. ${opt}${isCorrect ? ' ✔' : ''}`;
-    }).join("\n");
-
-    return `Question:
-${mcq.question}
-
-Options:
-${optionsList}`;
-  }
-
-  function openDeepDiveModal(mcq) {
-    if (!mcq || !deepDiveModal) return;
-    activeDeepDiveMCQ = mcq;
-
-    const prompt = generateFormattedPrompt(mcq, state.activeSubject || "Computer Science");
-    if (deepDivePromptText) deepDivePromptText.value = prompt;
-
-    deepDiveModal.style.display = "flex";
-  }
-
-  function closeDeepDiveModal() {
-    if (deepDiveModal) deepDiveModal.style.display = "none";
-    activeDeepDiveMCQ = null;
-  }
-
-  if (deepDiveModalClose) deepDiveModalClose.addEventListener("click", closeDeepDiveModal);
-
-  if (copyPromptBtn) {
-    copyPromptBtn.addEventListener("click", () => {
-      if (deepDivePromptText) {
-        navigator.clipboard.writeText(deepDivePromptText.value).then(() => {
-          const orig = copyPromptBtn.textContent;
-          copyPromptBtn.textContent = "✅ Copied!";
-          setTimeout(() => copyPromptBtn.textContent = orig, 2000);
-        }).catch(err => {
-          alert("Copy failed: " + err);
-        });
+    if (mcq.explanation) {
+      if (typeof mcq.explanation === "object") {
+        expObj = mcq.explanation;
+      } else if (typeof mcq.explanation === "string") {
+        try {
+          expObj = JSON.parse(mcq.explanation);
+        } catch(e) {
+          legacyText = mcq.explanation;
+        }
       }
-    });
+    }
+
+    const correctLetter = String.fromCharCode(65 + mcq.answerIndex);
+    const correctOptText = mcq.options[mcq.answerIndex] || "";
+
+    // 3. Difficulty & BPSC Importance Badges
+    const diff = (expObj && expObj.difficulty) ? expObj.difficulty : "Medium";
+    const imp = (expObj && expObj.bpscImportance) ? expObj.bpscImportance : "High";
+
+    if (expBadgeDifficulty) {
+      expBadgeDifficulty.textContent = `${diff} Difficulty`;
+      expBadgeDifficulty.className = `exp-badge badge-difficulty ${diff.toLowerCase()}`;
+    }
+    if (expBadgeImportance) {
+      expBadgeImportance.textContent = `BPSC ${imp} Priority`;
+    }
+
+    // 4. Correct Answer Reason
+    if (expCorrectReasonText) {
+      if (expObj && expObj.correctReason) {
+        expCorrectReasonText.textContent = expObj.correctReason;
+      } else if (legacyText) {
+        expCorrectReasonText.textContent = legacyText;
+      } else {
+        expCorrectReasonText.textContent = `Option ${correctLetter} (${correctOptText}) is the correct answer.`;
+      }
+    }
+
+    // 5. Option-by-Option Breakdown
+    if (expOptionsGrid) {
+      expOptionsGrid.innerHTML = "";
+      (mcq.options || []).forEach((optText, i) => {
+        const letter = String.fromCharCode(65 + i);
+        const isCorrect = i === mcq.answerIndex;
+
+        let reason = "";
+        if (expObj && expObj.optionReasons && expObj.optionReasons[letter]) {
+          reason = expObj.optionReasons[letter];
+        } else {
+          reason = isCorrect 
+            ? `Correct answer as defined in BPSC syllabus.`
+            : `Incorrect option for this question context.`;
+        }
+
+        const cardEl = document.createElement("div");
+        cardEl.className = `exp-option-card ${isCorrect ? "correct" : "incorrect"}`;
+        cardEl.innerHTML = `
+          <div class="exp-option-header">
+            <span>${letter}) ${optText}</span>
+            <span class="exp-opt-badge ${isCorrect ? "badge-correct" : "badge-incorrect"}">
+              ${isCorrect ? "✔ Correct" : "✖ Incorrect"}
+            </span>
+          </div>
+          <div class="exp-option-reason">${reason}</div>
+        `;
+        expOptionsGrid.appendChild(cardEl);
+      });
+    }
+
+    // 6. Memory Trick
+    if (expMemoryBlock && expMemoryTipText) {
+      if (expObj && expObj.memoryTip) {
+        expMemoryBlock.style.display = "flex";
+        expMemoryTipText.textContent = expObj.memoryTip;
+      } else {
+        expMemoryBlock.style.display = "none";
+      }
+    }
+
+    // 7. Exam Trap
+    if (expTrapBlock && expExamTrapText) {
+      if (expObj && expObj.examTrap) {
+        expTrapBlock.style.display = "flex";
+        expExamTrapText.textContent = expObj.examTrap;
+      } else {
+        expTrapBlock.style.display = "none";
+      }
+    }
+
+    // 8. Concept Summary
+    if (expSummaryBlock && expConceptSummaryText) {
+      if (expObj && expObj.conceptSummary) {
+        expSummaryBlock.style.display = "flex";
+        expConceptSummaryText.textContent = expObj.conceptSummary;
+      } else {
+        expSummaryBlock.style.display = "none";
+      }
+    }
+
+    // 9. Related Concepts Pills
+    if (expConceptsBlock && expRelatedConceptsPills) {
+      const pillsArr = (expObj && Array.isArray(expObj.relatedConcepts) && expObj.relatedConcepts.length > 0)
+        ? expObj.relatedConcepts
+        : (mcq.category ? [mcq.category] : []);
+
+      if (pillsArr.length > 0) {
+        expConceptsBlock.style.display = "flex";
+        expRelatedConceptsPills.innerHTML = pillsArr.map(p => `<span class="exp-pill">• ${p}</span>`).join("");
+      } else {
+        expConceptsBlock.style.display = "none";
+      }
+    }
+
+    // 10. 3-5 Related Practice Questions with Correct Answers
+    if (expRelatedMcqsBlock && expRelatedMcqsList) {
+      const currentSubjectQs = (typeof getActiveSubjectData === "function" ? getActiveSubjectData() : []) || [];
+      const related = currentSubjectQs
+        .filter(q => q.id !== mcq.id && (q.category === mcq.category || Math.abs(q.id - mcq.id) <= 5))
+        .slice(0, 3);
+
+      if (related.length > 0) {
+        expRelatedMcqsBlock.style.display = "flex";
+        expRelatedMcqsList.innerHTML = related.map(rq => {
+          const rAnsLetter = String.fromCharCode(65 + rq.answerIndex);
+          const rAnsText = rq.options[rq.answerIndex] || "";
+          return `
+            <div class="exp-related-mcq-item">
+              <div class="exp-related-q">${rq.id}. ${rq.question}</div>
+              <div class="exp-related-ans">✔ Answer: ${rAnsLetter}) ${rAnsText}</div>
+            </div>
+          `;
+        }).join("");
+      } else {
+        expRelatedMcqsBlock.style.display = "none";
+      }
+    }
+
+    explanationModal.style.display = "flex";
   }
 
-  if (btnSearchGoogle) {
-    btnSearchGoogle.addEventListener("click", () => {
-      if (!activeDeepDiveMCQ) return;
-      const query = `${activeDeepDiveMCQ.question} ${activeDeepDiveMCQ.options[activeDeepDiveMCQ.answerIndex]}`;
-      openMiniPopupWindow(`https://www.google.com/search?q=${encodeURIComponent(query)}`, "GoogleSearchWindow");
-    });
+  function closeExplanationModal() {
+    if (explanationModal) explanationModal.style.display = "none";
   }
 
-  if (btnSearchDuckDuckGo) {
-    btnSearchDuckDuckGo.addEventListener("click", () => {
-      if (!activeDeepDiveMCQ) return;
-      const query = `${activeDeepDiveMCQ.question} ${activeDeepDiveMCQ.options[activeDeepDiveMCQ.answerIndex]}`;
-      openMiniPopupWindow(`https://duckduckgo.com/?q=${encodeURIComponent(query)}`, "DuckDuckGoSearchWindow");
-    });
-  }
-
-  if (btnSearchChatGPT) {
-    btnSearchChatGPT.addEventListener("click", () => {
-      if (!deepDivePromptText) return;
-      navigator.clipboard.writeText(deepDivePromptText.value);
-      openMiniPopupWindow("https://chatgpt.com/", "ChatGPTWindow");
-    });
-  }
-
-  if (btnSearchPerplexity) {
-    btnSearchPerplexity.addEventListener("click", () => {
-      if (!deepDivePromptText) return;
-      const prompt = deepDivePromptText.value;
-      openMiniPopupWindow(`https://www.perplexity.ai/search?q=${encodeURIComponent(prompt)}`, "PerplexitySearchWindow");
-    });
-  }
+  if (explanationModalClose) explanationModalClose.addEventListener("click", closeExplanationModal);
 
   if (exportProgressBtn) {
     exportProgressBtn.addEventListener("click", () => {
