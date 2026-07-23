@@ -9,7 +9,26 @@ const NETWORKING_MCQS = [
     question: "Which OSI layer is responsible for logical addressing?",
     options: ["Data Link Layer", "Transport Layer", "Network Layer", "Session Layer"],
     answerIndex: 2,
-    explanation: "Network Layer (Layer 3) handles logical addressing (IPv4/IPv6) and packet routing."
+    explanation: {
+    "correctReason": "The Network Layer (Layer 3) handles logical addressing using IP addresses (IPv4/IPv6) to route packets across disparate networks.",
+    "optionReasons": {
+        "A": "Data Link Layer handles physical addressing (MAC addresses) and node-to-node frame delivery within the same local network.",
+        "B": "Transport Layer handles process-to-process communication, port numbers, flow control, and end-to-end reliability (TCP/UDP).",
+        "C": "Network Layer is correct because logical IP addressing and inter-network routing occur exclusively at Layer 3.",
+        "D": "Session Layer manages, establishes, and terminates active communication dialogues and sessions between applications."
+    },
+    "memoryTip": "Logical = Layer 3 = IP Address (Network Layer). Physical = Layer 2 = MAC Address (Data Link).",
+    "examTrap": "BPSC frequently tricks students by swapping logical addressing (IP at Layer 3) with physical addressing (MAC at Layer 2).",
+    "conceptSummary": "The OSI Network Layer provides logical addressing, packet encapsulation, and path determination (routing). IP addresses allow data packets to cross multiple network routers from source host to destination host.",
+    "relatedConcepts": [
+        "IP Addressing",
+        "OSI Layer 3",
+        "Packet Routing",
+        "Logical vs Physical Address"
+    ],
+    "difficulty": "Easy",
+    "bpscImportance": "High"
+}
   },
   {
     id: 2,
@@ -17,7 +36,26 @@ const NETWORKING_MCQS = [
     question: "Which OSI layer is responsible for framing?",
     options: ["Physical Layer", "Data Link Layer", "Network Layer", "Transport Layer"],
     answerIndex: 1,
-    explanation: "Data Link Layer (Layer 2) packages network layer packets into frames for physical transmission."
+    explanation: {
+    "correctReason": "The Data Link Layer (Layer 2) takes network layer packets and encapsulates them into frames by adding header (MAC addresses) and trailer (FCS/CRC error check) fields.",
+    "optionReasons": {
+        "A": "Physical Layer converts bits into raw electrical signals, light pulses, or radio waves without any frame boundaries.",
+        "B": "Data Link Layer is correct because framing, MAC addressing, and local error detection occur at Layer 2.",
+        "C": "Network Layer deals with IP packets and routing across networks, prior to frame encapsulation.",
+        "D": "Transport Layer breaks data into segments (TCP) or datagrams (UDP) and attaches source/destination port numbers."
+    },
+    "memoryTip": "Data Link Layer = Framing & MAC addresses (Layer 2).",
+    "examTrap": "Remember that switches operate at Layer 2 because they process frames using MAC tables.",
+    "conceptSummary": "Framing is the primary function of the Data Link Layer. It packages Layer 3 IP packets into Layer 2 frames with sender/receiver MAC addresses and a Frame Check Sequence (FCS) CRC code for error detection on local links.",
+    "relatedConcepts": [
+        "Framing",
+        "MAC Address",
+        "Layer 2 Switch",
+        "CRC Error Checking"
+    ],
+    "difficulty": "Easy",
+    "bpscImportance": "High"
+}
   },
   {
     id: 3,
@@ -25,7 +63,26 @@ const NETWORKING_MCQS = [
     question: "Which OSI layer converts bits into electrical, optical, or radio signals?",
     options: ["Physical Layer", "Data Link Layer", "Session Layer", "Network Layer"],
     answerIndex: 0,
-    explanation: "Physical Layer (Layer 1) deals with transmitting raw bit streams over physical media."
+    explanation: {
+    "correctReason": "The Physical Layer (Layer 1) defines mechanical, electrical, and functional specifications to transmit raw unstructured bit streams over physical transmission media.",
+    "optionReasons": {
+        "A": "Physical Layer is correct because signal encoding, voltage levels, and bit transmission over media occur at Layer 1.",
+        "B": "Data Link Layer organizes raw bits into structured frames and handles medium access control.",
+        "C": "Session Layer manages session establishment and dialogue control between software applications.",
+        "D": "Network Layer handles logical IP addressing and packet routing."
+    },
+    "memoryTip": "Physical = Cables, Voltage, Bits, and Signals (Layer 1).",
+    "examTrap": "Hubs and repeaters work at the Physical Layer because they simply regenerate electrical/optical signals without inspecting bit frames.",
+    "conceptSummary": "The Physical Layer governs the physical cable interface, connector types (RJ-45), signaling techniques (NRZ, Manchester), and bit representation as voltage, pulse of light, or RF wave.",
+    "relatedConcepts": [
+        "Physical Layer",
+        "Bit Stream",
+        "Signal Encoding",
+        "Media Transmission"
+    ],
+    "difficulty": "Easy",
+    "bpscImportance": "High"
+}
   },
   {
     id: 4,
@@ -33,7 +90,26 @@ const NETWORKING_MCQS = [
     question: "Which PDU belongs to the Transport Layer?",
     options: ["Frame", "Packet", "Segment", "Bit"],
     answerIndex: 2,
-    explanation: "The Protocol Data Unit (PDU) at Transport Layer is called a Segment (or Datagram for UDP)."
+    explanation: {
+    "correctReason": "At the Transport Layer (Layer 4), data is divided into Protocol Data Units (PDUs) known as Segments in TCP or Datagrams in UDP.",
+    "optionReasons": {
+        "A": "Frame is the Protocol Data Unit (PDU) at the Data Link Layer (Layer 2).",
+        "B": "Packet is the Protocol Data Unit (PDU) at the Network Layer (Layer 3).",
+        "C": "Segment is correct for Layer 4 because TCP appends sequence numbers and port numbers to form segments.",
+        "D": "Bit is the unit of data at the Physical Layer (Layer 1)."
+    },
+    "memoryTip": "PDUs: Bits (L1) -> Frames (L2) -> Packets (L3) -> Segments (L4) -> Data (L5-L7).",
+    "examTrap": "BPSC tests PDU hierarchy regularly. Remember the acronym 'Please Do Not Throw Sausage Pizza Away' (Physical to Application).",
+    "conceptSummary": "Each OSI layer encapsulates data into a specific PDU format. Transport layer adds port headers to form Segments, which are passed down to Network layer to become Packets.",
+    "relatedConcepts": [
+        "Layer 4 PDU",
+        "TCP Segment",
+        "UDP Datagram",
+        "OSI Encapsulation"
+    ],
+    "difficulty": "Easy",
+    "bpscImportance": "High"
+}
   },
   {
     id: 5,
@@ -41,7 +117,26 @@ const NETWORKING_MCQS = [
     question: "Which PDU belongs to the Network Layer?",
     options: ["Segment", "Frame", "Packet", "Bit"],
     answerIndex: 2,
-    explanation: "The PDU at Network Layer is called a Packet."
+    explanation: {
+    "correctReason": "At the Network Layer (Layer 3), data units are encapsulated into Packets containing source and destination IP addresses.",
+    "optionReasons": {
+        "A": "Segment is the PDU of the Transport Layer (Layer 4).",
+        "B": "Frame is the PDU of the Data Link Layer (Layer 2).",
+        "C": "Packet is correct as the Network Layer PDU.",
+        "D": "Bit is the PDU of the Physical Layer (Layer 1)."
+    },
+    "memoryTip": "Layer 3 = IP = Packet.",
+    "examTrap": "Do not confuse Layer 3 Packets with Layer 2 Frames. Routers route Packets; Switches switch Frames.",
+    "conceptSummary": "Network Layer receives segments from Transport Layer, prepends IP headers (containing logical source and destination IP addresses, TTL, protocol field) to create Packets.",
+    "relatedConcepts": [
+        "Network Layer PDU",
+        "IP Packet",
+        "IP Header",
+        "Routing PDU"
+    ],
+    "difficulty": "Easy",
+    "bpscImportance": "High"
+}
   },
   {
     id: 6,
@@ -49,7 +144,26 @@ const NETWORKING_MCQS = [
     question: "Which OSI layer is responsible for MAC addressing?",
     options: ["Network Layer", "Data Link Layer", "Physical Layer", "Session Layer"],
     answerIndex: 1,
-    explanation: "MAC (Media Access Control) addresses reside at the Data Link Layer (Sublayer MAC)."
+    explanation: {
+    "correctReason": "MAC (Media Access Control) addresses are 48-bit hardware addresses baked into Network Interface Cards (NICs), operating at the Data Link Layer (Layer 2).",
+    "optionReasons": {
+        "A": "Network Layer operates using 32-bit (IPv4) or 128-bit (IPv6) logical IP addresses.",
+        "B": "Data Link Layer is correct because MAC addressing resides in the MAC sublayer of Layer 2.",
+        "C": "Physical Layer transmits raw electrical signals and has no address evaluation logic.",
+        "D": "Session Layer manages session tokens and dialogue control, operating above network addressing."
+    },
+    "memoryTip": "MAC = Physical Hardware Address = Data Link Layer (Layer 2).",
+    "examTrap": "Remember that MAC address is 48 bits (6 bytes) written in hexadecimal format (e.g., 00:1A:2B:3C:4D:5E).",
+    "conceptSummary": "The Data Link Layer is divided into two sublayers: LLC (Logical Link Control) and MAC (Media Access Control). MAC handles node identification on a local ethernet segment.",
+    "relatedConcepts": [
+        "MAC Address",
+        "Data Link Sublayers",
+        "NIC Hardware Address",
+        "Layer 2 Addressing"
+    ],
+    "difficulty": "Easy",
+    "bpscImportance": "High"
+}
   },
   {
     id: 7,
@@ -57,7 +171,26 @@ const NETWORKING_MCQS = [
     question: "Which OSI layer establishes, manages, and terminates communication sessions?",
     options: ["Session Layer", "Network Layer", "Presentation Layer", "Transport Layer"],
     answerIndex: 0,
-    explanation: "Session Layer (Layer 5) maintains connection checkpoints, dialogues, and session teardowns."
+    explanation: {
+    "correctReason": "The Session Layer (Layer 5) establishes, manages, synchronizes, and terminates session connections between local and remote application processes.",
+    "optionReasons": {
+        "A": "Session Layer is correct as it handles dialogue control, checkpoints, and session teardowns.",
+        "B": "Network Layer routes IP packets across network pathways.",
+        "C": "Presentation Layer formats, encrypts, and compresses data.",
+        "D": "Transport Layer ensures reliable end-to-end transport and flow control."
+    },
+    "memoryTip": "Session Layer = Dialogue Control & Checkpoints.",
+    "examTrap": "Session layer handles half-duplex / full-duplex session synchronization checkpoints so downloads can resume after interruption.",
+    "conceptSummary": "Session Layer allows two applications on different computers to establish, use, and end a connection called a session. It maintains session checkpoints for recovery.",
+    "relatedConcepts": [
+        "Session Layer",
+        "Dialogue Control",
+        "Session Synchronization",
+        "OSI Layer 5"
+    ],
+    "difficulty": "Medium",
+    "bpscImportance": "High"
+}
   },
   {
     id: 8,
@@ -65,7 +198,26 @@ const NETWORKING_MCQS = [
     question: "Data encryption is mainly performed at which OSI layer?",
     options: ["Application", "Presentation", "Session", "Transport"],
     answerIndex: 1,
-    explanation: "Presentation Layer (Layer 6) manages syntax, data formatting, compression, and encryption/decryption."
+    explanation: {
+    "correctReason": "The Presentation Layer (Layer 6) formats, translates, compresses, and encrypts/decrypts data so that applications receive data in a readable syntax.",
+    "optionReasons": {
+        "A": "Application Layer directly interacts with end-user software applications like web browsers.",
+        "B": "Presentation Layer is correct because data encryption (SSL/TLS syntax), compression, and translation occur here.",
+        "C": "Session Layer maintains session checkpoints and active connection state.",
+        "D": "Transport Layer manages port numbers, segmentation, and reassembly."
+    },
+    "memoryTip": "Presentation Layer = Syntax, Encryption, Compression, Data Format.",
+    "examTrap": "SSL/TLS data encryption and image formatting (JPEG, GIF, ASCII translation) belong to the Presentation Layer.",
+    "conceptSummary": "Presentation Layer acts as the data translator for the network. It handles syntax formatting, data compression (ZIP, JPEG), and security encryption/decryption (SSL/TLS).",
+    "relatedConcepts": [
+        "Data Encryption",
+        "Presentation Layer",
+        "SSL/TLS Syntax",
+        "Data Compression"
+    ],
+    "difficulty": "Easy",
+    "bpscImportance": "High"
+}
   },
   {
     id: 9,
@@ -73,7 +225,26 @@ const NETWORKING_MCQS = [
     question: "Which layer translates different data formats between systems?",
     options: ["Session", "Presentation", "Transport", "Data Link"],
     answerIndex: 1,
-    explanation: "Presentation Layer standardizes formats (ASCII, EBCDIC, JPEG, SSL/TLS data representations)."
+    explanation: {
+    "correctReason": "The Presentation Layer handles code conversion and data translation between different computer syntax systems (such as ASCII to EBCDIC or little-endian to big-endian).",
+    "optionReasons": {
+        "A": "Session Layer handles session setup and dialogue management.",
+        "B": "Presentation Layer is correct because it ensures syntax compatibility between heterogeneous systems.",
+        "C": "Transport Layer provides port-to-port multiplexing and error control.",
+        "D": "Data Link Layer manages framing and MAC address identification."
+    },
+    "memoryTip": "Presentation = Translator between different machine data formats.",
+    "examTrap": "Questions asking about 'EBCDIC to ASCII conversion' or 'character encoding translation' point directly to Presentation Layer.",
+    "conceptSummary": "Presentation layer ensures that information sent by the application layer of one system is readable by the application layer of another system via common transfer syntax.",
+    "relatedConcepts": [
+        "Character Encoding",
+        "Data Translation",
+        "Syntax Standard",
+        "OSI Layer 6"
+    ],
+    "difficulty": "Medium",
+    "bpscImportance": "High"
+}
   },
   {
     id: 10,
@@ -81,7 +252,26 @@ const NETWORKING_MCQS = [
     question: "Which layer provides services directly to end-user applications?",
     options: ["Presentation", "Session", "Application", "Transport"],
     answerIndex: 2,
-    explanation: "Application Layer (Layer 7) provides protocols directly used by user software (HTTP, FTP, SMTP)."
+    explanation: {
+    "correctReason": "The Application Layer (Layer 7) serves as the window for users and application processes to access network services (e.g., HTTP, FTP, SMTP, DNS).",
+    "optionReasons": {
+        "A": "Presentation Layer formats and encrypts data for application consumption.",
+        "B": "Session Layer maintains session connections between software applications.",
+        "C": "Application Layer is correct as it provides protocols directly utilized by end-user network applications.",
+        "D": "Transport Layer manages port numbers, segmentation, and reassembly."
+    },
+    "memoryTip": "Application Layer = User Application Protocols (HTTP, FTP, SMTP, DNS).",
+    "examTrap": "Note that Application Layer does NOT mean the user program itself (like Chrome browser), but rather the protocol services (HTTP/HTTPS) that Chrome uses.",
+    "conceptSummary": "Application Layer is the top layer in the OSI model. It supplies network services directly to user applications, handling HTTP web browsing, FTP file transfer, and SMTP email.",
+    "relatedConcepts": [
+        "Application Layer",
+        "Network Protocols",
+        "HTTP/FTP/SMTP",
+        "OSI Layer 7"
+    ],
+    "difficulty": "Easy",
+    "bpscImportance": "High"
+}
   },
   {
     id: 11,
