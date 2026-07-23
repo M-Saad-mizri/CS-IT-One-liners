@@ -23757,7 +23757,25 @@ const DSD_MCQS = [
       "16"
     ],
     "answerIndex": 2,
-    "explanation": "The binary system uses 2 as its base (radix)."
+    "explanation": {
+      "correctReason": "Option C (2) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (8) is incorrect for this specific question context.",
+        "B": "Option B (10) is incorrect for this specific question context.",
+        "C": "Option C (2) is the correct choice.",
+        "D": "Option D (16) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The base (radix) of the binary number system is: -> 2.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 2,
@@ -23770,7 +23788,25 @@ const DSD_MCQS = [
       "1 and 2"
     ],
     "answerIndex": 2,
-    "explanation": "Binary consists strictly of digits 0 and 1."
+    "explanation": {
+      "correctReason": "Option C (0 and 1) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (0-7) is incorrect for this specific question context.",
+        "B": "Option B (0-9) is incorrect for this specific question context.",
+        "C": "Option C (0 and 1) is the correct choice.",
+        "D": "Option D (1 and 2) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which digits are used in the binary number system? -> 0 and 1.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 3,
@@ -23783,7 +23819,25 @@ const DSD_MCQS = [
       "12"
     ],
     "answerIndex": 2,
-    "explanation": "1*8 + 0*4 + 1*2 + 0*1 = 10."
+    "explanation": {
+      "correctReason": "Option C (10) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (8) is incorrect for this specific question context.",
+        "B": "Option B (9) is incorrect for this specific question context.",
+        "C": "Option C (10) is the correct choice.",
+        "D": "Option D (12) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The decimal equivalent of binary (1010)\u2082 is: -> 10.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 4,
@@ -23796,7 +23850,25 @@ const DSD_MCQS = [
       "1101"
     ],
     "answerIndex": 1,
-    "explanation": "15 = 8 + 4 + 2 + 1 = (1111)\u2082."
+    "explanation": {
+      "correctReason": "Option B (1111) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (1110) is incorrect for this specific question context.",
+        "B": "Option B (1111) is the correct choice.",
+        "C": "Option C (1011) is incorrect for this specific question context.",
+        "D": "Option D (1101) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The binary equivalent of decimal 15 is: -> 1111.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 5,
@@ -23809,7 +23881,25 @@ const DSD_MCQS = [
       "20"
     ],
     "answerIndex": 2,
-    "explanation": "16 + 2 + 1 = 19."
+    "explanation": {
+      "correctReason": "Option C (19) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (17) is incorrect for this specific question context.",
+        "B": "Option B (18) is incorrect for this specific question context.",
+        "C": "Option C (19) is the correct choice.",
+        "D": "Option D (20) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The decimal equivalent of binary (10011)\u2082 is: -> 19.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 6,
@@ -23822,7 +23912,25 @@ const DSD_MCQS = [
       "Hexadecimal"
     ],
     "answerIndex": 1,
-    "explanation": "Octal has base/radix 8."
+    "explanation": {
+      "correctReason": "Option B (Octal) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (Binary) is incorrect for this specific question context.",
+        "B": "Option B (Octal) is the correct choice.",
+        "C": "Option C (Decimal) is incorrect for this specific question context.",
+        "D": "Option D (Hexadecimal) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which number system has radix 8? -> Octal.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 7,
@@ -23835,7 +23943,25 @@ const DSD_MCQS = [
       "Hexadecimal"
     ],
     "answerIndex": 3,
-    "explanation": "Hexadecimal has base/radix 16."
+    "explanation": {
+      "correctReason": "Option D (Hexadecimal) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (Binary) is incorrect for this specific question context.",
+        "B": "Option B (Decimal) is incorrect for this specific question context.",
+        "C": "Option C (Octal) is incorrect for this specific question context.",
+        "D": "Option D (Hexadecimal) is the correct choice."
+      },
+      "memoryTip": "Remember: Which number system has radix 16? -> Hexadecimal.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 8,
@@ -23848,7 +23974,25 @@ const DSD_MCQS = [
       "12"
     ],
     "answerIndex": 1,
-    "explanation": "A = 10 in hexadecimal."
+    "explanation": {
+      "correctReason": "Option B (10) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (9) is incorrect for this specific question context.",
+        "B": "Option B (10) is the correct choice.",
+        "C": "Option C (11) is incorrect for this specific question context.",
+        "D": "Option D (12) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The hexadecimal digit A represents decimal: -> 10.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 9,
@@ -23861,7 +24005,25 @@ const DSD_MCQS = [
       "15"
     ],
     "answerIndex": 3,
-    "explanation": "F = 15 in hexadecimal."
+    "explanation": {
+      "correctReason": "Option D (15) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (12) is incorrect for this specific question context.",
+        "B": "Option B (13) is incorrect for this specific question context.",
+        "C": "Option C (14) is incorrect for this specific question context.",
+        "D": "Option D (15) is the correct choice."
+      },
+      "memoryTip": "Remember: The hexadecimal digit F is equal to decimal: -> 15.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 10,
@@ -23874,7 +24036,25 @@ const DSD_MCQS = [
       "11100"
     ],
     "answerIndex": 0,
-    "explanation": "25 = 16 + 8 + 1 = (11001)\u2082."
+    "explanation": {
+      "correctReason": "Option A (11001) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (11001) is the correct choice.",
+        "B": "Option B (10101) is incorrect for this specific question context.",
+        "C": "Option C (10011) is incorrect for this specific question context.",
+        "D": "Option D (11100) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Decimal 25 in binary is: -> 11001.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 11,
@@ -23887,7 +24067,25 @@ const DSD_MCQS = [
       "255"
     ],
     "answerIndex": 3,
-    "explanation": "2^8 - 1 = 255."
+    "explanation": {
+      "correctReason": "Option D (255) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (127) is incorrect for this specific question context.",
+        "B": "Option B (128) is incorrect for this specific question context.",
+        "C": "Option C (254) is incorrect for this specific question context.",
+        "D": "Option D (255) is the correct choice."
+      },
+      "memoryTip": "Remember: Binary (11111111)\u2082 is equal to decimal: -> 255.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 12,
@@ -23900,7 +24098,25 @@ const DSD_MCQS = [
       "101000"
     ],
     "answerIndex": 1,
-    "explanation": "32 = 2^5 = (100000)\u2082."
+    "explanation": {
+      "correctReason": "Option B (100000) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (11111) is incorrect for this specific question context.",
+        "B": "Option B (100000) is the correct choice.",
+        "C": "Option C (100001) is incorrect for this specific question context.",
+        "D": "Option D (101000) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Decimal 32 in binary is: -> 100000.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 13,
@@ -23913,7 +24129,25 @@ const DSD_MCQS = [
       "128"
     ],
     "answerIndex": 1,
-    "explanation": "2^5 = 32."
+    "explanation": {
+      "correctReason": "Option B (32) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (16) is incorrect for this specific question context.",
+        "B": "Option B (32) is the correct choice.",
+        "C": "Option C (64) is incorrect for this specific question context.",
+        "D": "Option D (128) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Binary (100000)\u2082 is equal to: -> 32.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 14,
@@ -23926,7 +24160,25 @@ const DSD_MCQS = [
       "101010"
     ],
     "answerIndex": 1,
-    "explanation": "50 = 32 + 16 + 2 = (110010)\u2082."
+    "explanation": {
+      "correctReason": "Option B (110010) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (110000) is incorrect for this specific question context.",
+        "B": "Option B (110010) is the correct choice.",
+        "C": "Option C (111010) is incorrect for this specific question context.",
+        "D": "Option D (101010) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The binary equivalent of decimal 50 is: -> 110010.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 15,
@@ -23939,7 +24191,25 @@ const DSD_MCQS = [
       "Octal and Hexadecimal"
     ],
     "answerIndex": 3,
-    "explanation": "Octal (3 bits) and Hexadecimal (4 bits) group binary bits efficiently."
+    "explanation": {
+      "correctReason": "Option D (Octal and Hexadecimal) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (Decimal) is incorrect for this specific question context.",
+        "B": "Option B (Octal only) is incorrect for this specific question context.",
+        "C": "Option C (Hexadecimal only) is incorrect for this specific question context.",
+        "D": "Option D (Octal and Hexadecimal) is the correct choice."
+      },
+      "memoryTip": "Remember: Which number system is commonly used as a shorthand representation of binary? -> Octal and Hexadecimal.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 16,
@@ -23952,7 +24222,25 @@ const DSD_MCQS = [
       "8 bits"
     ],
     "answerIndex": 2,
-    "explanation": "Each hex digit replaces 4 binary bits (2^4 = 16)."
+    "explanation": {
+      "correctReason": "Option C (4 bits) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (2 bits) is incorrect for this specific question context.",
+        "B": "Option B (3 bits) is incorrect for this specific question context.",
+        "C": "Option C (4 bits) is the correct choice.",
+        "D": "Option D (8 bits) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: One hexadecimal digit represents: -> 4 bits.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 17,
@@ -23965,7 +24253,25 @@ const DSD_MCQS = [
       "5 bits"
     ],
     "answerIndex": 1,
-    "explanation": "Each octal digit replaces 3 binary bits (2^3 = 8)."
+    "explanation": {
+      "correctReason": "Option B (3 bits) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (2 bits) is incorrect for this specific question context.",
+        "B": "Option B (3 bits) is the correct choice.",
+        "C": "Option C (4 bits) is incorrect for this specific question context.",
+        "D": "Option D (5 bits) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: One octal digit represents: -> 3 bits.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 18,
@@ -23978,7 +24284,25 @@ const DSD_MCQS = [
       "C"
     ],
     "answerIndex": 1,
-    "explanation": "1111 in binary = F in hex."
+    "explanation": {
+      "correctReason": "Option B (F) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (E) is incorrect for this specific question context.",
+        "B": "Option B (F) is the correct choice.",
+        "C": "Option C (A) is incorrect for this specific question context.",
+        "D": "Option D (C) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Binary (1111)\u2082 is equal to hexadecimal: -> F.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 19,
@@ -23991,7 +24315,25 @@ const DSD_MCQS = [
       "27"
     ],
     "answerIndex": 2,
-    "explanation": "1*16 + 10 = 26."
+    "explanation": {
+      "correctReason": "Option C (26) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (24) is incorrect for this specific question context.",
+        "B": "Option B (25) is incorrect for this specific question context.",
+        "C": "Option C (26) is the correct choice.",
+        "D": "Option D (27) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Hexadecimal (1A)\u2081\u2086 is equal to decimal: -> 26.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 20,
@@ -24004,7 +24346,25 @@ const DSD_MCQS = [
       "60"
     ],
     "answerIndex": 1,
-    "explanation": "64 / 16 = 4 R 0 => 40 in hex."
+    "explanation": {
+      "correctReason": "Option B (40) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (30) is incorrect for this specific question context.",
+        "B": "Option B (40) is the correct choice.",
+        "C": "Option C (50) is incorrect for this specific question context.",
+        "D": "Option D (60) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Decimal 64 is represented in hexadecimal as: -> 40.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 21,
@@ -24017,7 +24377,25 @@ const DSD_MCQS = [
       "Multiplying by 2"
     ],
     "answerIndex": 1,
-    "explanation": "1's complement flips all 0s to 1s and 1s to 0s."
+    "explanation": {
+      "correctReason": "Option B (Inverting all bits) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (Adding 1) is incorrect for this specific question context.",
+        "B": "Option B (Inverting all bits) is the correct choice.",
+        "C": "Option C (Removing the MSB) is incorrect for this specific question context.",
+        "D": "Option D (Multiplying by 2) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: One's complement is obtained by: -> Inverting all bits.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 22,
@@ -24030,7 +24408,25 @@ const DSD_MCQS = [
       "Shifting left"
     ],
     "answerIndex": 1,
-    "explanation": "2's complement = 1's complement + 1."
+    "explanation": {
+      "correctReason": "Option B (Adding 1 to the one's complement) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (Inverting bits only) is incorrect for this specific question context.",
+        "B": "Option B (Adding 1 to the one's complement) is the correct choice.",
+        "C": "Option C (Subtracting 1) is incorrect for this specific question context.",
+        "D": "Option D (Shifting left) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Two's complement is obtained by: -> Adding 1 to the one's complement.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 23,
@@ -24043,7 +24439,25 @@ const DSD_MCQS = [
       "0011"
     ],
     "answerIndex": 2,
-    "explanation": "Inverting 1010 yields 0101."
+    "explanation": {
+      "correctReason": "Option C (0101) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (1011) is incorrect for this specific question context.",
+        "B": "Option B (0100) is incorrect for this specific question context.",
+        "C": "Option C (0101) is the correct choice.",
+        "D": "Option D (0011) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The one's complement of 1010 is: -> 0101.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 24,
@@ -24056,7 +24470,25 @@ const DSD_MCQS = [
       "1000"
     ],
     "answerIndex": 1,
-    "explanation": "1's complement of 1010 is 0101; adding 1 gives 0110."
+    "explanation": {
+      "correctReason": "Option B (0110) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (0101) is incorrect for this specific question context.",
+        "B": "Option B (0110) is the correct choice.",
+        "C": "Option C (1110) is incorrect for this specific question context.",
+        "D": "Option D (1000) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The two's complement of 1010 is: -> 0110.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 25,
@@ -24069,7 +24501,25 @@ const DSD_MCQS = [
       "0101"
     ],
     "answerIndex": 1,
-    "explanation": "1's complement of 1101 is 0010; adding 1 gives 0011."
+    "explanation": {
+      "correctReason": "Option B (0011) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (0010) is incorrect for this specific question context.",
+        "B": "Option B (0011) is the correct choice.",
+        "C": "Option C (0100) is incorrect for this specific question context.",
+        "D": "Option D (0101) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The two's complement of 1101 is: -> 0011.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 26,
@@ -24082,7 +24532,25 @@ const DSD_MCQS = [
       "ASCII"
     ],
     "answerIndex": 2,
-    "explanation": "2's complement simplifies hardware arithmetic (no separate subtraction logic)."
+    "explanation": {
+      "correctReason": "Option C (Two's Complement) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (BCD) is incorrect for this specific question context.",
+        "B": "Option B (Gray Code) is incorrect for this specific question context.",
+        "C": "Option C (Two's Complement) is the correct choice.",
+        "D": "Option D (ASCII) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which representation is widely used for signed integers in computers? -> Two's Complement.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 27,
@@ -24095,7 +24563,25 @@ const DSD_MCQS = [
       "1110"
     ],
     "answerIndex": 2,
-    "explanation": "+6 is 0110 -> 1's comp 1001 -> +1 = 1010."
+    "explanation": {
+      "correctReason": "Option C (1010) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (0110) is incorrect for this specific question context.",
+        "B": "Option B (1001) is incorrect for this specific question context.",
+        "C": "Option C (1010) is the correct choice.",
+        "D": "Option D (1110) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The two's complement representation of decimal -6 using 4 bits is: -> 1010.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 28,
@@ -24108,7 +24594,25 @@ const DSD_MCQS = [
       "256"
     ],
     "answerIndex": 1,
-    "explanation": "Range is -(2^7) to +(2^7 - 1), so max is +127."
+    "explanation": {
+      "correctReason": "Option B (127) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (128) is incorrect for this specific question context.",
+        "B": "Option B (127) is the correct choice.",
+        "C": "Option C (255) is incorrect for this specific question context.",
+        "D": "Option D (256) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: In an 8-bit signed two's complement system, the maximum positive number is: -> 127.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 29,
@@ -24121,7 +24625,25 @@ const DSD_MCQS = [
       "-256"
     ],
     "answerIndex": 1,
-    "explanation": "Minimum number is -2^7 = -128."
+    "explanation": {
+      "correctReason": "Option B (-128) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (-127) is incorrect for this specific question context.",
+        "B": "Option B (-128) is the correct choice.",
+        "C": "Option C (-255) is incorrect for this specific question context.",
+        "D": "Option D (-256) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: In an 8-bit signed two's complement system, the minimum number is: -> -128.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 30,
@@ -24134,7 +24656,25 @@ const DSD_MCQS = [
       "Parity bit"
     ],
     "answerIndex": 1,
-    "explanation": "Most Significant Bit (MSB): 0 = positive, 1 = negative."
+    "explanation": {
+      "correctReason": "Option B (MSB) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (LSB) is incorrect for this specific question context.",
+        "B": "Option B (MSB) is the correct choice.",
+        "C": "Option C (Carry bit) is incorrect for this specific question context.",
+        "D": "Option D (Parity bit) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which bit indicates the sign in signed binary representation? -> MSB.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 31,
@@ -24147,7 +24687,25 @@ const DSD_MCQS = [
       "Binary Control Digit"
     ],
     "answerIndex": 1,
-    "explanation": "BCD stands for Binary Coded Decimal."
+    "explanation": {
+      "correctReason": "Option B (Binary Coded Decimal) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (Binary Code Digit) is incorrect for this specific question context.",
+        "B": "Option B (Binary Coded Decimal) is the correct choice.",
+        "C": "Option C (Binary Computer Data) is incorrect for this specific question context.",
+        "D": "Option D (Binary Control Digit) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: BCD stands for: -> Binary Coded Decimal.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 32,
@@ -24160,7 +24718,25 @@ const DSD_MCQS = [
       "1111"
     ],
     "answerIndex": 1,
-    "explanation": "9 in 4-bit BCD is 1001."
+    "explanation": {
+      "correctReason": "Option B (1001) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (1000) is incorrect for this specific question context.",
+        "B": "Option B (1001) is the correct choice.",
+        "C": "Option C (1010) is incorrect for this specific question context.",
+        "D": "Option D (1111) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: In BCD, decimal digit 9 is represented as: -> 1001.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 33,
@@ -24173,7 +24749,25 @@ const DSD_MCQS = [
       "Excess-3"
     ],
     "answerIndex": 2,
-    "explanation": "Gray code is a unitemporal (unit distance) code where adjacent values differ by 1 bit."
+    "explanation": {
+      "correctReason": "Option C (Gray Code) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (ASCII) is incorrect for this specific question context.",
+        "B": "Option B (BCD) is incorrect for this specific question context.",
+        "C": "Option C (Gray Code) is the correct choice.",
+        "D": "Option D (Excess-3) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which code changes only one bit between successive numbers? -> Gray Code.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 34,
@@ -24186,7 +24780,25 @@ const DSD_MCQS = [
       "Encrypt data"
     ],
     "answerIndex": 2,
-    "explanation": "Single bit transitions prevent spurious intermediate switching states in physical systems."
+    "explanation": {
+      "correctReason": "Option C (Reduce transition errors) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (Increase memory) is incorrect for this specific question context.",
+        "B": "Option B (Compress data) is incorrect for this specific question context.",
+        "C": "Option C (Reduce transition errors) is the correct choice.",
+        "D": "Option D (Encrypt data) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Gray code is mainly used to: -> Reduce transition errors.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 35,
@@ -24199,7 +24811,25 @@ const DSD_MCQS = [
       "BCD"
     ],
     "answerIndex": 2,
-    "explanation": "Gray code prevents positioning errors in optical/mechanical rotary encoders."
+    "explanation": {
+      "correctReason": "Option C (Gray Code) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (ASCII) is incorrect for this specific question context.",
+        "B": "Option B (Unicode) is incorrect for this specific question context.",
+        "C": "Option C (Gray Code) is the correct choice.",
+        "D": "Option D (BCD) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which code is widely used in rotary encoders? -> Gray Code.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 36,
@@ -24212,7 +24842,25 @@ const DSD_MCQS = [
       "Floating-point numbers"
     ],
     "answerIndex": 2,
-    "explanation": "ASCII encodes alphanumeric characters and symbols."
+    "explanation": {
+      "correctReason": "Option C (Characters) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (Images) is incorrect for this specific question context.",
+        "B": "Option B (Audio) is incorrect for this specific question context.",
+        "C": "Option C (Characters) is the correct choice.",
+        "D": "Option D (Floating-point numbers) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: ASCII is primarily used to represent: -> Characters.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 37,
@@ -24225,7 +24873,25 @@ const DSD_MCQS = [
       "Automatic Standard Code for Information"
     ],
     "answerIndex": 1,
-    "explanation": "ASCII stands for American Standard Code for Information Interchange."
+    "explanation": {
+      "correctReason": "Option B (American Standard Code for Information Interchange) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (American Standard Code for Information Interface) is incorrect for this specific question context.",
+        "B": "Option B (American Standard Code for Information Interchange) is the correct choice.",
+        "C": "Option C (American System Code for Internet Information) is incorrect for this specific question context.",
+        "D": "Option D (Automatic Standard Code for Information) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: ASCII stands for: -> American Standard Code for Information Interchange.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 38,
@@ -24238,7 +24904,25 @@ const DSD_MCQS = [
       "Unicode"
     ],
     "answerIndex": 1,
-    "explanation": "BCD encodes each decimal digit (0-9) as a 4-bit binary group."
+    "explanation": {
+      "correctReason": "Option B (BCD) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (Gray Code) is incorrect for this specific question context.",
+        "B": "Option B (BCD) is the correct choice.",
+        "C": "Option C (ASCII) is incorrect for this specific question context.",
+        "D": "Option D (Unicode) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which code represents decimal digits separately in binary form? -> BCD.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 39,
@@ -24251,7 +24935,25 @@ const DSD_MCQS = [
       "2421 Code"
     ],
     "answerIndex": 1,
-    "explanation": "Gray code has no positional bit weights (unweighted)."
+    "explanation": {
+      "correctReason": "Option B (Gray Code) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (BCD) is incorrect for this specific question context.",
+        "B": "Option B (Gray Code) is the correct choice.",
+        "C": "Option C (8421 Code) is incorrect for this specific question context.",
+        "D": "Option D (2421 Code) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which code is not a weighted code? -> Gray Code.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 40,
@@ -24264,7 +24966,25 @@ const DSD_MCQS = [
       "Unicode"
     ],
     "answerIndex": 2,
-    "explanation": "BCD (8421) is a weighted binary code."
+    "explanation": {
+      "correctReason": "Option C (BCD) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (Gray Code) is incorrect for this specific question context.",
+        "B": "Option B (ASCII) is incorrect for this specific question context.",
+        "C": "Option C (BCD) is the correct choice.",
+        "D": "Option D (Unicode) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which code is a weighted code? -> BCD.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 41,
@@ -24277,7 +24997,25 @@ const DSD_MCQS = [
       "31"
     ],
     "answerIndex": 1,
-    "explanation": "2^4 - 1 = 15 (1111)\u2082."
+    "explanation": {
+      "correctReason": "Option B (15) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (14) is incorrect for this specific question context.",
+        "B": "Option B (15) is the correct choice.",
+        "C": "Option C (16) is incorrect for this specific question context.",
+        "D": "Option D (31) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The largest decimal number represented by 4 unsigned bits is: -> 15.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 42,
@@ -24290,7 +25028,25 @@ const DSD_MCQS = [
       "-128"
     ],
     "answerIndex": 0,
-    "explanation": "Unsigned minimum value is 0 (00000000)\u2082."
+    "explanation": {
+      "correctReason": "Option A (0) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (0) is the correct choice.",
+        "B": "Option B (1) is incorrect for this specific question context.",
+        "C": "Option C (-1) is incorrect for this specific question context.",
+        "D": "Option D (-128) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The smallest unsigned 8-bit binary number is: -> 0.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 43,
@@ -24303,7 +25059,25 @@ const DSD_MCQS = [
       "A carry is generated"
     ],
     "answerIndex": 2,
-    "explanation": "Overflow occurs when arithmetic result exceeds the word-size representation capacity."
+    "explanation": {
+      "correctReason": "Option C (The result cannot be represented with the available bits) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (Division is performed) is incorrect for this specific question context.",
+        "B": "Option B (Multiplication is performed) is incorrect for this specific question context.",
+        "C": "Option C (The result cannot be represented with the available bits) is the correct choice.",
+        "D": "Option D (A carry is generated) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Overflow occurs when: -> The result cannot be represented with the available bits.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 44,
@@ -24316,7 +25090,25 @@ const DSD_MCQS = [
       "32"
     ],
     "answerIndex": 3,
-    "explanation": "2^5 = 32 distinct combinations."
+    "explanation": {
+      "correctReason": "Option D (32) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (16) is incorrect for this specific question context.",
+        "B": "Option B (25) is incorrect for this specific question context.",
+        "C": "Option C (31) is incorrect for this specific question context.",
+        "D": "Option D (32) is the correct choice."
+      },
+      "memoryTip": "Remember: How many different values can be represented using 5 bits? -> 32.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 45,
@@ -24329,7 +25121,25 @@ const DSD_MCQS = [
       "Double Word"
     ],
     "answerIndex": 1,
-    "explanation": "8 bits = 1 Byte."
+    "explanation": {
+      "correctReason": "Option B (Byte) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (Nibble) is incorrect for this specific question context.",
+        "B": "Option B (Byte) is the correct choice.",
+        "C": "Option C (Word) is incorrect for this specific question context.",
+        "D": "Option D (Double Word) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Eight bits are collectively called a: -> Byte.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 46,
@@ -24342,7 +25152,25 @@ const DSD_MCQS = [
       "Cell"
     ],
     "answerIndex": 0,
-    "explanation": "4 bits = 1 Nibble."
+    "explanation": {
+      "correctReason": "Option A (Nibble) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (Nibble) is the correct choice.",
+        "B": "Option B (Byte) is incorrect for this specific question context.",
+        "C": "Option C (Word) is incorrect for this specific question context.",
+        "D": "Option D (Cell) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Four bits are called a: -> Nibble.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 47,
@@ -24355,7 +25183,25 @@ const DSD_MCQS = [
       "1010"
     ],
     "answerIndex": 3,
-    "explanation": "Binary numbers ending in LSB = 0 are even (1010 = 10)."
+    "explanation": {
+      "correctReason": "Option D (1010) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (1011) is incorrect for this specific question context.",
+        "B": "Option B (1111) is incorrect for this specific question context.",
+        "C": "Option C (1101) is incorrect for this specific question context.",
+        "D": "Option D (1010) is the correct choice."
+      },
+      "memoryTip": "Remember: Which binary number is even? -> 1010.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 48,
@@ -24368,7 +25214,25 @@ const DSD_MCQS = [
       "Negative"
     ],
     "answerIndex": 1,
-    "explanation": "LSB = 1 indicates an odd integer."
+    "explanation": {
+      "correctReason": "Option B (Odd) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (Even) is incorrect for this specific question context.",
+        "B": "Option B (Odd) is the correct choice.",
+        "C": "Option C (Prime) is incorrect for this specific question context.",
+        "D": "Option D (Negative) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: A binary number ending with 1 is always: -> Odd.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 49,
@@ -24381,7 +25245,25 @@ const DSD_MCQS = [
       "FF"
     ],
     "answerIndex": 2,
-    "explanation": "Hexadecimal only uses 0-9 and A-F. 'G' is invalid."
+    "explanation": {
+      "correctReason": "Option C (1G) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (A9) is incorrect for this specific question context.",
+        "B": "Option B (2F) is incorrect for this specific question context.",
+        "C": "Option C (1G) is the correct choice.",
+        "D": "Option D (FF) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which of the following is an invalid hexadecimal number? -> 1G.",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 50,
@@ -24394,7 +25276,25 @@ const DSD_MCQS = [
       "Hexadecimal uses digits 0-9 and A-F."
     ],
     "answerIndex": 3,
-    "explanation": "Hexadecimal incorporates digits 0-9 and letters A through F."
+    "explanation": {
+      "correctReason": "Option D (Hexadecimal uses digits 0-9 and A-F.) is correct because it accurately satisfies the principles of Number Systems & Codes.",
+      "optionReasons": {
+        "A": "Option A (Binary uses digits 0-9.) is incorrect for this specific question context.",
+        "B": "Option B (Octal uses digits 0-9.) is incorrect for this specific question context.",
+        "C": "Option C (Hexadecimal uses digits 0-9 only.) is incorrect for this specific question context.",
+        "D": "Option D (Hexadecimal uses digits 0-9 and A-F.) is the correct choice."
+      },
+      "memoryTip": "Remember: Which statement is correct? -> Hexadecimal uses digits 0-9 and A-F..",
+      "examTrap": "BPSC examiners frequently test Number Systems & Codes definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Number Systems & Codes forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Number Systems & Codes",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 51,
@@ -24407,7 +25307,25 @@ const DSD_MCQS = [
       "Infinite values"
     ],
     "answerIndex": 2,
-    "explanation": "Boolean variables take binary values: 0 (FALSE) or 1 (TRUE)."
+    "explanation": {
+      "correctReason": "Option C (Two values (0 and 1)) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (Three values) is incorrect for this specific question context.",
+        "B": "Option B (Four values) is incorrect for this specific question context.",
+        "C": "Option C (Two values (0 and 1)) is the correct choice.",
+        "D": "Option D (Infinite values) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Boolean algebra deals with variables that have: -> Two values (0 and 1).",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 52,
@@ -24420,7 +25338,25 @@ const DSD_MCQS = [
       "Shift, Rotate, Complement"
     ],
     "answerIndex": 1,
-    "explanation": "AND, OR, and NOT are the fundamental Boolean logic operations."
+    "explanation": {
+      "correctReason": "Option B (AND, OR, NOT) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (Addition, Subtraction, Multiplication) is incorrect for this specific question context.",
+        "B": "Option B (AND, OR, NOT) is the correct choice.",
+        "C": "Option C (XOR, NAND, NOR) is incorrect for this specific question context.",
+        "D": "Option D (Shift, Rotate, Complement) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which are the three basic Boolean operations? -> AND, OR, NOT.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 53,
@@ -24433,7 +25369,25 @@ const DSD_MCQS = [
       "NOT operation"
     ],
     "answerIndex": 1,
-    "explanation": "Symbol '+' denotes logical OR."
+    "explanation": {
+      "correctReason": "Option B (OR operation) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (Arithmetic addition) is incorrect for this specific question context.",
+        "B": "Option B (OR operation) is the correct choice.",
+        "C": "Option C (AND operation) is incorrect for this specific question context.",
+        "D": "Option D (NOT operation) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: In Boolean algebra, '+' represents: -> OR operation.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 54,
@@ -24446,7 +25400,25 @@ const DSD_MCQS = [
       "NOR"
     ],
     "answerIndex": 1,
-    "explanation": "Symbol '.' (or concatenation) denotes logical AND."
+    "explanation": {
+      "correctReason": "Option B (AND) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (OR) is incorrect for this specific question context.",
+        "B": "Option B (AND) is the correct choice.",
+        "C": "Option C (XOR) is incorrect for this specific question context.",
+        "D": "Option D (NOR) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: In Boolean algebra, '.' represents: -> AND.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 55,
@@ -24459,7 +25431,25 @@ const DSD_MCQS = [
       "A#"
     ],
     "answerIndex": 2,
-    "explanation": "A' (or A with overbar) represents NOT A."
+    "explanation": {
+      "correctReason": "Option C (A') is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (A+) is incorrect for this specific question context.",
+        "B": "Option B (Ax) is incorrect for this specific question context.",
+        "C": "Option C (A') is the correct choice.",
+        "D": "Option D (A#) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The complement of A is represented as: -> A'.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 56,
@@ -24472,7 +25462,25 @@ const DSD_MCQS = [
       "Undefined"
     ],
     "answerIndex": 1,
-    "explanation": "NOT 1 = 0."
+    "explanation": {
+      "correctReason": "Option B (0) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (1) is incorrect for this specific question context.",
+        "B": "Option B (0) is the correct choice.",
+        "C": "Option C (2) is incorrect for this specific question context.",
+        "D": "Option D (Undefined) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: If A = 1, then A' equals: -> 0.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 57,
@@ -24485,7 +25493,25 @@ const DSD_MCQS = [
       "Undefined"
     ],
     "answerIndex": 0,
-    "explanation": "NOT 0 = 1."
+    "explanation": {
+      "correctReason": "Option A (1) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (1) is the correct choice.",
+        "B": "Option B (0) is incorrect for this specific question context.",
+        "C": "Option C (-1) is incorrect for this specific question context.",
+        "D": "Option D (Undefined) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: If A = 0, then A' equals: -> 1.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 58,
@@ -24498,7 +25524,25 @@ const DSD_MCQS = [
       "A . 0 = 1"
     ],
     "answerIndex": 1,
-    "explanation": "A + 0 = A (OR identity)."
+    "explanation": {
+      "correctReason": "Option B (A + 0 = A) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (A + A = A) is incorrect for this specific question context.",
+        "B": "Option B (A + 0 = A) is the correct choice.",
+        "C": "Option C (A + 1 = 0) is incorrect for this specific question context.",
+        "D": "Option D (A . 0 = 1) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: According to the Identity Law: -> A + 0 = A.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 59,
@@ -24511,7 +25555,25 @@ const DSD_MCQS = [
       "A + A = 0"
     ],
     "answerIndex": 1,
-    "explanation": "A + 1 = 1 (OR null law)."
+    "explanation": {
+      "correctReason": "Option B (A + 1 = 1) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (A + 0 = A) is incorrect for this specific question context.",
+        "B": "Option B (A + 1 = 1) is the correct choice.",
+        "C": "Option C (A . 1 = 0) is incorrect for this specific question context.",
+        "D": "Option D (A + A = 0) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: According to the Null Law: -> A + 1 = 1.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 60,
@@ -24524,7 +25586,25 @@ const DSD_MCQS = [
       "A + 0 = 1"
     ],
     "answerIndex": 1,
-    "explanation": "A . 1 = A (AND identity)."
+    "explanation": {
+      "correctReason": "Option B (A . 1 = A) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (A . 0 = A) is incorrect for this specific question context.",
+        "B": "Option B (A . 1 = A) is the correct choice.",
+        "C": "Option C (A + 1 = A) is incorrect for this specific question context.",
+        "D": "Option D (A + 0 = 1) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: According to the Identity Law for AND: -> A . 1 = A.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 61,
@@ -24537,7 +25617,25 @@ const DSD_MCQS = [
       "A . A = 0"
     ],
     "answerIndex": 1,
-    "explanation": "A . 0 = 0 (AND null law)."
+    "explanation": {
+      "correctReason": "Option B (A . 0 = 0) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (A . 1 = 0) is incorrect for this specific question context.",
+        "B": "Option B (A . 0 = 0) is the correct choice.",
+        "C": "Option C (A + 0 = 1) is incorrect for this specific question context.",
+        "D": "Option D (A . A = 0) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: According to the Null Law: -> A . 0 = 0.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 62,
@@ -24550,7 +25648,25 @@ const DSD_MCQS = [
       "A . 0 = A"
     ],
     "answerIndex": 1,
-    "explanation": "A + A = A and A . A = A."
+    "explanation": {
+      "correctReason": "Option B (A + A = A) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (A + 1 = A) is incorrect for this specific question context.",
+        "B": "Option B (A + A = A) is the correct choice.",
+        "C": "Option C (A + 0 = 0) is incorrect for this specific question context.",
+        "D": "Option D (A . 0 = A) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The Idempotent Law states: -> A + A = A.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 63,
@@ -24563,7 +25679,25 @@ const DSD_MCQS = [
       "A + 1"
     ],
     "answerIndex": 1,
-    "explanation": "A . 1 = A by identity."
+    "explanation": {
+      "correctReason": "Option B (A . 1) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (A + A') is incorrect for this specific question context.",
+        "B": "Option B (A . 1) is the correct choice.",
+        "C": "Option C (A . 0) is incorrect for this specific question context.",
+        "D": "Option D (A + 1) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which expression is equal to A? -> A . 1.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 64,
@@ -24576,7 +25710,25 @@ const DSD_MCQS = [
       "A + 0"
     ],
     "answerIndex": 1,
-    "explanation": "A + A' = 1 (Complement Law)."
+    "explanation": {
+      "correctReason": "Option B (A + A') is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (A . A') is incorrect for this specific question context.",
+        "B": "Option B (A + A') is the correct choice.",
+        "C": "Option C (A . 0) is incorrect for this specific question context.",
+        "D": "Option D (A + 0) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which expression always equals 1? -> A + A'.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 65,
@@ -24589,7 +25741,25 @@ const DSD_MCQS = [
       "A . 1"
     ],
     "answerIndex": 0,
-    "explanation": "A . A' = 0 (Complement Law)."
+    "explanation": {
+      "correctReason": "Option A (A . A') is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (A . A') is the correct choice.",
+        "B": "Option B (A + A') is incorrect for this specific question context.",
+        "C": "Option C (A + 1) is incorrect for this specific question context.",
+        "D": "Option D (A . 1) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which expression always equals 0? -> A . A'.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 66,
@@ -24602,7 +25772,25 @@ const DSD_MCQS = [
       "Absorption"
     ],
     "answerIndex": 1,
-    "explanation": "Order of operands does not matter (Commutative Law)."
+    "explanation": {
+      "correctReason": "Option B (Commutative) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (Associative) is incorrect for this specific question context.",
+        "B": "Option B (Commutative) is the correct choice.",
+        "C": "Option C (Distributive) is incorrect for this specific question context.",
+        "D": "Option D (Absorption) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which law states A + B = B + A? -> Commutative.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 67,
@@ -24615,7 +25803,25 @@ const DSD_MCQS = [
       "Null"
     ],
     "answerIndex": 1,
-    "explanation": "Grouping of operands does not matter (Associative Law)."
+    "explanation": {
+      "correctReason": "Option B (Associative) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (Commutative) is incorrect for this specific question context.",
+        "B": "Option B (Associative) is the correct choice.",
+        "C": "Option C (Identity) is incorrect for this specific question context.",
+        "D": "Option D (Null) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which law states (A + B) + C = A + (B + C)? -> Associative.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 68,
@@ -24628,7 +25834,25 @@ const DSD_MCQS = [
       "DeMorgan"
     ],
     "answerIndex": 2,
-    "explanation": "Distributive Law: A(B + C) = AB + AC."
+    "explanation": {
+      "correctReason": "Option C (Distributive) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (Commutative) is incorrect for this specific question context.",
+        "B": "Option B (Identity) is incorrect for this specific question context.",
+        "C": "Option C (Distributive) is the correct choice.",
+        "D": "Option D (DeMorgan) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which law states A(B + C) = AB + AC? -> Distributive.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 69,
@@ -24641,7 +25865,25 @@ const DSD_MCQS = [
       "A . 1 = 0"
     ],
     "answerIndex": 1,
-    "explanation": "A + AB = A(1 + B) = A(1) = A."
+    "explanation": {
+      "correctReason": "Option B (A + AB = A) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (A + A = A) is incorrect for this specific question context.",
+        "B": "Option B (A + AB = A) is the correct choice.",
+        "C": "Option C (A + 0 = 0) is incorrect for this specific question context.",
+        "D": "Option D (A . 1 = 0) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The Absorption Law is: -> A + AB = A.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 70,
@@ -24654,7 +25896,25 @@ const DSD_MCQS = [
       "B"
     ],
     "answerIndex": 2,
-    "explanation": "A AND NOT A is always 0."
+    "explanation": {
+      "correctReason": "Option C (0) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (A) is incorrect for this specific question context.",
+        "B": "Option B (1) is incorrect for this specific question context.",
+        "C": "Option C (0) is the correct choice.",
+        "D": "Option D (B) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The expression AA' simplifies to: -> 0.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 71,
@@ -24667,7 +25927,25 @@ const DSD_MCQS = [
       "A"
     ],
     "answerIndex": 2,
-    "explanation": "Since A . A' = 0, (0) . B = 0."
+    "explanation": {
+      "correctReason": "Option C (0) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (B) is incorrect for this specific question context.",
+        "B": "Option B (AB) is incorrect for this specific question context.",
+        "C": "Option C (0) is the correct choice.",
+        "D": "Option D (A) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The Boolean expression AA'B simplifies to: -> 0.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 72,
@@ -24680,7 +25958,25 @@ const DSD_MCQS = [
       "1"
     ],
     "answerIndex": 0,
-    "explanation": "By absorption law, A + AB = A."
+    "explanation": {
+      "correctReason": "Option A (A) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (A) is the correct choice.",
+        "B": "Option B (AB) is incorrect for this specific question context.",
+        "C": "Option C (B) is incorrect for this specific question context.",
+        "D": "Option D (1) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The Boolean expression A + AB simplifies to: -> A.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 73,
@@ -24693,7 +25989,25 @@ const DSD_MCQS = [
       "B"
     ],
     "answerIndex": 0,
-    "explanation": "A.A + A.B = A + AB = A."
+    "explanation": {
+      "correctReason": "Option A (A) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (A) is the correct choice.",
+        "B": "Option B (AB) is incorrect for this specific question context.",
+        "C": "Option C (A+B) is incorrect for this specific question context.",
+        "D": "Option D (B) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The Boolean expression A(A + B) simplifies to: -> A.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 74,
@@ -24706,7 +26020,25 @@ const DSD_MCQS = [
       "A'"
     ],
     "answerIndex": 0,
-    "explanation": "OR identity with 0 equals A."
+    "explanation": {
+      "correctReason": "Option A (A) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (A) is the correct choice.",
+        "B": "Option B (1) is incorrect for this specific question context.",
+        "C": "Option C (0) is incorrect for this specific question context.",
+        "D": "Option D (A') is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The expression A + 0 equals: -> A.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 75,
@@ -24719,7 +26051,25 @@ const DSD_MCQS = [
       "A'"
     ],
     "answerIndex": 0,
-    "explanation": "AND identity with 1 equals A."
+    "explanation": {
+      "correctReason": "Option A (A) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (A) is the correct choice.",
+        "B": "Option B (0) is incorrect for this specific question context.",
+        "C": "Option C (1) is incorrect for this specific question context.",
+        "D": "Option D (A') is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The expression A . 1 equals: -> A.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 76,
@@ -24732,7 +26082,25 @@ const DSD_MCQS = [
       "(AB)' = A'B'"
     ],
     "answerIndex": 1,
-    "explanation": "Complement of product equals sum of complements: (AB)' = A' + B'."
+    "explanation": {
+      "correctReason": "Option B ((AB)' = A' + B') is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A ((AB)' = AB) is incorrect for this specific question context.",
+        "B": "Option B ((AB)' = A' + B') is the correct choice.",
+        "C": "Option C ((A+B)' = A+B) is incorrect for this specific question context.",
+        "D": "Option D ((AB)' = A'B') is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: DeMorgan's First Theorem is: -> (AB)' = A' + B'.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 77,
@@ -24745,7 +26113,25 @@ const DSD_MCQS = [
       "(AB)' = AB"
     ],
     "answerIndex": 1,
-    "explanation": "Complement of sum equals product of complements: (A+B)' = A'B'."
+    "explanation": {
+      "correctReason": "Option B ((A+B)' = A'B') is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A ((AB)' = A+B) is incorrect for this specific question context.",
+        "B": "Option B ((A+B)' = A'B') is the correct choice.",
+        "C": "Option C ((A+B)' = A'+B') is incorrect for this specific question context.",
+        "D": "Option D ((AB)' = AB) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: DeMorgan's Second Theorem is: -> (A+B)' = A'B'.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 78,
@@ -24758,7 +26144,25 @@ const DSD_MCQS = [
       "Memory design"
     ],
     "answerIndex": 1,
-    "explanation": "DeMorgan's laws simplify complex Boolean expressions and swap AND/OR operators."
+    "explanation": {
+      "correctReason": "Option B (Boolean simplification) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (Number conversion) is incorrect for this specific question context.",
+        "B": "Option B (Boolean simplification) is the correct choice.",
+        "C": "Option C (Binary subtraction) is incorrect for this specific question context.",
+        "D": "Option D (Memory design) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: DeMorgan's theorems are mainly used for: -> Boolean simplification.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 79,
@@ -24771,7 +26175,25 @@ const DSD_MCQS = [
       "AB"
     ],
     "answerIndex": 2,
-    "explanation": "(A+B)' = A'B' by DeMorgan."
+    "explanation": {
+      "correctReason": "Option C (A'B') is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (A+B) is incorrect for this specific question context.",
+        "B": "Option B (A'+B') is incorrect for this specific question context.",
+        "C": "Option C (A'B') is the correct choice.",
+        "D": "Option D (AB) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The complement of (A+B) is: -> A'B'.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 80,
@@ -24784,7 +26206,25 @@ const DSD_MCQS = [
       "A+B"
     ],
     "answerIndex": 1,
-    "explanation": "(AB)' = A' + B' by DeMorgan."
+    "explanation": {
+      "correctReason": "Option B (A'+B') is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (AB) is incorrect for this specific question context.",
+        "B": "Option B (A'+B') is the correct choice.",
+        "C": "Option C (A'B') is incorrect for this specific question context.",
+        "D": "Option D (A+B) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The complement of AB is: -> A'+B'.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 81,
@@ -24797,7 +26237,25 @@ const DSD_MCQS = [
       "XOR"
     ],
     "answerIndex": 0,
-    "explanation": "AND gate output is 1 only when A=1 and B=1."
+    "explanation": {
+      "correctReason": "Option A (AND) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (AND) is the correct choice.",
+        "B": "Option B (OR) is incorrect for this specific question context.",
+        "C": "Option C (NAND) is incorrect for this specific question context.",
+        "D": "Option D (XOR) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which gate produces HIGH only when all inputs are HIGH? -> AND.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 82,
@@ -24810,7 +26268,25 @@ const DSD_MCQS = [
       "XOR"
     ],
     "answerIndex": 1,
-    "explanation": "NAND gate (NOT-AND) output is 0 only when A=1 and B=1."
+    "explanation": {
+      "correctReason": "Option B (NAND) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (OR) is incorrect for this specific question context.",
+        "B": "Option B (NAND) is the correct choice.",
+        "C": "Option C (NOR) is incorrect for this specific question context.",
+        "D": "Option D (XOR) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which gate produces LOW only when all inputs are HIGH? -> NAND.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 83,
@@ -24823,7 +26299,25 @@ const DSD_MCQS = [
       "XNOR"
     ],
     "answerIndex": 1,
-    "explanation": "OR gate output is 1 if any input is 1."
+    "explanation": {
+      "correctReason": "Option B (OR) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (AND) is incorrect for this specific question context.",
+        "B": "Option B (OR) is the correct choice.",
+        "C": "Option C (NOR) is incorrect for this specific question context.",
+        "D": "Option D (XNOR) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which gate produces HIGH if at least one input is HIGH? -> OR.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 84,
@@ -24836,7 +26330,25 @@ const DSD_MCQS = [
       "XNOR"
     ],
     "answerIndex": 1,
-    "explanation": "NOR = NOT OR."
+    "explanation": {
+      "correctReason": "Option B (NOR) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (NAND) is incorrect for this specific question context.",
+        "B": "Option B (NOR) is the correct choice.",
+        "C": "Option C (XOR) is incorrect for this specific question context.",
+        "D": "Option D (XNOR) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which gate is the complement of OR? -> NOR.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 85,
@@ -24849,7 +26361,25 @@ const DSD_MCQS = [
       "XOR"
     ],
     "answerIndex": 2,
-    "explanation": "NOT gate (Inverter) takes a single input."
+    "explanation": {
+      "correctReason": "Option C (NOT) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (AND) is incorrect for this specific question context.",
+        "B": "Option B (OR) is incorrect for this specific question context.",
+        "C": "Option C (NOT) is the correct choice.",
+        "D": "Option D (XOR) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which gate has only one input? -> NOT.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 86,
@@ -24862,7 +26392,25 @@ const DSD_MCQS = [
       "Encoder"
     ],
     "answerIndex": 1,
-    "explanation": "A NOT gate inverts its input signal."
+    "explanation": {
+      "correctReason": "Option B (Inverter) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (Buffer) is incorrect for this specific question context.",
+        "B": "Option B (Inverter) is the correct choice.",
+        "C": "Option C (Decoder) is incorrect for this specific question context.",
+        "D": "Option D (Encoder) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: A NOT gate is also known as: -> Inverter.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 87,
@@ -24875,7 +26423,25 @@ const DSD_MCQS = [
       "High impedance"
     ],
     "answerIndex": 1,
-    "explanation": "NOT 0 = 1."
+    "explanation": {
+      "correctReason": "Option B (1) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (0) is incorrect for this specific question context.",
+        "B": "Option B (1) is the correct choice.",
+        "C": "Option C (Undefined) is incorrect for this specific question context.",
+        "D": "Option D (High impedance) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: If the input to a NOT gate is 0, the output is: -> 1.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 88,
@@ -24888,7 +26454,25 @@ const DSD_MCQS = [
       "Floating"
     ],
     "answerIndex": 0,
-    "explanation": "NOT 1 = 0."
+    "explanation": {
+      "correctReason": "Option A (0) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (0) is the correct choice.",
+        "B": "Option B (1) is incorrect for this specific question context.",
+        "C": "Option C (Undefined) is incorrect for this specific question context.",
+        "D": "Option D (Floating) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: If the input to a NOT gate is 1, the output is: -> 0.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 89,
@@ -24901,7 +26485,25 @@ const DSD_MCQS = [
       "NOR"
     ],
     "answerIndex": 2,
-    "explanation": "XOR (Exclusive OR) outputs 1 when inputs differ."
+    "explanation": {
+      "correctReason": "Option C (XOR) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (XNOR) is incorrect for this specific question context.",
+        "B": "Option B (NAND) is incorrect for this specific question context.",
+        "C": "Option C (XOR) is the correct choice.",
+        "D": "Option D (NOR) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which gate produces HIGH only when inputs are different? -> XOR.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 90,
@@ -24914,7 +26516,25 @@ const DSD_MCQS = [
       "Clock generation"
     ],
     "answerIndex": 2,
-    "explanation": "XOR acts as a inequality comparator (outputs 1 if bits differ)."
+    "explanation": {
+      "correctReason": "Option C (Comparison of bits) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (Data storage) is incorrect for this specific question context.",
+        "B": "Option B (Multiplication) is incorrect for this specific question context.",
+        "C": "Option C (Comparison of bits) is the correct choice.",
+        "D": "Option D (Clock generation) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: XOR gate is commonly used for: -> Comparison of bits.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 91,
@@ -24927,7 +26547,25 @@ const DSD_MCQS = [
       "NOR"
     ],
     "answerIndex": 1,
-    "explanation": "XNOR (Equivalence gate) outputs 1 when inputs match."
+    "explanation": {
+      "correctReason": "Option B (XNOR) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (XOR) is incorrect for this specific question context.",
+        "B": "Option B (XNOR) is the correct choice.",
+        "C": "Option C (NAND) is incorrect for this specific question context.",
+        "D": "Option D (NOR) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which gate produces HIGH when both inputs are the same? -> XNOR.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 92,
@@ -24940,7 +26578,25 @@ const DSD_MCQS = [
       "Undefined"
     ],
     "answerIndex": 1,
-    "explanation": "1 AND 1 = 1."
+    "explanation": {
+      "correctReason": "Option B (1) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (0) is incorrect for this specific question context.",
+        "B": "Option B (1) is the correct choice.",
+        "C": "Option C (Depends on clock) is incorrect for this specific question context.",
+        "D": "Option D (Undefined) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The output of AND gate for inputs (1,1) is: -> 1.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 93,
@@ -24953,7 +26609,25 @@ const DSD_MCQS = [
       "Depends on carry"
     ],
     "answerIndex": 1,
-    "explanation": "0 OR 1 = 1."
+    "explanation": {
+      "correctReason": "Option B (1) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (0) is incorrect for this specific question context.",
+        "B": "Option B (1) is the correct choice.",
+        "C": "Option C (Undefined) is incorrect for this specific question context.",
+        "D": "Option D (Depends on carry) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The output of OR gate for inputs (0,1) is: -> 1.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 94,
@@ -24966,7 +26640,25 @@ const DSD_MCQS = [
       "High impedance"
     ],
     "answerIndex": 0,
-    "explanation": "NAND(1,1) = NOT(1 AND 1) = 0."
+    "explanation": {
+      "correctReason": "Option A (0) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (0) is the correct choice.",
+        "B": "Option B (1) is incorrect for this specific question context.",
+        "C": "Option C (Undefined) is incorrect for this specific question context.",
+        "D": "Option D (High impedance) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The output of NAND gate for inputs (1,1) is: -> 0.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 95,
@@ -24979,7 +26671,25 @@ const DSD_MCQS = [
       "Undefined"
     ],
     "answerIndex": 1,
-    "explanation": "NOR(0,0) = NOT(0 OR 0) = 1."
+    "explanation": {
+      "correctReason": "Option B (1) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (0) is incorrect for this specific question context.",
+        "B": "Option B (1) is the correct choice.",
+        "C": "Option C (Depends on clock) is incorrect for this specific question context.",
+        "D": "Option D (Undefined) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: The output of NOR gate for inputs (0,0) is: -> 1.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 96,
@@ -24992,7 +26702,25 @@ const DSD_MCQS = [
       "XOR"
     ],
     "answerIndex": 2,
-    "explanation": "NAND gates can synthesize any Boolean function."
+    "explanation": {
+      "correctReason": "Option C (NAND) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (AND only) is incorrect for this specific question context.",
+        "B": "Option B (OR only) is incorrect for this specific question context.",
+        "C": "Option C (NAND) is the correct choice.",
+        "D": "Option D (XOR) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which gate is called a universal gate? -> NAND.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 97,
@@ -25005,7 +26733,25 @@ const DSD_MCQS = [
       "OR"
     ],
     "answerIndex": 1,
-    "explanation": "NOR is also a universal logic gate."
+    "explanation": {
+      "correctReason": "Option B (NOR) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (XOR) is incorrect for this specific question context.",
+        "B": "Option B (NOR) is the correct choice.",
+        "C": "Option C (AND) is incorrect for this specific question context.",
+        "D": "Option D (OR) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Which other gate is also a universal gate? -> NOR.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 98,
@@ -25018,7 +26764,25 @@ const DSD_MCQS = [
       "Only NOT gates"
     ],
     "answerIndex": 2,
-    "explanation": "Universal gates can replicate AND, OR, NOT, XOR, and complex circuits."
+    "explanation": {
+      "correctReason": "Option C (Any Boolean function) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (Only AND gates) is incorrect for this specific question context.",
+        "B": "Option B (Only OR gates) is incorrect for this specific question context.",
+        "C": "Option C (Any Boolean function) is the correct choice.",
+        "D": "Option D (Only NOT gates) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: Universal gates can be used to implement: -> Any Boolean function.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 99,
@@ -25031,7 +26795,25 @@ const DSD_MCQS = [
       "4"
     ],
     "answerIndex": 0,
-    "explanation": "Tying both inputs of a NAND together produces (A.A)' = A' (1 gate)."
+    "explanation": {
+      "correctReason": "Option A (1) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (1) is the correct choice.",
+        "B": "Option B (2) is incorrect for this specific question context.",
+        "C": "Option C (3) is incorrect for this specific question context.",
+        "D": "Option D (4) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: How many NAND gates are required to implement a NOT gate? -> 1.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 100,
@@ -25044,7 +26826,25 @@ const DSD_MCQS = [
       "4"
     ],
     "answerIndex": 1,
-    "explanation": "One NAND computes (AB)', second NAND inverts it to AB (2 gates)."
+    "explanation": {
+      "correctReason": "Option B (2) is correct because it accurately satisfies the principles of Boolean Algebra & Gates.",
+      "optionReasons": {
+        "A": "Option A (1) is incorrect for this specific question context.",
+        "B": "Option B (2) is the correct choice.",
+        "C": "Option C (3) is incorrect for this specific question context.",
+        "D": "Option D (4) is incorrect for this specific question context."
+      },
+      "memoryTip": "Remember: How many NAND gates are required to implement an AND gate? -> 2.",
+      "examTrap": "BPSC examiners frequently test Boolean Algebra & Gates definitions; pay close attention to exact bit values and operator properties.",
+      "conceptSummary": "Boolean Algebra & Gates forms a core foundation in Digital Logic Design and computer arithmetic.",
+      "relatedConcepts": [
+        "Boolean Algebra & Gates",
+        "Digital Logic",
+        "BPSC CS"
+      ],
+      "difficulty": "Medium",
+      "bpscImportance": "High"
+    }
   },
   {
     "id": 101,
