@@ -1531,15 +1531,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const copyPromptBtn = document.getElementById("copyPromptBtn");
 
   const btnSearchGoogle = document.getElementById("btnSearchGoogle");
+  const btnSearchDuckDuckGo = document.getElementById("btnSearchDuckDuckGo");
   const btnSearchChatGPT = document.getElementById("btnSearchChatGPT");
   const btnSearchPerplexity = document.getElementById("btnSearchPerplexity");
-  const btnToggleEmbeddedSearch = document.getElementById("btnToggleEmbeddedSearch");
 
-  const embeddedSearchContainer = document.getElementById("embeddedSearchContainer");
-  const embeddedSearchFrame = document.getElementById("embeddedSearchFrame");
   const deepDiveModalClose = document.getElementById("deepDiveModalClose");
-
   let activeDeepDiveMCQ = null;
+
+  const openMiniPopupWindow = (url, title = "MiniSearchWindow") => {
+    const width = 800;
+    const height = 650;
+    const left = Math.max(0, Math.round((window.screen.width / 2) - (width / 2)));
+    const top = Math.max(0, Math.round((window.screen.height / 2) - (height / 2)));
+    window.open(
+      url,
+      title,
+      `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes,status=yes`
+    );
+  };
 
   function generateFormattedPrompt(mcq, subjectName) {
     const optionsList = (mcq.options || []).map((opt, i) => `${String.fromCharCode(65 + i)}. ${opt}`).join("\n");
@@ -1570,15 +1579,12 @@ Instructions:
 
     const prompt = generateFormattedPrompt(mcq, state.activeSubject || "Computer Science");
     if (deepDivePromptText) deepDivePromptText.value = prompt;
-    if (embeddedSearchContainer) embeddedSearchContainer.style.display = "none";
-    if (embeddedSearchFrame) embeddedSearchFrame.src = "about:blank";
 
     deepDiveModal.style.display = "flex";
   }
 
   function closeDeepDiveModal() {
     if (deepDiveModal) deepDiveModal.style.display = "none";
-    if (embeddedSearchFrame) embeddedSearchFrame.src = "about:blank";
     activeDeepDiveMCQ = null;
   }
 
@@ -1602,7 +1608,15 @@ Instructions:
     btnSearchGoogle.addEventListener("click", () => {
       if (!activeDeepDiveMCQ) return;
       const query = `${activeDeepDiveMCQ.question} ${activeDeepDiveMCQ.options[activeDeepDiveMCQ.answerIndex]}`;
-      window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, "_blank");
+      openMiniPopupWindow(`https://www.google.com/search?q=${encodeURIComponent(query)}`, "GoogleSearchWindow");
+    });
+  }
+
+  if (btnSearchDuckDuckGo) {
+    btnSearchDuckDuckGo.addEventListener("click", () => {
+      if (!activeDeepDiveMCQ) return;
+      const query = `${activeDeepDiveMCQ.question} ${activeDeepDiveMCQ.options[activeDeepDiveMCQ.answerIndex]}`;
+      openMiniPopupWindow(`https://duckduckgo.com/?q=${encodeURIComponent(query)}`, "DuckDuckGoSearchWindow");
     });
   }
 
@@ -1610,7 +1624,7 @@ Instructions:
     btnSearchChatGPT.addEventListener("click", () => {
       if (!deepDivePromptText) return;
       navigator.clipboard.writeText(deepDivePromptText.value);
-      window.open("https://chatgpt.com/", "_blank");
+      openMiniPopupWindow("https://chatgpt.com/", "ChatGPTWindow");
     });
   }
 
@@ -1618,22 +1632,7 @@ Instructions:
     btnSearchPerplexity.addEventListener("click", () => {
       if (!deepDivePromptText) return;
       const prompt = deepDivePromptText.value;
-      window.open(`https://www.perplexity.ai/search?q=${encodeURIComponent(prompt)}`, "_blank");
-    });
-  }
-
-  if (btnToggleEmbeddedSearch) {
-    btnToggleEmbeddedSearch.addEventListener("click", () => {
-      if (!activeDeepDiveMCQ || !embeddedSearchContainer || !embeddedSearchFrame) return;
-
-      if (embeddedSearchContainer.style.display === "block") {
-        embeddedSearchContainer.style.display = "none";
-        embeddedSearchFrame.src = "about:blank";
-      } else {
-        embeddedSearchContainer.style.display = "block";
-        const query = `${activeDeepDiveMCQ.question} ${activeDeepDiveMCQ.options[activeDeepDiveMCQ.answerIndex]}`;
-        embeddedSearchFrame.src = `https://html.duckduckgo.com/html/?q=${encodeURIComponent(query)}`;
-      }
+      openMiniPopupWindow(`https://www.perplexity.ai/search?q=${encodeURIComponent(prompt)}`, "PerplexitySearchWindow");
     });
   }
 
