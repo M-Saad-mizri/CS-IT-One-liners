@@ -1656,4 +1656,44 @@ document.addEventListener("DOMContentLoaded", () => {
   globalShowAnswersToggle.checked = state.showAllAnswers;
   switchMode(state.activeMode || "practice");
   initSubjectView();
+
+  // --- PWA SERVICE WORKER REGISTRATION & INSTALL PROMPT ---
+  let deferredPrompt = null;
+  const pwaInstallBtn = document.getElementById("pwaInstallBtn");
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('../sw.js')
+        .then(reg => console.log('QuickFacts MCQs PWA registered:', reg.scope))
+        .catch(err => console.log('QuickFacts MCQs SW registration failed:', err));
+    });
+  }
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    if (pwaInstallBtn) {
+      pwaInstallBtn.style.display = "inline-flex";
+    }
+  });
+
+  if (pwaInstallBtn) {
+    pwaInstallBtn.addEventListener('click', () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User installed QuickFacts App');
+          }
+          deferredPrompt = null;
+          pwaInstallBtn.style.display = "none";
+        });
+      }
+    });
+  }
+
+  window.addEventListener('appinstalled', () => {
+    if (pwaInstallBtn) pwaInstallBtn.style.display = "none";
+    deferredPrompt = null;
+  });
 });

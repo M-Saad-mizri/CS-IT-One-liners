@@ -134,6 +134,20 @@ h4,
   transform: scale(0.95);
 }
 
+/* PWA Install Button Header Pulsing Highlight */
+.pwa-install-btn {
+  color: var(--accent-color);
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.pwa-install-btn:hover {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
 .icon-btn svg {
   width: 22px;
   height: 22px;

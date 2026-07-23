@@ -15,6 +15,16 @@
 
   <!-- CSS Styles -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Web App Manifest & PWA Installation Support -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#6366F1">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="QuickFacts">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 </head>
 
 <body class="dark-mode"> <!-- Defaults to dark mode for premium look -->
@@ -33,6 +43,15 @@
       <span class="logo-accent">Quick</span>Facts
     </div>
     <div class="header-actions">
+      <!-- PWA Install Application Button (shows when Chrome install prompt is ready) -->
+      <button class="icon-btn pwa-install-btn" id="pwaInstallBtn" aria-label="Install App" title="Install Site as Application" style="display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+          <polyline points="12 7 12 13 15 10"></polyline>
+        </svg>
+      </button>
       <button class="icon-btn theme-toggle" id="themeToggleTop" aria-label="Toggle theme">
         <!-- Sun icon (shows in dark mode) -->
         <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
