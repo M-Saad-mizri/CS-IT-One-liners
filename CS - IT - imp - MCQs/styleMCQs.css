@@ -122,6 +122,15 @@ h4,
   transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 8px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
 .logo {
   font-size: 1.3rem;
   letter-spacing: -0.5px;
@@ -1954,4 +1963,34 @@ body.light-mode .back-to-top-btn:hover {
   border-radius: 8px;
   padding: 8px 10px;
   color: var(--text-main);
+}
+
+@media (max-width: 600px) {
+  .app-header {
+    padding: 0 10px;
+  }
+
+  .header-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 4px !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  .icon-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .mode-switch-container {
+    padding: 2px;
+    gap: 2px;
+  }
+
+  .mode-btn {
+    padding: 4px 10px;
+    font-size: 0.78rem;
+  }
 }
