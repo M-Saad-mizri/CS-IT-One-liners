@@ -1567,6 +1567,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  function generateCopyableMCQText(mcq) {
+    const optionsList = (mcq.options || []).map((opt, i) => {
+      const letter = String.fromCharCode(65 + i);
+      const isCorrect = i === mcq.answerIndex;
+      return `${letter}. ${opt}${isCorrect ? " ✔" : ""}`;
+    }).join("\n");
+
+    const correctLetter = String.fromCharCode(65 + mcq.answerIndex);
+    const correctOptText = (mcq.options && mcq.options[mcq.answerIndex]) ? mcq.options[mcq.answerIndex] : "";
+
+    return `Question:
+${mcq.question}
+
+Options:
+${optionsList}
+
+Correct Answer:
+${correctLetter}. ${correctOptText}`;
+  }
+
   function generateFormattedPrompt(mcq, subjectName) {
     const optionsList = (mcq.options || []).map((opt, i) => `${String.fromCharCode(65 + i)}. ${opt}`).join("\n");
     const correctLetter = String.fromCharCode(65 + mcq.answerIndex);
