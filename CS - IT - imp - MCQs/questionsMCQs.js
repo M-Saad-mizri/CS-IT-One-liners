@@ -23743,7 +23743,5214 @@ const DSP_MCQS = [
 ];
 
 
+
+
+const DSD_MCQS = [
+  {
+    "id": 1,
+    "category": "Number Systems & Codes",
+    "question": "The base (radix) of the binary number system is:",
+    "options": [
+      "8",
+      "10",
+      "2",
+      "16"
+    ],
+    "answerIndex": 2,
+    "explanation": "The binary system uses 2 as its base (radix)."
+  },
+  {
+    "id": 2,
+    "category": "Number Systems & Codes",
+    "question": "Which digits are used in the binary number system?",
+    "options": [
+      "0-7",
+      "0-9",
+      "0 and 1",
+      "1 and 2"
+    ],
+    "answerIndex": 2,
+    "explanation": "Binary consists strictly of digits 0 and 1."
+  },
+  {
+    "id": 3,
+    "category": "Number Systems & Codes",
+    "question": "The decimal equivalent of binary (1010)\u2082 is:",
+    "options": [
+      "8",
+      "9",
+      "10",
+      "12"
+    ],
+    "answerIndex": 2,
+    "explanation": "1*8 + 0*4 + 1*2 + 0*1 = 10."
+  },
+  {
+    "id": 4,
+    "category": "Number Systems & Codes",
+    "question": "The binary equivalent of decimal 15 is:",
+    "options": [
+      "1110",
+      "1111",
+      "1011",
+      "1101"
+    ],
+    "answerIndex": 1,
+    "explanation": "15 = 8 + 4 + 2 + 1 = (1111)\u2082."
+  },
+  {
+    "id": 5,
+    "category": "Number Systems & Codes",
+    "question": "The decimal equivalent of binary (10011)\u2082 is:",
+    "options": [
+      "17",
+      "18",
+      "19",
+      "20"
+    ],
+    "answerIndex": 2,
+    "explanation": "16 + 2 + 1 = 19."
+  },
+  {
+    "id": 6,
+    "category": "Number Systems & Codes",
+    "question": "Which number system has radix 8?",
+    "options": [
+      "Binary",
+      "Octal",
+      "Decimal",
+      "Hexadecimal"
+    ],
+    "answerIndex": 1,
+    "explanation": "Octal has base/radix 8."
+  },
+  {
+    "id": 7,
+    "category": "Number Systems & Codes",
+    "question": "Which number system has radix 16?",
+    "options": [
+      "Binary",
+      "Decimal",
+      "Octal",
+      "Hexadecimal"
+    ],
+    "answerIndex": 3,
+    "explanation": "Hexadecimal has base/radix 16."
+  },
+  {
+    "id": 8,
+    "category": "Number Systems & Codes",
+    "question": "The hexadecimal digit A represents decimal:",
+    "options": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "answerIndex": 1,
+    "explanation": "A = 10 in hexadecimal."
+  },
+  {
+    "id": 9,
+    "category": "Number Systems & Codes",
+    "question": "The hexadecimal digit F is equal to decimal:",
+    "options": [
+      "12",
+      "13",
+      "14",
+      "15"
+    ],
+    "answerIndex": 3,
+    "explanation": "F = 15 in hexadecimal."
+  },
+  {
+    "id": 10,
+    "category": "Number Systems & Codes",
+    "question": "Decimal 25 in binary is:",
+    "options": [
+      "11001",
+      "10101",
+      "10011",
+      "11100"
+    ],
+    "answerIndex": 0,
+    "explanation": "25 = 16 + 8 + 1 = (11001)\u2082."
+  },
+  {
+    "id": 11,
+    "category": "Number Systems & Codes",
+    "question": "Binary (11111111)\u2082 is equal to decimal:",
+    "options": [
+      "127",
+      "128",
+      "254",
+      "255"
+    ],
+    "answerIndex": 3,
+    "explanation": "2^8 - 1 = 255."
+  },
+  {
+    "id": 12,
+    "category": "Number Systems & Codes",
+    "question": "Decimal 32 in binary is:",
+    "options": [
+      "11111",
+      "100000",
+      "100001",
+      "101000"
+    ],
+    "answerIndex": 1,
+    "explanation": "32 = 2^5 = (100000)\u2082."
+  },
+  {
+    "id": 13,
+    "category": "Number Systems & Codes",
+    "question": "Binary (100000)\u2082 is equal to:",
+    "options": [
+      "16",
+      "32",
+      "64",
+      "128"
+    ],
+    "answerIndex": 1,
+    "explanation": "2^5 = 32."
+  },
+  {
+    "id": 14,
+    "category": "Number Systems & Codes",
+    "question": "The binary equivalent of decimal 50 is:",
+    "options": [
+      "110000",
+      "110010",
+      "111010",
+      "101010"
+    ],
+    "answerIndex": 1,
+    "explanation": "50 = 32 + 16 + 2 = (110010)\u2082."
+  },
+  {
+    "id": 15,
+    "category": "Number Systems & Codes",
+    "question": "Which number system is commonly used as a shorthand representation of binary?",
+    "options": [
+      "Decimal",
+      "Octal only",
+      "Hexadecimal only",
+      "Octal and Hexadecimal"
+    ],
+    "answerIndex": 3,
+    "explanation": "Octal (3 bits) and Hexadecimal (4 bits) group binary bits efficiently."
+  },
+  {
+    "id": 16,
+    "category": "Number Systems & Codes",
+    "question": "One hexadecimal digit represents:",
+    "options": [
+      "2 bits",
+      "3 bits",
+      "4 bits",
+      "8 bits"
+    ],
+    "answerIndex": 2,
+    "explanation": "Each hex digit replaces 4 binary bits (2^4 = 16)."
+  },
+  {
+    "id": 17,
+    "category": "Number Systems & Codes",
+    "question": "One octal digit represents:",
+    "options": [
+      "2 bits",
+      "3 bits",
+      "4 bits",
+      "5 bits"
+    ],
+    "answerIndex": 1,
+    "explanation": "Each octal digit replaces 3 binary bits (2^3 = 8)."
+  },
+  {
+    "id": 18,
+    "category": "Number Systems & Codes",
+    "question": "Binary (1111)\u2082 is equal to hexadecimal:",
+    "options": [
+      "E",
+      "F",
+      "A",
+      "C"
+    ],
+    "answerIndex": 1,
+    "explanation": "1111 in binary = F in hex."
+  },
+  {
+    "id": 19,
+    "category": "Number Systems & Codes",
+    "question": "Hexadecimal (1A)\u2081\u2086 is equal to decimal:",
+    "options": [
+      "24",
+      "25",
+      "26",
+      "27"
+    ],
+    "answerIndex": 2,
+    "explanation": "1*16 + 10 = 26."
+  },
+  {
+    "id": 20,
+    "category": "Number Systems & Codes",
+    "question": "Decimal 64 is represented in hexadecimal as:",
+    "options": [
+      "30",
+      "40",
+      "50",
+      "60"
+    ],
+    "answerIndex": 1,
+    "explanation": "64 / 16 = 4 R 0 => 40 in hex."
+  },
+  {
+    "id": 21,
+    "category": "Number Systems & Codes",
+    "question": "One's complement is obtained by:",
+    "options": [
+      "Adding 1",
+      "Inverting all bits",
+      "Removing the MSB",
+      "Multiplying by 2"
+    ],
+    "answerIndex": 1,
+    "explanation": "1's complement flips all 0s to 1s and 1s to 0s."
+  },
+  {
+    "id": 22,
+    "category": "Number Systems & Codes",
+    "question": "Two's complement is obtained by:",
+    "options": [
+      "Inverting bits only",
+      "Adding 1 to the one's complement",
+      "Subtracting 1",
+      "Shifting left"
+    ],
+    "answerIndex": 1,
+    "explanation": "2's complement = 1's complement + 1."
+  },
+  {
+    "id": 23,
+    "category": "Number Systems & Codes",
+    "question": "The one's complement of 1010 is:",
+    "options": [
+      "1011",
+      "0100",
+      "0101",
+      "0011"
+    ],
+    "answerIndex": 2,
+    "explanation": "Inverting 1010 yields 0101."
+  },
+  {
+    "id": 24,
+    "category": "Number Systems & Codes",
+    "question": "The two's complement of 1010 is:",
+    "options": [
+      "0101",
+      "0110",
+      "1110",
+      "1000"
+    ],
+    "answerIndex": 1,
+    "explanation": "1's complement of 1010 is 0101; adding 1 gives 0110."
+  },
+  {
+    "id": 25,
+    "category": "Number Systems & Codes",
+    "question": "The two's complement of 1101 is:",
+    "options": [
+      "0010",
+      "0011",
+      "0100",
+      "0101"
+    ],
+    "answerIndex": 1,
+    "explanation": "1's complement of 1101 is 0010; adding 1 gives 0011."
+  },
+  {
+    "id": 26,
+    "category": "Number Systems & Codes",
+    "question": "Which representation is widely used for signed integers in computers?",
+    "options": [
+      "BCD",
+      "Gray Code",
+      "Two's Complement",
+      "ASCII"
+    ],
+    "answerIndex": 2,
+    "explanation": "2's complement simplifies hardware arithmetic (no separate subtraction logic)."
+  },
+  {
+    "id": 27,
+    "category": "Number Systems & Codes",
+    "question": "The two's complement representation of decimal -6 using 4 bits is:",
+    "options": [
+      "0110",
+      "1001",
+      "1010",
+      "1110"
+    ],
+    "answerIndex": 2,
+    "explanation": "+6 is 0110 -> 1's comp 1001 -> +1 = 1010."
+  },
+  {
+    "id": 28,
+    "category": "Number Systems & Codes",
+    "question": "In an 8-bit signed two's complement system, the maximum positive number is:",
+    "options": [
+      "128",
+      "127",
+      "255",
+      "256"
+    ],
+    "answerIndex": 1,
+    "explanation": "Range is -(2^7) to +(2^7 - 1), so max is +127."
+  },
+  {
+    "id": 29,
+    "category": "Number Systems & Codes",
+    "question": "In an 8-bit signed two's complement system, the minimum number is:",
+    "options": [
+      "-127",
+      "-128",
+      "-255",
+      "-256"
+    ],
+    "answerIndex": 1,
+    "explanation": "Minimum number is -2^7 = -128."
+  },
+  {
+    "id": 30,
+    "category": "Number Systems & Codes",
+    "question": "Which bit indicates the sign in signed binary representation?",
+    "options": [
+      "LSB",
+      "MSB",
+      "Carry bit",
+      "Parity bit"
+    ],
+    "answerIndex": 1,
+    "explanation": "Most Significant Bit (MSB): 0 = positive, 1 = negative."
+  },
+  {
+    "id": 31,
+    "category": "Number Systems & Codes",
+    "question": "BCD stands for:",
+    "options": [
+      "Binary Code Digit",
+      "Binary Coded Decimal",
+      "Binary Computer Data",
+      "Binary Control Digit"
+    ],
+    "answerIndex": 1,
+    "explanation": "BCD stands for Binary Coded Decimal."
+  },
+  {
+    "id": 32,
+    "category": "Number Systems & Codes",
+    "question": "In BCD, decimal digit 9 is represented as:",
+    "options": [
+      "1000",
+      "1001",
+      "1010",
+      "1111"
+    ],
+    "answerIndex": 1,
+    "explanation": "9 in 4-bit BCD is 1001."
+  },
+  {
+    "id": 33,
+    "category": "Number Systems & Codes",
+    "question": "Which code changes only one bit between successive numbers?",
+    "options": [
+      "ASCII",
+      "BCD",
+      "Gray Code",
+      "Excess-3"
+    ],
+    "answerIndex": 2,
+    "explanation": "Gray code is a unitemporal (unit distance) code where adjacent values differ by 1 bit."
+  },
+  {
+    "id": 34,
+    "category": "Number Systems & Codes",
+    "question": "Gray code is mainly used to:",
+    "options": [
+      "Increase memory",
+      "Compress data",
+      "Reduce transition errors",
+      "Encrypt data"
+    ],
+    "answerIndex": 2,
+    "explanation": "Single bit transitions prevent spurious intermediate switching states in physical systems."
+  },
+  {
+    "id": 35,
+    "category": "Number Systems & Codes",
+    "question": "Which code is widely used in rotary encoders?",
+    "options": [
+      "ASCII",
+      "Unicode",
+      "Gray Code",
+      "BCD"
+    ],
+    "answerIndex": 2,
+    "explanation": "Gray code prevents positioning errors in optical/mechanical rotary encoders."
+  },
+  {
+    "id": 36,
+    "category": "Number Systems & Codes",
+    "question": "ASCII is primarily used to represent:",
+    "options": [
+      "Images",
+      "Audio",
+      "Characters",
+      "Floating-point numbers"
+    ],
+    "answerIndex": 2,
+    "explanation": "ASCII encodes alphanumeric characters and symbols."
+  },
+  {
+    "id": 37,
+    "category": "Number Systems & Codes",
+    "question": "ASCII stands for:",
+    "options": [
+      "American Standard Code for Information Interface",
+      "American Standard Code for Information Interchange",
+      "American System Code for Internet Information",
+      "Automatic Standard Code for Information"
+    ],
+    "answerIndex": 1,
+    "explanation": "ASCII stands for American Standard Code for Information Interchange."
+  },
+  {
+    "id": 38,
+    "category": "Number Systems & Codes",
+    "question": "Which code represents decimal digits separately in binary form?",
+    "options": [
+      "Gray Code",
+      "BCD",
+      "ASCII",
+      "Unicode"
+    ],
+    "answerIndex": 1,
+    "explanation": "BCD encodes each decimal digit (0-9) as a 4-bit binary group."
+  },
+  {
+    "id": 39,
+    "category": "Number Systems & Codes",
+    "question": "Which code is not a weighted code?",
+    "options": [
+      "BCD",
+      "Gray Code",
+      "8421 Code",
+      "2421 Code"
+    ],
+    "answerIndex": 1,
+    "explanation": "Gray code has no positional bit weights (unweighted)."
+  },
+  {
+    "id": 40,
+    "category": "Number Systems & Codes",
+    "question": "Which code is a weighted code?",
+    "options": [
+      "Gray Code",
+      "ASCII",
+      "BCD",
+      "Unicode"
+    ],
+    "answerIndex": 2,
+    "explanation": "BCD (8421) is a weighted binary code."
+  },
+  {
+    "id": 41,
+    "category": "Number Systems & Codes",
+    "question": "The largest decimal number represented by 4 unsigned bits is:",
+    "options": [
+      "14",
+      "15",
+      "16",
+      "31"
+    ],
+    "answerIndex": 1,
+    "explanation": "2^4 - 1 = 15 (1111)\u2082."
+  },
+  {
+    "id": 42,
+    "category": "Number Systems & Codes",
+    "question": "The smallest unsigned 8-bit binary number is:",
+    "options": [
+      "0",
+      "1",
+      "-1",
+      "-128"
+    ],
+    "answerIndex": 0,
+    "explanation": "Unsigned minimum value is 0 (00000000)\u2082."
+  },
+  {
+    "id": 43,
+    "category": "Number Systems & Codes",
+    "question": "Overflow occurs when:",
+    "options": [
+      "Division is performed",
+      "Multiplication is performed",
+      "The result cannot be represented with the available bits",
+      "A carry is generated"
+    ],
+    "answerIndex": 2,
+    "explanation": "Overflow occurs when arithmetic result exceeds the word-size representation capacity."
+  },
+  {
+    "id": 44,
+    "category": "Number Systems & Codes",
+    "question": "How many different values can be represented using 5 bits?",
+    "options": [
+      "16",
+      "25",
+      "31",
+      "32"
+    ],
+    "answerIndex": 3,
+    "explanation": "2^5 = 32 distinct combinations."
+  },
+  {
+    "id": 45,
+    "category": "Number Systems & Codes",
+    "question": "Eight bits are collectively called a:",
+    "options": [
+      "Nibble",
+      "Byte",
+      "Word",
+      "Double Word"
+    ],
+    "answerIndex": 1,
+    "explanation": "8 bits = 1 Byte."
+  },
+  {
+    "id": 46,
+    "category": "Number Systems & Codes",
+    "question": "Four bits are called a:",
+    "options": [
+      "Nibble",
+      "Byte",
+      "Word",
+      "Cell"
+    ],
+    "answerIndex": 0,
+    "explanation": "4 bits = 1 Nibble."
+  },
+  {
+    "id": 47,
+    "category": "Number Systems & Codes",
+    "question": "Which binary number is even?",
+    "options": [
+      "1011",
+      "1111",
+      "1101",
+      "1010"
+    ],
+    "answerIndex": 3,
+    "explanation": "Binary numbers ending in LSB = 0 are even (1010 = 10)."
+  },
+  {
+    "id": 48,
+    "category": "Number Systems & Codes",
+    "question": "A binary number ending with 1 is always:",
+    "options": [
+      "Even",
+      "Odd",
+      "Prime",
+      "Negative"
+    ],
+    "answerIndex": 1,
+    "explanation": "LSB = 1 indicates an odd integer."
+  },
+  {
+    "id": 49,
+    "category": "Number Systems & Codes",
+    "question": "Which of the following is an invalid hexadecimal number?",
+    "options": [
+      "A9",
+      "2F",
+      "1G",
+      "FF"
+    ],
+    "answerIndex": 2,
+    "explanation": "Hexadecimal only uses 0-9 and A-F. 'G' is invalid."
+  },
+  {
+    "id": 50,
+    "category": "Number Systems & Codes",
+    "question": "Which statement is correct?",
+    "options": [
+      "Binary uses digits 0-9.",
+      "Octal uses digits 0-9.",
+      "Hexadecimal uses digits 0-9 only.",
+      "Hexadecimal uses digits 0-9 and A-F."
+    ],
+    "answerIndex": 3,
+    "explanation": "Hexadecimal incorporates digits 0-9 and letters A through F."
+  },
+  {
+    "id": 51,
+    "category": "Boolean Algebra & Gates",
+    "question": "Boolean algebra deals with variables that have:",
+    "options": [
+      "Three values",
+      "Four values",
+      "Two values (0 and 1)",
+      "Infinite values"
+    ],
+    "answerIndex": 2,
+    "explanation": "Boolean variables take binary values: 0 (FALSE) or 1 (TRUE)."
+  },
+  {
+    "id": 52,
+    "category": "Boolean Algebra & Gates",
+    "question": "Which are the three basic Boolean operations?",
+    "options": [
+      "Addition, Subtraction, Multiplication",
+      "AND, OR, NOT",
+      "XOR, NAND, NOR",
+      "Shift, Rotate, Complement"
+    ],
+    "answerIndex": 1,
+    "explanation": "AND, OR, and NOT are the fundamental Boolean logic operations."
+  },
+  {
+    "id": 53,
+    "category": "Boolean Algebra & Gates",
+    "question": "In Boolean algebra, '+' represents:",
+    "options": [
+      "Arithmetic addition",
+      "OR operation",
+      "AND operation",
+      "NOT operation"
+    ],
+    "answerIndex": 1,
+    "explanation": "Symbol '+' denotes logical OR."
+  },
+  {
+    "id": 54,
+    "category": "Boolean Algebra & Gates",
+    "question": "In Boolean algebra, '.' represents:",
+    "options": [
+      "OR",
+      "AND",
+      "XOR",
+      "NOR"
+    ],
+    "answerIndex": 1,
+    "explanation": "Symbol '.' (or concatenation) denotes logical AND."
+  },
+  {
+    "id": 55,
+    "category": "Boolean Algebra & Gates",
+    "question": "The complement of A is represented as:",
+    "options": [
+      "A+",
+      "Ax",
+      "A'",
+      "A#"
+    ],
+    "answerIndex": 2,
+    "explanation": "A' (or A with overbar) represents NOT A."
+  },
+  {
+    "id": 56,
+    "category": "Boolean Algebra & Gates",
+    "question": "If A = 1, then A' equals:",
+    "options": [
+      "1",
+      "0",
+      "2",
+      "Undefined"
+    ],
+    "answerIndex": 1,
+    "explanation": "NOT 1 = 0."
+  },
+  {
+    "id": 57,
+    "category": "Boolean Algebra & Gates",
+    "question": "If A = 0, then A' equals:",
+    "options": [
+      "1",
+      "0",
+      "-1",
+      "Undefined"
+    ],
+    "answerIndex": 0,
+    "explanation": "NOT 0 = 1."
+  },
+  {
+    "id": 58,
+    "category": "Boolean Algebra & Gates",
+    "question": "According to the Identity Law:",
+    "options": [
+      "A + A = A",
+      "A + 0 = A",
+      "A + 1 = 0",
+      "A . 0 = 1"
+    ],
+    "answerIndex": 1,
+    "explanation": "A + 0 = A (OR identity)."
+  },
+  {
+    "id": 59,
+    "category": "Boolean Algebra & Gates",
+    "question": "According to the Null Law:",
+    "options": [
+      "A + 0 = A",
+      "A + 1 = 1",
+      "A . 1 = 0",
+      "A + A = 0"
+    ],
+    "answerIndex": 1,
+    "explanation": "A + 1 = 1 (OR null law)."
+  },
+  {
+    "id": 60,
+    "category": "Boolean Algebra & Gates",
+    "question": "According to the Identity Law for AND:",
+    "options": [
+      "A . 0 = A",
+      "A . 1 = A",
+      "A + 1 = A",
+      "A + 0 = 1"
+    ],
+    "answerIndex": 1,
+    "explanation": "A . 1 = A (AND identity)."
+  },
+  {
+    "id": 61,
+    "category": "Boolean Algebra & Gates",
+    "question": "According to the Null Law:",
+    "options": [
+      "A . 1 = 0",
+      "A . 0 = 0",
+      "A + 0 = 1",
+      "A . A = 0"
+    ],
+    "answerIndex": 1,
+    "explanation": "A . 0 = 0 (AND null law)."
+  },
+  {
+    "id": 62,
+    "category": "Boolean Algebra & Gates",
+    "question": "The Idempotent Law states:",
+    "options": [
+      "A + 1 = A",
+      "A + A = A",
+      "A + 0 = 0",
+      "A . 0 = A"
+    ],
+    "answerIndex": 1,
+    "explanation": "A + A = A and A . A = A."
+  },
+  {
+    "id": 63,
+    "category": "Boolean Algebra & Gates",
+    "question": "Which expression is equal to A?",
+    "options": [
+      "A + A'",
+      "A . 1",
+      "A . 0",
+      "A + 1"
+    ],
+    "answerIndex": 1,
+    "explanation": "A . 1 = A by identity."
+  },
+  {
+    "id": 64,
+    "category": "Boolean Algebra & Gates",
+    "question": "Which expression always equals 1?",
+    "options": [
+      "A . A'",
+      "A + A'",
+      "A . 0",
+      "A + 0"
+    ],
+    "answerIndex": 1,
+    "explanation": "A + A' = 1 (Complement Law)."
+  },
+  {
+    "id": 65,
+    "category": "Boolean Algebra & Gates",
+    "question": "Which expression always equals 0?",
+    "options": [
+      "A . A'",
+      "A + A'",
+      "A + 1",
+      "A . 1"
+    ],
+    "answerIndex": 0,
+    "explanation": "A . A' = 0 (Complement Law)."
+  },
+  {
+    "id": 66,
+    "category": "Boolean Algebra & Gates",
+    "question": "Which law states A + B = B + A?",
+    "options": [
+      "Associative",
+      "Commutative",
+      "Distributive",
+      "Absorption"
+    ],
+    "answerIndex": 1,
+    "explanation": "Order of operands does not matter (Commutative Law)."
+  },
+  {
+    "id": 67,
+    "category": "Boolean Algebra & Gates",
+    "question": "Which law states (A + B) + C = A + (B + C)?",
+    "options": [
+      "Commutative",
+      "Associative",
+      "Identity",
+      "Null"
+    ],
+    "answerIndex": 1,
+    "explanation": "Grouping of operands does not matter (Associative Law)."
+  },
+  {
+    "id": 68,
+    "category": "Boolean Algebra & Gates",
+    "question": "Which law states A(B + C) = AB + AC?",
+    "options": [
+      "Commutative",
+      "Identity",
+      "Distributive",
+      "DeMorgan"
+    ],
+    "answerIndex": 2,
+    "explanation": "Distributive Law: A(B + C) = AB + AC."
+  },
+  {
+    "id": 69,
+    "category": "Boolean Algebra & Gates",
+    "question": "The Absorption Law is:",
+    "options": [
+      "A + A = A",
+      "A + AB = A",
+      "A + 0 = 0",
+      "A . 1 = 0"
+    ],
+    "answerIndex": 1,
+    "explanation": "A + AB = A(1 + B) = A(1) = A."
+  },
+  {
+    "id": 70,
+    "category": "Boolean Algebra & Gates",
+    "question": "The expression AA' simplifies to:",
+    "options": [
+      "A",
+      "1",
+      "0",
+      "B"
+    ],
+    "answerIndex": 2,
+    "explanation": "A AND NOT A is always 0."
+  },
+  {
+    "id": 71,
+    "category": "Boolean Algebra & Gates",
+    "question": "The Boolean expression AA'B simplifies to:",
+    "options": [
+      "B",
+      "AB",
+      "0",
+      "A"
+    ],
+    "answerIndex": 2,
+    "explanation": "Since A . A' = 0, (0) . B = 0."
+  },
+  {
+    "id": 72,
+    "category": "Boolean Algebra & Gates",
+    "question": "The Boolean expression A + AB simplifies to:",
+    "options": [
+      "A",
+      "AB",
+      "B",
+      "1"
+    ],
+    "answerIndex": 0,
+    "explanation": "By absorption law, A + AB = A."
+  },
+  {
+    "id": 73,
+    "category": "Boolean Algebra & Gates",
+    "question": "The Boolean expression A(A + B) simplifies to:",
+    "options": [
+      "A",
+      "AB",
+      "A+B",
+      "B"
+    ],
+    "answerIndex": 0,
+    "explanation": "A.A + A.B = A + AB = A."
+  },
+  {
+    "id": 74,
+    "category": "Boolean Algebra & Gates",
+    "question": "The expression A + 0 equals:",
+    "options": [
+      "A",
+      "1",
+      "0",
+      "A'"
+    ],
+    "answerIndex": 0,
+    "explanation": "OR identity with 0 equals A."
+  },
+  {
+    "id": 75,
+    "category": "Boolean Algebra & Gates",
+    "question": "The expression A . 1 equals:",
+    "options": [
+      "A",
+      "0",
+      "1",
+      "A'"
+    ],
+    "answerIndex": 0,
+    "explanation": "AND identity with 1 equals A."
+  },
+  {
+    "id": 76,
+    "category": "Boolean Algebra & Gates",
+    "question": "DeMorgan's First Theorem is:",
+    "options": [
+      "(AB)' = AB",
+      "(AB)' = A' + B'",
+      "(A+B)' = A+B",
+      "(AB)' = A'B'"
+    ],
+    "answerIndex": 1,
+    "explanation": "Complement of product equals sum of complements: (AB)' = A' + B'."
+  },
+  {
+    "id": 77,
+    "category": "Boolean Algebra & Gates",
+    "question": "DeMorgan's Second Theorem is:",
+    "options": [
+      "(AB)' = A+B",
+      "(A+B)' = A'B'",
+      "(A+B)' = A'+B'",
+      "(AB)' = AB"
+    ],
+    "answerIndex": 1,
+    "explanation": "Complement of sum equals product of complements: (A+B)' = A'B'."
+  },
+  {
+    "id": 78,
+    "category": "Boolean Algebra & Gates",
+    "question": "DeMorgan's theorems are mainly used for:",
+    "options": [
+      "Number conversion",
+      "Boolean simplification",
+      "Binary subtraction",
+      "Memory design"
+    ],
+    "answerIndex": 1,
+    "explanation": "DeMorgan's laws simplify complex Boolean expressions and swap AND/OR operators."
+  },
+  {
+    "id": 79,
+    "category": "Boolean Algebra & Gates",
+    "question": "The complement of (A+B) is:",
+    "options": [
+      "A+B",
+      "A'+B'",
+      "A'B'",
+      "AB"
+    ],
+    "answerIndex": 2,
+    "explanation": "(A+B)' = A'B' by DeMorgan."
+  },
+  {
+    "id": 80,
+    "category": "Boolean Algebra & Gates",
+    "question": "The complement of AB is:",
+    "options": [
+      "AB",
+      "A'+B'",
+      "A'B'",
+      "A+B"
+    ],
+    "answerIndex": 1,
+    "explanation": "(AB)' = A' + B' by DeMorgan."
+  },
+  {
+    "id": 81,
+    "category": "Boolean Algebra & Gates",
+    "question": "Which gate produces HIGH only when all inputs are HIGH?",
+    "options": [
+      "AND",
+      "OR",
+      "NAND",
+      "XOR"
+    ],
+    "answerIndex": 0,
+    "explanation": "AND gate output is 1 only when A=1 and B=1."
+  },
+  {
+    "id": 82,
+    "category": "Boolean Algebra & Gates",
+    "question": "Which gate produces LOW only when all inputs are HIGH?",
+    "options": [
+      "OR",
+      "NAND",
+      "NOR",
+      "XOR"
+    ],
+    "answerIndex": 1,
+    "explanation": "NAND gate (NOT-AND) output is 0 only when A=1 and B=1."
+  },
+  {
+    "id": 83,
+    "category": "Boolean Algebra & Gates",
+    "question": "Which gate produces HIGH if at least one input is HIGH?",
+    "options": [
+      "AND",
+      "OR",
+      "NOR",
+      "XNOR"
+    ],
+    "answerIndex": 1,
+    "explanation": "OR gate output is 1 if any input is 1."
+  },
+  {
+    "id": 84,
+    "category": "Boolean Algebra & Gates",
+    "question": "Which gate is the complement of OR?",
+    "options": [
+      "NAND",
+      "NOR",
+      "XOR",
+      "XNOR"
+    ],
+    "answerIndex": 1,
+    "explanation": "NOR = NOT OR."
+  },
+  {
+    "id": 85,
+    "category": "Boolean Algebra & Gates",
+    "question": "Which gate has only one input?",
+    "options": [
+      "AND",
+      "OR",
+      "NOT",
+      "XOR"
+    ],
+    "answerIndex": 2,
+    "explanation": "NOT gate (Inverter) takes a single input."
+  },
+  {
+    "id": 86,
+    "category": "Boolean Algebra & Gates",
+    "question": "A NOT gate is also known as:",
+    "options": [
+      "Buffer",
+      "Inverter",
+      "Decoder",
+      "Encoder"
+    ],
+    "answerIndex": 1,
+    "explanation": "A NOT gate inverts its input signal."
+  },
+  {
+    "id": 87,
+    "category": "Boolean Algebra & Gates",
+    "question": "If the input to a NOT gate is 0, the output is:",
+    "options": [
+      "0",
+      "1",
+      "Undefined",
+      "High impedance"
+    ],
+    "answerIndex": 1,
+    "explanation": "NOT 0 = 1."
+  },
+  {
+    "id": 88,
+    "category": "Boolean Algebra & Gates",
+    "question": "If the input to a NOT gate is 1, the output is:",
+    "options": [
+      "0",
+      "1",
+      "Undefined",
+      "Floating"
+    ],
+    "answerIndex": 0,
+    "explanation": "NOT 1 = 0."
+  },
+  {
+    "id": 89,
+    "category": "Boolean Algebra & Gates",
+    "question": "Which gate produces HIGH only when inputs are different?",
+    "options": [
+      "XNOR",
+      "NAND",
+      "XOR",
+      "NOR"
+    ],
+    "answerIndex": 2,
+    "explanation": "XOR (Exclusive OR) outputs 1 when inputs differ."
+  },
+  {
+    "id": 90,
+    "category": "Boolean Algebra & Gates",
+    "question": "XOR gate is commonly used for:",
+    "options": [
+      "Data storage",
+      "Multiplication",
+      "Comparison of bits",
+      "Clock generation"
+    ],
+    "answerIndex": 2,
+    "explanation": "XOR acts as a inequality comparator (outputs 1 if bits differ)."
+  },
+  {
+    "id": 91,
+    "category": "Boolean Algebra & Gates",
+    "question": "Which gate produces HIGH when both inputs are the same?",
+    "options": [
+      "XOR",
+      "XNOR",
+      "NAND",
+      "NOR"
+    ],
+    "answerIndex": 1,
+    "explanation": "XNOR (Equivalence gate) outputs 1 when inputs match."
+  },
+  {
+    "id": 92,
+    "category": "Boolean Algebra & Gates",
+    "question": "The output of AND gate for inputs (1,1) is:",
+    "options": [
+      "0",
+      "1",
+      "Depends on clock",
+      "Undefined"
+    ],
+    "answerIndex": 1,
+    "explanation": "1 AND 1 = 1."
+  },
+  {
+    "id": 93,
+    "category": "Boolean Algebra & Gates",
+    "question": "The output of OR gate for inputs (0,1) is:",
+    "options": [
+      "0",
+      "1",
+      "Undefined",
+      "Depends on carry"
+    ],
+    "answerIndex": 1,
+    "explanation": "0 OR 1 = 1."
+  },
+  {
+    "id": 94,
+    "category": "Boolean Algebra & Gates",
+    "question": "The output of NAND gate for inputs (1,1) is:",
+    "options": [
+      "0",
+      "1",
+      "Undefined",
+      "High impedance"
+    ],
+    "answerIndex": 0,
+    "explanation": "NAND(1,1) = NOT(1 AND 1) = 0."
+  },
+  {
+    "id": 95,
+    "category": "Boolean Algebra & Gates",
+    "question": "The output of NOR gate for inputs (0,0) is:",
+    "options": [
+      "0",
+      "1",
+      "Depends on clock",
+      "Undefined"
+    ],
+    "answerIndex": 1,
+    "explanation": "NOR(0,0) = NOT(0 OR 0) = 1."
+  },
+  {
+    "id": 96,
+    "category": "Boolean Algebra & Gates",
+    "question": "Which gate is called a universal gate?",
+    "options": [
+      "AND only",
+      "OR only",
+      "NAND",
+      "XOR"
+    ],
+    "answerIndex": 2,
+    "explanation": "NAND gates can synthesize any Boolean function."
+  },
+  {
+    "id": 97,
+    "category": "Boolean Algebra & Gates",
+    "question": "Which other gate is also a universal gate?",
+    "options": [
+      "XOR",
+      "NOR",
+      "AND",
+      "OR"
+    ],
+    "answerIndex": 1,
+    "explanation": "NOR is also a universal logic gate."
+  },
+  {
+    "id": 98,
+    "category": "Boolean Algebra & Gates",
+    "question": "Universal gates can be used to implement:",
+    "options": [
+      "Only AND gates",
+      "Only OR gates",
+      "Any Boolean function",
+      "Only NOT gates"
+    ],
+    "answerIndex": 2,
+    "explanation": "Universal gates can replicate AND, OR, NOT, XOR, and complex circuits."
+  },
+  {
+    "id": 99,
+    "category": "Boolean Algebra & Gates",
+    "question": "How many NAND gates are required to implement a NOT gate?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answerIndex": 0,
+    "explanation": "Tying both inputs of a NAND together produces (A.A)' = A' (1 gate)."
+  },
+  {
+    "id": 100,
+    "category": "Boolean Algebra & Gates",
+    "question": "How many NAND gates are required to implement an AND gate?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answerIndex": 1,
+    "explanation": "One NAND computes (AB)', second NAND inverts it to AB (2 gates)."
+  },
+  {
+    "id": 101,
+    "category": "K-Maps & Simplification",
+    "question": "The primary purpose of a Karnaugh Map (K-map) is:",
+    "options": [
+      "Convert decimal to binary",
+      "Design sequential circuits",
+      "Simplify Boolean expressions",
+      "Perform binary multiplication"
+    ],
+    "answerIndex": 2,
+    "explanation": "K-maps provide a graphical tool to minimize Boolean functions to minimal SOP/POS form."
+  },
+  {
+    "id": 102,
+    "category": "K-Maps & Simplification",
+    "question": "Karnaugh Map is an alternative to:",
+    "options": [
+      "Binary addition",
+      "Boolean algebra simplification",
+      "Decimal conversion",
+      "Data encoding"
+    ],
+    "answerIndex": 1,
+    "explanation": "K-maps visually simplify Boolean logic without algebraic manipulation."
+  },
+  {
+    "id": 103,
+    "category": "K-Maps & Simplification",
+    "question": "A K-map helps reduce:",
+    "options": [
+      "Memory size",
+      "Number of logic gates",
+      "Clock frequency",
+      "CPU speed"
+    ],
+    "answerIndex": 1,
+    "explanation": "Minimizing Boolean functions reduces gate count and circuit complexity."
+  },
+  {
+    "id": 104,
+    "category": "K-Maps & Simplification",
+    "question": "Simplifying a Boolean expression mainly reduces:",
+    "options": [
+      "Number of inputs",
+      "Hardware complexity",
+      "Number of outputs",
+      "Number of variables"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fewer terms and literals directly translate to lower hardware cost and chip area."
+  },
+  {
+    "id": 105,
+    "category": "K-Maps & Simplification",
+    "question": "A simplified logic circuit generally has:",
+    "options": [
+      "More gates",
+      "More wiring",
+      "Fewer gates",
+      "More flip-flops"
+    ],
+    "answerIndex": 2,
+    "explanation": "Logic minimization produces circuits with fewer gates and connections."
+  },
+  {
+    "id": 106,
+    "category": "K-Maps & Simplification",
+    "question": "A 2-variable K-map contains:",
+    "options": [
+      "2 cells",
+      "4 cells",
+      "8 cells",
+      "16 cells"
+    ],
+    "answerIndex": 1,
+    "explanation": "2^2 = 4 cells."
+  },
+  {
+    "id": 107,
+    "category": "K-Maps & Simplification",
+    "question": "A 3-variable K-map contains:",
+    "options": [
+      "4 cells",
+      "8 cells",
+      "12 cells",
+      "16 cells"
+    ],
+    "answerIndex": 1,
+    "explanation": "2^3 = 8 cells."
+  },
+  {
+    "id": 108,
+    "category": "K-Maps & Simplification",
+    "question": "A 4-variable K-map contains:",
+    "options": [
+      "8 cells",
+      "12 cells",
+      "16 cells",
+      "32 cells"
+    ],
+    "answerIndex": 2,
+    "explanation": "2^4 = 16 cells."
+  },
+  {
+    "id": 109,
+    "category": "K-Maps & Simplification",
+    "question": "A 5-variable K-map contains:",
+    "options": [
+      "16 cells",
+      "32 cells",
+      "64 cells",
+      "8 cells"
+    ],
+    "answerIndex": 1,
+    "explanation": "2^5 = 32 cells."
+  },
+  {
+    "id": 110,
+    "category": "K-Maps & Simplification",
+    "question": "The number of cells in an n-variable K-map is:",
+    "options": [
+      "n",
+      "n^2",
+      "2^n",
+      "n + 2"
+    ],
+    "answerIndex": 2,
+    "explanation": "An n-variable K-map has 2^n grid cells."
+  },
+  {
+    "id": 111,
+    "category": "K-Maps & Simplification",
+    "question": "The rows and columns of a K-map are arranged using:",
+    "options": [
+      "Binary code",
+      "ASCII",
+      "Gray code",
+      "BCD"
+    ],
+    "answerIndex": 2,
+    "explanation": "Gray code ensures adjacent cells differ by only 1 bit."
+  },
+  {
+    "id": 112,
+    "category": "K-Maps & Simplification",
+    "question": "Gray code is used in K-maps because:",
+    "options": [
+      "It is easier to remember",
+      "Adjacent cells differ by only one bit",
+      "It uses fewer bits",
+      "It is faster to compute"
+    ],
+    "answerIndex": 1,
+    "explanation": "Unit distance property allows visual grouping of adjacent 1s."
+  },
+  {
+    "id": 113,
+    "category": "K-Maps & Simplification",
+    "question": "In a K-map, adjacent cells differ in:",
+    "options": [
+      "Only one variable",
+      "Two variables",
+      "Three variables",
+      "All variables"
+    ],
+    "answerIndex": 0,
+    "explanation": "Geometrically adjacent K-map cells differ in exactly one binary variable."
+  },
+  {
+    "id": 114,
+    "category": "K-Maps & Simplification",
+    "question": "Which sequence follows Gray code?",
+    "options": [
+      "00, 01, 10, 11",
+      "00, 01, 11, 10",
+      "00, 10, 11, 01",
+      "01, 10, 00, 11"
+    ],
+    "answerIndex": 1,
+    "explanation": "00 -> 01 -> 11 -> 10 changes 1 bit at a time."
+  },
+  {
+    "id": 115,
+    "category": "K-Maps & Simplification",
+    "question": "Gray code is also widely used in:",
+    "options": [
+      "RAM",
+      "Rotary encoders",
+      "ALU",
+      "Registers"
+    ],
+    "answerIndex": 1,
+    "explanation": "Rotary encoders use Gray code to prevent erroneous multi-bit transition readouts."
+  },
+  {
+    "id": 116,
+    "category": "K-Maps & Simplification",
+    "question": "In K-map simplification, groups must contain:",
+    "options": [
+      "Any number of cells",
+      "Powers of two",
+      "Prime numbers",
+      "Odd numbers only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Groups must have 1, 2, 4, 8, 16, ... (2^k) cells."
+  },
+  {
+    "id": 117,
+    "category": "K-Maps & Simplification",
+    "question": "Which of the following is NOT a valid group size?",
+    "options": [
+      "2",
+      "4",
+      "8",
+      "6"
+    ],
+    "answerIndex": 3,
+    "explanation": "6 is not a power of 2."
+  },
+  {
+    "id": 118,
+    "category": "K-Maps & Simplification",
+    "question": "Which group size is valid?",
+    "options": [
+      "3",
+      "5",
+      "8",
+      "7"
+    ],
+    "answerIndex": 2,
+    "explanation": "8 is 2^3, a valid group size."
+  },
+  {
+    "id": 119,
+    "category": "K-Maps & Simplification",
+    "question": "The largest possible group should be selected because it:",
+    "options": [
+      "Increases variables",
+      "Produces simpler expressions",
+      "Increases hardware",
+      "Increases outputs"
+    ],
+    "answerIndex": 1,
+    "explanation": "Larger groups eliminate more variables, producing simpler product terms."
+  },
+  {
+    "id": 120,
+    "category": "K-Maps & Simplification",
+    "question": "K-map grouping aims to eliminate:",
+    "options": [
+      "Variables",
+      "Outputs",
+      "Gates",
+      "Inputs"
+    ],
+    "answerIndex": 0,
+    "explanation": "Combining adjacent minterms cancels out variables that appear in true and complemented forms."
+  },
+  {
+    "id": 121,
+    "category": "K-Maps & Simplification",
+    "question": "Larger groups in a K-map produce:",
+    "options": [
+      "More literals",
+      "Fewer literals",
+      "More gates",
+      "More outputs"
+    ],
+    "answerIndex": 1,
+    "explanation": "Grouping 2^k cells eliminates k variables, yielding fewer literals per term."
+  },
+  {
+    "id": 122,
+    "category": "K-Maps & Simplification",
+    "question": "Overlapping groups in a K-map are:",
+    "options": [
+      "Not allowed",
+      "Allowed when beneficial",
+      "Required",
+      "Allowed only in 2-variable maps"
+    ],
+    "answerIndex": 1,
+    "explanation": "Minterms can be shared across groups if it helps form larger power-of-2 groups."
+  },
+  {
+    "id": 123,
+    "category": "K-Maps & Simplification",
+    "question": "Corner cells in a K-map are:",
+    "options": [
+      "Never adjacent",
+      "Adjacent to each other",
+      "Ignored",
+      "Invalid"
+    ],
+    "answerIndex": 1,
+    "explanation": "K-map edges wrap around, so all 4 corners are adjacent to each other."
+  },
+  {
+    "id": 124,
+    "category": "K-Maps & Simplification",
+    "question": "Leftmost and rightmost cells in the same row are:",
+    "options": [
+      "Different",
+      "Adjacent",
+      "Never grouped",
+      "Opposite"
+    ],
+    "answerIndex": 1,
+    "explanation": "K-map grid wraps horizontally, making end-of-row cells adjacent."
+  },
+  {
+    "id": 125,
+    "category": "K-Maps & Simplification",
+    "question": "Top and bottom cells in the same column are:",
+    "options": [
+      "Separate",
+      "Adjacent",
+      "Invalid",
+      "Complementary"
+    ],
+    "answerIndex": 1,
+    "explanation": "K-map grid wraps vertically, making top and bottom column cells adjacent."
+  },
+  {
+    "id": 126,
+    "category": "K-Maps & Simplification",
+    "question": "SOP stands for:",
+    "options": [
+      "Sum of Products",
+      "System of Products",
+      "Standard Output Product",
+      "Signal Output Process"
+    ],
+    "answerIndex": 0,
+    "explanation": "SOP = Sum of Products (OR of AND terms)."
+  },
+  {
+    "id": 127,
+    "category": "K-Maps & Simplification",
+    "question": "POS stands for:",
+    "options": [
+      "Product of Signals",
+      "Product of Sums",
+      "Process of Sum",
+      "Power of Sum"
+    ],
+    "answerIndex": 1,
+    "explanation": "POS = Product of Sums (AND of OR terms)."
+  },
+  {
+    "id": 128,
+    "category": "K-Maps & Simplification",
+    "question": "SOP expression is formed using:",
+    "options": [
+      "Maxterms",
+      "Minterms",
+      "Variables only",
+      "Don't cares"
+    ],
+    "answerIndex": 1,
+    "explanation": "SOP expressions sum (OR) minterm product terms where output = 1."
+  },
+  {
+    "id": 129,
+    "category": "K-Maps & Simplification",
+    "question": "POS expression is formed using:",
+    "options": [
+      "Minterms",
+      "Maxterms",
+      "Variables only",
+      "Complements only"
+    ],
+    "answerIndex": 1,
+    "explanation": "POS expressions multiply (AND) maxterm sum terms where output = 0."
+  },
+  {
+    "id": 130,
+    "category": "K-Maps & Simplification",
+    "question": "In SOP, grouping is performed for:",
+    "options": [
+      "0's",
+      "1's",
+      "X's only",
+      "All cells"
+    ],
+    "answerIndex": 1,
+    "explanation": "SOP groups 1-cells in the K-map."
+  },
+  {
+    "id": 131,
+    "category": "K-Maps & Simplification",
+    "question": "In POS, grouping is performed for:",
+    "options": [
+      "0's",
+      "1's",
+      "X's only",
+      "Adjacent variables"
+    ],
+    "answerIndex": 0,
+    "explanation": "POS groups 0-cells in the K-map."
+  },
+  {
+    "id": 132,
+    "category": "K-Maps & Simplification",
+    "question": "Don't-care conditions are represented by:",
+    "options": [
+      "Y",
+      "Z",
+      "X",
+      "D"
+    ],
+    "answerIndex": 2,
+    "explanation": "Don't-care cells are marked with 'X' or 'd'."
+  },
+  {
+    "id": 133,
+    "category": "K-Maps & Simplification",
+    "question": "A don't-care condition means:",
+    "options": [
+      "Output must be 1",
+      "Output must be 0",
+      "Output can be either 0 or 1",
+      "Output is undefined forever"
+    ],
+    "answerIndex": 2,
+    "explanation": "Output value does not matter for that input combination and can be chosen as 0 or 1."
+  },
+  {
+    "id": 134,
+    "category": "K-Maps & Simplification",
+    "question": "Don't-care conditions are used to:",
+    "options": [
+      "Increase complexity",
+      "Simplify Boolean expressions",
+      "Increase variables",
+      "Remove outputs"
+    ],
+    "answerIndex": 1,
+    "explanation": "Don't-cares can be included in groups to form larger groups and simpler terms."
+  },
+  {
+    "id": 135,
+    "category": "K-Maps & Simplification",
+    "question": "A don't-care cell may be:",
+    "options": [
+      "Always ignored",
+      "Included if it helps simplification",
+      "Used only in POS",
+      "Used only in SOP"
+    ],
+    "answerIndex": 1,
+    "explanation": "Include 'X' as 1 (or 0) only if it helps enlarge a group."
+  },
+  {
+    "id": 136,
+    "category": "K-Maps & Simplification",
+    "question": "The expression A + A simplifies to:",
+    "options": [
+      "A",
+      "1",
+      "0",
+      "A'"
+    ],
+    "answerIndex": 0,
+    "explanation": "Idempotent Law: A + A = A."
+  },
+  {
+    "id": 137,
+    "category": "K-Maps & Simplification",
+    "question": "The expression A . A simplifies to:",
+    "options": [
+      "A",
+      "0",
+      "1",
+      "A'"
+    ],
+    "answerIndex": 0,
+    "explanation": "Idempotent Law: A . A = A."
+  },
+  {
+    "id": 138,
+    "category": "K-Maps & Simplification",
+    "question": "The expression A + A' equals:",
+    "options": [
+      "A",
+      "1",
+      "0",
+      "A'"
+    ],
+    "answerIndex": 1,
+    "explanation": "Complement Law: A + A' = 1."
+  },
+  {
+    "id": 139,
+    "category": "K-Maps & Simplification",
+    "question": "The expression A . A' equals:",
+    "options": [
+      "A",
+      "1",
+      "0",
+      "A'"
+    ],
+    "answerIndex": 2,
+    "explanation": "Complement Law: A . A' = 0."
+  },
+  {
+    "id": 140,
+    "category": "K-Maps & Simplification",
+    "question": "The expression A + AB simplifies to:",
+    "options": [
+      "A",
+      "AB",
+      "B",
+      "1"
+    ],
+    "answerIndex": 0,
+    "explanation": "Absorption Law: A + AB = A."
+  },
+  {
+    "id": 141,
+    "category": "K-Maps & Simplification",
+    "question": "The expression A(A+B) simplifies to:",
+    "options": [
+      "A",
+      "AB",
+      "A+B",
+      "B"
+    ],
+    "answerIndex": 0,
+    "explanation": "Absorption Law: A(A+B) = A."
+  },
+  {
+    "id": 142,
+    "category": "K-Maps & Simplification",
+    "question": "Which law is applied in A + AB = A?",
+    "options": [
+      "Identity",
+      "Absorption",
+      "Commutative",
+      "DeMorgan"
+    ],
+    "answerIndex": 1,
+    "explanation": "Absorption Law."
+  },
+  {
+    "id": 143,
+    "category": "K-Maps & Simplification",
+    "question": "Which law is applied in A(A+B)=A?",
+    "options": [
+      "Identity",
+      "Absorption",
+      "Associative",
+      "Null"
+    ],
+    "answerIndex": 1,
+    "explanation": "Absorption Law."
+  },
+  {
+    "id": 144,
+    "category": "K-Maps & Simplification",
+    "question": "Simplifying Boolean expressions mainly reduces:",
+    "options": [
+      "Voltage",
+      "Current",
+      "Hardware cost",
+      "Frequency"
+    ],
+    "answerIndex": 2,
+    "explanation": "Fewer gates and interconnections lower hardware production cost."
+  },
+  {
+    "id": 145,
+    "category": "K-Maps & Simplification",
+    "question": "Which method provides a graphical technique for Boolean simplification?",
+    "options": [
+      "Truth Table",
+      "Flowchart",
+      "Karnaugh Map",
+      "Binary Tree"
+    ],
+    "answerIndex": 2,
+    "explanation": "Karnaugh Map is a visual array technique."
+  },
+  {
+    "id": 146,
+    "category": "K-Maps & Simplification",
+    "question": "K-map is most practical for simplifying functions with:",
+    "options": [
+      "10-15 variables",
+      "2-6 variables",
+      "More than 20 variables",
+      "Unlimited variables"
+    ],
+    "answerIndex": 1,
+    "explanation": "K-maps are practical up to 4-6 variables; larger inputs use Quine-McCluskey or CAD algorithms."
+  },
+  {
+    "id": 147,
+    "category": "K-Maps & Simplification",
+    "question": "Which of the following cannot be a valid K-map group?",
+    "options": [
+      "1 cell",
+      "2 cells",
+      "4 cells",
+      "7 cells"
+    ],
+    "answerIndex": 3,
+    "explanation": "7 is not a power of 2."
+  },
+  {
+    "id": 148,
+    "category": "K-Maps & Simplification",
+    "question": "If no adjacent 1's exist in a K-map, each 1 forms:",
+    "options": [
+      "Pair",
+      "Quad",
+      "Single-cell group",
+      "Octet"
+    ],
+    "answerIndex": 2,
+    "explanation": "Isolated 1s cannot be combined and remain single-cell 1-groups."
+  },
+  {
+    "id": 149,
+    "category": "K-Maps & Simplification",
+    "question": "Which of the following is TRUE?",
+    "options": [
+      "K-map increases circuit complexity.",
+      "K-map minimizes the number of logic gates.",
+      "K-map is used only for sequential circuits.",
+      "K-map converts decimal numbers."
+    ],
+    "answerIndex": 1,
+    "explanation": "K-map minimization yields optimal logic expressions with minimal gate count."
+  },
+  {
+    "id": 150,
+    "category": "K-Maps & Simplification",
+    "question": "Which statement about Karnaugh Maps is correct?",
+    "options": [
+      "Adjacent cells differ in two variables.",
+      "Groups can contain any number of cells.",
+      "SOP groups 0's.",
+      "Gray code ordering ensures adjacent cells differ by only one bit."
+    ],
+    "answerIndex": 3,
+    "explanation": "Gray code ordering is essential for K-map cell adjacency."
+  },
+  {
+    "id": 151,
+    "category": "Combinational Circuits",
+    "question": "A half adder is used to add:",
+    "options": [
+      "Two multi-bit numbers",
+      "Two single-bit binary numbers",
+      "Three binary bits",
+      "Four binary bits"
+    ],
+    "answerIndex": 1,
+    "explanation": "A half adder adds two 1-bit inputs A and B."
+  },
+  {
+    "id": 152,
+    "category": "Combinational Circuits",
+    "question": "A half adder has:",
+    "options": [
+      "1 input and 2 outputs",
+      "2 inputs and 2 outputs",
+      "3 inputs and 1 output",
+      "4 inputs and 2 outputs"
+    ],
+    "answerIndex": 1,
+    "explanation": "2 inputs (A, B) and 2 outputs (Sum, Carry)."
+  },
+  {
+    "id": 153,
+    "category": "Combinational Circuits",
+    "question": "The outputs of a half adder are:",
+    "options": [
+      "Sum and Borrow",
+      "Sum and Carry",
+      "Carry and Difference",
+      "Difference and Borrow"
+    ],
+    "answerIndex": 1,
+    "explanation": "Half adder produces Sum (S) and Carry (C)."
+  },
+  {
+    "id": 154,
+    "category": "Combinational Circuits",
+    "question": "The Sum output of a half adder is produced by:",
+    "options": [
+      "AND gate",
+      "OR gate",
+      "XOR gate",
+      "NAND gate"
+    ],
+    "answerIndex": 2,
+    "explanation": "Sum = A XOR B."
+  },
+  {
+    "id": 155,
+    "category": "Combinational Circuits",
+    "question": "The Carry output of a half adder is produced by:",
+    "options": [
+      "AND gate",
+      "XOR gate",
+      "OR gate",
+      "NOR gate"
+    ],
+    "answerIndex": 0,
+    "explanation": "Carry = A AND B."
+  },
+  {
+    "id": 156,
+    "category": "Combinational Circuits",
+    "question": "A half adder cannot add:",
+    "options": [
+      "Two binary bits",
+      "A carry input",
+      "Logic 0",
+      "Logic 1"
+    ],
+    "answerIndex": 1,
+    "explanation": "Half adder lacks an input for a Carry-in from a previous stage."
+  },
+  {
+    "id": 157,
+    "category": "Combinational Circuits",
+    "question": "Which expression represents the Sum output of a half adder?",
+    "options": [
+      "A + B",
+      "A XOR B",
+      "AB",
+      "A'B"
+    ],
+    "answerIndex": 1,
+    "explanation": "Sum S = A XOR B."
+  },
+  {
+    "id": 158,
+    "category": "Combinational Circuits",
+    "question": "Which expression represents the Carry output of a half adder?",
+    "options": [
+      "A + B",
+      "A XOR B",
+      "AB",
+      "A' + B"
+    ],
+    "answerIndex": 2,
+    "explanation": "Carry C = AB."
+  },
+  {
+    "id": 159,
+    "category": "Combinational Circuits",
+    "question": "A full adder adds:",
+    "options": [
+      "Two binary bits only",
+      "Two binary bits and a carry input",
+      "Three decimal digits",
+      "Four binary bits"
+    ],
+    "answerIndex": 1,
+    "explanation": "Full adder adds 3 bits: A, B, and Cin."
+  },
+  {
+    "id": 160,
+    "category": "Combinational Circuits",
+    "question": "A full adder has:",
+    "options": [
+      "2 inputs",
+      "3 inputs",
+      "4 inputs",
+      "5 inputs"
+    ],
+    "answerIndex": 1,
+    "explanation": "3 inputs (A, B, Cin)."
+  },
+  {
+    "id": 161,
+    "category": "Combinational Circuits",
+    "question": "A full adder has:",
+    "options": [
+      "One output",
+      "Two outputs",
+      "Three outputs",
+      "Four outputs"
+    ],
+    "answerIndex": 1,
+    "explanation": "2 outputs (Sum and Cout)."
+  },
+  {
+    "id": 162,
+    "category": "Combinational Circuits",
+    "question": "The outputs of a full adder are:",
+    "options": [
+      "Sum and Borrow",
+      "Sum and Carry",
+      "Difference and Borrow",
+      "Product and Carry"
+    ],
+    "answerIndex": 1,
+    "explanation": "Full adder generates Sum and Carry-out."
+  },
+  {
+    "id": 163,
+    "category": "Combinational Circuits",
+    "question": "A full adder can be implemented using:",
+    "options": [
+      "One half adder",
+      "Two half adders and one OR gate",
+      "Two XOR gates only",
+      "One decoder"
+    ],
+    "answerIndex": 1,
+    "explanation": "2 Half Adders + 1 OR gate construct a complete Full Adder."
+  },
+  {
+    "id": 164,
+    "category": "Combinational Circuits",
+    "question": "Which circuit is more powerful?",
+    "options": [
+      "Half adder",
+      "Full adder",
+      "Decoder",
+      "Encoder"
+    ],
+    "answerIndex": 1,
+    "explanation": "Full adder accommodates previous stage carry inputs."
+  },
+  {
+    "id": 165,
+    "category": "Combinational Circuits",
+    "question": "The carry input of a full adder is denoted by:",
+    "options": [
+      "Cout",
+      "S",
+      "Cin",
+      "D"
+    ],
+    "answerIndex": 2,
+    "explanation": "Cin denotes input carry."
+  },
+  {
+    "id": 166,
+    "category": "Combinational Circuits",
+    "question": "The carry output of a full adder is denoted by:",
+    "options": [
+      "Cin",
+      "Cout",
+      "Sum",
+      "D"
+    ],
+    "answerIndex": 1,
+    "explanation": "Cout denotes output carry."
+  },
+  {
+    "id": 167,
+    "category": "Combinational Circuits",
+    "question": "Which circuit is used to build multi-bit binary adders?",
+    "options": [
+      "Half adders only",
+      "Full adders",
+      "Multiplexers",
+      "Decoders"
+    ],
+    "answerIndex": 1,
+    "explanation": "Cascading full adders constructs parallel multi-bit adders (e.g. 4-bit ripple carry adder)."
+  },
+  {
+    "id": 168,
+    "category": "Combinational Circuits",
+    "question": "A half subtractor performs subtraction of:",
+    "options": [
+      "Three bits",
+      "Two single-bit binary numbers",
+      "Four bits",
+      "Decimal numbers"
+    ],
+    "answerIndex": 1,
+    "explanation": "Half subtractor subtracts bit B from bit A."
+  },
+  {
+    "id": 169,
+    "category": "Combinational Circuits",
+    "question": "The outputs of a half subtractor are:",
+    "options": [
+      "Sum and Carry",
+      "Difference and Borrow",
+      "Carry and Borrow",
+      "Product and Difference"
+    ],
+    "answerIndex": 1,
+    "explanation": "Difference D = A XOR B, Borrow = A'B."
+  },
+  {
+    "id": 170,
+    "category": "Combinational Circuits",
+    "question": "A full subtractor has:",
+    "options": [
+      "Two inputs",
+      "Three inputs",
+      "Four inputs",
+      "One input"
+    ],
+    "answerIndex": 1,
+    "explanation": "3 inputs (A, B, Bin)."
+  },
+  {
+    "id": 171,
+    "category": "Combinational Circuits",
+    "question": "A full subtractor produces:",
+    "options": [
+      "Sum and Carry",
+      "Difference and Borrow",
+      "Carry only",
+      "Difference only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Full subtractor generates Difference and Borrow-out."
+  },
+  {
+    "id": 172,
+    "category": "Combinational Circuits",
+    "question": "A multiplexer is also called:",
+    "options": [
+      "Distributor",
+      "Data Selector",
+      "Data Generator",
+      "Data Encoder"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Multiplexer (MUX) selects one of several input lines to route to a single output."
+  },
+  {
+    "id": 173,
+    "category": "Combinational Circuits",
+    "question": "A multiplexer selects:",
+    "options": [
+      "One output from many outputs",
+      "One input from many inputs",
+      "Many inputs simultaneously",
+      "Two outputs"
+    ],
+    "answerIndex": 1,
+    "explanation": "MUX channels one selected input signal among 2^n inputs to its 1 output."
+  },
+  {
+    "id": 174,
+    "category": "Combinational Circuits",
+    "question": "A 4-to-1 multiplexer has:",
+    "options": [
+      "1 input",
+      "4 inputs",
+      "8 inputs",
+      "16 inputs"
+    ],
+    "answerIndex": 1,
+    "explanation": "4 data inputs."
+  },
+  {
+    "id": 175,
+    "category": "Combinational Circuits",
+    "question": "A 4-to-1 multiplexer requires:",
+    "options": [
+      "1 select line",
+      "2 select lines",
+      "3 select lines",
+      "4 select lines"
+    ],
+    "answerIndex": 1,
+    "explanation": "2^2 = 4 inputs, so 2 select lines."
+  },
+  {
+    "id": 176,
+    "category": "Combinational Circuits",
+    "question": "An 8-to-1 multiplexer requires:",
+    "options": [
+      "2 select lines",
+      "3 select lines",
+      "4 select lines",
+      "5 select lines"
+    ],
+    "answerIndex": 1,
+    "explanation": "2^3 = 8 inputs, so 3 select lines."
+  },
+  {
+    "id": 177,
+    "category": "Combinational Circuits",
+    "question": "A 16-to-1 multiplexer requires:",
+    "options": [
+      "2 select lines",
+      "3 select lines",
+      "4 select lines",
+      "5 select lines"
+    ],
+    "answerIndex": 2,
+    "explanation": "2^4 = 16 inputs, so 4 select lines."
+  },
+  {
+    "id": 178,
+    "category": "Combinational Circuits",
+    "question": "The number of select lines required for a multiplexer with 2^n inputs is:",
+    "options": [
+      "2n",
+      "n^2",
+      "n",
+      "n+1"
+    ],
+    "answerIndex": 2,
+    "explanation": "2^n inputs require n select lines."
+  },
+  {
+    "id": 179,
+    "category": "Combinational Circuits",
+    "question": "A multiplexer has:",
+    "options": [
+      "Many outputs",
+      "One output",
+      "No output",
+      "Two outputs"
+    ],
+    "answerIndex": 1,
+    "explanation": "MUX always has exactly 1 output line."
+  },
+  {
+    "id": 180,
+    "category": "Combinational Circuits",
+    "question": "Which combinational circuit selects one of many inputs and sends it to one output?",
+    "options": [
+      "Decoder",
+      "Encoder",
+      "Multiplexer",
+      "Comparator"
+    ],
+    "answerIndex": 2,
+    "explanation": "Multiplexer."
+  },
+  {
+    "id": 181,
+    "category": "Combinational Circuits",
+    "question": "A demultiplexer is also known as:",
+    "options": [
+      "Data Selector",
+      "Data Distributor",
+      "Data Comparator",
+      "Data Encoder"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Demultiplexer (DEMUX) distributes 1 input line to one of 2^n outputs."
+  },
+  {
+    "id": 182,
+    "category": "Combinational Circuits",
+    "question": "A demultiplexer transfers:",
+    "options": [
+      "Many inputs to one output",
+      "One input to many outputs",
+      "Two inputs to two outputs",
+      "Many inputs to many outputs"
+    ],
+    "answerIndex": 1,
+    "explanation": "1 input -> selected 1-of-N outputs."
+  },
+  {
+    "id": 183,
+    "category": "Combinational Circuits",
+    "question": "A demultiplexer performs the opposite function of a:",
+    "options": [
+      "Decoder",
+      "Encoder",
+      "Multiplexer",
+      "Comparator"
+    ],
+    "answerIndex": 2,
+    "explanation": "DEMUX is the inverse operation of MUX."
+  },
+  {
+    "id": 184,
+    "category": "Combinational Circuits",
+    "question": "A 1-to-8 demultiplexer has:",
+    "options": [
+      "8 inputs",
+      "8 outputs",
+      "16 outputs",
+      "2 outputs"
+    ],
+    "answerIndex": 1,
+    "explanation": "1 data input and 8 data outputs."
+  },
+  {
+    "id": 185,
+    "category": "Combinational Circuits",
+    "question": "Select lines in a demultiplexer are used to:",
+    "options": [
+      "Increase inputs",
+      "Select the output line",
+      "Increase outputs",
+      "Store data"
+    ],
+    "answerIndex": 1,
+    "explanation": "Select lines determine which output line receives the input data."
+  },
+  {
+    "id": 186,
+    "category": "Combinational Circuits",
+    "question": "An encoder converts:",
+    "options": [
+      "Binary to decimal",
+      "Many input lines into a binary code",
+      "Binary to Gray",
+      "Gray to Binary"
+    ],
+    "answerIndex": 1,
+    "explanation": "Encoder compresses 2^n active input lines into an n-bit binary code."
+  },
+  {
+    "id": 187,
+    "category": "Combinational Circuits",
+    "question": "A basic encoder has:",
+    "options": [
+      "More outputs than inputs",
+      "More inputs than outputs",
+      "Equal inputs and outputs",
+      "One input only"
+    ],
+    "answerIndex": 1,
+    "explanation": "2^n input lines and n output lines (Inputs > Outputs)."
+  },
+  {
+    "id": 188,
+    "category": "Combinational Circuits",
+    "question": "A 4-to-2 encoder has:",
+    "options": [
+      "2 inputs and 4 outputs",
+      "4 inputs and 2 outputs",
+      "4 inputs and 4 outputs",
+      "2 inputs and 2 outputs"
+    ],
+    "answerIndex": 1,
+    "explanation": "4 inputs, 2 binary outputs."
+  },
+  {
+    "id": 189,
+    "category": "Combinational Circuits",
+    "question": "The output of an encoder is generally:",
+    "options": [
+      "Decimal",
+      "Binary",
+      "Gray",
+      "ASCII"
+    ],
+    "answerIndex": 1,
+    "explanation": "Coded binary output."
+  },
+  {
+    "id": 190,
+    "category": "Combinational Circuits",
+    "question": "Which device converts active input lines into coded binary output?",
+    "options": [
+      "Decoder",
+      "Encoder",
+      "Comparator",
+      "Multiplexer"
+    ],
+    "answerIndex": 1,
+    "explanation": "Encoder."
+  },
+  {
+    "id": 191,
+    "category": "Combinational Circuits",
+    "question": "A decoder converts:",
+    "options": [
+      "Decimal into binary",
+      "Binary input into one active output",
+      "Gray into binary",
+      "ASCII into binary"
+    ],
+    "answerIndex": 1,
+    "explanation": "Decoder takes n-bit binary code and activates 1 of 2^n output lines."
+  },
+  {
+    "id": 192,
+    "category": "Combinational Circuits",
+    "question": "A decoder generally has:",
+    "options": [
+      "More outputs than inputs",
+      "More inputs than outputs",
+      "Equal inputs and outputs",
+      "One output only"
+    ],
+    "answerIndex": 0,
+    "explanation": "n inputs and 2^n outputs (Outputs > Inputs)."
+  },
+  {
+    "id": 193,
+    "category": "Combinational Circuits",
+    "question": "A 2-to-4 decoder has:",
+    "options": [
+      "4 inputs",
+      "2 inputs",
+      "8 inputs",
+      "16 inputs"
+    ],
+    "answerIndex": 1,
+    "explanation": "2 binary inputs and 4 outputs."
+  },
+  {
+    "id": 194,
+    "category": "Combinational Circuits",
+    "question": "A 3-to-8 decoder has:",
+    "options": [
+      "8 inputs",
+      "3 inputs",
+      "5 inputs",
+      "16 inputs"
+    ],
+    "answerIndex": 1,
+    "explanation": "3 binary inputs and 8 outputs."
+  },
+  {
+    "id": 195,
+    "category": "Combinational Circuits",
+    "question": "Which device activates only one output line corresponding to the input code?",
+    "options": [
+      "Encoder",
+      "Decoder",
+      "Multiplexer",
+      "Comparator"
+    ],
+    "answerIndex": 1,
+    "explanation": "Decoder."
+  },
+  {
+    "id": 196,
+    "category": "Combinational Circuits",
+    "question": "A digital comparator is used to:",
+    "options": [
+      "Add binary numbers",
+      "Subtract binary numbers",
+      "Compare two binary numbers",
+      "Store binary numbers"
+    ],
+    "answerIndex": 2,
+    "explanation": "A magnitude comparator tests if A > B, A < B, or A = B."
+  },
+  {
+    "id": 197,
+    "category": "Combinational Circuits",
+    "question": "A comparator determines whether one binary number is:",
+    "options": [
+      "Only equal",
+      "Greater than, less than, or equal to another",
+      "Even or odd",
+      "Positive or negative"
+    ],
+    "answerIndex": 1,
+    "explanation": "Outputs A=B, A>B, and A<B status lines."
+  },
+  {
+    "id": 198,
+    "category": "Combinational Circuits",
+    "question": "Which of the following is a combinational circuit?",
+    "options": [
+      "Flip-flop",
+      "Register",
+      "Counter",
+      "Comparator"
+    ],
+    "answerIndex": 3,
+    "explanation": "Comparator output depends strictly on current inputs (combinational)."
+  },
+  {
+    "id": 199,
+    "category": "Combinational Circuits",
+    "question": "Which of the following is NOT a combinational circuit?",
+    "options": [
+      "Decoder",
+      "Encoder",
+      "Multiplexer",
+      "Register"
+    ],
+    "answerIndex": 3,
+    "explanation": "Register contains flip-flops (sequential circuit)."
+  },
+  {
+    "id": 200,
+    "category": "Combinational Circuits",
+    "question": "Which statement is correct regarding combinational circuits?",
+    "options": [
+      "They require previous state information.",
+      "They contain memory elements.",
+      "Their outputs depend only on present inputs.",
+      "They always require a clock signal."
+    ],
+    "answerIndex": 2,
+    "explanation": "Combinational circuit outputs depend solely on present input values, without memory or clocks."
+  },
+  {
+    "id": 201,
+    "category": "Sequential Circuits",
+    "question": "A sequential circuit differs from a combinational circuit because it:",
+    "options": [
+      "Uses only logic gates",
+      "Has no outputs",
+      "Has memory",
+      "Uses only AND gates"
+    ],
+    "answerIndex": 2,
+    "explanation": "Sequential circuits contain memory elements (flip-flops/latches)."
+  },
+  {
+    "id": 202,
+    "category": "Sequential Circuits",
+    "question": "The output of a sequential circuit depends on:",
+    "options": [
+      "Present input only",
+      "Present input and previous state",
+      "Previous state only",
+      "Clock pulse only"
+    ],
+    "answerIndex": 1,
+    "explanation": "y(t) = f(x(t), state(t-1))."
+  },
+  {
+    "id": 203,
+    "category": "Sequential Circuits",
+    "question": "Which of the following is a sequential circuit?",
+    "options": [
+      "Decoder",
+      "Multiplexer",
+      "Comparator",
+      "Flip-flop"
+    ],
+    "answerIndex": 3,
+    "explanation": "Flip-flop is a 1-bit sequential memory cell."
+  },
+  {
+    "id": 204,
+    "category": "Sequential Circuits",
+    "question": "Sequential circuits generally require:",
+    "options": [
+      "No inputs",
+      "A clock signal",
+      "A decoder",
+      "An encoder"
+    ],
+    "answerIndex": 1,
+    "explanation": "Clock signals synchronize state transitions in synchronous sequential circuits."
+  },
+  {
+    "id": 205,
+    "category": "Sequential Circuits",
+    "question": "The basic memory element in digital electronics is:",
+    "options": [
+      "Multiplexer",
+      "Decoder",
+      "Flip-flop",
+      "Comparator"
+    ],
+    "answerIndex": 2,
+    "explanation": "Bistable multivibrator / Flip-flop."
+  },
+  {
+    "id": 206,
+    "category": "Sequential Circuits",
+    "question": "A flip-flop stores:",
+    "options": [
+      "8 bits",
+      "4 bits",
+      "1 bit",
+      "2 bits"
+    ],
+    "answerIndex": 2,
+    "explanation": "A single flip-flop stores 1 binary bit of information."
+  },
+  {
+    "id": 207,
+    "category": "Sequential Circuits",
+    "question": "Flip-flops are widely used in:",
+    "options": [
+      "Number conversion",
+      "Memory and registers",
+      "Arithmetic operations",
+      "Encoding only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Flip-flops build registers, counters, SRAM cells, and control units."
+  },
+  {
+    "id": 208,
+    "category": "Sequential Circuits",
+    "question": "SR stands for:",
+    "options": [
+      "Shift-Reset",
+      "Set-Reset",
+      "Serial-Reset",
+      "Shift-Register"
+    ],
+    "answerIndex": 1,
+    "explanation": "SR = Set-Reset."
+  },
+  {
+    "id": 209,
+    "category": "Sequential Circuits",
+    "question": "The inputs of an SR flip-flop are:",
+    "options": [
+      "J and K",
+      "S and R",
+      "D and C",
+      "T and C"
+    ],
+    "answerIndex": 1,
+    "explanation": "S (Set) and R (Reset)."
+  },
+  {
+    "id": 210,
+    "category": "Sequential Circuits",
+    "question": "In an SR flip-flop, S = 1 and R = 0 will:",
+    "options": [
+      "Set the output",
+      "Reset the output",
+      "Toggle the output",
+      "Produce an invalid state"
+    ],
+    "answerIndex": 0,
+    "explanation": "S=1, R=0 sets output Q = 1."
+  },
+  {
+    "id": 211,
+    "category": "Sequential Circuits",
+    "question": "In an SR flip-flop, S = 0 and R = 1 will:",
+    "options": [
+      "Set the output",
+      "Reset the output",
+      "Toggle the output",
+      "Hold the output"
+    ],
+    "answerIndex": 1,
+    "explanation": "S=0, R=1 resets output Q = 0."
+  },
+  {
+    "id": 212,
+    "category": "Sequential Circuits",
+    "question": "In an SR flip-flop, S = 0 and R = 0 will:",
+    "options": [
+      "Set",
+      "Reset",
+      "No change",
+      "Invalid"
+    ],
+    "answerIndex": 2,
+    "explanation": "S=0, R=0 maintains previous state (Hold/No Change)."
+  },
+  {
+    "id": 213,
+    "category": "Sequential Circuits",
+    "question": "Which input combination is invalid for a basic SR flip-flop?",
+    "options": [
+      "00",
+      "01",
+      "10",
+      "11"
+    ],
+    "answerIndex": 3,
+    "explanation": "S=1, R=1 causes race condition / undefined invalid state."
+  },
+  {
+    "id": 214,
+    "category": "Sequential Circuits",
+    "question": "The JK flip-flop was developed to eliminate the:",
+    "options": [
+      "Carry problem",
+      "Overflow problem",
+      "Invalid state of the SR flip-flop",
+      "Memory problem"
+    ],
+    "answerIndex": 2,
+    "explanation": "JK flip-flop defines J=1, K=1 as a toggle state, removing invalid S=1, R=1 state."
+  },
+  {
+    "id": 215,
+    "category": "Sequential Circuits",
+    "question": "The inputs of a JK flip-flop are:",
+    "options": [
+      "S and R",
+      "J and K",
+      "D and T",
+      "X and Y"
+    ],
+    "answerIndex": 1,
+    "explanation": "J and K."
+  },
+  {
+    "id": 216,
+    "category": "Sequential Circuits",
+    "question": "If J = 1 and K = 0, the JK flip-flop will:",
+    "options": [
+      "Set",
+      "Reset",
+      "Toggle",
+      "Hold"
+    ],
+    "answerIndex": 0,
+    "explanation": "J=1, K=0 sets Q = 1."
+  },
+  {
+    "id": 217,
+    "category": "Sequential Circuits",
+    "question": "If J = 0 and K = 1, the JK flip-flop will:",
+    "options": [
+      "Set",
+      "Reset",
+      "Toggle",
+      "Hold"
+    ],
+    "answerIndex": 1,
+    "explanation": "J=0, K=1 resets Q = 0."
+  },
+  {
+    "id": 218,
+    "category": "Sequential Circuits",
+    "question": "If J = 0 and K = 0, the output:",
+    "options": [
+      "Toggles",
+      "Remains unchanged",
+      "Becomes 1",
+      "Becomes 0"
+    ],
+    "answerIndex": 1,
+    "explanation": "J=0, K=0 holds state (No Change)."
+  },
+  {
+    "id": 219,
+    "category": "Sequential Circuits",
+    "question": "If J = 1 and K = 1, the output:",
+    "options": [
+      "Sets",
+      "Resets",
+      "Toggles",
+      "Holds"
+    ],
+    "answerIndex": 2,
+    "explanation": "J=1, K=1 toggles output Q(n+1) = Q'(n)."
+  },
+  {
+    "id": 220,
+    "category": "Sequential Circuits",
+    "question": "Which flip-flop suffers from the race-around condition?",
+    "options": [
+      "D",
+      "T",
+      "JK",
+      "SR"
+    ],
+    "answerIndex": 2,
+    "explanation": "Level-triggered JK flip-flop toggles uncontrollably when clock width > propagation delay."
+  },
+  {
+    "id": 221,
+    "category": "Sequential Circuits",
+    "question": "The race-around condition occurs when:",
+    "options": [
+      "Clock pulse is too short",
+      "Clock pulse is longer than the propagation delay",
+      "Inputs are zero",
+      "Output is constant"
+    ],
+    "answerIndex": 1,
+    "explanation": "tp_clock > tp_gate causes multiple toggle flips during single high clock pulse."
+  },
+  {
+    "id": 222,
+    "category": "Sequential Circuits",
+    "question": "Race-around condition can be eliminated using:",
+    "options": [
+      "Half adder",
+      "Master-Slave JK Flip-Flop",
+      "Decoder",
+      "Encoder"
+    ],
+    "answerIndex": 1,
+    "explanation": "Master-Slave configuration or edge-triggering eliminates race-around."
+  },
+  {
+    "id": 223,
+    "category": "Sequential Circuits",
+    "question": "The Master-Slave JK flip-flop uses:",
+    "options": [
+      "One JK flip-flop",
+      "Two JK flip-flops connected in cascade",
+      "One D flip-flop",
+      "Two T flip-flops"
+    ],
+    "answerIndex": 1,
+    "explanation": "Master flip-flop responds to clock high, Slave updates on inverted clock edge."
+  },
+  {
+    "id": 224,
+    "category": "Sequential Circuits",
+    "question": "D stands for:",
+    "options": [
+      "Digital",
+      "Data",
+      "Delay",
+      "Decimal"
+    ],
+    "answerIndex": 1,
+    "explanation": "D = Data (or Delay) flip-flop."
+  },
+  {
+    "id": 225,
+    "category": "Sequential Circuits",
+    "question": "A D flip-flop has:",
+    "options": [
+      "Two data inputs",
+      "One data input",
+      "Three inputs",
+      "Four inputs"
+    ],
+    "answerIndex": 1,
+    "explanation": "Single data input D."
+  },
+  {
+    "id": 226,
+    "category": "Sequential Circuits",
+    "question": "A D flip-flop transfers the input to the output:",
+    "options": [
+      "Continuously",
+      "On the active clock edge",
+      "Only when reset",
+      "Only when set"
+    ],
+    "answerIndex": 1,
+    "explanation": "Output Q next state equals D at active clock edge."
+  },
+  {
+    "id": 227,
+    "category": "Sequential Circuits",
+    "question": "The primary advantage of the D flip-flop is:",
+    "options": [
+      "Two outputs",
+      "No invalid input condition",
+      "No clock required",
+      "Two clocks"
+    ],
+    "answerIndex": 1,
+    "explanation": "Single D input guarantees no ambiguous or invalid state combinations."
+  },
+  {
+    "id": 228,
+    "category": "Sequential Circuits",
+    "question": "Which flip-flop is commonly used in registers?",
+    "options": [
+      "SR",
+      "JK",
+      "D",
+      "T"
+    ],
+    "answerIndex": 2,
+    "explanation": "D flip-flops store and shift multi-bit data in registers."
+  },
+  {
+    "id": 229,
+    "category": "Sequential Circuits",
+    "question": "Which flip-flop has a single data input?",
+    "options": [
+      "JK",
+      "SR",
+      "D",
+      "T"
+    ],
+    "answerIndex": 2,
+    "explanation": "D flip-flop."
+  },
+  {
+    "id": 230,
+    "category": "Sequential Circuits",
+    "question": "T stands for:",
+    "options": [
+      "Transfer",
+      "Toggle",
+      "Timing",
+      "Temporary"
+    ],
+    "answerIndex": 1,
+    "explanation": "T = Toggle flip-flop."
+  },
+  {
+    "id": 231,
+    "category": "Sequential Circuits",
+    "question": "When T = 1, the T flip-flop:",
+    "options": [
+      "Holds",
+      "Toggles",
+      "Resets",
+      "Sets"
+    ],
+    "answerIndex": 1,
+    "explanation": "T=1 flips output Q(n+1) = Q'(n)."
+  },
+  {
+    "id": 232,
+    "category": "Sequential Circuits",
+    "question": "When T = 0, the T flip-flop:",
+    "options": [
+      "Sets",
+      "Resets",
+      "Holds its previous state",
+      "Toggles"
+    ],
+    "answerIndex": 2,
+    "explanation": "T=0 holds state Q(n+1) = Q(n)."
+  },
+  {
+    "id": 233,
+    "category": "Sequential Circuits",
+    "question": "A T flip-flop can be obtained from a JK flip-flop by:",
+    "options": [
+      "J=0, K=1",
+      "J=1, K=0",
+      "Connecting J and K together",
+      "Removing the clock"
+    ],
+    "answerIndex": 2,
+    "explanation": "Tying J and K together forms a T flip-flop (T = J = K)."
+  },
+  {
+    "id": 234,
+    "category": "Sequential Circuits",
+    "question": "Which flip-flop is commonly used in counters?",
+    "options": [
+      "SR",
+      "D",
+      "T",
+      "Encoder"
+    ],
+    "answerIndex": 2,
+    "explanation": "T flip-flops divide clock frequency by 2 and build binary counters."
+  },
+  {
+    "id": 235,
+    "category": "Sequential Circuits",
+    "question": "A clock signal is generally:",
+    "options": [
+      "Analog",
+      "Periodic digital pulse",
+      "Random",
+      "Continuous DC"
+    ],
+    "answerIndex": 1,
+    "explanation": "Periodic square wave / pulse train."
+  },
+  {
+    "id": 236,
+    "category": "Sequential Circuits",
+    "question": "The clock signal synchronizes:",
+    "options": [
+      "Arithmetic operations",
+      "State changes in sequential circuits",
+      "Number conversion",
+      "Memory allocation"
+    ],
+    "answerIndex": 1,
+    "explanation": "Clock forces simultaneous state transitions across flip-flops."
+  },
+  {
+    "id": 237,
+    "category": "Sequential Circuits",
+    "question": "Flip-flops change state in response to:",
+    "options": [
+      "Data only",
+      "Clock pulse",
+      "Carry",
+      "Borrow"
+    ],
+    "answerIndex": 1,
+    "explanation": "Clock edge / pulse triggers state change."
+  },
+  {
+    "id": 238,
+    "category": "Sequential Circuits",
+    "question": "Which type of flip-flop changes output only on the clock edge?",
+    "options": [
+      "Combinational circuit",
+      "Edge-triggered flip-flop",
+      "Decoder",
+      "Encoder"
+    ],
+    "answerIndex": 1,
+    "explanation": "Edge-triggered flip-flops update on rising or falling clock transitions."
+  },
+  {
+    "id": 239,
+    "category": "Sequential Circuits",
+    "question": "A characteristic table describes:",
+    "options": [
+      "Circuit cost",
+      "Next state for given inputs and present state",
+      "Number of gates",
+      "Power consumption"
+    ],
+    "answerIndex": 1,
+    "explanation": "Tabulates Q(n+1) as a function of inputs and present state Q(n)."
+  },
+  {
+    "id": 240,
+    "category": "Sequential Circuits",
+    "question": "An excitation table is mainly used for:",
+    "options": [
+      "Testing hardware",
+      "Designing sequential circuits",
+      "Binary conversion",
+      "K-map simplification"
+    ],
+    "answerIndex": 1,
+    "explanation": "Maps required present-to-next state transitions to necessary input values."
+  },
+  {
+    "id": 241,
+    "category": "Sequential Circuits",
+    "question": "The present state of a flip-flop is commonly denoted by:",
+    "options": [
+      "Q(n+1)",
+      "Q(n)",
+      "Cin",
+      "Cout"
+    ],
+    "answerIndex": 1,
+    "explanation": "Q(n) or Q_t represents current state."
+  },
+  {
+    "id": 242,
+    "category": "Sequential Circuits",
+    "question": "The next state is commonly denoted by:",
+    "options": [
+      "Q(n)",
+      "Q(n+1)",
+      "D",
+      "T"
+    ],
+    "answerIndex": 1,
+    "explanation": "Q(n+1) or Q_(t+1) represents state after clock pulse."
+  },
+  {
+    "id": 243,
+    "category": "Sequential Circuits",
+    "question": "Which flip-flop has no invalid input condition?",
+    "options": [
+      "SR",
+      "JK",
+      "Decoder",
+      "Encoder"
+    ],
+    "answerIndex": 1,
+    "explanation": "JK flip-flop handles all 4 input combinations (00, 01, 10, 11)."
+  },
+  {
+    "id": 244,
+    "category": "Sequential Circuits",
+    "question": "Which flip-flop directly transfers the input to the output at the active clock edge?",
+    "options": [
+      "SR",
+      "JK",
+      "D",
+      "T"
+    ],
+    "answerIndex": 2,
+    "explanation": "D flip-flop Q(n+1) = D."
+  },
+  {
+    "id": 245,
+    "category": "Sequential Circuits",
+    "question": "Which flip-flop naturally performs the toggle operation?",
+    "options": [
+      "SR",
+      "D",
+      "T",
+      "Decoder"
+    ],
+    "answerIndex": 2,
+    "explanation": "T flip-flop toggles when T=1."
+  },
+  {
+    "id": 246,
+    "category": "Sequential Circuits",
+    "question": "Which flip-flop is best suited for storing a single data bit?",
+    "options": [
+      "JK",
+      "D",
+      "Half Adder",
+      "Decoder"
+    ],
+    "answerIndex": 1,
+    "explanation": "D flip-flop."
+  },
+  {
+    "id": 247,
+    "category": "Sequential Circuits",
+    "question": "Flip-flops are the building blocks of:",
+    "options": [
+      "Encoders",
+      "Decoders",
+      "Registers and counters",
+      "Multiplexers"
+    ],
+    "answerIndex": 2,
+    "explanation": "Flip-flops assemble registers, shift registers, and counters."
+  },
+  {
+    "id": 248,
+    "category": "Sequential Circuits",
+    "question": "Which statement is TRUE about sequential circuits?",
+    "options": [
+      "They never use memory.",
+      "They never require clocks.",
+      "Their outputs depend on present inputs and previous states.",
+      "They are always faster than combinational circuits."
+    ],
+    "answerIndex": 2,
+    "explanation": "Sequential logic incorporates memory and past state feedback."
+  },
+  {
+    "id": 249,
+    "category": "Sequential Circuits",
+    "question": "Which flip-flop is most commonly used in shift registers?",
+    "options": [
+      "JK",
+      "SR",
+      "D",
+      "T"
+    ],
+    "answerIndex": 2,
+    "explanation": "D flip-flops form shift register chains."
+  },
+  {
+    "id": 250,
+    "category": "Sequential Circuits",
+    "question": "Which of the following is FALSE?",
+    "options": [
+      "A flip-flop stores one bit.",
+      "JK flip-flop removes the invalid state of SR flip-flop.",
+      "D flip-flop has one data input.",
+      "A T flip-flop has two independent data inputs."
+    ],
+    "answerIndex": 3,
+    "explanation": "T flip-flop has 1 input T, not 2."
+  },
+  {
+    "id": 251,
+    "category": "Registers & Counters",
+    "question": "A register is primarily used to:",
+    "options": [
+      "Perform arithmetic operations",
+      "Store binary data",
+      "Convert analog signals",
+      "Generate clock pulses"
+    ],
+    "answerIndex": 1,
+    "explanation": "Registers store n-bit binary words."
+  },
+  {
+    "id": 252,
+    "category": "Registers & Counters",
+    "question": "A register is constructed using:",
+    "options": [
+      "Logic gates only",
+      "Multiplexers",
+      "Flip-flops",
+      "Decoders"
+    ],
+    "answerIndex": 2,
+    "explanation": "Group of flip-flops sharing a clock line."
+  },
+  {
+    "id": 253,
+    "category": "Registers & Counters",
+    "question": "An n-bit register requires:",
+    "options": [
+      "n/2 flip-flops",
+      "2n flip-flops",
+      "n flip-flops",
+      "n+1 flip-flops"
+    ],
+    "answerIndex": 2,
+    "explanation": "1 flip-flop per stored bit."
+  },
+  {
+    "id": 254,
+    "category": "Registers & Counters",
+    "question": "A 4-bit register contains:",
+    "options": [
+      "2 flip-flops",
+      "3 flip-flops",
+      "4 flip-flops",
+      "8 flip-flops"
+    ],
+    "answerIndex": 2,
+    "explanation": "4 flip-flops store 4 bits."
+  },
+  {
+    "id": 255,
+    "category": "Registers & Counters",
+    "question": "Registers are commonly used for:",
+    "options": [
+      "Data storage",
+      "Temporary data transfer",
+      "CPU operations",
+      "All of the above"
+    ],
+    "answerIndex": 3,
+    "explanation": "Registers serve in CPU registers (accumulator, PC, IR), memory buffers, and data transfer."
+  },
+  {
+    "id": 256,
+    "category": "Registers & Counters",
+    "question": "Which flip-flop is most commonly used to construct registers?",
+    "options": [
+      "SR",
+      "JK",
+      "D Flip-Flop",
+      "T Flip-Flop"
+    ],
+    "answerIndex": 2,
+    "explanation": "D flip-flops directly latch data on clock edges."
+  },
+  {
+    "id": 257,
+    "category": "Registers & Counters",
+    "question": "A register can store:",
+    "options": [
+      "One bit only",
+      "Multiple bits",
+      "Decimal numbers only",
+      "Analog signals"
+    ],
+    "answerIndex": 1,
+    "explanation": "n-bit registers store multi-bit binary data."
+  },
+  {
+    "id": 258,
+    "category": "Registers & Counters",
+    "question": "The number of bits stored by a register equals:",
+    "options": [
+      "Number of inputs",
+      "Number of outputs",
+      "Number of flip-flops",
+      "Number of gates"
+    ],
+    "answerIndex": 2,
+    "explanation": "Storage capacity = number of flip-flops N."
+  },
+  {
+    "id": 259,
+    "category": "Registers & Counters",
+    "question": "A shift register is mainly used to:",
+    "options": [
+      "Perform subtraction",
+      "Shift binary data",
+      "Compare numbers",
+      "Decode signals"
+    ],
+    "answerIndex": 1,
+    "explanation": "Shift registers move binary data laterally bit-by-bit."
+  },
+  {
+    "id": 260,
+    "category": "Registers & Counters",
+    "question": "A shift register shifts data:",
+    "options": [
+      "Randomly",
+      "Left or right",
+      "Upward only",
+      "Downward only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Data shifts left (SHL) or right (SHR) per clock pulse."
+  },
+  {
+    "id": 261,
+    "category": "Registers & Counters",
+    "question": "SISO stands for:",
+    "options": [
+      "Serial Input, Simultaneous Output",
+      "Serial Input, Serial Output",
+      "Single Input, Single Output",
+      "Serial Input, Separate Output"
+    ],
+    "answerIndex": 1,
+    "explanation": "SISO = Serial-In Serial-Out."
+  },
+  {
+    "id": 262,
+    "category": "Registers & Counters",
+    "question": "SIPO stands for:",
+    "options": [
+      "Simultaneous Input, Parallel Output",
+      "Serial Input, Parallel Output",
+      "Single Input, Parallel Output",
+      "Serial Input, Primary Output"
+    ],
+    "answerIndex": 1,
+    "explanation": "SIPO = Serial-In Parallel-Out."
+  },
+  {
+    "id": 263,
+    "category": "Registers & Counters",
+    "question": "PISO stands for:",
+    "options": [
+      "Parallel Input, Serial Output",
+      "Primary Input, Serial Output",
+      "Parallel Input, Simultaneous Output",
+      "Parallel Internal Serial Output"
+    ],
+    "answerIndex": 0,
+    "explanation": "PISO = Parallel-In Serial-Out."
+  },
+  {
+    "id": 264,
+    "category": "Registers & Counters",
+    "question": "PIPO stands for:",
+    "options": [
+      "Parallel Input, Primary Output",
+      "Parallel Input, Parallel Output",
+      "Parallel Internal Parallel Output",
+      "Primary Input, Parallel Output"
+    ],
+    "answerIndex": 1,
+    "explanation": "PIPO = Parallel-In Parallel-Out."
+  },
+  {
+    "id": 265,
+    "category": "Registers & Counters",
+    "question": "Which shift register converts serial data into parallel data?",
+    "options": [
+      "SISO",
+      "SIPO",
+      "PISO",
+      "PIPO"
+    ],
+    "answerIndex": 1,
+    "explanation": "SIPO shifts data in serially and reads all bits out in parallel."
+  },
+  {
+    "id": 266,
+    "category": "Registers & Counters",
+    "question": "Which shift register converts parallel data into serial data?",
+    "options": [
+      "SISO",
+      "SIPO",
+      "PISO",
+      "PIPO"
+    ],
+    "answerIndex": 2,
+    "explanation": "PISO loads data in parallel and shifts it out one bit per clock."
+  },
+  {
+    "id": 267,
+    "category": "Registers & Counters",
+    "question": "Which shift register stores and outputs data in parallel?",
+    "options": [
+      "SISO",
+      "SIPO",
+      "PISO",
+      "PIPO"
+    ],
+    "answerIndex": 3,
+    "explanation": "PIPO loads and reads data in parallel."
+  },
+  {
+    "id": 268,
+    "category": "Registers & Counters",
+    "question": "Which shift register is commonly used in serial communication?",
+    "options": [
+      "SISO",
+      "PIPO",
+      "Decoder",
+      "Encoder"
+    ],
+    "answerIndex": 0,
+    "explanation": "SISO acts as a serial delay line / buffer in communication channels."
+  },
+  {
+    "id": 269,
+    "category": "Registers & Counters",
+    "question": "Shift registers are widely used for:",
+    "options": [
+      "Data transfer",
+      "Data conversion",
+      "Temporary storage",
+      "All of the above"
+    ],
+    "answerIndex": 3,
+    "explanation": "Shift registers convert serial/parallel formats, delay data, and store words."
+  },
+  {
+    "id": 270,
+    "category": "Registers & Counters",
+    "question": "Which device is commonly used for serial-to-parallel conversion?",
+    "options": [
+      "Decoder",
+      "Multiplexer",
+      "SIPO Register",
+      "Comparator"
+    ],
+    "answerIndex": 2,
+    "explanation": "SIPO register."
+  },
+  {
+    "id": 271,
+    "category": "Registers & Counters",
+    "question": "A counter is a:",
+    "options": [
+      "Combinational circuit",
+      "Sequential circuit",
+      "Arithmetic circuit",
+      "Memoryless circuit"
+    ],
+    "answerIndex": 1,
+    "explanation": "Counters use flip-flops to sequence through a fixed state order."
+  },
+  {
+    "id": 272,
+    "category": "Registers & Counters",
+    "question": "A counter is mainly used to:",
+    "options": [
+      "Store data",
+      "Count clock pulses",
+      "Convert binary numbers",
+      "Compare data"
+    ],
+    "answerIndex": 1,
+    "explanation": "Counters count input clock pulses or events."
+  },
+  {
+    "id": 273,
+    "category": "Registers & Counters",
+    "question": "Counters are constructed using:",
+    "options": [
+      "Multiplexers",
+      "Decoders",
+      "Flip-flops",
+      "Comparators"
+    ],
+    "answerIndex": 2,
+    "explanation": "Cascaded flip-flops (T or JK)."
+  },
+  {
+    "id": 274,
+    "category": "Registers & Counters",
+    "question": "A 3-bit binary counter has:",
+    "options": [
+      "4 states",
+      "6 states",
+      "8 states",
+      "16 states"
+    ],
+    "answerIndex": 2,
+    "explanation": "2^3 = 8 states (000 to 111)."
+  },
+  {
+    "id": 275,
+    "category": "Registers & Counters",
+    "question": "An n-bit binary counter has:",
+    "options": [
+      "n states",
+      "2n states",
+      "2^n states",
+      "n^2 states"
+    ],
+    "answerIndex": 2,
+    "explanation": "2^n distinct counting states."
+  },
+  {
+    "id": 276,
+    "category": "Registers & Counters",
+    "question": "The modulus (MOD) of a counter refers to:",
+    "options": [
+      "Number of inputs",
+      "Number of outputs",
+      "Number of distinct states",
+      "Number of gates"
+    ],
+    "answerIndex": 2,
+    "explanation": "MOD number = total number of unique states in the counter cycle."
+  },
+  {
+    "id": 277,
+    "category": "Registers & Counters",
+    "question": "A 4-bit binary counter has a modulus of:",
+    "options": [
+      "4",
+      "8",
+      "16",
+      "32"
+    ],
+    "answerIndex": 2,
+    "explanation": "2^4 = 16 (MOD-16 counter)."
+  },
+  {
+    "id": 278,
+    "category": "Registers & Counters",
+    "question": "A MOD-10 counter counts from:",
+    "options": [
+      "0 to 9",
+      "1 to 10",
+      "0 to 10",
+      "1 to 9"
+    ],
+    "answerIndex": 0,
+    "explanation": "MOD-10 cycles through 10 states: 0, 1, 2, ..., 9."
+  },
+  {
+    "id": 279,
+    "category": "Registers & Counters",
+    "question": "Which counter is also called a decade counter?",
+    "options": [
+      "MOD-8",
+      "MOD-10",
+      "MOD-16",
+      "MOD-2"
+    ],
+    "answerIndex": 1,
+    "explanation": "MOD-10 counter is a Decade Counter."
+  },
+  {
+    "id": 280,
+    "category": "Registers & Counters",
+    "question": "A MOD-16 counter requires:",
+    "options": [
+      "2 flip-flops",
+      "3 flip-flops",
+      "4 flip-flops",
+      "5 flip-flops"
+    ],
+    "answerIndex": 2,
+    "explanation": "2^4 = 16, so 4 flip-flops are needed."
+  },
+  {
+    "id": 281,
+    "category": "Registers & Counters",
+    "question": "An asynchronous counter is also called a:",
+    "options": [
+      "Parallel counter",
+      "Ripple counter",
+      "Ring counter",
+      "Johnson counter"
+    ],
+    "answerIndex": 1,
+    "explanation": "Asynchronous counter = Ripple counter."
+  },
+  {
+    "id": 282,
+    "category": "Registers & Counters",
+    "question": "In a ripple counter:",
+    "options": [
+      "All flip-flops receive the clock simultaneously.",
+      "Each flip-flop is triggered by the previous flip-flop.",
+      "No clock is required.",
+      "All outputs change randomly."
+    ],
+    "answerIndex": 1,
+    "explanation": "Clock ripples through: stage Q output triggers the next stage's clock."
+  },
+  {
+    "id": 283,
+    "category": "Registers & Counters",
+    "question": "The main disadvantage of ripple counters is:",
+    "options": [
+      "High cost",
+      "Propagation delay",
+      "Large size",
+      "High power consumption"
+    ],
+    "answerIndex": 1,
+    "explanation": "Accumulated propagation delay across stages limits max operating frequency."
+  },
+  {
+    "id": 284,
+    "category": "Registers & Counters",
+    "question": "In ripple counters, outputs change:",
+    "options": [
+      "Simultaneously",
+      "One after another",
+      "Randomly",
+      "Without a clock"
+    ],
+    "answerIndex": 1,
+    "explanation": "Outputs change sequentially as the clock ripples through."
+  },
+  {
+    "id": 285,
+    "category": "Registers & Counters",
+    "question": "In a synchronous counter:",
+    "options": [
+      "Only the first flip-flop receives the clock.",
+      "All flip-flops receive the clock simultaneously.",
+      "No flip-flop receives the clock.",
+      "Clock pulses are random."
+    ],
+    "answerIndex": 1,
+    "explanation": "All flip-flops are connected to a common global clock line."
+  },
+  {
+    "id": 286,
+    "category": "Registers & Counters",
+    "question": "Synchronous counters are:",
+    "options": [
+      "Slower than ripple counters",
+      "Faster than ripple counters",
+      "Identical to ripple counters",
+      "Clockless"
+    ],
+    "answerIndex": 1,
+    "explanation": "Synchronous counters eliminate ripple delay and operate faster."
+  },
+  {
+    "id": 287,
+    "category": "Registers & Counters",
+    "question": "Which counter has less propagation delay?",
+    "options": [
+      "Ripple counter",
+      "Synchronous counter",
+      "Ring counter",
+      "Johnson counter"
+    ],
+    "answerIndex": 1,
+    "explanation": "Synchronous counter propagation delay equals single flip-flop delay."
+  },
+  {
+    "id": 288,
+    "category": "Registers & Counters",
+    "question": "Which counter is preferred in high-speed applications?",
+    "options": [
+      "Ripple counter",
+      "Synchronous counter",
+      "MOD-2 counter",
+      "Ring counter"
+    ],
+    "answerIndex": 1,
+    "explanation": "Synchronous counters handle high frequencies without accumulated ripple lag."
+  },
+  {
+    "id": 289,
+    "category": "Registers & Counters",
+    "question": "A ring counter is formed using:",
+    "options": [
+      "Decoder",
+      "Multiplexer",
+      "Shift register",
+      "Comparator"
+    ],
+    "answerIndex": 2,
+    "explanation": "Circular shift register with Q_last fed back to D_first."
+  },
+  {
+    "id": 290,
+    "category": "Registers & Counters",
+    "question": "A ring counter circulates:",
+    "options": [
+      "Decimal digits",
+      "A single binary 1 (or 0)",
+      "Gray code",
+      "ASCII characters"
+    ],
+    "answerIndex": 1,
+    "explanation": "Circulates a single HIGH bit (1000 -> 0100 -> 0010 -> 0001)."
+  },
+  {
+    "id": 291,
+    "category": "Registers & Counters",
+    "question": "A Johnson counter is also known as:",
+    "options": [
+      "Ripple counter",
+      "Twisted Ring Counter",
+      "Binary counter",
+      "Decade counter"
+    ],
+    "answerIndex": 1,
+    "explanation": "Johnson / Switch-tail / Twisted Ring counter."
+  },
+  {
+    "id": 292,
+    "category": "Registers & Counters",
+    "question": "Compared to a ring counter with the same number of flip-flops, a Johnson counter has:",
+    "options": [
+      "Half the states",
+      "Twice the number of states",
+      "The same number of states",
+      "Four times the states"
+    ],
+    "answerIndex": 1,
+    "explanation": "N flip-flops: Ring counter has N states; Johnson counter has 2N states."
+  },
+  {
+    "id": 293,
+    "category": "Registers & Counters",
+    "question": "A 4-bit ring counter has:",
+    "options": [
+      "4 states",
+      "8 states",
+      "16 states",
+      "2 states"
+    ],
+    "answerIndex": 0,
+    "explanation": "N bits = N states = 4 states."
+  },
+  {
+    "id": 294,
+    "category": "Registers & Counters",
+    "question": "A 4-bit Johnson counter has:",
+    "options": [
+      "4 states",
+      "8 states",
+      "16 states",
+      "32 states"
+    ],
+    "answerIndex": 1,
+    "explanation": "2N states = 2 * 4 = 8 states."
+  },
+  {
+    "id": 295,
+    "category": "Registers & Counters",
+    "question": "Which device temporarily stores binary information?",
+    "options": [
+      "Decoder",
+      "Register",
+      "Encoder",
+      "Comparator"
+    ],
+    "answerIndex": 1,
+    "explanation": "Register."
+  },
+  {
+    "id": 296,
+    "category": "Registers & Counters",
+    "question": "Which register performs serial-to-parallel conversion?",
+    "options": [
+      "SISO",
+      "SIPO",
+      "PISO",
+      "PIPO"
+    ],
+    "answerIndex": 1,
+    "explanation": "SIPO register."
+  },
+  {
+    "id": 297,
+    "category": "Registers & Counters",
+    "question": "Which counter suffers from ripple delay?",
+    "options": [
+      "Synchronous counter",
+      "Asynchronous counter",
+      "Ring counter",
+      "Johnson counter"
+    ],
+    "answerIndex": 1,
+    "explanation": "Asynchronous / Ripple counter."
+  },
+  {
+    "id": 298,
+    "category": "Registers & Counters",
+    "question": "Which statement about synchronous counters is TRUE?",
+    "options": [
+      "Flip-flops are triggered one after another.",
+      "All flip-flops are clocked simultaneously.",
+      "They do not require flip-flops.",
+      "They are slower than ripple counters."
+    ],
+    "answerIndex": 1,
+    "explanation": "Simultaneous clocking eliminates ripple delay."
+  },
+  {
+    "id": 299,
+    "category": "Registers & Counters",
+    "question": "Which statement is TRUE regarding a MOD-n counter?",
+    "options": [
+      "It has n flip-flops.",
+      "It always counts to 16.",
+      "It has n distinct counting states.",
+      "It is always synchronous."
+    ],
+    "answerIndex": 2,
+    "explanation": "MOD-n counter cycles through n distinct states."
+  },
+  {
+    "id": 300,
+    "category": "Registers & Counters",
+    "question": "Which of the following is FALSE?",
+    "options": [
+      "Registers are built from flip-flops.",
+      "Ripple counters are asynchronous.",
+      "SIPO converts serial input to parallel output.",
+      "A ring counter is a combinational circuit."
+    ],
+    "answerIndex": 3,
+    "explanation": "A ring counter is a sequential circuit built with flip-flops."
+  },
+  {
+    "id": 301,
+    "category": "Memory, Logic & PLDs",
+    "question": "Computer memory is primarily used to:",
+    "options": [
+      "Perform arithmetic operations",
+      "Store data and instructions",
+      "Generate clock signals",
+      "Compare binary numbers"
+    ],
+    "answerIndex": 1,
+    "explanation": "Memory stores data and executable software program instructions."
+  },
+  {
+    "id": 302,
+    "category": "Memory, Logic & PLDs",
+    "question": "Memory stores information in the form of:",
+    "options": [
+      "Analog signals",
+      "Binary bits",
+      "Decimal digits",
+      "ASCII characters only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Binary bits (0s and 1s)."
+  },
+  {
+    "id": 303,
+    "category": "Memory, Logic & PLDs",
+    "question": "The smallest unit of memory is:",
+    "options": [
+      "Byte",
+      "Bit",
+      "Nibble",
+      "Word"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Bit (binary digit) is the atomic memory unit."
+  },
+  {
+    "id": 304,
+    "category": "Memory, Logic & PLDs",
+    "question": "One byte consists of:",
+    "options": [
+      "4 bits",
+      "8 bits",
+      "16 bits",
+      "32 bits"
+    ],
+    "answerIndex": 1,
+    "explanation": "8 bits = 1 Byte."
+  },
+  {
+    "id": 305,
+    "category": "Memory, Logic & PLDs",
+    "question": "Which memory loses its contents when power is turned OFF?",
+    "options": [
+      "ROM",
+      "PROM",
+      "RAM",
+      "EEPROM"
+    ],
+    "answerIndex": 2,
+    "explanation": "RAM is volatile memory."
+  },
+  {
+    "id": 306,
+    "category": "Memory, Logic & PLDs",
+    "question": "Memory that retains data after power is removed is called:",
+    "options": [
+      "Volatile memory",
+      "Non-volatile memory",
+      "Temporary memory",
+      "Dynamic memory"
+    ],
+    "answerIndex": 1,
+    "explanation": "Non-volatile memory (ROM, Flash)."
+  },
+  {
+    "id": 307,
+    "category": "Memory, Logic & PLDs",
+    "question": "RAM stands for:",
+    "options": [
+      "Random Arithmetic Memory",
+      "Random Access Memory",
+      "Read Arithmetic Memory",
+      "Read Access Memory"
+    ],
+    "answerIndex": 1,
+    "explanation": "RAM = Random Access Memory."
+  },
+  {
+    "id": 308,
+    "category": "Memory, Logic & PLDs",
+    "question": "RAM is classified as:",
+    "options": [
+      "Non-volatile memory",
+      "Volatile memory",
+      "Permanent memory",
+      "Optical memory"
+    ],
+    "answerIndex": 1,
+    "explanation": "RAM loses data when powered down (Volatile)."
+  },
+  {
+    "id": 309,
+    "category": "Memory, Logic & PLDs",
+    "question": "RAM allows:",
+    "options": [
+      "Read operation only",
+      "Both read and write operations",
+      "Write operation only",
+      "Programming only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Read and write memory (R/W memory)."
+  },
+  {
+    "id": 310,
+    "category": "Memory, Logic & PLDs",
+    "question": "RAM is mainly used as:",
+    "options": [
+      "Permanent storage",
+      "Main memory",
+      "Backup storage",
+      "Firmware storage"
+    ],
+    "answerIndex": 1,
+    "explanation": "Main system memory (RAM)."
+  },
+  {
+    "id": 311,
+    "category": "Memory, Logic & PLDs",
+    "question": "Which memory is directly accessed by the CPU during program execution?",
+    "options": [
+      "ROM",
+      "RAM",
+      "DVD",
+      "Flash drive"
+    ],
+    "answerIndex": 1,
+    "explanation": "CPU reads/writes main system RAM directly during execution."
+  },
+  {
+    "id": 312,
+    "category": "Memory, Logic & PLDs",
+    "question": "ROM stands for:",
+    "options": [
+      "Random Output Memory",
+      "Read Only Memory",
+      "Read Operation Memory",
+      "Register Output Memory"
+    ],
+    "answerIndex": 1,
+    "explanation": "ROM = Read Only Memory."
+  },
+  {
+    "id": 313,
+    "category": "Memory, Logic & PLDs",
+    "question": "ROM is:",
+    "options": [
+      "Volatile memory",
+      "Non-volatile memory",
+      "Temporary memory",
+      "Dynamic memory"
+    ],
+    "answerIndex": 1,
+    "explanation": "ROM retains data without power (Non-volatile)."
+  },
+  {
+    "id": 314,
+    "category": "Memory, Logic & PLDs",
+    "question": "ROM is mainly used to store:",
+    "options": [
+      "Temporary variables",
+      "Firmware and boot programs",
+      "User documents",
+      "Cache data"
+    ],
+    "answerIndex": 1,
+    "explanation": "Stores BIOS, firmware, and system boot loaders."
+  },
+  {
+    "id": 315,
+    "category": "Memory, Logic & PLDs",
+    "question": "Data stored in ROM:",
+    "options": [
+      "Is lost when power fails",
+      "Remains after power is removed",
+      "Changes every clock pulse",
+      "Is always writable"
+    ],
+    "answerIndex": 1,
+    "explanation": "Non-volatile contents persist permanently."
+  },
+  {
+    "id": 316,
+    "category": "Memory, Logic & PLDs",
+    "question": "PROM stands for:",
+    "options": [
+      "Permanent Read Only Memory",
+      "Programmable Read Only Memory",
+      "Primary Read Only Memory",
+      "Parallel Read Only Memory"
+    ],
+    "answerIndex": 1,
+    "explanation": "PROM = Programmable Read-Only Memory."
+  },
+  {
+    "id": 317,
+    "category": "Memory, Logic & PLDs",
+    "question": "A PROM can be programmed:",
+    "options": [
+      "Unlimited times",
+      "Only once",
+      "Twice",
+      "Only after erasing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Field-programmable once by burning internal fuses."
+  },
+  {
+    "id": 318,
+    "category": "Memory, Logic & PLDs",
+    "question": "EPROM stands for:",
+    "options": [
+      "Electrical Programmable ROM",
+      "Erasable Programmable Read Only Memory",
+      "Extended Programmable ROM",
+      "External Programmable ROM"
+    ],
+    "answerIndex": 1,
+    "explanation": "EPROM = Erasable Programmable Read-Only Memory."
+  },
+  {
+    "id": 319,
+    "category": "Memory, Logic & PLDs",
+    "question": "EPROM can be erased using:",
+    "options": [
+      "Heat",
+      "Electricity",
+      "Ultraviolet (UV) light",
+      "Magnetic field"
+    ],
+    "answerIndex": 2,
+    "explanation": "Exposing EPROM quartz window to UV light erases all floating-gate charges."
+  },
+  {
+    "id": 320,
+    "category": "Memory, Logic & PLDs",
+    "question": "EEPROM stands for:",
+    "options": [
+      "Electronic EPROM",
+      "Electrically Erasable Programmable Read Only Memory",
+      "Extended EEPROM",
+      "External EEPROM"
+    ],
+    "answerIndex": 1,
+    "explanation": "EEPROM = Electrically Erasable Programmable Read-Only Memory."
+  },
+  {
+    "id": 321,
+    "category": "Memory, Logic & PLDs",
+    "question": "EEPROM can be erased by:",
+    "options": [
+      "UV light",
+      "Electrical signals",
+      "Heat",
+      "Sunlight"
+    ],
+    "answerIndex": 1,
+    "explanation": "Erased in-circuit using electrical voltage pulses."
+  },
+  {
+    "id": 322,
+    "category": "Memory, Logic & PLDs",
+    "question": "Which memory type can be erased and reprogrammed electrically without removing it from the circuit?",
+    "options": [
+      "PROM",
+      "EPROM",
+      "EEPROM",
+      "ROM"
+    ],
+    "answerIndex": 2,
+    "explanation": "EEPROM (and Flash memory)."
+  },
+  {
+    "id": 323,
+    "category": "Memory, Logic & PLDs",
+    "question": "SRAM stands for:",
+    "options": [
+      "Static Read Access Memory",
+      "Static Random Access Memory",
+      "Sequential RAM",
+      "Standard RAM"
+    ],
+    "answerIndex": 1,
+    "explanation": "SRAM = Static Random Access Memory."
+  },
+  {
+    "id": 324,
+    "category": "Memory, Logic & PLDs",
+    "question": "DRAM stands for:",
+    "options": [
+      "Dynamic Read Access Memory",
+      "Dynamic Random Access Memory",
+      "Digital RAM",
+      "Direct RAM"
+    ],
+    "answerIndex": 1,
+    "explanation": "DRAM = Dynamic Random Access Memory."
+  },
+  {
+    "id": 325,
+    "category": "Memory, Logic & PLDs",
+    "question": "Which RAM requires periodic refreshing?",
+    "options": [
+      "SRAM",
+      "DRAM",
+      "ROM",
+      "PROM"
+    ],
+    "answerIndex": 1,
+    "explanation": "DRAM stores data on parasitic capacitors that leak charge, requiring periodic refresh cycles."
+  },
+  {
+    "id": 326,
+    "category": "Memory, Logic & PLDs",
+    "question": "Which RAM does NOT require refreshing?",
+    "options": [
+      "SRAM",
+      "DRAM",
+      "PROM",
+      "EEPROM"
+    ],
+    "answerIndex": 0,
+    "explanation": "SRAM uses flip-flop latches and holds data continuously while powered."
+  },
+  {
+    "id": 327,
+    "category": "Memory, Logic & PLDs",
+    "question": "Which memory is generally faster?",
+    "options": [
+      "SRAM",
+      "DRAM",
+      "ROM",
+      "EPROM"
+    ],
+    "answerIndex": 0,
+    "explanation": "SRAM access times are much faster (ns) than DRAM."
+  },
+  {
+    "id": 328,
+    "category": "Memory, Logic & PLDs",
+    "question": "Which memory is commonly used to implement cache memory?",
+    "options": [
+      "SRAM",
+      "DRAM",
+      "PROM",
+      "EEPROM"
+    ],
+    "answerIndex": 0,
+    "explanation": "High-speed SRAM builds CPU L1/L2/L3 cache."
+  },
+  {
+    "id": 329,
+    "category": "Memory, Logic & PLDs",
+    "question": "Which memory is commonly used as the main system memory?",
+    "options": [
+      "SRAM",
+      "DRAM",
+      "ROM",
+      "Cache"
+    ],
+    "answerIndex": 1,
+    "explanation": "High-density, low-cost DRAM builds computer main RAM."
+  },
+  {
+    "id": 330,
+    "category": "Memory, Logic & PLDs",
+    "question": "DRAM is preferred over SRAM for main memory because it is:",
+    "options": [
+      "Faster",
+      "Less expensive and higher density",
+      "Non-volatile",
+      "Permanent"
+    ],
+    "answerIndex": 1,
+    "explanation": "DRAM uses 1 transistor + 1 capacitor per cell, providing higher capacity per area."
+  },
+  {
+    "id": 331,
+    "category": "Memory, Logic & PLDs",
+    "question": "Cache memory is located:",
+    "options": [
+      "On the hard disk",
+      "Between the CPU and main memory",
+      "Inside ROM",
+      "Inside EEPROM"
+    ],
+    "answerIndex": 1,
+    "explanation": "Cache sits between CPU registers and main RAM to bridge speed gaps."
+  },
+  {
+    "id": 332,
+    "category": "Memory, Logic & PLDs",
+    "question": "Cache memory is mainly used to:",
+    "options": [
+      "Store firmware",
+      "Increase processing speed",
+      "Store operating systems permanently",
+      "Convert binary numbers"
+    ],
+    "answerIndex": 1,
+    "explanation": "Caches frequently accessed instructions/data to reduce CPU wait states."
+  },
+  {
+    "id": 333,
+    "category": "Memory, Logic & PLDs",
+    "question": "Cache memory is generally built using:",
+    "options": [
+      "DRAM",
+      "SRAM",
+      "PROM",
+      "EEPROM"
+    ],
+    "answerIndex": 1,
+    "explanation": "Built with fast Static RAM (SRAM)."
+  },
+  {
+    "id": 334,
+    "category": "Memory, Logic & PLDs",
+    "question": "TTL stands for:",
+    "options": [
+      "Total Transfer Logic",
+      "Transistor-Transistor Logic",
+      "Transistor Timing Logic",
+      "Temporary Transistor Logic"
+    ],
+    "answerIndex": 1,
+    "explanation": "TTL = Transistor-Transistor Logic."
+  },
+  {
+    "id": 335,
+    "category": "Memory, Logic & PLDs",
+    "question": "CMOS stands for:",
+    "options": [
+      "Complementary Metal Oxide System",
+      "Complementary Metal-Oxide Semiconductor",
+      "Computer Metal Oxide Semiconductor",
+      "Complementary Memory Operating System"
+    ],
+    "answerIndex": 1,
+    "explanation": "CMOS = Complementary Metal-Oxide Semiconductor."
+  },
+  {
+    "id": 336,
+    "category": "Memory, Logic & PLDs",
+    "question": "Which logic family generally consumes less power?",
+    "options": [
+      "TTL",
+      "CMOS",
+      "ECL",
+      "RTL"
+    ],
+    "answerIndex": 1,
+    "explanation": "CMOS consumes near-zero static power."
+  },
+  {
+    "id": 337,
+    "category": "Memory, Logic & PLDs",
+    "question": "Which logic family is widely used in modern digital ICs?",
+    "options": [
+      "RTL",
+      "DTL",
+      "CMOS",
+      "TTL only"
+    ],
+    "answerIndex": 2,
+    "explanation": "CMOS is the dominant technology for modern microprocessors and microcontrollers."
+  },
+  {
+    "id": 338,
+    "category": "Memory, Logic & PLDs",
+    "question": "Compared with TTL, CMOS generally offers:",
+    "options": [
+      "Higher power consumption",
+      "Lower power consumption",
+      "Lower noise immunity",
+      "Slower technology in all cases"
+    ],
+    "answerIndex": 1,
+    "explanation": "CMOS offers lower power consumption and higher noise margins."
+  },
+  {
+    "id": 339,
+    "category": "Memory, Logic & PLDs",
+    "question": "Noise immunity refers to a circuit's ability to:",
+    "options": [
+      "Increase speed",
+      "Resist unwanted electrical noise",
+      "Store more bits",
+      "Reduce memory size"
+    ],
+    "answerIndex": 1,
+    "explanation": "Margin of tolerance against spurious voltage spikes on input lines."
+  },
+  {
+    "id": 340,
+    "category": "Memory, Logic & PLDs",
+    "question": "Fan-out refers to:",
+    "options": [
+      "Number of inputs of a gate",
+      "Number of gate inputs driven by one output",
+      "Number of outputs",
+      "Number of clock pulses"
+    ],
+    "answerIndex": 1,
+    "explanation": "Maximum number of standard load inputs a single gate output can drive."
+  },
+  {
+    "id": 341,
+    "category": "Memory, Logic & PLDs",
+    "question": "PLD stands for:",
+    "options": [
+      "Parallel Logic Device",
+      "Programmable Logic Device",
+      "Primary Logic Device",
+      "Permanent Logic Device"
+    ],
+    "answerIndex": 1,
+    "explanation": "PLD = Programmable Logic Device."
+  },
+  {
+    "id": 342,
+    "category": "Memory, Logic & PLDs",
+    "question": "A PLD is mainly used to:",
+    "options": [
+      "Store operating systems",
+      "Implement custom digital logic",
+      "Increase RAM capacity",
+      "Replace cache memory"
+    ],
+    "answerIndex": 1,
+    "explanation": "Reconfigurable ICs that implement custom user logic circuits."
+  },
+  {
+    "id": 343,
+    "category": "Memory, Logic & PLDs",
+    "question": "Which of the following is a Programmable Logic Device?",
+    "options": [
+      "DRAM",
+      "SRAM",
+      "PAL",
+      "Cache"
+    ],
+    "answerIndex": 2,
+    "explanation": "PAL (Programmable Array Logic)."
+  },
+  {
+    "id": 344,
+    "category": "Memory, Logic & PLDs",
+    "question": "PAL stands for:",
+    "options": [
+      "Parallel Array Logic",
+      "Programmable Array Logic",
+      "Primary Array Logic",
+      "Programmed Arithmetic Logic"
+    ],
+    "answerIndex": 1,
+    "explanation": "PAL = Programmable Array Logic (programmable AND array, fixed OR array)."
+  },
+  {
+    "id": 345,
+    "category": "Memory, Logic & PLDs",
+    "question": "PLA stands for:",
+    "options": [
+      "Programmable Logic Array",
+      "Parallel Logic Array",
+      "Primary Logic Array",
+      "Programmable Linear Array"
+    ],
+    "answerIndex": 0,
+    "explanation": "PLA = Programmable Logic Array (programmable AND array, programmable OR array)."
+  },
+  {
+    "id": 346,
+    "category": "Memory, Logic & PLDs",
+    "question": "FPGA stands for:",
+    "options": [
+      "Fast Programmable Gate Array",
+      "Field Programmable Gate Array",
+      "Field Programmed General Array",
+      "Flexible Programmable Gate Architecture"
+    ],
+    "answerIndex": 1,
+    "explanation": "FPGA = Field Programmable Gate Array."
+  },
+  {
+    "id": 347,
+    "category": "Memory, Logic & PLDs",
+    "question": "FPGA is primarily used for:",
+    "options": [
+      "Permanent data storage",
+      "Implementing complex digital circuits",
+      "Binary addition only",
+      "Memory refreshing"
+    ],
+    "answerIndex": 1,
+    "explanation": "High-density reconfigurable logic blocks for complex digital prototypes."
+  },
+  {
+    "id": 348,
+    "category": "Memory, Logic & PLDs",
+    "question": "Compared to PAL and PLA, FPGA generally provides:",
+    "options": [
+      "Less flexibility",
+      "Greater flexibility",
+      "Fewer logic resources",
+      "Lower complexity only"
+    ],
+    "answerIndex": 1,
+    "explanation": "FPGAs contain millions of logic gates and RAM blocks with higher routing flexibility."
+  },
+  {
+    "id": 349,
+    "category": "Memory, Logic & PLDs",
+    "question": "Which of the following memories is both non-volatile and electrically erasable?",
+    "options": [
+      "PROM",
+      "EPROM",
+      "EEPROM",
+      "DRAM"
+    ],
+    "answerIndex": 2,
+    "explanation": "EEPROM."
+  },
+  {
+    "id": 350,
+    "category": "Memory, Logic & PLDs",
+    "question": "Which statement is TRUE?",
+    "options": [
+      "DRAM is faster than SRAM.",
+      "RAM is non-volatile.",
+      "ROM is used as temporary memory.",
+      "CMOS generally consumes less power than TTL."
+    ],
+    "answerIndex": 3,
+    "explanation": "CMOS has significantly lower static power dissipation than TTL."
+  },
+  {
+    "id": 351,
+    "category": "Mixed Revision",
+    "question": "Which of the following is NOT a number system?",
+    "options": [
+      "Binary",
+      "Octal",
+      "Decimal",
+      "ASCII"
+    ],
+    "answerIndex": 3,
+    "explanation": "ASCII is a character encoding standard, not a positional number system."
+  },
+  {
+    "id": 352,
+    "category": "Mixed Revision",
+    "question": "Which binary code is designed so that adjacent numbers differ by only one bit?",
+    "options": [
+      "BCD",
+      "ASCII",
+      "Gray Code",
+      "Excess-3"
+    ],
+    "answerIndex": 2,
+    "explanation": "Gray code."
+  },
+  {
+    "id": 353,
+    "category": "Mixed Revision",
+    "question": "Which code is mainly used to represent alphanumeric characters?",
+    "options": [
+      "Gray Code",
+      "BCD",
+      "ASCII",
+      "Excess-3"
+    ],
+    "answerIndex": 2,
+    "explanation": "ASCII encodes alphanumeric characters."
+  },
+  {
+    "id": 354,
+    "category": "Mixed Revision",
+    "question": "The decimal value represented by hexadecimal FF is:",
+    "options": [
+      "127",
+      "128",
+      "240",
+      "255"
+    ],
+    "answerIndex": 3,
+    "explanation": "15*16 + 15 = 255."
+  },
+  {
+    "id": 355,
+    "category": "Mixed Revision",
+    "question": "Which representation is most commonly used for signed integers in computers?",
+    "options": [
+      "BCD",
+      "Gray Code",
+      "Two's Complement",
+      "ASCII"
+    ],
+    "answerIndex": 2,
+    "explanation": "2's complement."
+  },
+  {
+    "id": 356,
+    "category": "Mixed Revision",
+    "question": "The Boolean expression A + A'B simplifies to:",
+    "options": [
+      "A + B",
+      "AB",
+      "A",
+      "B"
+    ],
+    "answerIndex": 0,
+    "explanation": "A + A'B = (A + A')(A + B) = (1)(A + B) = A + B."
+  },
+  {
+    "id": 357,
+    "category": "Mixed Revision",
+    "question": "Which Boolean law is used in simplifying A + A'B = A + B?",
+    "options": [
+      "Identity Law",
+      "DeMorgan's Law",
+      "Absorption (Redundancy) Law",
+      "Commutative Law"
+    ],
+    "answerIndex": 2,
+    "explanation": "Redundancy / Absorption Law."
+  },
+  {
+    "id": 358,
+    "category": "Mixed Revision",
+    "question": "Which Boolean expression always evaluates to 1?",
+    "options": [
+      "A . A'",
+      "A + A'",
+      "A . 0",
+      "A + 0"
+    ],
+    "answerIndex": 1,
+    "explanation": "A + A' = 1."
+  },
+  {
+    "id": 359,
+    "category": "Mixed Revision",
+    "question": "Which logic gate is called an inverter?",
+    "options": [
+      "NAND",
+      "NOR",
+      "NOT",
+      "XOR"
+    ],
+    "answerIndex": 2,
+    "explanation": "NOT gate."
+  },
+  {
+    "id": 360,
+    "category": "Mixed Revision",
+    "question": "Which gate is commonly used to detect inequality between two bits?",
+    "options": [
+      "AND",
+      "OR",
+      "XOR",
+      "NOR"
+    ],
+    "answerIndex": 2,
+    "explanation": "XOR produces 1 when inputs differ."
+  },
+  {
+    "id": 361,
+    "category": "Mixed Revision",
+    "question": "Which pair of gates are known as universal gates?",
+    "options": [
+      "AND and OR",
+      "XOR and XNOR",
+      "NAND and NOR",
+      "AND and NOT"
+    ],
+    "answerIndex": 2,
+    "explanation": "NAND and NOR."
+  },
+  {
+    "id": 362,
+    "category": "Mixed Revision",
+    "question": "The primary advantage of using universal gates is that:",
+    "options": [
+      "They consume no power.",
+      "Any Boolean function can be implemented using only one type of gate.",
+      "They eliminate the need for clocks.",
+      "They store binary data."
+    ],
+    "answerIndex": 1,
+    "explanation": "Standardized IC design using a single gate type."
+  },
+  {
+    "id": 363,
+    "category": "Mixed Revision",
+    "question": "In Karnaugh Maps, a group of 8 cells is:",
+    "options": [
+      "Invalid",
+      "Valid because it is a power of two",
+      "Allowed only for 3-variable maps",
+      "Allowed only for POS simplification"
+    ],
+    "answerIndex": 1,
+    "explanation": "8 = 2^3, valid K-map group size."
+  },
+  {
+    "id": 364,
+    "category": "Mixed Revision",
+    "question": "Which statement about K-map grouping is TRUE?",
+    "options": [
+      "Groups must always contain exactly four cells.",
+      "Groups cannot overlap.",
+      "Groups may overlap if it leads to further simplification.",
+      "Groups must contain odd numbers of cells."
+    ],
+    "answerIndex": 2,
+    "explanation": "Overlapping is allowed to form larger power-of-2 groups."
+  },
+  {
+    "id": 365,
+    "category": "Mixed Revision",
+    "question": "Which combinational circuit converts binary input into one active output?",
+    "options": [
+      "Encoder",
+      "Comparator",
+      "Decoder",
+      "Register"
+    ],
+    "answerIndex": 2,
+    "explanation": "Decoder."
+  },
+  {
+    "id": 366,
+    "category": "Mixed Revision",
+    "question": "Which combinational circuit converts one active input into binary output?",
+    "options": [
+      "Decoder",
+      "Encoder",
+      "Multiplexer",
+      "Comparator"
+    ],
+    "answerIndex": 1,
+    "explanation": "Encoder."
+  },
+  {
+    "id": 367,
+    "category": "Mixed Revision",
+    "question": "A 32-to-1 multiplexer requires how many select lines?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "8"
+    ],
+    "answerIndex": 1,
+    "explanation": "2^5 = 32, so 5 select lines."
+  },
+  {
+    "id": 368,
+    "category": "Mixed Revision",
+    "question": "A multiplexer with 2^n input lines requires:",
+    "options": [
+      "2n select lines",
+      "n select lines",
+      "n + 1 select lines",
+      "n - 1 select lines"
+    ],
+    "answerIndex": 1,
+    "explanation": "n select lines."
+  },
+  {
+    "id": 369,
+    "category": "Mixed Revision",
+    "question": "Which combinational circuit is commonly used for data routing?",
+    "options": [
+      "Decoder",
+      "Multiplexer",
+      "Counter",
+      "Register"
+    ],
+    "answerIndex": 1,
+    "explanation": "Multiplexer routes data from multiple sources to a single destination."
+  },
+  {
+    "id": 370,
+    "category": "Mixed Revision",
+    "question": "Which device performs the reverse operation of a multiplexer?",
+    "options": [
+      "Decoder",
+      "Encoder",
+      "Demultiplexer",
+      "Comparator"
+    ],
+    "answerIndex": 2,
+    "explanation": "Demultiplexer."
+  },
+  {
+    "id": 371,
+    "category": "Mixed Revision",
+    "question": "Which flip-flop has no invalid state?",
+    "options": [
+      "SR",
+      "JK",
+      "D",
+      "T"
+    ],
+    "answerIndex": 1,
+    "explanation": "JK flip-flop handles all input combinations."
+  },
+  {
+    "id": 372,
+    "category": "Mixed Revision",
+    "question": "Which flip-flop is commonly used to eliminate race-around problems?",
+    "options": [
+      "SR Flip-Flop",
+      "D Flip-Flop",
+      "Master-Slave JK Flip-Flop",
+      "T Flip-Flop"
+    ],
+    "answerIndex": 2,
+    "explanation": "Master-Slave JK Flip-Flop."
+  },
+  {
+    "id": 373,
+    "category": "Mixed Revision",
+    "question": "Which flip-flop copies its input directly to the output on the active clock edge?",
+    "options": [
+      "JK",
+      "SR",
+      "D",
+      "T"
+    ],
+    "answerIndex": 2,
+    "explanation": "D flip-flop Q(n+1) = D."
+  },
+  {
+    "id": 374,
+    "category": "Mixed Revision",
+    "question": "Which flip-flop is most suitable for binary counters?",
+    "options": [
+      "SR",
+      "D",
+      "T",
+      "Encoder"
+    ],
+    "answerIndex": 2,
+    "explanation": "T flip-flop toggles output."
+  },
+  {
+    "id": 375,
+    "category": "Mixed Revision",
+    "question": "Which sequential circuit stores exactly one binary digit?",
+    "options": [
+      "Register",
+      "Counter",
+      "Flip-Flop",
+      "Decoder"
+    ],
+    "answerIndex": 2,
+    "explanation": "Flip-Flop."
+  },
+  {
+    "id": 376,
+    "category": "Mixed Revision",
+    "question": "A register is best described as:",
+    "options": [
+      "A combinational circuit",
+      "A group of flip-flops used for data storage",
+      "A binary decoder",
+      "A data selector"
+    ],
+    "answerIndex": 1,
+    "explanation": "Group of flip-flops."
+  },
+  {
+    "id": 377,
+    "category": "Mixed Revision",
+    "question": "Which register converts serial input into parallel output?",
+    "options": [
+      "SISO",
+      "SIPO",
+      "PISO",
+      "PIPO"
+    ],
+    "answerIndex": 1,
+    "explanation": "SIPO."
+  },
+  {
+    "id": 378,
+    "category": "Mixed Revision",
+    "question": "Which register converts parallel input into serial output?",
+    "options": [
+      "SISO",
+      "SIPO",
+      "PISO",
+      "PIPO"
+    ],
+    "answerIndex": 2,
+    "explanation": "PISO."
+  },
+  {
+    "id": 379,
+    "category": "Mixed Revision",
+    "question": "Which counter is faster?",
+    "options": [
+      "Ripple Counter",
+      "Synchronous Counter",
+      "Ring Counter",
+      "Johnson Counter"
+    ],
+    "answerIndex": 1,
+    "explanation": "Synchronous Counter."
+  },
+  {
+    "id": 380,
+    "category": "Mixed Revision",
+    "question": "The main disadvantage of ripple counters is:",
+    "options": [
+      "High cost",
+      "Low modulus",
+      "Propagation delay",
+      "High power consumption"
+    ],
+    "answerIndex": 2,
+    "explanation": "Accumulated ripple propagation delay."
+  },
+  {
+    "id": 381,
+    "category": "Mixed Revision",
+    "question": "A Johnson counter is also called:",
+    "options": [
+      "Ripple Counter",
+      "Binary Counter",
+      "Twisted Ring Counter",
+      "Up Counter"
+    ],
+    "answerIndex": 2,
+    "explanation": "Twisted Ring Counter."
+  },
+  {
+    "id": 382,
+    "category": "Mixed Revision",
+    "question": "A 5-bit ring counter has:",
+    "options": [
+      "4 states",
+      "5 states",
+      "10 states",
+      "32 states"
+    ],
+    "answerIndex": 1,
+    "explanation": "N bits = 5 states."
+  },
+  {
+    "id": 383,
+    "category": "Mixed Revision",
+    "question": "A 5-bit Johnson counter has:",
+    "options": [
+      "5 states",
+      "10 states",
+      "16 states",
+      "32 states"
+    ],
+    "answerIndex": 1,
+    "explanation": "2N bits = 2 * 5 = 10 states."
+  },
+  {
+    "id": 384,
+    "category": "Mixed Revision",
+    "question": "Which memory is volatile?",
+    "options": [
+      "ROM",
+      "EEPROM",
+      "RAM",
+      "PROM"
+    ],
+    "answerIndex": 2,
+    "explanation": "RAM."
+  },
+  {
+    "id": 385,
+    "category": "Mixed Revision",
+    "question": "Which memory retains its contents without electrical power?",
+    "options": [
+      "RAM",
+      "ROM",
+      "Cache",
+      "DRAM"
+    ],
+    "answerIndex": 1,
+    "explanation": "ROM."
+  },
+  {
+    "id": 386,
+    "category": "Mixed Revision",
+    "question": "Which RAM requires periodic refreshing?",
+    "options": [
+      "SRAM",
+      "DRAM",
+      "EEPROM",
+      "PROM"
+    ],
+    "answerIndex": 1,
+    "explanation": "DRAM."
+  },
+  {
+    "id": 387,
+    "category": "Mixed Revision",
+    "question": "Which RAM is faster?",
+    "options": [
+      "SRAM",
+      "DRAM",
+      "ROM",
+      "EEPROM"
+    ],
+    "answerIndex": 0,
+    "explanation": "SRAM."
+  },
+  {
+    "id": 388,
+    "category": "Mixed Revision",
+    "question": "Cache memory is generally implemented using:",
+    "options": [
+      "DRAM",
+      "SRAM",
+      "PROM",
+      "ROM"
+    ],
+    "answerIndex": 1,
+    "explanation": "SRAM."
+  },
+  {
+    "id": 389,
+    "category": "Mixed Revision",
+    "question": "Which memory type is electrically erasable and reprogrammable?",
+    "options": [
+      "PROM",
+      "EPROM",
+      "EEPROM",
+      "SRAM"
+    ],
+    "answerIndex": 2,
+    "explanation": "EEPROM."
+  },
+  {
+    "id": 390,
+    "category": "Mixed Revision",
+    "question": "CMOS technology is preferred mainly because it:",
+    "options": [
+      "Requires more power",
+      "Consumes less power",
+      "Is slower than TTL",
+      "Uses analog signals"
+    ],
+    "answerIndex": 1,
+    "explanation": "Low static power dissipation."
+  },
+  {
+    "id": 391,
+    "category": "Mixed Revision",
+    "question": "Fan-out of a logic gate refers to:",
+    "options": [
+      "Number of outputs",
+      "Number of gate inputs that one output can drive",
+      "Number of flip-flops",
+      "Number of clock pulses"
+    ],
+    "answerIndex": 1,
+    "explanation": "Number of load gate inputs one output can drive."
+  },
+  {
+    "id": 392,
+    "category": "Mixed Revision",
+    "question": "Which programmable device offers the greatest flexibility?",
+    "options": [
+      "PAL",
+      "PLA",
+      "FPGA",
+      "ROM"
+    ],
+    "answerIndex": 2,
+    "explanation": "FPGA."
+  },
+  {
+    "id": 393,
+    "category": "Mixed Revision",
+    "question": "FPGA stands for:",
+    "options": [
+      "Fast Programmable Gate Array",
+      "Field Programmable Gate Array",
+      "Flexible Program Gate Architecture",
+      "Field Program General Array"
+    ],
+    "answerIndex": 1,
+    "explanation": "Field Programmable Gate Array."
+  },
+  {
+    "id": 394,
+    "category": "Mixed Revision",
+    "question": "Which of the following is NOT a combinational circuit?",
+    "options": [
+      "Encoder",
+      "Decoder",
+      "Multiplexer",
+      "Counter"
+    ],
+    "answerIndex": 3,
+    "explanation": "Counter is a sequential circuit."
+  },
+  {
+    "id": 395,
+    "category": "Mixed Revision",
+    "question": "Which of the following is NOT a sequential circuit?",
+    "options": [
+      "Register",
+      "Counter",
+      "Flip-Flop",
+      "Comparator"
+    ],
+    "answerIndex": 3,
+    "explanation": "Comparator is a combinational circuit."
+  },
+  {
+    "id": 396,
+    "category": "Mixed Revision",
+    "question": "The output of a combinational circuit depends on:",
+    "options": [
+      "Present inputs only",
+      "Previous state only",
+      "Clock signal only",
+      "Present inputs and previous state"
+    ],
+    "answerIndex": 0,
+    "explanation": "Present inputs only."
+  },
+  {
+    "id": 397,
+    "category": "Mixed Revision",
+    "question": "The output of a sequential circuit depends on:",
+    "options": [
+      "Present inputs only",
+      "Present inputs and previous state",
+      "Previous state only",
+      "Clock signal only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Present inputs and previous state."
+  },
+  {
+    "id": 398,
+    "category": "Mixed Revision",
+    "question": "Which device is the basic building block of digital memory?",
+    "options": [
+      "Decoder",
+      "Multiplexer",
+      "Flip-Flop",
+      "Comparator"
+    ],
+    "answerIndex": 2,
+    "explanation": "Flip-Flop."
+  },
+  {
+    "id": 399,
+    "category": "Mixed Revision",
+    "question": "The basic building block of modern digital integrated circuits is:",
+    "options": [
+      "Transistor",
+      "Capacitor",
+      "Diode",
+      "Resistor"
+    ],
+    "answerIndex": 0,
+    "explanation": "Transistor (MOSFET/CMOS)."
+  },
+  {
+    "id": 400,
+    "category": "Mixed Revision",
+    "question": "Which statement is correct?",
+    "options": [
+      "Registers are combinational circuits.",
+      "RAM is non-volatile.",
+      "Multiplexers have multiple outputs and one input.",
+      "Synchronous counters receive the clock signal simultaneously on all flip-flops."
+    ],
+    "answerIndex": 3,
+    "explanation": "Synchronous counters clock all flip-flops simultaneously."
+  }
+];
+
+
 const builtInSubjects = {
+  "Digital System Design": DSD_MCQS,
   "Computer Networking": NETWORKING_MCQS,
   "Database Management Systems": DBMS_MCQS,
   "Digital Signal Processing": DSP_MCQS,
@@ -23840,3 +29047,4 @@ window.DSP_MCQS = DSP_MCQS;
 window.OPERATING_SYSTEMS_MCQS = OPERATING_SYSTEMS_MCQS;
 window.MICROPROCESSOR_MCQS = MICROPROCESSOR_MCQS;
 window.SOFTWARE_ENGINEERING_MCQS = SOFTWARE_ENGINEERING_MCQS;
+window.DSD_MCQS = DSD_MCQS;
