@@ -13335,8 +13335,10418 @@ const SOFTWARE_ENGINEERING_MCQS = [
 ];
 
 
+const DBMS_MCQS = [
+  {
+    "id": 1,
+    "category": "DBMS Basics",
+    "question": "A shared collection of logically related data and its description is called:",
+    "options": [
+      "Table",
+      "Database",
+      "DBMS",
+      "Data Warehouse"
+    ],
+    "answerIndex": 1,
+    "explanation": "A database is a shared collection of logically related data and its descriptive metadata."
+  },
+  {
+    "id": 2,
+    "category": "DBMS Basics",
+    "question": "DBMS stands for:",
+    "options": [
+      "Data Base Management Service",
+      "Database Management System",
+      "Data Backup Management System",
+      "Database Memory System"
+    ],
+    "answerIndex": 1,
+    "explanation": "DBMS stands for Database Management System."
+  },
+  {
+    "id": 3,
+    "category": "DBMS Basics",
+    "question": "Which of the following acts as an interface between users and the database?",
+    "options": [
+      "Operating System",
+      "Compiler",
+      "DBMS",
+      "CPU"
+    ],
+    "answerIndex": 2,
+    "explanation": "DBMS serves as the software interface between end users/applications and the stored database."
+  },
+  {
+    "id": 4,
+    "category": "DBMS Basics",
+    "question": "Which of the following is NOT a function of DBMS?",
+    "options": [
+      "Data Security",
+      "Backup and Recovery",
+      "Data Sharing",
+      "Compiling Programs"
+    ],
+    "answerIndex": 3,
+    "explanation": "Compiling programs is a task performed by a compiler, not a DBMS."
+  },
+  {
+    "id": 5,
+    "category": "Database Applications",
+    "question": "Which of the following is an example of a database application?",
+    "options": [
+      "Microsoft Word",
+      "Paint",
+      "Point-of-Sale System",
+      "Calculator"
+    ],
+    "answerIndex": 2,
+    "explanation": "Point-of-Sale (POS) systems rely on database management systems to manage transactions and inventory."
+  },
+  {
+    "id": 6,
+    "category": "DBMS Basics",
+    "question": "Which software manages data stored in a database?",
+    "options": [
+      "Database",
+      "Spreadsheet",
+      "DBMS",
+      "Browser"
+    ],
+    "answerIndex": 2,
+    "explanation": "A DBMS is the software responsible for storing, managing, retrieving, and manipulating database data."
+  },
+  {
+    "id": 7,
+    "category": "DBMS Basics",
+    "question": "The main purpose of a DBMS is to:",
+    "options": [
+      "Increase RAM",
+      "Design Web Pages",
+      "Store and Manage Data Efficiently",
+      "Compile Programs"
+    ],
+    "answerIndex": 2,
+    "explanation": "DBMS provides efficient mechanisms for storing, retrieving, and managing structured data."
+  },
+  {
+    "id": 8,
+    "category": "Database Applications",
+    "question": "Which of the following is NOT a database application?",
+    "options": [
+      "Banking System",
+      "Airline Reservation System",
+      "Library Management System",
+      "Adobe Photoshop"
+    ],
+    "answerIndex": 3,
+    "explanation": "Adobe Photoshop is a graphics editing application, not a database application."
+  },
+  {
+    "id": 9,
+    "category": "DBMS Basics",
+    "question": "A database contains:",
+    "options": [
+      "Only tables",
+      "Only records",
+      "Related Data",
+      "Programs Only"
+    ],
+    "answerIndex": 2,
+    "explanation": "A database contains logically related data and schema descriptions."
+  },
+  {
+    "id": 10,
+    "category": "DBMS Basics",
+    "question": "Which of the following is an example of DBMS software?",
+    "options": [
+      "Linux",
+      "Windows",
+      "MySQL",
+      "Chrome"
+    ],
+    "answerIndex": 2,
+    "explanation": "MySQL is a popular Relational Database Management System (RDBMS)."
+  },
+  {
+    "id": 11,
+    "category": "DBMS Basics",
+    "question": "Which of the following is NOT a DBMS?",
+    "options": [
+      "Oracle",
+      "PostgreSQL",
+      "SQL Server",
+      "Microsoft Excel"
+    ],
+    "answerIndex": 3,
+    "explanation": "MS Excel is a spreadsheet application, whereas Oracle, PostgreSQL, and SQL Server are full DBMS software."
+  },
+  {
+    "id": 12,
+    "category": "Advantages & Disadvantages",
+    "question": "Which of the following is an advantage of DBMS?",
+    "options": [
+      "Increased Redundancy",
+      "Reduced Data Redundancy",
+      "Increased Inconsistency",
+      "Data Isolation"
+    ],
+    "answerIndex": 1,
+    "explanation": "DBMS minimizes data redundancy by centralizing data storage."
+  },
+  {
+    "id": 13,
+    "category": "Advantages & Disadvantages",
+    "question": "Data redundancy means:",
+    "options": [
+      "Data Compression",
+      "Duplicate Copies of Data",
+      "Data Encryption",
+      "Data Backup"
+    ],
+    "answerIndex": 1,
+    "explanation": "Data redundancy refers to storing duplicate copies of the same data across multiple files or tables."
+  },
+  {
+    "id": 14,
+    "category": "Advantages & Disadvantages",
+    "question": "Data inconsistency occurs when:",
+    "options": [
+      "Data is encrypted",
+      "Data is indexed",
+      "Different Copies Have Different Values",
+      "Database is Normalized"
+    ],
+    "answerIndex": 2,
+    "explanation": "Inconsistency arises when redundant copies of data contain conflicting or non-matching values."
+  },
+  {
+    "id": 15,
+    "category": "Advantages & Disadvantages",
+    "question": "Which of the following is a disadvantage of file processing systems?",
+    "options": [
+      "Easy Data Sharing",
+      "Data Redundancy",
+      "Centralized Control",
+      "Better Security"
+    ],
+    "answerIndex": 1,
+    "explanation": "Traditional file processing systems suffer from high data redundancy and inconsistency."
+  },
+  {
+    "id": 16,
+    "category": "Advantages & Disadvantages",
+    "question": "Compared to file systems, DBMS provides:",
+    "options": [
+      "More Redundancy",
+      "Better Data Sharing",
+      "Less Security",
+      "Less Integrity"
+    ],
+    "answerIndex": 1,
+    "explanation": "DBMS supports multi-user data sharing, central access control, and high data integrity."
+  },
+  {
+    "id": 17,
+    "category": "Advantages & Disadvantages",
+    "question": "Which feature allows multiple users to access the same database simultaneously?",
+    "options": [
+      "Backup",
+      "Indexing",
+      "Data Sharing",
+      "Compilation"
+    ],
+    "answerIndex": 2,
+    "explanation": "Concurrent data sharing mechanisms allow multiple users and applications to read/write data simultaneously."
+  },
+  {
+    "id": 18,
+    "category": "DBMS Basics",
+    "question": "The collection of programs used to manage databases is called:",
+    "options": [
+      "Database",
+      "DBMS",
+      "Data Model",
+      "Relation"
+    ],
+    "answerIndex": 1,
+    "explanation": "DBMS is a suite of programs that manages database creation, maintenance, querying, and access control."
+  },
+  {
+    "id": 19,
+    "category": "Database Users",
+    "question": "Which database user is responsible for database maintenance?",
+    "options": [
+      "Programmer",
+      "End User",
+      "Database Administrator (DBA)",
+      "Operator"
+    ],
+    "answerIndex": 2,
+    "explanation": "The Database Administrator (DBA) manages maintenance, performance, backups, security, and schema changes."
+  },
+  {
+    "id": 20,
+    "category": "Database Users",
+    "question": "Who controls user authorization in a database?",
+    "options": [
+      "End User",
+      "Application Programmer",
+      "DBA",
+      "Database Designer"
+    ],
+    "answerIndex": 2,
+    "explanation": "The DBA grants and revokes access permissions and user authorizations."
+  },
+  {
+    "id": 21,
+    "category": "Database Users",
+    "question": "Who is mainly responsible for database backup and recovery?",
+    "options": [
+      "Operator",
+      "DBA",
+      "Customer",
+      "Analyst"
+    ],
+    "answerIndex": 1,
+    "explanation": "DBA configures, tests, and executes database backup and disaster recovery plans."
+  },
+  {
+    "id": 22,
+    "category": "Database Users",
+    "question": "Physical database implementation is mainly the responsibility of:",
+    "options": [
+      "End User",
+      "DBA",
+      "Cashier",
+      "Tester"
+    ],
+    "answerIndex": 1,
+    "explanation": "Physical storage allocation, indexing, and implementation are managed by the DBA."
+  },
+  {
+    "id": 23,
+    "category": "Database Users",
+    "question": "Who identifies data requirements before database creation?",
+    "options": [
+      "End User",
+      "Database Designer",
+      "Operator",
+      "Compiler"
+    ],
+    "answerIndex": 1,
+    "explanation": "Database Designers gather requirements, create conceptual models (ER diagrams), and design logical schemas."
+  },
+  {
+    "id": 24,
+    "category": "Database Users",
+    "question": "Which database user writes application programs?",
+    "options": [
+      "DBA",
+      "Database Designer",
+      "Application Programmer",
+      "Customer"
+    ],
+    "answerIndex": 2,
+    "explanation": "Application Programmers develop software modules (web/desktop apps) that query and interact with the DBMS."
+  },
+  {
+    "id": 25,
+    "category": "Database Users",
+    "question": "Which database user interacts with the database through applications?",
+    "options": [
+      "DBA",
+      "Programmer",
+      "End User",
+      "Designer"
+    ],
+    "answerIndex": 2,
+    "explanation": "End Users interact with databases indirectly via user interfaces of application software."
+  },
+  {
+    "id": 26,
+    "category": "Database Users",
+    "question": "Which database user defines relationships among tables?",
+    "options": [
+      "End User",
+      "Database Designer",
+      "Clerk",
+      "Customer"
+    ],
+    "answerIndex": 1,
+    "explanation": "Database Designers define entity sets, attributes, keys, and table relationships."
+  },
+  {
+    "id": 27,
+    "category": "Database Users",
+    "question": "Which of the following is NOT a type of database user?",
+    "options": [
+      "DBA",
+      "Application Programmer",
+      "End User",
+      "Compiler"
+    ],
+    "answerIndex": 3,
+    "explanation": "A Compiler is system translation software, not a category of database user."
+  },
+  {
+    "id": 28,
+    "category": "Three-Schema Architecture",
+    "question": "Which level of database architecture interacts directly with users?",
+    "options": [
+      "Internal Level",
+      "External Level",
+      "Physical Level",
+      "Storage Level"
+    ],
+    "answerIndex": 1,
+    "explanation": "The External Level (View Level) presents customized views directly to end users and applications."
+  },
+  {
+    "id": 29,
+    "category": "Three-Schema Architecture",
+    "question": "The conceptual level describes:",
+    "options": [
+      "File Storage",
+      "Overall Logical Structure of Database",
+      "Disk Blocks",
+      "Index Files"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Conceptual Level defines the entire database schema, entity structures, relationships, and constraints."
+  },
+  {
+    "id": 30,
+    "category": "Three-Schema Architecture",
+    "question": "The internal level describes:",
+    "options": [
+      "User Views",
+      "Relationships Only",
+      "Physical Storage of Data",
+      "SQL Statements"
+    ],
+    "answerIndex": 2,
+    "explanation": "The Internal Level (Physical Level) details how data is physically stored on disk, including data structures and access paths."
+  },
+  {
+    "id": 31,
+    "category": "Three-Schema Architecture",
+    "question": "The ANSI-SPARC architecture consists of:",
+    "options": [
+      "Two Levels",
+      "Three Levels",
+      "Four Levels",
+      "Five Levels"
+    ],
+    "answerIndex": 1,
+    "explanation": "The ANSI-SPARC architecture consists of 3 levels: External (View), Conceptual (Logical), and Internal (Physical)."
+  },
+  {
+    "id": 32,
+    "category": "Three-Schema Architecture",
+    "question": "Which level hides physical storage details from users?",
+    "options": [
+      "Internal",
+      "Conceptual",
+      "Hardware",
+      "Operating System"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Conceptual Level provides abstraction by hiding physical storage mechanisms from the view layer."
+  },
+  {
+    "id": 33,
+    "category": "Three-Schema Architecture",
+    "question": "External level is also known as:",
+    "options": [
+      "Physical Level",
+      "Internal Level",
+      "View Level",
+      "Storage Level"
+    ],
+    "answerIndex": 2,
+    "explanation": "The External Level is commonly called the View Level as it contains individual user views."
+  },
+  {
+    "id": 34,
+    "category": "Data Independence",
+    "question": "Physical storage details are hidden through:",
+    "options": [
+      "Programming",
+      "Data Abstraction",
+      "Debugging",
+      "Compilation"
+    ],
+    "answerIndex": 1,
+    "explanation": "Data Abstraction suppresses low-level technical details across internal, conceptual, and external levels."
+  },
+  {
+    "id": 35,
+    "category": "Three-Schema Architecture",
+    "question": "Which of the following is NOT one of the three-schema architecture levels?",
+    "options": [
+      "External",
+      "Conceptual",
+      "Internal",
+      "Network"
+    ],
+    "answerIndex": 3,
+    "explanation": "The three levels are External, Conceptual, and Internal. Network is a data model type, not an architecture level."
+  },
+  {
+    "id": 36,
+    "category": "Data Independence",
+    "question": "Logical data independence refers to:",
+    "options": [
+      "Changing Storage Devices",
+      "Changing Conceptual Schema Without Affecting External Views",
+      "Changing Operating System",
+      "Changing SQL Language"
+    ],
+    "answerIndex": 1,
+    "explanation": "Logical Data Independence is the capacity to modify the conceptual schema without altering external schemas or application programs."
+  },
+  {
+    "id": 37,
+    "category": "Data Independence",
+    "question": "Physical data independence means:",
+    "options": [
+      "Modifying Queries",
+      "Changing Internal Storage Without Affecting Conceptual Schema",
+      "Changing Tables",
+      "Changing Users"
+    ],
+    "answerIndex": 1,
+    "explanation": "Physical Data Independence is the ability to change physical storage structures (e.g. indexes, file organizations) without changing the conceptual schema."
+  },
+  {
+    "id": 38,
+    "category": "Data Independence",
+    "question": "Which type of data independence is easier to achieve?",
+    "options": [
+      "Logical",
+      "Physical",
+      "Both Equal",
+      "Neither"
+    ],
+    "answerIndex": 1,
+    "explanation": "Physical data independence is easier to achieve because user applications depend primarily on the logical schema."
+  },
+  {
+    "id": 39,
+    "category": "Data Models",
+    "question": "Which data model is most widely used today?",
+    "options": [
+      "Hierarchical",
+      "Network",
+      "Relational",
+      "Object"
+    ],
+    "answerIndex": 2,
+    "explanation": "The Relational Model (RDBMS) remains the most widely adopted database model in industry."
+  },
+  {
+    "id": 40,
+    "category": "Data Models",
+    "question": "The relational model was proposed by:",
+    "options": [
+      "Charles Bachman",
+      "Edgar F. Codd",
+      "James Gray",
+      "Michael Stonebraker"
+    ],
+    "answerIndex": 1,
+    "explanation": "E. F. Codd proposed the Relational Model in his landmark 1970 paper."
+  },
+  {
+    "id": 41,
+    "category": "Data Models",
+    "question": "Which data model organizes data into tables?",
+    "options": [
+      "Hierarchical",
+      "Network",
+      "Relational",
+      "Object-Oriented"
+    ],
+    "answerIndex": 2,
+    "explanation": "The Relational Model stores all data as two-dimensional tables (relations) of rows and columns."
+  },
+  {
+    "id": 42,
+    "category": "Data Models",
+    "question": "In the hierarchical model, each child has:",
+    "options": [
+      "One Parent",
+      "Multiple Parents",
+      "Unlimited Parents",
+      "No Parent"
+    ],
+    "answerIndex": 0,
+    "explanation": "Hierarchical models use tree structures where each child node can have only one parent node."
+  },
+  {
+    "id": 43,
+    "category": "Data Models",
+    "question": "The network model allows:",
+    "options": [
+      "Only One Parent",
+      "Multiple Parent Relationships",
+      "No Relationships",
+      "Flat Tables Only"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Network Model represents data using graph structures allowing a record to have multiple parent records."
+  },
+  {
+    "id": 44,
+    "category": "Data Models",
+    "question": "Which data model represents real-world objects?",
+    "options": [
+      "Hierarchical",
+      "Relational",
+      "Object-Oriented",
+      "Network"
+    ],
+    "answerIndex": 2,
+    "explanation": "Object-Oriented database models combine object-oriented programming concepts (encapsulation, objects, classes) with database features."
+  },
+  {
+    "id": 45,
+    "category": "Data Models",
+    "question": "Which data model came after the hierarchical model?",
+    "options": [
+      "Relational",
+      "Network",
+      "Object-Oriented",
+      "NoSQL"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Network model was developed to overcome the rigid single-parent limitation of the Hierarchical model."
+  },
+  {
+    "id": 46,
+    "category": "Data Models",
+    "question": "Which database model is based on parent-child relationships?",
+    "options": [
+      "Relational",
+      "Object-Oriented",
+      "Hierarchical",
+      "Graph"
+    ],
+    "answerIndex": 2,
+    "explanation": "The Hierarchical model explicitly uses parent-child tree links to represent data relationships."
+  },
+  {
+    "id": 47,
+    "category": "Data Models",
+    "question": "Which database model supports many-to-many relationships naturally?",
+    "options": [
+      "Hierarchical",
+      "Network",
+      "Flat File",
+      "Sequential"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Network model naturally represents N:M relationships through graph nodes and set types."
+  },
+  {
+    "id": 48,
+    "category": "Data Models",
+    "question": "Which of the following is NOT a traditional database model?",
+    "options": [
+      "Hierarchical",
+      "Network",
+      "Relational",
+      "Compiler Model"
+    ],
+    "answerIndex": 3,
+    "explanation": "Compiler Model is not a database model."
+  },
+  {
+    "id": 49,
+    "category": "Data Models",
+    "question": "Which database model is the foundation of modern SQL databases?",
+    "options": [
+      "Network",
+      "Hierarchical",
+      "Relational",
+      "Object"
+    ],
+    "answerIndex": 2,
+    "explanation": "Modern SQL databases (MySQL, PostgreSQL, Oracle, SQL Server) are built on the Relational Database Model."
+  },
+  {
+    "id": 50,
+    "category": "DBMS Basics",
+    "question": "Which of the following is the primary objective of a DBMS?",
+    "options": [
+      "Increase Processor Speed",
+      "Increase Disk Size",
+      "Efficient Storage, Retrieval, and Management of Data",
+      "Improve Internet Speed"
+    ],
+    "answerIndex": 2,
+    "explanation": "The core objective of a DBMS is efficient, secure, and reliable storage, retrieval, and management of data."
+  },
+  {
+    "id": 51,
+    "category": "Relational Model",
+    "question": "The Relational Database Model was proposed by:",
+    "options": [
+      "Charles Bachman",
+      "Edgar F. Codd",
+      "James Gray",
+      "Peter Chen"
+    ],
+    "answerIndex": 1,
+    "explanation": "E. F. Codd introduced the relational database model in 1970."
+  },
+  {
+    "id": 52,
+    "category": "Relational Model",
+    "question": "In the relational model, data is organized into:",
+    "options": [
+      "Trees",
+      "Graphs",
+      "Tables",
+      "Objects"
+    ],
+    "answerIndex": 2,
+    "explanation": "Relational model organizes all structured data into two-dimensional tables."
+  },
+  {
+    "id": 53,
+    "category": "Relational Model",
+    "question": "A table in the relational model is called a:",
+    "options": [
+      "Entity",
+      "Relation",
+      "Domain",
+      "Schema"
+    ],
+    "answerIndex": 1,
+    "explanation": "In formal database terminology, a table is called a Relation."
+  },
+  {
+    "id": 54,
+    "category": "Relational Model",
+    "question": "A row in a relation is called:",
+    "options": [
+      "Attribute",
+      "Tuple",
+      "Domain",
+      "Field"
+    ],
+    "answerIndex": 1,
+    "explanation": "A row of data in a table is formally known as a Tuple."
+  },
+  {
+    "id": 55,
+    "category": "Relational Model",
+    "question": "A column in a relation is called:",
+    "options": [
+      "Tuple",
+      "Attribute",
+      "Domain",
+      "Relation"
+    ],
+    "answerIndex": 1,
+    "explanation": "A column header representing a property is called an Attribute."
+  },
+  {
+    "id": 56,
+    "category": "Relational Model",
+    "question": "The set of permissible values for an attribute is called:",
+    "options": [
+      "Schema",
+      "Relation",
+      "Domain",
+      "Tuple"
+    ],
+    "answerIndex": 2,
+    "explanation": "A Domain is the pool of valid, legal values permitted for a given attribute."
+  },
+  {
+    "id": 57,
+    "category": "Relational Model",
+    "question": "The number of attributes in a relation is called:",
+    "options": [
+      "Cardinality",
+      "Degree",
+      "Dimension",
+      "Order"
+    ],
+    "answerIndex": 1,
+    "explanation": "Degree refers to the total count of columns/attributes in a relation."
+  },
+  {
+    "id": 58,
+    "category": "Relational Model",
+    "question": "The number of tuples in a relation is called:",
+    "options": [
+      "Degree",
+      "Cardinality",
+      "Domain",
+      "Dimension"
+    ],
+    "answerIndex": 1,
+    "explanation": "Cardinality refers to the total count of rows/tuples present in a relation."
+  },
+  {
+    "id": 59,
+    "category": "Relational Model",
+    "question": "If a table has 8 columns and 50 rows, its degree is:",
+    "options": [
+      "50",
+      "8",
+      "58",
+      "400"
+    ],
+    "answerIndex": 1,
+    "explanation": "Degree equals column count (8), whereas cardinality equals row count (50)."
+  },
+  {
+    "id": 60,
+    "category": "Relational Model",
+    "question": "If a relation contains 12 tuples, its cardinality is:",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "Depends on attributes"
+    ],
+    "answerIndex": 2,
+    "explanation": "Cardinality is defined directly as the total number of tuples (12)."
+  },
+  {
+    "id": 61,
+    "category": "Schema & Instance",
+    "question": "The overall logical design of a database is called:",
+    "options": [
+      "Instance",
+      "Schema",
+      "Relation",
+      "Domain"
+    ],
+    "answerIndex": 1,
+    "explanation": "The overall logical design and description of a database structure is called Schema."
+  },
+  {
+    "id": 62,
+    "category": "Schema & Instance",
+    "question": "Database schema changes:",
+    "options": [
+      "Frequently",
+      "Rarely",
+      "Every Transaction",
+      "Every Query"
+    ],
+    "answerIndex": 1,
+    "explanation": "A database schema represents fixed structural design and changes very infrequently."
+  },
+  {
+    "id": 63,
+    "category": "Schema & Instance",
+    "question": "Database instance refers to:",
+    "options": [
+      "Database Structure",
+      "Current Data Stored",
+      "ER Diagram",
+      "Schema Design"
+    ],
+    "answerIndex": 1,
+    "explanation": "An instance is the collection of information/data stored in the database at a specific moment in time."
+  },
+  {
+    "id": 64,
+    "category": "Schema & Instance",
+    "question": "Which changes more frequently?",
+    "options": [
+      "Schema",
+      "Instance",
+      "Both equally",
+      "Neither"
+    ],
+    "answerIndex": 1,
+    "explanation": "Database instances change dynamically with every INSERT, UPDATE, or DELETE operation."
+  },
+  {
+    "id": 65,
+    "category": "Schema & Instance",
+    "question": "A relation schema defines:",
+    "options": [
+      "Stored Data Only",
+      "Table Structure",
+      "User Accounts",
+      "SQL Queries"
+    ],
+    "answerIndex": 1,
+    "explanation": "A relation schema defines table name, column attributes, and data types."
+  },
+  {
+    "id": 66,
+    "category": "Keys & Integrity",
+    "question": "A key is mainly used to:",
+    "options": [
+      "Sort Records",
+      "Encrypt Data",
+      "Identify Tuples Uniquely",
+      "Compress Data"
+    ],
+    "answerIndex": 2,
+    "explanation": "Keys uniquely identify tuples (records) within a table and establish entity relationships."
+  },
+  {
+    "id": 67,
+    "category": "Keys & Integrity",
+    "question": "Which key uniquely identifies each tuple?",
+    "options": [
+      "Foreign Key",
+      "Primary Key",
+      "Secondary Key",
+      "Duplicate Key"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Primary Key uniquely identifies each row in a relation."
+  },
+  {
+    "id": 68,
+    "category": "Keys & Integrity",
+    "question": "A Primary Key must be:",
+    "options": [
+      "Unique only",
+      "Not Null only",
+      "Unique and Not Null",
+      "Numeric"
+    ],
+    "answerIndex": 2,
+    "explanation": "Primary Key constraint requires every value to be unique and non-null."
+  },
+  {
+    "id": 69,
+    "category": "Keys & Integrity",
+    "question": "Which key cannot contain NULL values?",
+    "options": [
+      "Foreign Key",
+      "Candidate Key",
+      "Primary Key",
+      "Alternate Key"
+    ],
+    "answerIndex": 2,
+    "explanation": "By Entity Integrity rule, Primary Keys can never contain NULL values."
+  },
+  {
+    "id": 70,
+    "category": "Keys & Integrity",
+    "question": "Which key may contain NULL values?",
+    "options": [
+      "Primary Key",
+      "Foreign Key",
+      "Candidate Key",
+      "Super Key"
+    ],
+    "answerIndex": 1,
+    "explanation": "Foreign keys may contain NULL values unless explicitly defined with NOT NULL constraint."
+  },
+  {
+    "id": 71,
+    "category": "Keys & Integrity",
+    "question": "A Super Key is:",
+    "options": [
+      "Smallest Unique Key",
+      "Any Set of Attributes that Uniquely Identifies a Tuple",
+      "Foreign Key",
+      "Duplicate Key"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Super Key is any attribute or combination of attributes that uniquely identifies a row."
+  },
+  {
+    "id": 72,
+    "category": "Keys & Integrity",
+    "question": "Every Primary Key is:",
+    "options": [
+      "Foreign Key",
+      "Super Key",
+      "Composite Key",
+      "Alternate Key"
+    ],
+    "answerIndex": 1,
+    "explanation": "Every Primary Key is a minimal Super Key."
+  },
+  {
+    "id": 73,
+    "category": "Keys & Integrity",
+    "question": "Every Candidate Key is:",
+    "options": [
+      "Foreign Key",
+      "Super Key",
+      "Duplicate Key",
+      "Weak Key"
+    ],
+    "answerIndex": 1,
+    "explanation": "Candidate Keys are minimal Super Keys."
+  },
+  {
+    "id": 74,
+    "category": "Keys & Integrity",
+    "question": "Which of the following is the minimal Super Key?",
+    "options": [
+      "Composite Key",
+      "Candidate Key",
+      "Foreign Key",
+      "Secondary Key"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Candidate Key is defined as a minimal super key with no redundant attributes."
+  },
+  {
+    "id": 75,
+    "category": "Keys & Integrity",
+    "question": "A Candidate Key that is not selected as Primary Key becomes:",
+    "options": [
+      "Foreign Key",
+      "Composite Key",
+      "Alternate Key",
+      "Secondary Key"
+    ],
+    "answerIndex": 2,
+    "explanation": "Unchosen candidate keys serve as Alternate Keys."
+  },
+  {
+    "id": 76,
+    "category": "Keys & Integrity",
+    "question": "A Composite Key consists of:",
+    "options": [
+      "One Attribute",
+      "Two or More Attributes",
+      "One Foreign Key",
+      "Duplicate Attributes"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Composite Key uses two or more attributes combined to uniquely identify a record."
+  },
+  {
+    "id": 77,
+    "category": "Keys & Integrity",
+    "question": "Which key references the Primary Key of another table?",
+    "options": [
+      "Composite Key",
+      "Candidate Key",
+      "Foreign Key",
+      "Alternate Key"
+    ],
+    "answerIndex": 2,
+    "explanation": "A Foreign Key in a child table references the Primary Key in a parent table."
+  },
+  {
+    "id": 78,
+    "category": "Keys & Integrity",
+    "question": "Foreign Keys are mainly used to:",
+    "options": [
+      "Speed Queries",
+      "Establish Relationships Between Tables",
+      "Encrypt Data",
+      "Compress Tables"
+    ],
+    "answerIndex": 1,
+    "explanation": "Foreign Keys link tables and enforce relational integrity constraints."
+  },
+  {
+    "id": 79,
+    "category": "Keys & Integrity",
+    "question": "Which key enforces Referential Integrity?",
+    "options": [
+      "Candidate Key",
+      "Super Key",
+      "Foreign Key",
+      "Composite Key"
+    ],
+    "answerIndex": 2,
+    "explanation": "Referential Integrity ensures child foreign key values match valid parent primary key values."
+  },
+  {
+    "id": 80,
+    "category": "Keys & Integrity",
+    "question": "Which key should remain stable over time?",
+    "options": [
+      "Foreign Key",
+      "Composite Key",
+      "Primary Key",
+      "Alternate Key"
+    ],
+    "answerIndex": 2,
+    "explanation": "Primary keys should be stable and unchanging to preserve foreign key references."
+  },
+  {
+    "id": 81,
+    "category": "Keys & Integrity",
+    "question": "A system-generated unique key is called:",
+    "options": [
+      "Composite Key",
+      "Natural Key",
+      "Surrogate Key",
+      "Foreign Key"
+    ],
+    "answerIndex": 2,
+    "explanation": "A Surrogate Key is an artificial system-generated unique identifier (like auto-increment ID)."
+  },
+  {
+    "id": 82,
+    "category": "Keys & Integrity",
+    "question": "An example of a Natural Key is:",
+    "options": [
+      "Auto Increment ID",
+      "CNIC Number",
+      "Serial Number Generated by DBMS",
+      "Record Number"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Natural Key is formed from existing attributes that possess real-world meaning (e.g., CNIC, SSN)."
+  },
+  {
+    "id": 83,
+    "category": "Keys & Integrity",
+    "question": "Which key is usually Auto Increment?",
+    "options": [
+      "Foreign Key",
+      "Candidate Key",
+      "Surrogate Key",
+      "Alternate Key"
+    ],
+    "answerIndex": 2,
+    "explanation": "Surrogate keys are typically implemented using DBMS auto-increment integer sequences."
+  },
+  {
+    "id": 84,
+    "category": "Keys & Integrity",
+    "question": "Entity Integrity requires:",
+    "options": [
+      "Foreign Key must exist",
+      "Primary Key cannot be NULL",
+      "Duplicate Rows",
+      "Composite Keys Only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Entity Integrity dictates that primary key attributes cannot contain NULL values."
+  },
+  {
+    "id": 85,
+    "category": "Keys & Integrity",
+    "question": "Referential Integrity ensures:",
+    "options": [
+      "Tables have indexes",
+      "Foreign Key References Existing Primary Key",
+      "Queries are Fast",
+      "Database is Normalized"
+    ],
+    "answerIndex": 1,
+    "explanation": "Referential Integrity requires that foreign key values must match existing parent primary key values or be NULL."
+  },
+  {
+    "id": 86,
+    "category": "Keys & Integrity",
+    "question": "Which integrity constraint prevents orphan records?",
+    "options": [
+      "Entity Integrity",
+      "Referential Integrity",
+      "Domain Integrity",
+      "View Integrity"
+    ],
+    "answerIndex": 1,
+    "explanation": "Referential Integrity prevents orphan records by disallowing child entries without matching parent keys."
+  },
+  {
+    "id": 87,
+    "category": "Keys & Integrity",
+    "question": "Domain Integrity ensures:",
+    "options": [
+      "No Duplicate Rows",
+      "Attribute Values Must Belong to Valid Domain",
+      "Primary Key Exists",
+      "Tables are Linked"
+    ],
+    "answerIndex": 1,
+    "explanation": "Domain Integrity ensures that values stored in a column adhere to defined data types, ranges, and formats."
+  },
+  {
+    "id": 88,
+    "category": "Keys & Integrity",
+    "question": "Which constraint ensures valid values for an attribute?",
+    "options": [
+      "Foreign Key",
+      "Domain Constraint",
+      "Join Constraint",
+      "Transaction Constraint"
+    ],
+    "answerIndex": 1,
+    "explanation": "Domain constraints enforce range, type, and valid value rules for attributes."
+  },
+  {
+    "id": 89,
+    "category": "Keys & Integrity",
+    "question": "Which constraint prevents duplicate values?",
+    "options": [
+      "CHECK",
+      "UNIQUE",
+      "DEFAULT",
+      "NOT NULL"
+    ],
+    "answerIndex": 1,
+    "explanation": "The UNIQUE constraint ensures all non-null values in a column are distinct."
+  },
+  {
+    "id": 90,
+    "category": "Keys & Integrity",
+    "question": "Which constraint prevents NULL values?",
+    "options": [
+      "UNIQUE",
+      "NOT NULL",
+      "CHECK",
+      "DEFAULT"
+    ],
+    "answerIndex": 1,
+    "explanation": "The NOT NULL constraint prevents NULL entries in specified columns."
+  },
+  {
+    "id": 91,
+    "category": "Keys & Integrity",
+    "question": "Which constraint assigns a default value automatically?",
+    "options": [
+      "CHECK",
+      "UNIQUE",
+      "DEFAULT",
+      "FOREIGN KEY"
+    ],
+    "answerIndex": 2,
+    "explanation": "DEFAULT constraint supplies a predetermined value when no value is provided on INSERT."
+  },
+  {
+    "id": 92,
+    "category": "Keys & Integrity",
+    "question": "Which constraint validates a condition before inserting data?",
+    "options": [
+      "UNIQUE",
+      "DEFAULT",
+      "CHECK",
+      "PRIMARY KEY"
+    ],
+    "answerIndex": 2,
+    "explanation": "CHECK constraint evaluates boolean expression conditions prior to inserting/updating rows."
+  },
+  {
+    "id": 93,
+    "category": "Keys & Integrity",
+    "question": "Which constraint combines UNIQUE and NOT NULL?",
+    "options": [
+      "CHECK",
+      "PRIMARY KEY",
+      "FOREIGN KEY",
+      "DEFAULT"
+    ],
+    "answerIndex": 1,
+    "explanation": "PRIMARY KEY enforces both UNIQUE and NOT NULL constraints on key columns."
+  },
+  {
+    "id": 94,
+    "category": "Keys & Integrity",
+    "question": "Which constraint establishes a relationship between two tables?",
+    "options": [
+      "UNIQUE",
+      "CHECK",
+      "FOREIGN KEY",
+      "DEFAULT"
+    ],
+    "answerIndex": 2,
+    "explanation": "FOREIGN KEY constraint enforces parent-child relational dependencies between tables."
+  },
+  {
+    "id": 95,
+    "category": "Relational Model",
+    "question": "A relation should not contain:",
+    "options": [
+      "Attributes",
+      "Tuples",
+      "Duplicate Tuples",
+      "Domains"
+    ],
+    "answerIndex": 2,
+    "explanation": "In set theory, relations are sets of unique tuples; duplicate tuples are strictly forbidden."
+  },
+  {
+    "id": 96,
+    "category": "Relational Model",
+    "question": "Attribute values in a relation should be:",
+    "options": [
+      "Multi-valued",
+      "Atomic",
+      "Repeated",
+      "Ordered"
+    ],
+    "answerIndex": 1,
+    "explanation": "First Normal Form requires attribute values to be atomic (indivisible single values)."
+  },
+  {
+    "id": 97,
+    "category": "Relational Model",
+    "question": "Which property distinguishes a relation from a simple table?",
+    "options": [
+      "Rows have colors",
+      "Rows have indexes",
+      "Duplicate tuples are not allowed",
+      "Columns are numbered"
+    ],
+    "answerIndex": 2,
+    "explanation": "Mathematical relations prohibit duplicate tuples, whereas simple non-relational tables might contain duplicate rows."
+  },
+  {
+    "id": 98,
+    "category": "Relational Model",
+    "question": "Which statement is TRUE about tuples in a relation?",
+    "options": [
+      "Their physical order is significant.",
+      "Their logical order is not significant.",
+      "They must always be sorted alphabetically.",
+      "They cannot be deleted."
+    ],
+    "answerIndex": 1,
+    "explanation": "In relational algebra, tuples form an unordered set; physical row ordering is irrelevant."
+  },
+  {
+    "id": 99,
+    "category": "Relational Model",
+    "question": "Which statement is TRUE about attributes in a relation?",
+    "options": [
+      "Duplicate attribute names are allowed.",
+      "Each attribute has a unique name within a relation.",
+      "Every attribute must be numeric.",
+      "Attributes cannot have NULL values."
+    ],
+    "answerIndex": 1,
+    "explanation": "Attributes within a single relation schema must have distinct, unique column names."
+  },
+  {
+    "id": 100,
+    "category": "Relational Model",
+    "question": "Which statement best describes a relation?",
+    "options": [
+      "A collection of SQL statements",
+      "A set of database users",
+      "A table consisting of rows and columns with unique tuples",
+      "A programming language"
+    ],
+    "answerIndex": 2,
+    "explanation": "A relation is a two-dimensional table structure containing rows and columns with unique tuples."
+  },
+  {
+    "id": 101,
+    "category": "ER & EER Model",
+    "question": "An Entity is:",
+    "options": [
+      "A database table",
+      "A real-world object with independent existence",
+      "A SQL command",
+      "A relationship"
+    ],
+    "answerIndex": 1,
+    "explanation": "An entity represents an object, concept, or thing in the real world with independent existence."
+  },
+  {
+    "id": 102,
+    "category": "ER & EER Model",
+    "question": "A collection of similar entities is called:",
+    "options": [
+      "Relation",
+      "Entity Set",
+      "Attribute Set",
+      "Schema"
+    ],
+    "answerIndex": 1,
+    "explanation": "An Entity Set is a collection of similar entity types sharing the same attributes."
+  },
+  {
+    "id": 103,
+    "category": "ER & EER Model",
+    "question": "Which of the following is an entity?",
+    "options": [
+      "Age",
+      "Salary",
+      "Student",
+      "Integer"
+    ],
+    "answerIndex": 2,
+    "explanation": "Student is an entity object, whereas Age and Salary are attributes."
+  },
+  {
+    "id": 104,
+    "category": "ER & EER Model",
+    "question": "In an ER diagram, an entity is represented by:",
+    "options": [
+      "Diamond",
+      "Rectangle",
+      "Oval",
+      "Triangle"
+    ],
+    "answerIndex": 1,
+    "explanation": "Entity sets are depicted as Rectangles in standard Chen ER diagrams."
+  },
+  {
+    "id": 105,
+    "category": "ER & EER Model",
+    "question": "Which is an example of an entity set?",
+    "options": [
+      "Ali",
+      "Roll Number",
+      "Students",
+      "Integer"
+    ],
+    "answerIndex": 2,
+    "explanation": "Students is an entity set, while Ali is a specific entity instance."
+  },
+  {
+    "id": 106,
+    "category": "ER & EER Model",
+    "question": "Which of the following is NOT an entity?",
+    "options": [
+      "Employee",
+      "Customer",
+      "Product",
+      "Salary"
+    ],
+    "answerIndex": 3,
+    "explanation": "Salary is an attribute describing an Employee entity, not an entity itself."
+  },
+  {
+    "id": 107,
+    "category": "ER & EER Model",
+    "question": "An attribute is:",
+    "options": [
+      "A relationship",
+      "A property of an entity",
+      "A table",
+      "A key"
+    ],
+    "answerIndex": 1,
+    "explanation": "An attribute is a property or characteristic describing an entity set."
+  },
+  {
+    "id": 108,
+    "category": "ER & EER Model",
+    "question": "In an ER diagram, an attribute is represented by:",
+    "options": [
+      "Rectangle",
+      "Diamond",
+      "Oval (Ellipse)",
+      "Triangle"
+    ],
+    "answerIndex": 2,
+    "explanation": "Attributes are represented by Ovals (Ellipses) in ER diagrams."
+  },
+  {
+    "id": 109,
+    "category": "ER & EER Model",
+    "question": "Which of the following is an attribute of Student?",
+    "options": [
+      "Student",
+      "Roll Number",
+      "Course",
+      "Department"
+    ],
+    "answerIndex": 1,
+    "explanation": "Roll Number is a property/attribute describing a Student entity."
+  },
+  {
+    "id": 110,
+    "category": "ER & EER Model",
+    "question": "Which attribute uniquely identifies an entity?",
+    "options": [
+      "Composite Attribute",
+      "Derived Attribute",
+      "Key Attribute",
+      "Multivalued Attribute"
+    ],
+    "answerIndex": 2,
+    "explanation": "A Key Attribute uniquely distinguishes individual entity instances in an entity set."
+  },
+  {
+    "id": 111,
+    "category": "ER & EER Model",
+    "question": "A key attribute is shown by:",
+    "options": [
+      "Double Oval",
+      "Dashed Oval",
+      "Underlined Attribute",
+      "Double Rectangle"
+    ],
+    "answerIndex": 2,
+    "explanation": "Key attributes are drawn as Ovals with Underlined text."
+  },
+  {
+    "id": 112,
+    "category": "ER & EER Model",
+    "question": "An attribute that cannot be divided further is called:",
+    "options": [
+      "Composite Attribute",
+      "Simple Attribute",
+      "Derived Attribute",
+      "Multivalued Attribute"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Simple (Atomic) Attribute cannot be subdivided into smaller constituent parts."
+  },
+  {
+    "id": 113,
+    "category": "ER & EER Model",
+    "question": "Which attribute can be divided into smaller components?",
+    "options": [
+      "Simple Attribute",
+      "Composite Attribute",
+      "Derived Attribute",
+      "Key Attribute"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Composite Attribute can be divided into sub-components (e.g. Address -> Street, City, Zip)."
+  },
+  {
+    "id": 114,
+    "category": "ER & EER Model",
+    "question": "Name can be divided into First Name and Last Name. It is a:",
+    "options": [
+      "Derived Attribute",
+      "Composite Attribute",
+      "Multivalued Attribute",
+      "Key Attribute"
+    ],
+    "answerIndex": 1,
+    "explanation": "Name composed of First Name and Last Name is a Composite Attribute."
+  },
+  {
+    "id": 115,
+    "category": "ER & EER Model",
+    "question": "Age calculated from Date of Birth is:",
+    "options": [
+      "Composite Attribute",
+      "Simple Attribute",
+      "Derived Attribute",
+      "Multivalued Attribute"
+    ],
+    "answerIndex": 2,
+    "explanation": "Age is a Derived Attribute computed dynamically from Date of Birth."
+  },
+  {
+    "id": 116,
+    "category": "ER & EER Model",
+    "question": "A derived attribute is represented by:",
+    "options": [
+      "Double Oval",
+      "Dashed Oval",
+      "Rectangle",
+      "Diamond"
+    ],
+    "answerIndex": 1,
+    "explanation": "Derived attributes are represented using Dashed Ovals in ER diagrams."
+  },
+  {
+    "id": 117,
+    "category": "ER & EER Model",
+    "question": "Which attribute can have multiple values?",
+    "options": [
+      "Composite",
+      "Multivalued Attribute",
+      "Derived",
+      "Key"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Multivalued Attribute can store more than one value for a single entity."
+  },
+  {
+    "id": 118,
+    "category": "ER & EER Model",
+    "question": "Phone Numbers is an example of:",
+    "options": [
+      "Composite Attribute",
+      "Multivalued Attribute",
+      "Derived Attribute",
+      "Key Attribute"
+    ],
+    "answerIndex": 1,
+    "explanation": "A person having multiple phone numbers is a classic Multivalued Attribute."
+  },
+  {
+    "id": 119,
+    "category": "ER & EER Model",
+    "question": "A multivalued attribute is represented by:",
+    "options": [
+      "Dashed Oval",
+      "Double Oval",
+      "Rectangle",
+      "Diamond"
+    ],
+    "answerIndex": 1,
+    "explanation": "Multivalued attributes are drawn with Double Ovals in ER diagrams."
+  },
+  {
+    "id": 120,
+    "category": "ER & EER Model",
+    "question": "Which of the following is a simple attribute?",
+    "options": [
+      "Address",
+      "Name",
+      "Gender",
+      "Full Name"
+    ],
+    "answerIndex": 2,
+    "explanation": "Gender is an atomic (simple) attribute with indivisible values."
+  },
+  {
+    "id": 121,
+    "category": "ER & EER Model",
+    "question": "A relationship represents:",
+    "options": [
+      "Attribute Values",
+      "Association Between Entities",
+      "SQL Commands",
+      "Database Schema"
+    ],
+    "answerIndex": 1,
+    "explanation": "A relationship is an association among two or more entity sets."
+  },
+  {
+    "id": 122,
+    "category": "ER & EER Model",
+    "question": "In an ER diagram, a relationship is represented by:",
+    "options": [
+      "Rectangle",
+      "Diamond",
+      "Oval",
+      "Triangle"
+    ],
+    "answerIndex": 1,
+    "explanation": "Relationships are represented by Diamond shapes in ER diagrams."
+  },
+  {
+    "id": 123,
+    "category": "ER & EER Model",
+    "question": " \"Student Enrolls in Course\" represents:",
+    "options": [
+      "Entity",
+      "Attribute",
+      "Relationship",
+      "Domain"
+    ],
+    "answerIndex": 2,
+    "explanation": "\"Enrolls\" represents a relationship associating Student and Course entities."
+  },
+  {
+    "id": 124,
+    "category": "ER & EER Model",
+    "question": "A relationship may exist between:",
+    "options": [
+      "Attributes Only",
+      "Two or More Entities",
+      "SQL Statements",
+      "Views"
+    ],
+    "answerIndex": 1,
+    "explanation": "Relationships associate two or more entity sets."
+  },
+  {
+    "id": 125,
+    "category": "ER & EER Model",
+    "question": "Which of the following is NOT a relationship?",
+    "options": [
+      "Works For",
+      "Enrolls",
+      "Purchases",
+      "Salary"
+    ],
+    "answerIndex": 3,
+    "explanation": "Salary is an attribute, whereas Works For, Enrolls, and Purchases are relationships."
+  },
+  {
+    "id": 126,
+    "category": "ER & EER Model",
+    "question": "A relationship involving one entity set is called:",
+    "options": [
+      "Unary Relationship",
+      "Binary Relationship",
+      "Ternary Relationship",
+      "Recursive Join"
+    ],
+    "answerIndex": 0,
+    "explanation": "A Unary (Recursive) Relationship associates entities within the same single entity set."
+  },
+  {
+    "id": 127,
+    "category": "ER & EER Model",
+    "question": "Most relationships in databases are:",
+    "options": [
+      "Unary",
+      "Binary",
+      "Ternary",
+      "Quaternary"
+    ],
+    "answerIndex": 1,
+    "explanation": "The vast majority of real-world database relationships are Binary (between 2 entity sets)."
+  },
+  {
+    "id": 128,
+    "category": "ER & EER Model",
+    "question": "A relationship involving three entity sets is:",
+    "options": [
+      "Binary",
+      "Ternary",
+      "Unary",
+      "Recursive"
+    ],
+    "answerIndex": 1,
+    "explanation": "A relationship involving 3 participating entity sets is called a Ternary Relationship."
+  },
+  {
+    "id": 129,
+    "category": "ER & EER Model",
+    "question": "Employee supervises Employee is an example of:",
+    "options": [
+      "Unary (Recursive) Relationship",
+      "Binary Relationship",
+      "Ternary Relationship",
+      "Weak Relationship"
+    ],
+    "answerIndex": 0,
+    "explanation": "Supervision within the Employee entity set is a Unary (Recursive) Relationship."
+  },
+  {
+    "id": 130,
+    "category": "ER & EER Model",
+    "question": "One customer can place many orders. This is:",
+    "options": [
+      "One-to-One",
+      "One-to-Many",
+      "Many-to-One",
+      "Many-to-Many"
+    ],
+    "answerIndex": 1,
+    "explanation": "One customer linked to multiple orders exhibits a 1:N (One-to-Many) cardinality."
+  },
+  {
+    "id": 131,
+    "category": "ER & EER Model",
+    "question": "Many students enroll in many courses. This is:",
+    "options": [
+      "One-to-One",
+      "One-to-Many",
+      "Many-to-One",
+      "Many-to-Many"
+    ],
+    "answerIndex": 3,
+    "explanation": "Multiple students enrolling in multiple courses is an M:N (Many-to-Many) cardinality."
+  },
+  {
+    "id": 132,
+    "category": "ER & EER Model",
+    "question": "One passport belongs to one citizen. This relationship is:",
+    "options": [
+      "One-to-One",
+      "One-to-Many",
+      "Many-to-One",
+      "Many-to-Many"
+    ],
+    "answerIndex": 0,
+    "explanation": "One passport mapped strictly to one citizen is a 1:1 (One-to-One) cardinality."
+  },
+  {
+    "id": 133,
+    "category": "ER & EER Model",
+    "question": "One department has many employees. This is:",
+    "options": [
+      "One-to-One",
+      "One-to-Many",
+      "Many-to-Many",
+      "Recursive"
+    ],
+    "answerIndex": 1,
+    "explanation": "A single department employing multiple workers is a One-to-Many relationship."
+  },
+  {
+    "id": 134,
+    "category": "ER & EER Model",
+    "question": "Which cardinality is generally implemented using a junction (bridge) table in relational databases?",
+    "options": [
+      "One-to-One",
+      "One-to-Many",
+      "Many-to-Many",
+      "Unary"
+    ],
+    "answerIndex": 2,
+    "explanation": "Many-to-Many (M:N) relationships require an associative/junction table in RDBMS implementation."
+  },
+  {
+    "id": 135,
+    "category": "ER & EER Model",
+    "question": "Total participation means:",
+    "options": [
+      "Some entities participate",
+      "Every entity must participate",
+      "No entity participates",
+      "Participation is optional"
+    ],
+    "answerIndex": 1,
+    "explanation": "Total participation (existence dependency) requires every entity instance to participate in the relationship."
+  },
+  {
+    "id": 136,
+    "category": "ER & EER Model",
+    "question": "Partial participation means:",
+    "options": [
+      "All entities participate",
+      "Participation is Optional",
+      "Every entity is mandatory",
+      "No relationship exists"
+    ],
+    "answerIndex": 1,
+    "explanation": "Partial participation indicates that entity participation in the relationship is optional."
+  },
+  {
+    "id": 137,
+    "category": "ER & EER Model",
+    "question": "Total participation is represented by:",
+    "options": [
+      "Single Line",
+      "Double Line",
+      "Dashed Line",
+      "Double Diamond"
+    ],
+    "answerIndex": 1,
+    "explanation": "Total participation is drawn using Double Lines connecting entity set to relationship."
+  },
+  {
+    "id": 138,
+    "category": "ER & EER Model",
+    "question": "A weak entity:",
+    "options": [
+      "Has its own Primary Key",
+      "Depends on another entity for identification",
+      "Has no attributes",
+      "Cannot participate in relationships"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Weak Entity does not have a primary key of its own and depends on an owner entity set."
+  },
+  {
+    "id": 139,
+    "category": "ER & EER Model",
+    "question": "A weak entity is represented by:",
+    "options": [
+      "Single Rectangle",
+      "Double Rectangle",
+      "Diamond",
+      "Oval"
+    ],
+    "answerIndex": 1,
+    "explanation": "Weak entity sets are represented as Double Rectangles in ER diagrams."
+  },
+  {
+    "id": 140,
+    "category": "ER & EER Model",
+    "question": "The identifying relationship of a weak entity is represented by:",
+    "options": [
+      "Rectangle",
+      "Double Diamond",
+      "Oval",
+      "Triangle"
+    ],
+    "answerIndex": 1,
+    "explanation": "The relationship linking a weak entity to its owner is represented by a Double Diamond."
+  },
+  {
+    "id": 141,
+    "category": "ER & EER Model",
+    "question": "Which entity can exist independently?",
+    "options": [
+      "Strong Entity",
+      "Weak Entity",
+      "Composite Entity",
+      "Associative Entity"
+    ],
+    "answerIndex": 0,
+    "explanation": "A Strong Entity possesses its own primary key and exists independently."
+  },
+  {
+    "id": 142,
+    "category": "ER & EER Model",
+    "question": "Which of the following is an example of a weak entity?",
+    "options": [
+      "Employee",
+      "Student",
+      "Dependent",
+      "Department"
+    ],
+    "answerIndex": 2,
+    "explanation": "Dependent is a classic Weak Entity dependent on the Employee primary key."
+  },
+  {
+    "id": 143,
+    "category": "ER & EER Model",
+    "question": "Specialization is a:",
+    "options": [
+      "Bottom-up Process",
+      "Top-down Process",
+      "Query Optimization",
+      "Data Compression"
+    ],
+    "answerIndex": 1,
+    "explanation": "Specialization is a Top-down design process breaking superclasses into specialized subclasses."
+  },
+  {
+    "id": 144,
+    "category": "ER & EER Model",
+    "question": "Generalization is a:",
+    "options": [
+      "Bottom-up Process",
+      "Top-down Process",
+      "Normalization Technique",
+      "SQL Command"
+    ],
+    "answerIndex": 0,
+    "explanation": "Generalization is a Bottom-up design process synthesizing common entity types into a higher-level superclass."
+  },
+  {
+    "id": 145,
+    "category": "ER & EER Model",
+    "question": "Vehicle \u2192 Car, Bus, Bike is an example of:",
+    "options": [
+      "Generalization",
+      "Specialization",
+      "Aggregation",
+      "Association"
+    ],
+    "answerIndex": 1,
+    "explanation": "Subdividing Vehicle into Car, Bus, and Bike superclass-subclass hierarchies is Specialization."
+  },
+  {
+    "id": 146,
+    "category": "ER & EER Model",
+    "question": "Car + Bus + Bike \u2192 Vehicle is an example of:",
+    "options": [
+      "Generalization",
+      "Specialization",
+      "Aggregation",
+      "Composition"
+    ],
+    "answerIndex": 0,
+    "explanation": "Combining Car, Bus, and Bike into a generalized Vehicle superclass is Generalization."
+  },
+  {
+    "id": 147,
+    "category": "ER & EER Model",
+    "question": "Inheritance in EER allows a subclass to inherit:",
+    "options": [
+      "Queries Only",
+      "Attributes and Relationships of Superclass",
+      "SQL Commands",
+      "Tables Only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Type Inheritance lets subclasses inherit all attributes and relationship participations of their superclass."
+  },
+  {
+    "id": 148,
+    "category": "ER & EER Model",
+    "question": "Aggregation is mainly used to:",
+    "options": [
+      "Remove Redundancy",
+      "Treat a Relationship as a Higher-Level Entity",
+      "Create Keys",
+      "Create Indexes"
+    ],
+    "answerIndex": 1,
+    "explanation": "Aggregation abstracts relationships between entity sets into higher-level composite entities."
+  },
+  {
+    "id": 149,
+    "category": "ER & EER Model",
+    "question": "Which EER concept allows subclasses to inherit properties from a superclass?",
+    "options": [
+      "Aggregation",
+      "Composition",
+      "Inheritance",
+      "Participation"
+    ],
+    "answerIndex": 2,
+    "explanation": "Inheritance allows subclasses to inherit superclass attributes and relationships."
+  },
+  {
+    "id": 150,
+    "category": "ER & EER Model",
+    "question": "The main purpose of the ER model is to:",
+    "options": [
+      "Execute SQL Queries",
+      "Optimize Transactions",
+      "Design the Logical Structure of a Database",
+      "Store Physical Data"
+    ],
+    "answerIndex": 2,
+    "explanation": "The ER model is a conceptual schema design tool representing logical database structure."
+  },
+  {
+    "id": 151,
+    "category": "Normalization",
+    "question": "Functional Dependency describes:",
+    "options": [
+      "Relationship between tables",
+      "Relationship between attributes",
+      "Relationship between users",
+      "Relationship between databases"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Functional Dependency (FD) describes a constraint relationship between attributes in a relation."
+  },
+  {
+    "id": 152,
+    "category": "Normalization",
+    "question": "If A \u2192 B, then:",
+    "options": [
+      "B determines A",
+      "A uniquely determines B",
+      "A and B are unrelated",
+      "B is always a primary key"
+    ],
+    "answerIndex": 1,
+    "explanation": "A \u2192 B means attribute A functionally and uniquely determines attribute B."
+  },
+  {
+    "id": 153,
+    "category": "Normalization",
+    "question": "In a functional dependency X \u2192 Y, X is called the:",
+    "options": [
+      "Determinant",
+      "Dependent",
+      "Candidate Key",
+      "Foreign Key"
+    ],
+    "answerIndex": 0,
+    "explanation": "In X \u2192 Y, X is the Determinant attribute set."
+  },
+  {
+    "id": 154,
+    "category": "Normalization",
+    "question": "In X \u2192 Y, Y is called the:",
+    "options": [
+      "Determinant",
+      "Dependent Attribute",
+      "Primary Key",
+      "Domain"
+    ],
+    "answerIndex": 1,
+    "explanation": "In X \u2192 Y, Y is the Dependent attribute."
+  },
+  {
+    "id": 155,
+    "category": "Normalization",
+    "question": "Functional dependencies are mainly used in:",
+    "options": [
+      "SQL Programming",
+      "Query Optimization",
+      "Normalization",
+      "Backup"
+    ],
+    "answerIndex": 2,
+    "explanation": "Functional dependencies provide the formal mathematical foundation for database Normalization."
+  },
+  {
+    "id": 156,
+    "category": "Normalization",
+    "question": "Which dependency forms the basis of normalization?",
+    "options": [
+      "Referential Dependency",
+      "Functional Dependency",
+      "Join Dependency",
+      "Inclusion Dependency"
+    ],
+    "answerIndex": 1,
+    "explanation": "Functional Dependency analysis forms the primary foundation for 1NF, 2NF, 3NF, and BCNF."
+  },
+  {
+    "id": 157,
+    "category": "Normalization",
+    "question": "Which statement about functional dependency is TRUE?",
+    "options": [
+      "One attribute can determine every other attribute.",
+      "A determinant uniquely determines another attribute.",
+      "Every foreign key is a determinant.",
+      "Functional dependency exists only between tables."
+    ],
+    "answerIndex": 1,
+    "explanation": "Functional dependency means a given determinant value uniquely pinpoints a dependent value."
+  },
+  {
+    "id": 158,
+    "category": "Normalization",
+    "question": "Functional dependency helps eliminate:",
+    "options": [
+      "Encryption",
+      "Data Redundancy",
+      "Indexes",
+      "Transactions"
+    ],
+    "answerIndex": 1,
+    "explanation": "Analyzing FDs helps decompose tables to eliminate duplicate data and redundant storage."
+  },
+  {
+    "id": 159,
+    "category": "Normalization",
+    "question": "A dependency in which an attribute depends on the entire composite key is called:",
+    "options": [
+      "Partial Dependency",
+      "Full Functional Dependency",
+      "Transitive Dependency",
+      "Join Dependency"
+    ],
+    "answerIndex": 1,
+    "explanation": "Full Functional Dependency requires a non-prime attribute to depend on the whole candidate key, not a proper subset."
+  },
+  {
+    "id": 160,
+    "category": "Normalization",
+    "question": "A dependency on only part of a composite key is called:",
+    "options": [
+      "Full Dependency",
+      "Partial Dependency",
+      "Transitive Dependency",
+      "Multivalued Dependency"
+    ],
+    "answerIndex": 1,
+    "explanation": "Partial Dependency occurs when a non-key attribute depends on a proper subset of a composite candidate key."
+  },
+  {
+    "id": 161,
+    "category": "Normalization",
+    "question": "Partial dependency occurs when:",
+    "options": [
+      "Primary key has one attribute",
+      "Primary key is composite",
+      "There is no key",
+      "Only foreign keys exist"
+    ],
+    "answerIndex": 1,
+    "explanation": "Partial dependency can only occur when a relation has a composite primary key."
+  },
+  {
+    "id": 162,
+    "category": "Normalization",
+    "question": "Which normal form removes partial dependency?",
+    "options": [
+      "1NF",
+      "2NF",
+      "3NF",
+      "BCNF"
+    ],
+    "answerIndex": 1,
+    "explanation": "Second Normal Form (2NF) eliminates partial functional dependencies."
+  },
+  {
+    "id": 163,
+    "category": "Normalization",
+    "question": "Transitive dependency occurs when:",
+    "options": [
+      "A non-key attribute depends directly on the key",
+      "A non-key attribute depends on another non-key attribute",
+      "A key depends on another key",
+      "A foreign key references a primary key"
+    ],
+    "answerIndex": 1,
+    "explanation": "Transitive dependency X \u2192 Y and Y \u2192 Z exists when a non-key attribute Z depends on another non-key attribute Y."
+  },
+  {
+    "id": 164,
+    "category": "Normalization",
+    "question": "Which normal form removes transitive dependency?",
+    "options": [
+      "1NF",
+      "2NF",
+      "3NF",
+      "BCNF"
+    ],
+    "answerIndex": 2,
+    "explanation": "Third Normal Form (3NF) eliminates transitive functional dependencies."
+  },
+  {
+    "id": 165,
+    "category": "Normalization",
+    "question": "Which dependency is allowed in 2NF but not in 3NF?",
+    "options": [
+      "Full Dependency",
+      "Transitive Dependency",
+      "Candidate Dependency",
+      "Domain Dependency"
+    ],
+    "answerIndex": 1,
+    "explanation": "2NF permits transitive dependencies, but 3NF strictly forbids them."
+  },
+  {
+    "id": 166,
+    "category": "Normalization",
+    "question": "Normalization is the process of:",
+    "options": [
+      "Compressing data",
+      "Encrypting data",
+      "Organizing data to reduce redundancy",
+      "Backing up data"
+    ],
+    "answerIndex": 2,
+    "explanation": "Normalization is the systematic process of structuring relation schemas to minimize redundancy and anomalies."
+  },
+  {
+    "id": 167,
+    "category": "Normalization",
+    "question": "The primary objective of normalization is:",
+    "options": [
+      "Increase redundancy",
+      "Minimize redundancy and anomalies",
+      "Improve graphics",
+      "Increase storage"
+    ],
+    "answerIndex": 1,
+    "explanation": "Normalization minimizes data duplication and prevents insertion, update, and deletion anomalies."
+  },
+  {
+    "id": 168,
+    "category": "Normalization",
+    "question": "Which of the following is NOT an objective of normalization?",
+    "options": [
+      "Reduce redundancy",
+      "Improve consistency",
+      "Increase duplicate data",
+      "Eliminate anomalies"
+    ],
+    "answerIndex": 2,
+    "explanation": "Increasing duplicate data contradicts the primary goal of normalization."
+  },
+  {
+    "id": 169,
+    "category": "Normalization",
+    "question": "Normalization mainly improves:",
+    "options": [
+      "Monitor Speed",
+      "Database Design",
+      "Network Speed",
+      "Processor Performance"
+    ],
+    "answerIndex": 1,
+    "explanation": "Normalization refines database schema design for data consistency and logical integrity."
+  },
+  {
+    "id": 170,
+    "category": "Normalization",
+    "question": "Which of the following is an insertion anomaly?",
+    "options": [
+      "Unable to update data",
+      "Unable to insert data without unrelated information",
+      "Unable to delete files",
+      "Unable to create indexes"
+    ],
+    "answerIndex": 1,
+    "explanation": "Insertion anomaly occurs when data cannot be recorded without artificially supplying unrelated attributes."
+  },
+  {
+    "id": 171,
+    "category": "Normalization",
+    "question": "Deletion anomaly occurs when:",
+    "options": [
+      "Data is duplicated",
+      "Deleting one record unintentionally removes useful information",
+      "Index is deleted",
+      "Schema is modified"
+    ],
+    "answerIndex": 1,
+    "explanation": "Deletion anomaly happens when removing a row unintentionally destroys other vital business facts."
+  },
+  {
+    "id": 172,
+    "category": "Normalization",
+    "question": "Update anomaly occurs because of:",
+    "options": [
+      "Encryption",
+      "Redundant Data",
+      "Views",
+      "Constraints"
+    ],
+    "answerIndex": 1,
+    "explanation": "Update anomaly occurs when inconsistent data modifications result from redundant data stored in multiple places."
+  },
+  {
+    "id": 173,
+    "category": "Normalization",
+    "question": "First Normal Form requires:",
+    "options": [
+      "Composite attributes",
+      "Atomic attribute values",
+      "No foreign keys",
+      "No primary key"
+    ],
+    "answerIndex": 1,
+    "explanation": "1NF requires that all column attribute values must be scalar and atomic."
+  },
+  {
+    "id": 174,
+    "category": "Normalization",
+    "question": "1NF eliminates:",
+    "options": [
+      "Partial dependency",
+      "Transitive dependency",
+      "Repeating groups",
+      "Join dependency"
+    ],
+    "answerIndex": 2,
+    "explanation": "1NF eliminates repeating groups, multi-valued attributes, and non-atomic fields."
+  },
+  {
+    "id": 175,
+    "category": "Normalization",
+    "question": "Which violates 1NF?",
+    "options": [
+      "One phone number",
+      "Multiple phone numbers in one field",
+      "One roll number",
+      "One CNIC"
+    ],
+    "answerIndex": 1,
+    "explanation": "Storing multiple comma-separated values in a single cell violates atomic value rules of 1NF."
+  },
+  {
+    "id": 176,
+    "category": "Normalization",
+    "question": "Atomicity in 1NF means:",
+    "options": [
+      "Fast transactions",
+      "Indivisible attribute values",
+      "Composite keys",
+      "Data encryption"
+    ],
+    "answerIndex": 1,
+    "explanation": "Atomicity means attribute values are single, indivisible fields."
+  },
+  {
+    "id": 177,
+    "category": "Normalization",
+    "question": "A relation must first satisfy _____ before 2NF.",
+    "options": [
+      "BCNF",
+      "1NF",
+      "3NF",
+      "4NF"
+    ],
+    "answerIndex": 1,
+    "explanation": "A relation must satisfy 1NF before it can be evaluated for 2NF."
+  },
+  {
+    "id": 178,
+    "category": "Normalization",
+    "question": "2NF removes:",
+    "options": [
+      "Repeating groups",
+      "Partial Dependency",
+      "Transitive Dependency",
+      "Join Dependency"
+    ],
+    "answerIndex": 1,
+    "explanation": "2NF requires 1NF compliance and the total elimination of partial dependencies."
+  },
+  {
+    "id": 179,
+    "category": "Normalization",
+    "question": "2NF applies mainly when:",
+    "options": [
+      "Primary key is single",
+      "Composite primary key exists",
+      "Foreign key exists",
+      "No keys exist"
+    ],
+    "answerIndex": 1,
+    "explanation": "2NF is relevant when relations possess composite candidate keys."
+  },
+  {
+    "id": 180,
+    "category": "Normalization",
+    "question": "Which dependency remains in 2NF?",
+    "options": [
+      "Partial Dependency",
+      "Transitive Dependency",
+      "Multivalued Dependency",
+      "Join Dependency"
+    ],
+    "answerIndex": 1,
+    "explanation": "2NF removes partial dependencies but allows transitive dependencies to remain."
+  },
+  {
+    "id": 181,
+    "category": "Normalization",
+    "question": "A table in 3NF must already be in:",
+    "options": [
+      "1NF only",
+      "2NF",
+      "BCNF",
+      "None"
+    ],
+    "answerIndex": 1,
+    "explanation": "A table must satisfy 2NF requirements before achieving 3NF."
+  },
+  {
+    "id": 182,
+    "category": "Normalization",
+    "question": "3NF removes:",
+    "options": [
+      "Partial Dependency",
+      "Transitive Dependency",
+      "Candidate Keys",
+      "Foreign Keys"
+    ],
+    "answerIndex": 1,
+    "explanation": "3NF removes transitive dependencies where a non-key attribute determines another non-key attribute."
+  },
+  {
+    "id": 183,
+    "category": "Normalization",
+    "question": "In 3NF, every non-key attribute should depend on:",
+    "options": [
+      "Another non-key attribute",
+      "The key, the whole key, and nothing but the key",
+      "Foreign keys",
+      "Composite attributes"
+    ],
+    "answerIndex": 1,
+    "explanation": "In 3NF, non-key attributes depend directly on the primary key, the whole key, and nothing but the key."
+  },
+  {
+    "id": 184,
+    "category": "Normalization",
+    "question": "Which dependency is NOT allowed in 3NF?",
+    "options": [
+      "Full Functional Dependency",
+      "Transitive Dependency",
+      "Candidate Key Dependency",
+      "Primary Key Dependency"
+    ],
+    "answerIndex": 1,
+    "explanation": "Transitive functional dependencies are prohibited in 3NF."
+  },
+  {
+    "id": 185,
+    "category": "Normalization",
+    "question": "BCNF is a stronger version of:",
+    "options": [
+      "1NF",
+      "2NF",
+      "3NF",
+      "4NF"
+    ],
+    "answerIndex": 2,
+    "explanation": "Boyce-Codd Normal Form (BCNF) is a stricter, stronger variation of 3NF."
+  },
+  {
+    "id": 186,
+    "category": "Normalization",
+    "question": "BCNF requires:",
+    "options": [
+      "Every determinant must be a foreign key",
+      "Every determinant must be a candidate key",
+      "Every table must have two primary keys",
+      "Every attribute must be unique"
+    ],
+    "answerIndex": 1,
+    "explanation": "BCNF requires that for every functional dependency X \u2192 Y, X must be a candidate key (super key)."
+  },
+  {
+    "id": 187,
+    "category": "Normalization",
+    "question": "Which normal form is stricter?",
+    "options": [
+      "3NF",
+      "BCNF",
+      "2NF",
+      "1NF"
+    ],
+    "answerIndex": 1,
+    "explanation": "BCNF enforces stricter conditions than standard 3NF by handling overlapping candidate keys."
+  },
+  {
+    "id": 188,
+    "category": "Normalization",
+    "question": "BCNF eliminates anomalies caused by:",
+    "options": [
+      "Composite attributes",
+      "Non-candidate key determinants",
+      "Primary keys",
+      "Foreign keys"
+    ],
+    "answerIndex": 1,
+    "explanation": "BCNF removes anomalies resulting from functional dependencies where determinants are not candidate keys."
+  },
+  {
+    "id": 189,
+    "category": "Normalization",
+    "question": "A Prime Attribute is:",
+    "options": [
+      "Any foreign key",
+      "An attribute that is part of a candidate key",
+      "Any primary key",
+      "Any unique attribute"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Prime Attribute is an attribute that belongs to any candidate key of the relation."
+  },
+  {
+    "id": 190,
+    "category": "Normalization",
+    "question": "A Non-prime Attribute is:",
+    "options": [
+      "Part of candidate key",
+      "Not part of any candidate key",
+      "A foreign key",
+      "A primary key"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Non-prime Attribute does not belong to any candidate key."
+  },
+  {
+    "id": 191,
+    "category": "Normalization",
+    "question": "Candidate keys are identified during:",
+    "options": [
+      "Backup",
+      "Database Design",
+      "Query Execution",
+      "Recovery"
+    ],
+    "answerIndex": 1,
+    "explanation": "Candidate keys and functional dependencies are determined during conceptual/logical database design."
+  },
+  {
+    "id": 192,
+    "category": "Normalization",
+    "question": "Which normal form is mainly concerned with atomic values?",
+    "options": [
+      "1NF",
+      "2NF",
+      "3NF",
+      "BCNF"
+    ],
+    "answerIndex": 0,
+    "explanation": "1NF focuses on atomicity of attribute values."
+  },
+  {
+    "id": 193,
+    "category": "Normalization",
+    "question": "Which normal form specifically removes partial dependency?",
+    "options": [
+      "1NF",
+      "2NF",
+      "3NF",
+      "BCNF"
+    ],
+    "answerIndex": 1,
+    "explanation": "2NF specifically addresses and eliminates partial functional dependency."
+  },
+  {
+    "id": 194,
+    "category": "Normalization",
+    "question": "Which normal form specifically removes transitive dependency?",
+    "options": [
+      "1NF",
+      "2NF",
+      "3NF",
+      "BCNF"
+    ],
+    "answerIndex": 2,
+    "explanation": "3NF specifically addresses and eliminates transitive functional dependency."
+  },
+  {
+    "id": 195,
+    "category": "Normalization",
+    "question": "Which normal form requires every determinant to be a candidate key?",
+    "options": [
+      "2NF",
+      "3NF",
+      "BCNF",
+      "4NF"
+    ],
+    "answerIndex": 2,
+    "explanation": "BCNF strictly requires every functional determinant to be a super key/candidate key."
+  },
+  {
+    "id": 196,
+    "category": "Normalization",
+    "question": "Which normal form is generally sufficient for most practical database designs?",
+    "options": [
+      "1NF",
+      "2NF",
+      "3NF",
+      "5NF"
+    ],
+    "answerIndex": 2,
+    "explanation": "3NF (or BCNF) provides an optimal balance of redundancy elimination and performance for real-world applications."
+  },
+  {
+    "id": 197,
+    "category": "Normalization",
+    "question": "Which of the following best describes denormalization?",
+    "options": [
+      "Removing duplicate rows",
+      "Intentionally introducing redundancy to improve performance",
+      "Converting tables into views",
+      "Creating indexes"
+    ],
+    "answerIndex": 1,
+    "explanation": "Denormalization intentionally reintroduces controlled redundancy into normalized tables to speed up complex queries."
+  },
+  {
+    "id": 198,
+    "category": "Normalization",
+    "question": "Denormalization is mainly performed to:",
+    "options": [
+      "Improve normalization",
+      "Improve query performance",
+      "Remove foreign keys",
+      "Reduce storage"
+    ],
+    "answerIndex": 1,
+    "explanation": "Denormalization reduces costly JOIN operations to optimize read query execution speed."
+  },
+  {
+    "id": 199,
+    "category": "Normalization",
+    "question": "Which statement is TRUE?",
+    "options": [
+      "Every BCNF relation violates 3NF.",
+      "Every BCNF relation is also in 3NF.",
+      "Every 2NF relation is in BCNF.",
+      "Every 1NF relation is in 3NF."
+    ],
+    "answerIndex": 1,
+    "explanation": "BCNF is a stricter subset of 3NF; therefore, every relation in BCNF is automatically in 3NF."
+  },
+  {
+    "id": 200,
+    "category": "Normalization",
+    "question": "Which sequence of normalization forms is correct?",
+    "options": [
+      "BCNF \u2192 3NF \u2192 2NF \u2192 1NF",
+      "2NF \u2192 BCNF \u2192 1NF \u2192 3NF",
+      "1NF \u2192 2NF \u2192 3NF \u2192 BCNF",
+      "3NF \u2192 2NF \u2192 1NF \u2192 BCNF"
+    ],
+    "answerIndex": 2,
+    "explanation": "The standard progression of normal forms is 1NF \u2192 2NF \u2192 3NF \u2192 BCNF."
+  },
+  {
+    "id": 201,
+    "category": "SQL Commands",
+    "question": "SQL stands for:",
+    "options": [
+      "Structured Question Language",
+      "Structured Query Language",
+      "Standard Query Logic",
+      "System Query Language"
+    ],
+    "answerIndex": 1,
+    "explanation": "SQL stands for Structured Query Language."
+  },
+  {
+    "id": 202,
+    "category": "SQL Commands",
+    "question": "SQL is primarily used to:",
+    "options": [
+      "Design Networks",
+      "Compile Programs",
+      "Manage and Query Databases",
+      "Create Operating Systems"
+    ],
+    "answerIndex": 2,
+    "explanation": "SQL is the standard language for defining, querying, and managing relational databases."
+  },
+  {
+    "id": 203,
+    "category": "SQL Commands",
+    "question": "SQL is:",
+    "options": [
+      "A Programming Language",
+      "A Database Query Language",
+      "An Operating System",
+      "A Compiler"
+    ],
+    "answerIndex": 1,
+    "explanation": "SQL is a domain-specific database query and data manipulation language."
+  },
+  {
+    "id": 204,
+    "category": "SQL Commands",
+    "question": "Which organization originally standardized SQL?",
+    "options": [
+      "IEEE",
+      "Microsoft",
+      "ANSI",
+      "Oracle"
+    ],
+    "answerIndex": 2,
+    "explanation": "ANSI (American National Standards Institute) first standardized SQL in 1986."
+  },
+  {
+    "id": 205,
+    "category": "SQL Commands",
+    "question": "SQL is mainly used with:",
+    "options": [
+      "Hierarchical Databases",
+      "Network Databases",
+      "Relational Databases",
+      "Graph Databases"
+    ],
+    "answerIndex": 2,
+    "explanation": "SQL is used universally as the query interface for Relational Database Management Systems (RDBMS)."
+  },
+  {
+    "id": 206,
+    "category": "SQL Commands",
+    "question": "Which category contains CREATE, ALTER and DROP?",
+    "options": [
+      "DML",
+      "DCL",
+      "DDL",
+      "TCL"
+    ],
+    "answerIndex": 2,
+    "explanation": "Data Definition Language (DDL) includes commands that define database schema structure."
+  },
+  {
+    "id": 207,
+    "category": "SQL Commands",
+    "question": "DDL stands for:",
+    "options": [
+      "Data Design Language",
+      "Data Definition Language",
+      "Database Definition Logic",
+      "Data Development Language"
+    ],
+    "answerIndex": 1,
+    "explanation": "DDL stands for Data Definition Language."
+  },
+  {
+    "id": 208,
+    "category": "SQL Commands",
+    "question": "Which command creates a new table?",
+    "options": [
+      "INSERT",
+      "CREATE",
+      "UPDATE",
+      "SELECT"
+    ],
+    "answerIndex": 1,
+    "explanation": "The CREATE TABLE statement creates a new database table."
+  },
+  {
+    "id": 209,
+    "category": "SQL Commands",
+    "question": "Which command permanently removes a table?",
+    "options": [
+      "DELETE",
+      "DROP",
+      "REMOVE",
+      "CLEAR"
+    ],
+    "answerIndex": 1,
+    "explanation": "The DROP TABLE statement permanently deletes a table structure and all its data."
+  },
+  {
+    "id": 210,
+    "category": "SQL Commands",
+    "question": "ALTER command is used to:",
+    "options": [
+      "Delete Records",
+      "Modify Database Objects",
+      "Retrieve Records",
+      "Commit Transactions"
+    ],
+    "answerIndex": 1,
+    "explanation": "ALTER is a DDL command used to modify existing table structures or database objects."
+  },
+  {
+    "id": 211,
+    "category": "SQL Commands",
+    "question": "Which command removes all rows but keeps the table structure?",
+    "options": [
+      "DELETE",
+      "TRUNCATE",
+      "DROP",
+      "REMOVE"
+    ],
+    "answerIndex": 1,
+    "explanation": "TRUNCATE TABLE quickly removes all rows while keeping the table definition intact."
+  },
+  {
+    "id": 212,
+    "category": "SQL Commands",
+    "question": "TRUNCATE is classified as:",
+    "options": [
+      "DML",
+      "DCL",
+      "DDL",
+      "TCL"
+    ],
+    "answerIndex": 2,
+    "explanation": "TRUNCATE is classified as a DDL statement because it deallocates data pages and resets table metadata."
+  },
+  {
+    "id": 213,
+    "category": "SQL Commands",
+    "question": "DML stands for:",
+    "options": [
+      "Database Management Language",
+      "Data Manipulation Language",
+      "Data Modeling Language",
+      "Data Maintenance Language"
+    ],
+    "answerIndex": 1,
+    "explanation": "DML stands for Data Manipulation Language."
+  },
+  {
+    "id": 214,
+    "category": "SQL Commands",
+    "question": "Which command inserts new records?",
+    "options": [
+      "CREATE",
+      "INSERT",
+      "UPDATE",
+      "ALTER"
+    ],
+    "answerIndex": 1,
+    "explanation": "The INSERT INTO statement adds new data records to a table."
+  },
+  {
+    "id": 215,
+    "category": "SQL Commands",
+    "question": "UPDATE command is used to:",
+    "options": [
+      "Insert Records",
+      "Modify Existing Records",
+      "Delete Tables",
+      "Create Views"
+    ],
+    "answerIndex": 1,
+    "explanation": "The UPDATE statement modifies existing data values within table rows."
+  },
+  {
+    "id": 216,
+    "category": "SQL Commands",
+    "question": "DELETE command removes:",
+    "options": [
+      "Table Structure",
+      "Rows from a Table",
+      "Database",
+      "Indexes"
+    ],
+    "answerIndex": 1,
+    "explanation": "DELETE is a DML command that removes specified rows from a table based on a condition."
+  },
+  {
+    "id": 217,
+    "category": "SQL Commands",
+    "question": "Which command retrieves data?",
+    "options": [
+      "UPDATE",
+      "DELETE",
+      "SELECT",
+      "ALTER"
+    ],
+    "answerIndex": 2,
+    "explanation": "The SELECT statement retrieves data records matching query conditions."
+  },
+  {
+    "id": 218,
+    "category": "SQL Commands",
+    "question": "SELECT belongs to:",
+    "options": [
+      "DDL",
+      "DCL",
+      "DQL",
+      "TCL"
+    ],
+    "answerIndex": 2,
+    "explanation": "SELECT belongs to Data Query Language (DQL), a subset of DML."
+  },
+  {
+    "id": 219,
+    "category": "SQL Commands",
+    "question": "Which SQL category manipulates data?",
+    "options": [
+      "DDL",
+      "DML",
+      "DCL",
+      "TCL"
+    ],
+    "answerIndex": 1,
+    "explanation": "Data Manipulation Language (DML) statements (INSERT, UPDATE, DELETE) alter table data content."
+  },
+  {
+    "id": 220,
+    "category": "SQL Commands",
+    "question": "DCL stands for:",
+    "options": [
+      "Data Configuration Language",
+      "Data Control Language",
+      "Database Command Language",
+      "Data Connection Language"
+    ],
+    "answerIndex": 1,
+    "explanation": "DCL stands for Data Control Language."
+  },
+  {
+    "id": 221,
+    "category": "SQL Commands",
+    "question": "Which command grants user privileges?",
+    "options": [
+      "COMMIT",
+      "GRANT",
+      "UPDATE",
+      "CREATE"
+    ],
+    "answerIndex": 1,
+    "explanation": "GRANT is a DCL command used to assign security privileges and access permissions."
+  },
+  {
+    "id": 222,
+    "category": "SQL Commands",
+    "question": "Which command removes user privileges?",
+    "options": [
+      "DROP",
+      "DELETE",
+      "REVOKE",
+      "REMOVE"
+    ],
+    "answerIndex": 2,
+    "explanation": "REVOKE is a DCL command used to take back assigned permissions from users."
+  },
+  {
+    "id": 223,
+    "category": "SQL Commands",
+    "question": "GRANT and REVOKE belong to:",
+    "options": [
+      "DML",
+      "DDL",
+      "DCL",
+      "TCL"
+    ],
+    "answerIndex": 2,
+    "explanation": "GRANT and REVOKE are the principal DCL commands."
+  },
+  {
+    "id": 224,
+    "category": "SQL Commands",
+    "question": "TCL stands for:",
+    "options": [
+      "Table Control Language",
+      "Transaction Control Language",
+      "Transaction Command Logic",
+      "Table Command Language"
+    ],
+    "answerIndex": 1,
+    "explanation": "TCL stands for Transaction Control Language."
+  },
+  {
+    "id": 225,
+    "category": "SQL Commands",
+    "question": "Which command permanently saves a transaction?",
+    "options": [
+      "ROLLBACK",
+      "COMMIT",
+      "SAVEPOINT",
+      "INSERT"
+    ],
+    "answerIndex": 1,
+    "explanation": "COMMIT permanently saves all modifications made during the current transaction."
+  },
+  {
+    "id": 226,
+    "category": "SQL Commands",
+    "question": "Which command restores the database to the previous committed state?",
+    "options": [
+      "COMMIT",
+      "ROLLBACK",
+      "DELETE",
+      "DROP"
+    ],
+    "answerIndex": 1,
+    "explanation": "ROLLBACK cancels uncommitted changes and reverts data to the last committed checkpoint state."
+  },
+  {
+    "id": 227,
+    "category": "SQL Commands",
+    "question": "SAVEPOINT is used to:",
+    "options": [
+      "Delete Tables",
+      "Create Intermediate Transaction Points",
+      "Create Indexes",
+      "Update Records"
+    ],
+    "answerIndex": 1,
+    "explanation": "SAVEPOINT sets an intermediate marker within a transaction to allow partial rollback."
+  },
+  {
+    "id": 228,
+    "category": "SQL Commands",
+    "question": "COMMIT belongs to:",
+    "options": [
+      "DDL",
+      "DML",
+      "DCL",
+      "TCL"
+    ],
+    "answerIndex": 3,
+    "explanation": "COMMIT is a Transaction Control Language (TCL) command."
+  },
+  {
+    "id": 229,
+    "category": "SQL Clauses & Functions",
+    "question": "Which clause filters rows based on a condition?",
+    "options": [
+      "FROM",
+      "SELECT",
+      "WHERE",
+      "GROUP BY"
+    ],
+    "answerIndex": 2,
+    "explanation": "The WHERE clause filters individual rows before grouping or aggregation."
+  },
+  {
+    "id": 230,
+    "category": "SQL Clauses & Functions",
+    "question": "WHERE clause is used with:",
+    "options": [
+      "Conditions",
+      "Conditional Filtering",
+      "Table Creation",
+      "Transactions"
+    ],
+    "answerIndex": 1,
+    "explanation": "WHERE provides row-level conditional filtering in SELECT, UPDATE, and DELETE queries."
+  },
+  {
+    "id": 231,
+    "category": "SQL Clauses & Functions",
+    "question": "Which clause is evaluated before GROUP BY?",
+    "options": [
+      "ORDER BY",
+      "WHERE",
+      "HAVING",
+      "LIMIT"
+    ],
+    "answerIndex": 1,
+    "explanation": "In SQL query execution order, WHERE is evaluated before GROUP BY."
+  },
+  {
+    "id": 232,
+    "category": "SQL Clauses & Functions",
+    "question": "ORDER BY is used to:",
+    "options": [
+      "Delete Rows",
+      "Sort Query Results",
+      "Create Tables",
+      "Join Tables"
+    ],
+    "answerIndex": 1,
+    "explanation": "The ORDER BY clause sorts the result set rows in ascending or descending order."
+  },
+  {
+    "id": 233,
+    "category": "SQL Clauses & Functions",
+    "question": "Default sorting order of ORDER BY is:",
+    "options": [
+      "Ascending",
+      "Descending",
+      "Random",
+      "Alphabetical Only"
+    ],
+    "answerIndex": 0,
+    "explanation": "ORDER BY defaults to Ascending (ASC) order if unspecified."
+  },
+  {
+    "id": 234,
+    "category": "SQL Clauses & Functions",
+    "question": "Which keyword sorts in descending order?",
+    "options": [
+      "ASC",
+      "DESC",
+      "DOWN",
+      "REVERSE"
+    ],
+    "answerIndex": 1,
+    "explanation": "The DESC keyword specifies descending sorting order in ORDER BY."
+  },
+  {
+    "id": 235,
+    "category": "SQL Clauses & Functions",
+    "question": "GROUP BY is mainly used with:",
+    "options": [
+      "INSERT",
+      "Aggregate Functions",
+      "CREATE TABLE",
+      "DELETE"
+    ],
+    "answerIndex": 1,
+    "explanation": "GROUP BY arranges identical data into summary groups, commonly paired with Aggregate Functions."
+  },
+  {
+    "id": 236,
+    "category": "SQL Clauses & Functions",
+    "question": "HAVING clause filters:",
+    "options": [
+      "Individual Rows",
+      "Groups",
+      "Tables",
+      "Columns"
+    ],
+    "answerIndex": 1,
+    "explanation": "HAVING filters aggregated groups created by GROUP BY, operating on summary values."
+  },
+  {
+    "id": 237,
+    "category": "SQL Clauses & Functions",
+    "question": "Which clause is used after GROUP BY?",
+    "options": [
+      "WHERE",
+      "HAVING",
+      "ORDER",
+      "JOIN"
+    ],
+    "answerIndex": 1,
+    "explanation": "HAVING is evaluated after GROUP BY to filter grouped results."
+  },
+  {
+    "id": 238,
+    "category": "SQL Clauses & Functions",
+    "question": "Which clause cannot use aggregate functions directly?",
+    "options": [
+      "WHERE",
+      "HAVING",
+      "GROUP BY",
+      "ORDER BY"
+    ],
+    "answerIndex": 0,
+    "explanation": "WHERE filters rows before aggregation occurs and cannot directly evaluate aggregate functions like COUNT() or SUM()."
+  },
+  {
+    "id": 239,
+    "category": "SQL Clauses & Functions",
+    "question": "Which is an aggregate function?",
+    "options": [
+      "LENGTH()",
+      "COUNT()",
+      "UPPER()",
+      "ROUND()"
+    ],
+    "answerIndex": 1,
+    "explanation": "COUNT() is a standard SQL aggregate function operating on a set of rows."
+  },
+  {
+    "id": 240,
+    "category": "SQL Clauses & Functions",
+    "question": "COUNT(*) returns:",
+    "options": [
+      "Number of Columns",
+      "Number of Rows",
+      "Number of Tables",
+      "Number of Databases"
+    ],
+    "answerIndex": 1,
+    "explanation": "COUNT(*) returns the total number of rows matching the query, including NULL values."
+  },
+  {
+    "id": 241,
+    "category": "SQL Clauses & Functions",
+    "question": "Which function returns the highest value?",
+    "options": [
+      "MIN()",
+      "AVG()",
+      "MAX()",
+      "COUNT()"
+    ],
+    "answerIndex": 2,
+    "explanation": "MAX() calculates and returns the maximum value in a column."
+  },
+  {
+    "id": 242,
+    "category": "SQL Clauses & Functions",
+    "question": "Which function returns the lowest value?",
+    "options": [
+      "MIN()",
+      "MAX()",
+      "SUM()",
+      "AVG()"
+    ],
+    "answerIndex": 0,
+    "explanation": "MIN() returns the minimum scalar value in a column."
+  },
+  {
+    "id": 243,
+    "category": "SQL Clauses & Functions",
+    "question": "Which function calculates average?",
+    "options": [
+      "COUNT()",
+      "AVG()",
+      "MAX()",
+      "SUM()"
+    ],
+    "answerIndex": 1,
+    "explanation": "AVG() calculates the mathematical average of numeric column values."
+  },
+  {
+    "id": 244,
+    "category": "SQL Clauses & Functions",
+    "question": "SUM() calculates:",
+    "options": [
+      "Average",
+      "Largest Value",
+      "Total of Numeric Values",
+      "Number of Rows"
+    ],
+    "answerIndex": 2,
+    "explanation": "SUM() computes the cumulative arithmetic sum of numeric values."
+  },
+  {
+    "id": 245,
+    "category": "SQL Clauses & Functions",
+    "question": "Which aggregate function ignores NULL values?",
+    "options": [
+      "COUNT(column)",
+      "SUM()",
+      "AVG()",
+      "All of them"
+    ],
+    "answerIndex": 3,
+    "explanation": "All aggregate functions (SUM, AVG, MIN, MAX, COUNT(col)) ignore NULL values (except COUNT(*))."
+  },
+  {
+    "id": 246,
+    "category": "SQL Clauses & Functions",
+    "question": "Which operator searches for a range of values?",
+    "options": [
+      "LIKE",
+      "BETWEEN",
+      "IN",
+      "EXISTS"
+    ],
+    "answerIndex": 1,
+    "explanation": "BETWEEN tests whether a value falls within an inclusive range."
+  },
+  {
+    "id": 247,
+    "category": "SQL Clauses & Functions",
+    "question": "Which operator checks membership in a list?",
+    "options": [
+      "BETWEEN",
+      "IN",
+      "LIKE",
+      "ALL"
+    ],
+    "answerIndex": 1,
+    "explanation": "The IN operator checks if a value matches any entry in a discrete list or subquery result."
+  },
+  {
+    "id": 248,
+    "category": "SQL Clauses & Functions",
+    "question": "Which operator is mainly used with wildcard characters?",
+    "options": [
+      "LIKE",
+      "BETWEEN",
+      "EXISTS",
+      "UNION"
+    ],
+    "answerIndex": 0,
+    "explanation": "LIKE performs pattern matching using wildcard characters (% and _)."
+  },
+  {
+    "id": 249,
+    "category": "SQL Clauses & Functions",
+    "question": "Which wildcard represents any number of characters in SQL?",
+    "options": [
+      "_",
+      "%",
+      "*",
+      "#"
+    ],
+    "answerIndex": 1,
+    "explanation": "The percent sign (%) wildcard matches zero, one, or multiple arbitrary characters."
+  },
+  {
+    "id": 250,
+    "category": "SQL Clauses & Functions",
+    "question": "Which wildcard represents exactly one character?",
+    "options": [
+      "%",
+      "_",
+      "*",
+      "?"
+    ],
+    "answerIndex": 1,
+    "explanation": "The underscore (_) wildcard matches exactly one single character."
+  },
+  {
+    "id": 251,
+    "category": "Joins & SQL Objects",
+    "question": "A JOIN operation is used to:",
+    "options": [
+      "Delete records",
+      "Create tables",
+      "Retrieve related data from two or more tables",
+      "Create indexes"
+    ],
+    "answerIndex": 2,
+    "explanation": "A JOIN query combines rows from two or more tables based on related key columns."
+  },
+  {
+    "id": 252,
+    "category": "Joins & SQL Objects",
+    "question": "Which join returns only matching rows from both tables?",
+    "options": [
+      "LEFT JOIN",
+      "RIGHT JOIN",
+      "INNER JOIN",
+      "FULL OUTER JOIN"
+    ],
+    "answerIndex": 2,
+    "explanation": "INNER JOIN returns only rows where matching values exist in both joined tables."
+  },
+  {
+    "id": 253,
+    "category": "Joins & SQL Objects",
+    "question": "Which join is also known as Equi Join?",
+    "options": [
+      "LEFT JOIN",
+      "INNER JOIN (using equality condition)",
+      "CROSS JOIN",
+      "SELF JOIN"
+    ],
+    "answerIndex": 1,
+    "explanation": "An INNER JOIN performed using an equality operator (=) is known as an Equi Join."
+  },
+  {
+    "id": 254,
+    "category": "Joins & SQL Objects",
+    "question": "Which join returns all rows from the left table and matching rows from the right table?",
+    "options": [
+      "LEFT OUTER JOIN",
+      "RIGHT OUTER JOIN",
+      "INNER JOIN",
+      "CROSS JOIN"
+    ],
+    "answerIndex": 0,
+    "explanation": "LEFT OUTER JOIN returns all records from left table, plus matched values from right table."
+  },
+  {
+    "id": 255,
+    "category": "Joins & SQL Objects",
+    "question": "Which join returns all rows from the right table and matching rows from the left table?",
+    "options": [
+      "LEFT JOIN",
+      "RIGHT OUTER JOIN",
+      "INNER JOIN",
+      "CROSS JOIN"
+    ],
+    "answerIndex": 1,
+    "explanation": "RIGHT OUTER JOIN returns all records from right table, plus matching records from left table."
+  },
+  {
+    "id": 256,
+    "category": "Joins & SQL Objects",
+    "question": "Which join returns all rows from both tables?",
+    "options": [
+      "INNER JOIN",
+      "LEFT JOIN",
+      "RIGHT JOIN",
+      "FULL OUTER JOIN"
+    ],
+    "answerIndex": 3,
+    "explanation": "FULL OUTER JOIN returns all rows when there is a match in left OR right table."
+  },
+  {
+    "id": 257,
+    "category": "Joins & SQL Objects",
+    "question": "Which join returns the Cartesian Product?",
+    "options": [
+      "INNER JOIN",
+      "NATURAL JOIN",
+      "CROSS JOIN",
+      "SELF JOIN"
+    ],
+    "answerIndex": 2,
+    "explanation": "CROSS JOIN pairs every row of the first table with every row of the second, returning their Cartesian Product."
+  },
+  {
+    "id": 258,
+    "category": "Joins & SQL Objects",
+    "question": "Cartesian Product means:",
+    "options": [
+      "Matching rows only",
+      "Every row of one table combined with every row of another table",
+      "Duplicate rows only",
+      "Sorted rows"
+    ],
+    "answerIndex": 1,
+    "explanation": "Cartesian product combines each row of table A with all rows of table B (M \u00d7 N rows)."
+  },
+  {
+    "id": 259,
+    "category": "Joins & SQL Objects",
+    "question": "Which join joins a table with itself?",
+    "options": [
+      "INNER JOIN",
+      "CROSS JOIN",
+      "SELF JOIN",
+      "OUTER JOIN"
+    ],
+    "answerIndex": 2,
+    "explanation": "A SELF JOIN is a regular join in which a table is joined with itself using table aliases."
+  },
+  {
+    "id": 260,
+    "category": "Joins & SQL Objects",
+    "question": "SELF JOIN is useful for:",
+    "options": [
+      "Joining unrelated tables",
+      "Comparing rows within the same table",
+      "Creating indexes",
+      "Creating views"
+    ],
+    "answerIndex": 1,
+    "explanation": "SELF JOIN compares rows within the same table (e.g., matching employees to managers)."
+  },
+  {
+    "id": 261,
+    "category": "Joins & SQL Objects",
+    "question": "NATURAL JOIN automatically joins tables based on:",
+    "options": [
+      "Primary Keys only",
+      "Columns having the same name and compatible data types",
+      "Foreign Keys only",
+      "Indexes"
+    ],
+    "answerIndex": 1,
+    "explanation": "NATURAL JOIN joins tables automatically using all columns sharing identical names and data types."
+  },
+  {
+    "id": 262,
+    "category": "Joins & SQL Objects",
+    "question": "Which join usually returns the smallest result set?",
+    "options": [
+      "CROSS JOIN",
+      "FULL OUTER JOIN",
+      "INNER JOIN",
+      "LEFT JOIN"
+    ],
+    "answerIndex": 2,
+    "explanation": "INNER JOIN filters out non-matching rows, usually producing the smallest result set."
+  },
+  {
+    "id": 263,
+    "category": "Views & Indexes",
+    "question": "A View is:",
+    "options": [
+      "Physical table",
+      "Virtual table based on a query",
+      "Index",
+      "Stored Procedure"
+    ],
+    "answerIndex": 1,
+    "explanation": "A View is a virtual database table defined by an underlying SELECT query statement."
+  },
+  {
+    "id": 264,
+    "category": "Views & Indexes",
+    "question": "A view stores:",
+    "options": [
+      "Actual data",
+      "SQL query definition",
+      "Index entries",
+      "Transaction logs"
+    ],
+    "answerIndex": 1,
+    "explanation": "A standard View does not store physical data; it stores the SQL query definition in the data dictionary."
+  },
+  {
+    "id": 265,
+    "category": "Views & Indexes",
+    "question": "Which SQL command creates a view?",
+    "options": [
+      "CREATE TABLE",
+      "CREATE VIEW",
+      "CREATE INDEX",
+      "CREATE DATABASE"
+    ],
+    "answerIndex": 1,
+    "explanation": "The CREATE VIEW statement creates a new virtual view."
+  },
+  {
+    "id": 266,
+    "category": "Views & Indexes",
+    "question": "The main advantage of a view is:",
+    "options": [
+      "More redundancy",
+      "Data security and simplified queries",
+      "Increased storage",
+      "Faster INSERT operations"
+    ],
+    "answerIndex": 1,
+    "explanation": "Views simplify complex query logic and enhance security by restricting column/row visibility."
+  },
+  {
+    "id": 267,
+    "category": "Views & Indexes",
+    "question": "A view always contains:",
+    "options": [
+      "Independent data",
+      "Data derived from one or more tables",
+      "Backup files",
+      "Transaction logs"
+    ],
+    "answerIndex": 1,
+    "explanation": "A View dynamically displays data derived from underlying base tables."
+  },
+  {
+    "id": 268,
+    "category": "Views & Indexes",
+    "question": "Which statement about views is TRUE?",
+    "options": [
+      "Every view stores data permanently.",
+      "A view is generally a virtual table.",
+      "A view cannot use joins.",
+      "A view cannot contain WHERE clauses."
+    ],
+    "answerIndex": 1,
+    "explanation": "Standard views are virtual windows dynamically computed from base queries."
+  },
+  {
+    "id": 269,
+    "category": "Views & Indexes",
+    "question": "Which SQL statement removes a view?",
+    "options": [
+      "DELETE VIEW",
+      "DROP VIEW",
+      "REMOVE VIEW",
+      "CLEAR VIEW"
+    ],
+    "answerIndex": 1,
+    "explanation": "DROP VIEW removes a view definition from the data dictionary."
+  },
+  {
+    "id": 270,
+    "category": "Views & Indexes",
+    "question": "The primary purpose of an index is to:",
+    "options": [
+      "Increase redundancy",
+      "Speed up data retrieval",
+      "Reduce table size",
+      "Backup data"
+    ],
+    "answerIndex": 1,
+    "explanation": "Indexes speed up data retrieval operations by providing fast lookup access paths."
+  },
+  {
+    "id": 271,
+    "category": "Views & Indexes",
+    "question": "Which SQL command creates an index?",
+    "options": [
+      "CREATE VIEW",
+      "ALTER TABLE",
+      "CREATE INDEX",
+      "CREATE USER"
+    ],
+    "answerIndex": 2,
+    "explanation": "The CREATE INDEX statement creates an access index on specified columns."
+  },
+  {
+    "id": 272,
+    "category": "Views & Indexes",
+    "question": "CREATE INDEX belongs to:",
+    "options": [
+      "DML",
+      "DCL",
+      "DDL",
+      "TCL"
+    ],
+    "answerIndex": 2,
+    "explanation": "CREATE INDEX is a DDL command modifying database structural objects."
+  },
+  {
+    "id": 273,
+    "category": "Views & Indexes",
+    "question": "Which database object improves query performance?",
+    "options": [
+      "Trigger",
+      "Index",
+      "View",
+      "Transaction"
+    ],
+    "answerIndex": 1,
+    "explanation": "Indexes significantly improve query search and retrieval performance."
+  },
+  {
+    "id": 274,
+    "category": "Views & Indexes",
+    "question": "An index is especially useful for:",
+    "options": [
+      "Frequently searched columns",
+      "Primary key lookups",
+      "Foreign key searches",
+      "All of them"
+    ],
+    "answerIndex": 3,
+    "explanation": "Indexes optimize lookups on primary keys, foreign key joins, and frequently searched filter columns."
+  },
+  {
+    "id": 275,
+    "category": "Views & Indexes",
+    "question": "Which index determines the physical order of rows?",
+    "options": [
+      "Secondary Index",
+      "Clustered Index",
+      "Bitmap Index",
+      "Hash Index"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Clustered Index sorts and determines the physical storage order of rows in a table."
+  },
+  {
+    "id": 276,
+    "category": "Views & Indexes",
+    "question": "A non-clustered index:",
+    "options": [
+      "Changes physical row order",
+      "Maintains a separate structure pointing to rows",
+      "Removes duplicates",
+      "Stores backup data"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Non-Clustered Index maintains a separate B-tree structure containing pointers to physical data rows."
+  },
+  {
+    "id": 277,
+    "category": "Views & Indexes",
+    "question": "How many clustered indexes can a table typically have?",
+    "options": [
+      "One",
+      "Two",
+      "Unlimited",
+      "Depends on DBMS version"
+    ],
+    "answerIndex": 0,
+    "explanation": "A table can have only ONE Clustered Index because data rows can be physically ordered only once."
+  },
+  {
+    "id": 278,
+    "category": "Views & Indexes",
+    "question": "Which statement is TRUE?",
+    "options": [
+      "More indexes always improve performance.",
+      "Too many indexes can slow INSERT, UPDATE, and DELETE operations.",
+      "Indexes only improve DELETE.",
+      "Indexes reduce storage requirements."
+    ],
+    "answerIndex": 1,
+    "explanation": "Excessive indexes slow down write operations (INSERT, UPDATE, DELETE) because indexes must be updated on write."
+  },
+  {
+    "id": 279,
+    "category": "Schema & Metadata",
+    "question": "Database schema defines:",
+    "options": [
+      "Current records",
+      "Logical structure of the database",
+      "User passwords",
+      "Backup strategy"
+    ],
+    "answerIndex": 1,
+    "explanation": "Database schema defines the overall logical blueprint and table organization of a database."
+  },
+  {
+    "id": 280,
+    "category": "Schema & Metadata",
+    "question": "Schema contains:",
+    "options": [
+      "Data values only",
+      "Tables, relationships, constraints, and other objects",
+      "Transaction logs",
+      "Index pages only"
+    ],
+    "answerIndex": 1,
+    "explanation": "A schema contains metadata definitions for tables, views, fields, constraints, and keys."
+  },
+  {
+    "id": 281,
+    "category": "Schema & Metadata",
+    "question": "Which changes more frequently?",
+    "options": [
+      "Schema",
+      "Database Instance",
+      "Data Dictionary",
+      "Constraints"
+    ],
+    "answerIndex": 1,
+    "explanation": "The database instance changes dynamically whenever data is updated."
+  },
+  {
+    "id": 282,
+    "category": "Schema & Metadata",
+    "question": "A schema is created during:",
+    "options": [
+      "Backup",
+      "Database Design",
+      "Recovery",
+      "Query Execution"
+    ],
+    "answerIndex": 1,
+    "explanation": "A schema is created during the database design and initial system setup phase."
+  },
+  {
+    "id": 283,
+    "category": "Schema & Metadata",
+    "question": "Database instance represents:",
+    "options": [
+      "Database design",
+      "Current state of the database",
+      "SQL syntax",
+      "ER diagram"
+    ],
+    "answerIndex": 1,
+    "explanation": "An instance represents the actual data state stored in the database at any given snapshot in time."
+  },
+  {
+    "id": 284,
+    "category": "Schema & Metadata",
+    "question": "Which statement is TRUE?",
+    "options": [
+      "Schema changes frequently.",
+      "Instance changes whenever data changes.",
+      "Schema and instance are identical.",
+      "Instance stores SQL commands."
+    ],
+    "answerIndex": 1,
+    "explanation": "The database instance mutates dynamically whenever data modifications occur."
+  },
+  {
+    "id": 285,
+    "category": "Schema & Metadata",
+    "question": "Data Dictionary stores:",
+    "options": [
+      "User records only",
+      "Metadata about database objects",
+      "Backup files",
+      "Transaction history"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Data Dictionary stores system metadata describing tables, columns, indexes, and constraints."
+  },
+  {
+    "id": 286,
+    "category": "Schema & Metadata",
+    "question": "Metadata means:",
+    "options": [
+      "User data",
+      "Data about data",
+      "Temporary data",
+      "Duplicate data"
+    ],
+    "answerIndex": 1,
+    "explanation": "Metadata is defined as structural data that describes other data."
+  },
+  {
+    "id": 287,
+    "category": "Schema & Metadata",
+    "question": "Which of the following is stored in a Data Dictionary?",
+    "options": [
+      "Table names",
+      "Column names",
+      "Data types",
+      "All of them"
+    ],
+    "answerIndex": 3,
+    "explanation": "Data Dictionaries hold definitions for table names, column data types, security roles, and constraints."
+  },
+  {
+    "id": 288,
+    "category": "Schema & Metadata",
+    "question": "The Data Dictionary is maintained mainly by:",
+    "options": [
+      "End Users",
+      "DBMS",
+      "Compiler",
+      "Operating System"
+    ],
+    "answerIndex": 1,
+    "explanation": "The DBMS automatically maintains and updates system Data Dictionary tables."
+  },
+  {
+    "id": 289,
+    "category": "Triggers & Procedures",
+    "question": "Which database object automatically executes when a specified event occurs?",
+    "options": [
+      "View",
+      "Index",
+      "Trigger",
+      "Cursor"
+    ],
+    "answerIndex": 2,
+    "explanation": "A Trigger is a procedural code block that automatically executes in response to database events (INSERT, UPDATE, DELETE)."
+  },
+  {
+    "id": 290,
+    "category": "Triggers & Procedures",
+    "question": "Trigger is executed:",
+    "options": [
+      "Manually only",
+      "Automatically",
+      "Weekly",
+      "After backup"
+    ],
+    "answerIndex": 1,
+    "explanation": "Triggers fire automatically when associated DML/DDL events occur."
+  },
+  {
+    "id": 291,
+    "category": "Triggers & Procedures",
+    "question": "Which event can activate a trigger?",
+    "options": [
+      "INSERT",
+      "UPDATE",
+      "DELETE",
+      "All of them"
+    ],
+    "answerIndex": 3,
+    "explanation": "Triggers can be attached to INSERT, UPDATE, or DELETE events."
+  },
+  {
+    "id": 292,
+    "category": "Triggers & Procedures",
+    "question": "A stored procedure is:",
+    "options": [
+      "A table",
+      "A stored collection of SQL statements",
+      "An index",
+      "A view"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Stored Procedure is a compiled group of reusable SQL statements stored on the server."
+  },
+  {
+    "id": 293,
+    "category": "Triggers & Procedures",
+    "question": "Which object helps reuse SQL logic?",
+    "options": [
+      "View",
+      "Index",
+      "Stored Procedure",
+      "Constraint"
+    ],
+    "answerIndex": 2,
+    "explanation": "Stored procedures encapsulate business logic for modular execution and code reuse."
+  },
+  {
+    "id": 294,
+    "category": "Triggers & Procedures",
+    "question": "Which database object is mainly used for security and simplifying complex queries?",
+    "options": [
+      "Trigger",
+      "View",
+      "Cursor",
+      "Sequence"
+    ],
+    "answerIndex": 1,
+    "explanation": "Views simplify complex query syntax and enforce data access security control."
+  },
+  {
+    "id": 295,
+    "category": "Query Processing",
+    "question": "Query optimization aims to:",
+    "options": [
+      "Increase redundancy",
+      "Execute queries efficiently",
+      "Increase transaction time",
+      "Create indexes automatically"
+    ],
+    "answerIndex": 1,
+    "explanation": "Query Optimization selects the most cost-effective execution plan to process a SQL query efficiently."
+  },
+  {
+    "id": 296,
+    "category": "Query Processing",
+    "question": "Which component selects the most efficient execution plan?",
+    "options": [
+      "Parser",
+      "Compiler",
+      "Query Optimizer",
+      "Scheduler"
+    ],
+    "answerIndex": 2,
+    "explanation": "The Query Optimizer evaluates execution strategies and selects the optimal query plan."
+  },
+  {
+    "id": 297,
+    "category": "Query Processing",
+    "question": "Which factor most improves query speed?",
+    "options": [
+      "Large tables",
+      "Proper indexing",
+      "Duplicate records",
+      "More NULL values"
+    ],
+    "answerIndex": 1,
+    "explanation": "Proper indexing provides fast lookup paths, drastically accelerating query execution speed."
+  },
+  {
+    "id": 298,
+    "category": "Miscellaneous SQL",
+    "question": "Which object occupies the least additional storage?",
+    "options": [
+      "Table",
+      "View",
+      "Index",
+      "Materialized View"
+    ],
+    "answerIndex": 1,
+    "explanation": "A standard View stores only its SQL text definition, consuming virtually zero additional data storage."
+  },
+  {
+    "id": 299,
+    "category": "Miscellaneous SQL",
+    "question": "Materialized View differs from a normal view because it:",
+    "options": [
+      "Cannot be queried",
+      "Physically stores query results",
+      "Has no SQL definition",
+      "Cannot use joins"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Materialized View physically saves and persists query results on disk for rapid retrieval."
+  },
+  {
+    "id": 300,
+    "category": "Miscellaneous SQL",
+    "question": "Which database object is best suited for frequently executed complex queries without recalculating results every time?",
+    "options": [
+      "Trigger",
+      "Standard View",
+      "Materialized View",
+      "Foreign Key"
+    ],
+    "answerIndex": 2,
+    "explanation": "Materialized Views store precomputed query results on disk, avoiding repeated recalculations."
+  },
+  {
+    "id": 301,
+    "category": "Transactions",
+    "question": "A database transaction is:",
+    "options": [
+      "A SQL keyword",
+      "A logical unit of work",
+      "A database table",
+      "A backup file"
+    ],
+    "answerIndex": 1,
+    "explanation": "A transaction is a logical unit of database processing that executes as an all-or-nothing unit."
+  },
+  {
+    "id": 302,
+    "category": "Transactions",
+    "question": "A transaction normally consists of:",
+    "options": [
+      "One statement only",
+      "One or more SQL statements executed as a single unit",
+      "One table",
+      "One index"
+    ],
+    "answerIndex": 1,
+    "explanation": "A transaction combines one or multiple SQL operations executed atomically as a single operational unit."
+  },
+  {
+    "id": 303,
+    "category": "Transactions",
+    "question": "Which of the following is an example of a transaction?",
+    "options": [
+      "Creating a database",
+      "Transferring money from one bank account to another",
+      "Installing MySQL",
+      "Designing an ER diagram"
+    ],
+    "answerIndex": 1,
+    "explanation": "Bank account fund transfer is a classic transaction requiring debit and credit operations to complete together."
+  },
+  {
+    "id": 304,
+    "category": "Transactions",
+    "question": "A transaction ends successfully with:",
+    "options": [
+      "DELETE",
+      "COMMIT",
+      "SELECT",
+      "DROP"
+    ],
+    "answerIndex": 1,
+    "explanation": "A transaction ends successfully when a COMMIT command persists all modifications."
+  },
+  {
+    "id": 305,
+    "category": "Transactions",
+    "question": "Which command cancels uncommitted changes?",
+    "options": [
+      "SAVEPOINT",
+      "ROLLBACK",
+      "COMMIT",
+      "UPDATE"
+    ],
+    "answerIndex": 1,
+    "explanation": "ROLLBACK aborts an active transaction and reverts uncommitted changes."
+  },
+  {
+    "id": 306,
+    "category": "Transactions",
+    "question": "SAVEPOINT is used to:",
+    "options": [
+      "Permanently save data",
+      "Mark an intermediate point within a transaction",
+      "Delete records",
+      "Create indexes"
+    ],
+    "answerIndex": 1,
+    "explanation": "SAVEPOINT establishes intermediate checkpoints within a transaction for partial rollbacks."
+  },
+  {
+    "id": 307,
+    "category": "Transactions",
+    "question": "Which command makes transaction changes permanent?",
+    "options": [
+      "ROLLBACK",
+      "COMMIT",
+      "DELETE",
+      "ALTER"
+    ],
+    "answerIndex": 1,
+    "explanation": "COMMIT permanently writes all transaction updates to persistent storage."
+  },
+  {
+    "id": 308,
+    "category": "Transactions",
+    "question": "If a transaction fails before COMMIT, the DBMS should:",
+    "options": [
+      "Keep partial changes",
+      "Undo all changes",
+      "Delete the database",
+      "Restart the operating system"
+    ],
+    "answerIndex": 1,
+    "explanation": "By the Atomicity principle, if a transaction fails before commit, the DBMS must undo (rollback) all partial updates."
+  },
+  {
+    "id": 309,
+    "category": "ACID Properties",
+    "question": "ACID stands for:",
+    "options": [
+      "Accuracy, Consistency, Isolation, Durability",
+      "Atomicity, Consistency, Isolation, Durability",
+      "Atomicity, Concurrency, Integrity, Durability",
+      "Access, Consistency, Isolation, Data"
+    ],
+    "answerIndex": 1,
+    "explanation": "ACID stands for Atomicity, Consistency, Isolation, and Durability."
+  },
+  {
+    "id": 310,
+    "category": "ACID Properties",
+    "question": "Which ACID property ensures that a transaction is completed entirely or not at all?",
+    "options": [
+      "Atomicity",
+      "Consistency",
+      "Isolation",
+      "Durability"
+    ],
+    "answerIndex": 0,
+    "explanation": "Atomicity guarantees an 'all-or-nothing' execution rule for transaction operations."
+  },
+  {
+    "id": 311,
+    "category": "ACID Properties",
+    "question": "The \"C\" in ACID stands for:",
+    "options": [
+      "Concurrency",
+      "Consistency",
+      "Control",
+      "Cardinality"
+    ],
+    "answerIndex": 1,
+    "explanation": "The 'C' in ACID stands for Consistency."
+  },
+  {
+    "id": 312,
+    "category": "ACID Properties",
+    "question": "Consistency ensures that:",
+    "options": [
+      "Multiple users can access simultaneously",
+      "The database moves from one valid state to another",
+      "Transactions execute faster",
+      "Data is compressed"
+    ],
+    "answerIndex": 1,
+    "explanation": "Consistency guarantees that a transaction moves the database from one valid integrity state to another."
+  },
+  {
+    "id": 313,
+    "category": "ACID Properties",
+    "question": "Which ACID property prevents one transaction from interfering with another?",
+    "options": [
+      "Atomicity",
+      "Consistency",
+      "Isolation",
+      "Durability"
+    ],
+    "answerIndex": 2,
+    "explanation": "Isolation ensures concurrent transactions execute independently without interfering with each other."
+  },
+  {
+    "id": 314,
+    "category": "ACID Properties",
+    "question": "Durability guarantees that:",
+    "options": [
+      "Data remains encrypted",
+      "Committed data survives system failures",
+      "Queries execute faster",
+      "Data is indexed"
+    ],
+    "answerIndex": 1,
+    "explanation": "Durability ensures that once a transaction commits, its modifications persist permanently even during power outages or system crashes."
+  },
+  {
+    "id": 315,
+    "category": "ACID Properties",
+    "question": "Which ACID property is most closely associated with COMMIT?",
+    "options": [
+      "Isolation",
+      "Atomicity",
+      "Durability",
+      "Domain Integrity"
+    ],
+    "answerIndex": 2,
+    "explanation": "COMMIT finalizes transaction updates, directly fulfilling the Durability property."
+  },
+  {
+    "id": 316,
+    "category": "ACID Properties",
+    "question": "Which ACID property ensures no partial updates occur?",
+    "options": [
+      "Atomicity",
+      "Consistency",
+      "Isolation",
+      "Durability"
+    ],
+    "answerIndex": 0,
+    "explanation": "Atomicity ensures partial updates are rolled back if execution fails midway."
+  },
+  {
+    "id": 317,
+    "category": "Transaction States",
+    "question": "Which is the first state of a transaction?",
+    "options": [
+      "Active",
+      "Committed",
+      "Failed",
+      "Aborted"
+    ],
+    "answerIndex": 0,
+    "explanation": "When a transaction begins execution, it enters the Active state."
+  },
+  {
+    "id": 318,
+    "category": "Transaction States",
+    "question": "After successful completion, a transaction enters:",
+    "options": [
+      "Failed",
+      "Committed",
+      "Aborted",
+      "Active"
+    ],
+    "answerIndex": 1,
+    "explanation": "Upon successful completion of all operations, a transaction transitions to Committed state."
+  },
+  {
+    "id": 319,
+    "category": "Transaction States",
+    "question": "If an error occurs during execution, the transaction enters:",
+    "options": [
+      "Committed",
+      "Failed",
+      "Active",
+      "Ready"
+    ],
+    "answerIndex": 1,
+    "explanation": "If a failure or system error occurs during active execution, the transaction enters Failed state."
+  },
+  {
+    "id": 320,
+    "category": "Transaction States",
+    "question": "After ROLLBACK, the transaction becomes:",
+    "options": [
+      "Active",
+      "Committed",
+      "Aborted",
+      "Running"
+    ],
+    "answerIndex": 2,
+    "explanation": "Once a failed transaction has rolled back its changes, it enters the Aborted state."
+  },
+  {
+    "id": 321,
+    "category": "Concurrency Control",
+    "question": "Concurrency Control is used to:",
+    "options": [
+      "Improve graphics",
+      "Manage simultaneous transaction execution",
+      "Compress databases",
+      "Create indexes"
+    ],
+    "answerIndex": 1,
+    "explanation": "Concurrency Control coordinates simultaneous transaction executions to prevent data conflicts."
+  },
+  {
+    "id": 322,
+    "category": "Concurrency Control",
+    "question": "Concurrency problems occur mainly because:",
+    "options": [
+      "Large databases",
+      "Multiple transactions execute simultaneously",
+      "Small memory",
+      "SQL syntax"
+    ],
+    "answerIndex": 1,
+    "explanation": "Concurrency issues arise when multiple interleaved transactions access and modify the same data concurrently."
+  },
+  {
+    "id": 323,
+    "category": "Concurrency Control",
+    "question": "The main objective of concurrency control is:",
+    "options": [
+      "Increase redundancy",
+      "Maintain data consistency",
+      "Delete duplicate records",
+      "Improve storage"
+    ],
+    "answerIndex": 1,
+    "explanation": "Concurrency control maintains database consistency during concurrent multi-user execution."
+  },
+  {
+    "id": 324,
+    "category": "Concurrency Control",
+    "question": "Which problem occurs when two transactions update the same data simultaneously?",
+    "options": [
+      "Lost Update",
+      "Dirty Read",
+      "Phantom Read",
+      "Cascading Rollback"
+    ],
+    "answerIndex": 0,
+    "explanation": "Lost Update occurs when concurrent transaction T2 overwrites an uncommitted update made by T1."
+  },
+  {
+    "id": 325,
+    "category": "Concurrency Control",
+    "question": "A Dirty Read occurs when:",
+    "options": [
+      "Reading deleted data",
+      "Reading uncommitted data",
+      "Reading duplicate rows",
+      "Reading NULL values"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Dirty Read occurs when transaction T2 reads uncommitted modifications written by transaction T1."
+  },
+  {
+    "id": 326,
+    "category": "Concurrency Control",
+    "question": "Phantom Read occurs when:",
+    "options": [
+      "Data disappears",
+      "Re-executing a query returns additional or missing rows due to another committed transaction",
+      "Index is deleted",
+      "Primary key changes"
+    ],
+    "answerIndex": 1,
+    "explanation": "Phantom Read occurs when re-running a query returns a different set of rows because another transaction inserted or deleted matching rows."
+  },
+  {
+    "id": 327,
+    "category": "Concurrency Control",
+    "question": "Which problem is prevented by proper isolation?",
+    "options": [
+      "Backup Failure",
+      "Dirty Read",
+      "Disk Failure",
+      "Schema Change"
+    ],
+    "answerIndex": 1,
+    "explanation": "Enforcing transaction Isolation levels (Read Committed/Serializable) prevents Dirty Reads."
+  },
+  {
+    "id": 328,
+    "category": "Locking",
+    "question": "Locking is primarily used for:",
+    "options": [
+      "Encryption",
+      "Concurrency Control",
+      "Backup",
+      "Indexing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Locking mechanisms serialize data access to enforce concurrency control and transaction isolation."
+  },
+  {
+    "id": 329,
+    "category": "Locking",
+    "question": "A Shared Lock allows:",
+    "options": [
+      "Multiple transactions to read the same data",
+      "Multiple transactions to update simultaneously",
+      "One transaction to delete all rows",
+      "Only database administrators to read data"
+    ],
+    "answerIndex": 0,
+    "explanation": "A Shared Lock (S-lock) allows multiple concurrent transactions to read a data item."
+  },
+  {
+    "id": 330,
+    "category": "Locking",
+    "question": "An Exclusive Lock allows:",
+    "options": [
+      "Multiple writers",
+      "Only one transaction to modify data",
+      "Everyone to update",
+      "Only SELECT operations"
+    ],
+    "answerIndex": 1,
+    "explanation": "An Exclusive Lock (X-lock) permits only a single transaction to write/update a data item."
+  },
+  {
+    "id": 331,
+    "category": "Locking",
+    "question": "Which lock is required before updating a record?",
+    "options": [
+      "Shared Lock",
+      "Exclusive Lock",
+      "Intent Lock",
+      "Read Lock"
+    ],
+    "answerIndex": 1,
+    "explanation": "An Exclusive Lock (X-lock) must be acquired before performing write/update operations."
+  },
+  {
+    "id": 332,
+    "category": "Locking",
+    "question": "Which lock is generally compatible with another Shared Lock?",
+    "options": [
+      "Shared Lock",
+      "Exclusive Lock",
+      "Update Lock",
+      "None"
+    ],
+    "answerIndex": 0,
+    "explanation": "Shared Locks are compatible with other Shared Locks (multiple readers allowed)."
+  },
+  {
+    "id": 333,
+    "category": "Two-Phase Locking",
+    "question": "Two-Phase Locking consists of:",
+    "options": [
+      "Read Phase & Write Phase",
+      "Growing Phase & Shrinking Phase",
+      "Lock Phase & Unlock Phase",
+      "Insert Phase & Delete Phase"
+    ],
+    "answerIndex": 1,
+    "explanation": "2PL protocol consists of two distinct phases: Growing Phase and Shrinking Phase."
+  },
+  {
+    "id": 334,
+    "category": "Two-Phase Locking",
+    "question": "During the Growing Phase:",
+    "options": [
+      "Locks are acquired but not released",
+      "Locks are released only",
+      "Data is deleted",
+      "Transactions are committed"
+    ],
+    "answerIndex": 0,
+    "explanation": "In the Growing Phase, a transaction may acquire new locks but cannot release any locks."
+  },
+  {
+    "id": 335,
+    "category": "Two-Phase Locking",
+    "question": "During the Shrinking Phase:",
+    "options": [
+      "New locks can be acquired",
+      "Locks are released but no new locks are acquired",
+      "Tables are created",
+      "Data is encrypted"
+    ],
+    "answerIndex": 1,
+    "explanation": "In the Shrinking Phase, a transaction releases existing locks but cannot acquire new ones."
+  },
+  {
+    "id": 336,
+    "category": "Deadlock",
+    "question": "Deadlock occurs when:",
+    "options": [
+      "Database crashes",
+      "Two or more transactions wait indefinitely for each other",
+      "SQL syntax is wrong",
+      "Primary key is duplicated"
+    ],
+    "answerIndex": 1,
+    "explanation": "Deadlock is a blockage occurring when two or more transactions indefinitely wait for locks held by each other."
+  },
+  {
+    "id": 337,
+    "category": "Deadlock",
+    "question": "Which condition is necessary for deadlock?",
+    "options": [
+      "No locking",
+      "Circular Wait",
+      "Data redundancy",
+      "Backup failure"
+    ],
+    "answerIndex": 1,
+    "explanation": "Circular Wait is a fundamental necessary condition for deadlock occurrence."
+  },
+  {
+    "id": 338,
+    "category": "Deadlock",
+    "question": "Deadlock can be resolved by:",
+    "options": [
+      "Creating indexes",
+      "Aborting one of the transactions",
+      "Adding foreign keys",
+      "Deleting tables"
+    ],
+    "answerIndex": 1,
+    "explanation": "Deadlocks are resolved by selecting a victim transaction and aborting/rolling it back."
+  },
+  {
+    "id": 339,
+    "category": "Deadlock",
+    "question": "Which locking approach generally reduces deadlocks?",
+    "options": [
+      "Exclusive Locking Only",
+      "Optimistic Concurrency Control",
+      "No Locking",
+      "Random Locking"
+    ],
+    "answerIndex": 1,
+    "explanation": "Optimistic Concurrency Control reduces lock contention and deadlocks by validating transactions prior to commit."
+  },
+  {
+    "id": 340,
+    "category": "Recovery & Logs",
+    "question": "Database recovery aims to:",
+    "options": [
+      "Improve query speed",
+      "Restore the database after failure",
+      "Create indexes",
+      "Normalize tables"
+    ],
+    "answerIndex": 1,
+    "explanation": "Database recovery techniques restore the database to a consistent state following a crash or failure."
+  },
+  {
+    "id": 341,
+    "category": "Recovery & Logs",
+    "question": "Which recovery technique uses a transaction log?",
+    "options": [
+      "Replication",
+      "Log-based Recovery",
+      "Partitioning",
+      "Normalization"
+    ],
+    "answerIndex": 1,
+    "explanation": "Log-based recovery uses sequential transaction log records to perform UNDO and REDO operations."
+  },
+  {
+    "id": 342,
+    "category": "Recovery & Logs",
+    "question": "A transaction log stores:",
+    "options": [
+      "SQL keywords",
+      "Records of database changes",
+      "ER diagrams",
+      "Indexes"
+    ],
+    "answerIndex": 1,
+    "explanation": "A transaction log sequentially records all data modifications, transaction starts, commits, and aborts."
+  },
+  {
+    "id": 343,
+    "category": "Recovery & Logs",
+    "question": "Which operation reverses changes made by an incomplete transaction?",
+    "options": [
+      "UNDO",
+      "REDO",
+      "COMMIT",
+      "SAVEPOINT"
+    ],
+    "answerIndex": 0,
+    "explanation": "The UNDO operation reverses (rolls back) uncommitted changes made by incomplete transactions."
+  },
+  {
+    "id": 344,
+    "category": "Recovery & Logs",
+    "question": "Which operation reapplies committed transactions after a crash?",
+    "options": [
+      "UNDO",
+      "REDO",
+      "DELETE",
+      "UPDATE"
+    ],
+    "answerIndex": 1,
+    "explanation": "The REDO operation reapplies changes made by committed transactions that were not flushed to disk before failure."
+  },
+  {
+    "id": 345,
+    "category": "Recovery & Logs",
+    "question": "A checkpoint is used to:",
+    "options": [
+      "Delete logs",
+      "Reduce recovery time",
+      "Create views",
+      "Encrypt transactions"
+    ],
+    "answerIndex": 1,
+    "explanation": "Checkpoints periodically sync memory to disk, reducing the amount of transaction log needed during crash recovery."
+  },
+  {
+    "id": 346,
+    "category": "Recovery & Logs",
+    "question": "During recovery, checkpoints help because they:",
+    "options": [
+      "Increase redundancy",
+      "Reduce the amount of log that must be processed",
+      "Remove indexes",
+      "Create backups"
+    ],
+    "answerIndex": 1,
+    "explanation": "Checkpoints ensure earlier committed log records can be skipped, shortening recovery duration."
+  },
+  {
+    "id": 347,
+    "category": "ACID & Transactions",
+    "question": "Which ACID property is most directly related to concurrency control?",
+    "options": [
+      "Durability",
+      "Isolation",
+      "Atomicity",
+      "Consistency"
+    ],
+    "answerIndex": 1,
+    "explanation": "Concurrency Control mechanisms directly enforce the Isolation property."
+  },
+  {
+    "id": 348,
+    "category": "ACID & Transactions",
+    "question": "Which statement is TRUE?",
+    "options": [
+      "COMMIT can be undone.",
+      "ROLLBACK cannot undo a committed transaction.",
+      "COMMIT deletes data.",
+      "SAVEPOINT permanently stores data."
+    ],
+    "answerIndex": 1,
+    "explanation": "Once a transaction is committed, ROLLBACK cannot undo it; recovery tools are required."
+  },
+  {
+    "id": 349,
+    "category": "ACID & Transactions",
+    "question": "Which component is responsible for maintaining database consistency during concurrent execution?",
+    "options": [
+      "Query Optimizer",
+      "Parser",
+      "Concurrency Control Manager",
+      "Data Dictionary"
+    ],
+    "answerIndex": 2,
+    "explanation": "The Concurrency Control Manager handles locks and schedules to preserve database consistency."
+  },
+  {
+    "id": 350,
+    "category": "ACID & Transactions",
+    "question": "Which statement best summarizes the purpose of transactions?",
+    "options": [
+      "Increase storage efficiency",
+      "Improve SQL syntax",
+      "Ensure reliable, consistent, and recoverable execution of database operations",
+      "Replace normalization"
+    ],
+    "answerIndex": 2,
+    "explanation": "Transactions guarantee reliable, consistent, isolated, and recoverable database operations."
+  },
+  {
+    "id": 351,
+    "category": "NoSQL Databases",
+    "question": "NoSQL stands for:",
+    "options": [
+      "No Structured Query Language",
+      "Not Only SQL",
+      "New SQL",
+      "Non-Standard Query Language"
+    ],
+    "answerIndex": 1,
+    "explanation": "NoSQL stands for 'Not Only SQL', representing non-relational, highly scalable databases."
+  },
+  {
+    "id": 352,
+    "category": "NoSQL Databases",
+    "question": "NoSQL databases are mainly designed for:",
+    "options": [
+      "Small fixed datasets",
+      "Large-scale, flexible and distributed data",
+      "Spreadsheet processing",
+      "Word processing"
+    ],
+    "answerIndex": 1,
+    "explanation": "NoSQL databases are engineered for massive scale, high throughput, and unstructured/semi-structured flexible data models."
+  },
+  {
+    "id": 353,
+    "category": "NoSQL Databases",
+    "question": "Which of the following is NOT a NoSQL database?",
+    "options": [
+      "MongoDB",
+      "Cassandra",
+      "MySQL",
+      "Redis"
+    ],
+    "answerIndex": 2,
+    "explanation": "MySQL is a relational database (RDBMS), whereas MongoDB, Cassandra, and Redis are NoSQL databases."
+  },
+  {
+    "id": 354,
+    "category": "NoSQL Databases",
+    "question": "MongoDB is a:",
+    "options": [
+      "Key-Value Database",
+      "Document Database",
+      "Graph Database",
+      "Relational Database"
+    ],
+    "answerIndex": 1,
+    "explanation": "MongoDB is a document-oriented NoSQL database storing JSON/BSON document structures."
+  },
+  {
+    "id": 355,
+    "category": "NoSQL Databases",
+    "question": "Cassandra is a:",
+    "options": [
+      "Document Database",
+      "Column-Family Database",
+      "Graph Database",
+      "Object-Oriented Database"
+    ],
+    "answerIndex": 1,
+    "explanation": "Apache Cassandra is a wide-column family NoSQL database built for high scalability."
+  },
+  {
+    "id": 356,
+    "category": "NoSQL Databases",
+    "question": "Redis is a:",
+    "options": [
+      "Key-Value Database",
+      "Document Database",
+      "Relational Database",
+      "Graph Database"
+    ],
+    "answerIndex": 0,
+    "explanation": "Redis is an in-memory key-value data store used as a cache and database."
+  },
+  {
+    "id": 357,
+    "category": "NoSQL Databases",
+    "question": "Neo4j is mainly classified as a:",
+    "options": [
+      "Relational Database",
+      "Column Database",
+      "Graph Database",
+      "Document Database"
+    ],
+    "answerIndex": 2,
+    "explanation": "Neo4j is a graph database optimized for storing nodes, edges, and complex interconnected relationships."
+  },
+  {
+    "id": 358,
+    "category": "NoSQL Databases",
+    "question": "Which NoSQL database is best suited for graph relationships?",
+    "options": [
+      "Redis",
+      "MongoDB",
+      "Cassandra",
+      "Neo4j"
+    ],
+    "answerIndex": 3,
+    "explanation": "Neo4j is purpose-built for querying graph structures and network relationships."
+  },
+  {
+    "id": 359,
+    "category": "NoSQL Databases",
+    "question": "Which feature is commonly associated with NoSQL databases?",
+    "options": [
+      "Fixed schema only",
+      "Flexible schema",
+      "Tables only",
+      "SQL only"
+    ],
+    "answerIndex": 1,
+    "explanation": "NoSQL databases feature dynamic/flexible schemas allowing fields to vary per record."
+  },
+  {
+    "id": 360,
+    "category": "NoSQL Databases",
+    "question": "NoSQL databases are generally preferred for:",
+    "options": [
+      "Small payroll systems only",
+      "Big Data and highly scalable web applications",
+      "Text editing",
+      "Operating systems"
+    ],
+    "answerIndex": 1,
+    "explanation": "NoSQL is preferred for big data processing, real-time analytics, and horizontally scalable web apps."
+  },
+  {
+    "id": 361,
+    "category": "Distributed DB & Warehousing",
+    "question": "A Distributed Database stores data:",
+    "options": [
+      "On one computer only",
+      "Across multiple networked computers",
+      "In RAM only",
+      "On removable media only"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Distributed Database manages data distributed physically across multiple networked computer nodes."
+  },
+  {
+    "id": 362,
+    "category": "Distributed DB & Warehousing",
+    "question": "The primary advantage of distributed databases is:",
+    "options": [
+      "Reduced security",
+      "High availability and scalability",
+      "Increased redundancy only",
+      "Slower processing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Distributed databases offer high availability, fault tolerance, and horizontal scalability."
+  },
+  {
+    "id": 363,
+    "category": "Distributed DB & Warehousing",
+    "question": "Which of the following is an advantage of distributed databases?",
+    "options": [
+      "Single point of failure",
+      "Improved fault tolerance",
+      "No network communication",
+      "No replication"
+    ],
+    "answerIndex": 1,
+    "explanation": "Distributed architecture improves fault tolerance by removing single points of system failure."
+  },
+  {
+    "id": 364,
+    "category": "Distributed DB & Warehousing",
+    "question": "Data replication means:",
+    "options": [
+      "Data deletion",
+      "Maintaining copies of data at multiple locations",
+      "Data compression",
+      "Data normalization"
+    ],
+    "answerIndex": 1,
+    "explanation": "Replication maintains duplicate copies of data across multiple geographic/network locations."
+  },
+  {
+    "id": 365,
+    "category": "Distributed DB & Warehousing",
+    "question": "Replication mainly improves:",
+    "options": [
+      "Query complexity",
+      "Availability and reliability",
+      "Redundancy elimination",
+      "SQL syntax"
+    ],
+    "answerIndex": 1,
+    "explanation": "Replication ensures data remains accessible even if individual server nodes experience outages."
+  },
+  {
+    "id": 366,
+    "category": "Distributed DB & Warehousing",
+    "question": "A Data Warehouse is primarily used for:",
+    "options": [
+      "Daily transaction processing",
+      "Decision support and analysis",
+      "Operating systems",
+      "Web hosting"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Data Warehouse centralizes historical data for analytical processing and decision support (BI)."
+  },
+  {
+    "id": 367,
+    "category": "Distributed DB & Warehousing",
+    "question": "Data warehouses mainly store:",
+    "options": [
+      "Temporary data",
+      "Historical data",
+      "Program code",
+      "Operating system files"
+    ],
+    "answerIndex": 1,
+    "explanation": "Data warehouses store large volumes of historical, time-variant data collected over time."
+  },
+  {
+    "id": 368,
+    "category": "Distributed DB & Warehousing",
+    "question": "Data Warehouse is:",
+    "options": [
+      "Subject-oriented",
+      "Integrated",
+      "Time-variant",
+      "All of them"
+    ],
+    "answerIndex": 3,
+    "explanation": "Bill Inmon defined a Data Warehouse as a subject-oriented, integrated, time-variant, non-volatile data repository."
+  },
+  {
+    "id": 369,
+    "category": "Distributed DB & Warehousing",
+    "question": "Which process extracts, transforms and loads data into a warehouse?",
+    "options": [
+      "SQL",
+      "ETL",
+      "DDL",
+      "DML"
+    ],
+    "answerIndex": 1,
+    "explanation": "ETL (Extract, Transform, Load) pipelines process and ingest data into a warehouse."
+  },
+  {
+    "id": 370,
+    "category": "Distributed DB & Warehousing",
+    "question": "ETL stands for:",
+    "options": [
+      "Execute, Transfer, Load",
+      "Extract, Transform, Load",
+      "Extract, Translate, Link",
+      "Execute, Transform, Link"
+    ],
+    "answerIndex": 1,
+    "explanation": "ETL stands for Extract, Transform, Load."
+  },
+  {
+    "id": 371,
+    "category": "OLTP vs OLAP",
+    "question": "OLTP stands for:",
+    "options": [
+      "Online Transaction Processing",
+      "Online Table Processing",
+      "Offline Transaction Processing",
+      "Online Transfer Processing"
+    ],
+    "answerIndex": 0,
+    "explanation": "OLTP stands for Online Transaction Processing."
+  },
+  {
+    "id": 372,
+    "category": "OLTP vs OLAP",
+    "question": "OLAP stands for:",
+    "options": [
+      "Online Logical Access Processing",
+      "Online Analytical Processing",
+      "Offline Analytical Processing",
+      "Online Application Processing"
+    ],
+    "answerIndex": 1,
+    "explanation": "OLAP stands for Online Analytical Processing."
+  },
+  {
+    "id": 373,
+    "category": "OLTP vs OLAP",
+    "question": "OLTP systems are mainly designed for:",
+    "options": [
+      "Data Analysis",
+      "Day-to-day Transactions",
+      "Machine Learning",
+      "Data Mining"
+    ],
+    "answerIndex": 1,
+    "explanation": "OLTP systems process fast, high-volume day-to-day operational transactions (e.g., banking, sales)."
+  },
+  {
+    "id": 374,
+    "category": "OLTP vs OLAP",
+    "question": "OLAP systems are mainly designed for:",
+    "options": [
+      "Banking Transactions",
+      "Analytical Queries and Reporting",
+      "Record Insertion",
+      "Transaction Recovery"
+    ],
+    "answerIndex": 1,
+    "explanation": "OLAP systems optimize complex analytical queries, aggregations, and business reporting."
+  },
+  {
+    "id": 375,
+    "category": "OLTP vs OLAP",
+    "question": "Which system generally handles fewer but more complex queries?",
+    "options": [
+      "OLTP",
+      "OLAP",
+      "File System",
+      "FTP"
+    ],
+    "answerIndex": 1,
+    "explanation": "OLAP databases process fewer, long-running, complex analytical aggregation queries."
+  },
+  {
+    "id": 376,
+    "category": "Advanced DBMS Concepts",
+    "question": "Data Mining is the process of:",
+    "options": [
+      "Storing data",
+      "Discovering useful patterns from large datasets",
+      "Deleting duplicate records",
+      "Creating indexes"
+    ],
+    "answerIndex": 1,
+    "explanation": "Data Mining uses algorithmic techniques to extract patterns and knowledge from large datasets."
+  },
+  {
+    "id": 377,
+    "category": "Advanced DBMS Concepts",
+    "question": "Data Mining is commonly performed on:",
+    "options": [
+      "Word Documents",
+      "Data Warehouses",
+      "Operating Systems",
+      "ER Diagrams"
+    ],
+    "answerIndex": 1,
+    "explanation": "Data Mining algorithms run against consolidated historical data stored in Data Warehouses."
+  },
+  {
+    "id": 378,
+    "category": "Advanced DBMS Concepts",
+    "question": "CAP Theorem consists of:",
+    "options": [
+      "Consistency, Accuracy, Performance",
+      "Consistency, Availability, Partition Tolerance",
+      "Compression, Access, Protection",
+      "Concurrency, Accuracy, Persistence"
+    ],
+    "answerIndex": 1,
+    "explanation": "CAP Theorem states a distributed system can guarantee at most 2 of: Consistency, Availability, and Partition Tolerance."
+  },
+  {
+    "id": 379,
+    "category": "Advanced DBMS Concepts",
+    "question": "According to CAP theorem, during a network partition a distributed system must choose between:",
+    "options": [
+      "SQL and NoSQL",
+      "Consistency and Availability",
+      "Backup and Recovery",
+      "OLTP and OLAP"
+    ],
+    "answerIndex": 1,
+    "explanation": "When a network partition occurs (P), a system must trade off between Consistency (C) and Availability (A)."
+  },
+  {
+    "id": 380,
+    "category": "Advanced DBMS Concepts",
+    "question": "RAID is mainly used for:",
+    "options": [
+      "SQL optimization",
+      "Improving storage reliability and/or performance",
+      "Database normalization",
+      "Query optimization"
+    ],
+    "answerIndex": 1,
+    "explanation": "RAID (Redundant Array of Independent Disks) combines physical hard drives to boost storage reliability and performance."
+  },
+  {
+    "id": 381,
+    "category": "Advanced DBMS Concepts",
+    "question": "RAID stands for:",
+    "options": [
+      "Random Access Independent Drives",
+      "Redundant Array of Independent Disks",
+      "Reliable Access Internal Disks",
+      "Random Array of Indexed Disks"
+    ],
+    "answerIndex": 1,
+    "explanation": "RAID stands for Redundant Array of Independent Disks."
+  },
+  {
+    "id": 382,
+    "category": "Advanced DBMS Concepts",
+    "question": "XML is mainly used to:",
+    "options": [
+      "Create indexes",
+      "Store and exchange structured/semi-structured data",
+      "Normalize databases",
+      "Create transactions"
+    ],
+    "answerIndex": 1,
+    "explanation": "XML (eXtensible Markup Language) formats structured and semi-structured data for storage and web exchange."
+  },
+  {
+    "id": 383,
+    "category": "Advanced DBMS Concepts",
+    "question": "XML is considered:",
+    "options": [
+      "Relational Data",
+      "Semi-Structured Data",
+      "Binary Data",
+      "Temporary Data"
+    ],
+    "answerIndex": 1,
+    "explanation": "XML data features self-describing tags and is classified as Semi-Structured Data."
+  },
+  {
+    "id": 384,
+    "category": "Advanced DBMS Concepts",
+    "question": "Hashing primarily helps in:",
+    "options": [
+      "Normalization",
+      "Fast record retrieval",
+      "Backup",
+      "Data Warehousing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Hashing uses hash functions for direct, constant time O(1) record location retrieval."
+  },
+  {
+    "id": 385,
+    "category": "Advanced DBMS Concepts",
+    "question": "A hash function maps:",
+    "options": [
+      "Queries to indexes",
+      "Keys to storage locations",
+      "Tables to views",
+      "Transactions to logs"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Hash Function maps search keys directly to specific hash bucket storage locations."
+  },
+  {
+    "id": 386,
+    "category": "Advanced DBMS Concepts",
+    "question": "A cursor is used to:",
+    "options": [
+      "Create tables",
+      "Process query results row by row",
+      "Create indexes",
+      "Backup databases"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Cursor is a database control structure used to iterate and process query result sets row by row."
+  },
+  {
+    "id": 387,
+    "category": "Advanced DBMS Concepts",
+    "question": "Cursors are mainly associated with:",
+    "options": [
+      "Views",
+      "Stored Procedures and SQL Programming",
+      "Constraints",
+      "Transactions"
+    ],
+    "answerIndex": 1,
+    "explanation": "Cursors are used within Stored Procedures and embedded SQL for sequential row processing."
+  },
+  {
+    "id": 388,
+    "category": "Advanced DBMS Concepts",
+    "question": "Embedded SQL means:",
+    "options": [
+      "SQL stored in indexes",
+      "SQL statements embedded within a programming language",
+      "SQL inside operating systems",
+      "SQL inside browsers"
+    ],
+    "answerIndex": 1,
+    "explanation": "Embedded SQL refers to SQL queries embedded inside procedural host programming code (C, COAP, Java)."
+  },
+  {
+    "id": 389,
+    "category": "Advanced DBMS Concepts",
+    "question": "In a client-server DBMS:",
+    "options": [
+      "Client stores the entire database",
+      "Client requests services from the database server",
+      "Server has no database",
+      "Client performs recovery"
+    ],
+    "answerIndex": 1,
+    "explanation": "In client-server architecture, client applications request database services from a centralized database server."
+  },
+  {
+    "id": 390,
+    "category": "Advanced DBMS Concepts",
+    "question": "Which component executes SQL queries?",
+    "options": [
+      "Client only",
+      "Database Server",
+      "Browser",
+      "Compiler"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Database Server receives, compiles, optimizes, and executes SQL queries."
+  },
+  {
+    "id": 391,
+    "category": "Advanced DBMS Concepts",
+    "question": "Metadata is:",
+    "options": [
+      "Duplicate data",
+      "Data describing other data",
+      "Backup data",
+      "Transaction data"
+    ],
+    "answerIndex": 1,
+    "explanation": "Metadata is structural information describing database schemas, data types, and objects."
+  },
+  {
+    "id": 392,
+    "category": "Advanced DBMS Concepts",
+    "question": "Which of the following is metadata?",
+    "options": [
+      "Student Marks",
+      "Column Data Types",
+      "Salary Records",
+      "Attendance Data"
+    ],
+    "answerIndex": 1,
+    "explanation": "Column Data Types describe structural properties of fields and represent Metadata."
+  },
+  {
+    "id": 393,
+    "category": "Advanced DBMS Concepts",
+    "question": "Which database is best suited for highly connected data like social networks?",
+    "options": [
+      "Relational Database",
+      "Document Database",
+      "Graph Database",
+      "Key-Value Database"
+    ],
+    "answerIndex": 2,
+    "explanation": "Graph Databases excel at traversing highly interconnected network node relationships like social networks."
+  },
+  {
+    "id": 394,
+    "category": "Advanced DBMS Concepts",
+    "question": "Which database model provides the greatest schema flexibility?",
+    "options": [
+      "Relational",
+      "NoSQL",
+      "Hierarchical",
+      "Network"
+    ],
+    "answerIndex": 1,
+    "explanation": "NoSQL database models provide schema-less dynamic flexibility for changing data structures."
+  },
+  {
+    "id": 395,
+    "category": "Advanced DBMS Concepts",
+    "question": "Which technology is commonly used for large-scale analytics?",
+    "options": [
+      "OLTP",
+      "Data Warehouse",
+      "Trigger",
+      "Cursor"
+    ],
+    "answerIndex": 1,
+    "explanation": "Data Warehouses are built specifically to support high-volume analytical business intelligence."
+  },
+  {
+    "id": 396,
+    "category": "Advanced DBMS Concepts",
+    "question": "Which of the following is TRUE about Data Warehouses?",
+    "options": [
+      "Frequently updated with every transaction",
+      "Optimized for querying and reporting",
+      "Used only for backups",
+      "Cannot store historical data"
+    ],
+    "answerIndex": 1,
+    "explanation": "Data Warehouses are optimized for complex analytical queries, reporting, and historical trend analysis."
+  },
+  {
+    "id": 397,
+    "category": "Advanced DBMS Concepts",
+    "question": "Which database is most suitable for storing JSON documents?",
+    "options": [
+      "MySQL",
+      "MongoDB",
+      "Neo4j",
+      "Oracle (Traditional RDBMS)"
+    ],
+    "answerIndex": 1,
+    "explanation": "MongoDB natively stores semi-structured BSON/JSON document collections."
+  },
+  {
+    "id": 398,
+    "category": "Advanced DBMS Concepts",
+    "question": "Which concept mainly improves database scalability?",
+    "options": [
+      "Normalization only",
+      "Distribution and Partitioning",
+      "Views",
+      "Constraints"
+    ],
+    "answerIndex": 1,
+    "explanation": "Distribution and Horizontal Partitioning (Sharding) enable linear database scaling across clusters."
+  },
+  {
+    "id": 399,
+    "category": "Advanced DBMS Concepts",
+    "question": "Which DBMS feature provides high availability by maintaining multiple copies of data?",
+    "options": [
+      "Normalization",
+      "Replication",
+      "Hashing",
+      "Cursor"
+    ],
+    "answerIndex": 1,
+    "explanation": "Data Replication distributes redundant copies across nodes to ensure high service availability."
+  },
+  {
+    "id": 400,
+    "category": "Advanced DBMS Concepts",
+    "question": "Which statement best summarizes modern DBMS evolution?",
+    "options": [
+      "Relational databases have completely replaced NoSQL databases.",
+      "NoSQL databases have completely replaced relational databases.",
+      "Relational and NoSQL databases complement each other depending on application requirements.",
+      "Data warehouses are replacing operational databases."
+    ],
+    "answerIndex": 2,
+    "explanation": "Relational RDBMS and NoSQL systems complement each other in modern polyglot persistence architectures."
+  }
+];
+
+
+const DSP_MCQS = [
+  {
+    "id": 1,
+    "category": "Signals & Systems",
+    "question": "A signal is best defined as:",
+    "options": [
+      "A mathematical equation only",
+      "A function that conveys information about a phenomenon",
+      "A computer program",
+      "A digital circuit"
+    ],
+    "answerIndex": 1,
+    "explanation": "A signal is a function of one or more independent variables that conveys information about a physical phenomenon."
+  },
+  {
+    "id": 2,
+    "category": "Signals & Systems",
+    "question": "Which of the following is an example of a continuous-time signal?",
+    "options": [
+      "Daily stock prices",
+      "ECG waveform measured continuously",
+      "Sequence {1,2,3,4}",
+      "Digital clock output"
+    ],
+    "answerIndex": 1,
+    "explanation": "Continuous-time signals are defined for every instant of time, such as an ECG waveform measured continuously."
+  },
+  {
+    "id": 3,
+    "category": "Signals & Systems",
+    "question": "A discrete-time signal is defined only at:",
+    "options": [
+      "Every instant of time",
+      "Discrete time instants",
+      "Continuous frequencies",
+      "Infinite amplitudes"
+    ],
+    "answerIndex": 1,
+    "explanation": "Discrete-time signals are defined only at specific discrete instants of time n."
+  },
+  {
+    "id": 4,
+    "category": "Signals & Systems",
+    "question": "Which signal has both discrete time and discrete amplitude?",
+    "options": [
+      "Analog Signal",
+      "Continuous Signal",
+      "Digital Signal",
+      "Periodic Signal"
+    ],
+    "answerIndex": 2,
+    "explanation": "A digital signal is discrete in both time and amplitude (quantized)."
+  },
+  {
+    "id": 5,
+    "category": "Signals & Systems",
+    "question": "An analog signal has:",
+    "options": [
+      "Continuous time and continuous amplitude",
+      "Continuous time and discrete amplitude",
+      "Discrete time and continuous amplitude",
+      "Discrete time and discrete amplitude"
+    ],
+    "answerIndex": 0,
+    "explanation": "An analog signal is continuous in both time and amplitude."
+  },
+  {
+    "id": 6,
+    "category": "Signals & Systems",
+    "question": "Which of the following is a digital signal?",
+    "options": [
+      "Human voice",
+      "Analog voltage",
+      "Binary data (0s and 1s)",
+      "Temperature variation"
+    ],
+    "answerIndex": 2,
+    "explanation": "Binary data (0s and 1s) is a digital signal discrete in both time and amplitude."
+  },
+  {
+    "id": 7,
+    "category": "Signals & Systems",
+    "question": "A signal represented as x(t) is generally:",
+    "options": [
+      "Continuous-time signal",
+      "Discrete-time signal",
+      "Digital signal",
+      "Random signal"
+    ],
+    "answerIndex": 0,
+    "explanation": "Independent variable t in parentheses x(t) denotes a continuous-time signal."
+  },
+  {
+    "id": 8,
+    "category": "Signals & Systems",
+    "question": "A signal represented as x[n] is generally:",
+    "options": [
+      "Continuous-time signal",
+      "Discrete-time signal",
+      "Analog signal",
+      "Periodic waveform"
+    ],
+    "answerIndex": 1,
+    "explanation": "Independent variable n in square brackets x[n] denotes a discrete-time signal."
+  },
+  {
+    "id": 9,
+    "category": "Signals & Systems",
+    "question": "A periodic signal satisfies:",
+    "options": [
+      "x(t)=0",
+      "x(t)=x(t+T)",
+      "x(t)=-x(t)",
+      "x(t)=t"
+    ],
+    "answerIndex": 1,
+    "explanation": "A continuous-time signal is periodic if it satisfies x(t) = x(t+T) for all t."
+  },
+  {
+    "id": 10,
+    "category": "Signals & Systems",
+    "question": "T is called:",
+    "options": [
+      "Frequency",
+      "Fundamental Period",
+      "Amplitude",
+      "Sampling Time"
+    ],
+    "answerIndex": 1,
+    "explanation": "The smallest positive value of T that satisfies periodicity is the Fundamental Period."
+  },
+  {
+    "id": 11,
+    "category": "Signals & Systems",
+    "question": "Which of the following is periodic?",
+    "options": [
+      "e^(-t)",
+      "t^2",
+      "sin(wt)",
+      "ln(t)"
+    ],
+    "answerIndex": 2,
+    "explanation": "Sinusoidal functions such as sin(wt) repeat at fixed intervals T = 2pi/w."
+  },
+  {
+    "id": 12,
+    "category": "Signals & Systems",
+    "question": "Which of the following is generally aperiodic?",
+    "options": [
+      "cos(wt)",
+      "e^(-t)u(t)",
+      "sin(wt)",
+      "Square wave"
+    ],
+    "answerIndex": 1,
+    "explanation": "Exponentially decaying signals like e^(-t)u(t) do not repeat and are aperiodic."
+  },
+  {
+    "id": 13,
+    "category": "Signals & Systems",
+    "question": "A periodic discrete-time signal must satisfy:",
+    "options": [
+      "x[n]=0",
+      "x[n]=x[n+N]",
+      "x[n]=-x[n]",
+      "x[n]=1"
+    ],
+    "answerIndex": 1,
+    "explanation": "A discrete-time sequence is periodic if x[n] = x[n+N] for integer period N."
+  },
+  {
+    "id": 14,
+    "category": "Signals & Systems",
+    "question": "Which signal repeats after a fixed interval?",
+    "options": [
+      "Random Signal",
+      "Periodic Signal",
+      "Energy Signal",
+      "Causal Signal"
+    ],
+    "answerIndex": 1,
+    "explanation": "Periodic signals repeat identical patterns after regular fixed intervals."
+  },
+  {
+    "id": 15,
+    "category": "Signals & Systems",
+    "question": "An energy signal has:",
+    "options": [
+      "Finite energy and zero average power",
+      "Infinite energy and finite power",
+      "Infinite energy and infinite power",
+      "Zero energy"
+    ],
+    "answerIndex": 0,
+    "explanation": "An energy signal has non-zero finite energy (0 < E < infinity) and zero average power (P = 0)."
+  },
+  {
+    "id": 16,
+    "category": "Signals & Systems",
+    "question": "A power signal has:",
+    "options": [
+      "Zero power",
+      "Finite average power and infinite energy",
+      "Finite energy only",
+      "Infinite power"
+    ],
+    "answerIndex": 1,
+    "explanation": "A power signal has non-zero finite average power (0 < P < infinity) and infinite total energy."
+  },
+  {
+    "id": 17,
+    "category": "Signals & Systems",
+    "question": "Which of the following is typically an energy signal?",
+    "options": [
+      "Finite-duration pulse",
+      "Infinite sine wave",
+      "Periodic square wave",
+      "Constant signal"
+    ],
+    "answerIndex": 0,
+    "explanation": "Signals restricted to a finite time duration possess finite total energy."
+  },
+  {
+    "id": 18,
+    "category": "Signals & Systems",
+    "question": "Which of the following is generally a power signal?",
+    "options": [
+      "Pulse",
+      "Infinite sinusoidal signal",
+      "Exponentially decaying pulse",
+      "Finite-duration signal"
+    ],
+    "answerIndex": 1,
+    "explanation": "Sinusoids extending indefinitely have infinite energy but constant finite average power."
+  },
+  {
+    "id": 19,
+    "category": "Signals & Systems",
+    "question": "An even signal satisfies:",
+    "options": [
+      "x(t)=x(-t)",
+      "x(t)=-x(-t)",
+      "x(t)=0",
+      "x(t)=1"
+    ],
+    "answerIndex": 0,
+    "explanation": "An even signal exhibits symmetry about the vertical axis: x(t) = x(-t)."
+  },
+  {
+    "id": 20,
+    "category": "Signals & Systems",
+    "question": "An odd signal satisfies:",
+    "options": [
+      "x(t)=x(-t)",
+      "x(t)=-x(-t)",
+      "x(t)=0",
+      "x(t)=t^2"
+    ],
+    "answerIndex": 1,
+    "explanation": "An odd signal exhibits anti-symmetry about the origin: x(t) = -x(-t)."
+  },
+  {
+    "id": 21,
+    "category": "Signals & Systems",
+    "question": "cos(t) is:",
+    "options": [
+      "Even",
+      "Odd",
+      "Neither",
+      "Random"
+    ],
+    "answerIndex": 0,
+    "explanation": "cos(-t) = cos(t), making cos(t) an even signal."
+  },
+  {
+    "id": 22,
+    "category": "Signals & Systems",
+    "question": "sin(t) is:",
+    "options": [
+      "Even",
+      "Odd",
+      "Neither",
+      "Periodic only"
+    ],
+    "answerIndex": 1,
+    "explanation": "sin(-t) = -sin(t), making sin(t) an odd signal."
+  },
+  {
+    "id": 23,
+    "category": "Signals & Systems",
+    "question": "Every signal can be decomposed into:",
+    "options": [
+      "Analog and Digital parts",
+      "Even and Odd components",
+      "Real and Imaginary parts only",
+      "Power and Energy parts"
+    ],
+    "answerIndex": 1,
+    "explanation": "Any arbitrary signal x(t) can be decomposed into sum of even x_e(t) and odd x_o(t) parts."
+  },
+  {
+    "id": 24,
+    "category": "Signals & Systems",
+    "question": "A deterministic signal is:",
+    "options": [
+      "Completely unpredictable",
+      "Completely specified mathematically",
+      "Random in nature",
+      "Periodic only"
+    ],
+    "answerIndex": 1,
+    "explanation": "A deterministic signal can be modeled completely by a explicit mathematical expression."
+  },
+  {
+    "id": 25,
+    "category": "Signals & Systems",
+    "question": "Noise is generally considered:",
+    "options": [
+      "Deterministic",
+      "Random Signal",
+      "Even Signal",
+      "Energy Signal"
+    ],
+    "answerIndex": 1,
+    "explanation": "Noise cannot be predicted with certainty and is modeled as a random signal."
+  },
+  {
+    "id": 26,
+    "category": "Signals & Systems",
+    "question": "Which signal cannot be predicted exactly?",
+    "options": [
+      "Deterministic",
+      "Random Signal",
+      "Continuous Signal",
+      "Periodic Signal"
+    ],
+    "answerIndex": 1,
+    "explanation": "Random signals exhibit uncertainty and cannot be predicted precisely in advance."
+  },
+  {
+    "id": 27,
+    "category": "Signals & Systems",
+    "question": "x(t-2) represents:",
+    "options": [
+      "Time Advance",
+      "Time Delay",
+      "Amplitude Scaling",
+      "Time Reversal"
+    ],
+    "answerIndex": 1,
+    "explanation": "x(t-t0) with t0 > 0 shifts the signal right by t0 units, representing a Time Delay."
+  },
+  {
+    "id": 28,
+    "category": "Signals & Systems",
+    "question": "x(t+2) represents:",
+    "options": [
+      "Time Advance",
+      "Time Delay",
+      "Reflection",
+      "Compression"
+    ],
+    "answerIndex": 0,
+    "explanation": "x(t+t0) with t0 > 0 shifts the signal left by t0 units, representing a Time Advance."
+  },
+  {
+    "id": 29,
+    "category": "Signals & Systems",
+    "question": "x(2t) represents:",
+    "options": [
+      "Expansion",
+      "Time Compression",
+      "Delay",
+      "Reflection"
+    ],
+    "answerIndex": 1,
+    "explanation": "x(at) with a > 1 compresses the signal in time by factor a."
+  },
+  {
+    "id": 30,
+    "category": "Signals & Systems",
+    "question": "x(t/2) represents:",
+    "options": [
+      "Time Expansion",
+      "Compression",
+      "Delay",
+      "Shift"
+    ],
+    "answerIndex": 0,
+    "explanation": "x(at) with 0 < a < 1 expands the signal in time."
+  },
+  {
+    "id": 31,
+    "category": "Signals & Systems",
+    "question": "-x(t) represents:",
+    "options": [
+      "Time Shift",
+      "Amplitude Inversion",
+      "Time Scaling",
+      "Delay"
+    ],
+    "answerIndex": 1,
+    "explanation": "-x(t) flips the signal amplitude upside down across the horizontal time axis."
+  },
+  {
+    "id": 32,
+    "category": "Signals & Systems",
+    "question": "3x(t) represents:",
+    "options": [
+      "Time Compression",
+      "Amplitude Scaling",
+      "Reflection",
+      "Delay"
+    ],
+    "answerIndex": 1,
+    "explanation": "Multiplying by a scalar c increases amplitude (Amplitude Scaling)."
+  },
+  {
+    "id": 33,
+    "category": "Signals & Systems",
+    "question": "x(-t) represents:",
+    "options": [
+      "Delay",
+      "Compression",
+      "Time Reversal (Reflection)",
+      "Expansion"
+    ],
+    "answerIndex": 2,
+    "explanation": "x(-t) reflects the signal across the vertical axis (Time Reversal)."
+  },
+  {
+    "id": 34,
+    "category": "Signals & Systems",
+    "question": "The unit impulse signal is denoted by:",
+    "options": [
+      "u(t)",
+      "delta(t)",
+      "r(t)",
+      "s(t)"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Dirac delta (unit impulse) function is represented by delta(t)."
+  },
+  {
+    "id": 35,
+    "category": "Signals & Systems",
+    "question": "The area under delta(t) equals:",
+    "options": [
+      "0",
+      "1",
+      "infinity",
+      "-1"
+    ],
+    "answerIndex": 1,
+    "explanation": "By definition, the integral of unit impulse delta(t) over time equals 1."
+  },
+  {
+    "id": 36,
+    "category": "Signals & Systems",
+    "question": "Unit step signal is denoted by:",
+    "options": [
+      "u(t)",
+      "delta(t)",
+      "r(t)",
+      "x(t)"
+    ],
+    "answerIndex": 0,
+    "explanation": "The unit step function is denoted by u(t)."
+  },
+  {
+    "id": 37,
+    "category": "Signals & Systems",
+    "question": "The derivative of unit step is:",
+    "options": [
+      "Ramp",
+      "Unit Impulse",
+      "Constant",
+      "Sine Wave"
+    ],
+    "answerIndex": 1,
+    "explanation": "du(t)/dt = delta(t). The derivative of the unit step is the unit impulse."
+  },
+  {
+    "id": 38,
+    "category": "Signals & Systems",
+    "question": "The integral of unit impulse is:",
+    "options": [
+      "Ramp",
+      "Unit Step",
+      "Constant",
+      "Zero"
+    ],
+    "answerIndex": 1,
+    "explanation": "The running integral of delta(t) from -infinity to t equals the unit step u(t)."
+  },
+  {
+    "id": 39,
+    "category": "Signals & Systems",
+    "question": "Ramp signal is represented by:",
+    "options": [
+      "delta(t)",
+      "u(t)",
+      "r(t)=tu(t)",
+      "sin(t)"
+    ],
+    "answerIndex": 2,
+    "explanation": "The unit ramp signal is r(t) = t for t >= 0, i.e., r(t) = tu(t)."
+  },
+  {
+    "id": 40,
+    "category": "Signals & Systems",
+    "question": "A system is:",
+    "options": [
+      "A signal",
+      "A device or process that transforms an input signal into an output signal",
+      "A frequency response",
+      "A sampling circuit"
+    ],
+    "answerIndex": 1,
+    "explanation": "A system takes an input signal x(t) and produces an output signal y(t)."
+  },
+  {
+    "id": 41,
+    "category": "Signals & Systems",
+    "question": "If y(t)=2x(t), the system is:",
+    "options": [
+      "Linear",
+      "Nonlinear",
+      "Time-varying",
+      "Unstable"
+    ],
+    "answerIndex": 0,
+    "explanation": "y(t)=2x(t) satisfies additivity and homogeneity, making it Linear."
+  },
+  {
+    "id": 42,
+    "category": "Signals & Systems",
+    "question": "A linear system satisfies:",
+    "options": [
+      "Only causality",
+      "Superposition Principle",
+      "Only stability",
+      "Memorylessness"
+    ],
+    "answerIndex": 1,
+    "explanation": "Linearity requires compliance with the Principle of Superposition."
+  },
+  {
+    "id": 43,
+    "category": "Signals & Systems",
+    "question": "Superposition consists of:",
+    "options": [
+      "Time invariance only",
+      "Additivity and Homogeneity",
+      "Stability and causality",
+      "Memory and linearity"
+    ],
+    "answerIndex": 1,
+    "explanation": "Superposition combines Additivity (f(x+y)=f(x)+f(y)) and Homogeneity (f(ax)=af(x))."
+  },
+  {
+    "id": 44,
+    "category": "Signals & Systems",
+    "question": "A system is time invariant if:",
+    "options": [
+      "Output is always zero",
+      "A time shift in input produces the same time shift in output",
+      "Input equals output",
+      "Frequency changes"
+    ],
+    "answerIndex": 1,
+    "explanation": "Time-invariance means a shift in input x(t-t0) results in an identical shift in output y(t-t0)."
+  },
+  {
+    "id": 45,
+    "category": "Signals & Systems",
+    "question": "A causal system depends on:",
+    "options": [
+      "Present and past inputs only",
+      "Future inputs only",
+      "Future outputs",
+      "Random inputs"
+    ],
+    "answerIndex": 0,
+    "explanation": "A system is causal if output y(t) depends only on current and past inputs."
+  },
+  {
+    "id": 46,
+    "category": "Signals & Systems",
+    "question": "A non-causal system depends on:",
+    "options": [
+      "Past inputs only",
+      "Future inputs",
+      "Present inputs only",
+      "Constants"
+    ],
+    "answerIndex": 1,
+    "explanation": "A non-causal system relies on future input values."
+  },
+  {
+    "id": 47,
+    "category": "Signals & Systems",
+    "question": "A stable system produces:",
+    "options": [
+      "Infinite output for finite input",
+      "Finite output for every bounded input",
+      "Zero output always",
+      "Random output"
+    ],
+    "answerIndex": 1,
+    "explanation": "BIBO stability guarantees every bounded input produces a bounded output."
+  },
+  {
+    "id": 48,
+    "category": "Signals & Systems",
+    "question": "BIBO stability stands for:",
+    "options": [
+      "Binary Input Binary Output",
+      "Bounded Input Bounded Output",
+      "Baseband Input Baseband Output",
+      "Balanced Input Balanced Output"
+    ],
+    "answerIndex": 1,
+    "explanation": "BIBO stands for Bounded-Input Bounded-Output stability."
+  },
+  {
+    "id": 49,
+    "category": "Signals & Systems",
+    "question": "A memoryless system depends only on:",
+    "options": [
+      "Present input value",
+      "Past inputs",
+      "Future inputs",
+      "Entire signal"
+    ],
+    "answerIndex": 0,
+    "explanation": "A memoryless (static) system's output at time t depends strictly on input at time t."
+  },
+  {
+    "id": 50,
+    "category": "Signals & Systems",
+    "question": "Which of the following properties is essential for an LTI system?",
+    "options": [
+      "Randomness",
+      "Periodicity",
+      "Linearity and Time Invariance",
+      "Memorylessness"
+    ],
+    "answerIndex": 2,
+    "explanation": "An LTI system must satisfy both Linearity and Time-Invariance."
+  },
+  {
+    "id": 51,
+    "category": "Convolution",
+    "question": "Convolution is primarily used to determine:",
+    "options": [
+      "Frequency spectrum",
+      "Output of an LTI system",
+      "Sampling rate",
+      "Signal energy"
+    ],
+    "answerIndex": 1,
+    "explanation": "Convolution calculates the response y(t) or y[n] of an LTI system to an arbitrary input."
+  },
+  {
+    "id": 52,
+    "category": "Convolution",
+    "question": "The output of an LTI system is obtained by convolving:",
+    "options": [
+      "Input with Output",
+      "Input Signal with Impulse Response",
+      "Output with Frequency",
+      "Two Random Signals"
+    ],
+    "answerIndex": 1,
+    "explanation": "y(t) = x(t) * h(t); system output is the convolution of input x(t) and impulse response h(t)."
+  },
+  {
+    "id": 53,
+    "category": "Convolution",
+    "question": "The mathematical symbol commonly used for convolution is:",
+    "options": [
+      "+",
+      "x",
+      "* (asterisk)",
+      "(+)"
+    ],
+    "answerIndex": 2,
+    "explanation": "The asterisk (*) represents the convolution operator."
+  },
+  {
+    "id": 54,
+    "category": "Convolution",
+    "question": "Continuous-time convolution is represented by:",
+    "options": [
+      "Multiplication",
+      "Integral",
+      "Differentiation",
+      "Summation only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Continuous-time convolution integral is integral of x(tau)h(t-tau)d(tau)."
+  },
+  {
+    "id": 55,
+    "category": "Convolution",
+    "question": "Discrete-time convolution is represented by:",
+    "options": [
+      "Integration",
+      "Summation",
+      "Differentiation",
+      "Multiplication only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Discrete-time convolution sum is sum of x[k]h[n-k]."
+  },
+  {
+    "id": 56,
+    "category": "Convolution",
+    "question": "Which operation combines two signals to produce a third signal?",
+    "options": [
+      "Sampling",
+      "Convolution",
+      "Quantization",
+      "Modulation"
+    ],
+    "answerIndex": 1,
+    "explanation": "Convolution combines an input signal and an impulse response to produce an output signal."
+  },
+  {
+    "id": 57,
+    "category": "Convolution",
+    "question": "The impulse response of a system is usually denoted by:",
+    "options": [
+      "x(t)",
+      "h(t)",
+      "y(t)",
+      "f(t)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Impulse response is conventionally denoted by h(t) or h[n]."
+  },
+  {
+    "id": 58,
+    "category": "Convolution",
+    "question": "In an LTI system, h(t) represents:",
+    "options": [
+      "Input Signal",
+      "System Characteristics",
+      "Output Signal",
+      "Sampling Function"
+    ],
+    "answerIndex": 1,
+    "explanation": "h(t) captures the complete dynamic characteristics of an LTI system."
+  },
+  {
+    "id": 59,
+    "category": "Convolution",
+    "question": "If the impulse response of an LTI system is known, the output can be determined using:",
+    "options": [
+      "Fourier Series",
+      "Convolution",
+      "Sampling",
+      "Quantization"
+    ],
+    "answerIndex": 1,
+    "explanation": "Knowing h(t) allows computing output y(t) for any input x(t) via convolution."
+  },
+  {
+    "id": 60,
+    "category": "Convolution",
+    "question": "The impulse response completely characterizes:",
+    "options": [
+      "Any nonlinear system",
+      "An LTI system",
+      "Random systems only",
+      "Time-varying systems"
+    ],
+    "answerIndex": 1,
+    "explanation": "An LTI system is completely and uniquely characterized by its impulse response."
+  },
+  {
+    "id": 61,
+    "category": "Convolution",
+    "question": "Convolution satisfies the commutative property.:",
+    "options": [
+      "False",
+      "True",
+      "Only for continuous signals",
+      "Only for discrete signals"
+    ],
+    "answerIndex": 1,
+    "explanation": "x * h = h * x. Convolution is commutative for LTI systems."
+  },
+  {
+    "id": 62,
+    "category": "Convolution",
+    "question": "The commutative property is:",
+    "options": [
+      "x*h != h*x",
+      "x*h = h*x",
+      "x+h=h+x",
+      "x-h=h-x"
+    ],
+    "answerIndex": 1,
+    "explanation": "Commutative property: order of signals in convolution does not alter the result."
+  },
+  {
+    "id": 63,
+    "category": "Convolution",
+    "question": "Convolution also satisfies:",
+    "options": [
+      "Periodicity only",
+      "Associative Property",
+      "Sampling Property",
+      "Nyquist Property"
+    ],
+    "answerIndex": 1,
+    "explanation": "Convolution satisfies associative property: (x * h1) * h2 = x * (h1 * h2)."
+  },
+  {
+    "id": 64,
+    "category": "Convolution",
+    "question": "Associative property is expressed as:",
+    "options": [
+      "x+h=h+x",
+      "(x*h1)*h2 = x*(h1*h2)",
+      "x-h=h-x",
+      "x*h=h*x"
+    ],
+    "answerIndex": 1,
+    "explanation": "(x * h1) * h2 = x * (h1 * h2) demonstrates associativity."
+  },
+  {
+    "id": 65,
+    "category": "Convolution",
+    "question": "Which property allows grouping of convolution operations?",
+    "options": [
+      "Commutative",
+      "Associative",
+      "Symmetric",
+      "Time Scaling"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Associative property permits re-grouping cascaded LTI system stages."
+  },
+  {
+    "id": 66,
+    "category": "Convolution",
+    "question": "Convolution also satisfies:",
+    "options": [
+      "Sampling Property",
+      "Distributive Property",
+      "Periodic Property",
+      "Aliasing Property"
+    ],
+    "answerIndex": 1,
+    "explanation": "Convolution satisfies distributive property over addition."
+  },
+  {
+    "id": 67,
+    "category": "Convolution",
+    "question": "Distributive property is:",
+    "options": [
+      "x*h=x+h",
+      "x*(h1+h2)=x*h1+x*h2",
+      "x+h=h+x",
+      "x=h"
+    ],
+    "answerIndex": 1,
+    "explanation": "x * (h1 + h2) = x * h1 + x * h2."
+  },
+  {
+    "id": 68,
+    "category": "Convolution",
+    "question": "The identity element for convolution is:",
+    "options": [
+      "Unit Step",
+      "Unit Impulse",
+      "Ramp",
+      "Constant Signal"
+    ],
+    "answerIndex": 1,
+    "explanation": "x(t) * delta(t) = x(t). The unit impulse is the identity element."
+  },
+  {
+    "id": 69,
+    "category": "Convolution",
+    "question": "Convolution of any signal with delta(t) results in:",
+    "options": [
+      "Zero",
+      "The Original Signal",
+      "Impulse Response",
+      "Constant"
+    ],
+    "answerIndex": 1,
+    "explanation": "Convolving any signal with delta(t) leaves the signal unchanged."
+  },
+  {
+    "id": 70,
+    "category": "Convolution",
+    "question": "x(t)*delta(t)=",
+    "options": [
+      "0",
+      "h(t)",
+      "x(t)",
+      "1"
+    ],
+    "answerIndex": 2,
+    "explanation": "x(t) * delta(t) = x(t)."
+  },
+  {
+    "id": 71,
+    "category": "Convolution",
+    "question": "Convolution is valid primarily for:",
+    "options": [
+      "Random Systems",
+      "Linear Time-Invariant Systems",
+      "Time-Varying Systems",
+      "Chaotic Systems"
+    ],
+    "answerIndex": 1,
+    "explanation": "Convolution integral/sum applies specifically to Linear Time-Invariant (LTI) systems."
+  },
+  {
+    "id": 72,
+    "category": "Convolution",
+    "question": "In an LTI system:",
+    "options": [
+      "Output depends only on frequency",
+      "Output is convolution of input and impulse response",
+      "Output equals input always",
+      "Output is differentiation of input"
+    ],
+    "answerIndex": 1,
+    "explanation": "Output y(t) is determined by convolving input x(t) with system impulse response h(t)."
+  },
+  {
+    "id": 73,
+    "category": "Convolution",
+    "question": "Which system property makes convolution applicable?",
+    "options": [
+      "Causality only",
+      "Linearity and Time Invariance",
+      "Stability only",
+      "Memorylessness"
+    ],
+    "answerIndex": 1,
+    "explanation": "Both linearity and time invariance are required for convolution representation."
+  },
+  {
+    "id": 74,
+    "category": "Convolution",
+    "question": "The first step in graphical convolution is:",
+    "options": [
+      "Integrate",
+      "Fold one signal",
+      "Differentiate",
+      "Normalize"
+    ],
+    "answerIndex": 1,
+    "explanation": "Graphical convolution steps: Fold (Time Reverse), Shift, Multiply, and Sum/Integrate."
+  },
+  {
+    "id": 75,
+    "category": "Convolution",
+    "question": "Folding means:",
+    "options": [
+      "Scaling amplitude",
+      "Time Reversal",
+      "Compression",
+      "Expansion"
+    ],
+    "answerIndex": 1,
+    "explanation": "Folding a signal h(tau) creates h(-tau) via time reversal."
+  },
+  {
+    "id": 76,
+    "category": "Convolution",
+    "question": "After folding, the next step is generally:",
+    "options": [
+      "Sampling",
+      "Shift",
+      "Quantize",
+      "Normalize"
+    ],
+    "answerIndex": 1,
+    "explanation": "After folding h(-tau), we shift it by t to obtain h(t-tau)."
+  },
+  {
+    "id": 77,
+    "category": "Convolution",
+    "question": "Graphical convolution mainly consists of:",
+    "options": [
+      "Shift and Multiply only",
+      "Fold, Shift, Multiply and Integrate/Sum",
+      "Differentiate only",
+      "Sample and Quantize"
+    ],
+    "answerIndex": 1,
+    "explanation": "The complete steps are Fold, Shift, Multiply, and Integrate (or Sum)."
+  },
+  {
+    "id": 78,
+    "category": "Convolution",
+    "question": "Linear convolution gives:",
+    "options": [
+      "Circular Output",
+      "Actual output of an LTI system",
+      "Frequency Response",
+      "FFT"
+    ],
+    "answerIndex": 1,
+    "explanation": "Linear convolution evaluates the true physical response of an LTI system to an input sequence."
+  },
+  {
+    "id": 79,
+    "category": "Convolution",
+    "question": "If one sequence has length M and another has length N, the linear convolution length is:",
+    "options": [
+      "M+N",
+      "M+N-1",
+      "MN",
+      "Max(M,N)"
+    ],
+    "answerIndex": 1,
+    "explanation": "The length of linear convolution between length M and N sequences is M + N - 1."
+  },
+  {
+    "id": 80,
+    "category": "Convolution",
+    "question": "Linear convolution assumes:",
+    "options": [
+      "Signals are periodic",
+      "Signals are not wrapped around",
+      "Signals are random",
+      "Signals are sampled twice"
+    ],
+    "answerIndex": 1,
+    "explanation": "Linear convolution treats sequences as aperiodic non-wrapping finite signals."
+  },
+  {
+    "id": 81,
+    "category": "Convolution",
+    "question": "Circular convolution assumes sequences are:",
+    "options": [
+      "Infinite",
+      "Periodic",
+      "Random",
+      "Continuous"
+    ],
+    "answerIndex": 1,
+    "explanation": "Circular convolution inherently assumes periodic extension of input sequences."
+  },
+  {
+    "id": 82,
+    "category": "Convolution",
+    "question": "Circular convolution is mainly associated with:",
+    "options": [
+      "Laplace Transform",
+      "DFT",
+      "ZOH",
+      "FIR Design"
+    ],
+    "answerIndex": 1,
+    "explanation": "Multiplication of DFTs in frequency domain corresponds to circular convolution in time domain."
+  },
+  {
+    "id": 83,
+    "category": "Convolution",
+    "question": "Circular convolution differs from linear convolution because:",
+    "options": [
+      "It uses integration",
+      "It wraps around the sequence",
+      "It ignores impulse response",
+      "It uses differentiation"
+    ],
+    "answerIndex": 1,
+    "explanation": "Circular convolution wraps sequence indices modulo N."
+  },
+  {
+    "id": 84,
+    "category": "Convolution",
+    "question": "Linear and circular convolution become identical when:",
+    "options": [
+      "No sampling",
+      "Proper zero-padding is applied",
+      "FFT is avoided",
+      "Signal is analog"
+    ],
+    "answerIndex": 1,
+    "explanation": "Zero-padding sequences to length >= M + N - 1 makes circular convolution equal to linear convolution."
+  },
+  {
+    "id": 85,
+    "category": "Convolution",
+    "question": "Convolution in the time domain corresponds to:",
+    "options": [
+      "Addition in frequency domain",
+      "Multiplication in frequency domain",
+      "Differentiation",
+      "Sampling"
+    ],
+    "answerIndex": 1,
+    "explanation": "Time-domain convolution x(t) * h(t) translates to multiplication X(f)H(f) in frequency domain."
+  },
+  {
+    "id": 86,
+    "category": "Convolution",
+    "question": "Multiplication in time domain corresponds to:",
+    "options": [
+      "Addition in frequency domain",
+      "Convolution in frequency domain",
+      "Integration",
+      "Sampling"
+    ],
+    "answerIndex": 1,
+    "explanation": "Time-domain multiplication x(t)h(t) translates to frequency-domain convolution X(f) * H(f)."
+  },
+  {
+    "id": 87,
+    "category": "Convolution",
+    "question": "Convolution theorem simplifies computation using:",
+    "options": [
+      "Quantization",
+      "Fourier Transform",
+      "Modulation",
+      "Coding"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fourier Transform allows replacing costly convolution operations with simple multiplications."
+  },
+  {
+    "id": 88,
+    "category": "Convolution",
+    "question": "Convolution mainly combines:",
+    "options": [
+      "Two frequencies",
+      "Two signals",
+      "Two databases",
+      "Two processors"
+    ],
+    "answerIndex": 1,
+    "explanation": "Convolution operates on two time-domain signals."
+  },
+  {
+    "id": 89,
+    "category": "Convolution",
+    "question": "Which signal is convolved with the input?",
+    "options": [
+      "Output Signal",
+      "Impulse Response",
+      "Frequency Response",
+      "Transfer Function"
+    ],
+    "answerIndex": 1,
+    "explanation": "The input signal x(t) is convolved with the system's impulse response h(t)."
+  },
+  {
+    "id": 90,
+    "category": "Convolution",
+    "question": "Convolution is an operation performed in:",
+    "options": [
+      "Time Domain",
+      "Discrete Domain",
+      "Continuous Domain",
+      "Both Time and Discrete-Time Domains"
+    ],
+    "answerIndex": 3,
+    "explanation": "Convolution is applicable to both continuous-time x(t)*h(t) and discrete-time x[n]*h[n] signals."
+  },
+  {
+    "id": 91,
+    "category": "Convolution",
+    "question": "Which statement is TRUE?",
+    "options": [
+      "Convolution is applicable only to analog signals.",
+      "Convolution applies to both continuous-time and discrete-time signals.",
+      "Convolution is used only with FFT.",
+      "Convolution requires periodic signals."
+    ],
+    "answerIndex": 1,
+    "explanation": "Convolution operates across both continuous-time and discrete-time domains."
+  },
+  {
+    "id": 92,
+    "category": "Convolution",
+    "question": "Which property allows changing the order of convolution?",
+    "options": [
+      "Associative",
+      "Commutative",
+      "Distributive",
+      "Identity"
+    ],
+    "answerIndex": 1,
+    "explanation": "Commutativity (x * h = h * x) allows changing signal order."
+  },
+  {
+    "id": 93,
+    "category": "Convolution",
+    "question": "Which property allows distributing convolution over addition?",
+    "options": [
+      "Commutative",
+      "Associative",
+      "Distributive",
+      "Scaling"
+    ],
+    "answerIndex": 2,
+    "explanation": "Distributive property: x * (h1 + h2) = x * h1 + x * h2."
+  },
+  {
+    "id": 94,
+    "category": "Convolution",
+    "question": "Which operation is closely related to system response?",
+    "options": [
+      "Sampling",
+      "Convolution",
+      "Quantization",
+      "Encoding"
+    ],
+    "answerIndex": 1,
+    "explanation": "System output response to an input is computed via convolution."
+  },
+  {
+    "id": 95,
+    "category": "Convolution",
+    "question": "A causal LTI system has an impulse response that is:",
+    "options": [
+      "Nonzero for t < 0",
+      "Zero for t < 0",
+      "Always periodic",
+      "Constant"
+    ],
+    "answerIndex": 1,
+    "explanation": "For a causal system, h(t) = 0 for t < 0 (or h[n] = 0 for n < 0)."
+  },
+  {
+    "id": 96,
+    "category": "Convolution",
+    "question": "If h(t)=delta(t), then the system behaves as:",
+    "options": [
+      "Integrator",
+      "Identity System",
+      "Differentiator",
+      "Low-pass Filter"
+    ],
+    "answerIndex": 1,
+    "explanation": "y(t) = x(t) * delta(t) = x(t), acting as an identity pass-through system."
+  },
+  {
+    "id": 97,
+    "category": "Convolution",
+    "question": "Convolution is useful because it:",
+    "options": [
+      "Increases sampling frequency",
+      "Predicts system output without solving differential equations directly",
+      "Eliminates quantization noise",
+      "Converts analog signals to digital"
+    ],
+    "answerIndex": 1,
+    "explanation": "Convolution calculates LTI system response directly from input and impulse response."
+  },
+  {
+    "id": 98,
+    "category": "Convolution",
+    "question": "Which concept is most closely linked with convolution?",
+    "options": [
+      "Nyquist Rate",
+      "Quantization",
+      "Impulse Response",
+      "Window Function"
+    ],
+    "answerIndex": 2,
+    "explanation": "Impulse response is the fundamental kernel used in LTI system convolution."
+  },
+  {
+    "id": 99,
+    "category": "Convolution",
+    "question": "Which of the following is NOT a property of convolution?",
+    "options": [
+      "Commutative",
+      "Associative",
+      "Distributive",
+      "Anti-Commutative"
+    ],
+    "answerIndex": 3,
+    "explanation": "Convolution is commutative, not anti-commutative."
+  },
+  {
+    "id": 100,
+    "category": "Convolution",
+    "question": "Which statement best summarizes convolution?",
+    "options": [
+      "It converts analog signals into digital signals.",
+      "It calculates the sampling frequency.",
+      "It determines the output of an LTI system by combining the input signal with the system's impulse response.",
+      "It measures signal power only."
+    ],
+    "answerIndex": 2,
+    "explanation": "Convolution evaluates LTI system response by combining input with impulse response."
+  },
+  {
+    "id": 101,
+    "category": "Sampling Theory",
+    "question": "Sampling is the process of:",
+    "options": [
+      "Amplifying a signal",
+      "Converting a continuous-time signal into a discrete-time signal",
+      "Compressing a signal",
+      "Encrypting a signal"
+    ],
+    "answerIndex": 1,
+    "explanation": "Sampling discretizes continuous time by taking values at discrete time intervals."
+  },
+  {
+    "id": 102,
+    "category": "Sampling Theory",
+    "question": "Sampling converts:",
+    "options": [
+      "Digital signal into analog signal",
+      "Analog signal into discrete-time signal",
+      "Frequency into amplitude",
+      "Voltage into current"
+    ],
+    "answerIndex": 1,
+    "explanation": "Sampling converts a continuous analog signal x(t) into a discrete-time signal x[n]."
+  },
+  {
+    "id": 103,
+    "category": "Sampling Theory",
+    "question": "The primary purpose of sampling is:",
+    "options": [
+      "Increase signal amplitude",
+      "Enable digital processing of analog signals",
+      "Reduce frequency",
+      "Increase bandwidth"
+    ],
+    "answerIndex": 1,
+    "explanation": "Sampling enables continuous real-world signals to be processed using digital computers and DSPs."
+  },
+  {
+    "id": 104,
+    "category": "Sampling Theory",
+    "question": "Which device performs sampling?",
+    "options": [
+      "Oscillator",
+      "Analog-to-Digital Converter (ADC)",
+      "Amplifier",
+      "Modulator"
+    ],
+    "answerIndex": 1,
+    "explanation": "An ADC performs sampling and quantization to convert analog signals to digital."
+  },
+  {
+    "id": 105,
+    "category": "Sampling Theory",
+    "question": "A sampled signal consists of:",
+    "options": [
+      "Continuous values at every instant",
+      "Values taken at discrete time intervals",
+      "Random amplitudes only",
+      "Infinite frequencies"
+    ],
+    "answerIndex": 1,
+    "explanation": "Sampling retains signal amplitude values strictly at discrete time steps Ts."
+  },
+  {
+    "id": 106,
+    "category": "Sampling Theory",
+    "question": "Sampling interval is commonly represented by:",
+    "options": [
+      "f",
+      "Ts",
+      "w",
+      "lambda"
+    ],
+    "answerIndex": 1,
+    "explanation": "Ts represents the sampling period or sampling interval."
+  },
+  {
+    "id": 107,
+    "category": "Sampling Theory",
+    "question": "Sampling frequency is denoted by:",
+    "options": [
+      "T",
+      "fs",
+      "A",
+      "H"
+    ],
+    "answerIndex": 1,
+    "explanation": "fs denotes sampling frequency (samples per second)."
+  },
+  {
+    "id": 108,
+    "category": "Sampling Theory",
+    "question": "Sampling frequency is the:",
+    "options": [
+      "Frequency of the original signal",
+      "Number of samples taken per second",
+      "Signal amplitude",
+      "Filter bandwidth"
+    ],
+    "answerIndex": 1,
+    "explanation": "fs = 1/Ts is the total number of samples taken per second (Hz)."
+  },
+  {
+    "id": 109,
+    "category": "Sampling Theory",
+    "question": "The relationship between sampling period and sampling frequency is:",
+    "options": [
+      "fs = Ts",
+      "fs = 1/Ts",
+      "fs = 2Ts",
+      "Ts = 2fs"
+    ],
+    "answerIndex": 1,
+    "explanation": "Sampling rate fs and sampling interval Ts are inversely related: fs = 1/Ts."
+  },
+  {
+    "id": 110,
+    "category": "Sampling Theory",
+    "question": "Increasing the sampling frequency means:",
+    "options": [
+      "Increasing the sampling interval",
+      "Decreasing the sampling interval",
+      "Increasing quantization error",
+      "Increasing aliasing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Higher sampling frequency fs decreases time interval Ts between consecutive samples."
+  },
+  {
+    "id": 111,
+    "category": "Sampling Theory",
+    "question": "Nyquist Sampling Theorem states that the sampling frequency must be at least:",
+    "options": [
+      "Equal to the highest frequency",
+      "Twice the highest frequency component",
+      "Half the highest frequency",
+      "Four times the highest frequency"
+    ],
+    "answerIndex": 1,
+    "explanation": "fs >= 2 * fmax to prevent spectral overlap (aliasing)."
+  },
+  {
+    "id": 112,
+    "category": "Sampling Theory",
+    "question": "Nyquist rate is:",
+    "options": [
+      "fmax",
+      "2fmax",
+      "fmax/2",
+      "4fmax"
+    ],
+    "answerIndex": 1,
+    "explanation": "The minimum sampling rate to avoid aliasing is the Nyquist Rate = 2 * fmax."
+  },
+  {
+    "id": 113,
+    "category": "Sampling Theory",
+    "question": "If the maximum frequency is 5 kHz, the minimum sampling frequency is:",
+    "options": [
+      "5 kHz",
+      "10 kHz",
+      "2.5 kHz",
+      "20 kHz"
+    ],
+    "answerIndex": 1,
+    "explanation": "Nyquist rate = 2 * 5 kHz = 10 kHz."
+  },
+  {
+    "id": 114,
+    "category": "Sampling Theory",
+    "question": "A signal containing frequencies up to 8 kHz should be sampled at a minimum rate of:",
+    "options": [
+      "8 kHz",
+      "12 kHz",
+      "16 kHz",
+      "24 kHz"
+    ],
+    "answerIndex": 2,
+    "explanation": "Minimum sampling rate = 2 * 8 kHz = 16 kHz."
+  },
+  {
+    "id": 115,
+    "category": "Sampling Theory",
+    "question": "Nyquist theorem prevents:",
+    "options": [
+      "Quantization",
+      "Aliasing",
+      "Filtering",
+      "Amplification"
+    ],
+    "answerIndex": 1,
+    "explanation": "Sampling above the Nyquist rate prevents spectral overlap (aliasing)."
+  },
+  {
+    "id": 116,
+    "category": "Sampling Theory",
+    "question": "Who proposed the sampling theorem commonly known as the Nyquist-Shannon theorem?",
+    "options": [
+      "Fourier",
+      "Nyquist and Shannon",
+      "Laplace",
+      "Euler"
+    ],
+    "answerIndex": 1,
+    "explanation": "Harry Nyquist and Claude Shannon formulated the sampling theorem."
+  },
+  {
+    "id": 117,
+    "category": "Sampling Theory",
+    "question": "Aliasing occurs when:",
+    "options": [
+      "Sampling frequency is too high",
+      "Sampling frequency is below the Nyquist rate",
+      "Quantization levels are increased",
+      "Noise is removed"
+    ],
+    "answerIndex": 1,
+    "explanation": "Undersampling (fs < 2fmax) causes high-frequency components to alias into lower frequencies."
+  },
+  {
+    "id": 118,
+    "category": "Sampling Theory",
+    "question": "Aliasing causes:",
+    "options": [
+      "Better reconstruction",
+      "Different frequencies to become indistinguishable",
+      "Higher resolution",
+      "Reduced storage"
+    ],
+    "answerIndex": 1,
+    "explanation": "Aliasing overlaps spectral copies, rendering high and low frequency components indistinguishable."
+  },
+  {
+    "id": 119,
+    "category": "Sampling Theory",
+    "question": "Which of the following is the main cause of aliasing?",
+    "options": [
+      "Oversampling",
+      "Undersampling",
+      "Filtering",
+      "Compression"
+    ],
+    "answerIndex": 1,
+    "explanation": "Undersampling (sampling below Nyquist rate) causes aliasing."
+  },
+  {
+    "id": 120,
+    "category": "Sampling Theory",
+    "question": "Aliasing results in:",
+    "options": [
+      "Accurate signal reconstruction",
+      "Distortion in the reconstructed signal",
+      "Increased bandwidth",
+      "Better quality"
+    ],
+    "answerIndex": 1,
+    "explanation": "Aliasing distorts signal spectrum, causing irreversible waveform degradation."
+  },
+  {
+    "id": 121,
+    "category": "Sampling Theory",
+    "question": "Which filter is used before sampling to prevent aliasing?",
+    "options": [
+      "High-pass Filter",
+      "Low-pass (Anti-Aliasing) Filter",
+      "Band-stop Filter",
+      "Notch Filter"
+    ],
+    "answerIndex": 1,
+    "explanation": "A low-pass anti-aliasing filter attenuates frequencies above fs/2 prior to sampling."
+  },
+  {
+    "id": 122,
+    "category": "Sampling Theory",
+    "question": "The anti-aliasing filter removes:",
+    "options": [
+      "Low-frequency components",
+      "Frequencies above the Nyquist frequency",
+      "Quantization noise",
+      "DC components"
+    ],
+    "answerIndex": 1,
+    "explanation": "Anti-aliasing low-pass filters eliminate frequencies above the Nyquist frequency fs/2."
+  },
+  {
+    "id": 123,
+    "category": "Sampling Theory",
+    "question": "Sampling below the Nyquist rate is called:",
+    "options": [
+      "Oversampling",
+      "Undersampling",
+      "Uniform Sampling",
+      "Sequential Sampling"
+    ],
+    "answerIndex": 1,
+    "explanation": "Sampling at fs < 2fmax is termed undersampling."
+  },
+  {
+    "id": 124,
+    "category": "Sampling Theory",
+    "question": "Oversampling means:",
+    "options": [
+      "Sampling below Nyquist rate",
+      "Sampling above the Nyquist rate",
+      "Sampling exactly at Nyquist rate",
+      "Random sampling"
+    ],
+    "answerIndex": 1,
+    "explanation": "Oversampling samples at fs significantly greater than 2fmax."
+  },
+  {
+    "id": 125,
+    "category": "Sampling Theory",
+    "question": "Oversampling generally:",
+    "options": [
+      "Increases aliasing",
+      "Reduces the risk of aliasing",
+      "Reduces signal quality",
+      "Eliminates filtering"
+    ],
+    "answerIndex": 1,
+    "explanation": "Oversampling widens transition bands and reduces aliasing risk."
+  },
+  {
+    "id": 126,
+    "category": "Sampling Theory",
+    "question": "Which statement is TRUE?",
+    "options": [
+      "Oversampling always causes distortion.",
+      "Oversampling provides more samples than the minimum required.",
+      "Oversampling reduces resolution.",
+      "Oversampling increases aliasing."
+    ],
+    "answerIndex": 1,
+    "explanation": "Oversampling gathers more samples per second than the minimum Nyquist requirement."
+  },
+  {
+    "id": 127,
+    "category": "Sampling Theory",
+    "question": "Quantization is the process of:",
+    "options": [
+      "Sampling time",
+      "Converting continuous amplitudes into discrete levels",
+      "Amplifying signals",
+      "Filtering noise"
+    ],
+    "answerIndex": 1,
+    "explanation": "Quantization discretizes continuous signal amplitude into finite discrete representation levels."
+  },
+  {
+    "id": 128,
+    "category": "Sampling Theory",
+    "question": "Quantization occurs after:",
+    "options": [
+      "Reconstruction",
+      "Sampling",
+      "Modulation",
+      "Filtering"
+    ],
+    "answerIndex": 1,
+    "explanation": "In ADC, sampling discretizes time first, followed by quantization of amplitude."
+  },
+  {
+    "id": 129,
+    "category": "Sampling Theory",
+    "question": "Quantization converts:",
+    "options": [
+      "Continuous time into discrete time",
+      "Continuous amplitude into discrete amplitude",
+      "Analog frequency into digital frequency",
+      "Voltage into current"
+    ],
+    "answerIndex": 1,
+    "explanation": "Quantization maps continuous voltage amplitudes into discrete digital binary steps."
+  },
+  {
+    "id": 130,
+    "category": "Sampling Theory",
+    "question": "Quantization error is also called:",
+    "options": [
+      "Sampling Error",
+      "Quantization Noise",
+      "Aliasing",
+      "White Noise"
+    ],
+    "answerIndex": 1,
+    "explanation": "The difference between actual continuous amplitude and quantized value is Quantization Noise."
+  },
+  {
+    "id": 131,
+    "category": "Sampling Theory",
+    "question": "Increasing the number of quantization levels generally:",
+    "options": [
+      "Increases quantization error",
+      "Reduces quantization error",
+      "Increases aliasing",
+      "Reduces sampling frequency"
+    ],
+    "answerIndex": 1,
+    "explanation": "More quantization levels reduce step size L, decreasing quantization noise error."
+  },
+  {
+    "id": 132,
+    "category": "Sampling Theory",
+    "question": "An 8-bit ADC provides:",
+    "options": [
+      "8 quantization levels",
+      "64 levels",
+      "128 levels",
+      "256 levels"
+    ],
+    "answerIndex": 3,
+    "explanation": "2^8 = 256 discrete quantization levels."
+  },
+  {
+    "id": 133,
+    "category": "Sampling Theory",
+    "question": "ADC stands for:",
+    "options": [
+      "Analog Data Converter",
+      "Analog-to-Digital Converter",
+      "Automatic Data Circuit",
+      "Analog Detection Circuit"
+    ],
+    "answerIndex": 1,
+    "explanation": "ADC stands for Analog-to-Digital Converter."
+  },
+  {
+    "id": 134,
+    "category": "Sampling Theory",
+    "question": "DAC stands for:",
+    "options": [
+      "Digital Analog Circuit",
+      "Digital-to-Analog Converter",
+      "Data Access Converter",
+      "Digital Amplitude Controller"
+    ],
+    "answerIndex": 1,
+    "explanation": "DAC stands for Digital-to-Analog Converter."
+  },
+  {
+    "id": 135,
+    "category": "Sampling Theory",
+    "question": "ADC performs:",
+    "options": [
+      "Reconstruction",
+      "Sampling and Quantization",
+      "Amplification only",
+      "Filtering only"
+    ],
+    "answerIndex": 1,
+    "explanation": "ADCs perform time sampling followed by amplitude quantization and encoding."
+  },
+  {
+    "id": 136,
+    "category": "Sampling Theory",
+    "question": "DAC is mainly used for:",
+    "options": [
+      "Sampling",
+      "Converting digital signals back into analog form",
+      "Quantization",
+      "Aliasing"
+    ],
+    "answerIndex": 1,
+    "explanation": "DAC reconstructs continuous analog signals from discrete digital numbers."
+  },
+  {
+    "id": 137,
+    "category": "Sampling Theory",
+    "question": "Reconstruction means:",
+    "options": [
+      "Sampling again",
+      "Recovering the original analog signal from its samples",
+      "Quantization",
+      "Encoding"
+    ],
+    "answerIndex": 1,
+    "explanation": "Reconstruction converts discrete-time sample sequence back to continuous-time analog signal."
+  },
+  {
+    "id": 138,
+    "category": "Sampling Theory",
+    "question": "Perfect reconstruction is possible when:",
+    "options": [
+      "Sampling frequency is below Nyquist rate",
+      "Sampling theorem is satisfied",
+      "Aliasing occurs",
+      "Quantization error is maximum"
+    ],
+    "answerIndex": 1,
+    "explanation": "If fs >= 2fmax (Nyquist satisfied), ideal low-pass filtering yields perfect signal reconstruction."
+  },
+  {
+    "id": 139,
+    "category": "Sampling Theory",
+    "question": "Which filter is commonly used after DAC for reconstruction?",
+    "options": [
+      "High-pass Filter",
+      "Low-pass Reconstruction Filter",
+      "Notch Filter",
+      "Band-stop Filter"
+    ],
+    "answerIndex": 1,
+    "explanation": "A low-pass reconstruction filter removes high frequency images created by DAC steps."
+  },
+  {
+    "id": 140,
+    "category": "Sampling Theory",
+    "question": "Reconstruction filter is also called:",
+    "options": [
+      "Sampling Filter",
+      "Smoothing Filter",
+      "Quantization Filter",
+      "Alias Filter"
+    ],
+    "answerIndex": 1,
+    "explanation": "Reconstruction filters smooth DAC stair-step outputs and are called Smoothing Filters."
+  },
+  {
+    "id": 141,
+    "category": "Sampling Theory",
+    "question": "The Nyquist frequency is equal to:",
+    "options": [
+      "fs",
+      "fs/2",
+      "2fs",
+      "fs^2"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Nyquist Frequency is half the sampling rate (fs/2)."
+  },
+  {
+    "id": 142,
+    "category": "Sampling Theory",
+    "question": "If sampling frequency increases, the sampling interval:",
+    "options": [
+      "Increases",
+      "Decreases",
+      "Remains constant",
+      "Doubles"
+    ],
+    "answerIndex": 1,
+    "explanation": "Ts = 1/fs; as fs increases, sampling interval Ts decreases."
+  },
+  {
+    "id": 143,
+    "category": "Sampling Theory",
+    "question": "Which statement is TRUE?",
+    "options": [
+      "Aliasing improves signal quality.",
+      "Aliasing makes different frequency components appear identical after sampling.",
+      "Aliasing occurs only in digital filters.",
+      "Aliasing is caused by quantization."
+    ],
+    "answerIndex": 1,
+    "explanation": "Aliasing causes higher frequencies to mimic lower frequencies after sampling."
+  },
+  {
+    "id": 144,
+    "category": "Sampling Theory",
+    "question": "Which process introduces quantization noise?",
+    "options": [
+      "Sampling",
+      "Quantization",
+      "Reconstruction",
+      "Filtering"
+    ],
+    "answerIndex": 1,
+    "explanation": "Quantization rounds continuous amplitudes to discrete levels, producing quantization noise."
+  },
+  {
+    "id": 145,
+    "category": "Sampling Theory",
+    "question": "Which process changes only the time axis?",
+    "options": [
+      "Sampling",
+      "Quantization",
+      "Filtering",
+      "Amplification"
+    ],
+    "answerIndex": 0,
+    "explanation": "Sampling discretizes the time axis without quantizing amplitude levels."
+  },
+  {
+    "id": 146,
+    "category": "Sampling Theory",
+    "question": "Which process changes only the amplitude axis?",
+    "options": [
+      "Sampling",
+      "Quantization",
+      "Reconstruction",
+      "Modulation"
+    ],
+    "answerIndex": 1,
+    "explanation": "Quantization discretizes the amplitude axis."
+  },
+  {
+    "id": 147,
+    "category": "Sampling Theory",
+    "question": "The minimum sampling frequency depends on:",
+    "options": [
+      "Signal amplitude",
+      "Highest frequency component of the signal",
+      "Signal duration",
+      "Signal power"
+    ],
+    "answerIndex": 1,
+    "explanation": "Nyquist rate relies on highest frequency component fmax in the signal."
+  },
+  {
+    "id": 148,
+    "category": "Sampling Theory",
+    "question": "Which statement about the Sampling Theorem is correct?",
+    "options": [
+      "It applies only to digital signals.",
+      "It provides the condition for faithful reconstruction of a band-limited signal.",
+      "It eliminates quantization noise.",
+      "It increases signal amplitude."
+    ],
+    "answerIndex": 1,
+    "explanation": "Sampling theorem defines conditions (fs >= 2fmax) for complete signal reconstruction."
+  },
+  {
+    "id": 149,
+    "category": "Sampling Theory",
+    "question": "Which sequence correctly represents analog-to-digital conversion?",
+    "options": [
+      "Quantization -> Sampling -> Encoding",
+      "Sampling -> Quantization -> Encoding",
+      "Encoding -> Sampling -> Quantization",
+      "Filtering -> Encoding -> Quantization"
+    ],
+    "answerIndex": 1,
+    "explanation": "A-to-D conversion pipeline: Sampling -> Quantization -> Encoding."
+  },
+  {
+    "id": 150,
+    "category": "Sampling Theory",
+    "question": "Which statement best summarizes sampling?",
+    "options": [
+      "It converts digital data into analog form.",
+      "It increases signal bandwidth.",
+      "It converts a continuous-time signal into a discrete-time representation suitable for digital processing.",
+      "It removes all noise from a signal."
+    ],
+    "answerIndex": 2,
+    "explanation": "Sampling converts continuous-time signals into discrete-time representations for digital systems."
+  },
+  {
+    "id": 151,
+    "category": "Fourier Series & Transform",
+    "question": "The Fourier Transform is mainly used to:",
+    "options": [
+      "Sample a signal",
+      "Convert a signal from the time domain to the frequency domain",
+      "Quantize a signal",
+      "Encode a signal"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fourier Transform analyzes frequency components by transforming signals from time to frequency domain."
+  },
+  {
+    "id": 152,
+    "category": "Fourier Series & Transform",
+    "question": "The inverse Fourier Transform converts a signal from:",
+    "options": [
+      "Time domain to time domain",
+      "Frequency domain to time domain",
+      "Digital to analog",
+      "Analog to digital"
+    ],
+    "answerIndex": 1,
+    "explanation": "Inverse Fourier Transform reconstructs time-domain signals from frequency-domain spectra."
+  },
+  {
+    "id": 153,
+    "category": "Fourier Series & Transform",
+    "question": "The frequency-domain representation of a signal is called its:",
+    "options": [
+      "Waveform",
+      "Spectrum",
+      "Impulse Response",
+      "Sampling Pattern"
+    ],
+    "answerIndex": 1,
+    "explanation": "The distribution of signal amplitudes/phases across frequencies is its Spectrum."
+  },
+  {
+    "id": 154,
+    "category": "Fourier Series & Transform",
+    "question": "Fourier analysis is based on the idea that a signal can be represented as:",
+    "options": [
+      "Polynomial functions only",
+      "A sum of sinusoidal components",
+      "Random noise",
+      "Impulse functions only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fourier analysis decomposes complex signals into sums of orthogonal sinusoids/complex exponentials."
+  },
+  {
+    "id": 155,
+    "category": "Fourier Series & Transform",
+    "question": "Fourier analysis decomposes signals into:",
+    "options": [
+      "Exponential growth functions",
+      "Different frequency components",
+      "Only square waves",
+      "Only triangular waves"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fourier analysis resolves arbitrary signals into constituent frequency components."
+  },
+  {
+    "id": 156,
+    "category": "Fourier Series & Transform",
+    "question": "Fourier Transform is applicable to:",
+    "options": [
+      "Periodic signals only",
+      "Digital signals only",
+      "Aperiodic (non-periodic) signals",
+      "Constant signals only"
+    ],
+    "answerIndex": 2,
+    "explanation": "Continuous Fourier Transform extends frequency analysis to non-periodic (aperiodic) signals."
+  },
+  {
+    "id": 157,
+    "category": "Fourier Series & Transform",
+    "question": "Fourier Series is mainly used for:",
+    "options": [
+      "Periodic signals",
+      "Aperiodic signals",
+      "Random signals",
+      "Noise signals"
+    ],
+    "answerIndex": 0,
+    "explanation": "Fourier Series expands periodic signals into discrete harmonic frequency components."
+  },
+  {
+    "id": 158,
+    "category": "Fourier Series & Transform",
+    "question": "Fourier Series represents a periodic signal as:",
+    "options": [
+      "Impulses only",
+      "A sum of sine and cosine (or complex exponential) terms",
+      "Step functions",
+      "Random sequences"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fourier Series represents periodic functions as linear combinations of sines and cosines."
+  },
+  {
+    "id": 159,
+    "category": "Fourier Series & Transform",
+    "question": "Which statement is TRUE?",
+    "options": [
+      "Fourier Series is used only for non-periodic signals.",
+      "Fourier Series represents periodic signals.",
+      "Fourier Series removes harmonics.",
+      "Fourier Series is identical to the Z-transform."
+    ],
+    "answerIndex": 1,
+    "explanation": "Fourier Series applies specifically to periodic waveforms."
+  },
+  {
+    "id": 160,
+    "category": "Fourier Series & Transform",
+    "question": "Fourier Series coefficients represent:",
+    "options": [
+      "Sampling instants",
+      "Amplitudes of harmonic frequency components",
+      "Quantization levels",
+      "Filter coefficients"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fourier series coefficients specify amplitudes and phases of fundamental and harmonic components."
+  },
+  {
+    "id": 161,
+    "category": "Fourier Series & Transform",
+    "question": "A periodic square wave can be represented using:",
+    "options": [
+      "Laplace Transform",
+      "Fourier Series",
+      "Z-transform",
+      "Convolution only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Periodic square waves are decomposed into infinite odd-harmonic sinusoids via Fourier Series."
+  },
+  {
+    "id": 162,
+    "category": "Fourier Series & Transform",
+    "question": "Fourier Transform is an extension of:",
+    "options": [
+      "Z-transform",
+      "Fourier Series",
+      "Laplace Equation",
+      "Nyquist Theorem"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fourier Transform extends Fourier Series by letting period T approach infinity."
+  },
+  {
+    "id": 163,
+    "category": "Fourier Series & Transform",
+    "question": "Fourier Transform is generally used for:",
+    "options": [
+      "Periodic signals only",
+      "Non-periodic signals",
+      "Constant signals",
+      "Quantized signals"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fourier Transform handles non-periodic continuous signals."
+  },
+  {
+    "id": 164,
+    "category": "Fourier Series & Transform",
+    "question": "Which domain is represented by X(f)?",
+    "options": [
+      "Time Domain",
+      "Frequency Domain",
+      "Spatial Domain",
+      "Sampling Domain"
+    ],
+    "answerIndex": 1,
+    "explanation": "X(f) or X(w) represents frequency-domain spectrum."
+  },
+  {
+    "id": 165,
+    "category": "Fourier Series & Transform",
+    "question": "Which notation usually represents a signal in the time domain?",
+    "options": [
+      "x(t)",
+      "X(f)",
+      "H(f)",
+      "Y(f)"
+    ],
+    "answerIndex": 0,
+    "explanation": "x(t) denotes continuous time-domain signal."
+  },
+  {
+    "id": 166,
+    "category": "Fourier Series & Transform",
+    "question": "Which notation usually represents the Fourier Transform?",
+    "options": [
+      "x(t)",
+      "X(f)",
+      "h(t)",
+      "y(t)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Capitalized X(f) or X(w) represents Fourier Transform."
+  },
+  {
+    "id": 167,
+    "category": "Fourier Series & Transform",
+    "question": "The time domain describes:",
+    "options": [
+      "Frequency distribution",
+      "Signal variation with time",
+      "Harmonic content only",
+      "Filter response"
+    ],
+    "answerIndex": 1,
+    "explanation": "Time domain represents signal amplitude variation as a function of time t."
+  },
+  {
+    "id": 168,
+    "category": "Fourier Series & Transform",
+    "question": "The frequency domain describes:",
+    "options": [
+      "Signal amplitude versus time",
+      "Distribution of frequencies present in a signal",
+      "Signal delay",
+      "Quantization levels"
+    ],
+    "answerIndex": 1,
+    "explanation": "Frequency domain details individual frequency components and spectral energy distribution."
+  },
+  {
+    "id": 169,
+    "category": "Fourier Series & Transform",
+    "question": "Which domain is generally easier for filter analysis?",
+    "options": [
+      "Time Domain",
+      "Frequency Domain",
+      "Spatial Domain",
+      "Sample Domain"
+    ],
+    "answerIndex": 1,
+    "explanation": "Frequency domain simplifies differential equations and convolution into algebraic operations."
+  },
+  {
+    "id": 170,
+    "category": "Fourier Series & Transform",
+    "question": "Which transform helps analyze frequency components?",
+    "options": [
+      "Z-transform only",
+      "Fourier Transform",
+      "Sampling Theorem",
+      "Quantization"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fourier Transform converts time-domain signals to inspect frequency content."
+  },
+  {
+    "id": 171,
+    "category": "Fourier Series & Transform",
+    "question": "A spectrum shows:",
+    "options": [
+      "Signal power versus time",
+      "Amplitude versus frequency",
+      "Time versus voltage",
+      "Sampling interval"
+    ],
+    "answerIndex": 1,
+    "explanation": "Frequency spectrum plots signal amplitude (or power) as a function of frequency."
+  },
+  {
+    "id": 172,
+    "category": "Fourier Series & Transform",
+    "question": "Frequency spectrum is obtained using:",
+    "options": [
+      "Convolution",
+      "Fourier Transform",
+      "Quantization",
+      "Interpolation"
+    ],
+    "answerIndex": 1,
+    "explanation": "Applying Fourier Transform yields frequency spectrum of a signal."
+  },
+  {
+    "id": 173,
+    "category": "Fourier Series & Transform",
+    "question": "Which statement is TRUE?",
+    "options": [
+      "A pure sine wave contains many frequencies.",
+      "A pure sine wave contains only one frequency component.",
+      "Every signal has only one frequency.",
+      "Frequency spectrum is always continuous."
+    ],
+    "answerIndex": 1,
+    "explanation": "A single pure sinusoid sin(w0 t) contains a single frequency component at w0."
+  },
+  {
+    "id": 174,
+    "category": "Fourier Series & Transform",
+    "question": "A complex signal generally consists of:",
+    "options": [
+      "One frequency only",
+      "Multiple frequency components",
+      "No frequencies",
+      "Constant values only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Arbitrary real-world signals consist of multiple superimposed frequency components."
+  },
+  {
+    "id": 175,
+    "category": "Fourier Series & Transform",
+    "question": "Fourier Transform is a linear transformation.",
+    "options": [
+      "False",
+      "True",
+      "Only for periodic signals",
+      "Only for discrete signals"
+    ],
+    "answerIndex": 1,
+    "explanation": "FT{a x1(t) + b x2(t)} = a X1(f) + b X2(f). Fourier Transform is linear."
+  },
+  {
+    "id": 176,
+    "category": "Fourier Series & Transform",
+    "question": "If two signals are added in the time domain, their Fourier Transforms are:",
+    "options": [
+      "Multiplied",
+      "Added",
+      "Differentiated",
+      "Integrated"
+    ],
+    "answerIndex": 1,
+    "explanation": "Linearity property: FT of sum of two signals equals sum of their individual FTs."
+  },
+  {
+    "id": 177,
+    "category": "Fourier Series & Transform",
+    "question": "Time shifting in the time domain mainly causes:",
+    "options": [
+      "Change in frequency values",
+      "Phase shift in the frequency domain",
+      "Aliasing",
+      "Quantization"
+    ],
+    "answerIndex": 1,
+    "explanation": "x(t-t0) <-> X(f) e^(-j 2pi f t0). Time shift introduces a linear phase shift."
+  },
+  {
+    "id": 178,
+    "category": "Fourier Series & Transform",
+    "question": "Time scaling affects:",
+    "options": [
+      "Only amplitude",
+      "Frequency distribution",
+      "Sampling interval only",
+      "Quantization levels"
+    ],
+    "answerIndex": 1,
+    "explanation": "x(at) <-> (1/|a|) X(f/a). Time scaling inversely expands or compresses frequency spectrum."
+  },
+  {
+    "id": 179,
+    "category": "Fourier Series & Transform",
+    "question": "Convolution in the time domain becomes:",
+    "options": [
+      "Addition",
+      "Multiplication in the frequency domain",
+      "Sampling",
+      "Integration"
+    ],
+    "answerIndex": 1,
+    "explanation": "x(t) * h(t) <-> X(f) H(f). Convolution in time corresponds to multiplication in frequency."
+  },
+  {
+    "id": 180,
+    "category": "Fourier Series & Transform",
+    "question": "Multiplication in the time domain corresponds to:",
+    "options": [
+      "Addition in frequency domain",
+      "Convolution in frequency domain",
+      "Differentiation",
+      "Filtering only"
+    ],
+    "answerIndex": 1,
+    "explanation": "x(t) h(t) <-> X(f) * H(f). Time-domain multiplication corresponds to frequency convolution."
+  },
+  {
+    "id": 181,
+    "category": "Fourier Series & Transform",
+    "question": "Parseval's theorem relates:",
+    "options": [
+      "Sampling and Quantization",
+      "Energy in the time domain and frequency domain",
+      "Time and Delay",
+      "Nyquist and Shannon"
+    ],
+    "answerIndex": 1,
+    "explanation": "Parseval's theorem states total energy computed in time domain equals total energy in frequency domain."
+  },
+  {
+    "id": 182,
+    "category": "Fourier Series & Transform",
+    "question": "Parseval's theorem implies that:",
+    "options": [
+      "Energy changes after transformation.",
+      "Total energy is preserved under the Fourier Transform.",
+      "Frequency doubles.",
+      "Sampling frequency changes."
+    ],
+    "answerIndex": 1,
+    "explanation": "Fourier Transform is unitary and preserves total signal energy across domains."
+  },
+  {
+    "id": 183,
+    "category": "Fourier Series & Transform",
+    "question": "Fourier Transform is widely used in:",
+    "options": [
+      "Image Processing",
+      "Audio Processing",
+      "Communication Systems",
+      "All of them"
+    ],
+    "answerIndex": 3,
+    "explanation": "Fourier analysis is fundamental to audio filtering, image compression (JPEG), and communications."
+  },
+  {
+    "id": 184,
+    "category": "Fourier Series & Transform",
+    "question": "Noise removal is commonly performed in:",
+    "options": [
+      "Time domain only",
+      "Frequency domain",
+      "Quantization domain",
+      "Sampling domain"
+    ],
+    "answerIndex": 1,
+    "explanation": "Filtering undesirable noise frequencies is standard practice in frequency domain."
+  },
+  {
+    "id": 185,
+    "category": "Fourier Series & Transform",
+    "question": "Frequency-domain analysis is especially useful for:",
+    "options": [
+      "Identifying frequency components",
+      "Filter design",
+      "Spectrum analysis",
+      "All of them"
+    ],
+    "answerIndex": 3,
+    "explanation": "Frequency domain simplifies filter design, spectral inspection, and frequency isolation."
+  },
+  {
+    "id": 186,
+    "category": "Fourier Series & Transform",
+    "question": "Audio equalizers mainly operate by modifying:",
+    "options": [
+      "Time samples",
+      "Frequency components",
+      "Quantization levels",
+      "Sampling interval"
+    ],
+    "answerIndex": 1,
+    "explanation": "Equalizers boost or cut selected frequency bands in the frequency domain."
+  },
+  {
+    "id": 187,
+    "category": "Fourier Series & Transform",
+    "question": "Which statement is TRUE?",
+    "options": [
+      "Fourier Transform destroys information.",
+      "Fourier Transform changes only the representation of a signal.",
+      "Fourier Transform changes analog signals into digital signals.",
+      "Fourier Transform removes noise automatically."
+    ],
+    "answerIndex": 1,
+    "explanation": "Fourier Transform changes representation from time to frequency without losing underlying signal information."
+  },
+  {
+    "id": 188,
+    "category": "Fourier Series & Transform",
+    "question": "Which transform is more suitable for periodic signals?",
+    "options": [
+      "Fourier Series",
+      "Fourier Transform",
+      "Z-transform",
+      "Laplace Transform"
+    ],
+    "answerIndex": 0,
+    "explanation": "Fourier Series efficiently represents periodic signals with discrete line spectra."
+  },
+  {
+    "id": 189,
+    "category": "Fourier Series & Transform",
+    "question": "Which transform is more suitable for non-periodic signals?",
+    "options": [
+      "Fourier Series",
+      "Fourier Transform",
+      "Sampling",
+      "Quantization"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fourier Transform handles continuous non-periodic spectra."
+  },
+  {
+    "id": 190,
+    "category": "Fourier Series & Transform",
+    "question": "The inverse Fourier Transform is used to:",
+    "options": [
+      "Remove harmonics",
+      "Recover the original time-domain signal",
+      "Increase sampling frequency",
+      "Remove aliasing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Inverse FT transforms frequency spectra back to continuous time-domain signals."
+  },
+  {
+    "id": 191,
+    "category": "Fourier Series & Transform",
+    "question": "Harmonics are:",
+    "options": [
+      "Random frequencies",
+      "Integer multiples of the fundamental frequency",
+      "Quantization levels",
+      "Sampling intervals"
+    ],
+    "answerIndex": 1,
+    "explanation": "Harmonics are frequencies that are integer multiples (2f0, 3f0, ...) of fundamental frequency f0."
+  },
+  {
+    "id": 192,
+    "category": "Fourier Series & Transform",
+    "question": "The first harmonic is also called the:",
+    "options": [
+      "Fundamental Frequency",
+      "Nyquist Frequency",
+      "Carrier Frequency",
+      "Alias Frequency"
+    ],
+    "answerIndex": 0,
+    "explanation": "The first harmonic (1 * f0) is the Fundamental Frequency."
+  },
+  {
+    "id": 193,
+    "category": "Fourier Series & Transform",
+    "question": "Fourier analysis assumes signals can be represented using:",
+    "options": [
+      "Only impulses",
+      "Sinusoids (or complex exponentials)",
+      "Only ramps",
+      "Only random signals"
+    ],
+    "answerIndex": 1,
+    "explanation": "Sinusoids/complex exponentials are fundamental basis functions of Fourier analysis."
+  },
+  {
+    "id": 194,
+    "category": "Fourier Series & Transform",
+    "question": "Which of the following is NOT an application of Fourier Transform?",
+    "options": [
+      "Spectrum analysis",
+      "Filter design",
+      "Signal processing",
+      "Database normalization"
+    ],
+    "answerIndex": 3,
+    "explanation": "Database normalization is a relational database concept, not a Fourier Transform application."
+  },
+  {
+    "id": 195,
+    "category": "Fourier Series & Transform",
+    "question": "Which transform helps identify dominant frequencies in a signal?",
+    "options": [
+      "Laplace Transform",
+      "Fourier Transform",
+      "Convolution",
+      "Sampling"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fourier Transform maps signal energy across frequencies to reveal dominant peaks."
+  },
+  {
+    "id": 196,
+    "category": "Fourier Series & Transform",
+    "question": "Which representation is easier for understanding signal composition?",
+    "options": [
+      "Time domain only",
+      "Frequency domain",
+      "Quantization domain",
+      "Spatial domain"
+    ],
+    "answerIndex": 1,
+    "explanation": "Frequency domain clearly displays constituent frequencies, amplitudes, and spectral bands."
+  },
+  {
+    "id": 197,
+    "category": "Fourier Series & Transform",
+    "question": "Which statement best distinguishes Fourier Series and Fourier Transform?",
+    "options": [
+      "Both are used only for periodic signals.",
+      "Fourier Series is for periodic signals, while Fourier Transform is generally for non-periodic signals.",
+      "Fourier Transform is only for discrete-time signals.",
+      "Fourier Series cannot represent sinusoidal signals."
+    ],
+    "answerIndex": 1,
+    "explanation": "Fourier Series applies to periodic signals; Fourier Transform applies to aperiodic continuous signals."
+  },
+  {
+    "id": 198,
+    "category": "Fourier Series & Transform",
+    "question": "Which concept is most directly associated with harmonics?",
+    "options": [
+      "Quantization",
+      "Fourier Series",
+      "Sampling",
+      "Convolution"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fourier Series decomposes periodic signals into discrete harmonic spectral lines."
+  },
+  {
+    "id": 199,
+    "category": "Fourier Series & Transform",
+    "question": "Which mathematical operation converts a signal back to the time domain?",
+    "options": [
+      "Sampling",
+      "Quantization",
+      "Inverse Fourier Transform",
+      "Convolution"
+    ],
+    "answerIndex": 2,
+    "explanation": "Inverse Fourier Transform converts frequency-domain representations back to time domain."
+  },
+  {
+    "id": 200,
+    "category": "Fourier Series & Transform",
+    "question": "Which statement best summarizes the purpose of Fourier analysis?",
+    "options": [
+      "It converts analog signals to digital signals.",
+      "It increases sampling frequency.",
+      "It reveals the frequency components that make up a signal, making analysis and processing easier.",
+      "It eliminates all noise from a signal."
+    ],
+    "answerIndex": 2,
+    "explanation": "Fourier analysis decomposes signals into frequency components for easier filter design and spectral analysis."
+  },
+  {
+    "id": 201,
+    "category": "DFT & FFT",
+    "question": "DFT stands for:",
+    "options": [
+      "Digital Fourier Theory",
+      "Discrete Fourier Transform",
+      "Digital Frequency Transform",
+      "Discrete Frequency Theory"
+    ],
+    "answerIndex": 1,
+    "explanation": "DFT stands for Discrete Fourier Transform."
+  },
+  {
+    "id": 202,
+    "category": "DFT & FFT",
+    "question": "DFT is mainly used for:",
+    "options": [
+      "Sampling",
+      "Frequency analysis of discrete-time signals",
+      "Quantization",
+      "Signal amplification"
+    ],
+    "answerIndex": 1,
+    "explanation": "DFT evaluates discrete frequency spectra of discrete-time sequences."
+  },
+  {
+    "id": 203,
+    "category": "DFT & FFT",
+    "question": "The input to the DFT is generally:",
+    "options": [
+      "Continuous-time signal",
+      "Discrete-time sequence",
+      "Analog waveform only",
+      "Continuous frequency spectrum"
+    ],
+    "answerIndex": 1,
+    "explanation": "DFT accepts a finite-length discrete-time sequence x[n]."
+  },
+  {
+    "id": 204,
+    "category": "DFT & FFT",
+    "question": "The output of the DFT is:",
+    "options": [
+      "Time-domain sequence",
+      "Frequency-domain representation",
+      "Continuous analog signal",
+      "Impulse response"
+    ],
+    "answerIndex": 1,
+    "explanation": "DFT produces discrete frequency-domain samples X[k]."
+  },
+  {
+    "id": 205,
+    "category": "DFT & FFT",
+    "question": "DFT converts:",
+    "options": [
+      "Frequency domain to time domain",
+      "Time-domain discrete sequence to frequency domain",
+      "Analog signal to digital signal",
+      "Continuous signal to sampled signal"
+    ],
+    "answerIndex": 1,
+    "explanation": "DFT maps a discrete time-domain sequence x[n] to discrete frequency domain samples X[k]."
+  },
+  {
+    "id": 206,
+    "category": "DFT & FFT",
+    "question": "DFT is the discrete counterpart of:",
+    "options": [
+      "Laplace Transform",
+      "Fourier Transform",
+      "Z-transform",
+      "Hilbert Transform"
+    ],
+    "answerIndex": 1,
+    "explanation": "DFT is the sampled discrete counterpart of the continuous Fourier Transform."
+  },
+  {
+    "id": 207,
+    "category": "DFT & FFT",
+    "question": "DFT assumes the input sequence is:",
+    "options": [
+      "Random",
+      "Periodic",
+      "Continuous",
+      "Infinite and non-periodic"
+    ],
+    "answerIndex": 1,
+    "explanation": "DFT mathematically treats finite-length sequences as one period of a periodic sequence."
+  },
+  {
+    "id": 208,
+    "category": "DFT & FFT",
+    "question": "A DFT of an N-point sequence produces:",
+    "options": [
+      "N-1 frequency samples",
+      "N frequency samples",
+      "2N samples",
+      "Infinite samples"
+    ],
+    "answerIndex": 1,
+    "explanation": "An N-point DFT converts N time-domain samples into N discrete frequency samples X[k]."
+  },
+  {
+    "id": 209,
+    "category": "DFT & FFT",
+    "question": "The frequency spectrum produced by DFT is:",
+    "options": [
+      "Continuous",
+      "Discrete",
+      "Analog",
+      "Random"
+    ],
+    "answerIndex": 1,
+    "explanation": "DFT spectrum consists of discrete frequency bins k = 0, 1, ..., N-1."
+  },
+  {
+    "id": 210,
+    "category": "DFT & FFT",
+    "question": "Which transform is mainly implemented on digital computers?",
+    "options": [
+      "Fourier Series",
+      "Continuous Fourier Transform",
+      "Discrete Fourier Transform (DFT)",
+      "Laplace Transform"
+    ],
+    "answerIndex": 2,
+    "explanation": "DFT operates on finite discrete numbers, making it ideally suited for digital computers."
+  },
+  {
+    "id": 211,
+    "category": "DFT & FFT",
+    "question": "The DFT uses:",
+    "options": [
+      "Differential equations",
+      "Complex exponential functions",
+      "Boolean algebra",
+      "Matrix inversion only"
+    ],
+    "answerIndex": 1,
+    "explanation": "DFT formula uses complex exponentials W_N^(kn) = exp(-j 2pi k n / N)."
+  },
+  {
+    "id": 212,
+    "category": "DFT & FFT",
+    "question": "The imaginary unit used in DFT is:",
+    "options": [
+      "k",
+      "j (or i in mathematics)",
+      "n",
+      "N"
+    ],
+    "answerIndex": 1,
+    "explanation": "j (or i) represents sqrt(-1) in complex twiddle factors."
+  },
+  {
+    "id": 213,
+    "category": "DFT & FFT",
+    "question": "In an N-point DFT, the index n usually represents:",
+    "options": [
+      "Frequency sample",
+      "Time-domain sample",
+      "Filter coefficient",
+      "Harmonic number"
+    ],
+    "answerIndex": 1,
+    "explanation": "Index n (0 <= n < N) indexes time-domain samples x[n]."
+  },
+  {
+    "id": 214,
+    "category": "DFT & FFT",
+    "question": "In an N-point DFT, the index k usually represents:",
+    "options": [
+      "Time sample",
+      "Frequency bin",
+      "Sampling interval",
+      "Quantization level"
+    ],
+    "answerIndex": 1,
+    "explanation": "Index k (0 <= k < N) indexes discrete frequency bins X[k]."
+  },
+  {
+    "id": 215,
+    "category": "DFT & FFT",
+    "question": "IDFT stands for:",
+    "options": [
+      "Inverse Digital Fourier Theory",
+      "Inverse Discrete Fourier Transform",
+      "Integrated Discrete Fourier Transform",
+      "Internal DFT"
+    ],
+    "answerIndex": 1,
+    "explanation": "IDFT stands for Inverse Discrete Fourier Transform."
+  },
+  {
+    "id": 216,
+    "category": "DFT & FFT",
+    "question": "IDFT converts:",
+    "options": [
+      "Time domain into frequency domain",
+      "Frequency domain into time domain",
+      "Analog into digital",
+      "Continuous into discrete"
+    ],
+    "answerIndex": 1,
+    "explanation": "IDFT transforms discrete frequency samples X[k] back to discrete time sequence x[n]."
+  },
+  {
+    "id": 217,
+    "category": "DFT & FFT",
+    "question": "Which operation reconstructs the original sequence?",
+    "options": [
+      "FFT",
+      "DFT",
+      "IDFT",
+      "Sampling"
+    ],
+    "answerIndex": 2,
+    "explanation": "IDFT reconstructs original discrete time sequence from frequency samples X[k]."
+  },
+  {
+    "id": 218,
+    "category": "DFT & FFT",
+    "question": "The term W_N in DFT is commonly known as:",
+    "options": [
+      "Window Function",
+      "Twiddle Factor",
+      "Weight Function",
+      "Walsh Function"
+    ],
+    "answerIndex": 1,
+    "explanation": "W_N = exp(-j 2pi / N) is called the Twiddle Factor or phase factor."
+  },
+  {
+    "id": 219,
+    "category": "DFT & FFT",
+    "question": "Twiddle factors are based on:",
+    "options": [
+      "Logarithms",
+      "Complex roots of unity",
+      "Differential equations",
+      "Binary numbers"
+    ],
+    "answerIndex": 1,
+    "explanation": "Twiddle factors W_N^k represent complex N-th roots of unity on the unit circle."
+  },
+  {
+    "id": 220,
+    "category": "DFT & FFT",
+    "question": "Twiddle factors mainly simplify:",
+    "options": [
+      "Sampling",
+      "DFT calculations",
+      "Quantization",
+      "Filtering"
+    ],
+    "answerIndex": 1,
+    "explanation": "Symmetry and periodicity properties of twiddle factors allow fast algorithms like FFT."
+  },
+  {
+    "id": 221,
+    "category": "DFT & FFT",
+    "question": "FFT stands for:",
+    "options": [
+      "Fast Frequency Theory",
+      "Fast Fourier Transform",
+      "Frequency Fourier Technique",
+      "Fast Frequency Transform"
+    ],
+    "answerIndex": 1,
+    "explanation": "FFT stands for Fast Fourier Transform."
+  },
+  {
+    "id": 222,
+    "category": "DFT & FFT",
+    "question": "FFT is:",
+    "options": [
+      "A different transform from DFT",
+      "An efficient algorithm to compute the DFT",
+      "A filtering technique",
+      "A sampling method"
+    ],
+    "answerIndex": 1,
+    "explanation": "FFT is not a different mathematical transform; it is an efficient algorithm for computing the DFT."
+  },
+  {
+    "id": 223,
+    "category": "DFT & FFT",
+    "question": "FFT produces:",
+    "options": [
+      "Different results from DFT",
+      "The same result as DFT, but faster",
+      "Only approximate results",
+      "Continuous spectra only"
+    ],
+    "answerIndex": 1,
+    "explanation": "FFT computes exact DFT results with dramatically fewer arithmetic operations."
+  },
+  {
+    "id": 224,
+    "category": "DFT & FFT",
+    "question": "The main advantage of FFT is:",
+    "options": [
+      "Better accuracy",
+      "Reduced computation time",
+      "Higher sampling frequency",
+      "Less memory only"
+    ],
+    "answerIndex": 1,
+    "explanation": "FFT reduces computational complexity from O(N^2) to O(N log N)."
+  },
+  {
+    "id": 225,
+    "category": "DFT & FFT",
+    "question": "FFT is especially useful when:",
+    "options": [
+      "Very small datasets are processed",
+      "Large numbers of DFT computations are required",
+      "Analog signals are sampled",
+      "Quantization is performed"
+    ],
+    "answerIndex": 1,
+    "explanation": "FFT computational savings become enormous for large values of N."
+  },
+  {
+    "id": 226,
+    "category": "DFT & FFT",
+    "question": "The computational complexity of a direct DFT is:",
+    "options": [
+      "O(N)",
+      "O(N^2)",
+      "O(log N)",
+      "O(N^3)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Direct N-point DFT requires N^2 complex multiplications, so complexity is O(N^2)."
+  },
+  {
+    "id": 227,
+    "category": "DFT & FFT",
+    "question": "The computational complexity of FFT is:",
+    "options": [
+      "O(N^2)",
+      "O(N log N)",
+      "O(N^3)",
+      "O(log N)"
+    ],
+    "answerIndex": 1,
+    "explanation": "Cooley-Tukey Radix-2 FFT achieves O(N log2 N) complexity."
+  },
+  {
+    "id": 228,
+    "category": "DFT & FFT",
+    "question": "FFT is faster because it:",
+    "options": [
+      "Ignores frequency components",
+      "Eliminates redundant computations",
+      "Uses fewer samples",
+      "Reduces signal length"
+    ],
+    "answerIndex": 1,
+    "explanation": "FFT exploits twiddle factor symmetry (W_N^(k+N/2) = -W_N^k) to avoid redundant calculations."
+  },
+  {
+    "id": 229,
+    "category": "DFT & FFT",
+    "question": "Which algorithm dramatically reduced DFT computation?",
+    "options": [
+      "Nyquist Algorithm",
+      "Cooley-Tukey FFT Algorithm",
+      "Shannon Algorithm",
+      "Kalman Algorithm"
+    ],
+    "answerIndex": 1,
+    "explanation": "James Cooley and John Tukey published the famous FFT algorithm in 1965."
+  },
+  {
+    "id": 230,
+    "category": "DFT & FFT",
+    "question": "The Radix-2 FFT algorithm requires the number of samples to be:",
+    "options": [
+      "A prime number",
+      "A power of 2",
+      "An odd number",
+      "A multiple of 3"
+    ],
+    "answerIndex": 1,
+    "explanation": "Radix-2 decimation-in-time/frequency FFT requires N = 2^M (power of 2)."
+  },
+  {
+    "id": 231,
+    "category": "DFT & FFT",
+    "question": "Radix-2 FFT divides the DFT into:",
+    "options": [
+      "Three smaller DFTs",
+      "Two smaller DFTs",
+      "Four equal matrices",
+      "One larger DFT"
+    ],
+    "answerIndex": 1,
+    "explanation": "Radix-2 recursively divides an N-point DFT into two N/2-point DFTs (even and odd samples)."
+  },
+  {
+    "id": 232,
+    "category": "DFT & FFT",
+    "question": "Radix-2 FFT follows the:",
+    "options": [
+      "Divide-and-Conquer approach",
+      "Divide-and-Conquer algorithm",
+      "Greedy algorithm",
+      "Dynamic programming"
+    ],
+    "answerIndex": 1,
+    "explanation": "Radix-2 FFT is a classic Divide-and-Conquer algorithm."
+  },
+  {
+    "id": 233,
+    "category": "DFT & FFT",
+    "question": "Radix-2 FFT repeatedly breaks the problem into:",
+    "options": [
+      "Larger subproblems",
+      "Smaller subproblems",
+      "Random blocks",
+      "Equal frequencies"
+    ],
+    "answerIndex": 1,
+    "explanation": "It recursively decomposes N-point DFTs into smaller half-size subproblems down to 2-point butterflies."
+  },
+  {
+    "id": 234,
+    "category": "DFT & FFT",
+    "question": "DFT naturally performs:",
+    "options": [
+      "Linear convolution",
+      "Circular convolution",
+      "Time reversal",
+      "Quantization"
+    ],
+    "answerIndex": 1,
+    "explanation": "Multiplying DFTs X[k]H[k] and taking IDFT produces circular convolution in time domain."
+  },
+  {
+    "id": 235,
+    "category": "DFT & FFT",
+    "question": "Circular convolution assumes sequences are:",
+    "options": [
+      "Finite and non-periodic",
+      "Periodic",
+      "Continuous",
+      "Analog"
+    ],
+    "answerIndex": 1,
+    "explanation": "DFT inherently assumes input sequences repeat periodically."
+  },
+  {
+    "id": 236,
+    "category": "DFT & FFT",
+    "question": "Linear convolution can be obtained using DFT by:",
+    "options": [
+      "Ignoring FFT",
+      "Zero-padding the sequences",
+      "Increasing quantization",
+      "Doubling amplitude"
+    ],
+    "answerIndex": 1,
+    "explanation": "Zero-padding sequences to length >= L + M - 1 makes circular convolution match linear convolution."
+  },
+  {
+    "id": 237,
+    "category": "DFT & FFT",
+    "question": "DFT is widely used in:",
+    "options": [
+      "Spectrum analysis",
+      "Filter design",
+      "Speech processing",
+      "All of them"
+    ],
+    "answerIndex": 3,
+    "explanation": "DFT/FFT is heavily used across spectrum analysis, audio/speech processing, and digital filter design."
+  },
+  {
+    "id": 238,
+    "category": "DFT & FFT",
+    "question": "FFT is commonly used because:",
+    "options": [
+      "It changes signal information",
+      "It computes DFT efficiently",
+      "It removes noise automatically",
+      "It replaces ADC"
+    ],
+    "answerIndex": 1,
+    "explanation": "FFT makes real-time digital frequency analysis computationally practical."
+  },
+  {
+    "id": 239,
+    "category": "DFT & FFT",
+    "question": "Which field heavily relies on FFT?",
+    "options": [
+      "Image Processing",
+      "Audio Processing",
+      "Communications",
+      "All of them"
+    ],
+    "answerIndex": 3,
+    "explanation": "FFT powers OFDM in modern wireless systems, JPEG/MPEG compression, and digital audio equalizers."
+  },
+  {
+    "id": 240,
+    "category": "DFT & FFT",
+    "question": "Which transform is most practical for computer implementation?",
+    "options": [
+      "Fourier Series",
+      "Continuous Fourier Transform",
+      "DFT (computed efficiently using FFT)",
+      "Laplace Transform"
+    ],
+    "answerIndex": 2,
+    "explanation": "FFT-computed DFT is the universal choice for digital computer implementations."
+  },
+  {
+    "id": 241,
+    "category": "DFT & FFT",
+    "question": "Which statement is TRUE?",
+    "options": [
+      "FFT and DFT produce different spectra.",
+      "FFT is an algorithm for efficiently computing the DFT.",
+      "FFT is slower than DFT.",
+      "FFT is used only for analog signals."
+    ],
+    "answerIndex": 1,
+    "explanation": "FFT is an algorithm, whereas DFT is the mathematical transform definition."
+  },
+  {
+    "id": 242,
+    "category": "DFT & FFT",
+    "question": "The main limitation of direct DFT is:",
+    "options": [
+      "Low accuracy",
+      "High computational complexity",
+      "Aliasing",
+      "Quantization"
+    ],
+    "answerIndex": 1,
+    "explanation": "Direct DFT requires O(N^2) operations, which is prohibitively slow for large sample lengths N."
+  },
+  {
+    "id": 243,
+    "category": "DFT & FFT",
+    "question": "Which transform is generally preferred for real-time signal processing?",
+    "options": [
+      "Direct DFT",
+      "FFT",
+      "Fourier Series",
+      "Laplace Transform"
+    ],
+    "answerIndex": 1,
+    "explanation": "FFT's speed enables real-time signal processing."
+  },
+  {
+    "id": 244,
+    "category": "DFT & FFT",
+    "question": "Which statement best distinguishes DFT and FFT?",
+    "options": [
+      "They produce different outputs.",
+      "DFT is the transform, while FFT is a fast algorithm to compute it.",
+      "FFT is only for continuous-time signals.",
+      "DFT is only for analog signals."
+    ],
+    "answerIndex": 1,
+    "explanation": "DFT defines the mathematical mapping; FFT is the fast algorithm computing it."
+  },
+  {
+    "id": 245,
+    "category": "DFT & FFT",
+    "question": "Which operation converts frequency samples back into the original sequence?",
+    "options": [
+      "DFT",
+      "FFT",
+      "IDFT",
+      "Convolution"
+    ],
+    "answerIndex": 2,
+    "explanation": "Inverse Discrete Fourier Transform (IDFT) converts frequency samples X[k] back to time sequence x[n]."
+  },
+  {
+    "id": 246,
+    "category": "DFT & FFT",
+    "question": "Which concept is directly associated with the DFT?",
+    "options": [
+      "Nyquist Rate",
+      "Frequency Bins",
+      "Quantization Noise",
+      "Anti-aliasing Filter"
+    ],
+    "answerIndex": 1,
+    "explanation": "DFT samples frequency at discrete index bins k."
+  },
+  {
+    "id": 247,
+    "category": "DFT & FFT",
+    "question": "Why is FFT preferred over direct DFT?",
+    "options": [
+      "It changes the spectrum.",
+      "It significantly reduces the number of arithmetic operations.",
+      "It eliminates aliasing.",
+      "It avoids sampling."
+    ],
+    "answerIndex": 1,
+    "explanation": "FFT reduces complex multiplications from N^2 to (N/2) log2(N)."
+  },
+  {
+    "id": 248,
+    "category": "DFT & FFT",
+    "question": "Which statement about DFT is correct?",
+    "options": [
+      "It is applicable only to continuous-time signals.",
+      "It analyzes discrete-time signals in the frequency domain.",
+      "It performs analog-to-digital conversion.",
+      "It is identical to the Z-transform."
+    ],
+    "answerIndex": 1,
+    "explanation": "DFT transforms finite discrete-time sequences into discrete frequency-domain samples."
+  },
+  {
+    "id": 249,
+    "category": "DFT & FFT",
+    "question": "Which transform pair is correct?",
+    "options": [
+      "DFT <-> Continuous signal",
+      "DFT <-> Discrete-time sequence",
+      "FFT <-> Analog signal",
+      "Fourier Series <-> Random noise"
+    ],
+    "answerIndex": 1,
+    "explanation": "DFT operates on discrete-time sequences x[n]."
+  },
+  {
+    "id": 250,
+    "category": "DFT & FFT",
+    "question": "Which statement best summarizes FFT?",
+    "options": [
+      "FFT is a different transform from DFT.",
+      "FFT replaces the Fourier Transform.",
+      "FFT is a computationally efficient algorithm for calculating the DFT, making frequency analysis practical for real-time and large-scale applications.",
+      "FFT is used only for periodic analog signals."
+    ],
+    "answerIndex": 2,
+    "explanation": "FFT provides a computationally efficient algorithm for computing the DFT in real-time systems."
+  },
+  {
+    "id": 251,
+    "category": "Z-Transform",
+    "question": "The Z-transform is primarily used for analyzing:",
+    "options": [
+      "Continuous-time systems",
+      "Discrete-time systems",
+      "Analog filters only",
+      "Continuous signals only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Z-transform is the discrete-time equivalent of Laplace transform for discrete LTI system analysis."
+  },
+  {
+    "id": 252,
+    "category": "Z-Transform",
+    "question": "The Z-transform is to discrete-time signals what the ______ is to continuous-time signals.",
+    "options": [
+      "DFT",
+      "Laplace Transform",
+      "Sampling Theorem",
+      "Fourier Series"
+    ],
+    "answerIndex": 1,
+    "explanation": "Z-transform analyzes discrete-time systems just as Laplace transform analyzes continuous-time systems."
+  },
+  {
+    "id": 253,
+    "category": "Z-Transform",
+    "question": "The Z-transform converts a sequence from:",
+    "options": [
+      "Frequency domain to time domain",
+      "Time domain to the z-domain",
+      "Analog to digital",
+      "Continuous to discrete"
+    ],
+    "answerIndex": 1,
+    "explanation": "Z-transform maps discrete time domain sequence x[n] to complex z-domain function X(z)."
+  },
+  {
+    "id": 254,
+    "category": "Z-Transform",
+    "question": "The variable used in the Z-transform is:",
+    "options": [
+      "s",
+      "z",
+      "t",
+      "f"
+    ],
+    "answerIndex": 1,
+    "explanation": "z = r e^(j w) is the complex frequency variable in Z-transform."
+  },
+  {
+    "id": 255,
+    "category": "Z-Transform",
+    "question": "Which notation commonly represents the Z-transform of x[n]?",
+    "options": [
+      "x(t)",
+      "X(z)",
+      "H(f)",
+      "Y(t)"
+    ],
+    "answerIndex": 1,
+    "explanation": "X(z) = Z{x[n]} represents Z-transform."
+  },
+  {
+    "id": 256,
+    "category": "Z-Transform",
+    "question": "The Z-transform is especially useful for studying:",
+    "options": [
+      "Sampling only",
+      "Stability and system behavior",
+      "Quantization only",
+      "Aliasing only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Z-transform enables checking pole-zero locations for stability, causality, and frequency response."
+  },
+  {
+    "id": 257,
+    "category": "Z-Transform",
+    "question": "ROC stands for:",
+    "options": [
+      "Rate of Conversion",
+      "Region of Convergence",
+      "Range of Convolution",
+      "Region of Computation"
+    ],
+    "answerIndex": 1,
+    "explanation": "ROC stands for Region of Convergence."
+  },
+  {
+    "id": 258,
+    "category": "Z-Transform",
+    "question": "The Region of Convergence (ROC) is associated with:",
+    "options": [
+      "Fourier coefficients",
+      "Values of z for which the Z-transform converges",
+      "Sampling interval",
+      "Quantization levels"
+    ],
+    "answerIndex": 1,
+    "explanation": "ROC is the set of values of z in the complex z-plane for which the summation sum(x[n] z^-n) converges absolutely."
+  },
+  {
+    "id": 259,
+    "category": "Z-Transform",
+    "question": "ROC never contains:",
+    "options": [
+      "Unit circle",
+      "Poles",
+      "Zeros",
+      "Origin (in some cases)"
+    ],
+    "answerIndex": 1,
+    "explanation": "By definition, X(z) goes to infinity at poles, so ROC cannot contain any poles."
+  },
+  {
+    "id": 260,
+    "category": "Z-Transform",
+    "question": "Which statement about ROC is TRUE?",
+    "options": [
+      "ROC always includes poles.",
+      "ROC cannot contain any pole.",
+      "ROC always contains all zeros.",
+      "ROC is independent of poles."
+    ],
+    "answerIndex": 1,
+    "explanation": "ROC is bounded by poles and can never include any pole."
+  },
+  {
+    "id": 261,
+    "category": "Z-Transform",
+    "question": "For a right-sided (causal) sequence, the ROC lies:",
+    "options": [
+      "Inside the innermost pole",
+      "Outside the outermost pole",
+      "Between poles only",
+      "At the origin"
+    ],
+    "answerIndex": 1,
+    "explanation": "For right-sided/causal sequences, ROC extends outwards beyond the outermost finite pole: |z| > r_max."
+  },
+  {
+    "id": 262,
+    "category": "Z-Transform",
+    "question": "For a left-sided sequence, the ROC lies:",
+    "options": [
+      "Inside the innermost pole",
+      "Outside the outermost pole",
+      "On the unit circle",
+      "At infinity"
+    ],
+    "answerIndex": 0,
+    "explanation": "For left-sided anti-causal sequences, ROC extends inwards inside the innermost pole: |z| < r_min."
+  },
+  {
+    "id": 263,
+    "category": "Z-Transform",
+    "question": "A pole is a value of z that makes:",
+    "options": [
+      "The numerator zero",
+      "The denominator zero",
+      "The transform constant",
+      "The ROC infinite"
+    ],
+    "answerIndex": 1,
+    "explanation": "Poles are roots of denominator polynomial A(z) where X(z) -> infinity."
+  },
+  {
+    "id": 264,
+    "category": "Z-Transform",
+    "question": "A zero is a value of z that makes:",
+    "options": [
+      "The numerator zero",
+      "The denominator zero",
+      "The ROC zero",
+      "The sequence periodic"
+    ],
+    "answerIndex": 0,
+    "explanation": "Zeros are roots of numerator polynomial B(z) where X(z) = 0."
+  },
+  {
+    "id": 265,
+    "category": "Z-Transform",
+    "question": "Poles mainly determine:",
+    "options": [
+      "Signal amplitude only",
+      "Stability and system behavior",
+      "Sampling rate",
+      "Quantization error"
+    ],
+    "answerIndex": 1,
+    "explanation": "Pole positions in the z-plane dictate system stability, transient response, and causality."
+  },
+  {
+    "id": 266,
+    "category": "Z-Transform",
+    "question": "Zeros mainly affect:",
+    "options": [
+      "Sampling frequency",
+      "Frequency response",
+      "ADC resolution",
+      "Aliasing"
+    ],
+    "answerIndex": 1,
+    "explanation": "Zero positions create notches or dips in the frequency response spectrum."
+  },
+  {
+    "id": 267,
+    "category": "Z-Transform",
+    "question": "The pole-zero plot is drawn in the:",
+    "options": [
+      "Time domain",
+      "z-plane",
+      "Frequency domain only",
+      "Spatial domain"
+    ],
+    "answerIndex": 1,
+    "explanation": "Poles and zeros are plotted on the two-dimensional complex z-plane."
+  },
+  {
+    "id": 268,
+    "category": "Z-Transform",
+    "question": "In a pole-zero plot, poles are commonly represented by:",
+    "options": [
+      "O",
+      "x",
+      "^",
+      "square"
+    ],
+    "answerIndex": 1,
+    "explanation": "In z-plane diagrams, poles are denoted by 'x' crosses."
+  },
+  {
+    "id": 269,
+    "category": "Z-Transform",
+    "question": "In a pole-zero plot, zeros are commonly represented by:",
+    "options": [
+      "O",
+      "x",
+      "+",
+      "square"
+    ],
+    "answerIndex": 0,
+    "explanation": "In z-plane diagrams, zeros are denoted by 'O' circles."
+  },
+  {
+    "id": 270,
+    "category": "Z-Transform",
+    "question": "A discrete-time LTI system is stable if:",
+    "options": [
+      "All poles lie outside the unit circle",
+      "The ROC includes the unit circle",
+      "All zeros are inside the unit circle",
+      "All poles are at the origin"
+    ],
+    "answerIndex": 1,
+    "explanation": "An LTI system is BIBO stable if and only if the ROC of its transfer function H(z) includes the unit circle |z| = 1."
+  },
+  {
+    "id": 271,
+    "category": "Z-Transform",
+    "question": "The unit circle in the z-plane has a radius of:",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "pi"
+    ],
+    "answerIndex": 1,
+    "explanation": "The unit circle is defined by equation |z| = 1 (radius r = 1)."
+  },
+  {
+    "id": 272,
+    "category": "Z-Transform",
+    "question": "A stable causal system has all poles:",
+    "options": [
+      "Outside the unit circle",
+      "Inside the unit circle",
+      "On the unit circle",
+      "At infinity"
+    ],
+    "answerIndex": 1,
+    "explanation": "For a causal system (ROC |z| > r_max) to be stable (|z|=1 in ROC), all poles must lie strictly inside the unit circle (|p_i| < 1)."
+  },
+  {
+    "id": 273,
+    "category": "Z-Transform",
+    "question": "Which statement is TRUE?",
+    "options": [
+      "Stability depends only on zeros.",
+      "Stability is determined primarily by the locations of poles.",
+      "Stability depends only on sampling frequency.",
+      "Stability is independent of ROC."
+    ],
+    "answerIndex": 1,
+    "explanation": "Poles determine system stability and bounds of convergence."
+  },
+  {
+    "id": 274,
+    "category": "Z-Transform",
+    "question": "A causal discrete-time system depends on:",
+    "options": [
+      "Present and past inputs only",
+      "Future inputs",
+      "Future outputs",
+      "Random inputs"
+    ],
+    "answerIndex": 0,
+    "explanation": "Causality requires system output at index n to rely only on input samples at index <= n."
+  },
+  {
+    "id": 275,
+    "category": "Z-Transform",
+    "question": "A causal system has an ROC:",
+    "options": [
+      "Inside the innermost pole",
+      "Outside the outermost pole",
+      "Between poles only",
+      "Passing through poles"
+    ],
+    "answerIndex": 1,
+    "explanation": "Causal systems have an ROC of the form |z| > r_max."
+  },
+  {
+    "id": 276,
+    "category": "Z-Transform",
+    "question": "A non-causal system may depend on:",
+    "options": [
+      "Past inputs only",
+      "Future inputs",
+      "Present inputs only",
+      "Constants"
+    ],
+    "answerIndex": 1,
+    "explanation": "Non-causal systems depend on future input samples."
+  },
+  {
+    "id": 277,
+    "category": "Z-Transform",
+    "question": "The inverse Z-transform is used to:",
+    "options": [
+      "Find the frequency response",
+      "Recover the original sequence x[n]",
+      "Compute FFT",
+      "Perform sampling"
+    ],
+    "answerIndex": 1,
+    "explanation": "Inverse Z-transform converts z-domain expression X(z) back to discrete sequence x[n]."
+  },
+  {
+    "id": 278,
+    "category": "Z-Transform",
+    "question": "Which transform pair is correct?",
+    "options": [
+      "x[n] -> Fourier Series",
+      "x[n] <-> X(z)",
+      "x[n] <-> Laplace",
+      "x[n] <-> Sampling"
+    ],
+    "answerIndex": 1,
+    "explanation": "X(z) is the Z-transform representation of discrete-time sequence x[n]."
+  },
+  {
+    "id": 279,
+    "category": "Z-Transform",
+    "question": "The inverse Z-transform converts:",
+    "options": [
+      "Time domain to z-domain",
+      "z-domain to time domain",
+      "Analog to digital",
+      "Continuous to discrete"
+    ],
+    "answerIndex": 1,
+    "explanation": "Inverse Z-transform maps complex z-domain functions back to time-domain sequences x[n]."
+  },
+  {
+    "id": 280,
+    "category": "Z-Transform",
+    "question": "The Initial Value Theorem is used to determine:",
+    "options": [
+      "Final value of the sequence",
+      "First value of the sequence",
+      "Sampling frequency",
+      "Filter order"
+    ],
+    "answerIndex": 1,
+    "explanation": "Initial Value Theorem determines x[0] = lim(z -> infinity) X(z) for causal sequences."
+  },
+  {
+    "id": 281,
+    "category": "Z-Transform",
+    "question": "The Final Value Theorem is used to determine:",
+    "options": [
+      "Initial sample",
+      "Steady-state value of the sequence",
+      "Frequency spectrum",
+      "Impulse response"
+    ],
+    "answerIndex": 1,
+    "explanation": "Final Value Theorem computes long-term steady state value x[infinity] = lim(z -> 1) (z-1) X(z)."
+  },
+  {
+    "id": 282,
+    "category": "Z-Transform",
+    "question": "Before applying the Final Value Theorem, the system should be:",
+    "options": [
+      "Periodic",
+      "Stable",
+      "Analog",
+      "Continuous"
+    ],
+    "answerIndex": 1,
+    "explanation": "Final Value Theorem is valid only if all poles of (z-1)X(z) lie inside the unit circle (stable system)."
+  },
+  {
+    "id": 283,
+    "category": "Z-Transform",
+    "question": "The transfer function of a discrete-time LTI system is commonly denoted by:",
+    "options": [
+      "x[n]",
+      "H(z)",
+      "y[n]",
+      "T(s)"
+    ],
+    "answerIndex": 1,
+    "explanation": "H(z) = Y(z)/X(z) denotes discrete-time system transfer function."
+  },
+  {
+    "id": 284,
+    "category": "Z-Transform",
+    "question": "The transfer function is defined as:",
+    "options": [
+      "Output x Input",
+      "Output/Input in the z-domain",
+      "Input - Output",
+      "Frequency x Time"
+    ],
+    "answerIndex": 1,
+    "explanation": "H(z) = Y(z) / X(z), ratio of output Z-transform to input Z-transform."
+  },
+  {
+    "id": 285,
+    "category": "Z-Transform",
+    "question": "H(z) describes:",
+    "options": [
+      "Sampling frequency",
+      "Input-output relationship of a system",
+      "Quantization levels",
+      "Signal energy"
+    ],
+    "answerIndex": 1,
+    "explanation": "System transfer function H(z) completely characterizes the input-output behavior of an LTI system."
+  },
+  {
+    "id": 286,
+    "category": "Z-Transform",
+    "question": "The Z-transform is widely used in:",
+    "options": [
+      "Digital filter analysis",
+      "Stability analysis",
+      "System design",
+      "All of them"
+    ],
+    "answerIndex": 3,
+    "explanation": "Z-transform is central to digital filter design, stability checking, and difference equation solving."
+  },
+  {
+    "id": 287,
+    "category": "Z-Transform",
+    "question": "Which transform is most suitable for analyzing recursive digital filters?",
+    "options": [
+      "Fourier Series",
+      "Sampling Theorem",
+      "Z-transform",
+      "Convolution"
+    ],
+    "answerIndex": 2,
+    "explanation": "Z-transform converts recursive difference equations into simple algebraic ratios."
+  },
+  {
+    "id": 288,
+    "category": "Z-Transform",
+    "question": "Which plot provides a graphical view of poles and zeros?",
+    "options": [
+      "Spectrum Plot",
+      "Pole-Zero Plot",
+      "Histogram",
+      "Bode Plot"
+    ],
+    "answerIndex": 1,
+    "explanation": "A Pole-Zero Plot displays pole crosses and zero circles on the z-plane."
+  },
+  {
+    "id": 289,
+    "category": "Z-Transform",
+    "question": "Which statement is TRUE?",
+    "options": [
+      "Z-transform applies only to continuous signals.",
+      "Z-transform is the discrete-time counterpart of the Laplace Transform.",
+      "Z-transform replaces sampling.",
+      "Z-transform computes DFT."
+    ],
+    "answerIndex": 1,
+    "explanation": "Z-transform plays the same fundamental role for discrete systems as Laplace transform plays for continuous systems."
+  },
+  {
+    "id": 290,
+    "category": "Z-Transform",
+    "question": "Which component determines whether the ROC includes the unit circle?",
+    "options": [
+      "Zeros",
+      "Poles",
+      "Harmonics",
+      "Samples"
+    ],
+    "answerIndex": 1,
+    "explanation": "Poles dictate boundaries of ROC, determining whether |z|=1 is enclosed."
+  },
+  {
+    "id": 291,
+    "category": "Z-Transform",
+    "question": "The unit circle is important because:",
+    "options": [
+      "It determines sampling frequency.",
+      "It is used to test stability and obtain the frequency response.",
+      "It defines quantization levels.",
+      "It removes aliasing."
+    ],
+    "answerIndex": 1,
+    "explanation": "Evaluating X(z) along unit circle z = e^(j w) gives DTFT frequency response."
+  },
+  {
+    "id": 292,
+    "category": "Z-Transform",
+    "question": "Which statement about poles is correct?",
+    "options": [
+      "Poles always lie inside the ROC.",
+      "Poles are excluded from the ROC.",
+      "Poles are identical to zeros.",
+      "Poles always lie on the unit circle."
+    ],
+    "answerIndex": 1,
+    "explanation": "Poles are explicitly excluded from the Region of Convergence."
+  },
+  {
+    "id": 293,
+    "category": "Z-Transform",
+    "question": "Which statement about zeros is correct?",
+    "options": [
+      "Zeros determine ROC boundaries.",
+      "Zeros affect the frequency response but do not define the ROC.",
+      "Zeros always cause instability.",
+      "Zeros are excluded from the z-plane."
+    ],
+    "answerIndex": 1,
+    "explanation": "Zeros shape frequency response but do not restrict ROC boundaries."
+  },
+  {
+    "id": 294,
+    "category": "Z-Transform",
+    "question": "Which theorem helps determine the steady-state value of a sequence?",
+    "options": [
+      "Nyquist Theorem",
+      "Parseval's Theorem",
+      "Final Value Theorem",
+      "Sampling Theorem"
+    ],
+    "answerIndex": 2,
+    "explanation": "Final Value Theorem calculates asymptotic value x[infinity]."
+  },
+  {
+    "id": 295,
+    "category": "Z-Transform",
+    "question": "Which theorem helps determine the first sample of a sequence?",
+    "options": [
+      "Fourier Theorem",
+      "Initial Value Theorem",
+      "Convolution Theorem",
+      "Shannon Theorem"
+    ],
+    "answerIndex": 1,
+    "explanation": "Initial Value Theorem calculates first sample value x[0]."
+  },
+  {
+    "id": 296,
+    "category": "Z-Transform",
+    "question": "Which concept is directly associated with H(z)?",
+    "options": [
+      "Sampling interval",
+      "System transfer function",
+      "Quantization error",
+      "Harmonic distortion"
+    ],
+    "answerIndex": 1,
+    "explanation": "H(z) represents the system transfer function."
+  },
+  {
+    "id": 297,
+    "category": "Z-Transform",
+    "question": "Which statement best distinguishes poles and zeros?",
+    "options": [
+      "Both are roots of the denominator.",
+      "Poles are roots of the denominator, while zeros are roots of the numerator.",
+      "Both determine the ROC directly.",
+      "Both always lie on the unit circle."
+    ],
+    "answerIndex": 1,
+    "explanation": "Poles make H(z)->infinity (roots of denominator); Zeros make H(z)=0 (roots of numerator)."
+  },
+  {
+    "id": 298,
+    "category": "Z-Transform",
+    "question": "Which of the following is NOT directly associated with the Z-transform?",
+    "options": [
+      "ROC",
+      "Pole-Zero Plot",
+      "Stability",
+      "Nyquist Sampling Rate"
+    ],
+    "answerIndex": 3,
+    "explanation": "Nyquist Sampling Rate belongs to sampling theory, not Z-transform definitions."
+  },
+  {
+    "id": 299,
+    "category": "Z-Transform",
+    "question": "Which representation is most useful for analyzing discrete-time systems?",
+    "options": [
+      "Time-domain waveform only",
+      "Z-domain representation",
+      "Analog spectrum only",
+      "Continuous-time graph"
+    ],
+    "answerIndex": 1,
+    "explanation": "Z-domain representations turn linear difference equations into easily manipulated algebraic polynomials."
+  },
+  {
+    "id": 300,
+    "category": "Z-Transform",
+    "question": "Which statement best summarizes the purpose of the Z-transform?",
+    "options": [
+      "It converts analog signals into digital signals.",
+      "It eliminates quantization noise.",
+      "It provides a powerful mathematical tool for analyzing and designing discrete-time systems, particularly with respect to stability, causality, and system response.",
+      "It calculates the sampling frequency."
+    ],
+    "answerIndex": 2,
+    "explanation": "Z-transform provides the core framework for discrete LTI system analysis, stability testing, and filter design."
+  },
+  {
+    "id": 301,
+    "category": "FIR Filters",
+    "question": "FIR stands for:",
+    "options": [
+      "Fast Impulse Response",
+      "Finite Impulse Response",
+      "Frequency Impulse Response",
+      "Fixed Impulse Response"
+    ],
+    "answerIndex": 1,
+    "explanation": "FIR stands for Finite Impulse Response."
+  },
+  {
+    "id": 302,
+    "category": "FIR Filters",
+    "question": "An FIR filter has:",
+    "options": [
+      "Infinite impulse response",
+      "Finite-duration impulse response",
+      "Continuous impulse response",
+      "Random impulse response"
+    ],
+    "answerIndex": 1,
+    "explanation": "An FIR filter's impulse response h[n] drops to zero after a finite number of terms N."
+  },
+  {
+    "id": 303,
+    "category": "FIR Filters",
+    "question": "FIR filters are primarily used in:",
+    "options": [
+      "Digital signal processing",
+      "Audio processing",
+      "Image processing",
+      "All of them"
+    ],
+    "answerIndex": 3,
+    "explanation": "FIR filters are widely deployed across DSP, digital audio processing, and image filtering."
+  },
+  {
+    "id": 304,
+    "category": "FIR Filters",
+    "question": "FIR filters are classified as:",
+    "options": [
+      "Analog filters",
+      "Digital filters",
+      "Mechanical filters",
+      "Optical filters"
+    ],
+    "answerIndex": 1,
+    "explanation": "FIR filters are digital filters implemented via delay elements, multipliers, and adders."
+  },
+  {
+    "id": 305,
+    "category": "FIR Filters",
+    "question": "Which equation generally describes an FIR filter?",
+    "options": [
+      "Differential equation",
+      "Difference equation without feedback",
+      "Laplace equation",
+      "Wave equation"
+    ],
+    "answerIndex": 1,
+    "explanation": "FIR difference equation y[n] = sum(b_k x[n-k]) contains no past output feedback terms."
+  },
+  {
+    "id": 306,
+    "category": "FIR Filters",
+    "question": "FIR filters are generally:",
+    "options": [
+      "Recursive",
+      "Non-recursive",
+      "Continuous",
+      "Analog"
+    ],
+    "answerIndex": 1,
+    "explanation": "FIR filters are non-recursive because output depends only on present and past inputs."
+  },
+  {
+    "id": 307,
+    "category": "FIR Filters",
+    "question": "A non-recursive filter means:",
+    "options": [
+      "Output is fed back to the input.",
+      "No feedback is used.",
+      "Infinite impulse response exists.",
+      "Filter is unstable."
+    ],
+    "answerIndex": 1,
+    "explanation": "Non-recursive means there is no feedback of previous output values into current calculation."
+  },
+  {
+    "id": 308,
+    "category": "FIR Filters",
+    "question": "FIR filters depend on:",
+    "options": [
+      "Present outputs only",
+      "Present and past input samples only",
+      "Future outputs",
+      "Future inputs"
+    ],
+    "answerIndex": 1,
+    "explanation": "FIR filter output y[n] depends solely on present and past input samples x[n-k]."
+  },
+  {
+    "id": 309,
+    "category": "FIR Filters",
+    "question": "Which component is absent in a basic FIR filter?",
+    "options": [
+      "Delay elements",
+      "Multipliers",
+      "Adders",
+      "Feedback path"
+    ],
+    "answerIndex": 3,
+    "explanation": "FIR filters lack feedback loops; they consist strictly of feedforward delay taps, multipliers, and adders."
+  },
+  {
+    "id": 310,
+    "category": "FIR Filters",
+    "question": "FIR filters use:",
+    "options": [
+      "Feedback loops",
+      "Feedforward structure",
+      "Oscillators",
+      "Integrators only"
+    ],
+    "answerIndex": 1,
+    "explanation": "FIR filters utilize a tapped-delay line feedforward architecture."
+  },
+  {
+    "id": 311,
+    "category": "FIR Filters",
+    "question": "FIR filters are always:",
+    "options": [
+      "Unstable",
+      "Stable",
+      "Marginally stable",
+      "Conditionally stable"
+    ],
+    "answerIndex": 1,
+    "explanation": "Because FIR filters have no feedback and all poles lie at the origin z=0, they are inherently and unconditionally stable."
+  },
+  {
+    "id": 312,
+    "category": "FIR Filters",
+    "question": "Why are FIR filters always stable?",
+    "options": [
+      "They use recursive equations.",
+      "They have no feedback path.",
+      "They have infinite impulse response.",
+      "They ignore input samples."
+    ],
+    "answerIndex": 1,
+    "explanation": "Absence of feedback guarantees BIBO stability for any bounded input."
+  },
+  {
+    "id": 313,
+    "category": "FIR Filters",
+    "question": "Which filter type can achieve exact linear phase?",
+    "options": [
+      "IIR only",
+      "FIR",
+      "Analog RC filter",
+      "Butterworth only"
+    ],
+    "answerIndex": 1,
+    "explanation": "FIR filters can achieve exact linear phase response by imposing symmetric or anti-symmetric coefficient constraints."
+  },
+  {
+    "id": 314,
+    "category": "FIR Filters",
+    "question": "Linear phase means:",
+    "options": [
+      "Constant amplitude",
+      "Equal delay for all frequency components",
+      "Infinite gain",
+      "Constant frequency"
+    ],
+    "answerIndex": 1,
+    "explanation": "Linear phase ensures constant group delay, imparting equal delay to all frequency components."
+  },
+  {
+    "id": 315,
+    "category": "FIR Filters",
+    "question": "Linear-phase filters preserve:",
+    "options": [
+      "Signal amplitude only",
+      "Signal waveform (shape)",
+      "Sampling rate",
+      "Quantization levels"
+    ],
+    "answerIndex": 1,
+    "explanation": "Constant group delay preserves original signal waveform shape and prevents phase distortion."
+  },
+  {
+    "id": 316,
+    "category": "FIR Filters",
+    "question": "Which property makes FIR filters attractive for communication systems?",
+    "options": [
+      "Recursive structure",
+      "Linear phase response",
+      "Infinite impulse response",
+      "High feedback gain"
+    ],
+    "answerIndex": 1,
+    "explanation": "Linear phase response prevents phase distortion in digital data transmissions."
+  },
+  {
+    "id": 317,
+    "category": "FIR Filters",
+    "question": "The impulse response of an FIR filter becomes zero after:",
+    "options": [
+      "Infinite time",
+      "A finite number of samples",
+      "One second",
+      "One period"
+    ],
+    "answerIndex": 1,
+    "explanation": "By definition, h[n] = 0 for n < 0 and n >= N (finite length N)."
+  },
+  {
+    "id": 318,
+    "category": "FIR Filters",
+    "question": "The word \"finite\" in FIR refers to:",
+    "options": [
+      "Finite bandwidth",
+      "Finite impulse response duration",
+      "Finite sampling frequency",
+      "Finite gain"
+    ],
+    "answerIndex": 1,
+    "explanation": "Finite refers to the limited duration of impulse response samples."
+  },
+  {
+    "id": 319,
+    "category": "FIR Filters",
+    "question": "A commonly used method for FIR filter design is:",
+    "options": [
+      "Bilinear transformation",
+      "Window method",
+      "Impulse invariance only",
+      "Euler approximation"
+    ],
+    "answerIndex": 1,
+    "explanation": "The Window Method truncates ideal infinite impulse responses using smooth windows (Hamming, Hanning, etc.)."
+  },
+  {
+    "id": 320,
+    "category": "FIR Filters",
+    "question": "Which window is widely used in FIR filter design?",
+    "options": [
+      "Blackman",
+      "Hamming",
+      "Hanning (Hann)",
+      "All of them"
+    ],
+    "answerIndex": 3,
+    "explanation": "Rectangular, Hamming, Hann, Blackman, and Kaiser are all standard FIR design windows."
+  },
+  {
+    "id": 321,
+    "category": "FIR Filters",
+    "question": "Which window provides a good balance between main-lobe width and side-lobe attenuation?",
+    "options": [
+      "Rectangular",
+      "Hamming",
+      "Kaiser",
+      "Bartlett"
+    ],
+    "answerIndex": 1,
+    "explanation": "Hamming window is popular for its excellent trade-off between main-lobe resolution and side-lobe suppression (-43 dB)."
+  },
+  {
+    "id": 322,
+    "category": "FIR Filters",
+    "question": "Which window has the narrowest main lobe but the highest side lobes?",
+    "options": [
+      "Rectangular",
+      "Hamming",
+      "Blackman",
+      "Kaiser"
+    ],
+    "answerIndex": 0,
+    "explanation": "Rectangular window has narrowest main lobe width (4pi/N) but highest peak side lobes (-13 dB)."
+  },
+  {
+    "id": 323,
+    "category": "FIR Filters",
+    "question": "The Kaiser window is popular because:",
+    "options": [
+      "It is the simplest window.",
+      "It provides adjustable performance using a parameter (beta).",
+      "It is used only in analog filters.",
+      "It removes aliasing automatically."
+    ],
+    "answerIndex": 1,
+    "explanation": "Kaiser window allows tuning side-lobe attenuation vs main-lobe width using parameter beta."
+  },
+  {
+    "id": 324,
+    "category": "FIR Filters",
+    "question": "The frequency sampling method is another technique for:",
+    "options": [
+      "ADC design",
+      "FIR filter design",
+      "Quantization",
+      "Modulation"
+    ],
+    "answerIndex": 1,
+    "explanation": "Frequency Sampling Method designs FIR filters by sampling desired frequency response H(w)."
+  },
+  {
+    "id": 325,
+    "category": "FIR Filters",
+    "question": "The frequency response of an FIR filter depends on:",
+    "options": [
+      "Sampling interval only",
+      "Filter coefficients",
+      "Quantization error only",
+      "Signal power"
+    ],
+    "answerIndex": 1,
+    "explanation": "Filter coefficients b_k uniquely dictate the magnitude and phase response of an FIR filter."
+  },
+  {
+    "id": 326,
+    "category": "FIR Filters",
+    "question": "Changing the filter coefficients mainly changes:",
+    "options": [
+      "Sampling frequency",
+      "Frequency response",
+      "ADC resolution",
+      "Quantization noise"
+    ],
+    "answerIndex": 1,
+    "explanation": "Modifying b_k alters the filter's frequency response H(w)."
+  },
+  {
+    "id": 327,
+    "category": "FIR Filters",
+    "question": "A low-pass FIR filter allows:",
+    "options": [
+      "High frequencies only",
+      "Low frequencies to pass while attenuating high frequencies",
+      "All frequencies equally",
+      "No frequencies"
+    ],
+    "answerIndex": 1,
+    "explanation": "Low-pass filter passes low frequencies below cutoff and attenuates high frequencies."
+  },
+  {
+    "id": 328,
+    "category": "FIR Filters",
+    "question": "A high-pass FIR filter mainly passes:",
+    "options": [
+      "Low frequencies",
+      "High frequencies",
+      "DC only",
+      "All frequencies"
+    ],
+    "answerIndex": 1,
+    "explanation": "High-pass filter passes frequencies above cutoff and blocks lower frequencies."
+  },
+  {
+    "id": 329,
+    "category": "FIR Filters",
+    "question": "A band-pass FIR filter passes:",
+    "options": [
+      "Low frequencies only",
+      "High frequencies only",
+      "Frequencies within a specific range",
+      "All frequencies"
+    ],
+    "answerIndex": 2,
+    "explanation": "Band-pass filter passes frequencies between lower and upper cutoff frequencies."
+  },
+  {
+    "id": 330,
+    "category": "FIR Filters",
+    "question": "A band-stop filter is also known as a:",
+    "options": [
+      "Low-pass filter",
+      "High-pass filter",
+      "Band-reject filter",
+      "Integrator"
+    ],
+    "answerIndex": 2,
+    "explanation": "Band-stop filters attenuate a specific frequency band and are also called Band-Reject filters."
+  },
+  {
+    "id": 331,
+    "category": "FIR Filters",
+    "question": "Which is an advantage of FIR filters?",
+    "options": [
+      "Lower computation than IIR",
+      "Guaranteed stability",
+      "Infinite impulse response",
+      "Requires feedback"
+    ],
+    "answerIndex": 1,
+    "explanation": "Absence of feedback guarantees absolute stability for all FIR designs."
+  },
+  {
+    "id": 332,
+    "category": "FIR Filters",
+    "question": "Another important advantage of FIR filters is:",
+    "options": [
+      "Recursive implementation",
+      "Exact linear phase can be achieved",
+      "Fewer coefficients than IIR in every case",
+      "Higher instability"
+    ],
+    "answerIndex": 1,
+    "explanation": "FIR filters achieve exact linear phase, avoiding phase distortion."
+  },
+  {
+    "id": 333,
+    "category": "FIR Filters",
+    "question": "FIR filters are less sensitive to:",
+    "options": [
+      "Sampling frequency",
+      "Quantization errors",
+      "Nyquist rate",
+      "Aliasing"
+    ],
+    "answerIndex": 1,
+    "explanation": "FIR non-recursive structures are far less sensitive to coefficient quantization and finite word-length effects."
+  },
+  {
+    "id": 334,
+    "category": "FIR Filters",
+    "question": "Which is a disadvantage of FIR filters?",
+    "options": [
+      "Instability",
+      "Higher computational complexity for sharp responses",
+      "Infinite impulse response",
+      "Uses feedback"
+    ],
+    "answerIndex": 1,
+    "explanation": "Achieving sharp transition bands requires high filter order N, raising computational complexity."
+  },
+  {
+    "id": 335,
+    "category": "FIR Filters",
+    "question": "Compared with IIR filters, FIR filters generally require:",
+    "options": [
+      "Fewer coefficients",
+      "More coefficients",
+      "No coefficients",
+      "Analog components"
+    ],
+    "answerIndex": 1,
+    "explanation": "To meet identical sharp magnitude specs, FIR filters require significantly higher order (more coefficients) than IIR filters."
+  },
+  {
+    "id": 336,
+    "category": "FIR Filters",
+    "question": "Because FIR filters often require more coefficients, they generally require:",
+    "options": [
+      "Less memory",
+      "More memory",
+      "No storage",
+      "Lower sampling rates"
+    ],
+    "answerIndex": 1,
+    "explanation": "Higher order N requires storing more coefficient weights and delay line values in memory."
+  },
+  {
+    "id": 337,
+    "category": "FIR Filters",
+    "question": "Which filter uses feedback?",
+    "options": [
+      "FIR",
+      "IIR",
+      "Both",
+      "Neither"
+    ],
+    "answerIndex": 1,
+    "explanation": "IIR (Infinite Impulse Response) filters use output feedback loops."
+  },
+  {
+    "id": 338,
+    "category": "FIR Filters",
+    "question": "Which filter is always stable?",
+    "options": [
+      "FIR",
+      "IIR",
+      "Both",
+      "Neither"
+    ],
+    "answerIndex": 0,
+    "explanation": "FIR filters are non-recursive with all poles at z=0, guaranteeing stability."
+  },
+  {
+    "id": 339,
+    "category": "FIR Filters",
+    "question": "Which filter can achieve exact linear phase more easily?",
+    "options": [
+      "FIR",
+      "IIR",
+      "Both",
+      "Neither"
+    ],
+    "answerIndex": 0,
+    "explanation": "Symmetric/antisymmetric FIR coefficient structures guarantee exact linear phase."
+  },
+  {
+    "id": 340,
+    "category": "FIR Filters",
+    "question": "Which filter generally requires fewer coefficients?",
+    "options": [
+      "FIR",
+      "IIR",
+      "Both",
+      "Neither"
+    ],
+    "answerIndex": 1,
+    "explanation": "IIR filters achieve sharp cutoff transitions with much lower filter orders."
+  },
+  {
+    "id": 341,
+    "category": "FIR Filters",
+    "question": "FIR filters are commonly used for:",
+    "options": [
+      "Audio equalization",
+      "Image enhancement",
+      "Noise reduction",
+      "All of them"
+    ],
+    "answerIndex": 3,
+    "explanation": "FIR filters are extensively used in digital audio, video, communications, and image processing."
+  },
+  {
+    "id": 342,
+    "category": "FIR Filters",
+    "question": "Which application benefits greatly from linear-phase FIR filters?",
+    "options": [
+      "Speech processing",
+      "Biomedical signals",
+      "Data communications",
+      "All of them"
+    ],
+    "answerIndex": 3,
+    "explanation": "Biomedical signals (ECG/EEG), modem communications, and speech processing require zero phase distortion."
+  },
+  {
+    "id": 343,
+    "category": "FIR Filters",
+    "question": "FIR filters are preferred when:",
+    "options": [
+      "Minimum computation is the only goal.",
+      "Signal waveform preservation is important.",
+      "Feedback is required.",
+      "Infinite impulse response is needed."
+    ],
+    "answerIndex": 1,
+    "explanation": "Linear-phase FIR filters preserve waveform shapes without phase dispersion."
+  },
+  {
+    "id": 344,
+    "category": "FIR Filters",
+    "question": "Which statement is TRUE?",
+    "options": [
+      "FIR filters are recursive.",
+      "FIR filters are non-recursive.",
+      "FIR filters are always unstable.",
+      "FIR filters use poles outside the unit circle."
+    ],
+    "answerIndex": 1,
+    "explanation": "FIR filters are non-recursive digital filters."
+  },
+  {
+    "id": 345,
+    "category": "FIR Filters",
+    "question": "Which statement about FIR filters is correct?",
+    "options": [
+      "They use feedback loops.",
+      "They depend only on present and past input samples.",
+      "They always require fewer computations than IIR filters.",
+      "They are analog filters."
+    ],
+    "answerIndex": 1,
+    "explanation": "FIR output depends strictly on present and past input samples."
+  },
+  {
+    "id": 346,
+    "category": "FIR Filters",
+    "question": "Why are FIR filters widely used in digital communications?",
+    "options": [
+      "They amplify signals.",
+      "They can provide linear phase and guaranteed stability.",
+      "They eliminate sampling.",
+      "They increase bandwidth."
+    ],
+    "answerIndex": 1,
+    "explanation": "Linear phase preserves pulse shapes, and guaranteed stability avoids system oscillation."
+  },
+  {
+    "id": 347,
+    "category": "FIR Filters",
+    "question": "Which concept is directly associated with FIR filter design?",
+    "options": [
+      "Bilinear transformation only",
+      "Window method",
+      "Nyquist rate",
+      "Quantization"
+    ],
+    "answerIndex": 1,
+    "explanation": "Window Method (Hamming, Hanning, Blackman, etc.) is a standard FIR design approach."
+  },
+  {
+    "id": 348,
+    "category": "FIR Filters",
+    "question": "Which of the following is NOT a characteristic of FIR filters?",
+    "options": [
+      "Finite impulse response",
+      "Non-recursive implementation",
+      "Guaranteed stability",
+      "Feedback structure"
+    ],
+    "answerIndex": 3,
+    "explanation": "FIR filters do not possess a feedback structure."
+  },
+  {
+    "id": 349,
+    "category": "FIR Filters",
+    "question": "Which factor mainly determines the performance of an FIR filter?",
+    "options": [
+      "Sampling interval",
+      "Filter coefficients",
+      "ADC resolution",
+      "Nyquist frequency"
+    ],
+    "answerIndex": 1,
+    "explanation": "Filter coefficients b_k dictate magnitude response, passband ripple, and stopband attenuation."
+  },
+  {
+    "id": 350,
+    "category": "FIR Filters",
+    "question": "Which statement best summarizes FIR filters?",
+    "options": [
+      "FIR filters are recursive digital filters with infinite impulse responses.",
+      "FIR filters are unstable but computationally efficient.",
+      "FIR filters are non-recursive digital filters with finite impulse responses, guaranteed stability, and the ability to achieve exact linear phase.",
+      "FIR filters are used only for analog signal processing."
+    ],
+    "answerIndex": 2,
+    "explanation": "FIR filters are non-recursive, finite impulse response digital filters providing guaranteed stability and linear phase."
+  },
+  {
+    "id": 351,
+    "category": "IIR Filters & Mixed",
+    "question": "IIR stands for:",
+    "options": [
+      "Infinite Input Response",
+      "Infinite Impulse Response",
+      "Internal Impulse Response",
+      "Integrated Impulse Response"
+    ],
+    "answerIndex": 1,
+    "explanation": "IIR stands for Infinite Impulse Response."
+  },
+  {
+    "id": 352,
+    "category": "IIR Filters & Mixed",
+    "question": "An IIR filter has:",
+    "options": [
+      "Finite impulse response",
+      "Infinite impulse response",
+      "Zero impulse response",
+      "Continuous impulse response only"
+    ],
+    "answerIndex": 1,
+    "explanation": "An IIR filter's impulse response h[n] continues theoretically indefinitely due to output feedback."
+  },
+  {
+    "id": 353,
+    "category": "IIR Filters & Mixed",
+    "question": "IIR filters are generally:",
+    "options": [
+      "Non-recursive",
+      "Recursive",
+      "Memoryless",
+      "Continuous only"
+    ],
+    "answerIndex": 1,
+    "explanation": "IIR filters are recursive because current output depends on previous output feedback terms."
+  },
+  {
+    "id": 354,
+    "category": "IIR Filters & Mixed",
+    "question": "Recursive filters use:",
+    "options": [
+      "Feedforward only",
+      "Feedback",
+      "Sampling only",
+      "Window functions only"
+    ],
+    "answerIndex": 1,
+    "explanation": "Recursive filters incorporate feedback of previous output values."
+  },
+  {
+    "id": 355,
+    "category": "IIR Filters & Mixed",
+    "question": "The output of an IIR filter depends on:",
+    "options": [
+      "Present input only",
+      "Past inputs only",
+      "Present/past inputs and past outputs",
+      "Future inputs"
+    ],
+    "answerIndex": 2,
+    "explanation": "y[n] = sum(b_k x[n-k]) - sum(a_m y[n-m]); depends on inputs and past outputs."
+  },
+  {
+    "id": 356,
+    "category": "IIR Filters & Mixed",
+    "question": "Which is a major advantage of IIR filters?",
+    "options": [
+      "Exact linear phase",
+      "Fewer coefficients for a given response",
+      "Guaranteed stability",
+      "No feedback"
+    ],
+    "answerIndex": 1,
+    "explanation": "IIR filters satisfy sharp frequency response specifications using much lower filter orders."
+  },
+  {
+    "id": 357,
+    "category": "IIR Filters & Mixed",
+    "question": "Compared to FIR filters, IIR filters usually require:",
+    "options": [
+      "More coefficients",
+      "Fewer coefficients",
+      "No coefficients",
+      "Infinite coefficients"
+    ],
+    "answerIndex": 1,
+    "explanation": "IIR filters achieve equivalent magnitude selectivity with far fewer coefficients."
+  },
+  {
+    "id": 358,
+    "category": "IIR Filters & Mixed",
+    "question": "IIR filters are computationally:",
+    "options": [
+      "More expensive",
+      "More efficient for similar specifications",
+      "Impossible to implement",
+      "Slower than FIR in all cases"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fewer coefficients translate into fewer multiplications and additions per sample."
+  },
+  {
+    "id": 359,
+    "category": "IIR Filters & Mixed",
+    "question": "Which property is generally difficult to achieve with IIR filters?",
+    "options": [
+      "Stability",
+      "Exact linear phase",
+      "Recursive implementation",
+      "Low computational cost"
+    ],
+    "answerIndex": 1,
+    "explanation": "IIR filters exhibit non-linear phase response; exact linear phase cannot be achieved across all frequencies."
+  },
+  {
+    "id": 360,
+    "category": "IIR Filters & Mixed",
+    "question": "An improperly designed IIR filter may become:",
+    "options": [
+      "Linear phase",
+      "Unstable",
+      "Memoryless",
+      "Non-causal"
+    ],
+    "answerIndex": 1,
+    "explanation": "Because IIR filters use feedback, poles placed outside the unit circle cause instability."
+  },
+  {
+    "id": 361,
+    "category": "IIR Filters & Mixed",
+    "question": "Which filter has a maximally flat passband?",
+    "options": [
+      "Chebyshev",
+      "Butterworth",
+      "Elliptic",
+      "Bessel"
+    ],
+    "answerIndex": 1,
+    "explanation": "Butterworth filter magnitude response is maximally flat in the passband with no ripples."
+  },
+  {
+    "id": 362,
+    "category": "IIR Filters & Mixed",
+    "question": "Which filter has ripple in the passband?",
+    "options": [
+      "Butterworth",
+      "Chebyshev Type-I",
+      "Bessel",
+      "Gaussian"
+    ],
+    "answerIndex": 1,
+    "explanation": "Chebyshev Type-I filter features equiripple behavior in passband and monotonic response in stopband."
+  },
+  {
+    "id": 363,
+    "category": "IIR Filters & Mixed",
+    "question": "Which filter has ripple in the stopband only?",
+    "options": [
+      "Butterworth",
+      "Chebyshev Type-II",
+      "Bessel",
+      "Gaussian"
+    ],
+    "answerIndex": 1,
+    "explanation": "Chebyshev Type-II (Inverse Chebyshev) has monotonic passband and equiripple stopband."
+  },
+  {
+    "id": 364,
+    "category": "IIR Filters & Mixed",
+    "question": "Which filter has ripple in both passband and stopband?",
+    "options": [
+      "Butterworth",
+      "Chebyshev Type-I",
+      "Elliptic (Cauer)",
+      "Bessel"
+    ],
+    "answerIndex": 2,
+    "explanation": "Elliptic (Cauer) filter features equiripples in both passband and stopband."
+  },
+  {
+    "id": 365,
+    "category": "IIR Filters & Mixed",
+    "question": "Which classical filter provides the sharpest transition band for a given filter order?",
+    "options": [
+      "Butterworth",
+      "Bessel",
+      "Elliptic",
+      "Moving Average"
+    ],
+    "answerIndex": 2,
+    "explanation": "Elliptic filters yield the steepest transition cutoff band for a given order N."
+  },
+  {
+    "id": 366,
+    "category": "IIR Filters & Mixed",
+    "question": "Which filter is known for a smooth, ripple-free magnitude response?",
+    "options": [
+      "Butterworth",
+      "Chebyshev",
+      "Elliptic",
+      "Comb"
+    ],
+    "answerIndex": 0,
+    "explanation": "Butterworth response decreases monotonically without any passband or stopband ripples."
+  },
+  {
+    "id": 367,
+    "category": "IIR Filters & Mixed",
+    "question": "Bilinear Transformation is mainly used to design:",
+    "options": [
+      "FIR filters",
+      "IIR digital filters from analog prototypes",
+      "ADCs",
+      "FFT algorithms"
+    ],
+    "answerIndex": 1,
+    "explanation": "Bilinear Transformation maps continuous s-plane analog filter designs to discrete z-plane IIR digital filters."
+  },
+  {
+    "id": 368,
+    "category": "IIR Filters & Mixed",
+    "question": "Bilinear Transformation converts:",
+    "options": [
+      "Digital filters into analog filters",
+      "Analog filter designs into digital filter designs",
+      "Time domain into frequency domain",
+      "Continuous signals into sampled signals"
+    ],
+    "answerIndex": 1,
+    "explanation": "It transforms continuous analog transfer functions H(s) into discrete digital filter transfer functions H(z)."
+  },
+  {
+    "id": 369,
+    "category": "IIR Filters & Mixed",
+    "question": "Bilinear Transformation avoids:",
+    "options": [
+      "Quantization",
+      "Aliasing",
+      "Convolution",
+      "Sampling"
+    ],
+    "answerIndex": 1,
+    "explanation": "Bilinear Transformation nonlinearly compresses continuous frequency axis (-inf, inf) onto unit circle (-pi, pi), preventing aliasing."
+  },
+  {
+    "id": 370,
+    "category": "IIR Filters & Mixed",
+    "question": "Which mapping is used in Bilinear Transformation?",
+    "options": [
+      "z-plane -> s-plane",
+      "s-plane -> z-plane",
+      "Time -> Frequency",
+      "Frequency -> Time"
+    ],
+    "answerIndex": 1,
+    "explanation": "Bilinear transformation uses substitution s = (2/T)(z-1)/(z+1) to map s-plane to z-plane."
+  },
+  {
+    "id": 371,
+    "category": "IIR Filters & Mixed",
+    "question": "Impulse Invariance is used for:",
+    "options": [
+      "FIR design",
+      "Converting analog filters into digital filters",
+      "Sampling only",
+      "FFT computation"
+    ],
+    "answerIndex": 1,
+    "explanation": "Impulse Invariance designs digital IIR filters by sampling the continuous analog impulse response h(t)."
+  },
+  {
+    "id": 372,
+    "category": "IIR Filters & Mixed",
+    "question": "Impulse Invariance preserves the:",
+    "options": [
+      "Frequency response exactly",
+      "Impulse response at sampling instants",
+      "Quantization levels",
+      "Nyquist frequency"
+    ],
+    "answerIndex": 1,
+    "explanation": "Impulse Invariance matches discrete impulse response h[n] to continuous impulse response h(n Ts)."
+  },
+  {
+    "id": 373,
+    "category": "IIR Filters & Mixed",
+    "question": "A limitation of Impulse Invariance is:",
+    "options": [
+      "Instability",
+      "Aliasing",
+      "Feedback removal",
+      "High memory usage"
+    ],
+    "answerIndex": 1,
+    "explanation": "Direct sampling of h(t) causes frequency aliasing unless the analog filter is strictly band-limited."
+  },
+  {
+    "id": 374,
+    "category": "IIR Filters & Mixed",
+    "question": "Which filter always has a finite impulse response?",
+    "options": [
+      "FIR",
+      "IIR",
+      "Both",
+      "Neither"
+    ],
+    "answerIndex": 0,
+    "explanation": "FIR filters inherently possess a finite-duration impulse response."
+  },
+  {
+    "id": 375,
+    "category": "IIR Filters & Mixed",
+    "question": "Which filter uses recursion?",
+    "options": [
+      "FIR",
+      "IIR",
+      "Both",
+      "Neither"
+    ],
+    "answerIndex": 1,
+    "explanation": "IIR filters use output feedback recursion."
+  },
+  {
+    "id": 376,
+    "category": "IIR Filters & Mixed",
+    "question": "Which filter is always BIBO stable?",
+    "options": [
+      "FIR",
+      "IIR",
+      "Both",
+      "Neither"
+    ],
+    "answerIndex": 0,
+    "explanation": "FIR filters are guaranteed BIBO stable; IIR filters can become unstable if poles move outside unit circle."
+  },
+  {
+    "id": 377,
+    "category": "IIR Filters & Mixed",
+    "question": "Which filter generally requires fewer arithmetic operations?",
+    "options": [
+      "FIR",
+      "IIR",
+      "Both",
+      "Neither"
+    ],
+    "answerIndex": 1,
+    "explanation": "IIR filters achieve equivalent magnitude specifications with far lower filter orders and fewer arithmetic operations."
+  },
+  {
+    "id": 378,
+    "category": "IIR Filters & Mixed",
+    "question": "Which filter is preferred when exact linear phase is essential?",
+    "options": [
+      "FIR",
+      "IIR",
+      "Butterworth",
+      "Elliptic"
+    ],
+    "answerIndex": 0,
+    "explanation": "FIR filters can achieve exact linear phase; IIR filters introduce non-linear phase distortion."
+  },
+  {
+    "id": 379,
+    "category": "IIR Filters & Mixed",
+    "question": "Which filter is preferred when computational efficiency is the primary concern?",
+    "options": [
+      "FIR",
+      "IIR",
+      "Both equally",
+      "Neither"
+    ],
+    "answerIndex": 1,
+    "explanation": "IIR filters require significantly fewer computations for sharp magnitude cutoffs."
+  },
+  {
+    "id": 380,
+    "category": "IIR Filters & Mixed",
+    "question": "Which statement correctly compares FIR and IIR filters?",
+    "options": [
+      "FIR filters use feedback, whereas IIR filters do not.",
+      "FIR filters are non-recursive, while IIR filters are recursive.",
+      "Both always have linear phase.",
+      "Both always require the same filter order."
+    ],
+    "answerIndex": 1,
+    "explanation": "FIR filters are non-recursive (no feedback); IIR filters are recursive (feedback)."
+  },
+  {
+    "id": 381,
+    "category": "IIR Filters & Mixed",
+    "question": "Nyquist theorem is related to:",
+    "options": [
+      "Convolution",
+      "Sampling",
+      "FFT",
+      "Filtering"
+    ],
+    "answerIndex": 1,
+    "explanation": "Nyquist theorem establishes minimum sampling rate fs >= 2fmax for alias-free sampling."
+  },
+  {
+    "id": 382,
+    "category": "IIR Filters & Mixed",
+    "question": "Aliasing occurs because of:",
+    "options": [
+      "Oversampling",
+      "Undersampling",
+      "Windowing",
+      "Convolution"
+    ],
+    "answerIndex": 1,
+    "explanation": "Undersampling (sampling below Nyquist rate) causes high frequencies to alias."
+  },
+  {
+    "id": 383,
+    "category": "IIR Filters & Mixed",
+    "question": "Fourier Transform converts:",
+    "options": [
+      "Frequency domain to time domain",
+      "Time domain to frequency domain",
+      "Analog to digital",
+      "Continuous to discrete"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fourier Transform maps time-domain signals to frequency-domain spectrum."
+  },
+  {
+    "id": 384,
+    "category": "IIR Filters & Mixed",
+    "question": "Which transform is mainly used for discrete-time system analysis?",
+    "options": [
+      "Laplace Transform",
+      "Z-Transform",
+      "Fourier Series",
+      "Hilbert Transform"
+    ],
+    "answerIndex": 1,
+    "explanation": "Z-transform is the primary mathematical tool for analyzing discrete-time systems."
+  },
+  {
+    "id": 385,
+    "category": "IIR Filters & Mixed",
+    "question": "FFT is mainly used because it:",
+    "options": [
+      "Produces different results than DFT",
+      "Computes the DFT efficiently",
+      "Eliminates quantization noise",
+      "Removes aliasing"
+    ],
+    "answerIndex": 1,
+    "explanation": "FFT reduces computational complexity of DFT calculation."
+  },
+  {
+    "id": 386,
+    "category": "IIR Filters & Mixed",
+    "question": "Which transform is used for periodic signals?",
+    "options": [
+      "Fourier Series",
+      "Fourier Transform",
+      "Z-transform",
+      "DFT"
+    ],
+    "answerIndex": 0,
+    "explanation": "Fourier Series represents periodic signals using discrete harmonic frequency series."
+  },
+  {
+    "id": 387,
+    "category": "IIR Filters & Mixed",
+    "question": "Convolution determines:",
+    "options": [
+      "Sampling interval",
+      "Output of an LTI system",
+      "Quantization levels",
+      "Filter order"
+    ],
+    "answerIndex": 1,
+    "explanation": "Convolution combines input signal with impulse response to determine LTI system output."
+  },
+  {
+    "id": 388,
+    "category": "IIR Filters & Mixed",
+    "question": "Which property is essential for an LTI system?",
+    "options": [
+      "Randomness",
+      "Linearity and Time Invariance",
+      "Quantization",
+      "Modulation"
+    ],
+    "answerIndex": 1,
+    "explanation": "An LTI system must satisfy both Linearity and Time Invariance."
+  },
+  {
+    "id": 389,
+    "category": "IIR Filters & Mixed",
+    "question": "A stable discrete-time system requires:",
+    "options": [
+      "Poles outside the unit circle",
+      "ROC including the unit circle",
+      "Zeros on the unit circle",
+      "Infinite bandwidth"
+    ],
+    "answerIndex": 1,
+    "explanation": "For BIBO stability, the transfer function's ROC must include the unit circle |z|=1."
+  },
+  {
+    "id": 390,
+    "category": "IIR Filters & Mixed",
+    "question": "Which theorem relates signal energy in time and frequency domains?",
+    "options": [
+      "Sampling Theorem",
+      "Parseval's Theorem",
+      "Shannon's Theorem",
+      "Convolution Theorem"
+    ],
+    "answerIndex": 1,
+    "explanation": "Parseval's Theorem asserts energy conservation across time and frequency domains."
+  },
+  {
+    "id": 391,
+    "category": "IIR Filters & Mixed",
+    "question": "Which operation corresponds to multiplication in the frequency domain?",
+    "options": [
+      "Sampling",
+      "Convolution in the time domain",
+      "Quantization",
+      "Encoding"
+    ],
+    "answerIndex": 1,
+    "explanation": "Time-domain convolution corresponds to frequency-domain multiplication."
+  },
+  {
+    "id": 392,
+    "category": "IIR Filters & Mixed",
+    "question": "The impulse response of an FIR filter is:",
+    "options": [
+      "Infinite",
+      "Finite",
+      "Continuous only",
+      "Undefined"
+    ],
+    "answerIndex": 1,
+    "explanation": "FIR filter impulse response consists of a finite number of non-zero sample terms."
+  },
+  {
+    "id": 393,
+    "category": "IIR Filters & Mixed",
+    "question": "Which window provides adjustable characteristics using a parameter beta?",
+    "options": [
+      "Hamming",
+      "Blackman",
+      "Kaiser",
+      "Bartlett"
+    ],
+    "answerIndex": 2,
+    "explanation": "Kaiser window features parameter beta to tune main-lobe width vs side-lobe attenuation."
+  },
+  {
+    "id": 394,
+    "category": "IIR Filters & Mixed",
+    "question": "The DFT naturally computes:",
+    "options": [
+      "Linear convolution",
+      "Circular convolution",
+      "Time reversal",
+      "Sampling"
+    ],
+    "answerIndex": 1,
+    "explanation": "Multiplication of DFTs produces circular convolution in the discrete-time domain."
+  },
+  {
+    "id": 395,
+    "category": "IIR Filters & Mixed",
+    "question": "Which device converts analog signals into digital form?",
+    "options": [
+      "DAC",
+      "ADC",
+      "FFT",
+      "Oscillator"
+    ],
+    "answerIndex": 1,
+    "explanation": "ADC (Analog-to-Digital Converter) converts continuous analog signals to digital form."
+  },
+  {
+    "id": 396,
+    "category": "IIR Filters & Mixed",
+    "question": "Which filter removes frequency components above the Nyquist frequency before sampling?",
+    "options": [
+      "High-pass filter",
+      "Anti-aliasing (Low-pass) filter",
+      "Band-stop filter",
+      "Comb filter"
+    ],
+    "answerIndex": 1,
+    "explanation": "Low-pass anti-aliasing filter suppresses frequencies above fs/2 prior to sampling."
+  },
+  {
+    "id": 397,
+    "category": "IIR Filters & Mixed",
+    "question": "Which statement about FFT is correct?",
+    "options": [
+      "FFT is a different transform than DFT.",
+      "FFT is a fast algorithm for computing the DFT.",
+      "FFT applies only to analog signals.",
+      "FFT replaces the Fourier Transform mathematically."
+    ],
+    "answerIndex": 1,
+    "explanation": "FFT is an efficient algorithm to compute the Discrete Fourier Transform."
+  },
+  {
+    "id": 398,
+    "category": "IIR Filters & Mixed",
+    "question": "Which DSP operation decomposes a signal into its constituent frequency components?",
+    "options": [
+      "Sampling",
+      "Quantization",
+      "Fourier Analysis",
+      "Modulation"
+    ],
+    "answerIndex": 2,
+    "explanation": "Fourier Analysis decomposes signals into constituent sinusoidal frequency components."
+  },
+  {
+    "id": 399,
+    "category": "IIR Filters & Mixed",
+    "question": "Which of the following is NOT a property of convolution?",
+    "options": [
+      "Commutative",
+      "Associative",
+      "Distributive",
+      "Anti-Commutative"
+    ],
+    "answerIndex": 3,
+    "explanation": "Convolution is commutative, not anti-commutative."
+  },
+  {
+    "id": 400,
+    "category": "IIR Filters & Mixed",
+    "question": "Which statement best summarizes Digital Signal Processing?",
+    "options": [
+      "DSP is limited to audio applications only.",
+      "DSP is used only for analog communication systems.",
+      "DSP involves the analysis, modification, and processing of digital signals using mathematical techniques such as sampling, transforms, filtering, and convolution.",
+      "DSP is used only for converting analog signals into digital signals."
+    ],
+    "answerIndex": 2,
+    "explanation": "DSP encompasses processing digital signals via sampling, transforms, digital filters, and convolution."
+  }
+];
+
+
 const builtInSubjects = {
   "Computer Networking": NETWORKING_MCQS,
+  "Database Management Systems": DBMS_MCQS,
+  "Digital Signal Processing": DSP_MCQS,
   "Operating Systems": OPERATING_SYSTEMS_MCQS,
   "Microprocessor": MICROPROCESSOR_MCQS,
   "Software Engineering": SOFTWARE_ENGINEERING_MCQS
@@ -13425,6 +23835,8 @@ function parseRawSubject(subjectName, rawText) {
 window.factsData = builtInSubjects;
 window.parseRawSubject = parseRawSubject;
 window.NETWORKING_MCQS = NETWORKING_MCQS;
+window.DBMS_MCQS = DBMS_MCQS;
+window.DSP_MCQS = DSP_MCQS;
 window.OPERATING_SYSTEMS_MCQS = OPERATING_SYSTEMS_MCQS;
 window.MICROPROCESSOR_MCQS = MICROPROCESSOR_MCQS;
 window.SOFTWARE_ENGINEERING_MCQS = SOFTWARE_ENGINEERING_MCQS;

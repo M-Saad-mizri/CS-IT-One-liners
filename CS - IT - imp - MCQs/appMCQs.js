@@ -527,6 +527,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
             </button>
+
+            <button class="card-action-btn btn-deep-dive" data-id="${mcq.id}" title="Deep Dive Web Search & AI Prompt">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+            </button>
           </div>
 
           <div class="action-right">
@@ -540,6 +548,13 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       `;
+
+      const deepDiveBtn = card.querySelector(".btn-deep-dive");
+      if (deepDiveBtn) {
+        deepDiveBtn.addEventListener("click", () => {
+          openDeepDiveModal(mcq);
+        });
+      }
 
       // Option Click Handler (Instant feedback, auto-mark covered if correct, auto-reset back to normal in 2.5s)
       const optBtns = card.querySelectorAll(".mcq-option-btn");
@@ -1509,6 +1524,119 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  // --- DEEP DIVE & WEB SEARCH MODAL LOGIC ---
+  const deepDiveModal = document.getElementById("deepDiveModal");
+  const deepDiveTitle = document.getElementById("deepDiveTitle");
+  const deepDivePromptText = document.getElementById("deepDivePromptText");
+  const copyPromptBtn = document.getElementById("copyPromptBtn");
+
+  const btnSearchGoogle = document.getElementById("btnSearchGoogle");
+  const btnSearchChatGPT = document.getElementById("btnSearchChatGPT");
+  const btnSearchPerplexity = document.getElementById("btnSearchPerplexity");
+  const btnToggleEmbeddedSearch = document.getElementById("btnToggleEmbeddedSearch");
+
+  const embeddedSearchContainer = document.getElementById("embeddedSearchContainer");
+  const embeddedSearchFrame = document.getElementById("embeddedSearchFrame");
+  const deepDiveModalClose = document.getElementById("deepDiveModalClose");
+
+  let activeDeepDiveMCQ = null;
+
+  function generateFormattedPrompt(mcq, subjectName) {
+    const optionsList = (mcq.options || []).map((opt, i) => `${String.fromCharCode(65 + i)}. ${opt}`).join("\n");
+    const correctLetter = String.fromCharCode(65 + mcq.answerIndex);
+    const correctOptText = mcq.options[mcq.answerIndex];
+    const incorrectOpts = (mcq.options || []).filter((_, i) => i !== mcq.answerIndex).join(", ");
+
+    return `Question:
+${mcq.question}
+
+Options:
+${optionsList}
+
+Correct Answer:
+${correctLetter}. ${correctOptText}
+
+Instructions:
+1. Explain why option ${correctLetter} (${correctOptText}) is correct.
+2. Explain why the other options (${incorrectOpts}) are incorrect.
+3. Provide simple real-world examples.
+4. Provide an easy memory trick / mnemonic to remember this concept.
+5. Mention where this concept is used in ${subjectName}.`;
+  }
+
+  function openDeepDiveModal(mcq) {
+    if (!mcq || !deepDiveModal) return;
+    activeDeepDiveMCQ = mcq;
+
+    const prompt = generateFormattedPrompt(mcq, state.activeSubject || "Computer Science");
+    if (deepDivePromptText) deepDivePromptText.value = prompt;
+    if (embeddedSearchContainer) embeddedSearchContainer.style.display = "none";
+    if (embeddedSearchFrame) embeddedSearchFrame.src = "about:blank";
+
+    deepDiveModal.style.display = "flex";
+  }
+
+  function closeDeepDiveModal() {
+    if (deepDiveModal) deepDiveModal.style.display = "none";
+    if (embeddedSearchFrame) embeddedSearchFrame.src = "about:blank";
+    activeDeepDiveMCQ = null;
+  }
+
+  if (deepDiveModalClose) deepDiveModalClose.addEventListener("click", closeDeepDiveModal);
+
+  if (copyPromptBtn) {
+    copyPromptBtn.addEventListener("click", () => {
+      if (deepDivePromptText) {
+        navigator.clipboard.writeText(deepDivePromptText.value).then(() => {
+          const orig = copyPromptBtn.textContent;
+          copyPromptBtn.textContent = "✅ Copied!";
+          setTimeout(() => copyPromptBtn.textContent = orig, 2000);
+        }).catch(err => {
+          alert("Copy failed: " + err);
+        });
+      }
+    });
+  }
+
+  if (btnSearchGoogle) {
+    btnSearchGoogle.addEventListener("click", () => {
+      if (!activeDeepDiveMCQ) return;
+      const query = `${activeDeepDiveMCQ.question} ${activeDeepDiveMCQ.options[activeDeepDiveMCQ.answerIndex]}`;
+      window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, "_blank");
+    });
+  }
+
+  if (btnSearchChatGPT) {
+    btnSearchChatGPT.addEventListener("click", () => {
+      if (!deepDivePromptText) return;
+      navigator.clipboard.writeText(deepDivePromptText.value);
+      window.open("https://chatgpt.com/", "_blank");
+    });
+  }
+
+  if (btnSearchPerplexity) {
+    btnSearchPerplexity.addEventListener("click", () => {
+      if (!deepDivePromptText) return;
+      const prompt = deepDivePromptText.value;
+      window.open(`https://www.perplexity.ai/search?q=${encodeURIComponent(prompt)}`, "_blank");
+    });
+  }
+
+  if (btnToggleEmbeddedSearch) {
+    btnToggleEmbeddedSearch.addEventListener("click", () => {
+      if (!activeDeepDiveMCQ || !embeddedSearchContainer || !embeddedSearchFrame) return;
+
+      if (embeddedSearchContainer.style.display === "block") {
+        embeddedSearchContainer.style.display = "none";
+        embeddedSearchFrame.src = "about:blank";
+      } else {
+        embeddedSearchContainer.style.display = "block";
+        const query = `${activeDeepDiveMCQ.question} ${activeDeepDiveMCQ.options[activeDeepDiveMCQ.answerIndex]}`;
+        embeddedSearchFrame.src = `https://html.duckduckgo.com/html/?q=${encodeURIComponent(query)}`;
+      }
+    });
+  }
+
   if (exportProgressBtn) {
     exportProgressBtn.addEventListener("click", () => {
       const filename = `quickfacts_mcq_backup_${new Date().toISOString().slice(0, 10)}.json`;
@@ -1516,59 +1644,207 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const importBackupModal = document.getElementById("importBackupModal");
+  const importModalClose = document.getElementById("importModalClose");
+  const importModalCancelBtn = document.getElementById("importModalCancelBtn");
+  const importModalConfirmBtn = document.getElementById("importModalConfirmBtn");
+
+  let pendingImportData = null;
+
   if (importProgressBtn && importFileInput) {
     importProgressBtn.addEventListener("click", () => {
+      importFileInput.value = "";
       importFileInput.click();
     });
     importFileInput.addEventListener("change", (e) => {
-      const file = e.target.files[0];
+      const file = e.target.files && e.target.files[0];
       if (!file) return;
+
       const reader = new FileReader();
       reader.onload = (event) => {
         try {
-          const importedData = JSON.parse(event.target.result);
-          if (typeof importedData === "object" && importedData !== null) {
-            // Safely merge imported history & stats without wiping existing data
-            const importedHistory = Array.isArray(importedData.quizHistory) ? importedData.quizHistory : [];
-            const existingHistory = Array.isArray(state.quizHistory) ? state.quizHistory : [];
-
-            // Combine histories avoiding duplicate attempt IDs
-            const historyMap = new Map();
-            existingHistory.forEach(h => { if (h && h.id) historyMap.set(h.id, h); });
-            importedHistory.forEach(h => { if (h && h.id) historyMap.set(h.id, h); });
-            const mergedHistory = Array.from(historyMap.values());
-
-            state = {
-              ...state,
-              ...importedData,
-              bookmarks: { ...(state.bookmarks || {}), ...(importedData.bookmarks || {}) },
-              covered: { ...(state.covered || {}), ...(importedData.covered || {}) },
-              checkpoints: { ...(state.checkpoints || {}), ...(importedData.checkpoints || {}) },
-              attempts: { ...(state.attempts || {}), ...(importedData.attempts || {}) },
-              revealedAnswers: { ...(state.revealedAnswers || {}), ...(importedData.revealedAnswers || {}) },
-              quizStats: { ...(state.quizStats || {}), ...(importedData.quizStats || {}) },
-              customSubjects: { ...(state.customSubjects || {}), ...(importedData.customSubjects || {}) },
-              quizHistory: mergedHistory.length > 0 ? mergedHistory : (importedHistory.length > 0 ? importedHistory : existingHistory),
-              hideQuizHistory: typeof importedData.hideQuizHistory === "boolean" ? importedData.hideQuizHistory : !!state.hideQuizHistory
-            };
-
-            shuffledSubjectCache = {};
-            saveState();
-            initSubjectView();
-            renderQuizHistoryList();
-            updateQuizHistoryVisibility();
-            closeSidebar();
-            alert(`Progress & Quiz History successfully imported! (${state.quizHistory.length} quiz attempts loaded)`);
-          } else {
-            alert("Invalid JSON backup file format.");
+          const parsed = JSON.parse(event.target.result);
+          if (!parsed || typeof parsed !== "object") {
+            throw new Error("Invalid JSON file format.");
+          }
+          if (!parsed.covered && !parsed.attempts && !parsed.quizHistory && !parsed.customSubjects) {
+            throw new Error("File does not appear to contain valid QuickFacts MCQ backup data.");
+          }
+          pendingImportData = parsed;
+          if (importBackupModal) {
+            importBackupModal.style.display = "flex";
           }
         } catch (err) {
-          alert("Error reading JSON file: " + err.message);
+          alert("Error reading backup file: " + err.message);
         }
       };
       reader.readAsText(file);
-      e.target.value = ""; // Reset input so same file can be re-imported if needed
     });
+  }
+
+  function closeImportModal() {
+    if (importBackupModal) importBackupModal.style.display = "none";
+    pendingImportData = null;
+    if (importFileInput) importFileInput.value = "";
+  }
+
+  if (importModalClose) importModalClose.addEventListener("click", closeImportModal);
+  if (importModalCancelBtn) importModalCancelBtn.addEventListener("click", closeImportModal);
+
+  if (importModalConfirmBtn) {
+    importModalConfirmBtn.addEventListener("click", () => {
+      if (!pendingImportData) {
+        closeImportModal();
+        return;
+      }
+
+      const selectedOption = document.querySelector('input[name="importModeChoice"]:checked');
+      const mode = selectedOption ? selectedOption.value : "merge";
+
+      if (mode === "merge") {
+        mergeBackupData(pendingImportData);
+      } else {
+        overwriteBackupData(pendingImportData);
+      }
+
+      closeImportModal();
+      closeSidebar();
+    });
+  }
+
+  function mergeBackupData(incoming) {
+    // 1. Merge Covered (Union per subject)
+    const mergedCovered = { ...state.covered };
+    if (incoming.covered && typeof incoming.covered === "object") {
+      Object.keys(incoming.covered).forEach(subj => {
+        const currentArr = Array.isArray(mergedCovered[subj]) ? mergedCovered[subj] : [];
+        const incomingArr = Array.isArray(incoming.covered[subj]) ? incoming.covered[subj] : [];
+        mergedCovered[subj] = Array.from(new Set([...currentArr, ...incomingArr]));
+      });
+    }
+
+    // 2. Merge Bookmarks (Union per subject)
+    const mergedBookmarks = { ...state.bookmarks };
+    if (incoming.bookmarks && typeof incoming.bookmarks === "object") {
+      Object.keys(incoming.bookmarks).forEach(subj => {
+        const currentArr = Array.isArray(mergedBookmarks[subj]) ? mergedBookmarks[subj] : [];
+        const incomingArr = Array.isArray(incoming.bookmarks[subj]) ? incoming.bookmarks[subj] : [];
+        mergedBookmarks[subj] = Array.from(new Set([...currentArr, ...incomingArr]));
+      });
+    }
+
+    // 3. Merge Checkpoints (Highest index)
+    const mergedCheckpoints = { ...state.checkpoints };
+    if (incoming.checkpoints && typeof incoming.checkpoints === "object") {
+      Object.keys(incoming.checkpoints).forEach(subj => {
+        const currentVal = mergedCheckpoints[subj] || 0;
+        const incomingVal = incoming.checkpoints[subj] || 0;
+        mergedCheckpoints[subj] = Math.max(currentVal, incomingVal);
+      });
+    }
+
+    // 4. Merge Attempts (Union wrongOptions, isCorrect true wins)
+    const mergedAttempts = { ...state.attempts };
+    if (incoming.attempts && typeof incoming.attempts === "object") {
+      Object.keys(incoming.attempts).forEach(subj => {
+        if (!mergedAttempts[subj]) mergedAttempts[subj] = {};
+        const incomingSubjAttempts = incoming.attempts[subj] || {};
+
+        Object.keys(incomingSubjAttempts).forEach(mcqId => {
+          const currentAtt = mergedAttempts[subj][mcqId];
+          const incomingAtt = incomingSubjAttempts[mcqId];
+
+          if (!currentAtt) {
+            mergedAttempts[subj][mcqId] = incomingAtt;
+          } else {
+            const combinedWrong = Array.from(new Set([
+              ...(currentAtt.wrongOptions || []),
+              ...(incomingAtt.wrongOptions || [])
+            ]));
+            mergedAttempts[subj][mcqId] = {
+              wrongOptions: combinedWrong,
+              isCorrect: !!(currentAtt.isCorrect || incomingAtt.isCorrect)
+            };
+          }
+        });
+      });
+    }
+
+    // 5. Merge Revealed Answers
+    const mergedRevealed = { ...state.revealedAnswers };
+    if (incoming.revealedAnswers && typeof incoming.revealedAnswers === "object") {
+      Object.keys(incoming.revealedAnswers).forEach(subj => {
+        const currentArr = Array.isArray(mergedRevealed[subj]) ? mergedRevealed[subj] : [];
+        const incomingArr = Array.isArray(incoming.revealedAnswers[subj]) ? incoming.revealedAnswers[subj] : [];
+        mergedRevealed[subj] = Array.from(new Set([...currentArr, ...incomingArr]));
+      });
+    }
+
+    // 6. Merge Custom Subjects
+    const mergedCustom = { ...state.customSubjects };
+    if (incoming.customSubjects && typeof incoming.customSubjects === "object") {
+      Object.keys(incoming.customSubjects).forEach(subj => {
+        if (!mergedCustom[subj]) {
+          mergedCustom[subj] = incoming.customSubjects[subj];
+        } else {
+          const currentQs = Array.isArray(mergedCustom[subj]) ? mergedCustom[subj] : [];
+          const incomingQs = Array.isArray(incoming.customSubjects[subj]) ? incoming.customSubjects[subj] : [];
+          const currentTextSet = new Set(currentQs.map(q => q.question));
+          const newQs = incomingQs.filter(q => !currentTextSet.has(q.question));
+          mergedCustom[subj] = [...currentQs, ...newQs];
+        }
+      });
+    }
+
+    // 7. Merge Quiz History
+    const currentHistory = Array.isArray(state.quizHistory) ? state.quizHistory : [];
+    const incomingHistory = Array.isArray(incoming.quizHistory) ? incoming.quizHistory : [];
+    const historyMap = new Map();
+
+    [...currentHistory, ...incomingHistory].forEach(item => {
+      const key = item.id || item.timestamp || JSON.stringify(item);
+      if (!historyMap.has(key)) {
+        historyMap.set(key, item);
+      }
+    });
+
+    const mergedHistory = Array.from(historyMap.values()).sort((a, b) => {
+      const timeA = new Date(a.date || a.timestamp || 0).getTime();
+      const timeB = new Date(b.date || b.timestamp || 0).getTime();
+      return timeB - timeA;
+    });
+
+    state = {
+      ...state,
+      covered: mergedCovered,
+      bookmarks: mergedBookmarks,
+      checkpoints: mergedCheckpoints,
+      attempts: mergedAttempts,
+      revealedAnswers: mergedRevealed,
+      customSubjects: mergedCustom,
+      quizHistory: mergedHistory
+    };
+
+    saveState();
+    shuffledSubjectCache = {};
+    initSubjectView();
+    if (typeof renderQuizHistoryList === "function") renderQuizHistoryList();
+    if (typeof updateQuizHistoryVisibility === "function") updateQuizHistoryVisibility();
+    alert(`Backup merged successfully! Total quiz attempts: ${state.quizHistory.length}`);
+  }
+
+  function overwriteBackupData(incoming) {
+    state = {
+      ...state,
+      ...incoming,
+      hideQuizHistory: typeof incoming.hideQuizHistory === "boolean" ? incoming.hideQuizHistory : !!state.hideQuizHistory
+    };
+    saveState();
+    shuffledSubjectCache = {};
+    initSubjectView();
+    if (typeof renderQuizHistoryList === "function") renderQuizHistoryList();
+    if (typeof updateQuizHistoryVisibility === "function") updateQuizHistoryVisibility();
+    alert("Application data replaced successfully from backup!");
   }
 
   globalShowAnswersToggle.addEventListener("change", () => {
