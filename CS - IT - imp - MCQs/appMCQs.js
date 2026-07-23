@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     activeSubject: "Computer Networking",
     theme: "dark",
     showAllAnswers: false,
+    hideQuizHistory: false, // boolean flag for show/hide attempt history
     activeMode: "practice", // "practice" | "quiz"
     selectedTopic: "ALL",   // "ALL" | specific topic string
     customSubjects: {},     // { [subjectName]: [ { id, category, question, options, answerIndex, explanation } ] }
@@ -160,7 +161,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
-        state = { ...state, ...parsed };
+        state = {
+          ...state,
+          ...parsed,
+          hideQuizHistory: !!parsed.hideQuizHistory
+        };
       }
     } catch (e) {
       console.error("Failed to load state", e);
@@ -1168,10 +1173,41 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- QUIZ ATTEMPT HISTORY LIST & BREAKDOWN MODAL ---
   const quizHistoryList = document.getElementById("quizHistoryList");
   const clearQuizHistoryBtn = document.getElementById("clearQuizHistoryBtn");
+  const toggleQuizHistoryVisBtn = document.getElementById("toggleQuizHistoryVisBtn");
   const quizHistoryDetailModal = document.getElementById("quizHistoryDetailModal");
   const historyDetailModalClose = document.getElementById("historyDetailModalClose");
   const historyDetailTitle = document.getElementById("historyDetailTitle");
   const historyDetailModalBody = document.getElementById("historyDetailModalBody");
+
+  function updateQuizHistoryVisibility() {
+    if (!quizHistoryList || !toggleQuizHistoryVisBtn) return;
+    const isHidden = !!state.hideQuizHistory;
+
+    const eyeOpen = toggleQuizHistoryVisBtn.querySelector(".eye-open-icon");
+    const eyeClosed = toggleQuizHistoryVisBtn.querySelector(".eye-closed-icon");
+
+    if (isHidden) {
+      quizHistoryList.style.display = "none";
+      if (eyeOpen) eyeOpen.style.display = "none";
+      if (eyeClosed) eyeClosed.style.display = "block";
+      toggleQuizHistoryVisBtn.title = "Show History";
+      toggleQuizHistoryVisBtn.setAttribute("aria-label", "Show History");
+    } else {
+      quizHistoryList.style.display = "flex";
+      if (eyeOpen) eyeOpen.style.display = "block";
+      if (eyeClosed) eyeClosed.style.display = "none";
+      toggleQuizHistoryVisBtn.title = "Hide History";
+      toggleQuizHistoryVisBtn.setAttribute("aria-label", "Hide History");
+    }
+  }
+
+  if (toggleQuizHistoryVisBtn) {
+    toggleQuizHistoryVisBtn.addEventListener("click", () => {
+      state.hideQuizHistory = !state.hideQuizHistory;
+      saveState();
+      updateQuizHistoryVisibility();
+    });
+  }
 
   function renderQuizHistoryList() {
     if (!quizHistoryList) return;
@@ -1185,6 +1221,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p>No past quiz attempts yet. Start a quiz test above to track your progress!</p>
         </div>
       `;
+      updateQuizHistoryVisibility();
       return;
     }
 
@@ -1222,6 +1259,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       quizHistoryList.appendChild(card);
     });
+
+    updateQuizHistoryVisibility();
   }
 
   if (clearQuizHistoryBtn) {
