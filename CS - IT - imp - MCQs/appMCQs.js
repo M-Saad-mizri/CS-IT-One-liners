@@ -528,11 +528,9 @@ document.addEventListener("DOMContentLoaded", () => {
               </svg>
             </button>
 
-            <button class="card-action-btn btn-deep-dive" data-id="${mcq.id}" title="Direct DuckDuckGo Deep Search with Full Prompt">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            <button class="card-action-btn btn-google-search" data-id="${mcq.id}" title="Search Google in Popup Window with Full Prompt">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 15.96 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
               </svg>
             </button>
 
@@ -556,10 +554,11 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
 
-      const deepDiveBtn = card.querySelector(".btn-deep-dive");
-      if (deepDiveBtn) {
-        deepDiveBtn.addEventListener("click", () => {
-          openExplanationModal(mcq);
+      const googleBtn = card.querySelector(".btn-google-search");
+      if (googleBtn) {
+        googleBtn.addEventListener("click", () => {
+          const prompt = generateFormattedPrompt(mcq, state.activeSubject || "Computer Science");
+          openMiniPopupWindow(`https://www.google.com/search?q=${encodeURIComponent(prompt)}`, "GoogleSearchWindow");
         });
       }
 
@@ -1549,29 +1548,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // --- RICH EXPLANATION MODAL LOGIC ---
-  const explanationModal = document.getElementById("explanationModal");
-  const explanationModalClose = document.getElementById("explanationModalClose");
-
-  const expQuestionText = document.getElementById("expQuestionText");
-  const expCorrectReasonText = document.getElementById("expCorrectReasonText");
-  const expOptionsGrid = document.getElementById("expOptionsGrid");
-  const expMemoryTipText = document.getElementById("expMemoryTipText");
-  const expExamTrapText = document.getElementById("expExamTrapText");
-  const expConceptSummaryText = document.getElementById("expConceptSummaryText");
-  const expRelatedConceptsPills = document.getElementById("expRelatedConceptsPills");
-  const expRelatedMcqsList = document.getElementById("expRelatedMcqsList");
-  const expBadgeDifficulty = document.getElementById("expBadgeDifficulty");
-  const expBadgeImportance = document.getElementById("expBadgeImportance");
-
-  const expMemoryBlock = document.getElementById("expMemoryBlock");
-  const expTrapBlock = document.getElementById("expTrapBlock");
-  const expSummaryBlock = document.getElementById("expSummaryBlock");
-  const expConceptsBlock = document.getElementById("expConceptsBlock");
-  const expRelatedMcqsBlock = document.getElementById("expRelatedMcqsBlock");
-
-  let activeExplanationMCQ = null;
-
+  // --- INSTANT GOOGLE & WEB SEARCH HELPERS ---
   const openMiniPopupWindow = (url, title = "SearchWindow") => {
     const width = 850;
     const height = 700;
@@ -1608,215 +1585,6 @@ Instructions:
 3. Provide simple real-world examples.
 4. Provide an easy memory trick / mnemonic to remember this concept.
 5. Mention where this concept is used in ${subjectName || 'Computer Science'}.`;
-  }
-
-  function openExplanationModal(mcq) {
-    if (!mcq || !explanationModal) return;
-    activeExplanationMCQ = mcq;
-
-    // 1. Question Statement
-    if (expQuestionText) expQuestionText.textContent = mcq.question;
-
-    // 2. Parse Explanation Schema
-    let expObj = null;
-    let legacyText = "";
-
-    if (mcq.explanation) {
-      if (typeof mcq.explanation === "object") {
-        expObj = mcq.explanation;
-      } else if (typeof mcq.explanation === "string") {
-        try {
-          expObj = JSON.parse(mcq.explanation);
-        } catch(e) {
-          legacyText = mcq.explanation;
-        }
-      }
-    }
-
-    const correctLetter = String.fromCharCode(65 + mcq.answerIndex);
-    const correctOptText = mcq.options[mcq.answerIndex] || "";
-
-    // 3. Difficulty & BPSC Importance Badges
-    const diff = (expObj && expObj.difficulty) ? expObj.difficulty : "Medium";
-    const imp = (expObj && expObj.bpscImportance) ? expObj.bpscImportance : "High";
-
-    if (expBadgeDifficulty) {
-      expBadgeDifficulty.textContent = `${diff} Difficulty`;
-      expBadgeDifficulty.className = `exp-badge badge-difficulty ${diff.toLowerCase()}`;
-    }
-    if (expBadgeImportance) {
-      expBadgeImportance.textContent = `BPSC ${imp} Priority`;
-    }
-
-    // 4. Correct Answer Reason
-    if (expCorrectReasonText) {
-      if (expObj && expObj.correctReason) {
-        expCorrectReasonText.textContent = expObj.correctReason;
-      } else if (legacyText) {
-        expCorrectReasonText.textContent = legacyText;
-      } else {
-        expCorrectReasonText.textContent = `Option ${correctLetter} (${correctOptText}) is the correct answer.`;
-      }
-    }
-
-    // 5. Option-by-Option Breakdown
-    if (expOptionsGrid) {
-      expOptionsGrid.innerHTML = "";
-      (mcq.options || []).forEach((optText, i) => {
-        const letter = String.fromCharCode(65 + i);
-        const isCorrect = i === mcq.answerIndex;
-
-        let reason = "";
-        if (expObj && expObj.optionReasons && expObj.optionReasons[letter]) {
-          reason = expObj.optionReasons[letter];
-        } else {
-          reason = isCorrect 
-            ? `Correct answer as defined in BPSC syllabus.`
-            : `Incorrect option for this question context.`;
-        }
-
-        const cardEl = document.createElement("div");
-        cardEl.className = `exp-option-card ${isCorrect ? "correct" : "incorrect"}`;
-        cardEl.innerHTML = `
-          <div class="exp-option-header">
-            <span>${letter}) ${optText}</span>
-            <span class="exp-opt-badge ${isCorrect ? "badge-correct" : "badge-incorrect"}">
-              ${isCorrect ? "✔ Correct" : "✖ Incorrect"}
-            </span>
-          </div>
-          <div class="exp-option-reason">${reason}</div>
-        `;
-        expOptionsGrid.appendChild(cardEl);
-      });
-    }
-
-    // 6. Memory Trick
-    if (expMemoryBlock && expMemoryTipText) {
-      if (expObj && expObj.memoryTip) {
-        expMemoryBlock.style.display = "flex";
-        expMemoryTipText.textContent = expObj.memoryTip;
-      } else {
-        expMemoryBlock.style.display = "none";
-      }
-    }
-
-    // 7. Exam Trap
-    if (expTrapBlock && expExamTrapText) {
-      if (expObj && expObj.examTrap) {
-        expTrapBlock.style.display = "flex";
-        expExamTrapText.textContent = expObj.examTrap;
-      } else {
-        expTrapBlock.style.display = "none";
-      }
-    }
-
-    // 8. Concept Summary
-    if (expSummaryBlock && expConceptSummaryText) {
-      if (expObj && expObj.conceptSummary) {
-        expSummaryBlock.style.display = "flex";
-        expConceptSummaryText.textContent = expObj.conceptSummary;
-      } else {
-        expSummaryBlock.style.display = "none";
-      }
-    }
-
-    // 9. Related Concepts Pills
-    if (expConceptsBlock && expRelatedConceptsPills) {
-      const pillsArr = (expObj && Array.isArray(expObj.relatedConcepts) && expObj.relatedConcepts.length > 0)
-        ? expObj.relatedConcepts
-        : (mcq.category ? [mcq.category] : []);
-
-      if (pillsArr.length > 0) {
-        expConceptsBlock.style.display = "flex";
-        expRelatedConceptsPills.innerHTML = pillsArr.map(p => `<span class="exp-pill">• ${p}</span>`).join("");
-      } else {
-        expConceptsBlock.style.display = "none";
-      }
-    }
-
-    // 10. 3-5 Related Practice Questions with Correct Answers
-    if (expRelatedMcqsBlock && expRelatedMcqsList) {
-      const currentSubjectQs = (typeof getActiveSubjectData === "function" ? getActiveSubjectData() : []) || [];
-      const related = currentSubjectQs
-        .filter(q => q.id !== mcq.id && (q.category === mcq.category || Math.abs(q.id - mcq.id) <= 5))
-        .slice(0, 3);
-
-      if (related.length > 0) {
-        expRelatedMcqsBlock.style.display = "flex";
-        expRelatedMcqsList.innerHTML = related.map(rq => {
-          const rAnsLetter = String.fromCharCode(65 + rq.answerIndex);
-          const rAnsText = rq.options[rq.answerIndex] || "";
-          return `
-            <div class="exp-related-mcq-item">
-              <div class="exp-related-q">${rq.id}. ${rq.question}</div>
-              <div class="exp-related-ans">✔ Answer: ${rAnsLetter}) ${rAnsText}</div>
-            </div>
-          `;
-        }).join("");
-      } else {
-        expRelatedMcqsBlock.style.display = "none";
-      }
-    }
-
-    explanationModal.style.display = "flex";
-  }
-
-  function closeExplanationModal() {
-    if (explanationModal) explanationModal.style.display = "none";
-    activeExplanationMCQ = null;
-  }
-
-  if (explanationModalClose) explanationModalClose.addEventListener("click", closeExplanationModal);
-
-  const expBtnGoogle = document.getElementById("expBtnGoogle");
-  const expBtnDuck = document.getElementById("expBtnDuck");
-  const expBtnChatGPT = document.getElementById("expBtnChatGPT");
-  const expBtnPerplexity = document.getElementById("expBtnPerplexity");
-  const expBtnCopyPrompt = document.getElementById("expBtnCopyPrompt");
-
-  if (expBtnGoogle) {
-    expBtnGoogle.addEventListener("click", () => {
-      if (!activeExplanationMCQ) return;
-      const prompt = generateFormattedPrompt(activeExplanationMCQ, state.activeSubject);
-      openMiniPopupWindow(`https://www.google.com/search?q=${encodeURIComponent(prompt)}`, "GoogleSearchWindow");
-    });
-  }
-
-  if (expBtnDuck) {
-    expBtnDuck.addEventListener("click", () => {
-      if (!activeExplanationMCQ) return;
-      const prompt = generateFormattedPrompt(activeExplanationMCQ, state.activeSubject);
-      openMiniPopupWindow(`https://duckduckgo.com/?q=${encodeURIComponent(prompt)}`, "DuckDuckGoSearchWindow");
-    });
-  }
-
-  if (expBtnChatGPT) {
-    expBtnChatGPT.addEventListener("click", () => {
-      if (!activeExplanationMCQ) return;
-      const prompt = generateFormattedPrompt(activeExplanationMCQ, state.activeSubject);
-      navigator.clipboard.writeText(prompt);
-      openMiniPopupWindow("https://chatgpt.com/", "ChatGPTWindow");
-    });
-  }
-
-  if (expBtnPerplexity) {
-    expBtnPerplexity.addEventListener("click", () => {
-      if (!activeExplanationMCQ) return;
-      const prompt = generateFormattedPrompt(activeExplanationMCQ, state.activeSubject);
-      openMiniPopupWindow(`https://www.perplexity.ai/search?q=${encodeURIComponent(prompt)}`, "PerplexitySearchWindow");
-    });
-  }
-
-  if (expBtnCopyPrompt) {
-    expBtnCopyPrompt.addEventListener("click", () => {
-      if (!activeExplanationMCQ) return;
-      const prompt = generateFormattedPrompt(activeExplanationMCQ, state.activeSubject);
-      navigator.clipboard.writeText(prompt).then(() => {
-        const orig = expBtnCopyPrompt.textContent;
-        expBtnCopyPrompt.textContent = "✅ Copied!";
-        setTimeout(() => expBtnCopyPrompt.textContent = orig, 2000);
-      });
-    });
   }
 
   if (exportProgressBtn) {
