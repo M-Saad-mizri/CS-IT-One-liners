@@ -24,28 +24,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeToggleTopBtn = document.getElementById("themeToggleTop");
   const darkModeToggle = document.getElementById("darkModeToggle");
   const globalShowAnswersToggle = document.getElementById("globalShowAnswersToggle");
-  
+
   const searchInput = document.getElementById("searchInput");
   const searchClear = document.getElementById("searchClear");
   const filterBookmarks = document.getElementById("filterBookmarks");
   const filterUncovered = document.getElementById("filterUncovered");
-  
+
   const checkpointBanner = document.getElementById("checkpointBanner");
   const checkpointNumber = document.getElementById("checkpointNumber");
   const jumpToCheckpointBtn = document.getElementById("jumpToCheckpoint");
-  
+
   const factsListContainer = document.getElementById("factsList");
   const currentSubjectBadge = document.getElementById("currentSubjectBadge");
   const progressPercentage = document.getElementById("progressPercentage");
   const progressBarFill = document.getElementById("progressBarFill");
   const progressCount = document.getElementById("progressCount");
   const bookmarkCount = document.getElementById("bookmarkCount");
-  
+
   const sidebarSubjectList = document.getElementById("sidebarSubjectList");
   const newSubjectNameInput = document.getElementById("newSubjectName");
   const rawFactsPasteInput = document.getElementById("rawFactsPaste");
   const addFactsBtn = document.getElementById("addFactsBtn");
-  
+
   const resetProgressBtn = document.getElementById("resetProgressBtn");
   const clearAllDataBtn = document.getElementById("clearAllDataBtn");
 
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let uncoveredFilterOnly = false;
 
   // --- STATE PERSISTENCE ---
-  
+
   // Load State from LocalStorage
   function loadState() {
     try {
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!sidebarSubjectList) return;
     sidebarSubjectList.innerHTML = "";
     const subjects = getAllSubjects();
-    
+
     subjects.forEach(subject => {
       let factsCount = 0;
       if (state.customSubjects[subject]) {
@@ -184,17 +184,17 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateProgressUI() {
     const facts = getActiveSubjectFacts();
     const total = facts.length;
-    
+
     // Initialize empty arrays if not present
     if (!state.covered[state.activeSubject]) state.covered[state.activeSubject] = [];
     if (!state.bookmarks[state.activeSubject]) state.bookmarks[state.activeSubject] = [];
-    
+
     const coveredCount = state.covered[state.activeSubject].length;
     const bookmarkedCount = state.bookmarks[state.activeSubject].length;
-    
+
     // Calculate percentage
     const percent = total > 0 ? Math.round((coveredCount / total) * 100) : 0;
-    
+
     currentSubjectBadge.textContent = state.activeSubject;
     progressPercentage.textContent = `${percent}% Covered`;
     progressBarFill.style.width = `${percent}%`;
@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderFactsList() {
     factsListContainer.innerHTML = "";
     const facts = getActiveSubjectFacts();
-    
+
     if (facts.length === 0) {
       factsListContainer.innerHTML = `
         <div class="empty-state">
@@ -283,11 +283,11 @@ document.addEventListener("DOMContentLoaded", () => {
     filteredFacts.forEach((fact) => {
       // Find its absolute sequence number in the full subject list
       const absoluteIndex = facts.findIndex(f => f.id === fact.id) + 1;
-      
+
       const isCovered = coveredList.includes(fact.id);
       const isBookmarked = bookmarkedList.includes(fact.id);
       const isCheckpoint = activeCheckpoint === fact.id;
-      
+
       const card = document.createElement("article");
       card.className = `fact-card ${isCheckpoint ? 'is-checkpoint' : ''}`;
       card.id = `fact-card-${fact.id}`;
@@ -334,10 +334,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <button class="card-action-btn btn-toggle-answer" data-id="${fact.id}">
               ${state.showAllAnswers ? `
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"></path><path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"></path><line x1="2" y1="2" x2="22" y2="22"></line></svg>
-                <span>Hide Answer</span>
               ` : `
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                <span>Show Answer</span>
               `}
             </button>
           </div>
@@ -345,7 +343,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
 
       // Attach Card Actions
-      
+
       // 1. Toggle Answer
       const toggleAnswerBtn = card.querySelector(".btn-toggle-answer");
       const answerContainer = card.querySelector(".fact-answer-container");
@@ -353,10 +351,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const isShowing = answerContainer.classList.toggle("show");
         toggleAnswerBtn.innerHTML = isShowing ? `
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"></path><path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"></path><line x1="2" y1="2" x2="22" y2="22"></line></svg>
-          <span>Hide Answer</span>
         ` : `
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-          <span>Show Answer</span>
         `;
       });
 
@@ -426,7 +422,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const checkpointBtn = card.querySelector(".btn-checkpoint");
       checkpointBtn.addEventListener("click", () => {
         const currentCheckpoint = state.checkpoints[state.activeSubject];
-        
+
         if (currentCheckpoint === fact.id) {
           // Clear checkpoint
           state.checkpoints[state.activeSubject] = null;
@@ -437,7 +433,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         saveState();
         updateProgressUI();
-        
+
         // Fully re-render to update classes of other checkpoint cards
         renderFactsList();
       });
@@ -504,13 +500,13 @@ document.addEventListener("DOMContentLoaded", () => {
       searchFilter = "";
       searchInput.value = "";
       searchClear.style.display = "none";
-      
+
       bookmarksFilterOnly = false;
       filterBookmarks.setAttribute("data-active", "false");
-      
+
       uncoveredFilterOnly = false;
       filterUncovered.setAttribute("data-active", "false");
-      
+
       renderFactsList();
       filtersCleared = true;
     }
@@ -576,7 +572,7 @@ document.addEventListener("DOMContentLoaded", () => {
   sidebarCloseBtn.addEventListener("click", closeSidebar);
   sidebarOverlay.addEventListener("click", closeSidebar);
   themeToggleTopBtn.addEventListener("click", toggleTheme);
-  
+
   if (darkModeToggle) {
     darkModeToggle.addEventListener("change", () => {
       state.theme = darkModeToggle.checked ? "dark" : "light";
@@ -692,87 +688,87 @@ document.addEventListener("DOMContentLoaded", () => {
   // Custom facts import
   if (addFactsBtn) {
     addFactsBtn.addEventListener("click", () => {
-    const rawSubject = newSubjectNameInput.value.trim();
-    const rawText = rawFactsPasteInput.value.trim();
+      const rawSubject = newSubjectNameInput.value.trim();
+      const rawText = rawFactsPasteInput.value.trim();
 
-    if (!rawText) {
-      alert("Please paste some text questions first.");
-      return;
-    }
-
-    const subjectName = rawSubject || state.activeSubject;
-
-    // Use parseRawSubject from questions.js (exposed as window.parseRawSubject or via export)
-    // In questions.js, parseRawSubject is internal but window.factsData contains getParsedData()
-    // Let's implement parsing directly if parseRawSubject is not global,
-    // but in questions.js we have functions. Let's make sure it's accessible.
-    let newFacts = [];
-    if (typeof parseRawSubject === "function") {
-      newFacts = parseRawSubject(subjectName, rawText);
-    } else {
-      // Fallback in case parseRawSubject isn't exposed (but we did write it in questions.js)
-      // Let's verify parseRawSubject scope. We can call parseRawSubject if it's in the global window namespace
-      // Let's check window.factsData. In questions.js we exported window.factsData
-      // We also need to expose parseRawSubject, so let's make sure it is on window
-      if (window.parseRawSubject) {
-        newFacts = window.parseRawSubject(subjectName, rawText);
-      } else {
-        alert("Parser engine not loaded. Please reload the page.");
+      if (!rawText) {
+        alert("Please paste some text questions first.");
         return;
       }
-    }
 
-    if (newFacts.length === 0) {
-      alert("Could not extract any valid facts. Check the formatting: numbers like '1.' followed by lines.");
-      return;
-    }
+      const subjectName = rawSubject || state.activeSubject;
 
-    // Merge custom facts
-    // If the subject already exists in customSubjects, deduplicate against existing questions
-    if (!state.customSubjects[subjectName]) {
-      state.customSubjects[subjectName] = [];
-    }
-
-    const existingFacts = state.customSubjects[subjectName];
-    // Built-in facts for this subject, if any
-    const builtInFacts = (window.factsData && window.factsData[subjectName]) || [];
-    const allCurrentFacts = [...builtInFacts, ...existingFacts];
-
-    // Check normalized questions to avoid duplicates
-    const normalizeQuestionText = (text) => text.toLowerCase().replace(/[^a-z0-9]/g, "").trim();
-    const existingNorms = new Set(allCurrentFacts.map(f => normalizeQuestionText(f.question)));
-
-    let addedCount = 0;
-    newFacts.forEach(fact => {
-      const normQ = normalizeQuestionText(fact.question);
-      if (!existingNorms.has(normQ)) {
-        existingNorms.add(normQ);
-        
-        // Set new ID based on total count
-        const nextId = allCurrentFacts.length + addedCount + 1;
-        existingFacts.push({
-          id: nextId,
-          category: fact.category,
-          question: fact.question,
-          answer: fact.answer
-        });
-        addedCount++;
+      // Use parseRawSubject from questions.js (exposed as window.parseRawSubject or via export)
+      // In questions.js, parseRawSubject is internal but window.factsData contains getParsedData()
+      // Let's implement parsing directly if parseRawSubject is not global,
+      // but in questions.js we have functions. Let's make sure it's accessible.
+      let newFacts = [];
+      if (typeof parseRawSubject === "function") {
+        newFacts = parseRawSubject(subjectName, rawText);
+      } else {
+        // Fallback in case parseRawSubject isn't exposed (but we did write it in questions.js)
+        // Let's verify parseRawSubject scope. We can call parseRawSubject if it's in the global window namespace
+        // Let's check window.factsData. In questions.js we exported window.factsData
+        // We also need to expose parseRawSubject, so let's make sure it is on window
+        if (window.parseRawSubject) {
+          newFacts = window.parseRawSubject(subjectName, rawText);
+        } else {
+          alert("Parser engine not loaded. Please reload the page.");
+          return;
+        }
       }
-    });
 
-    if (addedCount === 0) {
-      alert("All parsed questions already exist in this subject. No duplicates were added!");
-    } else {
-      state.activeSubject = subjectName;
-      saveState();
-      
-      newSubjectNameInput.value = "";
-      rawFactsPasteInput.value = "";
-      
-      alert(`Import complete! Added ${addedCount} unique facts to "${subjectName}".`);
-      initSubjectView();
-      closeSidebar();
-    }
+      if (newFacts.length === 0) {
+        alert("Could not extract any valid facts. Check the formatting: numbers like '1.' followed by lines.");
+        return;
+      }
+
+      // Merge custom facts
+      // If the subject already exists in customSubjects, deduplicate against existing questions
+      if (!state.customSubjects[subjectName]) {
+        state.customSubjects[subjectName] = [];
+      }
+
+      const existingFacts = state.customSubjects[subjectName];
+      // Built-in facts for this subject, if any
+      const builtInFacts = (window.factsData && window.factsData[subjectName]) || [];
+      const allCurrentFacts = [...builtInFacts, ...existingFacts];
+
+      // Check normalized questions to avoid duplicates
+      const normalizeQuestionText = (text) => text.toLowerCase().replace(/[^a-z0-9]/g, "").trim();
+      const existingNorms = new Set(allCurrentFacts.map(f => normalizeQuestionText(f.question)));
+
+      let addedCount = 0;
+      newFacts.forEach(fact => {
+        const normQ = normalizeQuestionText(fact.question);
+        if (!existingNorms.has(normQ)) {
+          existingNorms.add(normQ);
+
+          // Set new ID based on total count
+          const nextId = allCurrentFacts.length + addedCount + 1;
+          existingFacts.push({
+            id: nextId,
+            category: fact.category,
+            question: fact.question,
+            answer: fact.answer
+          });
+          addedCount++;
+        }
+      });
+
+      if (addedCount === 0) {
+        alert("All parsed questions already exist in this subject. No duplicates were added!");
+      } else {
+        state.activeSubject = subjectName;
+        saveState();
+
+        newSubjectNameInput.value = "";
+        rawFactsPasteInput.value = "";
+
+        alert(`Import complete! Added ${addedCount} unique facts to "${subjectName}".`);
+        initSubjectView();
+        closeSidebar();
+      }
     });
   }
 
@@ -783,7 +779,7 @@ document.addEventListener("DOMContentLoaded", () => {
       state.covered[state.activeSubject] = [];
       state.bookmarks[state.activeSubject] = [];
       state.checkpoints[state.activeSubject] = null;
-      
+
       saveState();
       initSubjectView();
       closeSidebar();
@@ -805,9 +801,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loadState();
   applyTheme();
-  
+
   // Set global toggle states
   globalShowAnswersToggle.checked = state.showAllAnswers;
-  
+
   initSubjectView();
 });

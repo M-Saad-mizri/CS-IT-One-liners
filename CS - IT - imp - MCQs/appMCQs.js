@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Check if user attempted at least 1 quiz for this topic
     const history = state.quizHistory || [];
-    const hasQuizAttempt = history.some(h => 
+    const hasQuizAttempt = history.some(h =>
       h.subject === state.activeSubject && (h.category === topic || h.category === "ALL")
     );
     if (hasQuizAttempt) return true;
@@ -528,10 +528,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <button class="card-action-btn btn-toggle-answer" data-id="${mcq.id}">
               ${isRevealed ? `
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"></path><path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"></path><line x1="2" y1="2" x2="22" y2="22"></line></svg>
-                <span>Hide Answer</span>
               ` : `
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                <span>Show Answer</span>
               `}
             </button>
           </div>
@@ -606,16 +604,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isCurrentlyRevealed) {
           rev = rev.filter(id => id !== mcq.id);
           explanationBox.style.display = "none";
-          toggleAnswerBtn.innerHTML = `
+          //eye opener svg
+          toggleAnswerBtn.innerHTML = ` 
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-            <span>Show Answer</span>
           `;
         } else {
           rev.push(mcq.id);
           explanationBox.style.display = "block";
           toggleAnswerBtn.innerHTML = `
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"></path><path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"></path><line x1="2" y1="2" x2="22" y2="22"></line></svg>
-            <span>Hide Answer</span>
           `;
 
           // Also highlight correct answer button if not yet solved
@@ -623,7 +620,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (correctBtn && !correctBtn.classList.contains("state-correct")) {
             correctBtn.classList.add("state-correct");
             if (!correctBtn.querySelector(".mcq-opt-badge")) {
-              correctBtn.insertAdjacentHTML("beforeend", `<span class="mcq-opt-badge">✓ Answer</span>`);
+              correctBtn.insertAdjacentHTML("beforeend", `<span class="mcq-opt-badge">✓</span>`);
             }
           }
         }
@@ -793,29 +790,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Define pool objects with SVG icons and filter only those with count > 0
     const poolDefs = [
-      { 
-        id: "all", 
-        label: `All`, 
+      {
+        id: "all",
+        label: `All`,
         iconSVG: ``,
-        count: allCount 
+        count: allCount
       },
-      { 
-        id: "bookmarks", 
-        label: `(${bmCount})`, 
+      {
+        id: "bookmarks",
+        label: `(${bmCount})`,
         iconSVG: `<svg class="chip-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`,
-        count: bmCount 
+        count: bmCount
       },
-      { 
-        id: "uncovered", 
-        label: `Uncovered (${uncCount})`, 
+      {
+        id: "uncovered",
+        label: `Uncovered (${uncCount})`,
         iconSVG: ``,
-        count: uncCount 
+        count: uncCount
       },
-      { 
-        id: "mistakes", 
-        label: `Mistakes (${mistCount})`, 
+      {
+        id: "mistakes",
+        label: `Mistakes (${mistCount})`,
         iconSVG: ``,
-        count: mistCount 
+        count: mistCount
       }
     ].filter(p => p.count > 0);
 
@@ -1259,12 +1256,12 @@ document.addEventListener("DOMContentLoaded", () => {
             <p class="history-q-text">${q.question}</p>
             <div class="history-q-options">
               ${q.options.map((opt, optIdx) => {
-                let optClass = "";
-                if (optIdx === q.correctAnswer) optClass = "opt-correct";
-                else if (optIdx === q.userAnswer) optClass = "opt-user-wrong";
-                const letter = String.fromCharCode(65 + optIdx);
-                return `<div class="history-opt ${optClass}">${letter}. ${opt}</div>`;
-              }).join("")}
+      let optClass = "";
+      if (optIdx === q.correctAnswer) optClass = "opt-correct";
+      else if (optIdx === q.userAnswer) optClass = "opt-user-wrong";
+      const letter = String.fromCharCode(65 + optIdx);
+      return `<div class="history-opt ${optClass}">${letter}. ${opt}</div>`;
+    }).join("")}
             </div>
             ${q.explanation ? `<div class="history-q-explanation"><strong>Explanation:</strong> ${q.explanation}</div>` : ''}
           </div>
