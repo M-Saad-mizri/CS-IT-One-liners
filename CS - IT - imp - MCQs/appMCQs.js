@@ -1570,8 +1570,49 @@ document.addEventListener("DOMContentLoaded", () => {
   const expConceptsBlock = document.getElementById("expConceptsBlock");
   const expRelatedMcqsBlock = document.getElementById("expRelatedMcqsBlock");
 
+  let activeExplanationMCQ = null;
+
+  const openMiniPopupWindow = (url, title = "SearchWindow") => {
+    const width = 850;
+    const height = 700;
+    const left = Math.max(0, Math.round((window.screen.width / 2) - (width / 2)));
+    const top = Math.max(0, Math.round((window.screen.height / 2) - (height / 2)));
+    const pop = window.open(
+      url,
+      title,
+      `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes,status=yes`
+    );
+    if (!pop || pop.closed || typeof pop.closed === 'undefined') {
+      window.open(url, '_blank');
+    }
+  };
+
+  function generateFormattedPrompt(mcq, subjectName) {
+    const optionsList = (mcq.options || []).map((opt, i) => `${String.fromCharCode(65 + i)}. ${opt}`).join("\n");
+    const correctLetter = String.fromCharCode(65 + mcq.answerIndex);
+    const correctOptText = mcq.options[mcq.answerIndex];
+    const incorrectOpts = (mcq.options || []).filter((_, i) => i !== mcq.answerIndex).join(", ");
+
+    return `Question:
+${mcq.question}
+
+Options:
+${optionsList}
+
+Correct Answer:
+${correctLetter}. ${correctOptText}
+
+Instructions:
+1. Explain why option ${correctLetter} (${correctOptText}) is correct.
+2. Explain why the other options (${incorrectOpts}) are incorrect.
+3. Provide simple real-world examples.
+4. Provide an easy memory trick / mnemonic to remember this concept.
+5. Mention where this concept is used in ${subjectName || 'Computer Science'}.`;
+  }
+
   function openExplanationModal(mcq) {
     if (!mcq || !explanationModal) return;
+    activeExplanationMCQ = mcq;
 
     // 1. Question Statement
     if (expQuestionText) expQuestionText.textContent = mcq.question;
@@ -1722,9 +1763,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function closeExplanationModal() {
     if (explanationModal) explanationModal.style.display = "none";
+    activeExplanationMCQ = null;
   }
 
   if (explanationModalClose) explanationModalClose.addEventListener("click", closeExplanationModal);
+
+  const expBtnGoogle = document.getElementById("expBtnGoogle");
+  const expBtnDuck = document.getElementById("expBtnDuck");
+  const expBtnChatGPT = document.getElementById("expBtnChatGPT");
+  const expBtnPerplexity = document.getElementById("expBtnPerplexity");
+  const expBtnCopyPrompt = document.getElementById("expBtnCopyPrompt");
+
+  if (expBtnGoogle) {
+    expBtnGoogle.addEventListener("click", () => {
+      if (!activeExplanationMCQ) return;
+      const prompt = generateFormattedPrompt(activeExplanationMCQ, state.activeSubject);
+      openMiniPopupWindow(`https://www.google.com/search?q=${encodeURIComponent(prompt)}`, "GoogleSearchWindow");
+    });
+  }
+
+  if (expBtnDuck) {
+    expBtnDuck.addEventListener("click", () => {
+      if (!activeExplanationMCQ) return;
+      const prompt = generateFormattedPrompt(activeExplanationMCQ, state.activeSubject);
+      openMiniPopupWindow(`https://duckduckgo.com/?q=${encodeURIComponent(prompt)}`, "DuckDuckGoSearchWindow");
+    });
+  }
+
+  if (expBtnChatGPT) {
+    expBtnChatGPT.addEventListener("click", () => {
+      if (!activeExplanationMCQ) return;
+      const prompt = generateFormattedPrompt(activeExplanationMCQ, state.activeSubject);
+      navigator.clipboard.writeText(prompt);
+      openMiniPopupWindow("https://chatgpt.com/", "ChatGPTWindow");
+    });
+  }
+
+  if (expBtnPerplexity) {
+    expBtnPerplexity.addEventListener("click", () => {
+      if (!activeExplanationMCQ) return;
+      const prompt = generateFormattedPrompt(activeExplanationMCQ, state.activeSubject);
+      openMiniPopupWindow(`https://www.perplexity.ai/search?q=${encodeURIComponent(prompt)}`, "PerplexitySearchWindow");
+    });
+  }
+
+  if (expBtnCopyPrompt) {
+    expBtnCopyPrompt.addEventListener("click", () => {
+      if (!activeExplanationMCQ) return;
+      const prompt = generateFormattedPrompt(activeExplanationMCQ, state.activeSubject);
+      navigator.clipboard.writeText(prompt).then(() => {
+        const orig = expBtnCopyPrompt.textContent;
+        expBtnCopyPrompt.textContent = "✅ Copied!";
+        setTimeout(() => expBtnCopyPrompt.textContent = orig, 2000);
+      });
+    });
+  }
 
   if (exportProgressBtn) {
     exportProgressBtn.addEventListener("click", () => {
