@@ -604,17 +604,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const jsonString = JSON.stringify(dataObj, null, 2);
     const baseFilename = filename.replace(/\.json$/, "");
 
-    // 1. Feature Check
     if (!navigator.share) {
       downloadBlobFallback(jsonString, `${baseFilename}.json`);
       return;
     }
 
     try {
-      // 2. Prepare file with text/plain type for maximum OS compatibility
-      const file = new File([jsonString], `${baseFilename}.txt`, { type: "text/plain" });
-
-      // 3. Test if device supports file sharing
+      const file = new File([jsonString], `${baseFilename}.json`, { type: "application/json" });
       const canShareFiles = navigator.canShare && navigator.canShare({ files: [file] });
 
       let sharePayload = {};
@@ -625,21 +621,18 @@ document.addEventListener("DOMContentLoaded", () => {
           files: [file],
         };
       } else {
-        // Fallback to text payload sharing if files are unsupported
         sharePayload = {
           title,
-          text: `Data Backup (${title}):\n\n${jsonString.substring(0, 1000)}...`,
+          text: `Data Backup (${title}):\n\n${jsonString}`,
         };
       }
 
-      // 4. Trigger Web Share API (Must be inside user gesture)
       await navigator.share(sharePayload);
     } catch (err) {
       if (err.name !== "AbortError") {
         console.error("Web Share failed:", err);
       }
     } finally {
-      // 5. Always save file locally
       downloadBlobFallback(jsonString, `${baseFilename}.json`);
     }
   };
@@ -663,7 +656,14 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
           const importedData = JSON.parse(event.target.result);
           if (typeof importedData === "object" && importedData !== null) {
-            state = { ...state, ...importedData };
+            state = {
+              ...state,
+              ...importedData,
+              bookmarks: { ...(state.bookmarks || {}), ...(importedData.bookmarks || {}) },
+              covered: { ...(state.covered || {}), ...(importedData.covered || {}) },
+              checkpoints: { ...(state.checkpoints || {}), ...(importedData.checkpoints || {}) },
+              customSubjects: { ...(state.customSubjects || {}), ...(importedData.customSubjects || {}) }
+            };
             saveState();
             initSubjectView();
             closeSidebar();
@@ -676,6 +676,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       };
       reader.readAsText(file);
+      e.target.value = "";
     });
   }
 

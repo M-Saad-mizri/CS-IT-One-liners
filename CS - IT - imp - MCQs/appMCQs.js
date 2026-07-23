@@ -1448,7 +1448,25 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const exportAndShareData = async (dataObj, filename, title) => {
-    const jsonString = JSON.stringify(dataObj, null, 2);
+    // Explicitly guarantee all quiz history and user progress fields are exported
+    const exportPayload = {
+      activeSubject: dataObj.activeSubject || "Computer Networking",
+      theme: dataObj.theme || "dark",
+      showAllAnswers: !!dataObj.showAllAnswers,
+      hideQuizHistory: !!dataObj.hideQuizHistory,
+      activeMode: dataObj.activeMode || "practice",
+      selectedTopic: dataObj.selectedTopic || "ALL",
+      customSubjects: dataObj.customSubjects || {},
+      bookmarks: dataObj.bookmarks || {},
+      covered: dataObj.covered || {},
+      checkpoints: dataObj.checkpoints || {},
+      attempts: dataObj.attempts || {},
+      revealedAnswers: dataObj.revealedAnswers || {},
+      quizStats: dataObj.quizStats || {},
+      quizHistory: Array.isArray(dataObj.quizHistory) ? dataObj.quizHistory : []
+    };
+
+    const jsonString = JSON.stringify(exportPayload, null, 2);
     const baseFilename = filename.replace(/\.json$/, "");
 
     // 1. Feature Check
@@ -1458,8 +1476,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      // 2. Prepare file with text/plain type for maximum OS compatibility
-      const file = new File([jsonString], `${baseFilename}.txt`, { type: "text/plain" });
+      // 2. Prepare file with application/json & .json extension for maximum app compatibility
+      const file = new File([jsonString], `${baseFilename}.json`, { type: "application/json" });
 
       // 3. Test if device supports file sharing
       const canShareFiles = navigator.canShare && navigator.canShare({ files: [file] });
@@ -1475,7 +1493,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Fallback to text payload sharing if files are unsupported
         sharePayload = {
           title,
-          text: `Data Backup (${title}):\n\n${jsonString.substring(0, 1000)}...`,
+          text: `Data Backup (${title}):\n\n${jsonString}`,
         };
       }
 
@@ -1510,20 +1528,46 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
           const importedData = JSON.parse(event.target.result);
           if (typeof importedData === "object" && importedData !== null) {
-            state = { ...state, ...importedData };
+            // Safely merge imported history & stats without wiping existing data
+            const importedHistory = Array.isArray(importedData.quizHistory) ? importedData.quizHistory : [];
+            const existingHistory = Array.isArray(state.quizHistory) ? state.quizHistory : [];
+
+            // Combine histories avoiding duplicate attempt IDs
+            const historyMap = new Map();
+            existingHistory.forEach(h => { if (h && h.id) historyMap.set(h.id, h); });
+            importedHistory.forEach(h => { if (h && h.id) historyMap.set(h.id, h); });
+            const mergedHistory = Array.from(historyMap.values());
+
+            state = {
+              ...state,
+              ...importedData,
+              bookmarks: { ...(state.bookmarks || {}), ...(importedData.bookmarks || {}) },
+              covered: { ...(state.covered || {}), ...(importedData.covered || {}) },
+              checkpoints: { ...(state.checkpoints || {}), ...(importedData.checkpoints || {}) },
+              attempts: { ...(state.attempts || {}), ...(importedData.attempts || {}) },
+              revealedAnswers: { ...(state.revealedAnswers || {}), ...(importedData.revealedAnswers || {}) },
+              quizStats: { ...(state.quizStats || {}), ...(importedData.quizStats || {}) },
+              customSubjects: { ...(state.customSubjects || {}), ...(importedData.customSubjects || {}) },
+              quizHistory: mergedHistory.length > 0 ? mergedHistory : (importedHistory.length > 0 ? importedHistory : existingHistory),
+              hideQuizHistory: typeof importedData.hideQuizHistory === "boolean" ? importedData.hideQuizHistory : !!state.hideQuizHistory
+            };
+
             shuffledSubjectCache = {};
             saveState();
             initSubjectView();
+            renderQuizHistoryList();
+            updateQuizHistoryVisibility();
             closeSidebar();
-            alert("Progress & history successfully imported!");
+            alert(`Progress & Quiz History successfully imported! (${state.quizHistory.length} quiz attempts loaded)`);
           } else {
-            alert("Invalid JSON backup file.");
+            alert("Invalid JSON backup file format.");
           }
         } catch (err) {
           alert("Error reading JSON file: " + err.message);
         }
       };
       reader.readAsText(file);
+      e.target.value = ""; // Reset input so same file can be re-imported if needed
     });
   }
 
