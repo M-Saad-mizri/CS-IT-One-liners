@@ -528,11 +528,18 @@ document.addEventListener("DOMContentLoaded", () => {
               </svg>
             </button>
 
-            <button class="card-action-btn btn-deep-dive" data-id="${mcq.id}" title="Deep Dive Web Search & AI Prompt">
+            <button class="card-action-btn btn-deep-dive" data-id="${mcq.id}" title="Direct DuckDuckGo Deep Search with Full Prompt">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
                 <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
                 <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+            </button>
+
+            <button class="card-action-btn btn-copy-mcq" data-id="${mcq.id}" title="Copy Question, Options & Correct Answer (✔)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
               </svg>
             </button>
           </div>
@@ -552,7 +559,26 @@ document.addEventListener("DOMContentLoaded", () => {
       const deepDiveBtn = card.querySelector(".btn-deep-dive");
       if (deepDiveBtn) {
         deepDiveBtn.addEventListener("click", () => {
-          openDeepDiveModal(mcq);
+          const prompt = generateFormattedPrompt(mcq, state.activeSubject || "Computer Science");
+          openMiniPopupWindow(`https://duckduckgo.com/?q=${encodeURIComponent(prompt)}`, "DuckDuckGoSearchWindow");
+        });
+      }
+
+      const copyMcqBtn = card.querySelector(".btn-copy-mcq");
+      if (copyMcqBtn) {
+        copyMcqBtn.addEventListener("click", () => {
+          const copyText = generateCopyableMCQText(mcq);
+          navigator.clipboard.writeText(copyText).then(() => {
+            const origHTML = copyMcqBtn.innerHTML;
+            copyMcqBtn.innerHTML = `
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            `;
+            setTimeout(() => { copyMcqBtn.innerHTML = origHTML; }, 2000);
+          }).catch(err => {
+            alert("Copy failed: " + err);
+          });
         });
       }
 
@@ -1571,6 +1597,20 @@ Instructions:
 3. Provide simple real-world examples.
 4. Provide an easy memory trick / mnemonic to remember this concept.
 5. Mention where this concept is used in ${subjectName}.`;
+  }
+
+  function generateCopyableMCQText(mcq) {
+    const optionsList = (mcq.options || []).map((opt, i) => {
+      const letter = String.fromCharCode(65 + i);
+      const isCorrect = i === mcq.answerIndex;
+      return `${letter}. ${opt}${isCorrect ? ' ✔' : ''}`;
+    }).join("\n");
+
+    return `Question:
+${mcq.question}
+
+Options:
+${optionsList}`;
   }
 
   function openDeepDiveModal(mcq) {
