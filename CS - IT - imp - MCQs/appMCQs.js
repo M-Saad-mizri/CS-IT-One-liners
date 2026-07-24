@@ -1529,52 +1529,52 @@ document.addEventListener("DOMContentLoaded", () => {
     const txtFilename = filename.replace(/\.json$/, ".txt");
 
     if (navigator.share) {
+      // 1. Try sharing .json file without title (Windows OS rejects title metadata with file payloads)
       try {
         const jsonFile = new File([jsonStr], filename, { type: "application/json" });
-
-        console.log("Before share");
-        console.log("userActivation:", navigator.userActivation?.isActive);
-        console.log("json length:", jsonStr.length);
-        console.log("file size:", jsonFile.size);
-        console.log("filename:", filename);
-        console.log("type:", jsonFile.type);
-        console.log("canShare:", navigator.canShare ? navigator.canShare({ files: [jsonFile] }) : "N/A");
-        console.log(jsonFile);
+        console.log("Attempting JSON file share | size:", jsonFile.size, "| userActive:", navigator.userActivation?.isActive);
 
         if (navigator.canShare && navigator.canShare({ files: [jsonFile] })) {
           await navigator.share({
-            title: title,
             files: [jsonFile]
           });
           return;
         }
+      } catch (err) {
+        if (err.name === "AbortError") return;
+        console.warn("JSON file sharing refused by OS, trying TXT format fallback:", err.message);
+      }
 
+      // 2. Try sharing .txt file (Supported universally across Windows Desktop & Mobile OS)
+      try {
         const txtFile = new File([jsonStr], txtFilename, { type: "text/plain" });
+        console.log("Attempting TXT file share | size:", txtFile.size, "| userActive:", navigator.userActivation?.isActive);
+
         if (navigator.canShare && navigator.canShare({ files: [txtFile] })) {
           await navigator.share({
-            title: title,
             files: [txtFile]
           });
           return;
         }
+      } catch (err) {
+        if (err.name === "AbortError") return;
+        console.warn("TXT file sharing failed, trying plain text string fallback:", err.message);
+      }
 
+      // 3. Try sharing plain text content fallback
+      try {
         await navigator.share({
           title: title,
           text: jsonStr
         });
         return;
       } catch (err) {
-        console.error(err);
-        console.error(err.name);
-        console.error(err.message);
-        console.error(err.stack);
-        if (err.name === "AbortError") {
-          return;
-        }
-        throw err;
+        if (err.name === "AbortError") return;
+        console.warn("Text sharing failed, falling back to direct file download:", err.message);
       }
     }
 
+    // 4. Final fallback to direct browser file download
     downloadBlobFallback(jsonStr, filename);
   };
 
