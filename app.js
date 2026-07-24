@@ -609,15 +609,6 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         const jsonFile = new File([jsonStr], filename, { type: "application/json" });
         if (navigator.canShare && navigator.canShare({ files: [jsonFile] })) {
-          console.log("User activation:", navigator.userActivation);
-          console.log("isActive:", navigator.userActivation?.isActive);
-          console.log("hasBeenActive:", navigator.userActivation?.hasBeenActive);
-
-          console.log("canShare:", navigator.canShare?.({ files: [jsonFile] }));
-
-          console.log(jsonFile);
-          console.log(jsonFile instanceof File);
-          console.log(jsonFile instanceof window.File);
           await navigator.share({
             title: title,
             files: [jsonFile]
@@ -627,30 +618,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const txtFile = new File([jsonStr], txtFilename, { type: "text/plain" });
         if (navigator.canShare && navigator.canShare({ files: [txtFile] })) {
-          console.log("User activation:", navigator.userActivation);
-          console.log("isActive:", navigator.userActivation?.isActive);
-          console.log("hasBeenActive:", navigator.userActivation?.hasBeenActive);
-
-          console.log("canShare:", navigator.canShare?.({ files: [jsonFile] }));
-
-          console.log(jsonFile);
-          console.log(jsonFile instanceof File);
-          console.log(jsonFile instanceof window.File);
           await navigator.share({
             title: title,
             files: [txtFile]
           });
           return;
         }
-        console.log("User activation:", navigator.userActivation);
-        console.log("isActive:", navigator.userActivation?.isActive);
-        console.log("hasBeenActive:", navigator.userActivation?.hasBeenActive);
 
-        console.log("canShare:", navigator.canShare?.({ files: [jsonFile] }));
-
-        console.log(jsonFile);
-        console.log(jsonFile instanceof File);
-        console.log(jsonFile instanceof window.File);
         await navigator.share({
           title: title,
           text: jsonStr
@@ -660,7 +634,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (err.name === "AbortError") {
           return;
         }
-        console.warn("Native sharing failed/unsupported, falling back to direct download:", err);
+        console.warn("Native sharing failed:", err);
       }
     }
 
@@ -668,42 +642,9 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   if (exportProgressBtn) {
-    exportProgressBtn.addEventListener("click", async () => {
-      console.clear();
-
-      console.log("navigator.share:", typeof navigator.share);
-      console.log("navigator.canShare:", typeof navigator.canShare);
-      console.log("Secure Context:", window.isSecureContext);
-      console.log("User Activation:", navigator.userActivation?.isActive);
-
-      const file = new File(
-        ["Hello World"],
-        "test.txt",
-        { type: "text/plain" }
-      );
-
-      console.log("File:", file);
-      console.log("instanceof File:", file instanceof File);
-
-      console.log(
-        "canShare:",
-        navigator.canShare?.({
-          files: [file]
-        })
-      );
-
-      try {
-        await navigator.share({
-          files: [file]
-        });
-
-        console.log("SUCCESS");
-      } catch (e) {
-        console.error("FAILED");
-        console.error(e);
-        console.error(e.name);
-        console.error(e.message);
-      }
+    exportProgressBtn.addEventListener("click", () => {
+      const filename = `quickfacts_one_liners_backup_${new Date().toISOString().slice(0, 10)}.json`;
+      exportAndShareData(state, filename, "QuickFacts One-Liners Backup");
     });
   }
 
