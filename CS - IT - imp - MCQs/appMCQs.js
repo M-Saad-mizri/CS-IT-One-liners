@@ -1506,7 +1506,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100);
   };
 
-  const exportAndShareData = async (dataObj, filename, title) => {
+  const exportAndShareData = async (dataObj, filename, title, overrideMode = null) => {
     // Explicitly guarantee all quiz history and user progress fields are exported
     const exportPayload = {
       activeSubject: dataObj.activeSubject || "Computer Networking",
@@ -1525,57 +1525,75 @@ document.addEventListener("DOMContentLoaded", () => {
       quizHistory: Array.isArray(dataObj.quizHistory) ? dataObj.quizHistory : []
     };
 
+    const mode = overrideMode || window.EXPORT_TEST_MODE || "TEST_D";
     const jsonStr = JSON.stringify(exportPayload, null, 2);
-    const txtFilename = filename.replace(/\.json$/, ".txt");
+
+    let content = jsonStr;
+    let shareFilename = filename;
+    let mimeType = "application/json";
+
+    if (mode === "TEST_A") {
+      content = "Hello World";
+      shareFilename = "test.txt";
+      mimeType = "text/plain";
+    } else if (mode === "TEST_B") {
+      content = "Hello World";
+      shareFilename = "test.json";
+      mimeType = "application/json";
+    } else if (mode === "TEST_C") {
+      content = jsonStr;
+      shareFilename = "test.txt";
+      mimeType = "text/plain";
+    } else if (mode === "TEST_D") {
+      content = jsonStr;
+      shareFilename = filename;
+      mimeType = "application/json";
+    } else if (mode === "TEST_EMPTY_MIME") {
+      content = jsonStr;
+      shareFilename = "backup.json";
+      mimeType = "";
+    } else if (mode === "TEST_OCTET_STREAM") {
+      content = jsonStr;
+      shareFilename = "backup.bin";
+      mimeType = "application/octet-stream";
+    }
 
     if (navigator.share) {
-      // 1. Try sharing .json file without title (Windows OS rejects title metadata with file payloads)
       try {
-        const jsonFile = new File([jsonStr], filename, { type: "application/json" });
-        console.log("Attempting JSON file share | size:", jsonFile.size, "| userActive:", navigator.userActivation?.isActive);
-
-        if (navigator.canShare && navigator.canShare({ files: [jsonFile] })) {
-          await navigator.share({
-            files: [jsonFile]
-          });
-          return;
-        }
-      } catch (err) {
-        if (err.name === "AbortError") return;
-        console.warn("JSON file sharing refused by OS, trying TXT format fallback:", err.message);
-      }
-
-      // 2. Try sharing .txt file (Supported universally across Windows Desktop & Mobile OS)
-      try {
-        const txtFile = new File([jsonStr], txtFilename, { type: "text/plain" });
-        console.log("Attempting TXT file share | size:", txtFile.size, "| userActive:", navigator.userActivation?.isActive);
-
-        if (navigator.canShare && navigator.canShare({ files: [txtFile] })) {
-          await navigator.share({
-            files: [txtFile]
-          });
-          return;
-        }
-      } catch (err) {
-        if (err.name === "AbortError") return;
-        console.warn("TXT file sharing failed, trying plain text string fallback:", err.message);
-      }
-
-      // 3. Try sharing plain text content fallback
-      try {
-        await navigator.share({
-          title: title,
-          text: jsonStr
+        const file = new File([content], shareFilename, { type: mimeType });
+        console.log(`[Mode: ${mode}] Single Share Attempt:`, {
+          filename: shareFilename,
+          mimeType,
+          size: file.size,
+          userActive: navigator.userActivation?.isActive,
+          canShare: navigator.canShare ? navigator.canShare({ files: [file] }) : "N/A"
         });
+
+        // Exactly ONE navigator.share call per click event
+        await navigator.share({
+          files: [file]
+        });
+
+        console.log(`[Mode: ${mode}] SUCCESS - Native Share Sheet Opened!`);
         return;
       } catch (err) {
-        if (err.name === "AbortError") return;
-        console.warn("Text sharing failed, falling back to direct file download:", err.message);
+        if (err.name === "AbortError") {
+          console.log(`[Mode: ${mode}] User cancelled share dialog.`);
+          return;
+        }
+        console.error(`[Mode: ${mode}] FAILED:`, err.name, "-", err.message);
+        // Fallback to direct file download
+        downloadBlobFallback(jsonStr, filename);
+        return;
       }
     }
 
-    // 4. Final fallback to direct browser file download
     downloadBlobFallback(jsonStr, filename);
+  };
+
+  window.runExportTest = (mode) => {
+    const filename = `quickfacts_mcq_backup_${new Date().toISOString().slice(0, 10)}.json`;
+    exportAndShareData(state, filename, "QuickFacts MCQs Backup", mode);
   };
 
   // --- INSTANT GOOGLE & WEB SEARCH HELPERS ---
