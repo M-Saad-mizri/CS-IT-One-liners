@@ -1,6 +1,7 @@
 // QuickFacts & MCQ Practice Portal - Application Core Logic
 
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("🚀 QuickFacts MCQs Build Commit: fd651d7");
   // --- APPLICATION STATE ---
   let state = {
     activeSubject: "Computer Networking",
