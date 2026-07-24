@@ -673,6 +673,15 @@ document.addEventListener("DOMContentLoaded", () => {
     exportAndShareData(state, filename, "QuickFacts One-Liners Backup", mode);
   };
 
+  const testBtns = document.querySelectorAll(".test-share-btn");
+  testBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const mode = btn.getAttribute("data-test");
+      const filename = `quickfacts_one_liners_backup_${new Date().toISOString().slice(0, 10)}.json`;
+      exportAndShareData(state, filename, "QuickFacts One-Liners Backup", mode);
+    });
+  });
+
   if (exportProgressBtn) {
     exportProgressBtn.addEventListener("click", () => {
       const filename = `quickfacts_one_liners_backup_${new Date().toISOString().slice(0, 10)}.json`;

@@ -212,6 +212,19 @@
             </button>
             <input type="file" id="importFileInput" accept=".json,.txt" style="display: none;">
           </div>
+          <div class="test-matrix-panel" style="margin-top: 12px; padding: 10px; background: rgba(99, 102, 241, 0.06); border: 1px dashed rgba(99, 102, 241, 0.3); border-radius: 12px; display: flex; flex-direction: column; gap: 8px;">
+            <span style="font-size: 0.76rem; font-weight: 700; color: #818CF8; text-transform: uppercase; letter-spacing: 0.5px;">
+              🧪 Web Share Matrix Diagnostics (Real Taps)
+            </span>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px;">
+              <button class="card-action-btn test-share-btn" data-test="TEST_A" style="font-size: 0.75rem; padding: 6px 8px; justify-content: center;">Test A (Hello, txt)</button>
+              <button class="card-action-btn test-share-btn" data-test="TEST_B" style="font-size: 0.75rem; padding: 6px 8px; justify-content: center;">Test B (Hello, json)</button>
+              <button class="card-action-btn test-share-btn" data-test="TEST_C" style="font-size: 0.75rem; padding: 6px 8px; justify-content: center;">Test C (jsonStr, txt)</button>
+              <button class="card-action-btn test-share-btn" data-test="TEST_D" style="font-size: 0.75rem; padding: 6px 8px; justify-content: center;">Test D (jsonStr, json)</button>
+              <button class="card-action-btn test-share-btn" data-test="TEST_EMPTY_MIME" style="font-size: 0.75rem; padding: 6px 8px; justify-content: center;">Empty MIME</button>
+              <button class="card-action-btn test-share-btn" data-test="TEST_OCTET_STREAM" style="font-size: 0.75rem; padding: 6px 8px; justify-content: center;">Octet Stream (.bin)</button>
+            </div>
+          </div>
         </div>
       </div>
 

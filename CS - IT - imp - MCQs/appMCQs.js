@@ -1655,6 +1655,15 @@ Instructions:
 5. Mention where this concept is used in ${subjectName || 'Computer Science'}.`;
   }
 
+  const testBtns = document.querySelectorAll(".test-share-btn");
+  testBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const mode = btn.getAttribute("data-test");
+      const filename = `quickfacts_mcq_backup_${new Date().toISOString().slice(0, 10)}.json`;
+      exportAndShareData(state, filename, "QuickFacts MCQs Backup", mode);
+    });
+  });
+
   if (exportProgressBtn) {
     exportProgressBtn.addEventListener("click", () => {
       const filename = `quickfacts_mcq_backup_${new Date().toISOString().slice(0, 10)}.json`;
