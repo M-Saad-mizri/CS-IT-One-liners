@@ -603,37 +603,71 @@ document.addEventListener("DOMContentLoaded", () => {
   const exportAndShareData = async (dataObj, filename, title) => {
     const jsonString = JSON.stringify(dataObj, null, 2);
     const baseFilename = filename.replace(/\.json$/, "");
+    const fullFilename = `${baseFilename}.json`;
 
-    if (!navigator.share) {
-      downloadBlobFallback(jsonString, `${baseFilename}.json`);
-      return;
-    }
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
 
-    try {
-      const file = new File([jsonString], `${baseFilename}.json`, { type: "application/json" });
-      const canShareFiles = navigator.canShare && navigator.canShare({ files: [file] });
+    if (isMobile) {
+      if (navigator.share) {
+        try {
+          const file = new File([jsonString], fullFilename, { type: "application/json" });
+          const canShareFiles = navigator.canShare && navigator.canShare({ files: [file] });
 
-      let sharePayload = {};
-      if (canShareFiles) {
-        sharePayload = {
-          title,
-          text: `Backup file for ${title}`,
-          files: [file],
-        };
+          let sharePayload = {};
+          if (canShareFiles) {
+            sharePayload = {
+              title,
+              text: `Backup file for ${title}`,
+              files: [file],
+            };
+          } else {
+            sharePayload = {
+              title,
+              text: `Data Backup (${title}):\n\n${jsonString}`,
+            };
+          }
+
+          await navigator.share(sharePayload);
+          return;
+        } catch (err) {
+          if (err.name === "AbortError") {
+            return;
+          }
+          console.warn("Mobile Web Share failed, falling back to direct file download:", err);
+          downloadBlobFallback(jsonString, fullFilename);
+        }
       } else {
-        sharePayload = {
-          title,
-          text: `Data Backup (${title}):\n\n${jsonString}`,
-        };
+        downloadBlobFallback(jsonString, fullFilename);
       }
+    } else {
+      downloadBlobFallback(jsonString, fullFilename);
 
-      await navigator.share(sharePayload);
-    } catch (err) {
-      if (err.name !== "AbortError") {
-        console.error("Web Share failed:", err);
+      if (navigator.share) {
+        try {
+          const file = new File([jsonString], fullFilename, { type: "application/json" });
+          const canShareFiles = navigator.canShare && navigator.canShare({ files: [file] });
+
+          let sharePayload = {};
+          if (canShareFiles) {
+            sharePayload = {
+              title,
+              text: `Backup file for ${title}`,
+              files: [file],
+            };
+          } else {
+            sharePayload = {
+              title,
+              text: `Data Backup (${title}):\n\n${jsonString}`,
+            };
+          }
+
+          await navigator.share(sharePayload);
+        } catch (err) {
+          if (err.name !== "AbortError") {
+            console.warn("Desktop Web Share failed:", err);
+          }
+        }
       }
-    } finally {
-      downloadBlobFallback(jsonString, `${baseFilename}.json`);
     }
   };
 

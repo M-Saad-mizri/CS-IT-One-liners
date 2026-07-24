@@ -205,6 +205,21 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
+  function formatExplanation(exp) {
+    if (!exp) return "";
+    if (typeof exp === "string") return exp;
+    if (typeof exp === "object") {
+      if (exp.correctReason) {
+        return exp.correctReason;
+      }
+      const textVals = Object.values(exp).filter(v => typeof v === "string" && v.trim());
+      if (textVals.length > 0) {
+        return textVals[0];
+      }
+    }
+    return String(exp);
+  }
+
   function getActiveSubjectMCQs() {
     const subject = state.activeSubject;
     if (shuffledSubjectCache[subject]) {
@@ -428,7 +443,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const inQuestion = mcq.question.toLowerCase().includes(query);
         const inCategory = (mcq.category || "").toLowerCase().includes(query);
         const inOptions = mcq.options.some(opt => opt.toLowerCase().includes(query));
-        const inExplanation = (mcq.explanation || "").toLowerCase().includes(query);
+        const expStr = formatExplanation(mcq.explanation);
+        const inExplanation = expStr.toLowerCase().includes(query);
         if (!inQuestion && !inCategory && !inOptions && !inExplanation) return false;
       }
 
@@ -503,7 +519,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div class="fact-explanation-box" style="display: ${isRevealed ? 'block' : 'none'}">
           <strong>Key Concept / Answer:</strong> Option ${String.fromCharCode(65 + mcq.answerIndex)}: ${mcq.options[mcq.answerIndex]}<br>
-          <span style="opacity: 0.9;">${mcq.explanation || ''}</span>
+          <span style="opacity: 0.9;">${formatExplanation(mcq.explanation)}</span>
         </div>
 
         <div class="fact-actions">
@@ -1065,7 +1081,7 @@ document.addEventListener("DOMContentLoaded", () => {
       quizExplanationBox.style.display = "block";
       quizExplanationBox.innerHTML = `
         <strong>Explanation:</strong> Option ${String.fromCharCode(65 + q.answerIndex)}: ${q.options[q.answerIndex]}<br>
-        <span style="opacity: 0.9;">${q.explanation || ''}</span>
+        <span style="opacity: 0.9;">${formatExplanation(q.explanation)}</span>
       `;
     } else {
       quizExplanationBox.style.display = "none";
@@ -1344,7 +1360,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `<div class="history-opt ${optClass}">${letter}. ${opt}</div>`;
     }).join("")}
             </div>
-            ${q.explanation ? `<div class="history-q-explanation"><strong>Explanation:</strong> ${q.explanation}</div>` : ''}
+            ${q.explanation ? `<div class="history-q-explanation"><strong>Explanation:</strong> ${formatExplanation(q.explanation)}</div>` : ''}
           </div>
         `).join("")}
       </div>
@@ -1510,44 +1526,71 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const jsonString = JSON.stringify(exportPayload, null, 2);
     const baseFilename = filename.replace(/\.json$/, "");
+    const fullFilename = `${baseFilename}.json`;
 
-    // 1. Feature Check
-    if (!navigator.share) {
-      downloadBlobFallback(jsonString, `${baseFilename}.json`);
-      return;
-    }
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
 
-    try {
-      // 2. Prepare file with application/json & .json extension for maximum app compatibility
-      const file = new File([jsonString], `${baseFilename}.json`, { type: "application/json" });
+    if (isMobile) {
+      if (navigator.share) {
+        try {
+          const file = new File([jsonString], fullFilename, { type: "application/json" });
+          const canShareFiles = navigator.canShare && navigator.canShare({ files: [file] });
 
-      // 3. Test if device supports file sharing
-      const canShareFiles = navigator.canShare && navigator.canShare({ files: [file] });
+          let sharePayload = {};
+          if (canShareFiles) {
+            sharePayload = {
+              title,
+              text: `Backup file for ${title}`,
+              files: [file],
+            };
+          } else {
+            sharePayload = {
+              title,
+              text: `Data Backup (${title}):\n\n${jsonString}`,
+            };
+          }
 
-      let sharePayload = {};
-      if (canShareFiles) {
-        sharePayload = {
-          title,
-          text: `Backup file for ${title}`,
-          files: [file],
-        };
+          await navigator.share(sharePayload);
+          return;
+        } catch (err) {
+          if (err.name === "AbortError") {
+            return;
+          }
+          console.warn("Mobile Web Share failed, falling back to direct file download:", err);
+          downloadBlobFallback(jsonString, fullFilename);
+        }
       } else {
-        // Fallback to text payload sharing if files are unsupported
-        sharePayload = {
-          title,
-          text: `Data Backup (${title}):\n\n${jsonString}`,
-        };
+        downloadBlobFallback(jsonString, fullFilename);
       }
+    } else {
+      downloadBlobFallback(jsonString, fullFilename);
 
-      // 4. Trigger Web Share API (Must be inside user gesture)
-      await navigator.share(sharePayload);
-    } catch (err) {
-      if (err.name !== "AbortError") {
-        console.error("Web Share failed:", err);
+      if (navigator.share) {
+        try {
+          const file = new File([jsonString], fullFilename, { type: "application/json" });
+          const canShareFiles = navigator.canShare && navigator.canShare({ files: [file] });
+
+          let sharePayload = {};
+          if (canShareFiles) {
+            sharePayload = {
+              title,
+              text: `Backup file for ${title}`,
+              files: [file],
+            };
+          } else {
+            sharePayload = {
+              title,
+              text: `Data Backup (${title}):\n\n${jsonString}`,
+            };
+          }
+
+          await navigator.share(sharePayload);
+        } catch (err) {
+          if (err.name !== "AbortError") {
+            console.warn("Desktop Web Share failed:", err);
+          }
+        }
       }
-    } finally {
-      // 5. Always save file locally
-      downloadBlobFallback(jsonString, `${baseFilename}.json`);
     }
   };
 
