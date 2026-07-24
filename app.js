@@ -1,7 +1,7 @@
 // QuickFacts Core Application Logic
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("🚀 QuickFacts One-Liners Build Commit: 576bd73 (Latest Deploy)");
+  console.log("🚀 QuickFacts One-Liners Build Commit: new (Latest Deploy)");
   // --- APPLICATION STATE ---
   let state = {
     activeSubject: "Computer Networking",
