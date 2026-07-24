@@ -608,6 +608,15 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         const jsonFile = new File([jsonStr], filename, { type: "application/json" });
         if (navigator.canShare && navigator.canShare({ files: [jsonFile] })) {
+          console.log("User activation:", navigator.userActivation);
+          console.log("isActive:", navigator.userActivation?.isActive);
+          console.log("hasBeenActive:", navigator.userActivation?.hasBeenActive);
+
+          console.log("canShare:", navigator.canShare?.({ files: [jsonFile] }));
+
+          console.log(jsonFile);
+          console.log(jsonFile instanceof File);
+          console.log(jsonFile instanceof window.File);
           await navigator.share({
             title: title,
             files: [jsonFile]
@@ -617,13 +626,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const txtFile = new File([jsonStr], txtFilename, { type: "text/plain" });
         if (navigator.canShare && navigator.canShare({ files: [txtFile] })) {
+          console.log("User activation:", navigator.userActivation);
+          console.log("isActive:", navigator.userActivation?.isActive);
+          console.log("hasBeenActive:", navigator.userActivation?.hasBeenActive);
+
+          console.log("canShare:", navigator.canShare?.({ files: [jsonFile] }));
+
+          console.log(jsonFile);
+          console.log(jsonFile instanceof File);
+          console.log(jsonFile instanceof window.File);
           await navigator.share({
             title: title,
             files: [txtFile]
           });
           return;
         }
+        console.log("User activation:", navigator.userActivation);
+        console.log("isActive:", navigator.userActivation?.isActive);
+        console.log("hasBeenActive:", navigator.userActivation?.hasBeenActive);
 
+        console.log("canShare:", navigator.canShare?.({ files: [jsonFile] }));
+
+        console.log(jsonFile);
+        console.log(jsonFile instanceof File);
+        console.log(jsonFile instanceof window.File);
         await navigator.share({
           title: title,
           text: jsonStr
