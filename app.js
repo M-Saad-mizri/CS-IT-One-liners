@@ -608,6 +608,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (navigator.share) {
       try {
         const jsonFile = new File([jsonStr], filename, { type: "application/json" });
+
+        console.log("Before share");
+        console.log("userActivation:", navigator.userActivation?.isActive);
+        console.log("json length:", jsonStr.length);
+        console.log("file size:", jsonFile.size);
+        console.log("filename:", filename);
+        console.log("type:", jsonFile.type);
+        console.log("canShare:", navigator.canShare ? navigator.canShare({ files: [jsonFile] }) : "N/A");
+        console.log(jsonFile);
+
         if (navigator.canShare && navigator.canShare({ files: [jsonFile] })) {
           await navigator.share({
             title: title,
@@ -631,10 +641,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         return;
       } catch (err) {
+        console.error(err);
+        console.error(err.name);
+        console.error(err.message);
+        console.error(err.stack);
         if (err.name === "AbortError") {
           return;
         }
-        console.warn("Native sharing failed:", err);
+        throw err;
       }
     }
 
